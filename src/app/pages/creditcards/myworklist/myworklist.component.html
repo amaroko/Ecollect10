@@ -1,0 +1,10 @@
+<app-panel title="My Worklist | List includes My Worklist">
+  <ag-grid-angular #agGrid (rowClicked)='onRowDoubleClicked($event)' [animateRows]="true" [columnDefs]="columnDefs"
+                   [defaultColDef]="defaultColDef" [floatingFilter]="true" [gridOptions]="gridOptions"
+                   [modules]="modules"
+                   [pagination]="true" [pivotPanelShow]="pivotPanelShow" [rowData]="rowData" [sideBar]="true"
+                   class="ag-theme-balham"
+                   id="myGrid" style="width: 100%; height: 550px;">
+
+  </ag-grid-angular>
+</app-panel>

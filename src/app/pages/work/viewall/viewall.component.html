@@ -1,0 +1,42 @@
+<!--&lt;!&ndash; begin breadcrumb &ndash;&gt;-->
+
+<!--<ol class="breadcrumb pull-right">-->
+<!--  <li class="breadcrumb-item"><a href="javascript:;">Home</a></li>-->
+<!--  <li class="breadcrumb-item"><a href="javascript:;">Library</a></li>-->
+<!--  <li class="breadcrumb-item active"><a href="javascript:;">Data</a></li>-->
+<!--</ol>-->
+<!--&lt;!&ndash; end breadcrumb &ndash;&gt;-->
+<!--&lt;!&ndash; begin page-header &ndash;&gt;-->
+<!--<h1 class="page-header">Work Queue <small>view all</small></h1>-->
+<!--&lt;!&ndash; end page-header &ndash;&gt;-->
+
+<!-- begin panel -->
+<app-panel title="Loan Arrears(ALL)">
+  <ag-grid-angular
+    #agGrid
+    (gridReady)="onGridReady($event)"
+    (rowClicked)='onRowDoubleClicked($event)'
+    [animateRows]="true"
+    [columnDefs]="columnDefs"
+    [defaultColDef]="defaultColDef"
+
+
+    [enableRangeSelection]="true"
+
+    [floatingFilter]="true"
+    [maxBlocksInCache]="maxBlocksInCache"
+    [modules]="modules"
+    [paginationAutoPageSize]="true"
+    [pagination]="true"
+    [pivotPanelShow]="pivotPanelShow"
+    [rowData]="rowData"
+    [rowDragManaged]="true"
+    [rowModelType]="rowModelType"
+    [sideBar]="true"
+    class="ag-theme-balham"
+    id="myGrid"
+    style="width: 100%; height: 700px;"
+  ></ag-grid-angular>
+</app-panel>
+<!-- end panel -->
+

@@ -1,0 +1,323 @@
+<app-panel title="Client Information Home">
+
+
+  <div class="row">
+    <!-- begin nav-tabs -->
+    <ngb-tabset>
+      <ngb-tab>
+        <ng-template class="label label-danger" ngbTabTitle>
+          <span class="d-sm-none">Account info</span>
+          <span class="d-sm-block ">Account info</span>
+        </ng-template>
+
+
+        <ng-template ngbTabContent>
+          <div>
+            <!--        <div *ngIf="loader" class="loader"></div>-->
+            <ngx-skeleton-loader
+              *ngIf="loader"
+              [theme]="{
+ 'border-radius': '5px',
+ height: '20px',
+ 'background-color': '#beb0b0',
+ border: '1px solid white'
+}"
+              >
+            </ngx-skeleton-loader>
+            <fieldset *ngIf="!loader">
+              <div class="form-group row">
+                <label class="col-lg-2 col-form-label">account number:</label>
+                <div class="col-lg-10">
+                  <strong>{{account?.accnumber || account?.cardacct || account?.loanaccnumber}}</strong>
+                </div>
+              </div>
+            </fieldset>
+            <fieldset *ngIf="!loader">
+              <div class="form-group row">
+                <label class="col-lg-2 col-form-label">Outstanding balance:</label>
+                <div class="col-lg-10">
+                  <strong>{{account?.oustbalance || account?.outbalance || account?.loanamount}}</strong>
+                </div>
+              </div>
+            </fieldset>
+            <fieldset *ngIf="!loader">
+              <div class="form-group row">
+                <label class="col-lg-2 col-form-label">Total arrears/EXPPMNT:</label>
+                <div class="col-lg-10">
+                  <strong>{{account?.instamount || account?.EXPPMNT}}</strong>
+                </div>
+              </div>
+            </fieldset>
+            <fieldset *ngIf="!loader">
+              <div class="form-group row">
+                <label class="col-lg-2 col-form-label">Bucket/cycle:</label>
+                <div class="col-lg-10">
+                  <strong>{{account?.bucket || account?.cycle || account?.grade}}</strong>
+                </div>
+              </div>
+            </fieldset>
+            <fieldset *ngIf="!loader">
+              <div class="form-group row">
+                <label class="col-lg-2 col-form-label">arocode :</label>
+                <div class="col-lg-10">
+                  <strong>{{account?.arocode}}</strong>
+                </div>
+              </div>
+            </fieldset>
+            <fieldset *ngIf="!loader">
+              <div class="form-group row">
+                <label class="col-lg-2 col-form-label">rrocode :</label>
+                <div class="col-lg-10">
+                  <strong>{{account?.rrocode}}</strong>
+                </div>
+              </div>
+            </fieldset>
+            <fieldset *ngIf="!loader">
+              <div class="form-group row">
+                <label class="col-lg-2 col-form-label">Branchname :</label>
+                <div class="col-lg-10">
+                  <strong>{{account?.branchcode}}</strong>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+        </ng-template>
+      </ngb-tab>
+      <ngb-tab>
+        <ng-template ngbTabTitle>
+          <span class="d-sm-none">Other accounts</span>
+          <span class="d-sm-block d-none">Other accounts</span>
+        </ng-template>
+        <ng-template ngbTabContent>
+          <!--<form>
+              <div class="form-group form-inline">
+                  Full text search: <input class="form-control ml-2" type="text" [formControl]="filter" />
+              </div> ; index as i  <th scope="row">{{ i + 1 }}</th> <th scope="col">#</th>
+          </form>-->
+          <div *ngIf="loader" class="loader"></div>
+          <table class="table table-striped">
+            <thead>
+            <tr>
+
+              <th scope="col">accnumber</th>
+              <th scope="col">productcode</th>
+              <th scope="col">oustbalance</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let other of otheraccs ">
+
+              <td>
+                {{ other.ACCNUMBER }}
+              </td>
+              <td>{{ other.PRODUCTCODE }}</td>
+              <td>{{ other.OUTSBALANCE | number }}</td>
+            </tr>
+            </tbody>
+
+          </table>
+          <!--        <pagination-controls (pageChange)="p = $event"></pagination-controls>-->
+        </ng-template>
+      </ngb-tab>
+      <ngb-tab>
+        <ng-template ngbTabTitle>
+          <span class="d-sm-none">Collateral info</span>
+          <span class="d-sm-block d-none">Collateral info</span>
+        </ng-template>
+        <ng-template ngbTabContent>
+          <div *ngIf="loader" class="loader"></div>
+          <table class="table table-striped">
+            <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">description</th>
+              <th scope="col">forced sale value</th>
+              <th scope="col">market value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let c of collaterals; index as i">
+              <th scope="row">{{ i + 1 }}</th>
+              <td>
+                {{ c.description }}
+              </td>
+              <td>{{ c.fsv }}</td>
+              <td>{{ c.msv}}</td>
+            </tr>
+            </tbody>
+          </table>
+        </ng-template>
+      </ngb-tab>
+
+      <ngb-tab>
+        <ng-template ngbTabTitle>
+          <span class="d-sm-none">Directors</span>
+          <span class="d-sm-block d-none">Directors</span>
+        </ng-template>
+        <ng-template ngbTabContent>
+          <div *ngIf="loader" class="loader"></div>
+          <table class="table table-striped">
+            <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">IDNuber</th>
+              <th scope="col">Telnumber</th>
+              <th scope="col">address</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let director of directors; index as i">
+              <th scope="row">{{ i + 1 }}</th>
+              <td>
+                {{ director.name }}
+              </td>
+              <td>{{ director.idnumber }}</td>
+              <td>{{ director.telnumber }}</td>
+              <td>{{ director.address }}</td>
+            </tr>
+            </tbody>
+          </table>
+        </ng-template>
+      </ngb-tab>
+
+      <ngb-tab>
+        <ng-template ngbTabTitle>
+          <span class="d-sm-none">Credit Card</span>
+          <span class="d-sm-block d-none">Credit Card</span>
+        </ng-template>
+        <ng-template ngbTabContent>
+          <!--<form>
+                          <div class="form-group form-inline">
+                              Full text search: <input class="form-control ml-2" type="text" [formControl]="filter" />
+                          </div>
+                      </form>-->
+          <div *ngIf="loader" class="loader"></div>
+          <table class="table table-striped">
+            <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">CardNumber</th>
+              <th scope="col">CardAcct</th>
+              <th scope="col">CardName</th>
+              <th scope="col">OustBalance</th>
+              <th scope="col">ExpAmount</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let card of cards; index as i">
+              <th scope="row">{{ i + 1 }}</th>
+              <td>
+                {{ card.cardnumber }}
+              </td>
+              <td>
+                {{ card.cardacct }}
+              </td>
+              <td>
+                {{ card.cardname }}
+              </td>
+              <td>{{ card.oustbalance | number }}</td>
+              <td>{{ card.expamount | number }}</td>
+            </tr>
+            </tbody>
+          </table>
+        </ng-template>
+      </ngb-tab>
+
+      <ngb-tab>
+        <ng-template ngbTabTitle>
+          <span class="d-sm-none">With Same ID Number</span>
+          <span class="d-sm-block d-none">With Same ID Number</span>
+        </ng-template>
+        <ng-template ngbTabContent>
+          <!--<form>
+                              <div class="form-group form-inline">
+                                  Full text search: <input class="form-control ml-2" type="text" [formControl]="filter" />
+                              </div>
+                          </form>-->
+          <table class="table table-striped">
+            <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">accnumber</th>
+              <th scope="col">arocode</th>
+              <th scope="col">oustbalance</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let d of accwithid; index as i">
+              <th scope="row">{{ i + 1 }}</th>
+              <td>
+                {{ d.accnumber }}
+              </td>
+              <td>{{ d.arocode }}</td>
+              <td>{{ d.oustbalance | number }}</td>
+            </tr>
+            </tbody>
+          </table>
+        </ng-template>
+      </ngb-tab>
+
+    </ngb-tabset>
+    <!-- end nav-tabs -->
+
+  </div>
+</app-panel>
+<app-panel title="NgbModal">
+  <p class="lead">
+    A service to open modal windows. Creating a modal is straightforward: create a template and pass it as an argument to the "open" method!
+  </p>
+  <!-- #modal-dialog -->
+  <ng-template #modalDialog let-c="close" let-d="dismiss">
+    <div class="modal-header">
+      <h4 class="modal-title">Modal Dialog</h4>
+      <button type="button" class="close" (click)="d('Cross click')">×</button>
+    </div>
+    <div class="modal-body">
+
+        <div class="alert alert-danger m-b-0">
+          <h5><i class="fa fa-info-circle"></i> Alert Header</h5>
+          <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-white" (click)="c('Close click')">Close</button>
+      <a href="javascript:;" class="btn btn-success">Action</a>
+    </div>
+  </ng-template>
+
+  <ng-container outsideBody>
+    <table class="table">
+      <thead>
+      <tr>
+        <th>Description</th>
+        <th>Demo</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>Default NgBootstrap Modal Dialog Box.</td>
+        <td><button class="btn btn-sm btn-success" (click)="open(modalDialog)">Demo</button></td>
+      </tr>
+      </tbody>
+    </table>
+    <div class="hljs-wrapper">
+          <textarea highlight-js [options]="{}" [lang]="'typescript'">&lt;ng-template #modalDialog let-c="close" let-d="dismiss"&gt;
+  &lt;div class="modal-header"&gt;
+    &lt;h4 class="modal-title"&gt;Modal Dialog&lt;/h4&gt;
+    &lt;button type="button" class="close" (click)="d('Cross click')"&gt;×&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="modal-body"&gt;
+    &lt;p&gt;
+      Modal body content here...
+    &lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="modal-footer"&gt;
+    &lt;button class="btn btn-white" (click)="c('Close click')"&gt;Close&lt;/button&gt;
+    &lt;a href="javascript:;" class="btn btn-success"&gt;Action&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/ng-template&gt;</textarea>
+    </div>
+  </ng-container>
+</app-panel>

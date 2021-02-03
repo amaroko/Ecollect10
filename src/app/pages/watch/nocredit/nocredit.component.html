@@ -1,0 +1,25 @@
+<app-panel title="Include all loans with settlement accounts having credit balances less than the next repayment
+      schedule">
+  <ag-grid-angular
+    #agGrid
+    (gridReady)="onGridReady($event)"
+    (rowClicked)='onRowDoubleClicked($event)'
+    [animateRows]="true"
+    [columnDefs]="columnDefs"
+    [defaultColDef]="defaultColDef"
+    [enableRangeSelection]="true"
+    [floatingFilter]="true"
+    [maxBlocksInCache]="maxBlocksInCache"
+    [modules]="modules"
+    [paginationAutoPageSize]="true"
+    [pagination]="true"
+    [pivotPanelShow]="pivotPanelShow"
+    [rowData]="rowData"
+    [rowDragManaged]="true"
+    [rowModelType]="rowModelType"
+    [sideBar]="true"
+    class="ag-theme-balham"
+    id="myGrid"
+    style="width: 100%; height: 700px;"
+  ></ag-grid-angular>
+</app-panel>

@@ -1,0 +1,601 @@
+<app-panel buttons="left">
+
+
+  <!-- begin profile -->
+  <div class="profile">
+    <div class="profile-header">
+      <!-- BEGIN profile-header-cover -->
+      <div class="profile-header-cover"></div>
+
+      <!-- END profile-header-cover -->
+      <!-- BEGIN profile-header-content -->
+      <!-- END profile-header-content -->
+      <!-- BEGIN profile-header-tab -->
+      <ul class="profile-header-tab nav nav-tabs">
+        <li class="nav-item"><a (click)="showTab('collectornotes')" [ngClass]="{ 'active': tabs.collectornotes }"
+                                class="nav-link"
+                                href="javascript:;">COLLECTOR NOTES</a></li>
+        <li class="nav-item"><a (click)="showTab('Bulknotes')" [ngClass]="{ 'active': tabs.Bulknotes }"
+                                class="nav-link" href="javascript:;">BULK NOTES</a></li>
+        <li class="nav-item"><a (click)="showTab('flaggednotes')" [ngClass]="{ 'active': tabs.flaggednotes }"
+                                class="nav-link" href="javascript:;">FLAGGED NOTES</a></li>
+        <li class="nav-item"><a (click)="showTab('allNotes')" [ngClass]="{ 'active': tabs.allNotes }"
+                                class="nav-link" href="javascript:;">ALL NOTES ON A GRID</a></li>
+        <li class="nav-item"><a (click)="showTab('friendTab')" [ngClass]="{ 'active': tabs.friendTab }"
+                                class="nav-link" href="javascript:;">FRIENDS</a></li>
+      </ul>
+
+      <!-- END profile-header-tab -->
+    </div>
+    <ng-container>
+      <div class="btn-group btn-group-toggle ml-auto" ngbRadioGroup>
+        <label class="btn btn-success btn-xs active" ngbButtonLabel>
+          <input (click)="widgetLightMode()" [ngClass]="{'checked': lightMode}" name="options" ngbButton
+                 type="radio"/> <i class="fa fa-sun text-primary"></i> Light
+        </label>
+        <label class="btn btn-success btn-xs" ngbButtonLabel>
+          <input (click)="widgetDarkMode()" [ngClass]="{'checked': darkMode}" name="options" ngbButton
+                 type="radio"/> <i class="fa fa-moon"></i> Dark
+        </label>
+      </div>
+    </ng-container>
+  </div>
+  <!-- end profile -->
+  <!-- begin profile-content -->
+  <div class="profile-content">
+    <!-- begin tab-content -->
+    <div class="tab-content p-0">
+
+
+      <!-- begin #profile-post tab -->
+      <div [ngClass]="{ 'active show': tabs.collectornotes }" class="tab-pane fade">
+        <!-- begin widget-list -->
+
+
+        <!-- begin widget-table -->
+
+          <!-- begin widget-table -->
+          <table *ngFor="let note of noteData | paginate: { itemsPerPage: 3, currentPage: p }" [ngClass]="{'inverse-mode': darkMode}"
+                 class="table table-bordered widget-table widget-table-rounded">
+            <thead>
+            <tr>
+              <th></th>
+              <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>
+                <p class="widget-table-desc m-b-15">{{note.OWNER}} {{note.NOTESRC}} on Account {{note.ACCNUMBER}}</p>
+                <div  class="clearfix f-s-10">
+                  Collector Note:
+                  <b [ngClass]="{'text-inverse': lightMode, 'text-white': darkMode}">{{note.NOTEMADE}}</b>
+                </div>
+                <div *ngIf="note.REASON?.length" class="clearfix f-s-10">
+                  Reason for default:
+                  <b [ngClass]="{'text-inverse': lightMode, 'text-white': darkMode}">{{note.REASON}}</b>
+                </div>
+                <div *ngIf="note.REASONDETAILS?.length" class="clearfix f-s-10">
+                  Reason Detail:
+                  <b [ngClass]="{'text-inverse': lightMode, 'text-white': darkMode}">{{note.REASONDETAILS}}</b>
+                </div>
+                <div *ngIf="note.REASON === 'Other'" class="clearfix f-s-10">
+                  Reason for default(Other):
+                  <b [ngClass]="{'text-inverse': lightMode, 'text-white': darkMode}">{{note.RFDOTHER}}</b>
+                </div>
+                <div class="clearfix f-s-10">
+                  Note Made on:
+                  <b [ngClass]="{'text-inverse': lightMode, 'text-white': darkMode}">{{note.NOTEDATE | date:'medium'}}</b>
+                </div>
+              </td>
+              <td>
+                <a (click)="editnote(note)" *ngIf="note.showedit" [ngClass]="{'btn-inverse': lightMode, 'btn-default': darkMode}"
+                   class="btn btn-sm width-80 rounded-corner">Edit</a>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+          <pagination-controls (pageChange)="p = $event"></pagination-controls>
+          <!-- end widget-table -->
+
+
+      </div>
+      <!-- end #profile-post tab -->
+
+
+      <!-- end #profile-post tab -->
+      <!-- begin #profile-about tab -->
+      <div [ngClass]="{ 'active show': tabs.Bulknotes }" class="tab-pane fade">
+        <!-- begin table -->
+        <!-- begin widget-table -->
+        <div class="table-responsive">
+          <!-- begin widget-table -->
+          <table *ngFor="let note of bulknote" [ngClass]="{'inverse-mode': darkMode}"
+                 class="table table-bordered widget-table widget-table-rounded">
+            <thead>
+            <tr>
+              <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>
+                <p class="widget-table-desc m-b-15">{{note.owner}} {{note.notesrc}} on Account {{note.accnumber}}</p>
+                <h4 class="widget-table-title">{{note.notemade}}</h4>
+                <!--                      <div class="progress progress-sm rounded-corner m-b-5">-->
+                <!--                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-orange f-s-10 f-w-600" style="width: 30%;">30%</div>-->
+                <!--                      </div>-->
+
+
+                <div class="clearfix f-s-10">
+                  Made on:
+                  <b [ngClass]="{'text-inverse': lightMode, 'text-white': darkMode}">{{note.notedate}}</b>
+                </div>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+          <!-- end widget-table -->
+        </div>
+      </div>
+      <!-- end #profile-about tab -->
+      <!-- begin #profile-photos tab -->
+      <div [ngClass]="{ 'active show': tabs.flaggednotes }" class="tab-pane fade">
+        <!-- begin table -->
+        <!-- begin widget-table -->
+        <div class="table-responsive">
+          <!-- begin widget-table -->
+          <table *ngFor="let note of flaggedNotes" [ngClass]="{'inverse-mode': darkMode}"
+                 class="table table-bordered widget-table widget-table-rounded">
+            <thead>
+            <tr>
+              <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>
+                <p class="widget-table-desc m-b-15">{{note.owner}} {{note.notesrc}} on Account {{note.accnumber}}</p>
+                <h4 class="widget-table-title">{{note.notemade}}</h4>
+                <!--                      <div class="progress progress-sm rounded-corner m-b-5">-->
+                <!--                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-orange f-s-10 f-w-600" style="width: 30%;">30%</div>-->
+                <!--                      </div>-->
+
+
+                <div class="clearfix f-s-10">
+                  Made on:
+                  <b [ngClass]="{'text-inverse': lightMode, 'text-white': darkMode}">{{note.notedate}}</b>
+                </div>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+          <!-- end widget-table -->
+        </div>
+      </div>
+      <!-- end #profile-photos tab -->
+      <!-- begin #profile-videos tab -->
+      <div [ngClass]="{ 'active show': tabs.allNotes }" class="tab-pane fade">
+        <ag-grid-angular #agGrid (columnResized)="onColumnResized()" [animateRows]="true" [columnDefs]="columnDefs"
+                         [defaultColDef]="defaultColDef"
+                         [floatingFilter]="true"
+                         [gridOptions]="gridOptions" [modules]="modules" [pagination]="true"
+                         [pivotPanelShow]="pivotPanelShow"
+                         [rowData]="rowData"
+                         [sideBar]="true" [statusBar]="statusBar" class="ag-theme-balham"
+                         id="myGrid" style="width: 100%; height: 550px;">
+
+        </ag-grid-angular>
+
+
+      </div>
+      <!-- end #profile-videos tab -->
+      <!-- begin #profile-friends tab -->
+      <div [ngClass]="{ 'active show': tabs.friendTab }" class="tab-pane fade">
+        <h4 class="m-t-0 m-b-20">Friend List (14)</h4>
+        <!-- begin row -->
+        <div class="row row-space-2">
+          <!-- begin col-6 -->
+          <div class="col-md-6 m-b-2">
+            <div class="p-10 bg-white">
+              <div class="media media-xs overflow-visible align-items-center">
+                <a class="media-left" href="javascript:;">
+                  <img alt="" class="media-object img-circle" src="/assets/img/user/user-1.jpg"/>
+                </a>
+                <div class="media-body valign-middle">
+                  <b class="text-inverse">James Pittman</b>
+                </div>
+                <div class="media-body valign-middle text-right overflow-visible">
+                  <div class="btn-group dropdown" ngbDropdown>
+                    <a class="btn btn-default" href="javascript:;">Friends</a>
+                    <a class="btn btn-default dropdown-toggle" href="javascript:;" ngbDropdownToggle><b
+                      class="caret"></b></a>
+                    <div class="dropdown-menu dropdown-menu-right" ngbDropdownMenu>
+                      <a class="dropdown-item" href="javascript:;">Action 1</a>
+                      <a class="dropdown-item" href="javascript:;">Action 2</a>
+                      <a class="dropdown-item" href="javascript:;">Action 3</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="javascript:;">Action 4</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end col-6 -->
+          <!-- begin col-6 -->
+          <div class="col-md-6 m-b-2">
+            <div class="p-10 bg-white">
+              <div class="media media-xs overflow-visible align-items-center">
+                <a class="media-left" href="javascript:;">
+                  <img alt="" class="media-object img-circle" src="/assets/img/user/user-2.jpg"/>
+                </a>
+                <div class="media-body valign-middle">
+                  <b class="text-inverse">Mitchell Ashcroft</b>
+                </div>
+                <div class="media-body valign-middle text-right overflow-visible">
+                  <div class="btn-group dropdown" ngbDropdown>
+                    <a class="btn btn-default" href="javascript:;">Friends</a>
+                    <a class="btn btn-default dropdown-toggle" href="javascript:;" ngbDropdownToggle><b
+                      class="caret"></b></a>
+                    <div class="dropdown-menu dropdown-menu-right" ngbDropdownMenu>
+                      <a class="dropdown-item" href="javascript:;">Action 1</a>
+                      <a class="dropdown-item" href="javascript:;">Action 2</a>
+                      <a class="dropdown-item" href="javascript:;">Action 3</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="javascript:;">Action 4</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end col-6 -->
+          <!-- begin col-6 -->
+          <div class="col-md-6 m-b-2">
+            <div class="p-10 bg-white">
+              <div class="media media-xs overflow-visible align-items-center">
+                <a class="media-left" href="javascript:;">
+                  <img alt="" class="media-object img-circle" src="/assets/img/user/user-3.jpg"/>
+                </a>
+                <div class="media-body valign-middle">
+                  <b class="text-inverse">Ella Cabena</b>
+                </div>
+                <div class="media-body valign-middle text-right overflow-visible">
+                  <div class="btn-group dropdown" ngbDropdown>
+                    <a class="btn btn-default" href="javascript:;">Friends</a>
+                    <a class="btn btn-default dropdown-toggle" href="javascript:;" ngbDropdownToggle><b
+                      class="caret"></b></a>
+                    <div class="dropdown-menu dropdown-menu-right" ngbDropdownMenu>
+                      <a class="dropdown-item" href="javascript:;">Action 1</a>
+                      <a class="dropdown-item" href="javascript:;">Action 2</a>
+                      <a class="dropdown-item" href="javascript:;">Action 3</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="javascript:;">Action 4</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end col-6 -->
+          <!-- begin col-6 -->
+          <div class="col-md-6 m-b-2">
+            <div class="p-10 bg-white">
+              <div class="media media-xs overflow-visible align-items-center">
+                <a class="media-left" href="javascript:;">
+                  <img alt="" class="media-object img-circle" src="/assets/img/user/user-4.jpg"/>
+                </a>
+                <div class="media-body valign-middle">
+                  <b class="text-inverse">Declan Dyson</b>
+                </div>
+                <div class="media-body valign-middle text-right overflow-visible">
+                  <div class="btn-group dropdown" ngbDropdown>
+                    <a class="btn btn-default" href="javascript:;">Friends</a>
+                    <a class="btn btn-default dropdown-toggle" href="javascript:;" ngbDropdownToggle><b
+                      class="caret"></b></a>
+                    <div class="dropdown-menu dropdown-menu-right" ngbDropdownMenu>
+                      <a class="dropdown-item" href="javascript:;">Action 1</a>
+                      <a class="dropdown-item" href="javascript:;">Action 2</a>
+                      <a class="dropdown-item" href="javascript:;">Action 3</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="javascript:;">Action 4</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end col-6 -->
+          <!-- begin col-6 -->
+          <div class="col-md-6 m-b-2">
+            <div class="p-10 bg-white">
+              <div class="media media-xs overflow-visible align-items-center">
+                <a class="media-left" href="javascript:;">
+                  <img alt="" class="media-object img-circle" src="/assets/img/user/user-5.jpg"/>
+                </a>
+                <div class="media-body valign-middle">
+                  <b class="text-inverse">George Seyler</b>
+                </div>
+                <div class="media-body valign-middle text-right overflow-visible">
+                  <div class="btn-group dropdown" ngbDropdown>
+                    <a class="btn btn-default" href="javascript:;">Friends</a>
+                    <a class="btn btn-default dropdown-toggle" href="javascript:;" ngbDropdownToggle><b
+                      class="caret"></b></a>
+                    <div class="dropdown-menu dropdown-menu-right" ngbDropdownMenu>
+                      <a class="dropdown-item" href="javascript:;">Action 1</a>
+                      <a class="dropdown-item" href="javascript:;">Action 2</a>
+                      <a class="dropdown-item" href="javascript:;">Action 3</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="javascript:;">Action 4</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end col-6 -->
+          <!-- begin col-6 -->
+          <div class="col-md-6 m-b-2">
+            <div class="p-10 bg-white">
+              <div class="media media-xs overflow-visible align-items-center">
+                <a class="media-left" href="javascript:;">
+                  <img alt="" class="media-object img-circle" src="/assets/img/user/user-6.jpg"/>
+                </a>
+                <div class="media-body valign-middle">
+                  <b class="text-inverse">Patrick Musgrove</b>
+                </div>
+                <div class="media-body valign-middle text-right overflow-visible">
+                  <div class="btn-group dropdown" ngbDropdown>
+                    <a class="btn btn-default" href="javascript:;">Friends</a>
+                    <a class="btn btn-default dropdown-toggle" href="javascript:;" ngbDropdownToggle><b
+                      class="caret"></b></a>
+                    <div class="dropdown-menu dropdown-menu-right" ngbDropdownMenu>
+                      <a class="dropdown-item" href="javascript:;">Action 1</a>
+                      <a class="dropdown-item" href="javascript:;">Action 2</a>
+                      <a class="dropdown-item" href="javascript:;">Action 3</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="javascript:;">Action 4</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end col-6 -->
+          <!-- begin col-6 -->
+          <div class="col-md-6 m-b-2">
+            <div class="p-10 bg-white">
+              <div class="media media-xs overflow-visible align-items-center">
+                <a class="media-left" href="javascript:;">
+                  <img alt="" class="media-object img-circle" src="/assets/img/user/user-7.jpg"/>
+                </a>
+                <div class="media-body valign-middle">
+                  <b class="text-inverse">Taj Connal</b>
+                </div>
+                <div class="media-body valign-middle text-right overflow-visible">
+                  <div class="btn-group dropdown" ngbDropdown>
+                    <a class="btn btn-default" href="javascript:;">Friends</a>
+                    <a class="btn btn-default dropdown-toggle" href="javascript:;" ngbDropdownToggle><b
+                      class="caret"></b></a>
+                    <div class="dropdown-menu dropdown-menu-right" ngbDropdownMenu>
+                      <a class="dropdown-item" href="javascript:;">Action 1</a>
+                      <a class="dropdown-item" href="javascript:;">Action 2</a>
+                      <a class="dropdown-item" href="javascript:;">Action 3</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="javascript:;">Action 4</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end col-6 -->
+          <!-- begin col-6 -->
+          <div class="col-md-6 m-b-2">
+            <div class="p-10 bg-white">
+              <div class="media media-xs overflow-visible align-items-center">
+                <a class="media-left" href="javascript:;">
+                  <img alt="" class="media-object img-circle" src="/assets/img/user/user-8.jpg"/>
+                </a>
+                <div class="media-body valign-middle">
+                  <b class="text-inverse">Laura Pollock</b>
+                </div>
+                <div class="media-body valign-middle text-right overflow-visible">
+                  <div class="btn-group dropdown" ngbDropdown>
+                    <a class="btn btn-default" href="javascript:;">Friends</a>
+                    <a class="btn btn-default dropdown-toggle" href="javascript:;" ngbDropdownToggle><b
+                      class="caret"></b></a>
+                    <div class="dropdown-menu dropdown-menu-right" ngbDropdownMenu>
+                      <a class="dropdown-item" href="javascript:;">Action 1</a>
+                      <a class="dropdown-item" href="javascript:;">Action 2</a>
+                      <a class="dropdown-item" href="javascript:;">Action 3</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="javascript:;">Action 4</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end col-6 -->
+          <!-- begin col-6 -->
+          <div class="col-md-6 m-b-2">
+            <div class="p-10 bg-white">
+              <div class="media media-xs overflow-visible align-items-center">
+                <a class="media-left" href="javascript:;">
+                  <img alt="" class="media-object img-circle" src="/assets/img/user/user-9.jpg"/>
+                </a>
+                <div class="media-body valign-middle">
+                  <b class="text-inverse">Dakota Mannix</b>
+                </div>
+                <div class="media-body valign-middle text-right overflow-visible">
+                  <div class="btn-group dropdown" ngbDropdown>
+                    <a class="btn btn-default" href="javascript:;">Friends</a>
+                    <a class="btn btn-default dropdown-toggle" href="javascript:;" ngbDropdownToggle><b
+                      class="caret"></b></a>
+                    <div class="dropdown-menu dropdown-menu-right" ngbDropdownMenu>
+                      <a class="dropdown-item" href="javascript:;">Action 1</a>
+                      <a class="dropdown-item" href="javascript:;">Action 2</a>
+                      <a class="dropdown-item" href="javascript:;">Action 3</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="javascript:;">Action 4</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end col-6 -->
+          <!-- begin col-6 -->
+          <div class="col-md-6 m-b-2">
+            <div class="p-10 bg-white">
+              <div class="media media-xs overflow-visible align-items-center">
+                <a class="media-left" href="javascript:;">
+                  <img alt="" class="media-object img-circle" src="/assets/img/user/user-10.jpg"/>
+                </a>
+                <div class="media-body valign-middle">
+                  <b class="text-inverse">Timothy Woolley</b>
+                </div>
+                <div class="media-body valign-middle text-right overflow-visible">
+                  <div class="btn-group dropdown" ngbDropdown>
+                    <a class="btn btn-default" href="javascript:;">Friends</a>
+                    <a class="btn btn-default dropdown-toggle" href="javascript:;" ngbDropdownToggle><b
+                      class="caret"></b></a>
+                    <div class="dropdown-menu dropdown-menu-right" ngbDropdownMenu>
+                      <a class="dropdown-item" href="javascript:;">Action 1</a>
+                      <a class="dropdown-item" href="javascript:;">Action 2</a>
+                      <a class="dropdown-item" href="javascript:;">Action 3</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="javascript:;">Action 4</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end col-6 -->
+          <!-- begin col-6 -->
+          <div class="col-md-6 m-b-2">
+            <div class="p-10 bg-white">
+              <div class="media media-xs overflow-visible align-items-center">
+                <a class="media-left" href="javascript:;">
+                  <img alt="" class="media-object img-circle" src="/assets/img/user/user-11.jpg"/>
+                </a>
+                <div class="media-body valign-middle">
+                  <b class="text-inverse">Benjamin Congreve</b>
+                </div>
+                <div class="media-body valign-middle text-right overflow-visible">
+                  <div class="btn-group dropdown" ngbDropdown>
+                    <a class="btn btn-default" href="javascript:;">Friends</a>
+                    <a class="btn btn-default dropdown-toggle" href="javascript:;" ngbDropdownToggle><b
+                      class="caret"></b></a>
+                    <div class="dropdown-menu dropdown-menu-right" ngbDropdownMenu>
+                      <a class="dropdown-item" href="javascript:;">Action 1</a>
+                      <a class="dropdown-item" href="javascript:;">Action 2</a>
+                      <a class="dropdown-item" href="javascript:;">Action 3</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="javascript:;">Action 4</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end col-6 -->
+          <!-- begin col-6 -->
+          <div class="col-md-6 m-b-2">
+            <div class="p-10 bg-white">
+              <div class="media media-xs overflow-visible align-items-center">
+                <a class="media-left" href="javascript:;">
+                  <img alt="" class="media-object img-circle" src="/assets/img/user/user-12.jpg"/>
+                </a>
+                <div class="media-body valign-middle">
+                  <b class="text-inverse">Mariam Maddock</b>
+                </div>
+                <div class="media-body valign-middle text-right overflow-visible">
+                  <div class="btn-group dropdown" ngbDropdown>
+                    <a class="btn btn-default" href="javascript:;">Friends</a>
+                    <a class="btn btn-default dropdown-toggle" href="javascript:;" ngbDropdownToggle><b
+                      class="caret"></b></a>
+                    <div class="dropdown-menu dropdown-menu-right" ngbDropdownMenu>
+                      <a class="dropdown-item" href="javascript:;">Action 1</a>
+                      <a class="dropdown-item" href="javascript:;">Action 2</a>
+                      <a class="dropdown-item" href="javascript:;">Action 3</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="javascript:;">Action 4</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end col-6 -->
+          <!-- begin col-6 -->
+          <div class="col-md-6 m-b-2">
+            <div class="p-10 bg-white">
+              <div class="media media-xs overflow-visible align-items-center">
+                <a class="media-left" href="javascript:;">
+                  <img alt="" class="media-object img-circle" src="/assets/img/user/user-13.jpg"/>
+                </a>
+                <div class="media-body valign-middle">
+                  <b class="text-inverse">Blake Gerrald</b>
+                </div>
+                <div class="media-body valign-middle text-right overflow-visible">
+                  <div class="btn-group dropdown" ngbDropdown>
+                    <a class="btn btn-default" href="javascript:;">Friends</a>
+                    <a class="btn btn-default dropdown-toggle" href="javascript:;" ngbDropdownToggle><b
+                      class="caret"></b></a>
+                    <div class="dropdown-menu dropdown-menu-right" ngbDropdownMenu>
+                      <a class="dropdown-item" href="javascript:;">Action 1</a>
+                      <a class="dropdown-item" href="javascript:;">Action 2</a>
+                      <a class="dropdown-item" href="javascript:;">Action 3</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="javascript:;">Action 4</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end col-6 -->
+          <!-- begin col-6 -->
+          <!-- end col-6 -->
+          <!-- begin col-6 -->
+          <div class="col-md-6 m-b-2">
+            <div class="p-10 bg-white">
+              <div class="media media-xs overflow-visible align-items-center">
+                <a class="media-left" href="javascript:;">
+                  <img alt="" class="media-object img-circle" src="/assets/img/user/user-14.jpg"/>
+                </a>
+                <div class="media-body valign-middle">
+                  <b class="text-inverse">Gabrielle Bunton</b>
+                </div>
+                <div class="media-body valign-middle text-right overflow-visible">
+                  <div class="btn-group dropdown" ngbDropdown>
+                    <a class="btn btn-default" href="javascript:;">Friends</a>
+                    <a class="btn btn-default dropdown-toggle" href="javascript:;" ngbDropdownToggle><b
+                      class="caret"></b></a>
+                    <div class="dropdown-menu dropdown-menu-right" ngbDropdownMenu>
+                      <a class="dropdown-item" href="javascript:;">Action 1</a>
+                      <a class="dropdown-item" href="javascript:;">Action 2</a>
+                      <a class="dropdown-item" href="javascript:;">Action 3</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="javascript:;">Action 4</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end col-6 -->
+        </div>
+        <!-- end row -->
+      </div>
+      <!-- end #profile-friends tab -->
+    </div>
+    <!-- end tab-content -->
+  </div>
+  <!-- end profile-content -->
+
+</app-panel>

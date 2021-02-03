@@ -1,0 +1,30 @@
+<!-- begin #page-container -->
+<div class="page-container fade page-sidebar-fixed page-header-fixed show" id="page-container">
+
+<!--  <app-top-menu *ngIf="pageSettings.pageTopMenu && !pageSettings.pageEmpty"></app-top-menu>-->
+
+  <app-header (toggleMobileRightSidebar)="onToggleMobileRightSidebar($event)"
+              (toggleMobileSidebar)="onToggleMobileSidebar($event)"
+              (toggleSidebarRightCollapsed)="onToggleSidebarRight($event)" *ngIf="!pageSettings.pageEmpty"
+              [pageSidebarTwo]="pageSettings.pageSidebarTwo"></app-header>
+
+  <app-sidebar (hideMobileSidebar)="onHideMobileSidebar($event)"
+               (toggleSidebarMinified)="onToggleSidebarMinified($event)"
+               *ngIf="!pageSettings.pageWithoutSidebar && !pageSettings.pageEmpty"
+               [pageSidebarMinified]="pageSettings.pageSidebarMinified"
+               [pageSidebarTransparent]="pageSettings.pageSidebarTransparent"></app-sidebar>
+
+  <!--  <sidebar-right (hideMobileRightSidebar)="onHideMobileRightSidebar($event)"-->
+  <!--                 *ngIf="pageSettings.pageSidebarTwo && !pageSettings.pageEmpty"></sidebar-right>-->
+
+  <div [ngClass]="{
+    'content-full-width': pageSettings.pageContentFullWidth,
+    'content-inverse-mode': pageSettings.pageContentInverseMode,
+    'p-0 m-0': pageSettings.pageEmpty
+  }" class="content" id="content">
+    <router-outlet></router-outlet>
+  </div>
+
+  <footer *ngIf="pageSettings.pageWithFooter"></footer>
+</div>
+<!-- end #page-container -->

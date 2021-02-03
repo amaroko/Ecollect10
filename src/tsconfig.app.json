@@ -1,0 +1,22 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../out-tsc/app",
+    "baseUrl": "./",
+    "types": []
+  },
+//  "angularCompilerOptions": {
+//    "enableIvy": true,
+//    "allowEmptyCodegenFiles": true
+//  },
+  "angularCompilerOptions": {
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true
+  },
+  "exclude": [
+    "test.ts",
+    "**/*.spec.ts",
+    "src/**/*.ts"
+  ]
+}

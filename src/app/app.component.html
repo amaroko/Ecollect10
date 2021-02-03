@@ -1,0 +1,19 @@
+<ngx-loading-bar [ngClass]="{ 'top': pageSettings.pageEmpty }"></ngx-loading-bar>
+<!--<ngx-loading-bar></ngx-loading-bar>-->
+
+<!-- begin #page-container -->
+<div [ngClass]="{
+    'has-scroll' : pageHasScroll,
+    'page-sidebar-minified': pageSettings.pageSidebarMinified,
+    'page-with-footer': pageSettings.pageWithFooter,
+    'page-sidebar-toggled': pageSettings.pageMobileSidebarToggled,
+    'p-0': pageSettings.pageEmpty
+  }" id="page-container">
+
+
+  <router-outlet></router-outlet>
+
+
+  <footer *ngIf="pageSettings.pageWithFooter"></footer>
+</div>
+<!-- end #page-container -->

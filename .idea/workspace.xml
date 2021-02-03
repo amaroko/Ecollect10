@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="28b3daf4-2105-4515-8956-01267c185b3f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/app/services/excel.service.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/services/excel.service.ts" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1nDJuVjFKmvn7WlITJh8MNZueYy" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="settings.javascript.linters.eslint" />
+    <property name="ts.external.directory.path" value="C:\Users\CATE\Desktop\Ecollect10\template_angularjs10_startup\node_modules\typescript\lib" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunManager" selected="npm.Angular CLI Server">
+    <configuration name="Tests (color-admin)" type="JavaScriptTestRunnerKarma">
+      <config-file value="$PROJECT_DIR$/karma.conf.js" />
+      <working-directory value="$PROJECT_DIR$" />
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="E2E Tests (color-admin-e2e)" type="JavaScriptTestRunnerProtractor">
+      <config-file value="$PROJECT_DIR$/protractor.conf.js" />
+      <node-interpreter value="project" />
+      <protractor-options value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Angular Application" type="JavascriptDebugType" uri="http://localhost:4200">
+      <method v="2" />
+    </configuration>
+    <configuration name="Angular CLI Server" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="28b3daf4-2105-4515-8956-01267c185b3f" name="Default Changelist" comment="" />
+      <created>1610918961661</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1610918961661</updated>
+      <workItem from="1610918962745" duration="4745000" />
+      <workItem from="1610924707736" duration="14567000" />
+      <workItem from="1610961253009" duration="3422000" />
+      <workItem from="1610965954981" duration="4553000" />
+      <workItem from="1611006106855" duration="11757000" />
+      <workItem from="1611049122117" duration="6053000" />
+      <workItem from="1611084832841" duration="8901000" />
+    </task>
+    <task id="LOCAL-00001" summary="Angular 10 upgrade startup">
+      <created>1611070245573</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1611070245574</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Angular 10 upgrade startup" />
+    <option name="LAST_COMMIT_MESSAGE" value="Angular 10 upgrade startup" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="187" y="0" key="CommitChangelistDialog2" timestamp="1611070236231">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="187" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1611070236231" />
+    <state x="0" y="0" key="FileDocumentManager.FileCacheConflict" timestamp="1611007719085">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="0" y="0" key="FileDocumentManager.FileCacheConflict/0.0.1280.689@0.0.1280.689" timestamp="1611007719085" />
+    <state width="1260" height="167" key="GridCell.Tab.0.bottom" timestamp="1610961202136">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state width="1260" height="167" key="GridCell.Tab.0.bottom/0.0.1280.689@0.0.1280.689" timestamp="1610961202136" />
+    <state width="1260" height="167" key="GridCell.Tab.0.center" timestamp="1610961202136">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state width="1260" height="167" key="GridCell.Tab.0.center/0.0.1280.689@0.0.1280.689" timestamp="1610961202136" />
+    <state width="1260" height="167" key="GridCell.Tab.0.left" timestamp="1610961202136">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state width="1260" height="167" key="GridCell.Tab.0.left/0.0.1280.689@0.0.1280.689" timestamp="1610961202136" />
+    <state width="1260" height="167" key="GridCell.Tab.0.right" timestamp="1610961202136">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state width="1260" height="167" key="GridCell.Tab.0.right/0.0.1280.689@0.0.1280.689" timestamp="1610961202136" />
+    <state x="150" y="0" key="SettingsEditor" timestamp="1611010092390">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="150" y="0" key="SettingsEditor/0.0.1280.689@0.0.1280.689" timestamp="1611010092390" />
+    <state x="345" y="85" width="591" height="520" key="find.popup" timestamp="1611085105703">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="345" y="85" width="591" height="520" key="find.popup/0.0.1280.689@0.0.1280.689" timestamp="1611085105703" />
+  </component>
+</project>
