@@ -57,11 +57,11 @@ export class ActivityactionComponent implements OnInit {
   p = 1;
   autodial_telnumber: string;
   ptpid: any = 0;
-  mappedexcuse:  string [];
-  MainReasonID:  string [];
-  mappedexcusedetails:  string [];
-  excusedetails:  string [];
-  mappedid:  string [];
+  mappedexcuse: string [];
+  MainReasonID: string [];
+  mappedexcusedetails: string [];
+  excusedetails: string [];
+  mappedid: string [];
   collectoraction: any = [
     {collectoractionid: 'OC', collectoraction: 'OUTGOING CALL'},
     {collectoractionid: 'IC', collectoraction: 'INCOMING CALL'},
@@ -342,7 +342,6 @@ export class ActivityactionComponent implements OnInit {
   }
 
 
-
   getmcoop(loanaccnumber) {
     this.ecolService.getmcoopcashAccount(loanaccnumber).subscribe(data => {
       this.account = data[0];
@@ -613,7 +612,7 @@ export class ActivityactionComponent implements OnInit {
   }
 
   changeParty(form) {
-    if (form.party[0].id === 1  || form.party[0].id === 4 || form.party[0].id === 5) {
+    if (form.party[0].id === 1 || form.party[0].id === 4 || form.party[0].id === 5) {
       this.actionForm.controls.ptp.enable();
       // this.actionForm.controls.paymode.enable();
       // JSON.stringify(excuseid.reason[0].id)
@@ -729,10 +728,13 @@ export class ActivityactionComponent implements OnInit {
       swal.fire('Error!', 'Error occurred during processing!', 'error');
     });
   }
+
   selectInput() {
 
   }
-  onKey(event) {const inputValue = event.target.value;
+
+  onKey(event) {
+    const inputValue = event.target.value;
     console.log(event.target.value);
   }
 }

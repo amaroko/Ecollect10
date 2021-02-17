@@ -3,83 +3,62 @@
 
   <div class="row">
     <!-- begin nav-tabs -->
-    <ngb-tabset>
+    <div class="col-xl-12">
+    <ngb-tabset type="pills">
       <ngb-tab>
-        <ng-template class="label label-danger" ngbTabTitle>
+        <ng-template  ngbTabTitle>
           <span class="d-sm-none">Account info</span>
           <span class="d-sm-block ">Account info</span>
         </ng-template>
 
 
         <ng-template ngbTabContent>
-          <div>
-            <!--        <div *ngIf="loader" class="loader"></div>-->
-            <ngx-skeleton-loader
-              *ngIf="loader"
-              [theme]="{
- 'border-radius': '5px',
- height: '20px',
- 'background-color': '#beb0b0',
- border: '1px solid white'
-}"
-              >
-            </ngx-skeleton-loader>
-            <fieldset *ngIf="!loader">
-              <div class="form-group row">
-                <label class="col-lg-2 col-form-label">account number:</label>
-                <div class="col-lg-10">
-                  <strong>{{account?.accnumber || account?.cardacct || account?.loanaccnumber}}</strong>
-                </div>
-              </div>
-            </fieldset>
-            <fieldset *ngIf="!loader">
-              <div class="form-group row">
-                <label class="col-lg-2 col-form-label">Outstanding balance:</label>
-                <div class="col-lg-10">
-                  <strong>{{account?.oustbalance || account?.outbalance || account?.loanamount}}</strong>
-                </div>
-              </div>
-            </fieldset>
-            <fieldset *ngIf="!loader">
-              <div class="form-group row">
-                <label class="col-lg-2 col-form-label">Total arrears/EXPPMNT:</label>
-                <div class="col-lg-10">
-                  <strong>{{account?.instamount || account?.EXPPMNT}}</strong>
-                </div>
-              </div>
-            </fieldset>
-            <fieldset *ngIf="!loader">
-              <div class="form-group row">
-                <label class="col-lg-2 col-form-label">Bucket/cycle:</label>
-                <div class="col-lg-10">
-                  <strong>{{account?.bucket || account?.cycle || account?.grade}}</strong>
-                </div>
-              </div>
-            </fieldset>
-            <fieldset *ngIf="!loader">
-              <div class="form-group row">
-                <label class="col-lg-2 col-form-label">arocode :</label>
-                <div class="col-lg-10">
-                  <strong>{{account?.arocode}}</strong>
-                </div>
-              </div>
-            </fieldset>
-            <fieldset *ngIf="!loader">
-              <div class="form-group row">
-                <label class="col-lg-2 col-form-label">rrocode :</label>
-                <div class="col-lg-10">
-                  <strong>{{account?.rrocode}}</strong>
-                </div>
-              </div>
-            </fieldset>
-            <fieldset *ngIf="!loader">
-              <div class="form-group row">
-                <label class="col-lg-2 col-form-label">Branchname :</label>
-                <div class="col-lg-10">
-                  <strong>{{account?.branchcode}}</strong>
-                </div>
-              </div>
-            </fieldset>
+          <div class="bg-white rounded mt-3 p-15">
+
+          <!--        <div *ngIf="loader" class="loader"></div>-->
+
+            <div class="col-xl-4">
+              <table class="table">
+                <thead>
+                <tr *ngIf="!loader">
+                  <th>Description</th>
+                  <th>Data</th>
+                </tr>
+                </thead>
+                <tbody>
+                <ngx-skeleton-loader *ngIf="loader" count="7" ></ngx-skeleton-loader>
+                <tr *ngIf="!loader">
+                  <td>Account Number.</td>
+                  <td><strong>{{account?.accnumber || account?.cardacct || account?.loanaccnumber}}</strong></td>
+                </tr>
+                <tr *ngIf="!loader">
+                  <td>Outstanding balance</td>
+                  <td><strong>{{account?.oustbalance || account?.outbalance || account?.loanamount}}</strong></td>
+                </tr>
+                <tr *ngIf="!loader">
+                  <td>Total arrears/EXPPMNT</td>
+                  <td><strong>{{account?.instamount || account?.EXPPMNT}}</strong></td>
+                </tr>
+                <tr *ngIf="!loader">
+                  <td>Bucket/cycle</td>
+                  <td><strong>{{account?.bucket || account?.cycle || account?.grade}}</strong></td>
+                </tr>
+                <tr *ngIf="!loader">
+                  <td>AROCODE</td>
+                  <td><strong>{{account?.arocode}}</strong></td>
+                </tr>
+                <tr *ngIf="!loader">
+                  <td>RROCODE</td>
+                  <td><strong>{{account?.rrocode}}</strong></td>
+                </tr>
+                <tr *ngIf="!loader">
+                  <td>BranchName</td>
+                  <td><strong>{{account?.branchcode}}</strong></td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+
           </div>
         </ng-template>
       </ngb-tab>
@@ -94,18 +73,21 @@
                   Full text search: <input class="form-control ml-2" type="text" [formControl]="filter" />
               </div> ; index as i  <th scope="row">{{ i + 1 }}</th> <th scope="col">#</th>
           </form>-->
-          <div *ngIf="loader" class="loader"></div>
+          <div class="bg-white rounded mt-3 p-15">
+<!--          <div *ngIf="loader" class="loader"></div>-->
+            <div class="col-xl-4">
           <table class="table table-striped">
             <thead>
-            <tr>
+            <tr *ngIf="!loader">
 
-              <th scope="col">accnumber</th>
-              <th scope="col">productcode</th>
-              <th scope="col">oustbalance</th>
+              <th >accnumber</th>
+              <th >productcode</th>
+              <th >oustbalance</th>
             </tr>
             </thead>
             <tbody>
-            <tr *ngFor="let other of otheraccs ">
+            <ngx-skeleton-loader *ngIf="loader" count={{7}} ></ngx-skeleton-loader>
+            <tr  *ngFor="let other of otheraccs ">
 
               <td>
                 {{ other.ACCNUMBER }}
@@ -116,7 +98,9 @@
             </tbody>
 
           </table>
+            </div>
           <!--        <pagination-controls (pageChange)="p = $event"></pagination-controls>-->
+          </div>
         </ng-template>
       </ngb-tab>
       <ngb-tab>
@@ -125,17 +109,20 @@
           <span class="d-sm-block d-none">Collateral info</span>
         </ng-template>
         <ng-template ngbTabContent>
-          <div *ngIf="loader" class="loader"></div>
+          <div class="bg-white rounded mt-3 p-15">
+<!--          <div *ngIf="loader" class="loader"></div>-->
+            <div class="col-xl-4">
           <table class="table table-striped">
             <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">description</th>
-              <th scope="col">forced sale value</th>
-              <th scope="col">market value</th>
+            <tr *ngIf="!loader">
+              <th >#</th>
+              <th >description</th>
+              <th >forced sale value</th>
+              <th >market value</th>
             </tr>
             </thead>
             <tbody>
+            <ngx-skeleton-loader *ngIf="loader" count={{7}} ></ngx-skeleton-loader>
             <tr *ngFor="let c of collaterals; index as i">
               <th scope="row">{{ i + 1 }}</th>
               <td>
@@ -146,6 +133,8 @@
             </tr>
             </tbody>
           </table>
+            </div>
+          </div>
         </ng-template>
       </ngb-tab>
 
@@ -155,18 +144,21 @@
           <span class="d-sm-block d-none">Directors</span>
         </ng-template>
         <ng-template ngbTabContent>
-          <div *ngIf="loader" class="loader"></div>
+          <div class="bg-white rounded mt-3 p-15">
+<!--          <div *ngIf="loader" class="loader"></div>-->
+            <div class="col-xl-4">
           <table class="table table-striped">
             <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Name</th>
-              <th scope="col">IDNuber</th>
-              <th scope="col">Telnumber</th>
-              <th scope="col">address</th>
+            <tr *ngIf="!loader">
+              <th >#</th>
+              <th >Name</th>
+              <th >IDNuber</th>
+              <th >Telnumber</th>
+              <th >address</th>
             </tr>
             </thead>
             <tbody>
+            <ngx-skeleton-loader *ngIf="loader" count={{7}} ></ngx-skeleton-loader>
             <tr *ngFor="let director of directors; index as i">
               <th scope="row">{{ i + 1 }}</th>
               <td>
@@ -178,6 +170,8 @@
             </tr>
             </tbody>
           </table>
+            </div>
+          </div>
         </ng-template>
       </ngb-tab>
 
@@ -187,24 +181,27 @@
           <span class="d-sm-block d-none">Credit Card</span>
         </ng-template>
         <ng-template ngbTabContent>
+          <div class="bg-white rounded mt-3 p-15">
           <!--<form>
                           <div class="form-group form-inline">
                               Full text search: <input class="form-control ml-2" type="text" [formControl]="filter" />
                           </div>
                       </form>-->
-          <div *ngIf="loader" class="loader"></div>
+<!--          <div *ngIf="loader" class="loader"></div>-->
+            <div class="col-xl-4">
           <table class="table table-striped">
             <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">CardNumber</th>
-              <th scope="col">CardAcct</th>
-              <th scope="col">CardName</th>
-              <th scope="col">OustBalance</th>
-              <th scope="col">ExpAmount</th>
+            <tr *ngIf="!loader">
+              <th >#</th>
+              <th >CardNumber</th>
+              <th >CardAcct</th>
+              <th >CardName</th>
+              <th >OustBalance</th>
+              <th >ExpAmount</th>
             </tr>
             </thead>
             <tbody>
+            <ngx-skeleton-loader *ngIf="loader" count={{7}} ></ngx-skeleton-loader>
             <tr *ngFor="let card of cards; index as i">
               <th scope="row">{{ i + 1 }}</th>
               <td>
@@ -221,6 +218,8 @@
             </tr>
             </tbody>
           </table>
+            </div>
+          </div>
         </ng-template>
       </ngb-tab>
 
@@ -230,21 +229,24 @@
           <span class="d-sm-block d-none">With Same ID Number</span>
         </ng-template>
         <ng-template ngbTabContent>
+          <div class="bg-white rounded mt-3 p-15">
           <!--<form>
                               <div class="form-group form-inline">
                                   Full text search: <input class="form-control ml-2" type="text" [formControl]="filter" />
                               </div>
                           </form>-->
+            <div class="col-xl-4">
           <table class="table table-striped">
             <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">accnumber</th>
-              <th scope="col">arocode</th>
-              <th scope="col">oustbalance</th>
+            <tr *ngIf="!loader">
+              <th >#</th>
+              <th >accnumber</th>
+              <th >arocode</th>
+              <th >oustbalance</th>
             </tr>
             </thead>
             <tbody>
+            <ngx-skeleton-loader *ngIf="loader" count="7" ></ngx-skeleton-loader>
             <tr *ngFor="let d of accwithid; index as i">
               <th scope="row">{{ i + 1 }}</th>
               <td>
@@ -255,6 +257,8 @@
             </tr>
             </tbody>
           </table>
+            </div>
+          </div>
         </ng-template>
       </ngb-tab>
 
@@ -262,28 +266,33 @@
     <!-- end nav-tabs -->
 
   </div>
+  </div>
+
 </app-panel>
 <app-panel title="NgbModal">
   <p class="lead">
-    A service to open modal windows. Creating a modal is straightforward: create a template and pass it as an argument to the "open" method!
+    A service to open modal windows. Creating a modal is straightforward: create a template and pass it as an argument
+    to the "open" method!
   </p>
   <!-- #modal-dialog -->
   <ng-template #modalDialog let-c="close" let-d="dismiss">
     <div class="modal-header">
       <h4 class="modal-title">Modal Dialog</h4>
-      <button type="button" class="close" (click)="d('Cross click')">×</button>
+      <button (click)="d('Cross click')" class="close" type="button">×</button>
     </div>
     <div class="modal-body">
 
-        <div class="alert alert-danger m-b-0">
-          <h5><i class="fa fa-info-circle"></i> Alert Header</h5>
-          <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+      <div class="alert alert-danger m-b-0">
+        <h5><i class="fa fa-info-circle"></i> Alert Header</h5>
+        <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras
+          purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate
+          fringilla. Donec lacinia congue felis in faucibus.</p>
 
       </div>
     </div>
     <div class="modal-footer">
-      <button class="btn btn-white" (click)="c('Close click')">Close</button>
-      <a href="javascript:;" class="btn btn-success">Action</a>
+      <button (click)="c('Close click')" class="btn btn-white">Close</button>
+      <a class="btn btn-success" href="javascript:;">Action</a>
     </div>
   </ng-template>
 
@@ -298,12 +307,14 @@
       <tbody>
       <tr>
         <td>Default NgBootstrap Modal Dialog Box.</td>
-        <td><button class="btn btn-sm btn-success" (click)="open(modalDialog)">Demo</button></td>
+        <td>
+          <button (click)="open(modalDialog)" class="btn btn-sm btn-success">Demo</button>
+        </td>
       </tr>
       </tbody>
     </table>
     <div class="hljs-wrapper">
-          <textarea highlight-js [options]="{}" [lang]="'typescript'">&lt;ng-template #modalDialog let-c="close" let-d="dismiss"&gt;
+          <textarea [lang]="'typescript'" [options]="{}" highlight-js>&lt;ng-template #modalDialog let-c="close" let-d="dismiss"&gt;
   &lt;div class="modal-header"&gt;
     &lt;h4 class="modal-title"&gt;Modal Dialog&lt;/h4&gt;
     &lt;button type="button" class="close" (click)="d('Cross click')"&gt;×&lt;/button&gt;

@@ -3,6 +3,7 @@ import {EcolService} from '../../services/ecol.service';
 import {environment} from '../../../environments/environment';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
+import {FaviconService} from '@enzedd/ng-favicon';
 
 const ADLOGIN = environment.adlogin;
 
@@ -12,6 +13,7 @@ const ADLOGIN = environment.adlogin;
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  messageCount = 0;
   valForm: FormGroup;
   loading = false;
   submitted = false;
@@ -25,12 +27,16 @@ export class LoginComponent implements OnInit {
     fb: FormBuilder,
     public ecolService: EcolService,
     public router: Router,
-    private route: ActivatedRoute) {
+    private route: ActivatedRoute,
+    private faviconService: FaviconService) {
     this.valForm = fb.group({
       // 'email': [null, Validators.compose([Validators.required, CustomValidators.email])],
       'username': [null, Validators.required],
       'password': [null, Validators.required]
     });
+  }
+  get f() {
+    return this.valForm.controls;
   }
 
   submitForm($ev, value: any) {
@@ -108,12 +114,15 @@ export class LoginComponent implements OnInit {
           // });
           const currentUser: any = JSON.parse(localStorage.getItem('currentUser'));
           console.log(currentUser);
+          this.reDirectTo('rolesensor');
 
-          this.router.navigate(['/home']).then(() => {
-            // do whatever you need after navigation succeeds
-            // this.router.navigate([this.returnUrl]);
-            // this.router.navigate([this.returnUrl]);
-          });
+          // this.router.navigate(['/permissionsensor']).then(() => {
+          //   // do whatever you need after navigation succeeds
+          //   // this.router.navigate([this.returnUrl]);
+          //   // this.router.navigate([this.returnUrl]);
+            setTimeout(() => {
+              this.router.navigate(['/home']);
+            }, 5000);
         });
         //
       } else {
@@ -133,4 +142,22 @@ export class LoginComponent implements OnInit {
       }
     });
   }
+
+  reDirectTo(uri: string) {
+    this.router.navigateByUrl('/permissionsensor', {skipLocationChange: true}).then(() =>
+      this.router.navigate([uri]));
+  }
+
+  incrementNotificationCount($event) {
+    $event.preventDefault();
+    this.messageCount++;
+    this.faviconService.setNumber(this.messageCount);
+  }
+
+  restoreFavicon($event) {
+    $event.preventDefault();
+    this.messageCount = 0;
+    this.faviconService.setDefault();
+  }
+
 }

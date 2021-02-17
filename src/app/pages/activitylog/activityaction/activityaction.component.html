@@ -49,10 +49,10 @@
                 <option *ngFor="let p of party" [value]="p.partyid">{{p.party}}</option>
               </select>-->
               <ng-select
-                          (ngModelChange)="changeParty(actionForm.value)" formControlName="party"
-                         id="party"
-                         >
-                <ng-option  *ngFor="let p of party" [value]=[{exd:p.party,id:p.partyid}]>{{p.party}}</ng-option>
+                (ngModelChange)="changeParty(actionForm.value)" formControlName="party"
+                id="party"
+              >
+                <ng-option *ngFor="let p of party" [value]=[{exd:p.party,id:p.partyid}]>{{p.party}}</ng-option>
               </ng-select>
 
             </div>
@@ -365,13 +365,13 @@
           <button *ngIf="!edit" [disabled]="!ptpForm.valid" class="btn btn-sm btn-outline-primary"
                   class="mb-1 mr-1 btn btn-sm btn-outline-warning  col-form-label" type="submit">Add
           </button>
-<!--          (click)="updateptp(ptp)"-->
-          <button  *ngIf="edit"
+          <!--          (click)="updateptp(ptp)"-->
+          <button *ngIf="edit"
                   [disabled]="ptpForm.invalid" class="mb-1 mr-1 btn btn-sm btn-outline-warning  col-form-label"
                   type="button">Update
           </button>
-<!--          (click)="cancel()"-->
-          <button  *ngIf="edit" class="mb-1 mr-1 btn btn-sm btn-outline-danger  col-form-label"
+          <!--          (click)="cancel()"-->
+          <button *ngIf="edit" class="mb-1 mr-1 btn btn-sm btn-outline-danger  col-form-label"
                   type="button">Cancel
           </button>
         </form>

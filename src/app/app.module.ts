@@ -7,7 +7,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 // import {LoadingBarHttpClientModule} from '@ngx-loading-bar/http-client';
-
+import {FAVICON_CONFIG, FaviconModule} from '@enzedd/ng-favicon';
 // Main Component
 import {AppComponent} from './app.component';
 import {HeaderComponent} from './components/header/header.component';
@@ -42,6 +42,7 @@ import {CommonModule} from '@angular/common';
 import {filter, map} from 'rxjs/operators';
 import {ActivitylogComponent} from './pages/activitylog/activitylog.component';
 import {NgxSkeletonLoaderModule} from 'ngx-skeleton-loader';
+import {RolesensorComponent} from './pages/rolesensor/rolesensor.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -62,10 +63,12 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     // HomePageComponent,
     LayoutComponent,
     LoginComponent,
-    ActivitylogComponent
+    ActivitylogComponent,
+    RolesensorComponent
   ],
   imports: [
     AppRoutingModule,
+    FaviconModule,
     AgmCoreModule.forRoot({apiKey: 'AIzaSyC5gJ5x8Yw7qP_DqvNq3IdZi2WUSiDjskk'}),
     BrowserAnimationsModule,
     BrowserModule,
@@ -97,7 +100,14 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   providers: [Title, {
     provide: PERFECT_SCROLLBAR_CONFIG,
     useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
-  }],
+  },
+    {
+      provide: FAVICON_CONFIG,
+      useValue: {
+        color: '#fff',    // favicon notification text color
+        bgColor: '#ff0000',  // favicon notification background color
+      },
+    },],
   bootstrap: [AppComponent]
 })
 

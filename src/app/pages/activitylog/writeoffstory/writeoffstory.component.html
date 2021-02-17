@@ -1,0 +1,33 @@
+<div class="card">
+  <div class="card-header">
+    <strong>Writeoff Story </strong>
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-12">
+        <form #writeoffstoryForm="ngForm" (ngSubmit)="updatefunc(writeoffstoryForm)" autocomplete="off" novalidate>
+
+          <div class="form-group">
+            <label>Message</label>
+            <label for="writeoffstoryMessage"></label><textarea #writeoffstoryMessage="ngModel"
+                                                                [(ngModel)]="data.writeoffstoryMessage"
+                                                                [maxlength]="4000"
+                                                                [ngClass]="{ 'is-invalid': writeoffstoryMessage.errors }"
+                                                                class="form-control"
+                                                                id="writeoffstoryMessage"
+                                                                name="writeoffstoryMessage"
+                                                                required
+                                                                rows="10"></textarea>
+
+            <p><strong> Maximum allowed is 4000.
+              You have {{4000 - data.writeoffstoryMessage?.length}} characters
+              remaining</strong></p>
+          </div>
+          <button [disabled]="!writeoffstoryForm.valid" class="btn btn-sm btn-square btn-warning" type="submit">Submit
+            to update
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

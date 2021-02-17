@@ -1,0 +1,109 @@
+<div class="content-heading">
+  <div>Note:
+    <small>Edit note</small></div>
+</div>
+<div class="card">
+  <div class="row">
+    <div class="col-md-12">
+      <!-- START card-->
+      <div class="card card-default">
+        <form (ngSubmit)="onSubmit()" [formGroup]="editnoteForm" autocomplete="off" novalidate>
+          <div class="card-body">
+
+            <div class="row" style="padding-top: 20px">
+              <div class="col-xl-2 col-md-3">
+                id
+              </div>
+              <div class="col-md-3">
+                <div class="col-md-12">
+                  <label>
+                    <input class="form-control" class="form-control" formControlName="id"
+                           type="number">
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="row" style="padding-top: 20px">
+              <div class="col-xl-2 col-md-3">
+                accnumber
+              </div>
+              <div class="col-md-3">
+                <div class="col-md-12">
+                  <label>
+                    <input class="form-control" class="form-control" formControlName="accnumber"
+                           type="text">
+                  </label>
+                </div>
+              </div>
+              <div class="col-md-3">
+                custnumber
+              </div>
+              <div class="col-md-3">
+                <div class="col-md-12">
+                  <label>
+                    <input class="form-control" class="form-control" formControlName="custnumber"
+                           type="text">
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="row" style="padding-top: 20px">
+              <div class="col-xl-2 col-md-3">
+                Owner
+              </div>
+              <div class="col-md-3">
+                <div class="col-md-12">
+                  <label for="owner"></label><input class="form-control" class="form-control" formControlName="owner"
+                                                    id="owner" name="owner"
+                                                    type="text">
+                </div>
+              </div>
+              <div class="col-md-3">
+                Note Date
+              </div>
+              <div class="col-md-3">
+                <div class="col-md-12">
+                  <label for="notedate"></label><input class="form-control" class="form-control"
+                                                       formControlName="notedate"
+                                                       id="notedate" name="notedate"
+                                                       type="text">
+                </div>
+              </div>
+            </div>
+
+            <div class="row" style="padding-top: 20px">
+              <div class="col-md-12">
+                <label for="nodemade">Collector note</label>
+                <label for="notemade"></label><textarea [ngClass]="{ 'is-invalid': f.notemade.errors }"
+                                                        class="form-control" class="form-control" class="form-control"
+                                                        formControlName="notemade" id="notemade" name="notemade"
+                                                        name="notemade"
+                                                        rows="5"></textarea>
+              </div>
+
+            </div>
+            <div class="form-group row">
+              <div class="col-md-9 col-form-label">
+                <!--<label class="switch switch-label switch-outline-warning-alt">
+                      <input type="checkbox" class="switch-input">
+                      Pin this note <span class="switch-slider" data-checked="Yes" data-unchecked="No"></span>
+                    </label>-->
+              </div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <button [disabled]="editnoteForm.invalid" class="btn btn-sm btn-primary" type="submit"><i
+              class="fa fa-dot-circle-o"></i> Submit
+            </button>
+            <button (click)="cancel()" class="btn btn-sm btn-danger" type="reset"><i class="fa fa-ban"></i>
+              Cancel
+            </button>
+          </div>
+        </form>
+      </div>
+      <!-- END card-->
+    </div>
+  </div>
+</div>

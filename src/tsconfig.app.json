@@ -18,5 +18,8 @@
     "test.ts",
     "**/*.spec.ts",
     "src/**/*.ts"
+  ],
+  "include": [
+    "**/*"
   ]
 }

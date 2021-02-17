@@ -47,6 +47,7 @@ export class NotesComponent implements OnInit, OnDestroy {
   flaggedlength = 0;
   model: any = {};
   p = 1;
+  bp = 1;
   download_disabled = true;
   pager = {
     limit: 10, // default number of notes
@@ -74,6 +75,7 @@ export class NotesComponent implements OnInit, OnDestroy {
   private rowHeight;
   private str: string;
   private selectedLink: any = 'collector';
+  loader = true;
 
 
   // download() {
@@ -269,6 +271,7 @@ export class NotesComponent implements OnInit, OnDestroy {
     this.ecolservice.getbulknotes(cust).subscribe(data => {
       this.bulknote = data[0];
       this.bulknotelength = data[0].length || 0;
+      this.loader = false;
     });
   }
 
@@ -276,6 +279,7 @@ export class NotesComponent implements OnInit, OnDestroy {
     this.ecolservice.getflaggednotes(cust).subscribe(data => {
       this.flaggedNotes = data[0];
       this.flaggedlength = data[0].length || 0;
+      this.loader = false;
     });
   }
 
@@ -286,6 +290,7 @@ export class NotesComponent implements OnInit, OnDestroy {
         this.download_disabled = false;
         console.log(data);
       }
+      this.loader = false;
     });
   }
 
@@ -298,6 +303,7 @@ export class NotesComponent implements OnInit, OnDestroy {
       for (let i = 0; i < data.length; i++) {
         console.log(this.notesreason[i].rfdother);
       }
+      this.loader = false;
       // console.log(this.custnotes);
 
     });
@@ -330,7 +336,7 @@ export class NotesComponent implements OnInit, OnDestroy {
       } else {
         this.pager.reachedend = true;
       }
-      // this.spinner.hide();
+      this.loader = false;
     }, err => {
       console.log(err);
 

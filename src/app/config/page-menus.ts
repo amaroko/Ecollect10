@@ -542,7 +542,6 @@ const headingRelegate = {
 };
 
 
-
 let menuitems: any[];
 
 const user_mgmt_menu = [

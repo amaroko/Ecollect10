@@ -18,7 +18,11 @@
               "rxjs-compat",
               "ng2-nvd3",
               "nvd3",
-              "d3"
+              "d3",
+              "util",
+              "howler",
+              "file-saver",
+              "xlsx"
             ],
             "index": "src/index.html",
             "main": "src/main.ts",

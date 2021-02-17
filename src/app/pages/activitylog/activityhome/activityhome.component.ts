@@ -31,11 +31,13 @@ export class ActivityhomeComponent implements OnInit {
   directors: any = [];
   accwithid: any = [];
   closeResult: string;
+
   constructor(
     private route: ActivatedRoute,
     private modalService: NgbModal,
     private ecolService: EcolService) {
   }
+
   open(content) {
     this.modalService.open(content).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
@@ -43,51 +45,6 @@ export class ActivityhomeComponent implements OnInit {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
     });
   }
-
-  private getDismissReason(reason: any): string {
-    if (reason === ModalDismissReasons.ESC) {
-      return 'by pressing ESC';
-    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-      return 'by clicking on a backdrop';
-    } else {
-      return  `with: ${reason}`;
-    }
-  }
-
-  // activityHomeSteps(): void {
-  //   this.introJS
-  //     .setOptions({
-  //       steps: [
-  //         {
-  //           element: '#step1',
-  //           intro: 'Here you will find all the information about the account; balances, arrears, branchcode, assisned RRO code etc'
-  //         },
-  //         {
-  //           element: '#step2',
-  //           intro: 'Here you will find  other accounts that the customer has with us'
-  //         },
-  //         {
-  //           element: '#step3',
-  //           intro: 'Here you will find all the information about the available collaterals held under this account'
-  //         },
-  //         {
-  //           element: '#step4',
-  //           intro: 'Here you will find info about if the account holder is mentioned as a director of a company with us'
-  //         },
-  //         {
-  //           element: '#step5',
-  //           intro: 'Here you will find the customers credit card details if available'
-  //         },
-  //         {
-  //           element: '#step6',
-  //           intro: 'Lastly, here you will find the accounts under same id number of the specified customer'
-  //         }
-  //       ],
-  //       hidePrev: true,
-  //       hideNext: false
-  //     })
-  //     .start();
-  // }
 
   ngOnInit() {
     // check if logged!
@@ -134,6 +91,41 @@ export class ActivityhomeComponent implements OnInit {
     }
 
   }
+
+  // activityHomeSteps(): void {
+  //   this.introJS
+  //     .setOptions({
+  //       steps: [
+  //         {
+  //           element: '#step1',
+  //           intro: 'Here you will find all the information about the account; balances, arrears, branchcode, assisned RRO code etc'
+  //         },
+  //         {
+  //           element: '#step2',
+  //           intro: 'Here you will find  other accounts that the customer has with us'
+  //         },
+  //         {
+  //           element: '#step3',
+  //           intro: 'Here you will find all the information about the available collaterals held under this account'
+  //         },
+  //         {
+  //           element: '#step4',
+  //           intro: 'Here you will find info about if the account holder is mentioned as a director of a company with us'
+  //         },
+  //         {
+  //           element: '#step5',
+  //           intro: 'Here you will find the customers credit card details if available'
+  //         },
+  //         {
+  //           element: '#step6',
+  //           intro: 'Lastly, here you will find the accounts under same id number of the specified customer'
+  //         }
+  //       ],
+  //       hidePrev: true,
+  //       hideNext: false
+  //     })
+  //     .start();
+  // }
 
   getaccount(accnumber) {
     this.ecolService.getAccount(accnumber).subscribe(data => {
@@ -279,5 +271,15 @@ export class ActivityhomeComponent implements OnInit {
       alert('unable to retrieve cards');
       this.loader = false;
     });
+  }
+
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return `with: ${reason}`;
+    }
   }
 }

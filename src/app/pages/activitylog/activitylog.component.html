@@ -7,43 +7,96 @@
     <!-- BEGIN profile-header-content -->
     <div class="profile-header-content">
       <!-- BEGIN profile-header-img -->
-      <div class="profile-header-img">
+
+
+      <div *ngIf="!loader" class="profile-header-img">
         <img alt="" src="/assets/img/user/user-13.jpg">
       </div>
+
+      <div *ngIf="loader" class="profile-header-img">
+        <ngx-skeleton-loader *ngIf="loader"  appearance="circle" [theme]="{ width: '80px', height: '80px',
+        'background-color': '#c8c7c7'}">
+        </ngx-skeleton-loader>
+      </div>
+
       <!-- END profile-header-img -->
       <!-- BEGIN profile-header-info -->
-      <div class="profile-header-info">
+      <div  class="profile-header-info">
+        <div  >
+
+<!--            <ngx-skeleton-loader *ngIf="loader"  [theme]="{-->
+<!--            width: '200px',-->
+<!--            'border-radius': '0',-->
+<!--            height: '15px',-->
+<!--            'background-color': '#c8c7c7',-->
+<!--            'margin-bottom': '10px'-->
+<!--          }"></ngx-skeleton-loader>-->
+
+          <div *ngIf="loader" >
+            <ngx-skeleton-loader *ngIf="loader"  count="3"  [theme]="{
+                      width: '200px',
+                      'border-radius': '0',
+                      height: '15px',
+                      'background-color': '#c8c7c7',
+                      'margin-bottom': '10px'
+                    }"></ngx-skeleton-loader>
+
+
+          </div>
+
+
         <h4
           class="m-t-10 m-b-5">{{accountdetails?.client_name || accountdetails?.cardname || accountdetails?.clientname || accountdetails?.custname}}</h4>
-        <p class="m-b-10">{{accountdetails?.addressline1 || accountdetails?.address}}</p>
+<!--          <ngx-skeleton-loader *ngIf="loader" [theme]="{ width: '170px', 'border-radius': '0', height: '15px' }">-->
+<!--          </ngx-skeleton-loader>-->
+        <p  class="m-b-10">{{accountdetails?.addressline1 || accountdetails?.address}}</p>
         <p
           class="m-b-10">{{accountdetails?.cellnumber || accountdetails?.mobile || accountdetails?.phonenumber || accountdetails?.telnumber || accountdetails?.celnumber}}</p>
-        <a *ngIf="autodial_telnumber?.length" (click)="copyText(num())" class="btn btn-sm btn-secondary"
+        <a (click)="copyText(num())" *ngIf="autodial_telnumber?.length" class="btn btn-sm btn-secondary"
            ngbPopover="{{autodial_telnumber}} copied!!">{{autodial_telnumber}}</a>
-        <a *ngIf="teles?.length== 0" aria-expanded="false" aria-haspopup="true"
+        <a *ngIf="teles?.length===0 && !loader" aria-expanded="false" aria-haspopup="true"
            class="btn btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" disabled
            id="dropdownMenuButton" ngbPopover="No More Contacts to Show">
           More contacts <span class="badge badge-info">{{totalTeles}}</span></a>
-        <a *ngIf="teles?.length!== 0" aria-expanded="false"
+        <a *ngIf="teles?.length > 0 && !loader" aria-expanded="false"
            aria-haspopup="true" class="btn btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown"
            id="dropdownMenuButton1" title="Press here for more contacts" type="button">
           More contacts <span class="badge badge-info">{{totalTeles}}</span></a>
       </div>
+      </div>
       <!-- END profile-header-info -->
+
+
+      <div *ngIf="loader"  class="profile-header-info">
+        <div  >
+                      <ngx-skeleton-loader *ngIf="loader"  count="3"  [theme]="{
+                      width: '200px',
+                      'border-radius': '0',
+                      height: '15px',
+                      'background-color': '#c8c7c7',
+                      'margin-bottom': '10px'
+                    }"></ngx-skeleton-loader>
+
+
+        </div>
+      </div>
+
+
+
+
+
+
     </div>
     <!-- END profile-header-content -->
+
+
     <!-- BEGIN profile-header-tab -->
-    <ul class="profile-header-tab nav nav-tabs">
-      <li class="nav-item"><a (click)="showTab('postTab')" [ngClass]="{ 'active': tabs.postTab }" class="nav-link"
-                              href="javascript:">POSTS</a></li>
-      <li class="nav-item"><a (click)="showTab('aboutTab')" [ngClass]="{ 'active': tabs.aboutTab }" class="nav-link"
-                              href="javascript:">ABOUT</a></li>
-      <li class="nav-item"><a (click)="showTab('photoTab')" [ngClass]="{ 'active': tabs.photoTab }" class="nav-link"
-                              href="javascript:">PHOTOS</a></li>
-      <li class="nav-item"><a (click)="showTab('videoTab')" [ngClass]="{ 'active': tabs.videoTab }" class="nav-link"
-                              href="javascript:">VIDEOS</a></li>
-      <li class="nav-item"><a (click)="showTab('friendTab')" [ngClass]="{ 'active': tabs.friendTab }"
-                              class="nav-link" href="javascript:">FRIENDS</a></li>
+    <ul class="profile-header-tab">
+      <div [ngClass]="{NONE: plan === 'NONE'}" [ngStyle]="{backgroundColor: getColor()}" class="row">
+        <div class="col-xl-12" style="padding-left: 10px; color: white">
+          <p style="margin-left: 10px">Current Account Plan: {{plan}}</p>
+        </div>
+      </div>
     </ul>
     <!-- END profile-header-tab -->
   </div>

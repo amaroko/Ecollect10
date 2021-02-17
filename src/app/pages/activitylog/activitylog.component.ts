@@ -45,6 +45,7 @@ export class ActivitylogComponent implements OnInit {
   totalPtps: number;
   teles: any = [];
   plan = 'NONE';
+  loader = true;
 
   tabs = {
     postTab: true,
@@ -176,6 +177,7 @@ export class ActivitylogComponent implements OnInit {
   getptps(accnumber) {
     this.ecolService.getptps(accnumber).subscribe(data => {
       this.totalPtps = data.length;
+      this.loader = false;
     }, error => {
       console.log(error);
     });
@@ -184,6 +186,7 @@ export class ActivitylogComponent implements OnInit {
   getwoffstory(accnumber) {
     this.ecolService.searchwoffstory(accnumber).subscribe(data => {
       this.totalwoffstory = data.length;
+      this.loader = false;
     }, error => {
       console.log(error);
     });
@@ -199,6 +202,7 @@ export class ActivitylogComponent implements OnInit {
         });
 
       }
+      this.loader = false;
     }, error => {
       console.log(error);
     });
@@ -216,6 +220,7 @@ export class ActivitylogComponent implements OnInit {
       this.model.celnumber = data[0].celnumber;
       // tslint:disable-next-line:max-line-length
       this.autodial_telnumber = this.accountdetails.cellnumber || this.accountdetails.mobile || this.accountdetails.phonenumber || this.accountdetails.telnumber || this.accountdetails.celnumber;
+      this.loader = false;
 
     });
   }
@@ -231,6 +236,7 @@ export class ActivitylogComponent implements OnInit {
       this.model.celnumber = data[0].celnumber;
       // tslint:disable-next-line:max-line-length
       this.autodial_telnumber = this.accountdetails.cellnumber || this.accountdetails.mobile || this.accountdetails.phonenumber || this.accountdetails.telnumber || this.accountdetails.celnumber;
+      this.loader = false;
 
     }, error => {
       //
@@ -241,12 +247,14 @@ export class ActivitylogComponent implements OnInit {
     this.ecolService.allteles(custnumber).subscribe(response => {
       this.teles = response.data;
       this.totalTeles = response.data.length;
+      this.loader = false;
     });
   }
 
   getNotes(custnumber) {
     this.ecolService.totalnotes(custnumber).subscribe(data => {
       this.notes = data[0].TOTAL;
+      this.loader = false;
     });
   }
 
@@ -254,24 +262,28 @@ export class ActivitylogComponent implements OnInit {
     this.ecolService.getfileshistory(custnumber).subscribe(data => {
       this.files = data;
       this.totalfiles = data.length;
+      this.loader = false;
     });
   }
 
   getGuarantors(custnumber) {
     this.ecolService.totalguarantors(custnumber).subscribe(data => {
       this.totalguarantors = data[0].TOTAL;
+      this.loader = false;
     });
   }
 
   getContacts(custnumber) {
     this.ecolService.totalcontacts(custnumber).subscribe(data => {
       this.totalcontacts = data[0].TOTAL;
+      this.loader = false;
     });
   }
 
   getCollateral(custnumber) {
     this.ecolService.totalcollaterals(custnumber).subscribe(data => {
       this.totalcollaterals = data[0].TOTAL;
+      this.loader = false;
     });
   }
 
@@ -288,6 +300,7 @@ export class ActivitylogComponent implements OnInit {
       this.model.celnumber = data[0].celnumber;
       // tslint:disable-next-line:max-line-length
       this.autodial_telnumber = this.accountdetails.cellnumber || this.accountdetails.mobile || this.accountdetails.phonenumber || this.accountdetails.telnumber || this.accountdetails.celnumber;
+      this.loader = false;
       // this.spinner.hide();
     });
   }
@@ -302,6 +315,7 @@ export class ActivitylogComponent implements OnInit {
       this.model.celnumber = data[0].phonenumber;
       // tslint:disable-next-line:max-line-length
       this.autodial_telnumber = this.accountdetails.cellnumber || this.accountdetails.mobile || this.accountdetails.phonenumber || this.accountdetails.telnumber || this.accountdetails.celnumber;
+      this.loader = false;
     });
   }
 
@@ -315,15 +329,18 @@ export class ActivitylogComponent implements OnInit {
       this.model.postcode = data.postcode;
       this.model.emailaddress = data.emailaddress;
       this.model.celnumber = data.celnumber;
+      this.loader = false;
     });
   }
 
   changeAutodialNumber(telnumber) {
     this.autodial_telnumber = telnumber;
+    this.loader = false;
   }
 
   // returns phone number
   num() {
+    this.loader = false;
     return this.autodial_telnumber;
   }
 
@@ -339,7 +356,7 @@ export class ActivitylogComponent implements OnInit {
   // Changes colour of Account Plan Background, if None, will be red, if not none, will be Green
 
   getColor() {
-    return this.plan !== 'NONE' ? '#7ac142' : 'red';
+    return this.plan !== 'NONE' ? '#7ac142' : '#bc3d3d';
   }
 
   copyText(val: string) {

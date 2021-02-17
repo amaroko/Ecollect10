@@ -28,3 +28,13 @@ li.pagination-next.disabled{
 li.pagination-previous.disabled{
   cursor: not-allowed;
 }
+/*start of cursor not allowed*/
+*.form-control[disabled] {
+  cursor: not-allowed;
+}
+
+
+*.btn[disabled] {
+  cursor: not-allowed;
+}
+/*end of cursor not allowed*/
