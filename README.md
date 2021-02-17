@@ -1,5 +1,5 @@
 # Ecollect V3.0
-
+node --max_old_space_size=8192 ./node_modules/@angular/cli/bin/ng build --prod
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.6.8.
 
 ## Development server
