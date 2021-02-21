@@ -33,7 +33,7 @@
 <!--          }"></ngx-skeleton-loader>-->
 
           <div *ngIf="loader" >
-            <ngx-skeleton-loader *ngIf="loader"  count="3"  [theme]="{
+            <ngx-skeleton-loader *ngIf="loader" [count]="3" [theme]="{
                       width: '200px',
                       'border-radius': '0',
                       height: '15px',
@@ -69,7 +69,7 @@
 
       <div *ngIf="loader"  class="profile-header-info">
         <div  >
-                      <ngx-skeleton-loader *ngIf="loader"  count="3"  [theme]="{
+          <ngx-skeleton-loader *ngIf="loader" [count]="3" [theme]="{
                       width: '200px',
                       'border-radius': '0',
                       height: '15px',
@@ -152,7 +152,7 @@
               [routerLinkActive]="['active']"
               [routerLink]="['./remedialcollaterals']"
               class="btn btn-inverse btn btn-block">Remedial Collaterals<span
-        class="badge badge-danger float-right">{{totalcollaterals}}</span></button>
+        class="badge badge-danger float-right">{{totalcollaterals1}}</span></button>
 
       <button [queryParams]="{accnumber: accnumber, custnumber: custnumber, username: username, sys: sys}"
               [routerLinkActive]="['active']"

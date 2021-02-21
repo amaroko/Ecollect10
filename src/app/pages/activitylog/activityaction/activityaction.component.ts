@@ -576,6 +576,7 @@ export class ActivityactionComponent implements OnInit {
     });
   }
 
+
   sendPtpsData(accnumber) {
     this.ecolService.getptps(accnumber).subscribe(data => {
       this.dataService.pushPtps(data.length);

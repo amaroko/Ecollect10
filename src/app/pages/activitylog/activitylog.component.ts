@@ -19,7 +19,7 @@ export class ActivitylogComponent implements OnInit {
   ptp = 0;
   notes: number;
   totalcontacts: number;
-  totalcollaterals: number;
+  totalcollaterals1: number;
   totalguarantors: number;
   totalfiles: number;
   totalwoffstory: number;
@@ -71,7 +71,7 @@ export class ActivitylogComponent implements OnInit {
     });
 
     dataService.getCollateral().subscribe(data => {
-      this.totalcollaterals = data;
+      this.totalcollaterals1 = data;
     });
 
     dataService.getContacts().subscribe(data => {
@@ -282,7 +282,7 @@ export class ActivitylogComponent implements OnInit {
 
   getCollateral(custnumber) {
     this.ecolService.totalcollaterals(custnumber).subscribe(data => {
-      this.totalcollaterals = data[0].TOTAL;
+      this.totalcollaterals1 = data[0].TOTAL;
       this.loader = false;
     });
   }

@@ -70,7 +70,7 @@
     "ngx-highlight-js": "^10.0.3",
     "ngx-pagination": "^5.0.0",
     "ngx-perfect-scrollbar": "^10.0.1",
-    "ngx-skeleton-loader": "^2.6.2",
+    "ngx-skeleton-loader": "^2.7.0",
     "ngx-smart-modal": "^7.4.1",
     "ngx-spinner": "^10.0.1",
     "ngx-trend": "^6.0.0",

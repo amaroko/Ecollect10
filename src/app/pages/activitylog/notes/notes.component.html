@@ -54,7 +54,7 @@
 
         <!-- begin widget-table -->
         <div *ngIf="loader" class="col-xl-6">
-          <ngx-skeleton-loader *ngIf="loader"  count="7"  [theme]="{
+          <ngx-skeleton-loader *ngIf="loader" [count]="7" [theme]="{
                       width: '400px',
                       'border-radius': '0',
                       height: '15px',
@@ -162,23 +162,22 @@
           <table *ngFor="let note of flaggedNotes" [ngClass]="{'inverse-mode': darkMode}"
                  class="table table-bordered widget-table widget-table-rounded">
             <thead>
-            <tr>
-              <th></th>
-            </tr>
             </thead>
             <tbody>
             <tr>
               <td>
-                <p class="widget-table-desc m-b-15">{{note.owner}} {{note.notesrc}} on Account {{note.accnumber}}</p>
-                <h4 class="widget-table-title">{{note.notemade}}</h4>
-                <!--                      <div class="progress progress-sm rounded-corner m-b-5">-->
-                <!--                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-orange f-s-10 f-w-600" style="width: 30%;">30%</div>-->
-                <!--                      </div>-->
-
-
+                <div class="clearfix f-s-10">
+                  <b [ngClass]="{'text-inverse': lightMode, 'text-white': darkMode}">{{note.owner}} {{note.notesrc}} on
+                    Account {{note.accnumber}}</b>
+                </div>
+                <div class="clearfix f-s-10">
+                  Collector Note:
+                  <b [ngClass]="{'text-inverse': lightMode, 'text-white': darkMode}">{{note.notemade}}</b>
+                </div>
                 <div class="clearfix f-s-10">
                   Made on:
-                  <b [ngClass]="{'text-inverse': lightMode, 'text-white': darkMode}">{{note.notedate}}</b>
+                  <b
+                    [ngClass]="{'text-inverse': lightMode, 'text-white': darkMode}">{{note.notedate | date:'medium'}}</b>
                 </div>
               </td>
             </tr>

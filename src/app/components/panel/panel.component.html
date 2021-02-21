@@ -31,7 +31,18 @@
   <div *ngIf="!this.noBody" [ngClass]="[ (this.collapse) ? 'd-none': '', (this.bodyClass) ? this.bodyClass : '' ]"
        class="panel-body">
     <ng-content></ng-content>
-    <div *ngIf="this.reload" class="panel-loader"><span class="spinner-small"></span></div>
+    <!--    <div *ngIf="this.reload" class="panel-loader"><span class="spinner-small"></span></div>-->
+    <div *ngIf="this.reload" class="panel-loader">
+      <div class='loader'>
+        <div class='loader--dot'></div>
+        <div class='loader--dot'></div>
+        <div class='loader--dot'></div>
+        <div class='loader--dot'></div>
+        <div class='loader--dot'></div>
+        <div class='loader--dot'></div>
+        <div class='loader--text'></div>
+      </div>
+    </div>
   </div>
   <!-- end panel-body -->
 

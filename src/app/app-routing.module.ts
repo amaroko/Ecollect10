@@ -51,8 +51,7 @@ export const routes: Routes = [
         loadChildren: './pages/creditcards/creditcards.module#CreditcardsModule',
         data: {title: 'Creditcards'}
       },
-      {path: 'watch', loadChildren: './pages/watch/watch.module#WatchModule', data: {title: 'Watch'}},
-      {path: '', loadChildren: './pages/home/home.module#HomeModule', data: {title: 'Home'}}
+      {path: 'watch', loadChildren: './pages/watch/watch.module#WatchModule', data: {title: 'Watch'}}
     ]
 
   },
@@ -60,9 +59,6 @@ export const routes: Routes = [
     path: 'activitylog',
     component: ActivitylogComponent,
     canActivate: [AuthGuard],
-    children: [
-      {
-        path: '',
         children: [
           {path: '', redirectTo: 'notes', pathMatch: 'full'},
           {path: 'notes', component: NotesComponent, data: {title: 'Activitylog | Notes'}},
@@ -79,12 +75,11 @@ export const routes: Routes = [
           {path: 'bulknotes', component: BulknotesComponent, data: {title: 'Activitylog | BulkNotes Upload'}},
           {path: 'ptps', component: PtpsComponent, data: {title: 'Activitylog | Ptps'}},
           {path: 'writeoffstory', component: WriteoffstoryComponent, data: {title: 'Activitylog | WriteOffStory'}},
-          {path: '**', redirectTo: 'notes'}
+          {path: '**', redirectTo: 'notes', pathMatch: 'full'}
         ]
-      }
-    ]
+
   },
-  {path: 'login', component: LoginComponent, data: {title: 'login'}},
+  {path: 'login', component: LoginComponent, data: {title: 'Login'}},
   {path: 'rolesensor', component: RolesensorComponent, data: {title: 'RoleSensor'}},
   {path: '**', redirectTo: 'home'}
 ];

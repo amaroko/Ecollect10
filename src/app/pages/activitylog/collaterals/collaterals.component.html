@@ -49,130 +49,166 @@
         <div class="card-body">
           <form #newCollateralForm="ngForm" (ngSubmit)="onSubmit(newCollateralForm)" autocomplete="off"
                 class="form-horizontal">
-            <div class="form-group row">
-              <label class="col-xl-3 col-form-label">Customer custnumber</label>
-              <div class="col-xl-6">
-                <label for="custnumber"></label><input #custnumber="ngModel" [(ngModel)]="model.custnumber"
-                                                       [disabled]="true"
-                                                       class="form-control"
-                                                       id="custnumber" name="custnumber"
-                                                       required type="text"/>
+
+            <div class="form-group row m-b-15">
+              <label for="custnumber" class="col-form-label col-md-2">Customer custnumber</label>
+              <div class="col-md-7">
+                <input #custnumber="ngModel" [ngClass]="{ 'is-invalid': custnumber.invalid }"
+                       [(ngModel)]="model.custnumber"
+                       [disabled]="true"
+                       class="form-control is-valid"
+                       id="custnumber" name="custnumber"
+                       required type="text"/>
+                <div *ngIf="custnumber.valid" class="valid-feedback">Looks good!</div>
               </div>
             </div>
-            <div class="form-group row">
-              <label class="col-xl-3 col-form-label">Customer accnumber</label>
-              <div class="col-xl-6">
-                <label for="accnumber"></label><input #accnumber="ngModel" [(ngModel)]="model.accnumber"
-                                                      [disabled]="true" class="form-control"
-                                                      id="accnumber" name="accnumber"
-                                                      required type="text"/>
+
+
+            <div class="form-group row m-b-15">
+              <label for="accnumber" class="col-form-label col-md-2">Customer accnumber</label>
+              <div class="col-md-7">
+                <input [ngClass]="{ 'is-invalid': accnumber.invalid }" #accnumber="ngModel"
+                       [(ngModel)]="model.accnumber"
+                       [disabled]="true" class="form-control is-valid"
+                       id="accnumber" name="accnumber"
+                       required type="text"/>
+                <div *ngIf="accnumber.valid" class="valid-feedback">Looks good!</div>
               </div>
             </div>
-            <div class="form-group row">
-              <label class="col-xl-3 col-form-label">Collateral title/name</label>
-              <div class="col-xl-6">
-                <label for="collateralname"></label><input #collateralname="ngModel" [(ngModel)]="model.collateralname"
-                                                           [ngClass]="{ 'is-invalid': collateralname.invalid }"
-                                                           class="form-control"
-                                                           id="collateralname" name="collateralname"
-                                                           required
-                                                           type="text"/>
-                <div *ngIf="collateralname.invalid && collateralname.touched" class="validation-error">
+
+
+            <div class="form-group row m-b-15">
+              <label for="collateralname" class="col-form-label col-md-2">Collateral title/name</label>
+              <div class="col-md-7">
+                <input #collateralname="ngModel" [(ngModel)]="model.collateralname"
+                       [ngClass]="{ 'is-invalid': collateralname.invalid }"
+                       class="form-control is-valid"
+                       id="collateralname" name="collateralname"
+                       required
+                       type="text"/>
+                <div *ngIf="collateralname.valid" class="valid-feedback">Looks good!</div>
+                <div *ngIf="collateralname.invalid && collateralname.touched" class="text-danger">
                   collateral name
                   is required
                 </div>
               </div>
             </div>
-            <div class="form-group row">
-              <label class="col-xl-3 col-form-label">Registered Owner</label>
-              <div class="col-xl-6">
-                <label for="regowner"></label><input #regowner="ngModel" [(ngModel)]="model.regowner"
-                                                     [ngClass]="{ 'is-invalid': regowner.invalid }" class="form-control"
-                                                     id="regowner" name="regowner"
-                                                     required type="text"/>
-                <div *ngIf="regowner.invalid && regowner.touched" class="validation-error">
+
+
+            <div class="form-group row m-b-15">
+              <label for="regowner" class="col-form-label col-md-2">Registered Owner</label>
+              <div class="col-md-7">
+                <input #regowner="ngModel" [(ngModel)]="model.regowner"
+                       [ngClass]="{ 'is-invalid': regowner.invalid }" class="form-control is-valid"
+                       id="regowner" name="regowner"
+                       required type="text"/>
+                <div *ngIf="regowner.valid" class="valid-feedback">Looks good!</div>
+                <div *ngIf="regowner.invalid && regowner.touched" class="text-danger">
                   registered owner name
                   is required
                 </div>
               </div>
             </div>
-            <div class="form-group row">
-              <label class="col-xl-3 col-form-label">Forced Sale Value</label>
-              <div class="col-xl-6">
-                <label for="forcedsale"></label><input #forcedsale="ngModel" [(ngModel)]="model.forcedsale"
-                                                       [ngClass]="{ 'is-invalid': forcedsale.invalid }"
-                                                       class="form-control"
-                                                       id="forcedsale" name="forcedsale"
-                                                       required type="text"/>
-                <div *ngIf="forcedsale.invalid && forcedsale.touched" class="validation-error">
+
+
+            <div class="form-group row m-b-15">
+              <label for="forcedsale" class="col-form-label col-md-2">Forced Sale Value</label>
+              <div class="col-md-7">
+                <input #forcedsale="ngModel" [(ngModel)]="model.forcedsale"
+                       [ngClass]="{ 'is-invalid': forcedsale.invalid }"
+                       class="form-control is-valid"
+                       id="forcedsale" name="forcedsale"
+                       required type="text"/>
+                <div *ngIf="forcedsale.valid" class="valid-feedback">Looks good!</div>
+                <div *ngIf="forcedsale.invalid && forcedsale.touched" class="text-danger">
                   forced sale value is
                   required
                 </div>
               </div>
             </div>
-            <div class="form-group row">
-              <label class="col-xl-3 col-form-label">Market Sale Value</label>
-              <div class="col-xl-6">
-                <label for="marketvalue"></label><input #marketvalue="ngModel" [(ngModel)]="model.marketvalue"
-                                                        [ngClass]="{ 'is-invalid': marketvalue.invalid }"
-                                                        class="form-control"
-                                                        id="marketvalue" name="marketvalue"
-                                                        required type="text"/>
-                <div *ngIf="marketvalue.invalid && marketvalue.touched" class="validation-error">
+
+
+            <div class="form-group row m-b-15">
+              <label for="marketvalue" class="col-form-label col-md-2">Market Sale Value</label>
+              <div class="col-md-7">
+                <input #marketvalue="ngModel" [(ngModel)]="model.marketvalue"
+                       [ngClass]="{ 'is-invalid': marketvalue.invalid }"
+                       class="form-control is-valid"
+                       id="marketvalue" name="marketvalue"
+                       required type="text"/>
+                <div *ngIf="marketvalue.valid" class="valid-feedback">Looks good!</div>
+                <div *ngIf="marketvalue.invalid && marketvalue.touched" class="text-danger">
                   Marketvalue is
                   required
                 </div>
               </div>
             </div>
-            <div class="form-group row">
-              <label class="col-xl-3 col-form-label">Insurance Value</label>
-              <div class="col-xl-6">
-                <label for="insurancevalue"></label><input #insurancevalue="ngModel" [(ngModel)]="model.insurancevalue"
-                                                           [ngClass]="{ 'is-invalid': insurancevalue.invalid }"
-                                                           class="form-control"
-                                                           id="insurancevalue" name="insurancevalue"
-                                                           required
-                                                           type="text"/>
-                <div *ngIf="insurancevalue.invalid && insurancevalue.touched" class="validation-error">
+
+
+            <div class="form-group row m-b-15">
+              <label for="insurancevalue" class="col-form-label col-md-2">Insurance Value</label>
+              <div class="col-md-7">
+                <input #insurancevalue="ngModel" [(ngModel)]="model.insurancevalue"
+                       [ngClass]="{ 'is-invalid': insurancevalue.invalid }"
+                       class="form-control is-valid"
+                       id="insurancevalue" name="insurancevalue"
+                       required
+                       type="text"/>
+                <div *ngIf="insurancevalue.valid" class="valid-feedback">Looks good!</div>
+                <div *ngIf="insurancevalue.invalid && insurancevalue.touched" class="text-danger">
                   insurancevalue is required
                 </div>
               </div>
             </div>
-            <div class="form-group row">
-              <label class="col-xl-3 col-form-label">Valuation Date</label>
-              <div class="col-xl-6">
-                <label for="valuationdate"></label><input #valuationdate="ngModel" [(ngModel)]="model.valuationdate"
-                                                          [ngClass]="{ 'is-invalid': valuationdate.invalid }"
-                                                          class="form-control"
-                                                          id="valuationdate" name="valuationdate"
-                                                          required type="text"/>
-                <div *ngIf="valuationdate.invalid && valuationdate.touched" class="validation-error">
+
+
+            <div class="form-group row m-b-15">
+              <label for="valuationdate" class="col-form-label col-md-2">Valuation Date</label>
+              <div class="col-md-7">
+                <input #valuationdate="ngModel" [(ngModel)]="model.valuationdate"
+                       [ngClass]="{ 'is-invalid': valuationdate.invalid }"
+                       class="form-control is-valid"
+                       id="valuationdate" name="valuationdate"
+                       required type="text"/>
+                <div *ngIf="valuationdate.valid" class="valid-feedback">Looks good!</div>
+                <div *ngIf="valuationdate.invalid && valuationdate.touched" class="text-danger">
                   valuationdate is required
                 </div>
               </div>
             </div>
-            <div class="form-group row">
-              <label class="col-xl-3 col-form-label">Tenure</label>
-              <div class="col-xl-6">
-                <label for="tenure"></label><input #tenure="ngModel" [(ngModel)]="model.tenure"
-                                                   [ngClass]="{ 'is-invalid': tenure.invalid }" class="form-control"
-                                                   id="tenure"
-                                                   name="tenure"
-                                                   required type="text"/>
-                <div *ngIf="tenure.invalid && tenure.touched" class="validation-error">
+
+
+            <div class="form-group row m-b-15">
+              <label for="tenure" class="col-form-label col-md-2">Tenure</label>
+              <div class="col-md-7">
+                <input #tenure="ngModel" [(ngModel)]="model.tenure"
+                       [ngClass]="{ 'is-invalid': tenure.invalid }" class="form-control is-valid"
+                       id="tenure"
+                       name="tenure"
+                       required type="text"/>
+                <div *ngIf="tenure.valid" class="valid-feedback">Looks good!</div>
+                <div *ngIf="tenure.invalid && tenure.touched" class="text-danger">
                   tenure is required
                 </div>
               </div>
             </div>
-            <div class="form-group row">
-              <label class="col-xl-3 col-form-label">Valuer</label>
-              <div class="col-xl-6">
-                <label for="valuer"></label><input #valuer="ngModel" [(ngModel)]="model.valuer" class="form-control"
-                                                   id="valuer"
-                                                   name="valuer"
-                                                   type="text"/>
+
+
+            <div class="form-group row m-b-15">
+              <label for="valuer" class="col-form-label col-md-2">Valuer</label>
+              <div class="col-md-7">
+                <input #valuer="ngModel" [(ngModel)]="model.valuer"
+                       [ngClass]="{ 'is-invalid': valuer.invalid }" class="form-control is-valid"
+                       id="valuer"
+                       name="valuer"
+                       required type="text"/>
+                <div *ngIf="valuer.valid" class="valid-feedback">Looks good!</div>
+                <div *ngIf="valuer.invalid && valuer.touched" class="text-danger">
+                  valuer is required
+                </div>
               </div>
             </div>
+
 
             <div class="form-group row">
               <label class="col-xl-3 col-form-label"></label>

@@ -8,8 +8,8 @@
 
   <ng-template #sidebarNav>
     <!-- begin sidebar user -->
-    <ul class="nav">
-      <li *ngIf="!pageSettings.pageSidebarSearch" [ngClass]="{ 'active' : (navProfileState == 'expand') }"
+    <ul *ngIf="!pageSettings.pageSidebarSearch" class="nav">
+      <li [ngClass]="{ 'active' : (navProfileState == 'expand') }"
           class="nav-profile">
         <a (click)="toggleNavProfile()" href="javascript:;">
           <div class="cover with-shadow"></div>

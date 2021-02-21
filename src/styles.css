@@ -1,12 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
-@import 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700';
-@import 'https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.6.1/fullcalendar.min.css';
+/*@import 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700';*/
+/*@import 'https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.6.1/fullcalendar.min.css';*/
 @import '~@fullcalendar/daygrid/main.css';
 @import '~nvd3/build/nv.d3.css';
 @import '~angular-calendar/css/angular-calendar.css';
 @import '~@ng-select/ng-select/themes/default.theme.css';
 @import "~@ag-grid-enterprise/all-modules/dist/styles/ag-grid.css";
 @import "~@ag-grid-enterprise/all-modules/dist/styles/ag-theme-balham";
+@import "assets/css/default/cooploader.css";
+@import "~ngx-bootstrap/datepicker/bs-datepicker.css";
 
 /*Make the screen more visible in small screen devices...13inch->*/
 html {
@@ -37,4 +39,6 @@ li.pagination-previous.disabled{
 *.btn[disabled] {
   cursor: not-allowed;
 }
+
+
 /*end of cursor not allowed*/

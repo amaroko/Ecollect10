@@ -7,6 +7,7 @@ import {BehaviorSubject, Observable} from 'rxjs';
 export class DataService {
   public dataSubject = new BehaviorSubject<number>(0);
   public notesSubject = new BehaviorSubject<number>(0);
+  public Subject = new BehaviorSubject<number>(0);
   public reminderSubject = new BehaviorSubject<number>(0);
   public woffstorySubject = new BehaviorSubject<number>(0);
   public guarantorsSubject = new BehaviorSubject<number>(0);

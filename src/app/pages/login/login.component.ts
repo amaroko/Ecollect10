@@ -89,7 +89,7 @@ export class LoginComponent implements OnInit {
     // get return url from route parameters or default to '/'
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
 
-  }
+    }
 
   getuser(username, password) {
     this.ecolService.login(username).subscribe(user => {
@@ -114,15 +114,17 @@ export class LoginComponent implements OnInit {
           // });
           const currentUser: any = JSON.parse(localStorage.getItem('currentUser'));
           console.log(currentUser);
-          this.reDirectTo('rolesensor');
+          // this.reDirectTo('home');
+          // this.router.navigate(['home'], { relativeTo: this.route });
+          window.location.href = 'home';
 
           // this.router.navigate(['/permissionsensor']).then(() => {
           //   // do whatever you need after navigation succeeds
           //   // this.router.navigate([this.returnUrl]);
           //   // this.router.navigate([this.returnUrl]);
-            setTimeout(() => {
-              this.router.navigate(['/home']);
-            }, 5000);
+          //   setTimeout(() => {
+          //     this.router.navigate(['/home/user/coop']);
+          //   }, 5000);
         });
         //
       } else {
@@ -136,6 +138,10 @@ export class LoginComponent implements OnInit {
       if (error.statusText === 'Not Found') {
         this.error = 'User not created on E-Collect';
         this.loading = false;
+
+        // error if server not found
+      } else if (error.name === 'HttpErrorResponse') {
+        this.error = 'Server Error. Could Not connect to Server';
       } else {
         this.error = 'Error during login';
         this.loading = false;

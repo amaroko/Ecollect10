@@ -4,6 +4,7 @@ import {EcolService} from '../../../services/ecol.service';
 import swal from 'sweetalert2';
 import {environment} from '../../../../environments/environment';
 import * as introJs from 'intro.js/intro.js';
+import {DataService} from '../../../services/data.service';
 
 const URL = environment.valor;
 
@@ -21,11 +22,13 @@ export class CollateralsComponent implements OnInit {
   model: any = {};
   collaterals: any = [];
   edit = false;
+  totalcollateralspage: number;
 
   //
   constructor(
     private route: ActivatedRoute,
-    private ecolService: EcolService) {
+    private ecolService: EcolService,
+    private dataService: DataService,) {
     //
   }
 
@@ -152,13 +155,15 @@ export class CollateralsComponent implements OnInit {
       this.model.custnumber = queryParams.get('custnumber');
     });
 
-    // get guarantors history
+    // get collateral history
     this.getCollateral(this.custnumber);
+    this.sendCollateralData(this.custnumber);
   }
 
   onSubmit(form) {
     // Loading indictor
     this.ecolService.loader();
+
     //
     const body = {
       regowner: form.value.regowner,
@@ -173,9 +178,11 @@ export class CollateralsComponent implements OnInit {
       valuationdate: form.value.valuationdate,
       valuer: form.value.valuer
     };
+    console.log(body);
     this.ecolService.submitCollateral(body).subscribe(data => {
+      this.sendCollateralData(this.custnumber);
       swal.fire('Successful!', 'saved successfully!', 'success');
-      this.getCollateral(this.accnumber);
+      this.getCollateral(this.custnumber);
     }, error => {
       console.log(error);
       swal.fire('Error!', 'Error occurred during processing!', 'error');
@@ -189,6 +196,14 @@ export class CollateralsComponent implements OnInit {
       console.log(error);
     });
   }
+
+
+  sendCollateralData(custnumber) {
+    this.ecolService.totalcollaterals(custnumber).subscribe(data => {
+      this.dataService.pushCollateral(data[0].TOTAL);
+    });
+  }
+
 
   reset() {
     this.model.regowner = '';
@@ -205,6 +220,7 @@ export class CollateralsComponent implements OnInit {
     this.edit = false;
     this.reset();
   }
+
 
   updatecollateral(form) {
     // save to db

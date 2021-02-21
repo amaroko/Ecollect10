@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {addDays, addHours, endOfMonth, startOfDay, subDays} from 'date-fns';
 import * as global from '../../config/globals';
+import {NavigationEnd, Router, RouterEvent} from "@angular/router";
+import {filter} from "rxjs/operators";
 
 declare let d3: any;
 
@@ -102,6 +104,16 @@ export class HomePageComponent implements OnInit {
     title: 'A draggable and resizable event',
     color: '#727cb6'
   }];
+
+  constructor(private router: Router) {
+    router.events.pipe(
+      filter((events: RouterEvent) => events instanceof NavigationEnd),
+    ).subscribe((val) => {
+      if (val.url === 'home') { // Fill with your loginPage Url (eg. /tabs/tab1)
+        window.location.reload(); // Refresh your form
+      }
+    });
+  }
 
   ngOnInit() {
     this.stackedChartOptions = {
