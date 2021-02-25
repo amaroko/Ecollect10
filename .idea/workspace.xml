@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="28b3daf4-2105-4515-8956-01267c185b3f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/app/services/excel.service.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/services/excel.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +33,7 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
@@ -94,6 +94,9 @@
       <workItem from="1611006106855" duration="11757000" />
       <workItem from="1611049122117" duration="6053000" />
       <workItem from="1611084832841" duration="8901000" />
+      <workItem from="1614239261621" duration="84000" />
+      <workItem from="1614239386246" duration="644000" />
+      <workItem from="1614240141422" duration="923000" />
     </task>
     <task id="LOCAL-00001" summary="Angular 10 upgrade startup">
       <created>1611070245573</created>
@@ -115,39 +118,5 @@
     <option name="LAST_COMMIT_MESSAGE" value="Angular 10 upgrade startup" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="187" y="0" key="CommitChangelistDialog2" timestamp="1611070236231">
-      <screen x="0" y="0" width="1280" height="689" />
-    </state>
-    <state x="187" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1611070236231" />
-    <state x="0" y="0" key="FileDocumentManager.FileCacheConflict" timestamp="1611007719085">
-      <screen x="0" y="0" width="1280" height="689" />
-    </state>
-    <state x="0" y="0" key="FileDocumentManager.FileCacheConflict/0.0.1280.689@0.0.1280.689" timestamp="1611007719085" />
-    <state width="1260" height="167" key="GridCell.Tab.0.bottom" timestamp="1610961202136">
-      <screen x="0" y="0" width="1280" height="689" />
-    </state>
-    <state width="1260" height="167" key="GridCell.Tab.0.bottom/0.0.1280.689@0.0.1280.689" timestamp="1610961202136" />
-    <state width="1260" height="167" key="GridCell.Tab.0.center" timestamp="1610961202136">
-      <screen x="0" y="0" width="1280" height="689" />
-    </state>
-    <state width="1260" height="167" key="GridCell.Tab.0.center/0.0.1280.689@0.0.1280.689" timestamp="1610961202136" />
-    <state width="1260" height="167" key="GridCell.Tab.0.left" timestamp="1610961202136">
-      <screen x="0" y="0" width="1280" height="689" />
-    </state>
-    <state width="1260" height="167" key="GridCell.Tab.0.left/0.0.1280.689@0.0.1280.689" timestamp="1610961202136" />
-    <state width="1260" height="167" key="GridCell.Tab.0.right" timestamp="1610961202136">
-      <screen x="0" y="0" width="1280" height="689" />
-    </state>
-    <state width="1260" height="167" key="GridCell.Tab.0.right/0.0.1280.689@0.0.1280.689" timestamp="1610961202136" />
-    <state x="150" y="0" key="SettingsEditor" timestamp="1611010092390">
-      <screen x="0" y="0" width="1280" height="689" />
-    </state>
-    <state x="150" y="0" key="SettingsEditor/0.0.1280.689@0.0.1280.689" timestamp="1611010092390" />
-    <state x="345" y="85" width="591" height="520" key="find.popup" timestamp="1611085105703">
-      <screen x="0" y="0" width="1280" height="689" />
-    </state>
-    <state x="345" y="85" width="591" height="520" key="find.popup/0.0.1280.689@0.0.1280.689" timestamp="1611085105703" />
   </component>
 </project>
