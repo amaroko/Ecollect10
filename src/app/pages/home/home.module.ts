@@ -11,11 +11,6 @@ import { PermissionsensorComponent } from './permissionsensor/permissionsensor.c
 const routes: Routes = [
   // {path: '', redirectTo: 'home'},
   { path: '', component: HomePageComponent },
-  {
-    path: 'permissionsensor',
-    component: PermissionsensorComponent,
-    data: { title: 'PermissionChecker' }
-  }
 ];
 
 @NgModule({

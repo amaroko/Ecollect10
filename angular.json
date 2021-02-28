@@ -22,7 +22,8 @@
               "util",
               "howler",
               "file-saver",
-              "xlsx"
+              "xlsx",
+              "chart.js"
             ],
             "index": "src/index.html",
             "main": "src/main.ts",

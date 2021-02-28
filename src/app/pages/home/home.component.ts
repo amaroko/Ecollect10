@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { addDays, addHours, endOfMonth, startOfDay, subDays } from 'date-fns';
 import * as global from '../../config/globals';
-import { NavigationEnd, Router, RouterEvent } from '@angular/router';
-import { filter } from 'rxjs/operators';
 
 declare let d3: any;
 
@@ -181,17 +179,6 @@ export class HomePageComponent implements OnInit {
     }
   ];
 
-  constructor(private router: Router) {
-    router.events
-      .pipe(filter((events: RouterEvent) => events instanceof NavigationEnd))
-      .subscribe((val) => {
-        if (val.url === 'home') {
-          // Fill with your loginPage Url (eg. /tabs/tab1)
-          window.location.reload(); // Refresh your form
-        }
-      });
-  }
-
   ngOnInit() {
     this.stackedChartOptions = {
       chart: {
@@ -229,7 +216,7 @@ export class HomePageComponent implements OnInit {
             d = monthsName[d.getMonth()] + ' ' + d.getDate();
             return d;
           }
-        }
+        },
       },
     };
 
@@ -315,7 +302,7 @@ export class HomePageComponent implements OnInit {
           [1518085558229, 7],
           [1518171958229, 7],
           [1518258358229, 7]
-        ]
+        ],
       },
       {
         key: 'Page Views',
@@ -398,8 +385,8 @@ export class HomePageComponent implements OnInit {
           [1518085558229, 18],
           [1518085558229, 18],
           [1518258358229, 17]
-        ]
-      }
+        ],
+      },
     ];
 
     this.donutChartData = [
@@ -427,7 +414,7 @@ export class HomePageComponent implements OnInit {
         ],
         duration: 3000,
         donutRatio: 0.5
-      }
+      },
     };
   }
 }

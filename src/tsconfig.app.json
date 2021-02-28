@@ -19,7 +19,11 @@
     "**/*.spec.ts",
     "src/**/*.ts"
   ],
+  "files": [
+    "main.ts",
+    "polyfills.ts"
+  ],
   "include": [
-    "**/*"
+    "src/**/*.d.ts"
   ]
 }

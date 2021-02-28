@@ -22,6 +22,12 @@ import { FilesComponent } from './pages/activitylog/files/files.component';
 import { BulknotesComponent } from './pages/activitylog/bulknotes/bulknotes.component';
 import { PtpsComponent } from './pages/activitylog/ptps/ptps.component';
 import { WriteoffstoryComponent } from './pages/activitylog/writeoffstory/writeoffstory.component';
+import { HomeModule } from './pages/home/home.module';
+import { WorkModule } from './pages/work/work.module';
+import { RemindersModule } from './pages/reminders/reminders.module';
+import { McoopcashModule } from './pages/mcoopcash/mcoopcash.module';
+import { CreditcardsModule } from './pages/creditcards/creditcards.module';
+import { WatchModule } from './pages/watch/watch.module';
 
 export const routes: Routes = [
   // {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -36,33 +42,39 @@ export const routes: Routes = [
       { path: '', redirectTo: 'login', pathMatch: 'full' },
       {
         path: 'home',
-        loadChildren: './pages/home/home.module#HomeModule',
+        loadChildren: () => HomeModule,
+        // loadChildren: './pages/home/home.module#HomeModule',
         data: { title: 'Home' }
       },
       {
         path: 'work',
-        loadChildren: './pages/work/work.module#WorkModule',
+        loadChildren: () => WorkModule,
+        // loadChildren: './pages/work/work.module#WorkModule',
         data: { title: 'Work Queue' }
       },
       {
         path: 'reminders',
-        loadChildren: './pages/reminders/reminders.module#RemindersModule',
+        loadChildren: () => RemindersModule,
+        // loadChildren: './pages/reminders/reminders.module#RemindersModule',
         data: { title: 'Reminders' }
       },
       {
         path: 'mcoopcash',
-        loadChildren: './pages/mcoopcash/mcoopcash.module#McoopcashModule',
+        loadChildren: () => McoopcashModule,
+        // loadChildren: './pages/mcoopcash/mcoopcash.module#McoopcashModule',
         data: { title: 'Mcoopcash' }
       },
       {
         path: 'creditcards',
-        loadChildren:
-          './pages/creditcards/creditcards.module#CreditcardsModule',
+        loadChildren: () => CreditcardsModule,
+        // loadChildren:
+        //   './pages/creditcards/creditcards.module#CreditcardsModule',
         data: { title: 'Creditcards' }
       },
       {
         path: 'watch',
-        loadChildren: './pages/watch/watch.module#WatchModule',
+        loadChildren: () => WatchModule,
+        // loadChildren: './pages/watch/watch.module#WatchModule',
         data: { title: 'Watch' }
       }
     ],
@@ -144,7 +156,7 @@ export const routes: Routes = [
         data: { title: 'Activitylog | WriteOffStory' }
       },
       { path: '**', redirectTo: 'notes', pathMatch: 'full' }
-    ]
+    ],
   },
   { path: 'login', component: LoginComponent, data: { title: 'Login' } },
   {

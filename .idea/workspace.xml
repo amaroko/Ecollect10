@@ -1,380 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="AutoImportSettings">
-    <option name="autoReloadType" value="NONE" />
+    <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="28b3daf4-2105-4515-8956-01267c185b3f" name="Default Changelist" comment="first run on new beat">
-      <change afterPath="$PROJECT_DIR$/ .prettierignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/img/ajax-loader.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="28b3daf4-2105-4515-8956-01267c185b3f" name="Default Changelist" comment="skeleton loader done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/angular.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/auth.guard.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/auth.guard.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/auth.guard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/auth.guard.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/footer/footer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/footer/footer.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/footer/footer.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/footer/footer.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/header/header.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/header/header.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/header/header.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/header/header.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/panel/panel.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/panel/panel.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/components/panel/panel.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/panel/panel.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/components/panel/panel.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/panel/panel.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/sidebar/sidebar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/sidebar/sidebar.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/components/sidebar/sidebar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/sidebar/sidebar.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/top-menu/top-menu.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/top-menu/top-menu.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/components/top-menu/top-menu.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/top-menu/top-menu.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/config/globals.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/config/globals.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/config/page-menus.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/config/page-menus.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/config/page-settings.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/config/page-settings.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/activitylog/accplan/accplan.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/activitylog/accplan/accplan.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/activitylog/accplan/accplan.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/activitylog/accplan/accplan.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/activitylog/accplan/accplan.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/activitylog/accplan/accplan.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/activitylog/activityaction/activityaction.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/activitylog/activityaction/activityaction.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/activitylog/activityaction/activityaction.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/activitylog/activityaction/activityaction.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/activitylog/activityaction/activityaction.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/activitylog/activityaction/activityaction.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/activitylog/activityaction/activityaction.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/activitylog/activityaction/activityaction.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/activitylog/activityhome/activityhome.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/activitylog/activityhome/activityhome.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/activitylog/activityhome/activityhome.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/activitylog/activityhome/activityhome.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/activitylog/activityhome/activityhome.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/activitylog/activityhome/activityhome.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/activitylog/activitylog.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/activitylog/activitylog.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/activitylog/activitylog.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/activitylog/activitylog.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/activitylog/activitylog.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/activitylog/activitylog.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/pages/activitylog/activitylog.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/activitylog/activitylog.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/activitylog/bulknotes/bulknotes.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/activitylog/bulknotes/bulknotes.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/activitylog/bulknotes/bulknotes.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/activitylog/bulknotes/bulknotes.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/activitylog/bulknotes/bulknotes.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/activitylog/bulknotes/bulknotes.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/activitylog/collaterals/collaterals.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/activitylog/collaterals/collaterals.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/activitylog/collaterals/collaterals.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/activitylog/collaterals/collaterals.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/activitylog/collaterals/collaterals.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/activitylog/collaterals/collaterals.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/pages/activitylog/custcontacts/custcontacts.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/activitylog/custcontacts/custcontacts.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/activitylog/custcontacts/custcontacts.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/activitylog/custcontacts/custcontacts.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/activitylog/custcontacts/custcontacts.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/activitylog/custcontacts/custcontacts.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/activitylog/demandletters/demandletters.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/activitylog/demandletters/demandletters.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/activitylog/demandletters/demandletters.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/activitylog/demandletters/demandletters.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/activitylog/demandletters/demandletters.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/activitylog/demandletters/demandletters.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/activitylog/editnote/editnote.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/activitylog/editnote/editnote.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/activitylog/editnote/editnote.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/activitylog/editnote/editnote.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/activitylog/editnote/editnote.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/activitylog/editnote/editnote.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/activitylog/files/files.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/activitylog/files/files.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/activitylog/files/files.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/activitylog/files/files.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/activitylog/files/files.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/activitylog/files/files.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/activitylog/guarantors/guarantors.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/activitylog/guarantors/guarantors.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/activitylog/guarantors/guarantors.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/activitylog/guarantors/guarantors.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/activitylog/guarantors/guarantors.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/activitylog/guarantors/guarantors.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/activitylog/notes/notes.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/activitylog/notes/notes.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/pages/activitylog/notes/notes.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/activitylog/notes/notes.component.spec.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/pages/activitylog/notes/notes.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/activitylog/notes/notes.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/activitylog/ptps/ptps.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/activitylog/ptps/ptps.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/pages/activitylog/ptps/ptps.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/activitylog/ptps/ptps.component.spec.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/pages/activitylog/ptps/ptps.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/activitylog/ptps/ptps.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/activitylog/sms/sms.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/activitylog/sms/sms.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/pages/activitylog/sms/sms.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/activitylog/sms/sms.component.spec.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/pages/activitylog/sms/sms.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/activitylog/sms/sms.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/activitylog/writeoffstory/writeoffstory.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/activitylog/writeoffstory/writeoffstory.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/pages/activitylog/writeoffstory/writeoffstory.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/activitylog/writeoffstory/writeoffstory.component.spec.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/pages/activitylog/writeoffstory/writeoffstory.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/activitylog/writeoffstory/writeoffstory.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/creditcards/allcards/allcards.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/creditcards/allcards/allcards.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/creditcards/allcards/allcards.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/creditcards/allcards/allcards.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/creditcards/allcards/allcards.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/creditcards/allcards/allcards.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/creditcards/creditcarddemands/creditcarddemands.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/creditcards/creditcarddemands/creditcarddemands.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/creditcards/creditcarddemands/creditcarddemands.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/creditcards/creditcarddemands/creditcarddemands.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/creditcards/creditcarddemands/creditcarddemands.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/creditcards/creditcarddemands/creditcarddemands.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/creditcards/creditcards.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/creditcards/creditcards.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/creditcards/myallocations/myallocations.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/creditcards/myallocations/myallocations.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/creditcards/myallocations/myallocations.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/creditcards/myallocations/myallocations.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/creditcards/myallocations/myallocations.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/creditcards/myallocations/myallocations.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/creditcards/myworklist/myworklist.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/creditcards/myworklist/myworklist.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/pages/creditcards/myworklist/myworklist.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/creditcards/myworklist/myworklist.component.spec.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/pages/creditcards/myworklist/myworklist.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/creditcards/myworklist/myworklist.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/creditcards/viewall/viewall.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/creditcards/viewall/viewall.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/pages/creditcards/viewall/viewall.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/creditcards/viewall/viewall.component.spec.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/pages/creditcards/viewall/viewall.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/creditcards/viewall/viewall.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/creditcards/zerobalance/zerobalance.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/creditcards/zerobalance/zerobalance.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/pages/creditcards/zerobalance/zerobalance.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/creditcards/zerobalance/zerobalance.component.spec.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/pages/creditcards/zerobalance/zerobalance.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/creditcards/zerobalance/zerobalance.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/pages/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/home/home.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/pages/home/home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/home/home.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/pages/home/home.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/home/home.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/home/permissionsensor/permissionsensor.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/home/permissionsensor/permissionsensor.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/pages/home/permissionsensor/permissionsensor.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/home/permissionsensor/permissionsensor.component.spec.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/pages/home/permissionsensor/permissionsensor.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/home/permissionsensor/permissionsensor.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/layout/layout.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/layout/layout.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/layout/layout.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/layout/layout.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/layout/layout.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/layout/layout.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/pages/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/login/login.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/login/login.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/login/login.component.spec.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/pages/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/login/login.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/mcoopcash/allecredit/allecredit.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/mcoopcash/allecredit/allecredit.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/mcoopcash/allecredit/allecredit.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/mcoopcash/allecredit/allecredit.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/mcoopcash/allecredit/allecredit.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/mcoopcash/allecredit/allecredit.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/mcoopcash/mcoopcash.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/mcoopcash/mcoopcash.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/mcoopcash/viewall/viewall.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/mcoopcash/viewall/viewall.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/pages/mcoopcash/viewall/viewall.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/mcoopcash/viewall/viewall.component.spec.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/pages/mcoopcash/viewall/viewall.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/mcoopcash/viewall/viewall.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/reminders/allreminders/allreminders.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/reminders/allreminders/allreminders.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/reminders/allreminders/allreminders.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/reminders/allreminders/allreminders.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/reminders/allreminders/allreminders.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/reminders/allreminders/allreminders.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/reminders/newreminders/newreminders.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/reminders/newreminders/newreminders.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/pages/reminders/newreminders/newreminders.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/reminders/newreminders/newreminders.component.spec.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/pages/reminders/newreminders/newreminders.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/reminders/newreminders/newreminders.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/pages/reminders/reminders.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/reminders/reminders.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/rolesensor/rolesensor.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/rolesensor/rolesensor.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/pages/rolesensor/rolesensor.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/rolesensor/rolesensor.component.spec.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/pages/rolesensor/rolesensor.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/rolesensor/rolesensor.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/watch/creditbuildup/creditbuildup.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/watch/creditbuildup/creditbuildup.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/watch/creditbuildup/creditbuildup.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/watch/creditbuildup/creditbuildup.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/watch/creditbuildup/creditbuildup.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/watch/creditbuildup/creditbuildup.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/watch/nocredit/nocredit.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/watch/nocredit/nocredit.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/pages/watch/nocredit/nocredit.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/watch/nocredit/nocredit.component.spec.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/pages/watch/nocredit/nocredit.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/watch/nocredit/nocredit.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/pages/watch/watch.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/watch/watch.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/work/allloans/allloans.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/work/allloans/allloans.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/work/allloans/allloans.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/work/allloans/allloans.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/work/allloans/allloans.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/work/allloans/allloans.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/work/myallocations/myallocations.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/work/myallocations/myallocations.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/work/myallocations/myallocations.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/work/myallocations/myallocations.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/work/myallocations/myallocations.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/work/myallocations/myallocations.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/work/myworklist/myworklist.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/work/myworklist/myworklist.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/pages/work/myworklist/myworklist.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/work/myworklist/myworklist.component.spec.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/pages/work/myworklist/myworklist.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/work/myworklist/myworklist.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/work/predelq/predelq.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/work/predelq/predelq.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/pages/work/predelq/predelq.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/work/predelq/predelq.component.spec.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/pages/work/predelq/predelq.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/work/predelq/predelq.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/work/ptps/ptps.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/work/ptps/ptps.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/pages/work/ptps/ptps.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/work/ptps/ptps.component.spec.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/pages/work/ptps/ptps.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/work/ptps/ptps.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/work/viewall/viewall.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/work/viewall/viewall.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/pages/work/viewall/viewall.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/work/viewall/viewall.component.spec.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/pages/work/viewall/viewall.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/work/viewall/viewall.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/work/withfunds/withfunds.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/work/withfunds/withfunds.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/pages/work/withfunds/withfunds.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/work/withfunds/withfunds.component.spec.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/pages/work/withfunds/withfunds.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/work/withfunds/withfunds.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/pages/work/work.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/work/work.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/services/data.service.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/services/data.service.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/services/data.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/services/data.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/services/ecol.service.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/services/ecol.service.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/services/ecol.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/services/ecol.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/services/excel.service.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/services/excel.service.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/services/excel.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/services/excel.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/default/app.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/default/app.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/default/cooploader.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/default/cooploader.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/default/theme/aqua.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/default/theme/aqua.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/default/theme/black.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/default/theme/black.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/default/theme/blue.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/default/theme/blue.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/default/theme/green.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/default/theme/green.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/default/theme/indigo.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/default/theme/indigo.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/default/theme/lime.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/default/theme/lime.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/default/theme/orange.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/default/theme/orange.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/default/theme/pink.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/default/theme/pink.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/default/theme/purple.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/default/theme/purple.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/default/theme/red.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/default/theme/red.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/default/theme/teal.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/default/theme/teal.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/default/theme/yellow.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/default/theme/yellow.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/environments/environment.prod.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/environment.prod.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/environments/environment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/environment.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/polyfills.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/polyfills.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/angular.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/angular.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/_app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/_app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/_functions.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/_functions.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/_helper.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/_helper.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/_layout.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/_layout.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/_mixins.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/_mixins.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/_plugins.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/_plugins.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/_reboot.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/_reboot.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/_ui.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/_ui.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/_variables.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/app/_content.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/app/_content.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/app/_float-sub-menu.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/app/_float-sub-menu.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/app/_footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/app/_footer.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/app/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/app/_header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/app/_page-loader.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/app/_page-loader.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/app/_sidebar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/app/_sidebar.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/app/_top-menu.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/app/_top-menu.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/layout/_boxed-layout.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/layout/_boxed-layout.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/layout/_page-content-full-height.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/layout/_page-content-full-height.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/layout/_page-empty.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/layout/_page-empty.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/layout/_page-header-fixed.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/layout/_page-header-fixed.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/layout/_page-right-sidebar-toggled.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/layout/_page-right-sidebar-toggled.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/layout/_page-sidebar-fixed.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/layout/_page-sidebar-fixed.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/layout/_page-sidebar-minified.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/layout/_page-sidebar-minified.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/layout/_page-sidebar-toggled.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/layout/_page-sidebar-toggled.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/layout/_page-with-light-sidebar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/layout/_page-with-light-sidebar.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/layout/_page-with-right-sidebar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/layout/_page-with-right-sidebar.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/layout/_page-with-top-menu.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/layout/_page-with-top-menu.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/layout/_page-with-two-sidebar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/layout/_page-with-two-sidebar.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/layout/_page-with-wide-sidebar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/layout/_page-with-wide-sidebar.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/layout/_page-without-sidebar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/layout/_page-without-sidebar.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/mixins/_animation.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/mixins/_animation.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/mixins/_appearance.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/mixins/_appearance.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/mixins/_background-gradient.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/mixins/_background-gradient.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/mixins/_border-radius.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/mixins/_border-radius.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/mixins/_box-shadow.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/mixins/_box-shadow.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/mixins/_clearfix.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/mixins/_clearfix.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/mixins/_column-count.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/mixins/_column-count.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/mixins/_column-gap.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/mixins/_column-gap.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/mixins/_display-flex.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/mixins/_display-flex.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/mixins/_display-inline-flex.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/mixins/_display-inline-flex.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/mixins/_filter.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/mixins/_filter.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/mixins/_flex-align.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/mixins/_flex-align.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/mixins/_flex-basis.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/mixins/_flex-basis.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/mixins/_flex-direction-column.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/mixins/_flex-direction-column.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/mixins/_flex-direction-row.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/mixins/_flex-direction-row.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/mixins/_flex-flow.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/mixins/_flex-flow.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/mixins/_flex-grow.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/mixins/_flex-grow.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/mixins/_flex-justify-content.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/mixins/_flex-justify-content.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/mixins/_flex-wrap.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/mixins/_flex-wrap.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/mixins/_flex.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/mixins/_flex.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/mixins/_fontawesome.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/mixins/_fontawesome.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/mixins/_gradient-enabled.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/mixins/_gradient-enabled.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/mixins/_gradient-linear.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/mixins/_gradient-linear.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/mixins/_helper-color.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/mixins/_helper-color.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/mixins/_helper-font-size.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/mixins/_helper-font-size.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/mixins/_helper-font-weight.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/mixins/_helper-font-weight.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/mixins/_helper-opacity.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/mixins/_helper-opacity.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/mixins/_helper-row-space.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/mixins/_helper-row-space.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/mixins/_helper-size.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/mixins/_helper-size.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/mixins/_helper-spacing.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/mixins/_helper-spacing.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/mixins/_keyframe.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/mixins/_keyframe.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/mixins/_placeholder.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/mixins/_placeholder.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/mixins/_rtl-mode.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/mixins/_rtl-mode.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/mixins/_transform.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/mixins/_transform.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/mixins/_transition.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/mixins/_transition.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/plugins/_apexchart.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/plugins/_apexchart.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/plugins/_bootstrap-calendar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/plugins/_bootstrap-calendar.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/plugins/_bootstrap-colorpalette.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/plugins/_bootstrap-colorpalette.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/plugins/_bootstrap-datetimepicker.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/plugins/_bootstrap-datetimepicker.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/plugins/_bootstrap-select.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/plugins/_bootstrap-select.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/plugins/_bootstrap-show-password.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/plugins/_bootstrap-show-password.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/plugins/_bootstrap-timepicker.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/plugins/_bootstrap-timepicker.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/plugins/_ckeditor.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/plugins/_ckeditor.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/plugins/_colorpicker.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/plugins/_colorpicker.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/plugins/_combobox.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/plugins/_combobox.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/plugins/_datatables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/plugins/_datatables.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/plugins/_datepicker.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/plugins/_datepicker.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/plugins/_daterangepicker.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/plugins/_daterangepicker.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/plugins/_dropzone.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/plugins/_dropzone.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/plugins/_eonasdan-bootstrap-datetimepicker.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/plugins/_eonasdan-bootstrap-datetimepicker.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/plugins/_flot.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/plugins/_flot.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/plugins/_fullcalendar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/plugins/_fullcalendar.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/plugins/_gritter.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/plugins/_gritter.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/plugins/_hljs.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/plugins/_hljs.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/plugins/_introjs.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/plugins/_introjs.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/plugins/_ion-range-slider.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/plugins/_ion-range-slider.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/plugins/_jquery-autocomplete.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/plugins/_jquery-autocomplete.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/plugins/_jquery-sortable.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/plugins/_jquery-sortable.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/plugins/_jstree.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/plugins/_jstree.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/plugins/_jvectormap.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/plugins/_jvectormap.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/plugins/_material-icons.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/plugins/_material-icons.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/plugins/_nvd3.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/plugins/_nvd3.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/plugins/_pace.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/plugins/_pace.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/plugins/_parsley.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/plugins/_parsley.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/plugins/_powerange.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/plugins/_powerange.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/plugins/_pwstrength-bootstrap.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/plugins/_pwstrength-bootstrap.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/plugins/_select2.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/plugins/_select2.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/plugins/_simplecolorpicker.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/plugins/_simplecolorpicker.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/plugins/_slimscroll.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/plugins/_slimscroll.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/plugins/_sparkline.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/plugins/_sparkline.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/plugins/_summernote.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/plugins/_summernote.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/plugins/_superbox.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/plugins/_superbox.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/plugins/_swal.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/plugins/_swal.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/plugins/_tagit.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/plugins/_tagit.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/plugins/_wysihtml5.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/plugins/_wysihtml5.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/plugins/_x-editable.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/plugins/_x-editable.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/styles.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/theme.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/theme.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_alert.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_alert.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_badge.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_badge.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_breadcrumb.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_breadcrumb.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_btn-scroll-to-top.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_btn-scroll-to-top.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_btn.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_btn.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_card.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_card.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_caret.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_caret.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_carousel.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_carousel.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_chats.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_chats.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_checkbox.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_checkbox.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_close.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_close.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_code.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_code.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_coming-soon.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_coming-soon.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_dropdown-menu.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_dropdown-menu.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_error.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_error.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_form-check.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_form-check.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_form-horizontal.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_form-horizontal.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_gallery.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_gallery.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_hr.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_hr.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_inbox.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_inbox.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_input-group-addon.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_input-group-addon.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_input-group.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_input-group.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_invoice.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_invoice.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_label.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_label.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_lead.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_lead.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_legend.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_legend.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_list-group-item.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_list-group-item.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_list-group.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_list-group.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_list.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_list.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_login.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_login.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_map.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_map.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_media-list.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_media-list.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_media-messaging.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_media-messaging.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_media.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_media.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_modal.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_modal.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_nav-tabs.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_nav-tabs.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_nav-wizards.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_nav-wizards.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_nav.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_nav.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_navbar-sticky.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_navbar-sticky.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_note.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_note.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_page-header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_page-header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_pager.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_pager.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_pagination.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_pagination.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_panel.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_panel.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_pos-booking.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_pos-booking.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_pos-counter.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_pos-counter.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_pos-customer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_pos-customer.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_pos-kitchen.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_pos-kitchen.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_pos-stock.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_pos-stock.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_pos.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_pos.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_profile.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_profile.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_progress.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_progress.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_radio.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_radio.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_register.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_register.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_registered-users-list.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_registered-users-list.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_result-list.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_result-list.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_row.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_row.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_spinner.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_spinner.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_switcher.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_switcher.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_tab-overflow.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_tab-overflow.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_table.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_table.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_theme-panel.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_theme-panel.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_timeline.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_timeline.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_todolist.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_todolist.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_vertical-box.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_vertical-box.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_widget-card.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_widget-card.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_widget-chart.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_widget-chart.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_widget-chat.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_widget-chat.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_widget-icon.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_widget-icon.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_widget-img.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_widget-img.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_widget-input.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_widget-input.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_widget-list.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_widget-list.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_widget-map.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_widget-map.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_widget-stats.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_widget-stats.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_widget-table.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_widget-table.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_widget-todolist.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_widget-todolist.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/default/ui/_widget.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/default/ui/_widget.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/login-bg/login-bg-11.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/login-bg/login-bg-11.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/test.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tsconfig.app.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/tsconfig.app.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tsconfig.spec.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/tsconfig.spec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/typings.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/typings.d.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -417,7 +106,6 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.openapi.externalSystem.service.settings.ExternalSystemGroupConfigurable" value="SELECTIVE" />
     <property name="javascript.nodejs.core.library.configured.version" value="14.16.0" />
@@ -436,7 +124,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\user\Desktop\Ecollect10\node_modules\prettier" />
-    <property name="settings.editor.selected.configurable" value="build.tools" />
+    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
     <property name="ts.external.directory.path" value="C:\Users\user\Desktop\Ecollect10\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -494,7 +182,8 @@
       <workItem from="1614285256795" duration="304000" />
       <workItem from="1614285578868" duration="6887000" />
       <workItem from="1614319972105" duration="25155000" />
-      <workItem from="1614499504931" duration="6716000" />
+      <workItem from="1614499504931" duration="13308000" />
+      <workItem from="1614544102547" duration="7005000" />
     </task>
     <task id="LOCAL-00001" summary="Angular 10 upgrade startup">
       <created>1611070245573</created>
@@ -510,7 +199,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614241176303</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="skeleton loader done">
+      <created>1614507593901</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1614507593901</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -533,12 +229,18 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Angular 10 upgrade startup" />
     <MESSAGE value="first run on new beat" />
-    <option name="LAST_COMMIT_MESSAGE" value="first run on new beat" />
+    <MESSAGE value="skeleton loader done" />
+    <option name="LAST_COMMIT_MESSAGE" value="skeleton loader done" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
+    <expand>
+      <path>
+        <item name="Ecollect10" type="b2602c69:ProjectViewProjectNode" />
+        <item name="Ecollect10" type="462c0819:PsiDirectoryNode" />
+      </path>
+    </expand>
     <select />
   </component>
 </project>

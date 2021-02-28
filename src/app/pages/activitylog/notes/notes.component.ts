@@ -201,7 +201,7 @@ export class NotesComponent implements OnInit, OnDestroy {
         { statusPanel: 'agFilteredRowCountComponent' },
         { statusPanel: 'agSelectedRowCountComponent' },
         { statusPanel: 'agAggregationComponent' }
-      ]
+      ],
     };
   }
 

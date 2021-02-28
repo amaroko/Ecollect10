@@ -72,3 +72,5 @@ const routes: Routes = [{ path: '', component: NotesComponent }];
 })
 export class ActivitylogModule {
 }
+
+// entry

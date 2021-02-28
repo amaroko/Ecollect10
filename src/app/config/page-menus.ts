@@ -89,7 +89,7 @@ const Allocations = {
       title: 'Pre Delq',
       url: '/allocations/predelq'
     }
-  ]
+  ],
 };
 
 /*const Reports = {
@@ -178,7 +178,7 @@ const Letters = {
           url: '/creditcards/creditcarddemands/demandshistory'
         }
       ]
-    }
+    },
   ],
   /* ,
    'alert': 'new',
@@ -227,7 +227,7 @@ const Administration = {
       title: 'Branches',
       url: '/users/branches'
     }
-  ]
+  ],
 };
 
 const Forms = {
@@ -256,7 +256,7 @@ const Forms = {
       title: 'Image Crop',
       url: '/forms/cropper'
     }
-  ]
+  ],
 };
 
 const Work = {
@@ -330,7 +330,7 @@ const Work_cc = {
       title: 'View all Cards',
       url: '/creditcards/allcards'
     }
-  ]
+  ],
 };
 
 const Remedial = {
@@ -444,7 +444,7 @@ const assetfinance = {
       title: 'Insurance Companies',
       url: '/configurations/insurance'
     }
-  ]
+  ],
 };
 
 const Demandletters = {
@@ -465,7 +465,7 @@ const Demandletters = {
       title: 'Customer suspensions',
       url: '/letters/customersuspensions'
     }
-  ]
+  ],
 };
 
 const SMS = {
@@ -504,7 +504,7 @@ const AccountPlans = {
       title: 'Plan-Memo setup',
       url: '/configurations/planmemos'
     }
-  ]
+  ],
 };
 
 const headingMain = {

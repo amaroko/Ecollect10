@@ -24,6 +24,7 @@ export class LoginComponent implements OnInit {
   menuArray = ['Home'];
   menuitems: any[];
   private div: any;
+  currentYear: number = new Date().getFullYear();
 
   constructor(
     fb: FormBuilder,
@@ -173,12 +174,6 @@ export class LoginComponent implements OnInit {
         }
       }
     );
-  }
-
-  reDirectTo(uri: string) {
-    this.router
-      .navigateByUrl('/permissionsensor', { skipLocationChange: true })
-      .then(() => this.router.navigate([uri]));
   }
 
   incrementNotificationCount($event) {

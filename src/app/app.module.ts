@@ -148,5 +148,3 @@ export class AppModule {
       });
   }
 }
-
-// AppModule
