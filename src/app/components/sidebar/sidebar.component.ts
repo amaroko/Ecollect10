@@ -1,5 +1,11 @@
-import {animate, state, style, transition, trigger} from '@angular/animations';
-import {menu} from '../../config/page-menus';
+import {
+  animate,
+  state,
+  style,
+  transition,
+  trigger
+} from '@angular/animations';
+import { menu } from '../../config/page-menus';
 import {
   AfterViewChecked,
   Component,
@@ -18,15 +24,23 @@ import pageSettings from '../../config/page-settings';
   templateUrl: './sidebar.component.html',
   animations: [
     trigger('expandCollapse', [
-      state('expand', style({height: '*', overflow: 'hidden', display: 'block'})),
-      state('collapse', style({height: '0px', overflow: 'hidden', display: 'none'})),
-      state('active', style({height: '*', overflow: 'hidden', display: 'block'})),
+      state(
+        'expand',
+        style({ height: '*', overflow: 'hidden', display: 'block' })
+      ),
+      state(
+        'collapse',
+        style({ height: '0px', overflow: 'hidden', display: 'none' })
+      ),
+      state(
+        'active',
+        style({ height: '*', overflow: 'hidden', display: 'block' })
+      ),
       transition('expand <=> collapse', animate(100)),
       transition('active => collapse', animate(100))
-    ])
-  ]
+    ]),
+  ],
 })
-
 export class SidebarComponent implements AfterViewChecked {
   navProfileState = 'collapse';
   @Output() toggleSidebarMinified = new EventEmitter<boolean>();
@@ -51,7 +65,8 @@ export class SidebarComponent implements AfterViewChecked {
   mobileMode;
   desktopMode;
   scrollTop;
-  @ViewChild('sidebarScrollbar', {static: false}) private sidebarScrollbar: ElementRef;
+  @ViewChild('sidebarScrollbar', { static: false })
+  private sidebarScrollbar: ElementRef;
 
   constructor(private eRef: ElementRef) {
     if (window.innerWidth <= 767) {
@@ -83,13 +98,16 @@ export class SidebarComponent implements AfterViewChecked {
     const windowHeight = window.innerHeight;
 
     setTimeout(() => {
-      const targetElm = <HTMLElement>document.querySelector('.float-sub-menu-container');
+      const targetElm = <HTMLElement>(
+        document.querySelector('.float-sub-menu-container')
+      );
       const targetSidebar = <HTMLElement>document.getElementById('sidebar');
       const targetHeight = targetElm.offsetHeight;
       this.pageFloatSubMenuRight = 'auto';
-      this.pageFloatSubMenuLeft = (this.pageFloatSubMenuOffset.width + targetSidebar.offsetLeft) + 'px';
+      this.pageFloatSubMenuLeft =
+        this.pageFloatSubMenuOffset.width + targetSidebar.offsetLeft + 'px';
 
-      if ((windowHeight - targetTop) > targetHeight) {
+      if (windowHeight - targetTop > targetHeight) {
         this.pageFloatSubMenuTop = this.pageFloatSubMenuOffset.top + 'px';
         this.pageFloatSubMenuBottom = 'auto';
         this.pageFloatSubMenuArrowTop = '20px';
@@ -100,7 +118,7 @@ export class SidebarComponent implements AfterViewChecked {
         this.pageFloatSubMenuTop = 'auto';
         this.pageFloatSubMenuBottom = '0';
 
-        const arrowBottom = (windowHeight - targetTop) - 21;
+        const arrowBottom = windowHeight - targetTop - 21;
         this.pageFloatSubMenuArrowTop = 'auto';
         this.pageFloatSubMenuArrowBottom = arrowBottom + 'px';
         this.pageFloatSubMenuLineTop = '20px';
@@ -136,9 +154,15 @@ export class SidebarComponent implements AfterViewChecked {
       }
     }
     if (active.isActive) {
-      currentMenu.state = (currentMenu.state && currentMenu.state === 'collapse') ? 'expand' : 'collapse';
+      currentMenu.state =
+        currentMenu.state && currentMenu.state === 'collapse'
+          ? 'expand'
+          : 'collapse';
     } else {
-      currentMenu.state = (currentMenu.state && currentMenu.state === 'expand') ? 'collapse' : 'expand';
+      currentMenu.state =
+        currentMenu.state && currentMenu.state === 'expand'
+          ? 'collapse'
+          : 'expand';
     }
   }
 
@@ -193,8 +217,10 @@ export class SidebarComponent implements AfterViewChecked {
 
   @HostListener('scroll', ['$event'])
   onScroll(event) {
-    this.scrollTop = (this.pageSettings.pageSidebarMinified) ? event.srcElement.scrollTop + 40 : 0;
-    if (typeof (Storage) !== 'undefined') {
+    this.scrollTop = this.pageSettings.pageSidebarMinified
+      ? event.srcElement.scrollTop + 40
+      : 0;
+    if (typeof Storage !== 'undefined') {
       localStorage.setItem('sidebarScroll', event.srcElement.scrollTop);
     }
   }
@@ -211,9 +237,10 @@ export class SidebarComponent implements AfterViewChecked {
   }
 
   ngAfterViewChecked() {
-    if (typeof (Storage) !== 'undefined' && localStorage.sidebarScroll) {
+    if (typeof Storage !== 'undefined' && localStorage.sidebarScroll) {
       if (this.sidebarScrollbar && this.sidebarScrollbar.nativeElement) {
-        this.sidebarScrollbar.nativeElement.scrollTop = localStorage.sidebarScroll;
+        this.sidebarScrollbar.nativeElement.scrollTop =
+          localStorage.sidebarScroll;
       }
     }
   }

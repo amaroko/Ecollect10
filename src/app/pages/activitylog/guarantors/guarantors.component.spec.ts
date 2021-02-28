@@ -1,6 +1,6 @@
-import {ComponentFixture, TestBed} from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import {GuarantorsComponent} from './guarantors.component';
+import { GuarantorsComponent } from './guarantors.component';
 
 describe('GuarantorsComponent', () => {
   let component: GuarantorsComponent;
@@ -9,8 +9,7 @@ describe('GuarantorsComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [GuarantorsComponent]
-    })
-      .compileComponents();
+    }).compileComponents();
   });
 
   beforeEach(() => {

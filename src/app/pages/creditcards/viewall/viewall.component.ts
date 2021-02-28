@@ -1,7 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {environment} from '../../../../environments/environment';
-import {HttpClient} from '@angular/common/http';
-import {AllModules} from '@ag-grid-enterprise/all-modules';
+import { Component, OnInit } from '@angular/core';
+import { environment } from '../../../../environments/environment';
+import { HttpClient } from '@angular/common/http';
+import { AllModules } from '@ag-grid-enterprise/all-modules';
 
 @Component({
   selector: 'app-viewall',
@@ -30,65 +30,72 @@ export class ViewallComponent implements OnInit {
 
   constructor(private http: HttpClient) {
     this.columnDefs = [
-
       {
         headerName: 'CARDACCT',
         field: 'CARDACCT',
-        cellRenderer: function (params) {
+        cellRenderer: function(params) {
           return '<a  href="#" target="_blank">' + params.value + '</a>';
         },
         width: 90,
-        filter: 'agTextColumnFilter', filterParams: {newRowsAction: 'keep'}
+        filter: 'agTextColumnFilter',
+        filterParams: { newRowsAction: 'keep' }
       },
       {
         headerName: 'CARDNUMBER',
         field: 'CARDNUMBER',
         width: 90,
-        filter: 'agTextColumnFilter', filterParams: {newRowsAction: 'keep'}
+        filter: 'agTextColumnFilter',
+        filterParams: { newRowsAction: 'keep' }
       },
       {
         headerName: 'CARDNAME',
         field: 'CARDNAME',
         width: 90,
-        filter: 'agTextColumnFilter', filterParams: {newRowsAction: 'keep'}
+        filter: 'agTextColumnFilter',
+        filterParams: { newRowsAction: 'keep' }
       },
       {
         headerName: 'DAYSINARREARS',
         field: 'DAYSINARREARS',
         width: 90,
-        filter: 'agNumberColumnFilter', filterParams: {newRowsAction: 'keep'}
+        filter: 'agNumberColumnFilter',
+        filterParams: { newRowsAction: 'keep' }
       },
       {
         headerName: 'EXPPMNT',
         field: 'EXPPMNT',
         width: 90,
-        filter: 'agNumberColumnFilter', filterParams: {newRowsAction: 'keep'}
+        filter: 'agNumberColumnFilter',
+        filterParams: { newRowsAction: 'keep' }
       },
       {
         headerName: 'OUTSTANDING BALANCE',
         field: 'OUTBALANCE',
         width: 90,
-        filter: 'agNumberColumnFilter', filterParams: {newRowsAction: 'keep'}
+        filter: 'agNumberColumnFilter',
+        filterParams: { newRowsAction: 'keep' }
       },
       {
         headerName: 'LIMIT',
         field: 'LIMIT',
         width: 90,
-        filter: 'agNumberColumnFilter', filterParams: {newRowsAction: 'keep'}
+        filter: 'agNumberColumnFilter',
+        filterParams: { newRowsAction: 'keep' }
       },
       {
         headerName: 'CYCLE',
         field: 'CYCLE',
         width: 90,
-        filter: 'agNumberColumnFilter', filterParams: {newRowsAction: 'keep'}
+        filter: 'agNumberColumnFilter',
+        filterParams: { newRowsAction: 'keep' }
       },
       {
         headerName: 'COLOFFICER',
         field: 'COLOFFICER',
         width: 90,
-        filter: 'agTextColumnFilter', filterParams: {newRowsAction: 'keep'}
-      },
-
+        filter: 'agTextColumnFilter',
+        filterParams: { newRowsAction: 'keep' }
+      }
     ];
     this.defaultColDef = {
       width: 120,
@@ -120,17 +127,17 @@ export class ViewallComponent implements OnInit {
         fetch(environment.nodeapi + '/gridcardsviewall/viewall', {
           method: 'post',
           body: JSON.stringify(params.request),
-          headers: {'Content-Type': 'application/json; charset=utf-8'}
+          headers: { 'Content-Type': 'application/json; charset=utf-8' }
         })
-          .then(httpResponse => httpResponse.json())
-          .then(response => {
+          .then((httpResponse) => httpResponse.json())
+          .then((response) => {
             params.successCallback(response.rows, response.lastRow);
           })
-          .catch(error => {
+          .catch((error) => {
             console.error(error);
             params.failCallback();
           });
-      }
+      },
     };
 
     params.api.setServerSideDatasource(datasource);
@@ -139,7 +146,7 @@ export class ViewallComponent implements OnInit {
   ServerSideDatasource(server) {
     return {
       getRows(params) {
-        setTimeout(function () {
+        setTimeout(function() {
           const response = server.getResponse(params.request);
           if (response.success) {
             params.successCallback(response.rows, response.lastRow);
@@ -153,7 +160,9 @@ export class ViewallComponent implements OnInit {
 
   currencyFormatter(params) {
     if (params.value !== undefined) {
-      return (Math.floor(params.value * 100) / 100).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
+      return (Math.floor(params.value * 100) / 100)
+        .toString()
+        .replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
     } else {
       return '';
     }
@@ -163,15 +172,21 @@ export class ViewallComponent implements OnInit {
     this.model = event.node.data;
     // console.log(this.model);
     // tslint:disable-next-line:max-line-length
-    window.open(environment.applink + '/activitylog?accnumber=' + this.model.CARDACCT + '&custnumber=' + this.model.CARDACCT + '&username=' + this.username + '&sys=cc', '_blank');
+    window.open(
+      environment.applink +
+      '/activitylog?accnumber=' +
+      this.model.CARDACCT +
+      '&custnumber=' +
+      this.model.CARDACCT +
+      '&username=' +
+      this.username +
+      '&sys=cc',
+      '_blank'
+    );
   }
-
 
   public ngOnInit(): void {
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
     this.username = currentUser.USERNAME;
   }
-
 }
-
-

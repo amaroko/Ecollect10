@@ -1,6 +1,6 @@
-import {ComponentFixture, TestBed} from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import {BulknotesComponent} from './bulknotes.component';
+import { BulknotesComponent } from './bulknotes.component';
 
 describe('BulknotesComponent', () => {
   let component: BulknotesComponent;
@@ -9,8 +9,7 @@ describe('BulknotesComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [BulknotesComponent]
-    })
-      .compileComponents();
+    }).compileComponents();
   });
 
   beforeEach(() => {

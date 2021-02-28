@@ -14,15 +14,12 @@
 <app-panel title="Loan Arrears(ALL)">
   <ag-grid-angular
     #agGrid
-    (gridReady)="onGridReady($event)"
+    (gridReady)='onGridReady($event)'
     (rowClicked)='onRowDoubleClicked($event)'
     [animateRows]="true"
     [columnDefs]="columnDefs"
     [defaultColDef]="defaultColDef"
-
-
     [enableRangeSelection]="true"
-
     [floatingFilter]="true"
     [maxBlocksInCache]="maxBlocksInCache"
     [modules]="modules"
@@ -34,9 +31,8 @@
     [rowModelType]="rowModelType"
     [sideBar]="true"
     class="ag-theme-balham"
-    id="myGrid"
-    style="width: 100%; height: 700px;"
+    id='myGrid'
+    style='width: 100%; height: 700px'
   ></ag-grid-angular>
 </app-panel>
 <!-- end panel -->
-

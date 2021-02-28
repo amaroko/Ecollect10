@@ -1,8 +1,15 @@
-import {Component, EventEmitter, Input, OnDestroy, Output, Renderer2} from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnDestroy,
+  Output,
+  Renderer2
+} from '@angular/core';
 import pageSettings from '../../config/page-settings';
 import swal from 'sweetalert2';
-import {Router} from '@angular/router';
-import {EcolService} from '../../services/ecol.service';
+import { Router } from '@angular/router';
+import { EcolService } from '../../services/ecol.service';
 
 @Component({
   selector: 'app-header',
@@ -21,14 +28,15 @@ export class HeaderComponent implements OnDestroy {
   userperm: any;
   user: any;
 
-
-  constructor(private renderer: Renderer2,
-              public ecolService: EcolService,
-              public router: Router) {
+  constructor(
+    private renderer: Renderer2,
+    public ecolService: EcolService,
+    public router: Router
+  ) {
     setInterval(() => {
       this.clock = new Date(); // shows clock on header
-      this.getGreetings();  // greeting text
-    }, 1000);    // sync time and greeting text in real time
+      this.getGreetings(); // greeting text
+    }, 1000); // sync time and greeting text in real time
     this.userdata = JSON.parse(localStorage.getItem('currentUser'));
     this.userperm = JSON.parse(localStorage.getItem('userpermission'));
     this.user = {
@@ -43,7 +51,7 @@ export class HeaderComponent implements OnDestroy {
 
   getGreetings() {
     const data = [
-        [0, 11, 'Good Morning'],          // Store messages in an array
+        [0, 11, 'Good Morning'], // Store messages in an array
         [12, 16, 'Good Afternoon'],
         [17, 24, 'Good Evening']
       ],
@@ -72,11 +80,13 @@ export class HeaderComponent implements OnDestroy {
   }
 
   mobileTopMenuToggle() {
-    this.pageSettings.pageMobileTopMenuToggled = !this.pageSettings.pageMobileTopMenuToggled;
+    this.pageSettings.pageMobileTopMenuToggled = !this.pageSettings
+      .pageMobileTopMenuToggled;
   }
 
   mobileMegaMenuToggle() {
-    this.pageSettings.pageMobileMegaMenuToggled = !this.pageSettings.pageMobileMegaMenuToggled;
+    this.pageSettings.pageMobileMegaMenuToggled = !this.pageSettings
+      .pageMobileMegaMenuToggled;
   }
 
   ngOnDestroy() {
@@ -85,19 +95,21 @@ export class HeaderComponent implements OnDestroy {
   }
 
   logout() {
-    swal.fire({
-      title: (this.user.firstname).toUpperCase() + ', are you sure?',
-      imageUrl: 'assets/img/user/coop.jpg',
-      text: 'You want to logout!',
-      showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
-      confirmButtonText: 'Yes, Logout!'
-    }).then((result) => {
-      if (result.value) {
-        this.ecolService.logout();
-        this.router.navigate(['/login']);
-      }
-    });
+    swal
+      .fire({
+        title: this.user.firstname.toUpperCase() + ', are you sure?',
+        imageUrl: 'assets/img/user/coop.jpg',
+        text: 'You want to logout!',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, Logout!'
+      })
+      .then((result) => {
+        if (result.value) {
+          this.ecolService.logout();
+          this.router.navigate(['/login']);
+        }
+      });
   }
 }

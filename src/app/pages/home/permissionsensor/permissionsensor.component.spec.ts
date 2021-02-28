@@ -1,6 +1,6 @@
-import {ComponentFixture, TestBed} from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import {PermissionsensorComponent} from './permissionsensor.component';
+import { PermissionsensorComponent } from './permissionsensor.component';
 
 describe('PermissionsensorComponent', () => {
   let component: PermissionsensorComponent;
@@ -9,8 +9,7 @@ describe('PermissionsensorComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [PermissionsensorComponent]
-    })
-      .compileComponents();
+    }).compileComponents();
   });
 
   beforeEach(() => {

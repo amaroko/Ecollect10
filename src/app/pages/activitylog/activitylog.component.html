@@ -5,96 +5,142 @@
     <div class="profile-header-cover"></div>
     <!-- END profile-header-cover -->
     <!-- BEGIN profile-header-content -->
-    <div class="profile-header-content">
+    <div class='profile-header-content'>
       <!-- BEGIN profile-header-img -->
 
 
-      <div *ngIf="!loader" class="profile-header-img">
-        <img alt="" src="/assets/img/user/user-13.jpg">
+      <div *ngIf='accountdetails' class='profile-header-img'>
+
+        <img alt='' src='/assets/img/user/user-13.jpg' />
       </div>
 
-      <div *ngIf="loader" class="profile-header-img">
-        <ngx-skeleton-loader *ngIf="loader"  appearance="circle" [theme]="{ width: '80px', height: '80px',
-        'background-color': '#c8c7c7'}">
-        </ngx-skeleton-loader>
+
+      <div *ngIf='!accountdetails' class='profile-header-img'>
+
+        <ngx-skeleton-loader
+          [theme]="{
+            width: '80px',
+            height: '80px',
+            'background-color': '#c8c7c7'
+          }"
+
+          appearance='circle'
+        ></ngx-skeleton-loader>
+
+
       </div>
+
 
       <!-- END profile-header-img -->
       <!-- BEGIN profile-header-info -->
-      <div  class="profile-header-info">
-        <div  >
+      <div class='profile-header-info'>
+        <div>
 
-<!--            <ngx-skeleton-loader *ngIf="loader"  [theme]="{-->
-<!--            width: '200px',-->
-<!--            'border-radius': '0',-->
-<!--            height: '15px',-->
-<!--            'background-color': '#c8c7c7',-->
-<!--            'margin-bottom': '10px'-->
-<!--          }"></ngx-skeleton-loader>-->
+          <h4 class='m-t-10 m-b-5'>
+            <ngx-skeleton-loader
+              *ngIf='!accountdetails'
+              [theme]="{
+                width: '50%',
+                'border-radius': '0',
+                height: '15px',
+                'background-color': '#c8c7c7',
+                'margin-bottom': '10px'
+              }">
 
-          <div *ngIf="loader" >
-            <ngx-skeleton-loader *ngIf="loader" [count]="3" [theme]="{
-                      width: '200px',
-                      'border-radius': '0',
-                      height: '15px',
-                      'background-color': '#c8c7c7',
-                      'margin-bottom': '10px'
-                    }"></ngx-skeleton-loader>
+            </ngx-skeleton-loader>
+            {{
+            accountdetails?.client_name ||
+            accountdetails?.cardname ||
+            accountdetails?.clientname ||
+            accountdetails?.custname
+            }}
+          </h4>
+          <!--          <ngx-skeleton-loader *ngIf="loader" [theme]="{ width: '170px', 'border-radius': '0', height: '15px' }">-->
+          <!--          </ngx-skeleton-loader>-->
+          <p class='m-b-10'>
+            <ngx-skeleton-loader
+              *ngIf='!accountdetails'
+              [theme]="{
+                width: '50%',
+                'border-radius': '0',
+                height: '15px',
+                'background-color': '#c8c7c7',
+                'margin-bottom': '10px'
+              }">
 
+            </ngx-skeleton-loader>
+            {{ accountdetails?.addressline1 || accountdetails?.address }}
+          </p>
+          <p class='m-b-10'>
+            <ngx-skeleton-loader
+              *ngIf='!accountdetails'
+              [theme]="{
+                width: '50%',
+                'border-radius': '0',
+                height: '15px',
+                'background-color': '#c8c7c7',
+                'margin-bottom': '10px'
+              }">
 
-          </div>
-
-
-        <h4
-          class="m-t-10 m-b-5">{{accountdetails?.client_name || accountdetails?.cardname || accountdetails?.clientname || accountdetails?.custname}}</h4>
-<!--          <ngx-skeleton-loader *ngIf="loader" [theme]="{ width: '170px', 'border-radius': '0', height: '15px' }">-->
-<!--          </ngx-skeleton-loader>-->
-        <p  class="m-b-10">{{accountdetails?.addressline1 || accountdetails?.address}}</p>
-        <p
-          class="m-b-10">{{accountdetails?.cellnumber || accountdetails?.mobile || accountdetails?.phonenumber || accountdetails?.telnumber || accountdetails?.celnumber}}</p>
-        <a (click)="copyText(num())" *ngIf="autodial_telnumber?.length" class="btn btn-sm btn-secondary"
-           ngbPopover="{{autodial_telnumber}} copied!!">{{autodial_telnumber}}</a>
-        <a *ngIf="teles?.length===0 && !loader" aria-expanded="false" aria-haspopup="true"
-           class="btn btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" disabled
-           id="dropdownMenuButton" ngbPopover="No More Contacts to Show">
-          More contacts <span class="badge badge-info">{{totalTeles}}</span></a>
-        <a *ngIf="teles?.length > 0 && !loader" aria-expanded="false"
-           aria-haspopup="true" class="btn btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown"
-           id="dropdownMenuButton1" title="Press here for more contacts" type="button">
-          More contacts <span class="badge badge-info">{{totalTeles}}</span></a>
-      </div>
-      </div>
-      <!-- END profile-header-info -->
-
-
-      <div *ngIf="loader"  class="profile-header-info">
-        <div  >
-          <ngx-skeleton-loader *ngIf="loader" [count]="3" [theme]="{
-                      width: '200px',
-                      'border-radius': '0',
-                      height: '15px',
-                      'background-color': '#c8c7c7',
-                      'margin-bottom': '10px'
-                    }"></ngx-skeleton-loader>
-
-
+            </ngx-skeleton-loader>
+            {{
+            accountdetails?.cellnumber ||
+            accountdetails?.mobile ||
+            accountdetails?.phonenumber ||
+            accountdetails?.telnumber ||
+            accountdetails?.celnumber
+            }}
+          </p>
+          <a
+            (click)='copyText(num())'
+            *ngIf='autodial_telnumber?.length'
+            class='btn btn-sm btn-secondary'
+            ngbPopover='{{ autodial_telnumber }} copied!!'
+          >
+            {{ autodial_telnumber }}</a
+          >
+          <a
+            *ngIf='teles?.length === 0 '
+            aria-expanded='false'
+            aria-haspopup='true'
+            class='btn btn-secondary btn-sm dropdown-toggle'
+            data-toggle='dropdown'
+            disabled
+            id='dropdownMenuButton'
+            ngbPopover='No More Contacts to Show'
+          >
+            More contacts
+            <span class='badge badge-info'>{{ totalTeles }}</span></a
+          >
+          <a
+            *ngIf='teles?.length > 0'
+            aria-expanded='false'
+            aria-haspopup='true'
+            class='btn btn-secondary btn-sm dropdown-toggle'
+            data-toggle='dropdown'
+            id='dropdownMenuButton1'
+            title='Press here for more contacts'
+            type='button'
+          >
+            More contacts
+            <span class='badge badge-info'>{{ totalTeles }}</span></a
+          >
         </div>
       </div>
-
-
-
-
-
+      <!-- END profile-header-info -->
 
     </div>
     <!-- END profile-header-content -->
 
-
     <!-- BEGIN profile-header-tab -->
-    <ul class="profile-header-tab">
-      <div [ngClass]="{NONE: plan === 'NONE'}" [ngStyle]="{backgroundColor: getColor()}" class="row">
-        <div class="col-xl-12" style="padding-left: 10px; color: white">
-          <p style="margin-left: 10px">Current Account Plan: {{plan}}</p>
+    <ul class='profile-header-tab'>
+      <div
+        [ngClass]="{ NONE: plan === 'NONE' }"
+        [ngStyle]='{ backgroundColor: getColor() }'
+        class='row'
+      >
+        <div class='col-xl-12' style='padding-left: 10px; color: white'>
+          <p style='margin-left: 10px'>Current Account Plan: {{ plan }}</p>
         </div>
       </div>
     </ul>
@@ -103,93 +149,220 @@
 </div>
 <!-- end profile -->
 <div class="row">
-  <div class="hidden-xs col-sm-2">
-    <div class="fading-side-menu" data-offset-top="350" data-spy="affix" style="padding-left: 10px">
+  <div class='hidden-xs col-sm-2'>
+    <div
+      class='fading-side-menu'
+      data-offset-top='350'
+      data-spy='affix'
+      style='padding-left: 10px'
+    >
       <h5>Menus</h5>
-      <button [queryParams]="{accnumber: accnumber, custnumber: custnumber, username: username, sys: sys}"
-              [routerLinkActive]="['active']"
-              [routerLink]="['./activityhome']" class="btn btn-inverse btn btn-block" queryParamsHandling="merge"><i
-        class="fa fa-list pull-right"></i>Client Home
+      <button
+        [queryParams]='{
+          accnumber: accnumber,
+          custnumber: custnumber,
+          username: username,
+          sys: sys
+        }'
+        [routerLinkActive]="['active']"
+        [routerLink]="['./activityhome']"
+        class='btn btn-inverse btn btn-block'
+        queryParamsHandling='merge'
+      >
+        <i class='fa fa-list pull-right'></i>Client Home
       </button>
 
-      <button [queryParams]="{accnumber: accnumber, custnumber: custnumber, username: username, sys: sys}"
-              [routerLinkActive]="['active']"
-              [routerLink]="['./notes']"
-              class="btn btn-inverse btn btn-block" queryParamsHandling="merge">Notes History<span
-        class="badge badge-danger float-right">{{notes}}</span></button>
-
-      <button [queryParams]="{accnumber: accnumber, custnumber: custnumber, username: username, sys: sys}"
-              [routerLinkActive]="['active']"
-              [routerLink]="['./activityaction']"
-              class="btn btn-inverse btn btn-block" queryParamsHandling="merge">Collector Activity
+      <button
+        [queryParams]='{
+          accnumber: accnumber,
+          custnumber: custnumber,
+          username: username,
+          sys: sys
+        }'
+        [routerLinkActive]="['active']"
+        [routerLink]="['./notes']"
+        class='btn btn-inverse btn btn-block'
+        queryParamsHandling='merge'
+      >
+        Notes History<span class='badge badge-danger float-right'>{{
+        notes
+        }}</span>
       </button>
 
-      <button [queryParams]="{accnumber: accnumber, custnumber: custnumber, username: username, sys: sys}"
-              [routerLinkActive]="['active']"
-              [routerLink]="['./demandletters']"
-              class="btn btn-inverse btn btn-block" queryParamsHandling="merge">Demand Letters
+      <button
+        [queryParams]='{
+          accnumber: accnumber,
+          custnumber: custnumber,
+          username: username,
+          sys: sys
+        }'
+        [routerLinkActive]="['active']"
+        [routerLink]="['./activityaction']"
+        class='btn btn-inverse btn btn-block'
+        queryParamsHandling='merge'
+      >
+        Collector Activity
       </button>
 
-      <button [queryParams]="{accnumber: accnumber, custnumber: custnumber, username: username, sys: sys}"
-              [routerLinkActive]="['active']"
-              [routerLink]="['./sms']"
-              class="btn btn-inverse btn btn-block">Send SMS
+      <button
+        [queryParams]='{
+          accnumber: accnumber,
+          custnumber: custnumber,
+          username: username,
+          sys: sys
+        }'
+        [routerLinkActive]="['active']"
+        [routerLink]="['./demandletters']"
+        class='btn btn-inverse btn btn-block'
+        queryParamsHandling='merge'
+      >
+        Demand Letters
       </button>
 
-      <button [queryParams]="{accnumber: accnumber, custnumber: custnumber, username: username, sys: sys}"
-              [routerLinkActive]="['active']"
-              [routerLink]="['./accplan']"
-              class="btn btn-inverse btn btn-block">Account Plan
+      <button
+        [queryParams]='{
+          accnumber: accnumber,
+          custnumber: custnumber,
+          username: username,
+          sys: sys
+        }'
+        [routerLinkActive]="['active']"
+        [routerLink]="['./sms']"
+        class='btn btn-inverse btn btn-block'
+      >
+        Send SMS
       </button>
 
-      <button [queryParams]="{accnumber: accnumber, custnumber: custnumber, username: username, sys: sys}"
-              [routerLinkActive]="['active']"
-              [routerLink]="['./contacts']"
-              class="btn btn-inverse btn btn-block">Customer Contacts<span
-        class="badge badge-danger float-right">{{totalcontacts}}</span></button>
-
-      <button [queryParams]="{accnumber: accnumber, custnumber: custnumber, username: username, sys: sys}"
-              [routerLinkActive]="['active']"
-              [routerLink]="['./remedialcollaterals']"
-              class="btn btn-inverse btn btn-block">Remedial Collaterals<span
-        class="badge badge-danger float-right">{{totalcollaterals1}}</span></button>
-
-      <button [queryParams]="{accnumber: accnumber, custnumber: custnumber, username: username, sys: sys}"
-              [routerLinkActive]="['active']"
-              [routerLink]="['./guarantors']"
-              class="btn btn-inverse btn btn-block" queryParamsHandling="merge">Guarantors<span
-        class="badge badge-danger float-right">{{totalguarantors}}</span></button>
-
-      <button [queryParams]="{accnumber: accnumber, custnumber: custnumber, username: username, sys: sys}"
-              [routerLinkActive]="['active']"
-              [routerLink]="['./files']"
-              class="btn btn-inverse btn btn-block" queryParamsHandling="merge">Upload Files<span
-        class="badge badge-danger float-right">{{totalfiles}}</span></button>
-
-      <button [queryParams]="{accnumber: accnumber, custnumber: custnumber, username: username, sys: sys}"
-              [routerLinkActive]="['active']"
-              [routerLink]="['./bulknotes']"
-              class="btn btn-inverse btn btn-block">Bulk Note Upload
+      <button
+        [queryParams]='{
+          accnumber: accnumber,
+          custnumber: custnumber,
+          username: username,
+          sys: sys
+        }'
+        [routerLinkActive]="['active']"
+        [routerLink]="['./accplan']"
+        class='btn btn-inverse btn btn-block'
+      >
+        Account Plan
       </button>
 
-      <button [queryParams]="{accnumber: accnumber, custnumber: custnumber, username: username, sys: sys}"
-              [routerLinkActive]="['active']"
-              [routerLink]="['./ptps']"
-              class="btn btn-inverse btn btn-block">Promises to Pay<span
-        class="badge badge-danger float-right">{{totalPtps}}</span></button>
+      <button
+        [queryParams]='{
+          accnumber: accnumber,
+          custnumber: custnumber,
+          username: username,
+          sys: sys
+        }'
+        [routerLinkActive]="['active']"
+        [routerLink]="['./contacts']"
+        class='btn btn-inverse btn btn-block'
+      >
+        Customer Contacts<span class='badge badge-danger float-right'>{{
+        totalcontacts
+        }}</span>
+      </button>
 
-      <button [queryParams]="{accnumber: accnumber, custnumber: custnumber, username: username, sys: sys}"
-              [routerLinkActive]="['active']"
-              [routerLink]="['./writeoffstory']"
-              class="btn btn-inverse btn btn-block">Write-off Story<span
-        class="badge badge-danger float-right">{{totalwoffstory}}</span></button>
+      <button
+        [queryParams]='{
+          accnumber: accnumber,
+          custnumber: custnumber,
+          username: username,
+          sys: sys
+        }'
+        [routerLinkActive]="['active']"
+        [routerLink]="['./remedialcollaterals']"
+        class='btn btn-inverse btn btn-block'
+      >
+        Remedial Collaterals<span class='badge badge-danger float-right'>{{
+        totalcollaterals1
+        }}</span>
+      </button>
+
+      <button
+        [queryParams]='{
+          accnumber: accnumber,
+          custnumber: custnumber,
+          username: username,
+          sys: sys
+        }'
+        [routerLinkActive]="['active']"
+        [routerLink]="['./guarantors']"
+        class='btn btn-inverse btn btn-block'
+        queryParamsHandling='merge'
+      >
+        Guarantors<span class='badge badge-danger float-right'>{{
+        totalguarantors
+        }}</span>
+      </button>
+
+      <button
+        [queryParams]='{
+          accnumber: accnumber,
+          custnumber: custnumber,
+          username: username,
+          sys: sys
+        }'
+        [routerLinkActive]="['active']"
+        [routerLink]="['./files']"
+        class='btn btn-inverse btn btn-block'
+        queryParamsHandling='merge'
+      >
+        Upload Files<span class='badge badge-danger float-right'>{{
+        totalfiles
+        }}</span>
+      </button>
+
+      <button
+        [queryParams]='{
+          accnumber: accnumber,
+          custnumber: custnumber,
+          username: username,
+          sys: sys
+        }'
+        [routerLinkActive]="['active']"
+        [routerLink]="['./bulknotes']"
+        class='btn btn-inverse btn btn-block'
+      >
+        Bulk Note Upload
+      </button>
+
+      <button
+        [queryParams]='{
+          accnumber: accnumber,
+          custnumber: custnumber,
+          username: username,
+          sys: sys
+        }'
+        [routerLinkActive]="['active']"
+        [routerLink]="['./ptps']"
+        class='btn btn-inverse btn btn-block'
+      >
+        Promises to Pay<span class='badge badge-danger float-right'>{{
+        totalPtps
+        }}</span>
+      </button>
+
+      <button
+        [queryParams]='{
+          accnumber: accnumber,
+          custnumber: custnumber,
+          username: username,
+          sys: sys
+        }'
+        [routerLinkActive]="['active']"
+        [routerLink]="['./writeoffstory']"
+        class='btn btn-inverse btn btn-block'
+      >
+        Write-off Story<span class='badge badge-danger float-right'>{{
+        totalwoffstory
+        }}</span>
+      </button>
     </div>
   </div>
   <div class="hidden-xs col-sm-10">
-
     <router-outlet></router-outlet>
   </div>
 </div>
 
 <!-- end profile-content -->
-

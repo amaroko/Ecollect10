@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-newreminders',
@@ -6,11 +6,9 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./newreminders.component.css']
 })
 export class NewremindersComponent implements OnInit {
-
   constructor() {
   }
 
   ngOnInit() {
   }
-
 }

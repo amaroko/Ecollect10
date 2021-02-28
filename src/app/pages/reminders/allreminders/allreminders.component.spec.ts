@@ -1,6 +1,6 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import {AllremindersComponent} from './allreminders.component';
+import { AllremindersComponent } from './allreminders.component';
 
 describe('AllremindersComponent', () => {
   let component: AllremindersComponent;
@@ -9,8 +9,7 @@ describe('AllremindersComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [AllremindersComponent]
-    })
-      .compileComponents();
+    }).compileComponents();
   }));
 
   beforeEach(() => {

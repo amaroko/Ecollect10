@@ -1,6 +1,6 @@
-import {ComponentFixture, TestBed} from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import {SmsComponent} from './sms.component';
+import { SmsComponent } from './sms.component';
 
 describe('SmsComponent', () => {
   let component: SmsComponent;
@@ -9,8 +9,7 @@ describe('SmsComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [SmsComponent]
-    })
-      .compileComponents();
+    }).compileComponents();
   });
 
   beforeEach(() => {

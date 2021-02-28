@@ -1,6 +1,6 @@
-import {ComponentFixture, TestBed} from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import {AccplanComponent} from './accplan.component';
+import { AccplanComponent } from './accplan.component';
 
 describe('AccplanComponent', () => {
   let component: AccplanComponent;
@@ -9,8 +9,7 @@ describe('AccplanComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [AccplanComponent]
-    })
-      .compileComponents();
+    }).compileComponents();
   });
 
   beforeEach(() => {

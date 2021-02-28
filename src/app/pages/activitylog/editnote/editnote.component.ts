@@ -1,9 +1,9 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
-import {EcolService} from '../../../services/ecol.service';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { EcolService } from '../../../services/ecol.service';
 import swal from 'sweetalert2';
-import {environment} from '../../../../environments/environment';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import { environment } from '../../../../environments/environment';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 const URL = environment.valor;
 
@@ -13,7 +13,6 @@ const URL = environment.valor;
   styleUrls: ['./editnote.component.css']
 })
 export class EditnoteComponent implements OnInit {
-
   custnumber: string;
   accnumber: string;
   username: string;
@@ -26,7 +25,8 @@ export class EditnoteComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private ecolService: EcolService,
-    private formBuilder: FormBuilder) {
+    private formBuilder: FormBuilder
+  ) {
     //
   }
 
@@ -42,7 +42,7 @@ export class EditnoteComponent implements OnInit {
     this.username = currentUser.USERNAME;
 
     this.accnumber = this.route.snapshot.queryParamMap.get('accnumber');
-    this.route.queryParamMap.subscribe(queryParams => {
+    this.route.queryParamMap.subscribe((queryParams) => {
       this.accnumber = queryParams.get('accnumber');
       this.model.accnumber = queryParams.get('accnumber');
     });
@@ -53,13 +53,13 @@ export class EditnoteComponent implements OnInit {
     });*/
 
     this.custnumber = this.route.snapshot.queryParamMap.get('custnumber');
-    this.route.queryParamMap.subscribe(queryParams => {
+    this.route.queryParamMap.subscribe((queryParams) => {
       this.custnumber = queryParams.get('custnumber');
       this.model.custnumber = queryParams.get('custnumber');
     });
 
     this.noteid = this.route.snapshot.queryParamMap.get('id');
-    this.route.queryParamMap.subscribe(queryParams => {
+    this.route.queryParamMap.subscribe((queryParams) => {
       this.noteid = queryParams.get('id');
       this.model.id = queryParams.get('id');
     });
@@ -86,44 +86,48 @@ export class EditnoteComponent implements OnInit {
       accnumber: this.model.accnumber,
       notesrc: this.note.notesrc,
       noteimp: this.note.noteimp,
-      notedate: this.note.notedate,
+      notedate: this.note.notedate
     };
-    this.ecolService.updatenote(body).subscribe(data => {
-      console.log(body);
-      swal.fire('Successful!', 'Note updated!', 'success').then(function () {
-        window.history.back();
-
-      });
-      //
-    }, error => {
-      console.log(error);
-      swal.fire('Error!', 'Error occurred during processing!', 'error');
-    });
+    this.ecolService.updatenote(body).subscribe(
+      (data) => {
+        console.log(body);
+        swal.fire('Successful!', 'Note updated!', 'success').then(function() {
+          window.history.back();
+        });
+        //
+      },
+      (error) => {
+        console.log(error);
+        swal.fire('Error!', 'Error occurred during processing!', 'error');
+      }
+    );
   }
 
   getNote(id) {
-    this.ecolService.getanote(id).subscribe(data => {
-      this.note = data;
-      this.buildForm();
-    }, error => {
-      console.log(error);
-    });
+    this.ecolService.getanote(id).subscribe(
+      (data) => {
+        this.note = data;
+        this.buildForm();
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 
   buildForm() {
     // get static data
     this.editnoteForm = this.formBuilder.group({
-      id: [{value: this.note.id, disabled: true}],
-      accnumber: [{value: this.note.accnumber, disabled: true}],
-      custnumber: [{value: this.note.custnumber, disabled: true}],
-      notemade: [{value: this.note.notemade, disabled: false}],
-      notedate: [{value: this.note.notedate, disabled: true}],
-      owner: [{value: this.note.owner, disabled: true}]
+      id: [{ value: this.note.id, disabled: true }],
+      accnumber: [{ value: this.note.accnumber, disabled: true }],
+      custnumber: [{ value: this.note.custnumber, disabled: true }],
+      notemade: [{ value: this.note.notemade, disabled: false }],
+      notedate: [{ value: this.note.notedate, disabled: true }],
+      owner: [{ value: this.note.owner, disabled: true }]
     });
   }
 
   cancel() {
     window.history.back();
   }
-
 }

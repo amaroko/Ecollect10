@@ -25,5 +25,4 @@ const pageSettings = {
   pageMobileMegaMenuToggled: false
 };
 
-
 export default pageSettings;

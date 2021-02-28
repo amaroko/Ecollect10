@@ -1,7 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
-import {EcolService} from '../../../services/ecol.service';
-import {DataService} from '../../../services/data.service';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { EcolService } from '../../../services/ecol.service';
+import { DataService } from '../../../services/data.service';
 import swal from 'sweetalert2';
 import * as moment from 'moment';
 import * as introJs from 'intro.js/intro.js';
@@ -31,7 +31,8 @@ export class SmsComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private ecolService: EcolService,
-    private dataService: DataService) {
+    private dataService: DataService
+  ) {
     //
   }
 
@@ -43,38 +44,42 @@ export class SmsComponent implements OnInit {
     return day + '-' + month + '-' + year;
   }
 
-
   SmsSteps(): void {
     this.introJS
       .setOptions({
         steps: [
           {
             element: '#mobile',
-            intro: 'This is where you select the mobile phone number of the customer. The ' +
+            intro:
+              'This is where you select the mobile phone number of the customer. The ' +
               'numbers will be listed here'
           },
           {
             element: '#template',
-            intro: 'Here you have to select the sms template according to the Status'
+            intro:
+              'Here you have to select the sms template according to the Status'
           },
           {
             element: '#smsmessage',
-            intro: 'This is where you can view the selected message template. As well as edit the message if you feel so. ' +
+            intro:
+              'This is where you can view the selected message template. As well as edit the message if you feel so. ' +
               'Keep in much that you are limited to the amount of characters that you type'
           },
           {
             element: '#callback',
-            intro: 'Here you can put the number to which the customer can call for enquiries. You can also leave it as default'
+            intro:
+              'Here you can put the number to which the customer can call for enquiries. You can also leave it as default'
           },
           {
             element: '#sendsms',
-            intro: 'Pressing this button will send the message to the selected customer phone number'
+            intro:
+              'Pressing this button will send the message to the selected customer phone number'
           },
           {
             element: '#historysms',
-            intro: 'Here is where the history of sent sms can be viewed in a listed format'
+            intro:
+              'Here is where the history of sent sms can be viewed in a listed format'
           }
-
         ],
         hidePrev: true,
         hideNext: true,
@@ -91,9 +96,8 @@ export class SmsComponent implements OnInit {
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
     this.username = currentUser.USERNAME;
 
-
     this.accnumber = this.route.snapshot.queryParamMap.get('accnumber');
-    this.route.queryParamMap.subscribe(queryParams => {
+    this.route.queryParamMap.subscribe((queryParams) => {
       this.accnumber = queryParams.get('accnumber');
     });
 
@@ -103,12 +107,12 @@ export class SmsComponent implements OnInit {
     });*/
 
     this.custnumber = this.route.snapshot.queryParamMap.get('custnumber');
-    this.route.queryParamMap.subscribe(queryParams => {
+    this.route.queryParamMap.subscribe((queryParams) => {
       this.custnumber = queryParams.get('custnumber');
     });
 
     this.sys = this.route.snapshot.queryParamMap.get('sys');
-    this.route.queryParamMap.subscribe(queryParams => {
+    this.route.queryParamMap.subscribe((queryParams) => {
       this.sys = queryParams.get('sys');
     });
 
@@ -128,41 +132,61 @@ export class SmsComponent implements OnInit {
     }
 
     this.getteles(this.custnumber);
-
   }
 
   getteles(cust) {
-    this.ecolService.getallteles(cust).subscribe(data_teles => {
+    this.ecolService.getallteles(cust).subscribe((data_teles) => {
       this.teles = data_teles.data;
     });
   }
 
   getsms() {
-    this.ecolService.getsms(this.custnumber).subscribe(data => {
-      this.sms = data;
-    }, error => {
-      console.log(error);
-    });
+    this.ecolService.getsms(this.custnumber).subscribe(
+      (data) => {
+        this.sms = data;
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 
   gettemplate(template) {
     if (template === 'LOAN') {
       // tslint:disable-next-line:max-line-length
-      this.dataSms.smsMessage = 'Dear Customer, Your loan payment is late by ' + this.account.daysinarr + ' days. Amount in arrears is Kes. '
-        + Math.round(this.account.instamount) + '. Please pay within seven days. ';
+      this.dataSms.smsMessage =
+        'Dear Customer, Your loan payment is late by ' +
+        this.account.daysinarr +
+        ' days. Amount in arrears is Kes. ' +
+        Math.round(this.account.instamount) +
+        '. Please pay within seven days. ';
       this.dataSms.smsCallback = ' Enquire details on 0711049000';
     } else if (template === 'LOANOD') {
-      this.dataSms.smsMessage = 'Dear Customer, Your account is overdrawn by  ' + this.account.currency + '. '
-        + Math.round(this.account.oustbalance) + '. Please regularize within seven days.';
+      this.dataSms.smsMessage =
+        'Dear Customer, Your account is overdrawn by  ' +
+        this.account.currency +
+        '. ' +
+        Math.round(this.account.oustbalance) +
+        '. Please regularize within seven days.';
       this.dataSms.smsCallback = ' Enquire details on 0711049000';
     } else if (template === 'CC') {
-      this.dataSms.smsMessage = 'Dear Customer, Your Credit Card payment is late by ' + this.account.daysinarrears +
-        ' days. The Expected amount is Kes. ' + Math.round(this.account.exppmnt) + '. Please pay within seven days. ';
+      this.dataSms.smsMessage =
+        'Dear Customer, Your Credit Card payment is late by ' +
+        this.account.daysinarrears +
+        ' days. The Expected amount is Kes. ' +
+        Math.round(this.account.exppmnt) +
+        '. Please pay within seven days. ';
       this.dataSms.smsCallback = ' Enquire details on 0711049000.';
     } else if (template === 'watch') {
-      this.dataSms.smsMessage = 'Dear Customer, Your loan payment is due on ' + this.account.repaymentdate +
+      this.dataSms.smsMessage =
+        'Dear Customer, Your loan payment is due on ' +
+        this.account.repaymentdate +
         // tslint:disable-next-line:max-line-length
-        ' .Amount to be paid is ' + this.account.currency + ' ' + Math.round(this.account.repaymentamount) + '. To make deposit, visit our branch, agent or M-Pesa PayBill 400200.';
+        ' .Amount to be paid is ' +
+        this.account.currency +
+        ' ' +
+        Math.round(this.account.repaymentamount) +
+        '. To make deposit, visit our branch, agent or M-Pesa PayBill 400200.';
       this.dataSms.smsCallback = ' Enquire details on 0711049000.';
     }
   }
@@ -172,31 +196,31 @@ export class SmsComponent implements OnInit {
   }
 
   getaccount(account) {
-    this.ecolService.getaccount(account).subscribe(data => {
+    this.ecolService.getaccount(account).subscribe((data) => {
       this.account = data;
     });
   }
 
   getmcoopcashaccount(loanaccaccount) {
-    this.ecolService.getmcoopcashAccount(loanaccaccount).subscribe(data => {
+    this.ecolService.getmcoopcashAccount(loanaccaccount).subscribe((data) => {
       this.account = data;
     });
   }
 
   getcard(cardacct) {
-    this.ecolService.getcardAccount(cardacct).subscribe(data => {
+    this.ecolService.getcardAccount(cardacct).subscribe((data) => {
       this.account = data[0];
     });
   }
 
   getwatchcard(cardacct) {
-    this.ecolService.getWatchcardAccount(cardacct).subscribe(data => {
+    this.ecolService.getWatchcardAccount(cardacct).subscribe((data) => {
       this.account = data[0];
     });
   }
 
   getwatch(accnumber) {
-    this.ecolService.getwatch(accnumber).subscribe(data => {
+    this.ecolService.getwatch(accnumber).subscribe((data) => {
       console.log(data);
       this.account = data;
     });
@@ -218,15 +242,18 @@ export class SmsComponent implements OnInit {
       datesent: new Date(),
       telnumber: form.value.smsNumber
     };
-    this.ecolService.postsms(body).subscribe(data => {
-      swal.fire('Success!', 'sms sent', 'success');
-      form.value.message = '';
-      this.getsms();
-      this.addActivity(body.message);
-    }, error => {
-      console.log(error);
-      swal.fire('Error!', 'sms service currently not available', 'error');
-    });
+    this.ecolService.postsms(body).subscribe(
+      (data) => {
+        swal.fire('Success!', 'sms sent', 'success');
+        form.value.message = '';
+        this.getsms();
+        this.addActivity(body.message);
+      },
+      (error) => {
+        console.log(error);
+        swal.fire('Error!', 'sms service currently not available', 'error');
+      }
+    );
   }
 
   addActivity(sms) {
@@ -253,18 +280,24 @@ export class SmsComponent implements OnInit {
       product: this.account.section
     };
     // add action
-    this.ecolService.postactivitylogs(body).subscribe(data => {
-      this.sendNotesData(this.custnumber);
-    }, error => {
-      console.log(error);
-      swal.fire('Error!', 'activitylog ::: service is currently not available', 'error');
-    });
+    this.ecolService.postactivitylogs(body).subscribe(
+      (data) => {
+        this.sendNotesData(this.custnumber);
+      },
+      (error) => {
+        console.log(error);
+        swal.fire(
+          'Error!',
+          'activitylog ::: service is currently not available',
+          'error'
+        );
+      }
+    );
   }
 
   sendNotesData(custnumber) {
-    this.ecolService.totalnotes(custnumber).subscribe(data => {
+    this.ecolService.totalnotes(custnumber).subscribe((data) => {
       this.dataService.pustNotesData(data[0].TOTAL);
     });
   }
-
 }

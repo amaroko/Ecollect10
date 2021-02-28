@@ -1,8 +1,8 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
-import {EcolService} from '../../services/ecol.service';
-import {DataService} from '../../services/data.service';
-import {environment} from '../../../environments/environment';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { EcolService } from '../../services/ecol.service';
+import { DataService } from '../../services/data.service';
+import { environment } from '../../../environments/environment';
 // import {NgxSpinnerService} from 'ngx-spinner';
 const URL = environment.valor;
 
@@ -12,7 +12,6 @@ const URL = environment.valor;
   styleUrls: ['./activitylog.component.css']
 })
 export class ActivitylogComponent implements OnInit {
-
   lat = 40.7143528;
   lng = -74.0059731;
 
@@ -58,39 +57,38 @@ export class ActivitylogComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private ecolService: EcolService,
-    public dataService: DataService,
-    // private spinner: NgxSpinnerService
+    public dataService: DataService // private spinner: NgxSpinnerService
   ) {
     // test service
-    dataService.getTestData().subscribe(data => {
+    dataService.getTestData().subscribe((data) => {
       this.ptp = data;
     });
 
-    dataService.getNotesData().subscribe(data => {
+    dataService.getNotesData().subscribe((data) => {
       this.notes = data;
     });
 
-    dataService.getCollateral().subscribe(data => {
+    dataService.getCollateral().subscribe((data) => {
       this.totalcollaterals1 = data;
     });
 
-    dataService.getContacts().subscribe(data => {
+    dataService.getContacts().subscribe((data) => {
       this.totalcontacts = data;
     });
 
-    dataService.getGuarantors().subscribe(data => {
+    dataService.getGuarantors().subscribe((data) => {
       this.totalguarantors = data;
     });
 
-    dataService.getFiles().subscribe(data => {
+    dataService.getFiles().subscribe((data) => {
       this.totalfiles = data;
     });
 
-    dataService.getPtps().subscribe(data => {
+    dataService.getPtps().subscribe((data) => {
       this.totalPtps = data;
     });
 
-    dataService.getWoffstoryData().subscribe(data => {
+    dataService.getWoffstoryData().subscribe((data) => {
       this.totalwoffstory = data;
     });
   }
@@ -113,7 +111,7 @@ export class ActivitylogComponent implements OnInit {
     this.username = currentUser.USERNAME;
 
     this.accnumber = this.route.snapshot.queryParamMap.get('accnumber');
-    this.route.queryParamMap.subscribe(queryParams => {
+    this.route.queryParamMap.subscribe((queryParams) => {
       this.accnumber = queryParams.get('accnumber');
     });
 
@@ -123,12 +121,12 @@ export class ActivitylogComponent implements OnInit {
     });*/
 
     this.custnumber = this.route.snapshot.queryParamMap.get('custnumber');
-    this.route.queryParamMap.subscribe(queryParams => {
+    this.route.queryParamMap.subscribe((queryParams) => {
       this.custnumber = queryParams.get('custnumber');
     });
 
     this.sys = this.route.snapshot.queryParamMap.get('sys');
-    this.route.queryParamMap.subscribe(queryParams => {
+    this.route.queryParamMap.subscribe((queryParams) => {
       this.sys = queryParams.get('sys');
     });
 
@@ -175,42 +173,51 @@ export class ActivitylogComponent implements OnInit {
   }
 
   getptps(accnumber) {
-    this.ecolService.getptps(accnumber).subscribe(data => {
-      this.totalPtps = data.length;
-      this.loader = false;
-    }, error => {
-      console.log(error);
-    });
+    this.ecolService.getptps(accnumber).subscribe(
+      (data) => {
+        this.totalPtps = data.length;
+        this.loader = false;
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 
   getwoffstory(accnumber) {
-    this.ecolService.searchwoffstory(accnumber).subscribe(data => {
-      this.totalwoffstory = data.length;
-      this.loader = false;
-    }, error => {
-      console.log(error);
-    });
+    this.ecolService.searchwoffstory(accnumber).subscribe(
+      (data) => {
+        this.totalwoffstory = data.length;
+        this.loader = false;
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
-
 
   planexists(accnumber) {
-    this.ecolService.s_check_account_plans(accnumber).subscribe(data => {
-      // check if there if a plan
-      if (data && data.length) {
-        this.ecolService.single_s_plans(data[0].planid).subscribe(plandata => {
-          this.plan = plandata.plantitle;
-        });
-
+    this.ecolService.s_check_account_plans(accnumber).subscribe(
+      (data) => {
+        // check if there if a plan
+        if (data && data.length) {
+          this.ecolService
+            .single_s_plans(data[0].planid)
+            .subscribe((plandata) => {
+              this.plan = plandata.plantitle;
+            });
+        }
+        this.loader = false;
+      },
+      (error) => {
+        console.log(error);
       }
-      this.loader = false;
-    }, error => {
-      console.log(error);
-    });
+    );
   }
 
-
   getcard(cardacct) {
-    this.ecolService.getcardAccount(cardacct).subscribe(data => {
+    this.ecolService.getcardAccount(cardacct).subscribe((data) => {
+      this.loader = true;
       this.accountdetails = data[0];
       this.model.accnumber = data[0].cardacct;
       this.model.custnumber = data[0].cardacct;
@@ -219,32 +226,44 @@ export class ActivitylogComponent implements OnInit {
       this.model.emailaddress = data[0].emailaddress;
       this.model.celnumber = data[0].celnumber;
       // tslint:disable-next-line:max-line-length
-      this.autodial_telnumber = this.accountdetails.cellnumber || this.accountdetails.mobile || this.accountdetails.phonenumber || this.accountdetails.telnumber || this.accountdetails.celnumber;
+      this.autodial_telnumber =
+        this.accountdetails.cellnumber ||
+        this.accountdetails.mobile ||
+        this.accountdetails.phonenumber ||
+        this.accountdetails.telnumber ||
+        this.accountdetails.celnumber;
       this.loader = false;
-
     });
   }
 
   getwatchcard(cardacct) {
-    this.ecolService.getWatchcardAccount(cardacct).subscribe(data => {
-      this.accountdetails = data[0];
-      this.model.accnumber = data[0].cardacct;
-      this.model.custnumber = data[0].cardacct;
-      this.model.addressline1 = data[0].address;
-      this.model.postcode = data[0].rpcode;
-      this.model.emailaddress = data[0].emailaddress;
-      this.model.celnumber = data[0].celnumber;
-      // tslint:disable-next-line:max-line-length
-      this.autodial_telnumber = this.accountdetails.cellnumber || this.accountdetails.mobile || this.accountdetails.phonenumber || this.accountdetails.telnumber || this.accountdetails.celnumber;
-      this.loader = false;
-
-    }, error => {
-      //
-    });
+    this.ecolService.getWatchcardAccount(cardacct).subscribe(
+      (data) => {
+        this.loader = true;
+        this.accountdetails = data[0];
+        this.model.accnumber = data[0].cardacct;
+        this.model.custnumber = data[0].cardacct;
+        this.model.addressline1 = data[0].address;
+        this.model.postcode = data[0].rpcode;
+        this.model.emailaddress = data[0].emailaddress;
+        this.model.celnumber = data[0].celnumber;
+        // tslint:disable-next-line:max-line-length
+        this.autodial_telnumber =
+          this.accountdetails.cellnumber ||
+          this.accountdetails.mobile ||
+          this.accountdetails.phonenumber ||
+          this.accountdetails.telnumber ||
+          this.accountdetails.celnumber;
+        this.loader = false;
+      },
+      (error) => {
+        //
+      }
+    );
   }
 
   getTeles(custnumber) {
-    this.ecolService.allteles(custnumber).subscribe(response => {
+    this.ecolService.allteles(custnumber).subscribe((response) => {
       this.teles = response.data;
       this.totalTeles = response.data.length;
       this.loader = false;
@@ -252,14 +271,14 @@ export class ActivitylogComponent implements OnInit {
   }
 
   getNotes(custnumber) {
-    this.ecolService.totalnotes(custnumber).subscribe(data => {
+    this.ecolService.totalnotes(custnumber).subscribe((data) => {
       this.notes = data[0].TOTAL;
       this.loader = false;
     });
   }
 
   getfileshistory(custnumber) {
-    this.ecolService.getfileshistory(custnumber).subscribe(data => {
+    this.ecolService.getfileshistory(custnumber).subscribe((data) => {
       this.files = data;
       this.totalfiles = data.length;
       this.loader = false;
@@ -267,21 +286,21 @@ export class ActivitylogComponent implements OnInit {
   }
 
   getGuarantors(custnumber) {
-    this.ecolService.totalguarantors(custnumber).subscribe(data => {
+    this.ecolService.totalguarantors(custnumber).subscribe((data) => {
       this.totalguarantors = data[0].TOTAL;
       this.loader = false;
     });
   }
 
   getContacts(custnumber) {
-    this.ecolService.totalcontacts(custnumber).subscribe(data => {
+    this.ecolService.totalcontacts(custnumber).subscribe((data) => {
       this.totalcontacts = data[0].TOTAL;
       this.loader = false;
     });
   }
 
   getCollateral(custnumber) {
-    this.ecolService.totalcollaterals(custnumber).subscribe(data => {
+    this.ecolService.totalcollaterals(custnumber).subscribe((data) => {
       this.totalcollaterals1 = data[0].TOTAL;
       this.loader = false;
     });
@@ -289,7 +308,9 @@ export class ActivitylogComponent implements OnInit {
 
   getaccount(accnumber) {
     // this.spinner.show();
-    this.ecolService.getAccount(accnumber).subscribe(data => {
+
+    this.ecolService.getAccount(accnumber).subscribe((data) => {
+      this.loader = true;
       this.accountdetails = data[0];
       this.guarantors = data[0].guarantors;
       this.model.accnumber = data[0].accnumber;
@@ -299,14 +320,20 @@ export class ActivitylogComponent implements OnInit {
       this.model.emailaddress = data[0].emailaddress;
       this.model.celnumber = data[0].celnumber;
       // tslint:disable-next-line:max-line-length
-      this.autodial_telnumber = this.accountdetails.cellnumber || this.accountdetails.mobile || this.accountdetails.phonenumber || this.accountdetails.telnumber || this.accountdetails.celnumber;
+      this.autodial_telnumber =
+        this.accountdetails.cellnumber ||
+        this.accountdetails.mobile ||
+        this.accountdetails.phonenumber ||
+        this.accountdetails.telnumber ||
+        this.accountdetails.celnumber;
       this.loader = false;
       // this.spinner.hide();
     });
   }
 
   getmcoopcashaccount(accnumber) {
-    this.ecolService.getmcoopcashAccount(accnumber).subscribe(data => {
+    this.ecolService.getmcoopcashAccount(accnumber).subscribe((data) => {
+      this.loader = true;
       this.accountdetails = data[0];
       this.model.accnumber = data[0].loanaccnumber;
       this.model.custnumber = data[0].loanaccnumber;
@@ -314,13 +341,19 @@ export class ActivitylogComponent implements OnInit {
       this.model.postcode = data[0].postcode;
       this.model.celnumber = data[0].phonenumber;
       // tslint:disable-next-line:max-line-length
-      this.autodial_telnumber = this.accountdetails.cellnumber || this.accountdetails.mobile || this.accountdetails.phonenumber || this.accountdetails.telnumber || this.accountdetails.celnumber;
+      this.autodial_telnumber =
+        this.accountdetails.cellnumber ||
+        this.accountdetails.mobile ||
+        this.accountdetails.phonenumber ||
+        this.accountdetails.telnumber ||
+        this.accountdetails.celnumber;
       this.loader = false;
     });
   }
 
   getwatch(accnumber) {
-    this.ecolService.getwatch(accnumber).subscribe(data => {
+    this.ecolService.getwatch(accnumber).subscribe((data) => {
+      this.loader = true;
       this.accountdetails = data;
       this.guarantors = data.guarantors;
       this.model.accnumber = data.accnumber;
@@ -372,7 +405,4 @@ export class ActivitylogComponent implements OnInit {
     document.execCommand('copy');
     document.body.removeChild(selBox);
   }
-
-
 }
-

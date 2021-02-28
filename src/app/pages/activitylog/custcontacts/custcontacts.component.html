@@ -1,108 +1,167 @@
-<ngx-spinner bdColor="rgba(51,51,51,0.8)" color="#fff" size="medium" type="ball-circus">
-  <p style="font-size: 20px; color: white">Contacts loading...</p>
-</ngx-spinner>
+
 
 <div>
   <h2>Customer contacts</h2>
   <div id="accordion">
     <div class="card">
-      <div class="collapse show" data-parent="#accordion" id="collapseupload">
-        <button (click)="ContactsSteps()" class="btn btn-primary">SHOW ME STEPS</button>
-        <div class="card-header">add or edit a contact</div>
+      <div class='collapse show' data-parent='#accordion' id='collapseupload'>
+        <button (click)='ContactsSteps()' class='btn btn-primary'>
+          SHOW ME STEPS
+        </button>
+        <div class='card-header'>add or edit a contact</div>
 
-        <div class="card-body">
-          <div class="row">
-            <div class="col-lg-4">
-              <form #custcontactsform="ngForm" (ngSubmit)="savecontact(model)" autocomplete="off"
-                    class="form-horizontal" novalidate>
-                <div class="form-group row">
-                  <label class="col-xl-4 col-form-label">Contact Number</label>
-                  <div class="col-xl-8">
-                    <label for="contactnumber"></label><input #contactnumber="ngModel" [(ngModel)]="model.contactnumber"
-                                                              [ngClass]="{ 'is-invalid': contactnumber.invalid }"
-                                                              [pattern]="mobNumberPattern" class="form-control"
-                                                              id="contactnumber" name="contactnumber"
-                                                              required
-                                                              type="text"/>
+        <div class='card-body'>
+          <div class='row'>
+
+            <div class='col-lg-6'>
+              <app-panel>
+                <form
+                  #custcontactsform='ngForm'
+                  (ngSubmit)='savecontact(model)'
+                  autocomplete='off'
+                  class='form-horizontal'
+                  novalidate
+                >
+                  <div class='form-group row'>
+
+                    <label class='col-xl-4 col-form-label'>Contact Number</label>
+
+                    <div class='col-xl-8'>
+                      <label for='contactnumber'></label
+                      ><input
+                      #contactnumber='ngModel'
+                      [(ngModel)]='model.contactnumber'
+                      [ngClass]="{ 'is-invalid': contactnumber.invalid }"
+                      [pattern]='mobNumberPattern'
+                      class='form-control is-valid'
+                      id='contactnumber'
+                      name='contactnumber'
+                      required
+                      type='text'
+                    />
+                      <div *ngIf='contactnumber.valid' class='valid-feedback'>
+                        Looks good!
+                      </div>
+                    </div>
+                    <span *ngIf='!contactnumber.valid' style='color: Tomato'
+                    >Please match pattern e.g 0724000000</span
+                    >
                   </div>
-                  <span *ngIf="!contactnumber.valid" style="color:Tomato;">Please match pattern e.g 0724000000</span>
-                </div>
                 <div class="form-group row">
                   <label class="col-xl-4 col-form-label">Email</label>
-                  <div class="col-xl-8">
-                    <label for="email"></label><input #email="ngModel" [(ngModel)]="model.email"
-                                                      [ngClass]="{ 'is-invalid': email.invalid }"
-                                                      [pattern]="emailPattern"
-                                                      class="form-control" id="email"
-                                                      name="email" required
-                                                      type="text"/>
+                  <div class='col-xl-8'>
+                    <label for='email'></label
+                    ><input
+                    #email='ngModel'
+                    [(ngModel)]='model.email'
+                    [ngClass]="{ 'is-invalid': email.invalid }"
+                    [pattern]='emailPattern'
+                    class='form-control is-valid'
+                    id='email'
+                    name='email'
+                    required
+                    type='text'
+                  />
+                    <div *ngIf='email.valid' class='valid-feedback'>
+                      Looks good!
+                    </div>
                   </div>
                 </div>
                 <div class="form-group row">
                   <label class="col-xl-4 col-form-label">Active</label>
-                  <div class="col-xl-8">
-                    <label for="active"></label><select #active="ngModel" [(ngModel)]="model.active"
-                                                        [ngClass]="{ 'is-invalid': active.invalid }"
-                                                        class="form-control"
-                                                        id="active"
-                                                        name="active" required
-                                                        type="text">
+                  <div class='col-xl-8'>
+                    <label for='active'></label
+                    ><select
+                    #active='ngModel'
+                    [(ngModel)]='model.active'
+                    [ngClass]="{ 'is-invalid': active.invalid }"
+                    class='form-control is-valid'
+                    id='active'
+                    name='active'
+                    required
+                    type='text'
+                  >
                     <option>Yes</option>
                     <option>No</option>
                   </select>
+                    <div *ngIf='active.valid' class='valid-feedback'>
+                      Looks good!
+                    </div>
                   </div>
                 </div>
                 <div class="form-group row">
                   <label class="col-xl-4 col-form-label"></label>
-                  <div class="col-xl-8">
-                    <button *ngIf="!edit" [disabled]="!custcontactsform.valid" class="mb-1 mr-1 btn btn-sm btn-outline-info  col-form-label"
-                            id="contactsubmit" type="submit">Submit
+                  <div class='col-xl-8'>
+                    <button
+                      *ngIf='!edit'
+                      [disabled]='!custcontactsform.valid'
+                      class='mb-1 mr-1 btn btn-sm btn-outline-info col-form-label'
+                      id='contactsubmit'
+                      type='submit'
+                    >
+                      Submit
                     </button>
-                    <button (click)="updatecontact(model)" *ngIf="edit"
-                            [disabled]="custcontactsform.invalid"
-                            class="mb-1 mr-1 btn btn-sm btn-outline-warning  col-form-label"
-                            type="button">Update
+                    <button
+                      (click)='updatecontact(model)'
+                      *ngIf='edit'
+                      [disabled]='custcontactsform.invalid'
+                      class='mb-1 mr-1 btn btn-sm btn-outline-warning col-form-label'
+                      type='button'
+                    >
+                      Update
                     </button>
-                    <button (click)="cancel()" *ngIf="edit"
-                            class="mb-1 mr-1 btn btn-sm btn-outline-danger  col-form-label"
-                            type="button">Cancel
+                    <button
+                      (click)='cancel()'
+                      *ngIf='edit'
+                      class='mb-1 mr-1 btn btn-sm btn-outline-danger col-form-label'
+                      type='button'
+                    >
+                      Cancel
                     </button>
                   </div>
                 </div>
-              </form>
+                </form>
+              </app-panel>
             </div>
-            <div class="col-lg-8" id="contacttable" style="margin-bottom: 40px">
-              <table class="table table-hover table-bordered table-striped">
-                <thead>
-                <tr>
-                  <th>#</th>
-                  <th>ContactNumber</th>
-                  <th>Email</th>
-                  <th>Added by</th>
-                  <th class="text-center">active</th>
-                  <th></th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr *ngFor="let c of contacts">
-                  <td>{{c.custnumber}}</td>
-                  <td>{{c.telephone}}</td>
-                  <td>{{c.email}}</td>
-                  <td>{{c.owner}}</td>
-                  <td>{{c.active}}</td>
-                  <td class="text-center">
-                    <button (click)="editcontact(c)" class="btn btn-outline-success btn-sm">
-                      <i class="fas fa-edit"></i> edit
-                    </button>
-                  </td>
-                </tr>
-                </tbody>
-              </table>
+
+
+            <div class='col-lg-6' id='contacttable' style='margin-bottom: 40px'>
+              <app-panel>
+                <table class='table table-hover table-bordered table-striped'>
+                  <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>ContactNumber</th>
+                    <th>Email</th>
+                    <th>Added by</th>
+                    <th class='text-center'>active</th>
+                    <th></th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr *ngFor='let c of contacts'>
+                    <td>{{ c.custnumber }}</td>
+                    <td>{{ c.telephone }}</td>
+                    <td>{{ c.email }}</td>
+                    <td>{{ c.owner }}</td>
+                    <td>{{ c.active }}</td>
+                    <td class='text-center'>
+                      <button
+                        (click)='editcontact(c)'
+                        class='btn btn-outline-success btn-sm'
+                      >
+                        <i class='fas fa-edit'></i> edit
+                      </button>
+                    </td>
+                  </tr>
+                  </tbody>
+                </table>
+              </app-panel>
             </div>
+
           </div>
         </div>
       </div>
     </div>
   </div>
-
 </div>

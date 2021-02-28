@@ -1,6 +1,6 @@
-import {ComponentFixture, TestBed} from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import {CollateralsComponent} from './collaterals.component';
+import { CollateralsComponent } from './collaterals.component';
 
 describe('CollateralsComponent', () => {
   let component: CollateralsComponent;
@@ -9,8 +9,7 @@ describe('CollateralsComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [CollateralsComponent]
-    })
-      .compileComponents();
+    }).compileComponents();
   });
 
   beforeEach(() => {

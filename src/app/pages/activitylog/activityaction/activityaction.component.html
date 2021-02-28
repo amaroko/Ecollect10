@@ -8,104 +8,113 @@
 </ngx-spinner>
 <app-panel>
   <div>
-
-    <div class="card-header">
+    <div class='card-header'>
       <strong>Collector activity </strong> capture
       <!--      <button (click)="CollectoractionSteps()" class="btn btn-primary">SHOW ME STEPS</button>-->
     </div>
 
-    <form (ngSubmit)="onSubmit()" [formGroup]="actionForm" autocomplete="off" novalidate>
-      <div class="card-body">
-
-        <div class="row" style="padding-top: 20px">
-          <div class="col-xl-2 col-md-3">
-            Collector action
-          </div>
-          <div class="col-md-9">
-            <div class="col-md-12">
-              <label for="collectoraction"></label><select
-              (ngModelChange)="changeAction(actionForm.value.collectoraction)"
+    <form
+      (ngSubmit)='onSubmit()'
+      [formGroup]='actionForm'
+      autocomplete='off'
+      novalidate
+    >
+      <div class='card-body'>
+        <div class='row' style='padding-top: 20px'>
+          <div *ngIf='!loader' class='col-xl-2 col-md-3'>Collector action</div>
+          <div class='col-md-9'>
+            <div class='col-md-12'>
+              <ngx-skeleton-loader
+                *ngIf='loader'
+              ></ngx-skeleton-loader>
+              <label for='collectoraction'></label
+              ><select
+              (ngModelChange)='changeAction(actionForm.value.collectoraction)'
+              *ngIf='!loader'
               [ngClass]="{ 'is-invalid': f.collectoraction.errors }"
-              class="form-control is-valid" formControlName="collectoraction"
-              id="collectoraction"
-              name="collectoraction">
-              <option value="">Please select</option>
-              <option *ngFor="let action of collectoraction" [value]="action.collectoractionid">
-                {{action.collectoraction}}</option>
+              class='form-control is-valid'
+              formControlName='collectoraction'
+              id='collectoraction'
+              name='collectoraction'
+            >
+              <option value=''>Please select</option>
+              <option
+                *ngFor='let action of collectoraction'
+                [value]='action.collectoractionid'
+              >
+                {{ action.collectoraction }}
+              </option>
             </select>
             </div>
           </div>
         </div>
 
         <div class="row" id="step2-li" style="padding-top: 20px">
-          <div *ngIf="!f.party.disabled" class="col-xl-2 col-md-3">
+          <div *ngIf='!f.party.disabled && !loader' class='col-xl-2 col-md-3'>
             Party contacted
           </div>
           <div *ngIf="!f.party.disabled" class="col-md-3">
-            <div class="col-md-12">
-              <!--<select id="party" name="party"
-                formControlName="party" class="form-control" [ngClass]="{ 'is-invalid': f.party.errors }">
-                <option value="">Please select</option>
-                <option *ngFor="let p of party" [value]="p.partyid">{{p.party}}</option>
-              </select>-->
+            <div class='col-md-12'>
+              <ngx-skeleton-loader
+                *ngIf='loader'
+              ></ngx-skeleton-loader>
               <ng-select
-                (ngModelChange)="changeParty(actionForm.value)" formControlName="party"
-                id="party"
+                (ngModelChange)='changeParty(actionForm.value)'
+                formControlName='party'
+                id='party'
               >
-                <ng-option *ngFor="let p of party" [value]=[{exd:p.party,id:p.partyid}]>{{p.party}}</ng-option>
+                <ng-option
+                  *ngFor='let p of party'
+                  [value]='[{ exd: p.party, id: p.partyid }]'
+                >{{ p.party }}</ng-option
+                >
               </ng-select>
-
             </div>
-            <p class="invalid-feedback">Please choose a unique and valid username.</p>
+            <p class='invalid-feedback'>
+              Please choose a unique and valid username.
+            </p>
           </div>
+          <div *ngIf='!loader' class='col-md-3'>Reason for default</div>
           <div class="col-md-3">
-            Reason for default
-          </div>
-          <div class="col-md-3">
-            <div class="col-md-12">
-
+            <div class='col-md-12'>
+              <ngx-skeleton-loader
+                *ngIf='loader'
+              ></ngx-skeleton-loader>
               <ng-select
-                (change)="onChangeExcuse(actionForm.value)"
-
-                formControlName="reason"
-
-                placeholder="Select Reason"
-
+                *ngIf='!loader'
+                (change)='onChangeExcuse(actionForm.value)'
+                formControlName='reason'
+                placeholder='Select Reason'
               >
-                <ng-option *ngFor="let thing of mainReason" [value]=[{ex:thing.excuse,id:thing.id}]
-                           id="reason">{{thing.excuse}}</ng-option>
+                <ng-option
+                  *ngFor='let thing of mainReason'
+                  [value]='[{ ex: thing.excuse, id: thing.id }]'
+                  id='reason'
+                >{{ thing.excuse }}</ng-option
+                >
               </ng-select>
-
-
-              <!--              <select class="form-control" (ngModelChange)="changeReason(actionForm.value.reason)" [ngClass]="{ 'is-invalid': f.reason.errors }" formControlName="reason"-->
-              <!--                         id="reason"-->
-              <!--                         placeholder="Select reason">-->
-              <!--                <optgroup *ngFor="let namee of mappedid"-->
-              <!--                          label= "{{namee}}" >-->
-              <!--                  <ng-container *ngFor="let thing of excuse" >-->
-              <!--                    <option *ngIf="thing.ID === namee" [value]="thing.EXCUSEDETAILS">-->
-              <!--                      {{thing.EXCUSEDETAILS}}-->
-              <!--                    </option>-->
-              <!--                  </ng-container>-->
-              <!--                </optgroup>-->
-              <!--&lt;!&ndash;                <ng-option *ngFor="let ex of excuse" [value]="ex.excusedetails">{{ex.excusedetails}}</ng-option>&ndash;&gt;-->
-              <!--              </select>-->
             </div>
           </div>
-
-
         </div>
-        <div class="row" style="padding-top: 20px">
-          <div *ngIf="!actionForm.controls['reason'].invalid" class="col-xl-2 col-md-3">
+        <div class='row' style='padding-top: 20px'>
+          <div
+            *ngIf="!actionForm.controls['reason'].invalid"
+            class='col-xl-2 col-md-3'
+          >
             Detail Reason for Default
           </div>
 
-          <div class="col-md-3">
-            <div *ngIf="!actionForm.controls['reason'].invalid" class="col-md-12">
-
-              <ng-select formControlName="reasondetails" id="reasondetails">
-                <ng-option *ngFor="let exdtls of subReason"
-                           [value]=[{exd:exdtls.excusedetails,id:exdtls.excuseid}]>{{exdtls.excusedetails}}</ng-option>
+          <div class='col-md-3'>
+            <div
+              *ngIf="!actionForm.controls['reason'].invalid"
+              class='col-md-12'
+            >
+              <ng-select formControlName='reasondetails' id='reasondetails'>
+                <ng-option
+                  *ngFor='let exdtls of subReason'
+                  [value]='[{ exd: exdtls.excusedetails, id: exdtls.excuseid }]'
+                >{{ exdtls.excusedetails }}</ng-option
+                >
               </ng-select>
             </div>
           </div>
@@ -115,10 +124,16 @@
             Promise to pay
           </div>
           <div *ngIf="!f.ptp.disabled" class="col-md-3">
-            <div class="col-md-12">
-              <ng-select (ngModelChange)="changePtp(actionForm.value.ptp)" formControlName="ptp" id="ptp"
-                         placeholder="Select PTP">
-                <ng-option *ngFor="let p of ptp" [value]="p.id">{{p.name}}</ng-option>
+            <div class='col-md-12'>
+              <ng-select
+                (ngModelChange)='changePtp(actionForm.value.ptp)'
+                formControlName='ptp'
+                id='ptp'
+                placeholder='Select PTP'
+              >
+                <ng-option *ngFor='let p of ptp' [value]='p.id'>{{
+                  p.name
+                  }}</ng-option>
               </ng-select>
             </div>
           </div>
@@ -126,11 +141,15 @@
             Other reason for default
           </div>
           <div *ngIf="!f.rfdother.disabled" class="col-md-3">
-            <div class="col-md-12">
-              <label for="rfdother"></label><textarea class="form-control" class="form-control"
-                                                      formControlName="rfdother" id="rfdother"
-                                                      name="rfdother"
-                                                      rows="2"></textarea>
+            <div class='col-md-12'>
+              <label for='rfdother'></label
+              ><textarea
+              class='form-control'
+              formControlName='rfdother'
+              id='rfdother'
+              name='rfdother'
+              rows='2'
+            ></textarea>
             </div>
           </div>
         </div>
@@ -143,32 +162,65 @@
             <div class="col-md-12">
               <div class="form-group row">
                 <label class="col-md-0 col-form-label"></label>
-                <div class="form-check form-check-inline">
-                  <input (click)="handleChange('single')" class="form-check-input" formControlName="ptptype"
-                         id="inlineRadio1"
-                         name="ptptype" type="radio" value="single"/>
-                  <label class="form-check-label" for="inlineRadio1">Single </label>
+                <div class='form-check form-check-inline'>
+                  <input
+                    (click)="handleChange('single')"
+                    class='form-check-input'
+                    formControlName='ptptype'
+                    id='inlineRadio1'
+                    name='ptptype'
+                    type='radio'
+                    value='single'
+                  />
+                  <label class='form-check-label' for='inlineRadio1'
+                  >Single
+                  </label>
                 </div>
-                <div class="form-check form-check-inline">
-                  <input (click)="handleChange('multiple')" class="form-check-input" formControlName="ptptype"
-                         id="inlineRadio2"
-                         name="ptptype" type="radio" value="multiple"/>
-                  <label class="form-check-label" for="inlineRadio2">Multiple </label>
+                <div class='form-check form-check-inline'>
+                  <input
+                    (click)="handleChange('multiple')"
+                    class='form-check-input'
+                    formControlName='ptptype'
+                    id='inlineRadio2'
+                    name='ptptype'
+                    type='radio'
+                    value='multiple'
+                  />
+                  <label class='form-check-label' for='inlineRadio2'
+                  >Multiple
+                  </label>
                 </div>
-                <div [hidden]="capture" class="form-check form-check-inline">
-                  <span><button (click)="multiplecapturefnc()" class="btn btn-link">Capture multiple</button></span>
+                <div [hidden]='capture' class='form-check form-check-inline'>
+                  <span
+                  ><button
+                    (click)='multiplecapturefnc()'
+                    class='btn btn-link'
+                  >
+                      Capture multiple
+                    </button></span
+                  >
                 </div>
               </div>
             </div>
           </div>
+          <div *ngIf='!loader' class='col-md-3'>CMD status</div>
           <div class="col-md-3">
-            CMD status
-          </div>
-          <div class="col-md-3">
-            <div class="col-md-12">
-              <ng-select [ngClass]="{ 'is-invalid': f.cmdstatus.errors }" formControlName="cmdstatus" id="cmdstatus"
-                         placeholder="Please Select">
-                <ng-option *ngFor="let cmd of cmdstatus" [value]="cmd.cmdstatus">{{cmd.cmdstatus}}</ng-option>
+            <div class='col-md-12'>
+              <ngx-skeleton-loader
+                *ngIf='loader'
+              ></ngx-skeleton-loader>
+              <ng-select
+                *ngIf='!loader'
+                [ngClass]="{ 'is-invalid': f.cmdstatus.errors }"
+                formControlName='cmdstatus'
+                id='cmdstatus'
+                placeholder='Please Select'
+              >
+                <ng-option
+                  *ngFor='let cmd of cmdstatus'
+                  [value]='cmd.cmdstatus'
+                >{{ cmd.cmdstatus }}</ng-option
+                >
               </ng-select>
             </div>
           </div>
@@ -181,19 +233,29 @@
           <div *ngIf="!f.ptpamount.disabled" class="col-md-3">
             <div class="col-md-12">
               <label>
-                <input [ngClass]="{ 'is-invalid': f.ptpamount.errors }" class="form-control" class="form-control"
-                       formControlName="ptpamount"
-                       type="number">
+                <input
+                  [ngClass]="{ 'is-invalid': f.ptpamount.errors }"
+                  class='form-control'
+                  formControlName='ptpamount'
+                  type='number'
+                />
               </label>
             </div>
           </div>
+          <div *ngIf='!loader' class='col-md-3'>Route for review</div>
           <div class="col-md-3">
-            Route for review
-          </div>
-          <div class="col-md-3">
-            <div class="col-md-12">
-              <ng-select formControlName="route" id="route" placeholder="Please Select">
-                <ng-option *ngFor="let r of reviewers" [value]="r.username">{{r.firstname}} {{r.lastname}} {{r.surname}}
+            <div class='col-md-12'>
+              <ngx-skeleton-loader
+                *ngIf='loader'
+              ></ngx-skeleton-loader>
+              <ng-select
+                *ngIf='!loader'
+                formControlName='route'
+                id='route'
+                placeholder='Please Select'
+              >
+                <ng-option *ngFor='let r of reviewers' [value]='r.username'
+                >{{ r.firstname }} {{ r.lastname }} {{ r.surname }}
                 </ng-option>
               </ng-select>
             </div>
@@ -207,40 +269,65 @@
           <div *ngIf="!f.ptpdate.disabled" class="col-md-3">
             <div class="col-md-12">
               <div class="input-group">
-
-                <label for="ptpdate">
-                  <input #p="bsDatepicker" [bsConfig]="{ dateInputFormat: 'DD-MMM-YYYY' }" [minDate]="minxDate"
-                         bsDatepicker
-                         class="form-control" formControlName="ptpdate" id="ptpdate" name="ptpdate"
-                         name="ptpdate" placeholder="yyyy-mm-dd" placement="left"
-                         type="text">
+                <label for='ptpdate'>
+                  <input
+                    #p='bsDatepicker'
+                    [bsConfig]="{ dateInputFormat: 'DD-MMM-YYYY' }"
+                    [minDate]='minxDate'
+                    bsDatepicker
+                    class='form-control'
+                    formControlName='ptpdate'
+                    id='ptpdate'
+                    name='ptpdate'
+                    name='ptpdate'
+                    placeholder='yyyy-mm-dd'
+                    placement='left'
+                    type='text'
+                  />
                 </label>
 
-                <div class="input-group-append">
-                  <button (click)="p.toggle()" class="btn btn-outline-primary" type="button"><span><i
-                    class="fa fa-calendar"></i>
-                    </span></button>
+                <div class='input-group-append'>
+                  <button
+                    (click)='p.toggle()'
+                    class='btn btn-outline-primary'
+                    type='button'
+                  >
+                    <span><i class='fa fa-calendar'></i> </span>
+                  </button>
                 </div>
               </div>
             </div>
           </div>
+          <div *ngIf='!loader' class='col-md-3'>Review date</div>
           <div class="col-md-3">
-            Review date
-          </div>
-          <div class="col-md-3">
-            <div class="col-md-12">
-              <div class="input-group">
+
+            <div class='col-md-12'>
+              <ngx-skeleton-loader
+                *ngIf='loader'
+              ></ngx-skeleton-loader>
+              <div *ngIf='!loader' class='input-group'>
                 <label>
-                  <input #dp="bsDatepicker" [bsConfig]="{ dateInputFormat: 'DD-MMM-YYYY' }" [minDate]="minxDate"
-                         bsDatepicker class="form-control"
-                         formControlName="reviewdate"
-                         id="review" placeholder="Review date" placement="left"
-                         type="text">
+                  <input
+                    #dp='bsDatepicker'
+                    [bsConfig]="{ dateInputFormat: 'DD-MMM-YYYY' }"
+                    [minDate]='minxDate'
+                    bsDatepicker
+                    class='form-control'
+                    formControlName='reviewdate'
+                    id='review'
+                    placeholder='Review date'
+                    placement='left'
+                    type='text'
+                  />
                 </label>
-                <div class="input-group-append">
-                  <button (click)="dp.toggle()" class="btn btn-outline-primary" type="button"><span><i
-                    class="fa fa-calendar"></i>
-                    </span></button>
+                <div class='input-group-append'>
+                  <button
+                    (click)='dp.toggle()'
+                    class='btn btn-outline-primary'
+                    type='button'
+                  >
+                    <span><i class='fa fa-calendar'></i> </span>
+                  </button>
                 </div>
               </div>
             </div>
@@ -252,12 +339,16 @@
             Payment mode
           </div>
           <div *ngIf="!f.paymode.disabled" class="col-md-3">
-            <div class="col-md-12">
-              <label for="paymode"></label><select [ngClass]="{ 'is-invalid': f.paymode.errors }" class="form-control"
-
-                                                   formControlName="paymode" id="paymode"
-                                                   name="paymode">
-              <option value="">Please select</option>
+            <div class='col-md-12'>
+              <label for='paymode'></label
+              ><select
+              [ngClass]="{ 'is-invalid': f.paymode.errors }"
+              class='form-control'
+              formControlName='paymode'
+              id='paymode'
+              name='paymode'
+            >
+              <option value=''>Please select</option>
               <option>Cash</option>
               <option>Cheque</option>
               <option>Mobile Transfer</option>
@@ -268,15 +359,29 @@
         </div>
 
         <div class="row" style="padding-top: 20px">
-          <div class="col-md-12">
-            <label>Collector note</label>
-            <label for="collectornote"></label><textarea [ngClass]="{ 'is-invalid': f.collectornote.errors }"
-
-                                                         class="form-control is-valid" formControlName="collectornote"
-                                                         id="collectornote" name="collectornote"
-                                                         rows="3"></textarea>
+          <div class='col-md-12'>
+            <ngx-skeleton-loader
+              *ngIf='loader'
+              [theme]="{
+ 'border-radius': '5px',
+ height: '100px'
+}"
+            ></ngx-skeleton-loader>
+            <label *ngIf='!loader'>Collector note</label>
+            <label for='collectornote'></label
+            ><textarea
+            *ngIf='!loader'
+            [ngClass]="{ 'is-invalid': f.collectornote.errors }"
+            class='form-control is-valid'
+            formControlName='collectornote'
+            id='collectornote'
+            name='collectornote'
+            rows='3'
+          ></textarea>
           </div>
-          <p class="text-danger" *ngIf="f.collectornote.errors?.minlength">minimum of five(5) characters is required</p>
+          <p *ngIf='f.collectornote.errors?.minlength' class='text-danger'>
+            minimum of five(5) characters is required
+          </p>
         </div>
         <div class="form-group row">
           <!--<div class="col-md-3 col-form-label">
@@ -291,48 +396,76 @@
                 formControlName="toemail" placeholder="Customer email" />
             </div>
           </div>-->
-          <div class="col-md-3 col-form-label">
-            <div *ngIf="!f.ptpsms.disabled" class="checkbox c-checkbox form-check-inline">
+          <div class='col-md-3 col-form-label'>
+            <div
+              *ngIf='!f.ptpsms.disabled'
+              class='checkbox c-checkbox form-check-inline'
+            >
               <label>
-                <input [checked]="false" formControlName="ptpsms" id="ptpsms" name="ptpsms" name="ptpsms"
-                       type="checkbox"/>
-                Send PTP Reminder SMS <span class="fa fa-check"></span></label>
-
+                <input
+                  [checked]='false'
+                  formControlName='ptpsms'
+                  id='ptpsms'
+                  name='ptpsms'
+                  name='ptpsms'
+                  type='checkbox' />
+                Send PTP Reminder SMS <span class='fa fa-check'></span
+              ></label>
             </div>
             <div *ngIf="!f.ptpsmsnumber.disabled" class="">
               <label>
-                <input class="form-control" formControlName="ptpsmsnumber" id="ptpsmsnumber" name="ptpsmsnumber"
-                       name="ptpsmsnumber"
-                       placeholder="Customer Tel." type="text"/>
+                <input
+                  class='form-control'
+                  formControlName='ptpsmsnumber'
+                  id='ptpsmsnumber'
+                  name='ptpsmsnumber'
+                  name='ptpsmsnumber'
+                  placeholder='Customer Tel.'
+                  type='text'
+                />
               </label>
             </div>
           </div>
 
 
-          <!--          <div class="col-md-3 col-form-label">-->
-          <!--            <div class="checkbox c-checkbox form-check-inline">-->
-          <!--              <label>-->
-          <!--                <input [checked]="false" formControlName="flag" name="flag" type="checkbox"/>-->
-          <!--                Flag this note <span class="fa fa-check" id="flag"></span></label>-->
-          <!--            </div>-->
-          <!--          </div>-->
-
-
-          <div class="col-md-3 col-form-label">
-            <div class="checkbox checkbox-css checkbox-inline">
-              <input formControlName="flag" type="checkbox" name="flag" id="flag" [checked]="false"/>
-              <label for="flag">Flag this Note</label>
+          <div class='col-md-3 col-form-label'>
+            <ngx-skeleton-loader
+              *ngIf='loader'
+            ></ngx-skeleton-loader>
+            <div *ngIf='!loader' class='checkbox checkbox-css checkbox-inline'>
+              <input
+                [checked]='false'
+                formControlName='flag'
+                id='flag'
+                name='flag'
+                type='checkbox'
+              />
+              <label for='flag'>Flag this Note</label>
             </div>
           </div>
-
-
         </div>
       </div>
-      <div class="card-footer">
-        <button [disabled]="actionForm.invalid" class="btn btn-sm btn-primary" id="submit" type="submit"><i
-          class="fa fa-dot-circle-o"></i> Submit
+      <div class='card-footer'>
+        <ngx-skeleton-loader
+          *ngIf='loader'
+        ></ngx-skeleton-loader>
+        <button
+          *ngIf='!loader'
+          [disabled]='actionForm.invalid'
+          class='btn btn-sm btn-primary'
+          id='submit'
+          type='submit'
+        >
+          <i class='fa fa-dot-circle-o'></i> Submit
         </button>
-        <button (click)="reset()" class="btn btn-sm btn-danger" id="reset" type="reset"><i class="fa fa-ban"></i> Reset
+        <button
+          (click)='reset()'
+          *ngIf='!loader'
+          class='btn btn-sm btn-danger'
+          id='reset'
+          type='reset'
+        >
+          <i class='fa fa-ban'></i> Reset
         </button>
       </div>
     </form>
@@ -340,51 +473,86 @@
     <pre>{{actionForm.value | json}}</pre>-->
   </div>
 
-
   <ngx-smart-modal #myModal [dismissable]="false" identifier="myModal">
     <div class="modal-header">
       <h4 class="modal-title">Mulptiple PTP</h4>
     </div>
     <div class="card-body">
       <div class="row">
-        <div class="col-md-4">
-          <form #ptpForm="ngForm" (ngSubmit)="ptpfunc(ptpForm)" autocomplete="off" novalidate>
-            <div class="form-group">
+        <div class='col-md-4'>
+          <form
+            #ptpForm='ngForm'
+            (ngSubmit)='ptpfunc(ptpForm)'
+            autocomplete='off'
+            novalidate
+          >
+            <div class='form-group'>
               <label>Promise Amount:</label>
               <label>
-                <input #ptpamount="ngModel" [(ngModel)]="ptpmultiple.ptpamount"
-                       [ngClass]="{ 'is-invalid': ptpamount.errors }" class="form-control"
-                       name="ptpamount" placeholder="ptp amount" required/>
+                <input
+                  #ptpamount='ngModel'
+                  [(ngModel)]='ptpmultiple.ptpamount'
+                  [ngClass]="{ 'is-invalid': ptpamount.errors }"
+                  class='form-control'
+                  name='ptpamount'
+                  placeholder='ptp amount'
+                  required
+                />
               </label>
-
             </div>
             <div class="form-group">
               <label>Promise Date:</label>
               <div class="input-group">
                 <label>
-                  <input #d="ngbDatepicker" [(ngModel)]="ptpmultiple.ptpdate" [minDate]="minDate" class="form-control"
-                         name="ptpdate" ngbDatepicker placeholder="yyyy-mm-dd" required>
+                  <input
+                    #d='ngbDatepicker'
+                    [(ngModel)]='ptpmultiple.ptpdate'
+                    [minDate]='minDate'
+                    class='form-control'
+                    name='ptpdate'
+                    ngbDatepicker
+                    placeholder='yyyy-mm-dd'
+                    required
+                  />
                 </label>
                 <div class="input-group-append">
-                  <div class="input-group-append">
-                    <button (click)="d.toggle()" class="btn btn-outline-primary" type="button"><span><i
-                      class="fa fa-calendar"></i>
-                    </span></button>
+                  <div class='input-group-append'>
+                    <button
+                      (click)='d.toggle()'
+                      class='btn btn-outline-primary'
+                      type='button'
+                    >
+                      <span><i class='fa fa-calendar'></i> </span>
+                    </button>
                   </div>
                 </div>
               </div>
             </div>
-            <button *ngIf="!edit" [disabled]="!ptpForm.valid" class="btn btn-sm btn-outline-primary"
-                    class="mb-1 mr-1 btn btn-sm btn-outline-warning  col-form-label" type="submit">Add
+            <button
+              *ngIf='!edit'
+              [disabled]='!ptpForm.valid'
+              class='btn btn-sm btn-outline-primary'
+              class='mb-1 mr-1 btn btn-sm btn-outline-warning col-form-label'
+              type='submit'
+            >
+              Add
             </button>
             <!--          (click)="updateptp(ptp)"-->
-            <button *ngIf="edit"
-                    [disabled]="ptpForm.invalid" class="mb-1 mr-1 btn btn-sm btn-outline-warning  col-form-label"
-                    type="button">Update
+            <button
+              *ngIf='edit'
+              [disabled]='ptpForm.invalid'
+              class='mb-1 mr-1 btn btn-sm btn-outline-warning col-form-label'
+              type='button'
+            >
+              Update
             </button>
             <!--          (click)="cancel()"-->
-            <button *ngIf="edit" class="mb-1 mr-1 btn btn-sm btn-outline-danger  col-form-label"
-                    type="button">Cancel
+            <button
+              *ngIf='edit'
+              class='mb-1 mr-1 btn btn-sm btn-outline-danger col-form-label'
+              type='button'
+            >
+              Cancel
             </button>
           </form>
         </div>
@@ -400,29 +568,48 @@
             </tr>
             </thead>
             <tbody>
-            <tr *ngFor="let p of ptps | paginate: { itemsPerPage: 5, currentPage: p }">
-              <td><strong>{{p.accnumber}}</strong></td>
-              <td>{{p.ptpamount}}</td>
-              <td>{{p.ptpdate}}</td>
-              <td>{{p.owner}}</td>
+            <tr
+              *ngFor='
+                  let p of ptps | paginate: { itemsPerPage: 5, currentPage: p }
+                '
+            >
               <td>
-                <button (click)="deleteptp(p)" class="btn btn-outline-danger btn-sm">
-                  <i class="fas fa-trash-alt"></i>
+                <strong>{{ p.accnumber }}</strong>
+              </td>
+              <td>{{ p.ptpamount }}</td>
+              <td>{{ p.ptpdate }}</td>
+              <td>{{ p.owner }}</td>
+              <td>
+                <button
+                  (click)='deleteptp(p)'
+                  class='btn btn-outline-danger btn-sm'
+                >
+                  <i class='fas fa-trash-alt'></i>
                 </button>
               </td>
             </tr>
             </tbody>
           </table>
           <!--<pagination-controls (pageChange)="p = $event"></pagination-controls>-->
-          <button (click)="saveallptps()" (click)="myModal.close()" [disabled]="!isptptosave"
-                  class="btn btn-block btn-outline-success">Save all Promises
+          <button
+            (click)='saveallptps()'
+            (click)='myModal.close()'
+            [disabled]='!isptptosave'
+            class='btn btn-block btn-outline-success'
+          >
+            Save all Promises
           </button>
         </div>
       </div>
     </div>
-    <div class="modal-footer">
-      <button (click)="myModal.close()" class="btn btn-outline-darck" type="button">Close</button>
+    <div class='modal-footer'>
+      <button
+        (click)='myModal.close()'
+        class='btn btn-outline-darck'
+        type='button'
+      >
+        Close
+      </button>
     </div>
   </ngx-smart-modal>
-
 </app-panel>

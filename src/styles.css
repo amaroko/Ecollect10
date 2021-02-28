@@ -5,40 +5,110 @@
 @import '~nvd3/build/nv.d3.css';
 @import '~angular-calendar/css/angular-calendar.css';
 @import '~@ng-select/ng-select/themes/default.theme.css';
-@import "~@ag-grid-enterprise/all-modules/dist/styles/ag-grid.css";
-@import "~@ag-grid-enterprise/all-modules/dist/styles/ag-theme-balham";
-@import "assets/css/default/cooploader.css";
-@import "~ngx-bootstrap/datepicker/bs-datepicker.css";
+@import '~@ag-grid-enterprise/all-modules/dist/styles/ag-grid.css';
+@import '~@ag-grid-enterprise/all-modules/dist/styles/ag-theme-balham';
+@import 'assets/css/default/cooploader.css';
+@import '~ngx-bootstrap/datepicker/bs-datepicker.css';
 
 /*Make the screen more visible in small screen devices...13inch->*/
 html {
-  zoom:85%
+  zoom: 90%;
 }
 
+/*Show hand cursor when hovering a link*/
 a:hover {
   cursor: pointer !important;
 }
 
- /*make scrollbar visible always on sidebar*/
+/*make scrollbar visible always on sidebar*/
 .ps > .ps__rail-x,
 .ps > .ps__rail-y {
   opacity: 0.6;
 }
-li.pagination-next.disabled{
+
+li.pagination-next.disabled {
   cursor: not-allowed;
 }
-li.pagination-previous.disabled{
+
+li.pagination-previous.disabled {
   cursor: not-allowed;
 }
+
 /*start of cursor not allowed*/
 *.form-control[disabled] {
   cursor: not-allowed;
 }
 
-
 *.btn[disabled] {
   cursor: not-allowed;
 }
 
+/*end of cursor not allowed
+  width: 80px;*/
 
-/*end of cursor not allowed*/
+/*start of login page loader*/
+.lds-ellipsis {
+  display: inline-block;
+  position: relative;
+  height: 80px;
+}
+
+.lds-ellipsis div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #005840;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+.lds-ellipsis div:nth-child(1) {
+  left: 8px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(2) {
+  left: 8px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(3) {
+  left: 32px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(4) {
+  left: 56px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
+}
+
+
+/*end of loader*/

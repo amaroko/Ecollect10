@@ -1,8 +1,8 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
-import {EcolService} from '../../../services/ecol.service';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { EcolService } from '../../../services/ecol.service';
 import swal from 'sweetalert2';
-import {environment} from '../../../../environments/environment';
+import { environment } from '../../../../environments/environment';
 import * as introJs from 'intro.js/intro.js';
 
 const URL = environment.valor;
@@ -19,13 +19,11 @@ export class GuarantorsComponent implements OnInit {
   username: string;
   model: any = {};
   guarantors: any = [];
+  emailPattern = '^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$';
 
-  constructor(
-    private route: ActivatedRoute,
-    private ecolService: EcolService) {
+  constructor(private route: ActivatedRoute, private ecolService: EcolService) {
     //
   }
-
 
   GuarantorSteps(): void {
     this.introJS
@@ -33,7 +31,8 @@ export class GuarantorsComponent implements OnInit {
         steps: [
           {
             element: '#existinguarantors',
-            intro: 'Here you will find a list of the existing guarantors for this account'
+            intro:
+              'Here you will find a list of the existing guarantors for this account'
           }
           // {
           //   element: '#custnumber',
@@ -56,7 +55,6 @@ export class GuarantorsComponent implements OnInit {
           //   element: '#historysms',
           //   intro: 'Here is where the history of sent sms can be viewed in a listed format'
           // }
-
         ],
         hidePrev: true,
         hideNext: true,
@@ -64,7 +62,6 @@ export class GuarantorsComponent implements OnInit {
       })
       .start();
   }
-
 
   GuarantorSteps2(): void {
     this.introJS
@@ -92,7 +89,8 @@ export class GuarantorsComponent implements OnInit {
           },
           {
             element: '#postalcode',
-            intro: 'This is the postal code of the postal address provided by the guarantor'
+            intro:
+              'This is the postal code of the postal address provided by the guarantor'
           },
           {
             element: '#telnumber',
@@ -108,15 +106,16 @@ export class GuarantorsComponent implements OnInit {
           },
           {
             element: '#guarantorsubmit',
-            intro: 'Pressing this button will submit your details to the server. If disabled, kindly check ' +
+            intro:
+              'Pressing this button will submit your details to the server. If disabled, kindly check ' +
               'to see if you have left a field unattended'
           },
           {
             element: '#reset',
-            intro: 'This button will clear your form or reset so that you could start entering ' +
+            intro:
+              'This button will clear your form or reset so that you could start entering ' +
               'the information again'
           }
-
         ],
         hidePrev: true,
         hideNext: true,
@@ -125,7 +124,6 @@ export class GuarantorsComponent implements OnInit {
       .start();
   }
 
-
   ngOnInit() {
     // check if logged in
     this.ecolService.ifLogged();
@@ -133,7 +131,7 @@ export class GuarantorsComponent implements OnInit {
     this.username = currentUser.USERNAME;
 
     this.accnumber = this.route.snapshot.queryParamMap.get('accnumber');
-    this.route.queryParamMap.subscribe(queryParams => {
+    this.route.queryParamMap.subscribe((queryParams) => {
       this.accnumber = queryParams.get('accnumber');
       this.model.accnumber = queryParams.get('accnumber');
     });
@@ -144,7 +142,7 @@ export class GuarantorsComponent implements OnInit {
     });*/
 
     this.custnumber = this.route.snapshot.queryParamMap.get('custnumber');
-    this.route.queryParamMap.subscribe(queryParams => {
+    this.route.queryParamMap.subscribe((queryParams) => {
       this.custnumber = queryParams.get('custnumber');
       this.model.custnumber = queryParams.get('custnumber');
     });
@@ -173,26 +171,30 @@ export class GuarantorsComponent implements OnInit {
       email: form.value.email,
       active: form.value.active
     };
-    this.ecolService.submitGuarantor(body).subscribe(data => {
-      swal.fire('Successful!', 'saved successfully!', 'success');
-      this.getGuarantors(this.accnumber);
-    }, error => {
-      console.log(error);
-      swal.fire('Error!', 'Error occurred during processing!', 'error');
-    });
+    this.ecolService.submitGuarantor(body).subscribe(
+      (data) => {
+        swal.fire('Successful!', 'saved successfully!', 'success');
+        this.getGuarantors(this.accnumber);
+      },
+      (error) => {
+        console.log(error);
+        swal.fire('Error!', 'Error occurred during processing!', 'error');
+      }
+    );
   }
 
   getGuarantors(accnumber) {
-    this.ecolService.guarantordetails(accnumber).subscribe(data => {
-      this.guarantors = data;
-    }, error => {
-      console.log(error);
-    });
+    this.ecolService.guarantordetails(accnumber).subscribe(
+      (data) => {
+        this.guarantors = data;
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 
   reset() {
     console.log('please!!!');
   }
-
 }
-

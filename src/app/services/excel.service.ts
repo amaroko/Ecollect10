@@ -1,10 +1,10 @@
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 // import {Workbook} from 'exceljs';
 // import * as fs from 'file-saver';
 // import * as logoFile from '../../assets/img/cooplogo.js';
-import {DatePipe} from '@angular/common';
-import {environment} from '../../environments/environment';
-import {HttpClient} from '@angular/common/http';
+import { DatePipe } from '@angular/common';
+import { environment } from '../../environments/environment';
+import { HttpClient } from '@angular/common/http';
 
 const URL = environment.api;
 
@@ -13,7 +13,6 @@ const URL = environment.api;
 })
 export class ExcelService {
   constructor(private datePipe: DatePipe, private http: HttpClient) {
-
   }
 
   // async generateExcel(cust) {
@@ -110,4 +109,3 @@ export class ExcelService {
   //
   // }
 }
-

@@ -1,16 +1,15 @@
-import {Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {Router} from '@angular/router';
-import {environment} from '../../environments/environment';
-import {forkJoin} from 'rxjs';
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Router } from '@angular/router';
+import { environment } from '../../environments/environment';
+import { forkJoin } from 'rxjs';
 import swal from 'sweetalert2';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EcolService {
-  constructor(private httpClient: HttpClient,
-              private router: Router) {
+  constructor(private httpClient: HttpClient, private router: Router) {
   }
 
   ifLogged() {
@@ -45,84 +44,138 @@ export class EcolService {
 
   getptps(accnumber) {
     // tslint:disable-next-line:max-line-length
-    return this.httpClient.get<any>(environment.api + '/api/ptps?filter[where][accnumber]=' + accnumber + '&filter[order]=actiondate DESC');
+    return this.httpClient.get<any>(
+      environment.api +
+      '/api/ptps?filter[where][accnumber]=' +
+      accnumber +
+      '&filter[order]=actiondate DESC'
+    );
   }
 
   searchwoffstory(accnumber) {
-    return this.httpClient.get<any>(environment.api + '/api/writeoffstory?filter[where][accnumber]=' + accnumber);
+    return this.httpClient.get<any>(
+      environment.api +
+      '/api/writeoffstory?filter[where][accnumber]=' +
+      accnumber
+    );
   }
 
   s_check_account_plans(accnumber) {
     // tslint:disable-next-line:max-line-length
-    return this.httpClient.get<any>(environment.api + '/api/tbl_s_accounts?filter[where][accnumber]=' + accnumber);
+    return this.httpClient.get<any>(
+      environment.api +
+      '/api/tbl_s_accounts?filter[where][accnumber]=' +
+      accnumber
+    );
   }
 
   single_s_plans(planid) {
     // tslint:disable-next-line:max-line-length
-    return this.httpClient.get<any>(environment.api + '/api/tbl_s_plans/' + planid);
+    return this.httpClient.get<any>(
+      environment.api + '/api/tbl_s_plans/' + planid
+    );
   }
 
   getpermissions(role_id: string) {
-    return this.httpClient.get<any>(environment.api + '/api/permissionsettings?filter[where][role_id]=' + role_id);
+    return this.httpClient.get<any>(
+      environment.api +
+      '/api/permissionsettings?filter[where][role_id]=' +
+      role_id
+    );
   }
 
   getcardAccount(cardacct) {
     // tslint:disable-next-line:max-line-length/qall
-    return this.httpClient.get<any>(environment.api + '/api/tcards?filter[where][cardacct]=' + cardacct);
+    return this.httpClient.get<any>(
+      environment.api + '/api/tcards?filter[where][cardacct]=' + cardacct
+    );
   }
 
   getWatchcardAccount(cardacct) {
     // tslint:disable-next-line:max-line-length
-    return this.httpClient.get<any>(environment.api + '/api/cards_watch_stage?filter[where][cardacct]=' + cardacct);
+    return this.httpClient.get<any>(
+      environment.api +
+      '/api/cards_watch_stage?filter[where][cardacct]=' +
+      cardacct
+    );
   }
 
   totalnotes(custnumber) {
-    return this.httpClient.get<any>(environment.api + '/api/notehis/total?custnumber=' + custnumber);
+    return this.httpClient.get<any>(
+      environment.api + '/api/notehis/total?custnumber=' + custnumber
+    );
   }
 
   retrievetotalCollateral(custnumber) {
-    return this.httpClient.get<any>(environment.api + '/api/notehis/total?custnumber=' + custnumber);
+    return this.httpClient.get<any>(
+      environment.api + '/api/notehis/total?custnumber=' + custnumber
+    );
   }
 
   getfileshistory(custnumber) {
     // tslint:disable-next-line:max-line-length
-    return this.httpClient.get<any>(environment.api + '/api/uploads?filter[where][custnumber]=' + custnumber + '&filter[order]=stagedate desc');
+    return this.httpClient.get<any>(
+      environment.api +
+      '/api/uploads?filter[where][custnumber]=' +
+      custnumber +
+      '&filter[order]=stagedate desc'
+    );
   }
 
   allteles(custnumber) {
-    return this.httpClient.get<any>(environment.nodeapi + '/teles/all?custnumber=' + custnumber);
+    return this.httpClient.get<any>(
+      environment.nodeapi + '/teles/all?custnumber=' + custnumber
+    );
   }
 
   totalguarantors(custnumber) {
-    return this.httpClient.get<any>(environment.api + '/api/guarantordetails/total?custnumber=' + custnumber);
+    return this.httpClient.get<any>(
+      environment.api + '/api/guarantordetails/total?custnumber=' + custnumber
+    );
   }
 
   totalcontacts(custnumber) {
-    return this.httpClient.get<any>(environment.api + '/api/teles/total?custnumber=' + custnumber);
+    return this.httpClient.get<any>(
+      environment.api + '/api/teles/total?custnumber=' + custnumber
+    );
   }
 
   totalcollaterals(custnumber) {
-    return this.httpClient.get<any>(environment.api + '/api/deptcollateral/total?custnumber=' + custnumber);
+    return this.httpClient.get<any>(
+      environment.api + '/api/deptcollateral/total?custnumber=' + custnumber
+    );
   }
 
   getAccount(accnumber) {
     // tslint:disable-next-line:max-line-length
     // return this.httpClient.get<any>(environment.api + '/api/tbl_q_all?filter[include]=guarantors&filter[include]=demandsdues&filter[where][accnumber]=' + accnumber);
     // tslint:disable-next-line:max-line-length
-    return this.httpClient.get<any>(environment.api + '/api/tqall?filter[include]=guarantors&filter[include]=demandsdues&filter[where][accnumber]=' + accnumber);
+    return this.httpClient.get<any>(
+      environment.api +
+      '/api/tqall?filter[include]=guarantors&filter[include]=demandsdues&filter[where][accnumber]=' +
+      accnumber
+    );
   }
 
   getmcoopcashAccount(accnumber) {
     // tslint:disable-next-line:max-line-length
-    return this.httpClient.get<any>(environment.api + '/api/mcoopcash_stage?filter[include]=mcoopcash_static&filter[where][loanaccnumber]=' + accnumber);
+    return this.httpClient.get<any>(
+      environment.api +
+      '/api/mcoopcash_stage?filter[include]=mcoopcash_static&filter[where][loanaccnumber]=' +
+      accnumber
+    );
   }
 
   getwatch(accnumber) {
-    return this.httpClient.get<any>(environment.api + '/api/watch_stage/' + accnumber);
+    return this.httpClient.get<any>(
+      environment.api + '/api/watch_stage/' + accnumber
+    );
   }
 
   login(username: string) {
-    return this.httpClient.get<any>(environment.api + '/api/tblusers/search?username=' + username);
+    return this.httpClient.get<any>(
+      environment.api + '/api/tblusers/search?username=' + username
+    );
   }
 
   logout() {
@@ -144,19 +197,33 @@ export class EcolService {
 
   getbulknotes(cust) {
     // tslint:disable-next-line:max-line-length
-    const response = this.httpClient.get<any>(environment.api + '/api/notehis?filter[where][custnumber]=' + cust + '&filter[where][notesrc]=uploaded a note' + '&filter[order]=notedate DESC');
+    const response = this.httpClient.get<any>(
+      environment.api +
+      '/api/notehis?filter[where][custnumber]=' +
+      cust +
+      '&filter[where][notesrc]=uploaded a note' +
+      '&filter[order]=notedate DESC'
+    );
     return forkJoin([response]);
   }
 
   getflaggednotes(cust) {
     // tslint:disable-next-line:max-line-length
-    const response = this.httpClient.get<any>(environment.api + '/api/notehis?filter[where][custnumber]=' + cust + '&filter[where][noteimp]=Y' + '&filter[order]=notedate DESC');
+    const response = this.httpClient.get<any>(
+      environment.api +
+      '/api/notehis?filter[where][custnumber]=' +
+      cust +
+      '&filter[where][noteimp]=Y' +
+      '&filter[order]=notedate DESC'
+    );
     return forkJoin([response]);
   }
 
   getactivitylogreason(cust) {
     // tslint:disable-next-line:max-line-length
-    return this.httpClient.get<any>(environment.api + '/api/activitylogs?filter[where][custnumber]=' + cust);
+    return this.httpClient.get<any>(
+      environment.api + '/api/activitylogs?filter[where][custnumber]=' + cust
+    );
   }
 
   getallnotes(filter, cust) {
@@ -171,32 +238,44 @@ export class EcolService {
 
   otheraccs(custnumber) {
     // tslint:disable-next-line:max-line-length
-    return this.httpClient.get<any>(environment.nodeapi + '/otheraccs/all?custnumber=' + custnumber);
+    return this.httpClient.get<any>(
+      environment.nodeapi + '/otheraccs/all?custnumber=' + custnumber
+    );
   }
 
   collaterals(accnumber) {
     // tslint:disable-next-line:max-line-length
-    return this.httpClient.get<any>(environment.api + '/api/collaterals?filter[where][accnumber]=' + accnumber);
+    return this.httpClient.get<any>(
+      environment.api + '/api/collaterals?filter[where][accnumber]=' + accnumber
+    );
   }
 
   directors(accnumber) {
     // tslint:disable-next-line:max-line-length
-    return this.httpClient.get<any>(environment.api + '/api/directors?filter[where][accnumber]=' + accnumber);
+    return this.httpClient.get<any>(
+      environment.api + '/api/directors?filter[where][accnumber]=' + accnumber
+    );
   }
 
   accwithid(nationid) {
     // tslint:disable-next-line:max-line-length
-    return this.httpClient.get<any>(environment.api + '/api/tbl_q_all?filter[where][nationid]=' + nationid);
+    return this.httpClient.get<any>(
+      environment.api + '/api/tbl_q_all?filter[where][nationid]=' + nationid
+    );
   }
 
   ptps(accnumber) {
     // tslint:disable-next-line:max-line-length
-    return this.httpClient.get<any>(environment.api + '/api/ptps?filter[where][accnumber]=' + accnumber);
+    return this.httpClient.get<any>(
+      environment.api + '/api/ptps?filter[where][accnumber]=' + accnumber
+    );
   }
 
   getcardwithid(nationid) {
     // tslint:disable-next-line:max-line-length
-    return this.httpClient.get<any>(environment.api + '/api/cards_stage?filter[where][nationid]=' + nationid);
+    return this.httpClient.get<any>(
+      environment.api + '/api/cards_stage?filter[where][nationid]=' + nationid
+    );
   }
 
   getexcuse() {
@@ -207,16 +286,28 @@ export class EcolService {
   }
 
   getExcuseDetails(EXCUSEID: any) {
-    return this.httpClient.get<any>(environment.api + '/api/excusedetailed?filter[where][excuseid]=' + EXCUSEID);
+    return this.httpClient.get<any>(
+      environment.api +
+      '/api/excusedetailed?filter[where][excuseid]=' +
+      EXCUSEID
+    );
   }
 
   getStaticLoans(accnumber) {
-    return this.httpClient.get<any>(environment.api + '/api/tbl_portfolio_static?filter[where][accnumber]=' + accnumber);
+    return this.httpClient.get<any>(
+      environment.api +
+      '/api/tbl_portfolio_static?filter[where][accnumber]=' +
+      accnumber
+    );
   }
 
   getWatchcardStatic(cardacct) {
     // tslint:disable-next-line:max-line-length
-    return this.httpClient.get<any>(environment.api + '/api/cards_watch_static?filter[where][cardacct]=' + cardacct);
+    return this.httpClient.get<any>(
+      environment.api +
+      '/api/cards_watch_static?filter[where][cardacct]=' +
+      cardacct
+    );
   }
 
   getcmdstatus() {
@@ -225,7 +316,8 @@ export class EcolService {
   }
 
   getreviewers() {
-    const url = environment.api + '/api/tblusers?filter[where][role]=teamleader';
+    const url =
+      environment.api + '/api/tblusers?filter[where][role]=teamleader';
     return this.httpClient.get(url);
   }
 
@@ -245,7 +337,6 @@ export class EcolService {
   }
 
   loader() {
-
     swal.fire({
       title: 'Processing ...',
       text: 'Please wait',
@@ -257,7 +348,10 @@ export class EcolService {
   }
 
   putcardwatch(data) {
-    return this.httpClient.put<any>(environment.api + '/api/cards_watch_static/' + data.cardacct, data);
+    return this.httpClient.put<any>(
+      environment.api + '/api/cards_watch_static/' + data.cardacct,
+      data
+    );
   }
 
   postactivitylogs(body) {
@@ -266,15 +360,23 @@ export class EcolService {
   }
 
   putwatch(data) {
-    return this.httpClient.put<any>(environment.api + '/api/watch_static', data);
+    return this.httpClient.put<any>(
+      environment.api + '/api/watch_static',
+      data
+    );
   }
 
   reviewptp(data) {
-    return this.httpClient.post<any>(environment.nodeapi + '/brokenptps/review', data);
+    return this.httpClient.post<any>(
+      environment.nodeapi + '/brokenptps/review',
+      data
+    );
   }
 
   activeptps(accnumber) {
-    return this.httpClient.get<any>(environment.nodeapi + '/activeptps/active?accnumber=' + accnumber);
+    return this.httpClient.get<any>(
+      environment.nodeapi + '/activeptps/active?accnumber=' + accnumber
+    );
   }
 
   postptps(ptps) {
@@ -293,38 +395,63 @@ export class EcolService {
   }
 
   demandshistory(data) {
-    return this.httpClient.post<any>(environment.api + '/api/demandshistory', data);
+    return this.httpClient.post<any>(
+      environment.api + '/api/demandshistory',
+      data
+    );
   }
 
   getteles(custnumber) {
-    return this.httpClient.get<any>(environment.api + '/api/teles?filter[where][custnumber]=' + custnumber);
+    return this.httpClient.get<any>(
+      environment.api + '/api/teles?filter[where][custnumber]=' + custnumber
+    );
   }
 
   getdemandshistory(accnumber) {
     // tslint:disable-next-line:max-line-length
-    return this.httpClient.get<any>(environment.api + '/api/demandshistory?filter[where][accnumber]=' + accnumber + '&filter[order]=datesent desc');
+    return this.httpClient.get<any>(
+      environment.api +
+      '/api/demandshistory?filter[where][accnumber]=' +
+      accnumber +
+      '&filter[order]=datesent desc'
+    );
   }
 
   getcustwithAccount(custnumber) {
     // tslint:disable-next-line:max-line-length
-    return this.httpClient.get<any>(environment.api + '/api/tqall?filter[where][custnumber]=' + custnumber);
+    return this.httpClient.get<any>(
+      environment.api + '/api/tqall?filter[where][custnumber]=' + custnumber
+    );
   }
 
   demand1history(accnumber) {
     // tslint:disable-next-line:max-line-length
-    return this.httpClient.get<any>(environment.api + '/api/demandshistory?filter[where][accnumber]=' + accnumber + '&filter[where][demand]=Demand1&filter[order]=datesent desc');
+    return this.httpClient.get<any>(
+      environment.api +
+      '/api/demandshistory?filter[where][accnumber]=' +
+      accnumber +
+      '&filter[where][demand]=Demand1&filter[order]=datesent desc'
+    );
   }
 
   generateLetter(data) {
-    return this.httpClient.post<any>(environment.letters_api + data.demand + '/download', data);
+    return this.httpClient.post<any>(
+      environment.letters_api + data.demand + '/download',
+      data
+    );
   }
 
   getsmsmessage(demand) {
-    return this.httpClient.get<any>(environment.api + '/api/demandsettings/' + demand.toLowerCase());
+    return this.httpClient.get<any>(
+      environment.api + '/api/demandsettings/' + demand.toLowerCase()
+    );
   }
 
   demandstatus(body) {
-    return this.httpClient.post<any>(environment.nodeapi + '/demandstatus/demandstatus', body);
+    return this.httpClient.post<any>(
+      environment.nodeapi + '/demandstatus/demandstatus',
+      body
+    );
   }
 
   sendDemandEmail(data) {
@@ -336,7 +463,10 @@ export class EcolService {
   }
 
   generateLettercc(data) {
-    return this.httpClient.post<any>(environment.letters_api + data.demand + '/download', data);
+    return this.httpClient.post<any>(
+      environment.letters_api + data.demand + '/download',
+      data
+    );
   }
 
   sendsms(data) {
@@ -344,21 +474,36 @@ export class EcolService {
   }
 
   guarantorletters(data) {
-    return this.httpClient.post<any>(environment.api + '/api/guarantorletters', data);
+    return this.httpClient.post<any>(
+      environment.api + '/api/guarantorletters',
+      data
+    );
   }
 
   demanddownload(file: string) {
-    const body = {filename: file};
+    const body = { filename: file };
 
-    return this.httpClient.post(environment.demanddownload + '/filesapi/download', body, {
-      responseType: 'blob',
-      headers: new HttpHeaders().append('Content-Type', 'application/json')
-    });
+    return this.httpClient.post(
+      environment.demanddownload + '/filesapi/download',
+      body,
+      {
+        responseType: 'blob',
+        headers: new HttpHeaders().append('Content-Type', 'application/json')
+      }
+    );
   }
 
   existsteles(custnumber, tel, email) {
     // tslint:disable-next-line:max-line-length
-    return this.httpClient.get<any>(environment.api + '/api/teles?filter[where][custnumber]=' + custnumber + '&filter[where][telephone]=' + tel + '&filter[where][email]=' + email);
+    return this.httpClient.get<any>(
+      environment.api +
+      '/api/teles?filter[where][custnumber]=' +
+      custnumber +
+      '&filter[where][telephone]=' +
+      tel +
+      '&filter[where][email]=' +
+      email
+    );
   }
 
   postteles(data) {
@@ -367,16 +512,25 @@ export class EcolService {
 
   getallteles(custnumber) {
     // return this.httpClient.get<any>(environment.api + '/api/teles/alltele?custnumber=' + custnumber);
-    return this.httpClient.get<any>(environment.nodeapi + '/teles/all?custnumber=' + custnumber);
+    return this.httpClient.get<any>(
+      environment.nodeapi + '/teles/all?custnumber=' + custnumber
+    );
   }
 
   getsms(cust) {
-    return this.httpClient.get<any>(environment.api + '/api/sms?filter[where][custnumber]=' + cust + '&filter[order]=stagedate desc');
+    return this.httpClient.get<any>(
+      environment.api +
+      '/api/sms?filter[where][custnumber]=' +
+      cust +
+      '&filter[order]=stagedate desc'
+    );
   }
 
   getaccount(accnumber) {
     // return this.httpClient.get<any>(environment.api + '/api/tbl_q_all/' + accnumber);
-    return this.httpClient.get<any>(environment.api + '/api/tqall/' + accnumber);
+    return this.httpClient.get<any>(
+      environment.api + '/api/tqall/' + accnumber
+    );
   }
 
   postsms(body) {
@@ -389,31 +543,53 @@ export class EcolService {
   }
 
   s_plan_actions(planid) {
-    return this.httpClient.get<any>(environment.api + '/api/tbl_s_plan_actions?filter[where][planid]=' + planid);
+    return this.httpClient.get<any>(
+      environment.api +
+      '/api/tbl_s_plan_actions?filter[where][planid]=' +
+      planid
+    );
   }
 
   s_account_plans(accnumber, planid) {
     // tslint:disable-next-line:max-line-length
-    return this.httpClient.get<any>(environment.api + '/api/tbl_s_account_plans?filter[where][accnumber]=' + accnumber + '&filter[where][planid]=' + planid);
+    return this.httpClient.get<any>(
+      environment.api +
+      '/api/tbl_s_account_plans?filter[where][accnumber]=' +
+      accnumber +
+      '&filter[where][planid]=' +
+      planid
+    );
   }
 
   putaccountplan(body) {
     // tslint:disable-next-line:max-line-length
-    return this.httpClient.put<any>(environment.api + '/api/tbl_s_account_plans/' + body.id, body);
+    return this.httpClient.put<any>(
+      environment.api + '/api/tbl_s_account_plans/' + body.id,
+      body
+    );
   }
 
   saveaccountplan(body) {
     // tslint:disable-next-line:max-line-length
-    return this.httpClient.post<any>(environment.api + '/api/tbl_s_account_plans', body);
+    return this.httpClient.post<any>(
+      environment.api + '/api/tbl_s_account_plans',
+      body
+    );
   }
 
   put_s_accounts(body) {
     // tslint:disable-next-line:max-line-length
-    return this.httpClient.put<any>(environment.api + '/api/tbl_s_accounts', body);
+    return this.httpClient.put<any>(
+      environment.api + '/api/tbl_s_accounts',
+      body
+    );
   }
 
   putteles(data) {
-    return this.httpClient.post<any>(environment.nodeapi + '/teles/update', data);
+    return this.httpClient.post<any>(
+      environment.nodeapi + '/teles/update',
+      data
+    );
   }
 
   submitCollateral(body) {
@@ -421,20 +597,34 @@ export class EcolService {
   }
 
   retrieveCollateral(custnumber) {
-    return this.httpClient.get(environment.api + '/api/deptcollateral?filter[where][custnumber]=' + custnumber);
+    return this.httpClient.get(
+      environment.api +
+      '/api/deptcollateral?filter[where][custnumber]=' +
+      custnumber
+    );
   }
 
   updateCollateral(id, body) {
-    return this.httpClient.put(environment.api + '/api/deptcollateral/' + id, body);
+    return this.httpClient.put(
+      environment.api + '/api/deptcollateral/' + id,
+      body
+    );
   }
 
   submitGuarantor(body) {
-    return this.httpClient.post(environment.api + '/api/guarantordetails', body);
+    return this.httpClient.post(
+      environment.api + '/api/guarantordetails',
+      body
+    );
   }
 
   guarantordetails(accnumber) {
     // tslint:disable-next-line:max-line-length
-    return this.httpClient.get<any>(environment.api + '/api/guarantordetails?filter[where][accnumber]=' + accnumber);
+    return this.httpClient.get<any>(
+      environment.api +
+      '/api/guarantordetails?filter[where][accnumber]=' +
+      accnumber
+    );
   }
 
   uploads(data) {
@@ -442,7 +632,7 @@ export class EcolService {
   }
 
   downloadFile(file: string) {
-    const body = {filename: file};
+    const body = { filename: file };
     return this.httpClient.post(environment.uploadurl + '/download', body, {
       responseType: 'blob',
       headers: new HttpHeaders().append('Content-Type', 'application/json')
@@ -472,12 +662,16 @@ export class EcolService {
   }
 
   ammendptp(data) {
-    return this.httpClient.post<any>(environment.nodeapi + '/ptpsammend/ammendptp', data);
+    return this.httpClient.post<any>(
+      environment.nodeapi + '/ptpsammend/ammendptp',
+      data
+    );
   }
 
   woffstory(data) {
-    return this.httpClient.put<any>(environment.api + '/api/writeoffstory', data);
+    return this.httpClient.put<any>(
+      environment.api + '/api/writeoffstory',
+      data
+    );
   }
 }
-
-

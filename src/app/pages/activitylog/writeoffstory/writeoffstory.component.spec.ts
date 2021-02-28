@@ -1,6 +1,6 @@
-import {ComponentFixture, TestBed} from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import {WriteoffstoryComponent} from './writeoffstory.component';
+import { WriteoffstoryComponent } from './writeoffstory.component';
 
 describe('WriteoffstoryComponent', () => {
   let component: WriteoffstoryComponent;
@@ -9,8 +9,7 @@ describe('WriteoffstoryComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [WriteoffstoryComponent]
-    })
-      .compileComponents();
+    }).compileComponents();
   });
 
   beforeEach(() => {

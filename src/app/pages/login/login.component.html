@@ -1,12 +1,16 @@
 <!-- begin login -->
 <div class="login login-with-news-feed">
   <!-- begin news-feed -->
-  <div class="news-feed">
-    <div class="news-image" style="background-image: url(../assets/img/login-bg/login-bg-11.jpg)"></div>
-    <div class="news-caption">
-      <h4 class="caption-title"><b>Ecollect</b></h4>
+  <div class='news-feed'>
+    <div
+      class='news-image'
+      style='background-image: url(../assets/img/login-bg/login-bg-11.jpg)'
+    ></div>
+    <div class='news-caption'>
+      <h4 class='caption-title'><b>Ecollect</b></h4>
       <p>
-        Loan management, business-debt management, consumer-debt management, credit card and reporting
+        Loan management, business-debt management, consumer-debt management,
+        credit card and reporting
       </p>
     </div>
   </div>
@@ -25,57 +29,95 @@
     </div>
     <!-- end login-header -->
     <!-- begin login-content -->
-    <div class="login-content">
-      <form (submit)="submitForm($event, valForm.value)" [formGroup]="valForm" class="margin-bottom-0" name="loginForm">
-        <div class="form-group m-b-15">
-          <input [ngClass]="{ 'is-invalid': f.username.errors }"  formControlName="username" id="username"
-                 name="username" class="form-control form-control-lg is-valid"
-                 placeholder="Enter Your Username"  type="text"/>
-          <div *ngIf="f.username.valid" class="valid-feedback">Looks good!</div>
+    <div class='login-content'>
+      <form
+        (submit)='submitForm($event, valForm.value)'
+        [formGroup]='valForm'
+        class='margin-bottom-0'
+        name='loginForm'
+      >
+        <div class='form-group m-b-15'>
+          <input
+            [ngClass]="{ 'is-invalid': f.username.errors }"
+            class='form-control form-control-lg is-valid'
+            formControlName='username'
+            id='username'
+            name='username'
+            placeholder='Enter Your Username'
+            type='text'
+          />
+          <div *ngIf='f.username.valid' class='valid-feedback'>Looks good!</div>
           <div
-            *ngIf="valForm.controls['username'].hasError('required') && (valForm.controls['username'].dirty || valForm.controls['username'].touched)"
-            class="text-danger">
+            *ngIf="
+              valForm.controls['username'].hasError('required') &&
+              (valForm.controls['username'].dirty ||
+                valForm.controls['username'].touched)
+            "
+            class='text-danger'
+          >
             Username is required
           </div>
-
         </div>
 
-
-        <div class="form-group m-b-15">
-          <input [ngClass]="{ 'is-invalid': f.password.errors }"  class="form-control form-control-lg is-valid" formControlName="password"
-                 id="password" placeholder="Password"  type="password"/>
-          <div *ngIf="f.password.valid" class="valid-feedback">Looks good!</div>
+        <div class='form-group m-b-15'>
+          <input
+            [ngClass]="{ 'is-invalid': f.password.errors }"
+            class='form-control form-control-lg is-valid'
+            formControlName='password'
+            id='password'
+            placeholder='Password'
+            type='password'
+          />
+          <div *ngIf='f.password.valid' class='valid-feedback'>Looks good!</div>
           <div
-            *ngIf="valForm.controls['password'].hasError('required') && (valForm.controls['password'].dirty || valForm.controls['password'].touched)"
-            class="text-danger">
+            *ngIf="
+              valForm.controls['password'].hasError('required') &&
+              (valForm.controls['password'].dirty ||
+                valForm.controls['password'].touched)
+            "
+            class='text-danger'
+          >
             Password is required
           </div>
         </div>
 
-        <div class="login-buttons">
-          <button [disabled]="!valForm.valid" class="btn btn-success btn-block btn-lg" type="submit">Sign me in</button>
+        <div *ngIf='!loading' class='login-buttons'>
+          <button
+            [disabled]='!valForm.valid'
+            class='btn btn-success btn-block btn-lg'
+            type='submit'
+          >
+            Sign me in
+          </button>
         </div>
-        <div *ngIf="error"  class="alert alert-danger fade show">{{error}}</div>
+        <div *ngIf='loading' class='lds-ellipsis' style='text-align: center'>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
 
-        <hr/>
-        <p class="text-center text-grey-darker mb-0">
+        <div *ngIf='error' class='alert alert-danger fade show'>
+          {{ error }}
+        </div>
+
+        <hr />
+        <p class='text-center text-grey-darker mb-0'>
           &copy; Inteligen Infosys All Right Reserved 2021
         </p>
-<!--        <p>-->
-<!--          <button (click)="incrementNotificationCount($event)" class="btn btn btn-outline-primary" type="button">-->
-<!--            Notifications count-->
-<!--          </button>-->
-<!--          Click to increment notifications count.-->
-<!--        </p>-->
+        <!--        <p>-->
+        <!--          <button (click)="incrementNotificationCount($event)" class="btn btn btn-outline-primary" type="button">-->
+        <!--            Notifications count-->
+        <!--          </button>-->
+        <!--          Click to increment notifications count.-->
+        <!--        </p>-->
 
-<!--        <p>-->
-<!--          <button (click)="restoreFavicon($event)" class="btn btn btn-outline-primary" type="button">-->
-<!--            Restore-->
-<!--          </button>-->
-<!--          Restore default favicon-->
-<!--        </p>-->
-
-
+        <!--        <p>-->
+        <!--          <button (click)="restoreFavicon($event)" class="btn btn btn-outline-primary" type="button">-->
+        <!--            Restore-->
+        <!--          </button>-->
+        <!--          Restore default favicon-->
+        <!--        </p>-->
       </form>
     </div>
     <!-- end login-content -->

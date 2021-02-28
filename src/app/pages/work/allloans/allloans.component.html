@@ -1,15 +1,17 @@
 <!-- begin panel -->
-<app-panel title="ALL Loans | List includes ALL loans, plus ones not in arrears">
+<app-panel
+  title='ALL Loans | List includes ALL loans, plus ones not in arrears'
+>
   <ag-grid-angular
     #agGrid
-    (gridReady)="onGridReady($event)"
+    (gridReady)='onGridReady($event)'
     (rowClicked)='onRowDoubleClicked($event)'
-    [animateRows]="true"
-    [columnDefs]="columnDefs"
-    [defaultColDef]="defaultColDef"
-    [enableRangeSelection]="true"
-    [floatingFilter]="true"
-    [maxBlocksInCache]="maxBlocksInCache"
+    [animateRows]='true'
+    [columnDefs]='columnDefs'
+    [defaultColDef]='defaultColDef'
+    [enableRangeSelection]='true'
+    [floatingFilter]='true'
+    [maxBlocksInCache]='maxBlocksInCache'
     [modules]="modules"
     [paginationAutoPageSize]="true"
     [pagination]="true"
@@ -19,8 +21,8 @@
     [rowModelType]="rowModelType"
     [sideBar]="true"
     class="ag-theme-balham"
-    id="myGrid"
-    style="width: 100%; height: 750px;"
+    id='myGrid'
+    style='width: 100%; height: 750px'
   ></ag-grid-angular>
 </app-panel>
 <!-- end panel -->

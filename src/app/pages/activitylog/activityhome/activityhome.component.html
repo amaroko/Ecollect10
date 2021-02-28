@@ -1,278 +1,317 @@
 <app-panel title="Client Information Home">
-
-
   <div class="row">
     <!-- begin nav-tabs -->
-    <div class="col-xl-12">
-    <ngb-tabset type="pills">
-      <ngb-tab>
-        <ng-template  ngbTabTitle>
-          <span class="d-sm-none">Account info</span>
-          <span class="d-sm-block ">Account info</span>
-        </ng-template>
+    <div class='col-xl-12'>
+      <ul #nav='ngbNav' class='nav-pills' ngbNav>
+        <li ngbNavItem='Account info'>
+          <!--          <ng-template >-->
+          <!--            <span class="d-sm-none">Account info</span>-->
+          <!--            <span class="d-sm-block">Account info</span>-->
+          <!--          </ng-template>-->
+          <a ngbNavLink>Account info</a>
+          <ng-template ngbNavContent>
+            <div class='bg-white rounded mt-3 p-15'>
+              <!--        <div *ngIf="loader" class="loader"></div>-->
 
-
-        <ng-template ngbTabContent>
-          <div class="bg-white rounded mt-3 p-15">
-
-          <!--        <div *ngIf="loader" class="loader"></div>-->
-
-            <div class="col-xl-4">
-              <table class="table">
-                <thead>
-                <tr *ngIf="!loader">
-                  <th>Description</th>
-                  <th>Data</th>
-                </tr>
-                </thead>
-                <tbody>
-                <ngx-skeleton-loader *ngIf="loader" [count]="7"></ngx-skeleton-loader>
-                <tr *ngIf="!loader">
-                  <td>Account Number.</td>
-                  <td><strong>{{account?.accnumber || account?.cardacct || account?.loanaccnumber}}</strong></td>
-                </tr>
-                <tr *ngIf="!loader">
-                  <td>Outstanding balance</td>
-                  <td><strong>{{account?.oustbalance || account?.outbalance || account?.loanamount}}</strong></td>
-                </tr>
-                <tr *ngIf="!loader">
-                  <td>Total arrears/EXPPMNT</td>
-                  <td><strong>{{account?.instamount || account?.EXPPMNT}}</strong></td>
-                </tr>
-                <tr *ngIf="!loader">
-                  <td>Bucket/cycle</td>
-                  <td><strong>{{account?.bucket || account?.cycle || account?.grade}}</strong></td>
-                </tr>
-                <tr *ngIf="!loader">
-                  <td>AROCODE</td>
-                  <td><strong>{{account?.arocode}}</strong></td>
-                </tr>
-                <tr *ngIf="!loader">
-                  <td>RROCODE</td>
-                  <td><strong>{{account?.rrocode}}</strong></td>
-                </tr>
-                <tr *ngIf="!loader">
-                  <td>BranchName</td>
-                  <td><strong>{{account?.branchcode}}</strong></td>
-                </tr>
-                </tbody>
-              </table>
+              <div class='col-xl-4'>
+                <table class='table'>
+                  <thead>
+                  <tr *ngIf='!loader'>
+                    <th>Description</th>
+                    <th>Data</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <ngx-skeleton-loader
+                    *ngIf='loader'
+                    [count]='7'
+                  ></ngx-skeleton-loader>
+                  <tr *ngIf='!loader'>
+                    <td>Account Number.</td>
+                    <td>
+                      <strong>{{
+                        account?.accnumber ||
+                        account?.cardacct ||
+                        account?.loanaccnumber
+                        }}</strong>
+                    </td>
+                  </tr>
+                  <tr *ngIf='!loader'>
+                    <td>Outstanding balance</td>
+                    <td>
+                      <strong>{{
+                        account?.oustbalance ||
+                        account?.outbalance ||
+                        account?.loanamount
+                        }}</strong>
+                    </td>
+                  </tr>
+                  <tr *ngIf='!loader'>
+                    <td>Total arrears/EXPPMNT</td>
+                    <td>
+                      <strong>{{
+                        account?.instamount || account?.EXPPMNT
+                        }}</strong>
+                    </td>
+                  </tr>
+                  <tr *ngIf='!loader'>
+                    <td>Bucket/cycle</td>
+                    <td>
+                      <strong>{{
+                        account?.bucket || account?.cycle || account?.grade
+                        }}</strong>
+                    </td>
+                  </tr>
+                  <tr *ngIf='!loader'>
+                    <td>AROCODE</td>
+                    <td>
+                      <strong>{{ account?.arocode }}</strong>
+                    </td>
+                  </tr>
+                  <tr *ngIf='!loader'>
+                    <td>RROCODE</td>
+                    <td>
+                      <strong>{{ account?.rrocode }}</strong>
+                    </td>
+                  </tr>
+                  <tr *ngIf='!loader'>
+                    <td>BranchName</td>
+                    <td>
+                      <strong>{{ account?.branchcode }}</strong>
+                    </td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
-
-          </div>
-        </ng-template>
-      </ngb-tab>
-      <ngb-tab>
-        <ng-template ngbTabTitle>
-          <span class="d-sm-none">Other accounts</span>
-          <span class="d-sm-block d-none">Other accounts</span>
-        </ng-template>
-        <ng-template ngbTabContent>
-          <!--<form>
+          </ng-template>
+        </li>
+        <li ngbNavItem='Other accounts'>
+          <!--          <ng-template ngbPanelTitle>-->
+          <!--            <span class="d-sm-none">Other accounts</span>-->
+          <!--            <span class="d-sm-block d-none">Other accounts</span>-->
+          <!--          </ng-template>-->
+          <a ngbNavLink>Other accounts</a>
+          <ng-template ngbNavContent>
+            <!--<form>
               <div class="form-group form-inline">
                   Full text search: <input class="form-control ml-2" type="text" [formControl]="filter" />
               </div> ; index as i  <th scope="row">{{ i + 1 }}</th> <th scope="col">#</th>
           </form>-->
-          <div class="bg-white rounded mt-3 p-15">
-<!--          <div *ngIf="loader" class="loader"></div>-->
-            <div class="col-xl-4">
-          <table class="table table-striped">
-            <thead>
-            <tr *ngIf="!loader">
-
-              <th >accnumber</th>
-              <th >productcode</th>
-              <th >oustbalance</th>
-            </tr>
-            </thead>
-            <tbody>
-            <ngx-skeleton-loader *ngIf="loader" [count]="7"></ngx-skeleton-loader>
-            <tr  *ngFor="let other of otheraccs ">
-
-              <td>
-                {{ other.ACCNUMBER }}
-              </td>
-              <td>{{ other.PRODUCTCODE }}</td>
-              <td>{{ other.OUTSBALANCE | number }}</td>
-            </tr>
-            </tbody>
-
-          </table>
+            <div class='bg-white rounded mt-3 p-15'>
+              <!--          <div *ngIf="loader" class="loader"></div>-->
+              <div class='col-xl-4'>
+                <table class='table table-striped'>
+                  <thead>
+                  <tr *ngIf='!loader'>
+                    <th>accnumber</th>
+                    <th>productcode</th>
+                    <th>oustbalance</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <ngx-skeleton-loader
+                    *ngIf='loader'
+                    [count]='7'
+                  ></ngx-skeleton-loader>
+                  <tr *ngFor='let other of otheraccs'>
+                    <td>
+                      {{ other.ACCNUMBER }}
+                    </td>
+                    <td>{{ other.PRODUCTCODE }}</td>
+                    <td>{{ other.OUTSBALANCE | number }}</td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!--        <pagination-controls (pageChange)="p = $event"></pagination-controls>-->
             </div>
-          <!--        <pagination-controls (pageChange)="p = $event"></pagination-controls>-->
-          </div>
-        </ng-template>
-      </ngb-tab>
-      <ngb-tab>
-        <ng-template ngbTabTitle>
-          <span class="d-sm-none">Collateral info</span>
-          <span class="d-sm-block d-none">Collateral info</span>
-        </ng-template>
-        <ng-template ngbTabContent>
-          <div class="bg-white rounded mt-3 p-15">
-<!--          <div *ngIf="loader" class="loader"></div>-->
-            <div class="col-xl-4">
-          <table class="table table-striped">
-            <thead>
-            <tr *ngIf="!loader">
-              <th >#</th>
-              <th >description</th>
-              <th >forced sale value</th>
-              <th >market value</th>
-            </tr>
-            </thead>
-            <tbody>
-            <ngx-skeleton-loader *ngIf="loader" [count]="7"></ngx-skeleton-loader>
-            <tr *ngFor="let c of collaterals; index as i">
-              <th scope="row">{{ i + 1 }}</th>
-              <td>
-                {{ c.description }}
-              </td>
-              <td>{{ c.fsv }}</td>
-              <td>{{ c.msv}}</td>
-            </tr>
-            </tbody>
-          </table>
+          </ng-template>
+        </li>
+        <li ngbNavItem='Collateral info'>
+          <!--          <ng-template ngbPanelTitle>-->
+          <!--            <span class="d-sm-none">Collateral info</span>-->
+          <!--            <span class="d-sm-block d-none">Collateral info</span>-->
+          <!--          </ng-template>-->
+          <a ngbNavLink>Collateral info</a>
+          <ng-template ngbNavContent>
+            <div class='bg-white rounded mt-3 p-15'>
+              <!--          <div *ngIf="loader" class="loader"></div>-->
+              <div class='col-xl-4'>
+                <table class='table table-striped'>
+                  <thead>
+                  <tr *ngIf='!loader'>
+                    <th>#</th>
+                    <th>description</th>
+                    <th>forced sale value</th>
+                    <th>market value</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <ngx-skeleton-loader
+                    *ngIf='loader'
+                    [count]='7'
+                  ></ngx-skeleton-loader>
+                  <tr *ngFor='let c of collaterals; index as i'>
+                    <th scope='row'>{{ i + 1 }}</th>
+                    <td>
+                      {{ c.description }}
+                    </td>
+                    <td>{{ c.fsv }}</td>
+                    <td>{{ c.msv }}</td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
-          </div>
-        </ng-template>
-      </ngb-tab>
+          </ng-template>
+        </li>
 
-      <ngb-tab>
-        <ng-template ngbTabTitle>
-          <span class="d-sm-none">Directors</span>
-          <span class="d-sm-block d-none">Directors</span>
-        </ng-template>
-        <ng-template ngbTabContent>
-          <div class="bg-white rounded mt-3 p-15">
-<!--          <div *ngIf="loader" class="loader"></div>-->
-            <div class="col-xl-4">
-          <table class="table table-striped">
-            <thead>
-            <tr *ngIf="!loader">
-              <th >#</th>
-              <th >Name</th>
-              <th >IDNuber</th>
-              <th >Telnumber</th>
-              <th >address</th>
-            </tr>
-            </thead>
-            <tbody>
-            <ngx-skeleton-loader *ngIf="loader" [count]="7"></ngx-skeleton-loader>
-            <tr *ngFor="let director of directors; index as i">
-              <th scope="row">{{ i + 1 }}</th>
-              <td>
-                {{ director.name }}
-              </td>
-              <td>{{ director.idnumber }}</td>
-              <td>{{ director.telnumber }}</td>
-              <td>{{ director.address }}</td>
-            </tr>
-            </tbody>
-          </table>
+        <li ngbNavItem='Directors'>
+          <!--          <ng-template ngbPanelTitle>-->
+          <!--            <span class="d-sm-none">Directors</span>-->
+          <!--            <span class="d-sm-block d-none">Directors</span>-->
+          <!--          </ng-template>-->
+          <a ngbNavLink>Directors</a>
+          <ng-template ngbNavContent>
+            <div class='bg-white rounded mt-3 p-15'>
+              <!--          <div *ngIf="loader" class="loader"></div>-->
+              <div class='col-xl-4'>
+                <table class='table table-striped'>
+                  <thead>
+                  <tr *ngIf='!loader'>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>IDNuber</th>
+                    <th>Telnumber</th>
+                    <th>address</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <ngx-skeleton-loader
+                    *ngIf='loader'
+                    [count]='7'
+                  ></ngx-skeleton-loader>
+                  <tr *ngFor='let director of directors; index as i'>
+                    <th scope='row'>{{ i + 1 }}</th>
+                    <td>
+                      {{ director.name }}
+                    </td>
+                    <td>{{ director.idnumber }}</td>
+                    <td>{{ director.telnumber }}</td>
+                    <td>{{ director.address }}</td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
-          </div>
-        </ng-template>
-      </ngb-tab>
+          </ng-template>
+        </li>
 
-      <ngb-tab>
-        <ng-template ngbTabTitle>
-          <span class="d-sm-none">Credit Card</span>
-          <span class="d-sm-block d-none">Credit Card</span>
-        </ng-template>
-        <ng-template ngbTabContent>
-          <div class="bg-white rounded mt-3 p-15">
-          <!--<form>
+        <li ngbNavItem='Credit Card'>
+          <!--          <ng-template ngbPanelTitle>-->
+          <!--            <span class="d-sm-none">Credit Card</span>-->
+          <!--            <span class="d-sm-block d-none">Credit Card</span>-->
+          <!--          </ng-template>-->
+          <a ngbNavLink>Credit Card</a>
+          <ng-template ngbNavContent>
+            <div class='bg-white rounded mt-3 p-15'>
+              <!--<form>
                           <div class="form-group form-inline">
                               Full text search: <input class="form-control ml-2" type="text" [formControl]="filter" />
                           </div>
                       </form>-->
-<!--          <div *ngIf="loader" class="loader"></div>-->
-            <div class="col-xl-4">
-          <table class="table table-striped">
-            <thead>
-            <tr *ngIf="!loader">
-              <th >#</th>
-              <th >CardNumber</th>
-              <th >CardAcct</th>
-              <th >CardName</th>
-              <th >OustBalance</th>
-              <th >ExpAmount</th>
-            </tr>
-            </thead>
-            <tbody>
-            <ngx-skeleton-loader *ngIf="loader" [count]="7"></ngx-skeleton-loader>
-            <tr *ngFor="let card of cards; index as i">
-              <th scope="row">{{ i + 1 }}</th>
-              <td>
-                {{ card.cardnumber }}
-              </td>
-              <td>
-                {{ card.cardacct }}
-              </td>
-              <td>
-                {{ card.cardname }}
-              </td>
-              <td>{{ card.oustbalance | number }}</td>
-              <td>{{ card.expamount | number }}</td>
-            </tr>
-            </tbody>
-          </table>
+              <!--          <div *ngIf="loader" class="loader"></div>-->
+              <div class='col-xl-4'>
+                <table class='table table-striped'>
+                  <thead>
+                  <tr *ngIf='!loader'>
+                    <th>#</th>
+                    <th>CardNumber</th>
+                    <th>CardAcct</th>
+                    <th>CardName</th>
+                    <th>OustBalance</th>
+                    <th>ExpAmount</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <ngx-skeleton-loader
+                    *ngIf='loader'
+                    [count]='7'
+                  ></ngx-skeleton-loader>
+                  <tr *ngFor='let card of cards; index as i'>
+                    <th scope='row'>{{ i + 1 }}</th>
+                    <td>
+                      {{ card.cardnumber }}
+                    </td>
+                    <td>
+                      {{ card.cardacct }}
+                    </td>
+                    <td>
+                      {{ card.cardname }}
+                    </td>
+                    <td>{{ card.oustbalance | number }}</td>
+                    <td>{{ card.expamount | number }}</td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
-          </div>
-        </ng-template>
-      </ngb-tab>
+          </ng-template>
+        </li>
 
-      <ngb-tab>
-        <ng-template ngbTabTitle>
-          <span class="d-sm-none">With Same ID Number</span>
-          <span class="d-sm-block d-none">With Same ID Number</span>
-        </ng-template>
-        <ng-template ngbTabContent>
-          <div class="bg-white rounded mt-3 p-15">
-          <!--<form>
+        <li ngbNavItem='With Same ID Number'>
+          <!--          <ng-template ngbPanelTitle>-->
+          <!--            <span class="d-sm-none">With Same ID Number</span>-->
+          <!--            <span class="d-sm-block d-none">With Same ID Number</span>-->
+          <!--          </ng-template>-->
+          <a ngbNavLink>With Same ID Number</a>
+          <ng-template ngbNavContent>
+            <div class='bg-white rounded mt-3 p-15'>
+              <!--<form>
                               <div class="form-group form-inline">
                                   Full text search: <input class="form-control ml-2" type="text" [formControl]="filter" />
                               </div>
                           </form>-->
-            <div class="col-xl-4">
-          <table class="table table-striped">
-            <thead>
-            <tr *ngIf="!loader">
-              <th >#</th>
-              <th >accnumber</th>
-              <th >arocode</th>
-              <th >oustbalance</th>
-            </tr>
-            </thead>
-            <tbody>
-            <ngx-skeleton-loader *ngIf="loader" [count]="7"></ngx-skeleton-loader>
-            <tr *ngFor="let d of accwithid; index as i">
-              <th scope="row">{{ i + 1 }}</th>
-              <td>
-                {{ d.accnumber }}
-              </td>
-              <td>{{ d.arocode }}</td>
-              <td>{{ d.oustbalance | number }}</td>
-            </tr>
-            </tbody>
-          </table>
+              <div class='col-xl-4'>
+                <table class='table table-striped'>
+                  <thead>
+                  <tr *ngIf='!loader'>
+                    <th>#</th>
+                    <th>accnumber</th>
+                    <th>arocode</th>
+                    <th>oustbalance</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <ngx-skeleton-loader
+                    *ngIf='loader'
+                    [count]='7'
+                  ></ngx-skeleton-loader>
+                  <tr *ngFor='let d of accwithid; index as i'>
+                    <th scope='row'>{{ i + 1 }}</th>
+                    <td>
+                      {{ d.accnumber }}
+                    </td>
+                    <td>{{ d.arocode }}</td>
+                    <td>{{ d.oustbalance | number }}</td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
-          </div>
-        </ng-template>
-      </ngb-tab>
-
-    </ngb-tabset>
-    <!-- end nav-tabs -->
-
+          </ng-template>
+        </li>
+      </ul>
+      <!-- end nav-tabs -->
+      <div [ngbNavOutlet]='nav' class='ml-4'></div>
+    </div>
   </div>
-  </div>
-
 </app-panel>
 <app-panel title="NgbModal">
   <p class="lead">
-    A service to open modal windows. Creating a modal is straightforward: create a template and pass it as an argument
-    to the "open" method!
+    A service to open modal windows. Creating a modal is straightforward: create
+    a template and pass it as an argument to the "open" method!
   </p>
   <!-- #modal-dialog -->
   <ng-template #modalDialog let-c="close" let-d="dismiss">
@@ -281,13 +320,14 @@
       <button (click)="d('Cross click')" class="close" type="button">×</button>
     </div>
     <div class="modal-body">
-
-      <div class="alert alert-danger m-b-0">
-        <h5><i class="fa fa-info-circle"></i> Alert Header</h5>
-        <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras
-          purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate
-          fringilla. Donec lacinia congue felis in faucibus.</p>
-
+      <div class='alert alert-danger m-b-0'>
+        <h5><i class='fa fa-info-circle'></i> Alert Header</h5>
+        <p>
+          Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
+          scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in
+          vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi
+          vulputate fringilla. Donec lacinia congue felis in faucibus.
+        </p>
       </div>
     </div>
     <div class="modal-footer">
@@ -308,13 +348,16 @@
       <tr>
         <td>Default NgBootstrap Modal Dialog Box.</td>
         <td>
-          <button (click)="open(modalDialog)" class="btn btn-sm btn-success">Demo</button>
+          <button (click)='open(modalDialog)' class='btn btn-sm btn-success'>
+            Demo
+          </button>
         </td>
       </tr>
       </tbody>
     </table>
-    <div class="hljs-wrapper">
-          <textarea [lang]="'typescript'" [options]="{}" highlight-js>&lt;ng-template #modalDialog let-c="close" let-d="dismiss"&gt;
+    <div class='hljs-wrapper'>
+      <textarea [lang]="'typescript'" [options]='{}' highlight-js>
+&lt;ng-template #modalDialog let-c="close" let-d="dismiss"&gt;
   &lt;div class="modal-header"&gt;
     &lt;h4 class="modal-title"&gt;Modal Dialog&lt;/h4&gt;
     &lt;button type="button" class="close" (click)="d('Cross click')"&gt;×&lt;/button&gt;
@@ -328,7 +371,8 @@
     &lt;button class="btn btn-white" (click)="c('Close click')"&gt;Close&lt;/button&gt;
     &lt;a href="javascript:;" class="btn btn-success"&gt;Action&lt;/a&gt;
   &lt;/div&gt;
-&lt;/ng-template&gt;</textarea>
+&lt;/ng-template&gt;</textarea
+      >
     </div>
   </ng-container>
 </app-panel>

@@ -1,10 +1,11 @@
 .widget-map {
-	background: $white;
-	
-	&.widget-map-rounded {
-		@include border-radius($border-radius);
-	}
-	&.inverse-mode {
-		background: $dark;
-	}
+  background: $white;
+
+  &.widget-map-rounded {
+    @include border-radius($border-radius);
+  }
+
+  &.inverse-mode {
+    background: $dark;
+  }
 }

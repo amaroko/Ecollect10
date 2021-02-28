@@ -7,56 +7,58 @@
 
 /* Perfect Scrollbar */
 .ps {
-	& .ps__rail-x {
-		z-index: 10;
+  & .ps__rail-x {
+    z-index: 10;
 
-		&:focus,
-		&:hover,
-		&.ps--clicking {
-			background: none;
-		}
-	}
-	& .ps__rail-y {
-		z-index: 10;
-		width: 6px !important;
-		background: none !important;
+    &:focus,
+    &:hover,
+    &.ps--clicking {
+      background: none;
+    }
+  }
 
-		&:focus,
-		&:hover,
-		&.ps--clicking {
-			width: 6px !important;
-			background: none !important;
+  & .ps__rail-y {
+    z-index: 10;
+    width: 6px !important;
+    background: none !important;
 
-			& .ps__thumb-y,
-			& > .ps__thumb_y {
-				width: 6px !important;
-			}
-		}
-	}
+    &:focus,
+    &:hover,
+    &.ps--clicking {
+      width: 6px !important;
+      background: none !important;
+
+      & .ps__thumb-y,
+      & > .ps__thumb_y {
+        width: 6px !important;
+      }
+    }
+  }
 }
 .page-sidebar-minified {
-	& .sidebar {
-		& .ps {
-			& .ps__rail-x,
-			& .ps__rail-y {
-				display: none !important;
-			}
-		}
-	}
+  & .sidebar {
+    & .ps {
+      & .ps__rail-x,
+      & .ps__rail-y {
+        display: none !important;
+      }
+    }
+  }
 }
-
 
 /* Countdown Timer */
 .countdown-section {
-	display: block;
-	text-align: center;
+  display: block;
+  text-align: center;
 
   .countdown-show1 & {
     width: 98%;
   }
+
   .countdown-show2 & {
     width: 48%;
   }
+
   .countdown-show3 & {
     width: 32.5%;
   }
@@ -77,7 +79,6 @@
   display: block;
 }
 
-
 /* Calendar */
 .fc {
   & .fc-toolbar {
@@ -91,7 +92,6 @@
   }
 }
 
-
 /* Material Header Sort */
 .mat-sort-header-sorted {
   & .mat-sort-header-button {
@@ -100,7 +100,6 @@
     }
   }
 }
-
 
 /* Ng Bootstrap Datepicker */
 ngb-datepicker {
@@ -169,7 +168,6 @@ ngb-datepicker {
   }
 }
 
-
 /* Tag Input */
 .ng2-tag-input {
   border: 1px solid lighten($border-color, 5%) !important;
@@ -219,7 +217,6 @@ ngb-datepicker {
     margin-bottom: -5px;
   }
 }
-
 
 /* Angular Calendar */
 .angular-calendar-inline {
@@ -315,7 +312,7 @@ ngb-datepicker {
           }
           &.cal-day-cell {
             &:not(:last-child) {
-              border-right-color: lighten($border-color, 5%);;
+              border-right-color: lighten($border-color, 5%);
             }
           }
         }
@@ -324,22 +321,21 @@ ngb-datepicker {
   }
 }
 
-
 /* Ngx Loading bar */
 ngx-loading-bar {
-	color: $primary !important;
+  color: $primary !important;
 
-	& .ngx-spinner {
+  & .ngx-spinner {
     top: $header-height + $content-padding-y - 7 !important;
     right: $content-padding-x - 20 !important;
     left: auto !important;
-	}
-	& .ngx-bar {
-		background: $primary !important;
-    height: 2px !important;
-	}
-}
+  }
 
+  & .ngx-bar {
+    background: $primary !important;
+    height: 2px !important;
+  }
+}
 
 /* Ngx Daterangepickr Material */
 .ngx-daterangepicker-action {
@@ -365,11 +361,12 @@ ngx-loading-bar {
   padding: 0;
 
   @include border-radius($border-radius-lg);
-  @include box-shadow(0 6px 30px rgba($black, .2));
+  @include box-shadow(0 6px 30px rgba($black, 0.2));
   @if $enable-rtl {
     direction: rtl;
     text-align: right;
   }
+
   &.double {
     @media (max-width: 563px) {
       width: rem(280px);
@@ -429,14 +426,17 @@ ngx-loading-bar {
                   cursor: default;
 
                   @include border-radius($border-radius);
-                  @include transition(all .2s linear);
+                  @include transition(all 0.2s linear);
 
                   &:focus {
                     outline: none;
                     border-color: $input-focus-border-color;
 
-                    @include box-shadow(0 0 0 0.125rem rgba($input-focus-border-color ,.3));
+                    @include box-shadow(
+                        0 0 0 0.125rem rgba($input-focus-border-color, 0.3)
+                    );
                   }
+
                   & + .dropdowns {
                     margin-left: rem(10px);
                   }
@@ -655,7 +655,6 @@ ngx-loading-bar {
   }
 }
 
-
 /* Accordion */
 .card-accordion {
   & ngb-accordion {
@@ -680,153 +679,167 @@ ngx-loading-bar {
   }
 }
 
-
 /* ngx-datatable */
 .panel {
-	& > .table-responsive .ngx-datatable.bootstrap,
-	& > .ngx-datatable.bootstrap {
-		& .datatable-header {
-			& .datatable-header-inner {
-				& .datatable-header-cell {
-						&:first-child {
-							padding-left: rem(15px);
-						}
-						&:last-child {
-							padding-right: rem(15px);
-						}
-				}
-			}
-		}
-		& .datatable-body {
-			& .datatable-body-row {
-				& .datatable-row-center {
-					& .datatable-body-cell {
-						&:first-child {
-							padding-left: rem(15px);
-						}
-						&:last-child {
-							padding-right: rem(15px);
-						}
-					}
-				}
-			}
-		}
-	}
+  & > .table-responsive .ngx-datatable.bootstrap,
+  & > .ngx-datatable.bootstrap {
+    & .datatable-header {
+      & .datatable-header-inner {
+        & .datatable-header-cell {
+          &:first-child {
+            padding-left: rem(15px);
+          }
+
+          &:last-child {
+            padding-right: rem(15px);
+          }
+        }
+      }
+    }
+
+    & .datatable-body {
+      & .datatable-body-row {
+        & .datatable-row-center {
+          & .datatable-body-cell {
+            &:first-child {
+              padding-left: rem(15px);
+            }
+
+            &:last-child {
+              padding-right: rem(15px);
+            }
+          }
+        }
+      }
+    }
+  }
 }
 .ngx-datatable.bootstrap {
-	& .datatable-header {
-		& .datatable-header-inner {
-			& .datatable-header-cell {
-				padding: $table-cell-padding;
-				font-weight: 600;
-				border-bottom: 1px solid #b8c1ca;
-				vertical-align: top;
-				line-height: inherit;
+  & .datatable-header {
+    & .datatable-header-inner {
+      & .datatable-header-cell {
+        padding: $table-cell-padding;
+        font-weight: 600;
+        border-bottom: 1px solid #b8c1ca;
+        vertical-align: top;
+        line-height: inherit;
 
-				& .datatable-header-cell-template-wrap {
-					@include display-flex();
-					@include flex-align(center);
+        & .datatable-header-cell-template-wrap {
+          @include display-flex();
+          @include flex-align(center);
 
-					& .datatable-header-cell-wrapper {
-						@include flex(1);
+          & .datatable-header-cell-wrapper {
+            @include flex(1);
 
-						& .datatable-header-cell-label {
-							display: block;
-						}
-					}
-					& .sort-btn {
-						@include fontawesome();
+            & .datatable-header-cell-label {
+              display: block;
+            }
+          }
 
-						&.datatable-icon-sort-unset:before {
-							content: '\f0dc';
-							opacity: 0.25;
-						}
-						&.datatable-icon-up:before {
-							color: $component-active-bg;
-							content: '\f0de';
-						}
-						&.datatable-icon-down:before {
-							color: $component-active-bg;
-							content: '\f0dd';
-						}
-					}
-				}
-			}
-		}
-	}
-	& .datatable-body {
-		& .datatable-body-row {
-			border-top: none;
+          & .sort-btn {
+            @include fontawesome();
 
-			&.datatable-row-even {
-				background: $table-accent-bg;
-			}
-			& .datatable-row-center {
-				& .datatable-body-cell {
-					padding: $table-cell-padding;
-					vertical-align: top;
-					border-top: none;
-					border-bottom: 1px solid #e4e7ea;
-					line-height: inherit;
-				}
-			}
-		}
-	}
-	& .datatable-footer {
-		background: none;
-		color: inherit;
-		margin-top: rem(-3px);
+            &.datatable-icon-sort-unset:before {
+              content: '\f0dc';
+              opacity: 0.25;
+            }
 
-		& .datatable-pager {
-			& ul {
-				& li {
-					& a {
-						padding: $pagination-padding-y $pagination-padding-x;
-						color: $pagination-color;
-						border: 1px solid $pagination-border-color;
-						min-width: inherit;
-						width: auto;
-						height: auto;
-						line-height: inherit;
+            &.datatable-icon-up:before {
+              color: $component-active-bg;
+              content: '\f0de';
+            }
 
-						@include border-radius($border-radius);
+            &.datatable-icon-down:before {
+              color: $component-active-bg;
+              content: '\f0dd';
+            }
+          }
+        }
+      }
+    }
+  }
 
-						&:hover {
-							color: $pagination-hover-color;
-							background: $pagination-hover-bg !important;
-							border-color: $pagination-hover-border-color;
-						}
-					}
-					&.active {
-						& a {
-							color: $pagination-active-color;
-							background: $pagination-active-bg !important;
-							border-color: $pagination-active-border-color;
-						}
-					}
-				}
-			}
-			& .datatable-icon-left,
-			& .datatable-icon-skip,
-			& .datatable-icon-right,
-			& .datatable-icon-prev {
-				font-size: inherit;
-				line-height: inherit;
+  & .datatable-body {
+    & .datatable-body-row {
+      border-top: none;
 
-				@include fontawesome();
-			}
-			& .datatable-icon-left:before {
-				content: '\f104';
-			}
-			& .datatable-icon-skip:before {
-				content: '\f101';
-			}
-			& .datatable-icon-right:before {
-				content: '\f105';
-			}
-			& .datatable-icon-prev:before {
-				content: '\f100';
-			}
-		}
-	}
+      &.datatable-row-even {
+        background: $table-accent-bg;
+      }
+
+      & .datatable-row-center {
+        & .datatable-body-cell {
+          padding: $table-cell-padding;
+          vertical-align: top;
+          border-top: none;
+          border-bottom: 1px solid #e4e7ea;
+          line-height: inherit;
+        }
+      }
+    }
+  }
+
+  & .datatable-footer {
+    background: none;
+    color: inherit;
+    margin-top: rem(-3px);
+
+    & .datatable-pager {
+      & ul {
+        & li {
+          & a {
+            padding: $pagination-padding-y $pagination-padding-x;
+            color: $pagination-color;
+            border: 1px solid $pagination-border-color;
+            min-width: inherit;
+            width: auto;
+            height: auto;
+            line-height: inherit;
+
+            @include border-radius($border-radius);
+
+            &:hover {
+              color: $pagination-hover-color;
+              background: $pagination-hover-bg !important;
+              border-color: $pagination-hover-border-color;
+            }
+          }
+
+          &.active {
+            & a {
+              color: $pagination-active-color;
+              background: $pagination-active-bg !important;
+              border-color: $pagination-active-border-color;
+            }
+          }
+        }
+      }
+
+      & .datatable-icon-left,
+      & .datatable-icon-skip,
+      & .datatable-icon-right,
+      & .datatable-icon-prev {
+        font-size: inherit;
+        line-height: inherit;
+
+        @include fontawesome();
+      }
+
+      & .datatable-icon-left:before {
+        content: '\f104';
+      }
+
+      & .datatable-icon-skip:before {
+        content: '\f101';
+      }
+
+      & .datatable-icon-right:before {
+        content: '\f105';
+      }
+
+      & .datatable-icon-prev:before {
+        content: '\f100';
+      }
+    }
+  }
 }

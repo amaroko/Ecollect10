@@ -1,87 +1,133 @@
-<div>
-  <button (click)="PtpsSteps()" class="btn btn-primary">SHOW ME STEPS</button>
-  <div class="table-responsive" id="ptptable">
-    <table class="table table-hover table-bordered table-striped">
-      <thead>
-      <tr>
-        <th>action date</th>
-        <th>Account Number</th>
-        <th>PTP Amount</th>
-        <th>Promise Date</th>
-        <th>Owner</th>
-        <th class="text-center">Met?</th>
-        <th>Amount received</th>
-        <th></th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr *ngFor="let p of ptps | paginate: { itemsPerPage: 10, currentPage: p }">
-        <td>{{p.actiondate}}</td>
-        <td>{{p.accnumber}}</td>
-        <td>{{p.ptpamount}}</td>
-        <td>{{p.ptpdate}}</td>
-        <td>{{p.owner}}</td>
-        <td class="text-center">
-          <span class="badge badge-danger">{{p.met}}</span>
-        </td>
-        <td>{{p.amountreceived}}</td>
-        <td><span><button (click)="openModal(p.id)" *ngIf="p.showedit"
-                          class="btn btn-link">edit</button></span></td>
-      </tr>
-      <pagination-controls (pageChange)="p = $event"></pagination-controls>
-      </tbody>
-    </table>
-
+<app-panel>
+  <div>
+    <!--  <button (click)="PtpsSteps()" class="btn btn-primary">SHOW ME STEPS</button>-->
+    <div class='table-responsive' id='ptptable'>
+      <table class='table table-hover table-bordered table-striped'>
+        <thead>
+        <tr>
+          <th>action date</th>
+          <th>Account Number</th>
+          <th>PTP Amount</th>
+          <th>Promise Date</th>
+          <th>Owner</th>
+          <th class='text-center'>Met?</th>
+          <th>Amount received</th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr
+          *ngFor='
+            let p of ptps | paginate: { itemsPerPage: 10, currentPage: p }
+          '
+        >
+          <td>{{ p.actiondate }}</td>
+          <td>{{ p.accnumber }}</td>
+          <td>{{ p.ptpamount }}</td>
+          <td>{{ p.ptpdate }}</td>
+          <td>{{ p.owner }}</td>
+          <td class='text-center'>
+            <span class='badge badge-danger'>{{ p.met }}</span>
+          </td>
+          <td>{{ p.amountreceived }}</td>
+          <td>
+            <span
+            ><button
+              (click)='openModal(p.id)'
+              *ngIf='p.showedit'
+              class='btn btn-link'
+            >
+                edit
+              </button></span
+            >
+          </td>
+        </tr>
+        <pagination-controls (pageChange)='p = $event'></pagination-controls>
+        </tbody>
+      </table>
+    </div>
   </div>
-</div>
+</app-panel>
 
 <ngx-smart-modal #myModal [dismissable]="false" identifier="myModal">
   <div class="modal-header">
     <h4 class="modal-title">ammend PTP</h4>
   </div>
   <div class="modal-body">
-    <div class="col-md-12">
-      <form #ammendptpForm="ngForm" (ngSubmit)="ammendfunc(ammendptpForm)" autocomplete="off" novalidate>
-        <div class="form-group">
+    <div class='col-md-12'>
+      <form
+        #ammendptpForm='ngForm'
+        (ngSubmit)='ammendfunc(ammendptpForm)'
+        autocomplete='off'
+        novalidate
+      >
+        <div class='form-group'>
           <label>id:</label>
           <label>
-            <input #id="ngModel" [(ngModel)]="ammendptp.id" [ngClass]="{ 'is-invalid': id.errors }" class="form-control"
-                   disabled
-                   name="id" placeholder="id"/>
+            <input
+              #id='ngModel'
+              [(ngModel)]='ammendptp.id'
+              [ngClass]="{ 'is-invalid': id.errors }"
+              class='form-control'
+              disabled
+              name='id'
+              placeholder='id'
+            />
           </label>
         </div>
         <div class="form-group">
           <label>accnumber:</label>
           <label>
-            <input #accnumber="ngModel" [(ngModel)]="ammendptp.accnumber" [ngClass]="{ 'is-invalid': accnumber.errors }"
-                   class="form-control"
-                   disabled name="accnumber" placeholder="accnumber"/>
+            <input
+              #accnumber='ngModel'
+              [(ngModel)]='ammendptp.accnumber'
+              [ngClass]="{ 'is-invalid': accnumber.errors }"
+              class='form-control'
+              disabled
+              name='accnumber'
+              placeholder='accnumber'
+            />
           </label>
-
         </div>
         <div class="form-group">
           <label>Promise Amount:</label>
           <label>
-            <input #ptpamount="ngModel" [(ngModel)]="ammendptp.ptpamount" [ngClass]="{ 'is-invalid': ptpamount.errors }"
-                   class="form-control"
-                   name="ptpamount" placeholder="ptp amount" required/>
+            <input
+              #ptpamount='ngModel'
+              [(ngModel)]='ammendptp.ptpamount'
+              [ngClass]="{ 'is-invalid': ptpamount.errors }"
+              class='form-control'
+              name='ptpamount'
+              placeholder='ptp amount'
+              required
+            />
           </label>
-
         </div>
         <div class="form-group">
           <label>Promise Date:</label>
-          <div class="input-group">
-            <label for="ptpdate"></label><input #d="ngbDatepicker" [(ngModel)]="ammendptp.ptpdate" [maxDate]="maxDate"
-                                                [minDate]="minDate"
-                                                class="form-control" id="ptpdate" name="ptpdate"
-                                                ngbDatepicker
-                                                placeholder="yyyy-mm-dd"
-                                                required>
-            <div class="input-group-append">
-              <div class="input-group-append">
-                <button (click)="d.toggle()" class="btn btn-outline-primary" type="button"><span><i
-                  class="fa fa-calendar"></i>
-                                    </span></button>
+          <div class='input-group'>
+            <label for='ptpdate'></label
+            ><input
+            #d='ngbDatepicker'
+            [(ngModel)]='ammendptp.ptpdate'
+            [maxDate]='maxDate'
+            [minDate]='minDate'
+            class='form-control'
+            id='ptpdate'
+            name='ptpdate'
+            ngbDatepicker
+            placeholder='yyyy-mm-dd'
+            required
+          />
+            <div class='input-group-append'>
+              <div class='input-group-append'>
+                <button
+                  (click)='d.toggle()'
+                  class='btn btn-outline-primary'
+                  type='button'
+                >
+                  <span><i class='fa fa-calendar'></i> </span>
+                </button>
               </div>
             </div>
           </div>
@@ -89,30 +135,50 @@
         <div class="form-group">
           <label>comment:</label>
           <label>
-<textarea #comment="ngModel" [(ngModel)]="ammendptp.comment" [ngClass]="{ 'is-invalid': comment.errors }"
-          class="form-control" name="comment"
-          placeholder="comment" required rows="2"></textarea>
+            <textarea
+              #comment='ngModel'
+              [(ngModel)]='ammendptp.comment'
+              [ngClass]="{ 'is-invalid': comment.errors }"
+              class='form-control'
+              name='comment'
+              placeholder='comment'
+              required
+              rows='2'
+            ></textarea>
           </label>
-
         </div>
         <div class="form-group">
           <label>owner:</label>
           <label>
-            <input #owner="ngModel" [(ngModel)]="ammendptp.owner" [ngClass]="{ 'is-invalid': owner.errors }"
-                   class="form-control"
-                   disabled name="owner" placeholder="owner"/>
+            <input
+              #owner='ngModel'
+              [(ngModel)]='ammendptp.owner'
+              [ngClass]="{ 'is-invalid': owner.errors }"
+              class='form-control'
+              disabled
+              name='owner'
+              placeholder='owner'
+            />
           </label>
-
         </div>
 
-        <button [disabled]="ammendptpForm.invalid"
-                class="mb-1 mr-1 btn btn-sm btn-outline-warning  col-form-label" type="submit">Update
+        <button
+          [disabled]='ammendptpForm.invalid'
+          class='mb-1 mr-1 btn btn-sm btn-outline-warning col-form-label'
+          type='submit'
+        >
+          Update
         </button>
       </form>
     </div>
   </div>
-  <div class="modal-footer">
-    <button (click)="myModal.close()" class="btn btn-outline-dark" type="button">Close</button>
+  <div class='modal-footer'>
+    <button
+      (click)='myModal.close()'
+      class='btn btn-outline-dark'
+      type='button'
+    >
+      Close
+    </button>
   </div>
-
 </ngx-smart-modal>

@@ -1,6 +1,6 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import {PtpsComponent} from './ptps.component';
+import { PtpsComponent } from './ptps.component';
 
 describe('PtpsComponent', () => {
   let component: PtpsComponent;
@@ -9,8 +9,7 @@ describe('PtpsComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [PtpsComponent]
-    })
-      .compileComponents();
+    }).compileComponents();
   }));
 
   beforeEach(() => {

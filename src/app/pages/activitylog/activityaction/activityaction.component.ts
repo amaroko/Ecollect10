@@ -1,22 +1,24 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import swal from 'sweetalert2';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {ActivatedRoute} from '@angular/router';
-import {EcolService} from '../../../services/ecol.service';
-import {DataService} from '../../../services/data.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { EcolService } from '../../../services/ecol.service';
+import { DataService } from '../../../services/data.service';
 import * as moment from 'moment';
-import {environment} from '../../../../environments/environment';
-import {NgOption} from '@ng-select/ng-select';
-import {NgbDateAdapter, NgbDateNativeAdapter, NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
-import {NgxSmartModalService} from 'ngx-smart-modal';
-import {NgxSpinnerService} from 'ngx-spinner';
-
+import { environment } from '../../../../environments/environment';
+import { NgOption } from '@ng-select/ng-select';
+import {
+  NgbDateAdapter,
+  NgbDateNativeAdapter,
+  NgbDateStruct
+} from '@ng-bootstrap/ng-bootstrap';
+import { NgxSmartModalService } from 'ngx-smart-modal';
 
 @Component({
   selector: 'app-activityaction',
   templateUrl: './activityaction.component.html',
   styleUrls: ['./activityaction.component.css'],
-  providers: [{provide: NgbDateAdapter, useClass: NgbDateNativeAdapter}]
+  providers: [{ provide: NgbDateAdapter, useClass: NgbDateNativeAdapter }]
 })
 export class ActivityactionComponent implements OnInit {
   @ViewChild('reason') inputOne: ElementRef;
@@ -57,24 +59,24 @@ export class ActivityactionComponent implements OnInit {
   p = 1;
   autodial_telnumber: string;
   ptpid: any = 0;
-  mappedexcuse: string [];
-  MainReasonID: string [];
-  mappedexcusedetails: string [];
-  excusedetails: string [];
-  mappedid: string [];
+  mappedexcuse: string[];
+  MainReasonID: string[];
+  mappedexcusedetails: string[];
+  excusedetails: string[];
+  mappedid: string[];
   collectoraction: any = [
-    {collectoractionid: 'OC', collectoraction: 'OUTGOING CALL'},
-    {collectoractionid: 'IC', collectoraction: 'INCOMING CALL'},
-    {collectoractionid: 'MET', collectoraction: 'DEBTOR VISITED'},
-    {collectoractionid: 'REVW', collectoraction: 'ACCOUNT REVIEW'},
-    {collectoractionid: 'EMPVISIT', collectoraction: 'EMPLOYER VISIT'},
-    {collectoractionid: 'SC', collectoraction: 'SENT CORRESPONDENCE'},
-    {collectoractionid: 'RC', collectoraction: 'RECEIVED CORRESPONDENCE'},
-    {collectoractionid: 'RR', collectoraction: 'ROUTE FOR REVIEW'},
-    {collectoractionid: 'OA', collectoraction: 'ASSIGN OUTSIDE AGENCY'},
-    {collectoractionid: 'RF', collectoraction: 'RECEIVED FILE'},
-    {collectoractionid: 'FT', collectoraction: 'FUND TRANSFER'},
-    {collectoractionid: 'NFA', collectoraction: 'NEW FILE ALLOCATION'}
+    { collectoractionid: 'OC', collectoraction: 'OUTGOING CALL' },
+    { collectoractionid: 'IC', collectoraction: 'INCOMING CALL' },
+    { collectoractionid: 'MET', collectoraction: 'DEBTOR VISITED' },
+    { collectoractionid: 'REVW', collectoraction: 'ACCOUNT REVIEW' },
+    { collectoractionid: 'EMPVISIT', collectoraction: 'EMPLOYER VISIT' },
+    { collectoractionid: 'SC', collectoraction: 'SENT CORRESPONDENCE' },
+    { collectoractionid: 'RC', collectoraction: 'RECEIVED CORRESPONDENCE' },
+    { collectoractionid: 'RR', collectoraction: 'ROUTE FOR REVIEW' },
+    { collectoractionid: 'OA', collectoraction: 'ASSIGN OUTSIDE AGENCY' },
+    { collectoractionid: 'RF', collectoraction: 'RECEIVED FILE' },
+    { collectoractionid: 'FT', collectoraction: 'FUND TRANSFER' },
+    { collectoractionid: 'NFA', collectoraction: 'NEW FILE ALLOCATION' }
   ];
 
   message: string;
@@ -84,15 +86,16 @@ export class ActivityactionComponent implements OnInit {
   sys = 'collections';
 
   ptp: NgOption[] = [
-    {id: 'No', name: 'No'},
-    {id: 'Yes', name: 'Yes'},
+    { id: 'No', name: 'No' },
+    { id: 'Yes', name: 'Yes' }
   ];
 
-  // subReason: any = {};
+  // ... subReason: any = {};
   subReason: any = [];
   mainReason: any = [];
   models: any = [];
   selectedtext: string;
+  loader = false;
 
   constructor(
     private el: ElementRef,
@@ -100,10 +103,9 @@ export class ActivityactionComponent implements OnInit {
     private formBuilder: FormBuilder,
     private ecolService: EcolService,
     private dataService: DataService,
-    private spinner: NgxSpinnerService,
-    public ngxSmartModalService: NgxSmartModalService,
+    public ngxSmartModalService: NgxSmartModalService
   ) {
-    this.minDate = {year: this.year, month: this.month, day: this.day};
+    this.minDate = { year: this.year, month: this.month, day: this.day };
     this.minxDate = new Date();
     this.minxDate.setDate(this.minxDate.getDate() - 1);
   }
@@ -177,7 +179,6 @@ export class ActivityactionComponent implements OnInit {
   // }
 
   ngOnInit() {
-
     // check if logged!
 
     this.ecolService.ifLogged();
@@ -186,9 +187,9 @@ export class ActivityactionComponent implements OnInit {
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
     this.username = currentUser.USERNAME;
 
-    this.spinner.show();
+    this.loader = true;
     this.accnumber = this.route.snapshot.queryParamMap.get('accnumber');
-    this.route.queryParamMap.subscribe(queryParams => {
+    this.route.queryParamMap.subscribe((queryParams) => {
       this.accnumber = queryParams.get('accnumber');
     });
 
@@ -198,12 +199,12 @@ export class ActivityactionComponent implements OnInit {
     });*/
 
     this.custnumber = this.route.snapshot.queryParamMap.get('custnumber');
-    this.route.queryParamMap.subscribe(queryParams => {
+    this.route.queryParamMap.subscribe((queryParams) => {
       this.custnumber = queryParams.get('custnumber');
     });
 
     this.sys = this.route.snapshot.queryParamMap.get('sys');
-    this.route.queryParamMap.subscribe(queryParams => {
+    this.route.queryParamMap.subscribe((queryParams) => {
       this.sys = queryParams.get('sys');
     });
 
@@ -220,9 +221,7 @@ export class ActivityactionComponent implements OnInit {
     // gets the MAin Reason
     this.getexcuse();
     // gets the main reason
-    this.ecolService.getexcuse().subscribe(
-      data => this.mainReason = data
-    );
+    this.ecolService.getexcuse().subscribe((data) => (this.mainReason = data));
     //
     if (this.sys === 'cc') {
       this.getcard(this.accnumber);
@@ -234,38 +233,39 @@ export class ActivityactionComponent implements OnInit {
       this.getwatch(this.accnumber);
     } else {
       this.getaccount(this.accnumber);
-
     }
-
   }
 
   onChangeExcuse(excuseid: any) {
     if (JSON.stringify(excuseid.reason)) {
-      this.ecolService.getExcuseDetails(JSON.stringify(excuseid.reason[0].id)).subscribe(
-        data => {
+      this.ecolService
+        .getExcuseDetails(JSON.stringify(excuseid.reason[0].id))
+        .subscribe((data) => {
           this.subReason = data;
           console.log(data);
-        }
-      );
+        });
     } else {
       this.subReason = null;
     }
   }
 
   getaccount(accnumber) {
-    this.ecolService.getAccount(accnumber).subscribe(data => {
+    this.ecolService.getAccount(accnumber).subscribe((data) => {
       this.account = data[0];
       // tslint:disable-next-line:max-line-length
-      this.autodial_telnumber = this.account.cellnumber || this.account.mobile || this.account.phonenumber || this.account.telnumber || this.account.celnumber;
+      this.autodial_telnumber =
+        this.account.cellnumber ||
+        this.account.mobile ||
+        this.account.phonenumber ||
+        this.account.telnumber ||
+        this.account.celnumber;
       this.model.emailaddress = data[0].emailaddress;
       this.getstatic(this.accnumber);
-
     });
   }
 
   getstatic(accnumber) {
-    this.ecolService.getStaticLoans(accnumber).subscribe(data => {
-
+    this.ecolService.getStaticLoans(accnumber).subscribe((data) => {
       if (data && data.length > 0) {
         this.account.reviewdate = data[0].reviewdate;
         this.account.excuse = data[0].excuse;
@@ -278,19 +278,21 @@ export class ActivityactionComponent implements OnInit {
       if (swal.isVisible) {
         swal.close();
       }
-      this.spinner.hide();
+
+      this.loader = false;
     });
   }
 
   getwatch(accnumber) {
-    this.ecolService.getwatch(accnumber).subscribe(data => {
+    this.ecolService.getwatch(accnumber).subscribe((data) => {
       this.account = data;
       if (data.watch) {
-        this.account.reviewdate = data.watch.reviewdate || '',
-          this.account.excuse = data.watch.excuse || '',
-          this.account.cmdstatus = data.watch.cmdstatus || '',
-          this.account.routetostate = data.watch.routetostate || 'ACTIVE COLLECTIONS',
-          this.account.excuse_other = data.watch.rfdother;
+        (this.account.reviewdate = data.watch.reviewdate || ''),
+          (this.account.excuse = data.watch.excuse || ''),
+          (this.account.cmdstatus = data.watch.cmdstatus || ''),
+          (this.account.routetostate =
+            data.watch.routetostate || 'ACTIVE COLLECTIONS'),
+          (this.account.excuse_other = data.watch.rfdother);
       }
 
       // build form
@@ -298,20 +300,19 @@ export class ActivityactionComponent implements OnInit {
       if (swal.isVisible) {
         swal.close();
       }
-      this.spinner.hide();
+      this.loader = false;
     });
   }
 
   getwatchcard(cardacct) {
-    this.ecolService.getWatchcardAccount(cardacct).subscribe(data => {
+    this.ecolService.getWatchcardAccount(cardacct).subscribe((data) => {
       this.account = data[0];
       this.getwatchcardstatic(cardacct);
     });
   }
 
   getwatchcardstatic(cardacct) {
-    this.ecolService.getWatchcardStatic(cardacct).subscribe(data => {
-
+    this.ecolService.getWatchcardStatic(cardacct).subscribe((data) => {
       if (data && data.length > 0) {
         this.account.reviewdate = data[0].reviewdate;
         this.account.excuse = data[0].excuse;
@@ -325,60 +326,65 @@ export class ActivityactionComponent implements OnInit {
       if (swal.isVisible) {
         swal.close();
       }
-      this.spinner.hide();
+
+      this.loader = false;
     });
   }
 
   getcard(cardacct) {
-    this.ecolService.getcardAccount(cardacct).subscribe(data => {
+    this.ecolService.getcardAccount(cardacct).subscribe((data) => {
       this.account = data[0];
       // build form
       this.buildForm();
       if (swal.isVisible) {
         swal.close();
       }
-      this.spinner.hide();
+
+      this.loader = false;
     });
   }
 
-
   getmcoop(loanaccnumber) {
-    this.ecolService.getmcoopcashAccount(loanaccnumber).subscribe(data => {
+    this.ecolService.getmcoopcashAccount(loanaccnumber).subscribe((data) => {
       this.account = data[0];
-      this.spinner.hide();
+      this.loader = false;
     });
   }
 
   getcmdstatus() {
-    this.ecolService.getcmdstatus().subscribe(cmdstatus => {
+    this.ecolService.getcmdstatus().subscribe((cmdstatus) => {
       this.cmdstatus = cmdstatus;
     });
   }
 
   getreviewers() {
-    this.ecolService.getreviewers().subscribe(data => {
+    this.ecolService.getreviewers().subscribe((data) => {
       this.reviewers = data;
     });
   }
 
   getparty() {
-    this.ecolService.getparty().subscribe(party => {
+    this.ecolService.getparty().subscribe((party) => {
       this.party = party;
     });
   }
 
   getcollectoraction() {
-    this.ecolService.getcollectoraction().subscribe(collectoraction => {
+    this.ecolService.getcollectoraction().subscribe((collectoraction) => {
       this.collectoraction = collectoraction;
     });
   }
 
   getexcuse() {
-    this.ecolService.getexcuse().subscribe(data => {
+    this.ecolService.getexcuse().subscribe((data) => {
       this.excuse = data;
-      this.mappedexcuse = Array.from(new Set(this.excuse.map(({EXCUSE}) => EXCUSE)));
-      this.mappedid = Array.from(new Set(this.excuse.map(({ID}) => ID)));
-      this.mappedexcusedetails = Array.from(new Set(this.excuse.map(({EXCUSEDETAILS}) => EXCUSEDETAILS)));
+      this.mappedexcuse = Array.from(
+        new Set(this.excuse.map(({ EXCUSE }) => EXCUSE))
+      );
+      this.mappedid = Array.from(new Set(this.excuse.map(({ ID }) => ID)));
+      this.mappedexcusedetails = Array.from(
+        new Set(this.excuse.map(({ EXCUSEDETAILS }) => EXCUSEDETAILS))
+      );
       console.log(this.mappedexcuse);
       console.log(this.excuse);
       console.log(this.mappedexcusedetails);
@@ -386,7 +392,7 @@ export class ActivityactionComponent implements OnInit {
   }
 
   getcure() {
-    this.ecolService.getcure().subscribe(cure => {
+    this.ecolService.getcure().subscribe((cure) => {
       this.cure = cure;
     });
   }
@@ -395,24 +401,24 @@ export class ActivityactionComponent implements OnInit {
     // get static data..
     this.actionForm = this.formBuilder.group({
       collectoraction: ['', Validators.required],
-      party: [{value: null, disabled: true}, [Validators.required]],
-      ptpamount: [{value: 0, disabled: true}],
-      ptpemail: [{value: '', disabled: true}],
-      toemail: [{value: this.model.emailaddress, disabled: true}],
-      ptpsms: [{value: '', disabled: true}],
-      ptpsmsnumber: [{value: this.autodial_telnumber, disabled: true}],
-      ptp: [{value: null, disabled: true}],
-      ptptype: [{value: '', disabled: true}],
-      ptpdate: [{value: '', disabled: true}],
+      party: [{ value: null, disabled: true }, [Validators.required]],
+      ptpamount: [{ value: 0, disabled: true }],
+      ptpemail: [{ value: '', disabled: true }],
+      toemail: [{ value: this.model.emailaddress, disabled: true }],
+      ptpsms: [{ value: '', disabled: true }],
+      ptpsmsnumber: [{ value: this.autodial_telnumber, disabled: true }],
+      ptp: [{ value: null, disabled: true }],
+      ptptype: [{ value: '', disabled: true }],
+      ptpdate: [{ value: '', disabled: true }],
       collectornote: ['', [Validators.required, Validators.minLength(5)]],
       reviewdate: [''],
       reason: [null, Validators.required],
-      reasondetails: [{value: '', disabled: false}, [Validators.required]],
+      reasondetails: [{ value: '', disabled: false }, [Validators.required]],
       cmdstatus: [null],
       flag: [false],
       route: [null],
-      paymode: [{value: null, disabled: true}],
-      rfdother: [{value: null, disabled: true}, [Validators.required]]
+      paymode: [{ value: null, disabled: true }],
+      rfdother: [{ value: null, disabled: true }, [Validators.required]]
     });
   }
 
@@ -490,95 +496,111 @@ export class ActivityactionComponent implements OnInit {
       };
     }
 
-
     // add action
-    this.ecolService.postactivitylogs(this.savebody).subscribe(data => {
-      console.log(this.savebody);
-      this.sendNotesData(this.custnumber);
-      this.sendPtpsData(this.accnumber);
-      // watch stream put watch_static
-      if (this.sys === 'watchcc') {
-        const watchccbody = {
-          rfdother: this.f.rfdother.value,
-          cardacct: this.accnumber,
-          cmdstatus: this.f.cmdstatus.value,
-          excuse: this.f.reason.value,
-          lastactiondate: new Date(),
-          reviewdate: moment(this.f.reviewdate.value).format('DD-MMM-YYYY'),
-          routetostate: this.f.route.value
-        };
+    this.ecolService.postactivitylogs(this.savebody).subscribe(
+      (data) => {
+        console.log(this.savebody);
+        this.sendNotesData(this.custnumber);
+        this.sendPtpsData(this.accnumber);
+        // watch stream put watch_static
+        if (this.sys === 'watchcc') {
+          const watchccbody = {
+            rfdother: this.f.rfdother.value,
+            cardacct: this.accnumber,
+            cmdstatus: this.f.cmdstatus.value,
+            excuse: this.f.reason.value,
+            lastactiondate: new Date(),
+            reviewdate: moment(this.f.reviewdate.value).format('DD-MMM-YYYY'),
+            routetostate: this.f.route.value
+          };
 
-        this.ecolService.putcardwatch(watchccbody).subscribe(resp => {
-          //
-        }, error => {
-          console.log(error);
-        });
-      }
-      //
-      if (this.sys === 'watch') {
-        const watchbody = {
-          rfdother: this.f.rfdother.value,
-          accnumber: this.accnumber,
-          cmdstatus: this.f.cmdstatus.value,
-          excuse: this.f.reason.value,
-          lastactiondate: new Date(),
-          reviewdate: moment(this.f.reviewdate.value).format('DD-MMM-YYYY'),
-          routetostate: this.f.route.value
-        };
-
-        this.ecolService.putwatch(watchbody).subscribe(resp => {
-        }, error => {
-          console.log(error);
-        });
-      }
-
-      if (this.sys === 'ptp') {
-        const ptpbody = {
-          id: this.ptpid,
-          comment: this.f.collectornote.value,
-          reviewdate: moment().format('DD-MMM-YYYY'),
-          owner: this.username
-        };
-
-        this.ecolService.reviewptp(ptpbody).subscribe(resp => {
-        }, error => {
-          console.log(error);
-        });
-      }
-
-      // close windows
-      swal.fire({
-        title: 'Activity successfully saved',
-        imageUrl: 'assets/img/user/coop.jpg',
-        text: 'Close activity windows?',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, Close!'
-      }).then((result) => {
-        if (result.value) {
-          // close tab
-          window.close();
-        } else {
-          // reset
-          this.reset();
+          this.ecolService.putcardwatch(watchccbody).subscribe(
+            (resp) => {
+              //
+            },
+            (error) => {
+              console.log(error);
+            }
+          );
         }
-      });
-    }, error => {
-      console.log(error);
-      swal.fire('Error!', 'activitylog service is currently not available', 'error');
-    });
+        //
+        if (this.sys === 'watch') {
+          const watchbody = {
+            rfdother: this.f.rfdother.value,
+            accnumber: this.accnumber,
+            cmdstatus: this.f.cmdstatus.value,
+            excuse: this.f.reason.value,
+            lastactiondate: new Date(),
+            reviewdate: moment(this.f.reviewdate.value).format('DD-MMM-YYYY'),
+            routetostate: this.f.route.value
+          };
+
+          this.ecolService.putwatch(watchbody).subscribe(
+            (resp) => {
+            },
+            (error) => {
+              console.log(error);
+            }
+          );
+        }
+
+        if (this.sys === 'ptp') {
+          const ptpbody = {
+            id: this.ptpid,
+            comment: this.f.collectornote.value,
+            reviewdate: moment().format('DD-MMM-YYYY'),
+            owner: this.username
+          };
+
+          this.ecolService.reviewptp(ptpbody).subscribe(
+            (resp) => {
+            },
+            (error) => {
+              console.log(error);
+            }
+          );
+        }
+
+        // close windows
+        swal
+          .fire({
+            title: 'Activity successfully saved',
+            imageUrl: 'assets/img/user/coop.jpg',
+            text: 'Close activity windows?',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, Close!'
+          })
+          .then((result) => {
+            if (result.value) {
+              // close tab
+              window.close();
+            } else {
+              // reset
+              this.reset();
+            }
+          });
+      },
+      (error) => {
+        console.log(error);
+        swal.fire(
+          'Error!',
+          'activitylog service is currently not available',
+          'error'
+        );
+      }
+    );
   }
 
   sendNotesData(custnumber) {
-    this.ecolService.totalnotes(custnumber).subscribe(data => {
+    this.ecolService.totalnotes(custnumber).subscribe((data) => {
       this.dataService.pustNotesData(data[0].TOTAL);
     });
   }
 
-
   sendPtpsData(accnumber) {
-    this.ecolService.getptps(accnumber).subscribe(data => {
+    this.ecolService.getptps(accnumber).subscribe((data) => {
       this.dataService.pushPtps(data.length);
     });
   }
@@ -588,7 +610,7 @@ export class ActivityactionComponent implements OnInit {
   }
 
   reset() {
-    this.spinner.show();
+    this.loader = true;
     if (this.sys === 'cc') {
       this.getcard(this.accnumber);
     } else if (this.sys === 'watchcc') {
@@ -613,7 +635,11 @@ export class ActivityactionComponent implements OnInit {
   }
 
   changeParty(form) {
-    if (form.party[0].id === 1 || form.party[0].id === 4 || form.party[0].id === 5) {
+    if (
+      form.party[0].id === 1 ||
+      form.party[0].id === 4 ||
+      form.party[0].id === 5
+    ) {
       this.actionForm.controls.ptp.enable();
       // this.actionForm.controls.paymode.enable();
       // JSON.stringify(excuseid.reason[0].id)
@@ -635,15 +661,18 @@ export class ActivityactionComponent implements OnInit {
   changePtp(value) {
     if (value === 'Yes') {
       // check if ptp exists
-      this.ecolService.activeptps(this.accnumber).subscribe(activedata => {
+      this.ecolService.activeptps(this.accnumber).subscribe((activedata) => {
         if (activedata && activedata.data.length > 0) {
-          swal.fire({
-            // type: 'error',
-            title: 'Oops...',
-            text: 'a/c already has a running promise to pay. Check under Promises to pay menu'
-          }).then((result) => {
-            this.actionForm.controls.ptp.setValue(null);
-          });
+          swal
+            .fire({
+              // type: 'error',
+              title: 'Oops...',
+              text:
+                'a/c already has a running promise to pay. Check under Promises to pay menu'
+            })
+            .then((result) => {
+              this.actionForm.controls.ptp.setValue(null);
+            });
         }
       });
 
@@ -690,7 +719,17 @@ export class ActivityactionComponent implements OnInit {
 
   multiplecapturefnc() {
     // tslint:disable-next-line:max-line-length
-    window.open(environment.applink + '/multipleptp?accnumber=' + this.accnumber + '&custnumber=' + this.custnumber + '&username=' + this.username + '&sys=collections', '_blank');
+    window.open(
+      environment.applink +
+      '/multipleptp?accnumber=' +
+      this.accnumber +
+      '&custnumber=' +
+      this.custnumber +
+      '&username=' +
+      this.username +
+      '&sys=collections',
+      '_blank'
+    );
   }
 
   openptpModal() {
@@ -710,28 +749,39 @@ export class ActivityactionComponent implements OnInit {
 
   ptpfunc(form) {
     const ptpamount = form.value.ptpamount;
-    const ptpdate = (moment(form.value.ptpdate).format('DD-MMM-YYYY')).toUpperCase();
+    const ptpdate = moment(form.value.ptpdate)
+      .format('DD-MMM-YYYY')
+      .toUpperCase();
     const owner = this.username;
     const accnumber = this.accnumber;
 
-    this.ptps.push({ptpdate: ptpdate, ptpamount: ptpamount, owner: owner, accnumber: accnumber});
+    this.ptps.push({
+      ptpdate: ptpdate,
+      ptpamount: ptpamount,
+      owner: owner,
+      accnumber: accnumber
+    });
     this.ptpmultiple = {};
     this.isptptosave = true;
   }
 
   saveallptps() {
-    this.ecolService.postptps(this.ptps).subscribe(resp => {
-      swal.fire('Successful!', 'Mupltiple ptp saved!', 'success').then(function () {
-        this.ngxSmartModalService.getModal('myModal').close()
-      });
-    }, error => {
-      console.log(error);
-      swal.fire('Error!', 'Error occurred during processing!', 'error');
-    });
+    this.ecolService.postptps(this.ptps).subscribe(
+      (resp) => {
+        swal
+          .fire('Successful!', 'Mupltiple ptp saved!', 'success')
+          .then(function() {
+            this.ngxSmartModalService.getModal('myModal').close();
+          });
+      },
+      (error) => {
+        console.log(error);
+        swal.fire('Error!', 'Error occurred during processing!', 'error');
+      }
+    );
   }
 
   selectInput() {
-
   }
 
   onKey(event) {
@@ -739,4 +789,3 @@ export class ActivityactionComponent implements OnInit {
     console.log(event.target.value);
   }
 }
-

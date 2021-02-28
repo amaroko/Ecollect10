@@ -1,31 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 <head>
-	<meta charset="utf-8" />
-	<title>E-Collect&trade;</title>
-  <base href="/">
-	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
-	<meta content="" name="Ecollect" />
-  <meta content="" name="Inteligen Infosys" />
+  <meta charset='utf-8' />
+  <title>E-Collect&trade;</title>
+  <base href='/' />
+  <meta
+    content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'
+    name='viewport'
+  />
+  <meta content='' name='Ecollect' />
+  <meta content='' name='Inteligen Infosys' />
 
-  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link href='favicon.ico' rel='icon' type='image/x-icon' />
 </head>
-<body detect-scroll (onScroll)="handleScroll($event)">
-  <app-root>
-    <!-- begin #page-loader -->
-    <!--    <div id="page-loader" class="fade show"><span class="spinner"></span></div>-->
-    <div class='container'>
-      <div class='loader'>
-        <div class='loader--dot'></div>
-        <div class='loader--dot'></div>
-        <div class='loader--dot'></div>
-        <div class='loader--dot'></div>
-        <div class='loader--dot'></div>
-        <div class='loader--dot'></div>
-        <div class='loader--text'></div>
-      </div>
+<body (onScroll)='handleScroll($event)' detect-scroll>
+<app-root>
+  <!-- begin #page-loader -->
+  <!--    <div id="page-loader" class="fade show"><span class="spinner"></span></div>-->
+  <div class='container'>
+    <div class='loader'>
+      <div class='loader--dot'></div>
+      <div class='loader--dot'></div>
+      <div class='loader--dot'></div>
+      <div class='loader--dot'></div>
+      <div class='loader--dot'></div>
+      <div class='loader--dot'></div>
+      <div class='loader--text'></div>
     </div>
-    <!-- end #page-loader -->
-  </app-root>
+  </div>
+  <!-- end #page-loader -->
+</app-root>
 </body>
 </html>

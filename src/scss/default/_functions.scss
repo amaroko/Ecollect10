@@ -6,13 +6,12 @@
 }
 
 @function rem-default($number) {
-	$number: strip-unit($number);
-	@return (($number / 16) * 1rem);
+  $number: strip-unit($number);
+  @return (($number / 16) * 1rem);
 }
 
 @function rem($number) {
-	@return $number;
-	//$number: strip-unit($number);
-	//@return (($number / 16) * 1rem);
+  @return $number;
+  //$number: strip-unit($number);
+  //@return (($number / 16) * 1rem);
 }
-

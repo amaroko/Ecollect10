@@ -1,6 +1,6 @@
-import {ComponentFixture, TestBed} from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import {RolesensorComponent} from './rolesensor.component';
+import { RolesensorComponent } from './rolesensor.component';
 
 describe('RolesensorComponent', () => {
   let component: RolesensorComponent;
@@ -9,8 +9,7 @@ describe('RolesensorComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [RolesensorComponent]
-    })
-      .compileComponents();
+    }).compileComponents();
   });
 
   beforeEach(() => {

@@ -1,13 +1,20 @@
-import {AfterViewInit, Component, ViewChild} from '@angular/core';
+import { AfterViewInit, Component, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-panel',
-  inputs: ['title', 'variant', 'noBody', 'noButton', 'bodyClass', 'footerClass', 'panelClass'],
+  inputs: [
+    'title',
+    'variant',
+    'noBody',
+    'noButton',
+    'bodyClass',
+    'footerClass',
+    'panelClass'
+  ],
   templateUrl: './panel.component.html'
 })
-
 export class PanelComponent implements AfterViewInit {
-  @ViewChild('panelFooter', {static: false}) panelFooter;
+  @ViewChild('panelFooter', { static: false }) panelFooter;
   expand = false;
   reload = false;
   collapse = false;
@@ -23,7 +30,9 @@ export class PanelComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     setTimeout(() => {
-      this.showFooter = this.panelFooter.nativeElement && this.panelFooter.nativeElement.children.length > 0;
+      this.showFooter =
+        this.panelFooter.nativeElement &&
+        this.panelFooter.nativeElement.children.length > 0;
     });
   }
 

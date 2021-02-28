@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-predelq',
@@ -6,11 +6,9 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./predelq.component.css']
 })
 export class PredelqComponent implements OnInit {
-
   constructor() {
   }
 
   ngOnInit() {
   }
-
 }

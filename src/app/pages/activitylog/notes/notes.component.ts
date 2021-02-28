@@ -1,15 +1,15 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
-import {EcolService} from '../../../services/ecol.service';
-import {isNullOrUndefined} from 'util';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { EcolService } from '../../../services/ecol.service';
+import { isNullOrUndefined } from 'util';
 // import {NgxSpinnerService} from 'ngx-spinner';
 import * as moment from 'moment';
-import {DatePipe} from '@angular/common';
-import {ExcelService} from '../../../services/excel.service';
-import {GridOptions} from '@ag-grid-community/all-modules';
-import {AllModules} from '@ag-grid-enterprise/all-modules';
-import {environment} from '../../../../environments/environment';
-import {HttpClient} from '@angular/common/http';
+import { DatePipe } from '@angular/common';
+import { ExcelService } from '../../../services/excel.service';
+import { GridOptions } from '@ag-grid-community/all-modules';
+import { AllModules } from '@ag-grid-enterprise/all-modules';
+import { environment } from '../../../../environments/environment';
+import { HttpClient } from '@angular/common/http';
 // import * as introJs from 'intro.js/intro.js';
 import pageSettings from '../../../config/page-settings';
 
@@ -19,8 +19,6 @@ import pageSettings from '../../../config/page-settings';
   styleUrls: ['./notes.component.css']
 })
 export class NotesComponent implements OnInit, OnDestroy {
-
-
   lightMode = true;
   darkMode = false;
   // introJS = introJs();
@@ -77,7 +75,6 @@ export class NotesComponent implements OnInit, OnDestroy {
   private selectedLink: any = 'collector';
   loader = true;
 
-
   // download() {
   //   this.excelService.generateExcel(this.cust);
 
@@ -89,14 +86,11 @@ export class NotesComponent implements OnInit, OnDestroy {
     // private spinner: NgxSpinnerService,
     private ecolService: EcolService,
     private excelService: ExcelService,
-    public http: HttpClient,
+    public http: HttpClient
   ) {
     this.pageSettings.pageContentFullWidth = true;
     this.gridOptions = <GridOptions>{
-
-
       // suppressCellSelection: true,
-
 
       // domLayout: 'autoHeight',
       rowSelection: 'multiple',
@@ -107,24 +101,25 @@ export class NotesComponent implements OnInit, OnDestroy {
       paginationPageSize: 50,
 
       onGridReady: (params) => {
-
         this.gridApi = params.api;
         this.gridColumnApi = params.columnApi;
         // params.api.sizeColumnsToFit();
         // this.gridApi.setDatasource(this.dataSource);
         // environment.api + '/api/tqall/paged/myallocation?colofficer=' + this.username
         this.http
-          .get(environment.api + '/api/notehis/allcustnotes?custnumber=' + this.cust)
-          .subscribe(resp => {
+          .get(
+            environment.api +
+            '/api/notehis/allcustnotes?custnumber=' +
+            this.cust
+          )
+          .subscribe((resp) => {
             console.log(typeof resp); // to check whether object or array
             this.str = JSON.stringify(resp, null, 4);
             const obj: any = JSON.parse(this.str);
 
             params.api.setRowData(obj);
-
           });
-
-      }
+      },
     };
     this.columnDefs = [
       {
@@ -136,38 +131,52 @@ export class NotesComponent implements OnInit, OnDestroy {
         //     return ''; // <img src="assets/img/user/loading.gif" alt="Loading Icon">
         //   }
         // },
-        filter: 'agTextColumnFilter', filterParams: {newRowsAction: 'keep'}, resizable: true, floatingFilter: true,
+        filter: 'agTextColumnFilter',
+        filterParams: { newRowsAction: 'keep' },
+        resizable: true,
+        floatingFilter: true
       },
       {
         field: 'CUSTNUMBER',
-        filter: 'agTextColumnFilter', filterParams: {newRowsAction: 'keep'}, resizable: true, floatingFilter: true,
+        filter: 'agTextColumnFilter',
+        filterParams: { newRowsAction: 'keep' },
+        resizable: true,
+        floatingFilter: true
       },
       {
         field: 'NOTEMADE',
         autoHeight: true,
         width: 220,
-        filter: 'agTextColumnFilter', filterParams: {newRowsAction: 'keep'}, resizable: true, floatingFilter: true,
+        filter: 'agTextColumnFilter',
+        filterParams: { newRowsAction: 'keep' },
+        resizable: true,
+        floatingFilter: true
       },
       {
         field: 'NOTEDATE',
         filter: 'agTextColumnFilter',
-        filterParams: {newRowsAction: 'keep', browserDatePicker: true, },
+        filterParams: { newRowsAction: 'keep', browserDatePicker: true },
         valueFormatter: this.dateFormatter,
-        floatingFilter: true,
-
+        floatingFilter: true
       },
       {
         field: 'NOTEIMP',
-        filter: 'agTextColumnFilter', filterParams: {newRowsAction: 'keep'}, resizable: true, floatingFilter: true,
+        filter: 'agTextColumnFilter',
+        filterParams: { newRowsAction: 'keep' },
+        resizable: true,
+        floatingFilter: true
       },
       {
         field: 'NOTESRC',
-        filter: 'agTextColumnFilter', filterParams: {newRowsAction: 'keep'}, resizable: true, floatingFilter: true,
+        filter: 'agTextColumnFilter',
+        filterParams: { newRowsAction: 'keep' },
+        resizable: true,
+        floatingFilter: true
       }
     ];
     this.sortingOrder = ['desc', 'asc', null];
     this.defaultColDef = {
-      cellStyle: {'white-space': 'normal'},
+      cellStyle: { 'white-space': 'normal' },
       width: 120,
       resizable: true,
       sortable: true,
@@ -189,13 +198,11 @@ export class NotesComponent implements OnInit, OnDestroy {
           statusPanel: 'agTotalRowCountComponent',
           align: 'center'
         },
-        {statusPanel: 'agFilteredRowCountComponent'},
-        {statusPanel: 'agSelectedRowCountComponent'},
-        {statusPanel: 'agAggregationComponent'}
+        { statusPanel: 'agFilteredRowCountComponent' },
+        { statusPanel: 'agSelectedRowCountComponent' },
+        { statusPanel: 'agAggregationComponent' }
       ]
     };
-
-
   }
 
   widgetLightMode() {
@@ -254,7 +261,7 @@ export class NotesComponent implements OnInit, OnDestroy {
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
     this.username = currentUser.USERNAME;
 
-    this.route.queryParams.subscribe(params => {
+    this.route.queryParams.subscribe((params) => {
       this.cust = params['custnumber'];
     });
     // this.data.currentMessage.subscribe(message => this.message = message)
@@ -268,7 +275,7 @@ export class NotesComponent implements OnInit, OnDestroy {
   }
 
   getbulknotes(cust) {
-    this.ecolservice.getbulknotes(cust).subscribe(data => {
+    this.ecolservice.getbulknotes(cust).subscribe((data) => {
       this.bulknote = data[0];
       this.bulknotelength = data[0].length || 0;
       this.loader = false;
@@ -276,7 +283,7 @@ export class NotesComponent implements OnInit, OnDestroy {
   }
 
   getflagged(cust) {
-    this.ecolservice.getflaggednotes(cust).subscribe(data => {
+    this.ecolservice.getflaggednotes(cust).subscribe((data) => {
       this.flaggedNotes = data[0];
       this.flaggedlength = data[0].length || 0;
       this.loader = false;
@@ -284,7 +291,7 @@ export class NotesComponent implements OnInit, OnDestroy {
   }
 
   getNotes(custnumber) {
-    this.ecolService.totalnotes(custnumber).subscribe(data => {
+    this.ecolService.totalnotes(custnumber).subscribe((data) => {
       this.noteslength = data[0].TOTAL;
       if (data[0].TOTAL && data[0].TOTAL > 0) {
         this.download_disabled = false;
@@ -295,7 +302,7 @@ export class NotesComponent implements OnInit, OnDestroy {
   }
 
   getNotesReason(cust) {
-    this.ecolService.getactivitylogreason(cust).subscribe(data => {
+    this.ecolService.getactivitylogreason(cust).subscribe((data) => {
       this.notesreason = data;
       this.notesreason = this.notesreason.concat(data);
       // this.reason = data[0].reason;
@@ -305,10 +312,8 @@ export class NotesComponent implements OnInit, OnDestroy {
       }
       this.loader = false;
       // console.log(this.custnotes);
-
     });
   }
-
 
   getAll(cust) {
     // this.spinner.show();
@@ -316,31 +321,40 @@ export class NotesComponent implements OnInit, OnDestroy {
     this.query.skip = this.pager.limit * this.pager.current;
 
     //
-    this.ecolservice.getallnotes(this.query, cust).subscribe(data => {
-      this.notes = data;
-      console.log(data);
-
-      // enable notes download button
-      if (data && data.length > 0) {
-        this.download_disabled = false;
-      }
-      // this.noteslength = data.length;
-      for (let i = 0; i < data.length; i++) {
-        // tslint:disable-next-line:max-line-length
-        this.notes[i].showedit = this.notes[i].OWNER === this.username && (this.datePipe.transform(this.currentDate, 'dd-MMM-yy')).toUpperCase() === (this.datePipe.transform(this.notes[i].NOTEDATE, 'dd-MMM-yy')).toUpperCase();
-      }
-      // append posts
-      if (!isNullOrUndefined(data) && this.notes.length) {
-        this.noteData = this.noteData.concat(data);
+    this.ecolservice.getallnotes(this.query, cust).subscribe(
+      (data) => {
+        this.notes = data;
         console.log(data);
-      } else {
-        this.pager.reachedend = true;
-      }
-      this.loader = false;
-    }, err => {
-      console.log(err);
 
-    });
+        // enable notes download button
+        if (data && data.length > 0) {
+          this.download_disabled = false;
+        }
+        // this.noteslength = data.length;
+        for (let i = 0; i < data.length; i++) {
+          // tslint:disable-next-line:max-line-length
+          this.notes[i].showedit =
+            this.notes[i].OWNER === this.username &&
+            this.datePipe
+              .transform(this.currentDate, 'dd-MMM-yy')
+              .toUpperCase() ===
+            this.datePipe
+              .transform(this.notes[i].NOTEDATE, 'dd-MMM-yy')
+              .toUpperCase();
+        }
+        // append posts
+        if (!isNullOrUndefined(data) && this.notes.length) {
+          this.noteData = this.noteData.concat(data);
+          console.log(data);
+        } else {
+          this.pager.reachedend = true;
+        }
+        this.loader = false;
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
   }
 
   loadmore(event) {
@@ -358,13 +372,25 @@ export class NotesComponent implements OnInit, OnDestroy {
 
   editnote(note) {
     // tslint:disable-next-line:max-line-length
-    this.rout.navigateByUrl('/activitylog/editnote?id=' + note.ID + '&accnumber=' + note.ACCNUMBER + '&custnumber=' + note.CUSTNUMBER + '&username=' + note.OWNER + '&sys=watch').then(e => {
-      if (e) {
-        console.log('Navigation is successful!');
-      } else {
-        console.log('Navigation has failed!');
-      }
-    });
+    this.rout
+      .navigateByUrl(
+        '/activitylog/editnote?id=' +
+        note.ID +
+        '&accnumber=' +
+        note.ACCNUMBER +
+        '&custnumber=' +
+        note.CUSTNUMBER +
+        '&username=' +
+        note.OWNER +
+        '&sys=watch'
+      )
+      .then((e) => {
+        if (e) {
+          console.log('Navigation is successful!');
+        } else {
+          console.log('Navigation has failed!');
+        }
+      });
   }
 
   handleChange(e) {
@@ -376,10 +402,11 @@ export class NotesComponent implements OnInit, OnDestroy {
   }
 
   isSelected(name: string) {
-    if (!this.selectedLink) { // if no radio button is selected, always return false so every nothing is shown
+    if (!this.selectedLink) {
+      // if no radio button is selected, always return false so every nothing is shown
       return false;
     }
-    return (this.selectedLink === name); // if current radio button is selected, return true, else return false
+    return this.selectedLink === name; // if current radio button is selected, return true, else return false
   }
 
   showTab(e) {
@@ -392,5 +419,3 @@ export class NotesComponent implements OnInit, OnDestroy {
     }
   }
 }
-
-

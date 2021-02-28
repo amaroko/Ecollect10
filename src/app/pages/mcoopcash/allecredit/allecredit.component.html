@@ -1,11 +1,22 @@
 <!-- begin panel -->
-<app-panel title="ALL Ecredit | List includes ALL Ecredit, plus ones not in arrears">
-  <ag-grid-angular #agGrid (gridReady)="onGridReady($event)" (rowClicked)='onRowDoubleClicked($event)'
-                   [animateRows]="true"
-                   [columnDefs]="columnDefs" [defaultColDef]="defaultColDef"
-                   [maxBlocksInCache]="maxBlocksInCache" [paginationAutoPageSize]="true" [pagination]="true"
-                   [rowData]="rowData"
-                   [rowModelType]="rowModelType" class="ag-theme-balham" id="myGrid"
-                   style="width: 100%; height: 700px;"></ag-grid-angular>
+<app-panel
+  title='ALL Ecredit | List includes ALL Ecredit, plus ones not in arrears'
+>
+  <ag-grid-angular
+    #agGrid
+    (gridReady)='onGridReady($event)'
+    (rowClicked)='onRowDoubleClicked($event)'
+    [animateRows]='true'
+    [columnDefs]='columnDefs'
+    [defaultColDef]='defaultColDef'
+    [maxBlocksInCache]='maxBlocksInCache'
+    [paginationAutoPageSize]='true'
+    [pagination]='true'
+    [rowData]='rowData'
+    [rowModelType]='rowModelType'
+    class='ag-theme-balham'
+    id='myGrid'
+    style='width: 100%; height: 700px'
+  ></ag-grid-angular>
 </app-panel>
 <!-- end panel -->

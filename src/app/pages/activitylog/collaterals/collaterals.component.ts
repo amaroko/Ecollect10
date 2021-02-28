@@ -1,10 +1,10 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
-import {EcolService} from '../../../services/ecol.service';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { EcolService } from '../../../services/ecol.service';
 import swal from 'sweetalert2';
-import {environment} from '../../../../environments/environment';
+import { environment } from '../../../../environments/environment';
 import * as introJs from 'intro.js/intro.js';
-import {DataService} from '../../../services/data.service';
+import { DataService } from '../../../services/data.service';
 
 const URL = environment.valor;
 
@@ -14,7 +14,6 @@ const URL = environment.valor;
   styleUrls: ['./collaterals.component.css']
 })
 export class CollateralsComponent implements OnInit {
-
   introJS = introJs();
   custnumber: string;
   accnumber: string;
@@ -28,10 +27,10 @@ export class CollateralsComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private ecolService: EcolService,
-    private dataService: DataService,) {
+    private dataService: DataService
+  ) {
     //
   }
-
 
   CollateralsSteps(): void {
     this.introJS
@@ -39,7 +38,8 @@ export class CollateralsComponent implements OnInit {
         steps: [
           {
             element: '#collateraltable',
-            intro: 'Here you will find a list of all collaterals placed under the specified account ' +
+            intro:
+              'Here you will find a list of all collaterals placed under the specified account ' +
               'you could then edit the collaterals if need be'
           }
           // {
@@ -63,7 +63,6 @@ export class CollateralsComponent implements OnInit {
           //   element: '#historysms',
           //   intro: 'Here is where the history of sent sms can be viewed in a listed format'
           // }
-
         ],
         hidePrev: true,
         hideNext: true,
@@ -82,20 +81,24 @@ export class CollateralsComponent implements OnInit {
           },
           {
             element: '#accnumber',
-            intro: 'This is the 14 digit number of the customer. You can only view it'
+            intro:
+              'This is the 14 digit number of the customer. You can only view it'
           },
           {
             element: '#collateralname',
-            intro: 'Here, you have to provide the Name of the Collateral that you are about to add'
+            intro:
+              'Here, you have to provide the Name of the Collateral that you are about to add'
           },
           {
             element: '#regowner',
-            intro: 'Here, you have to enter the details of the registered owners of the collateral ' +
+            intro:
+              'Here, you have to enter the details of the registered owners of the collateral ' +
               'at hand'
           },
           {
             element: '#forcedsale',
-            intro: 'This is the value that the bank has decided to place on the collateral'
+            intro:
+              'This is the value that the bank has decided to place on the collateral'
           },
           {
             element: '#marketvalue',
@@ -115,19 +118,21 @@ export class CollateralsComponent implements OnInit {
           },
           {
             element: '#valuer',
-            intro: 'This is the details of the valuer who valuated the collateral at hand'
+            intro:
+              'This is the details of the valuer who valuated the collateral at hand'
           },
           {
             element: '#collateralsubmit',
-            intro: 'Pressing this button will submit your information to the server. If disabled, please check ' +
+            intro:
+              'Pressing this button will submit your information to the server. If disabled, please check ' +
               'to see if there is a field you left out'
           },
           {
             element: '#collateralreset',
-            intro: 'Pressing this button will reset your form to empty,so that you may start filling the ' +
+            intro:
+              'Pressing this button will reset your form to empty,so that you may start filling the ' +
               'information again'
           }
-
         ],
         hidePrev: true,
         hideNext: true,
@@ -136,21 +141,20 @@ export class CollateralsComponent implements OnInit {
       .start();
   }
 
-
   ngOnInit() {
     this.accnumber = this.route.snapshot.queryParamMap.get('accnumber');
-    this.route.queryParamMap.subscribe(queryParams => {
+    this.route.queryParamMap.subscribe((queryParams) => {
       this.accnumber = queryParams.get('accnumber');
       this.model.accnumber = queryParams.get('accnumber');
     });
 
     this.username = this.route.snapshot.queryParamMap.get('username');
-    this.route.queryParamMap.subscribe(queryParams => {
+    this.route.queryParamMap.subscribe((queryParams) => {
       this.username = queryParams.get('username');
     });
 
     this.custnumber = this.route.snapshot.queryParamMap.get('custnumber');
-    this.route.queryParamMap.subscribe(queryParams => {
+    this.route.queryParamMap.subscribe((queryParams) => {
       this.custnumber = queryParams.get('custnumber');
       this.model.custnumber = queryParams.get('custnumber');
     });
@@ -179,31 +183,35 @@ export class CollateralsComponent implements OnInit {
       valuer: form.value.valuer
     };
     console.log(body);
-    this.ecolService.submitCollateral(body).subscribe(data => {
-      this.sendCollateralData(this.custnumber);
-      swal.fire('Successful!', 'saved successfully!', 'success');
-      this.getCollateral(this.custnumber);
-    }, error => {
-      console.log(error);
-      swal.fire('Error!', 'Error occurred during processing!', 'error');
-    });
+    this.ecolService.submitCollateral(body).subscribe(
+      (data) => {
+        this.sendCollateralData(this.custnumber);
+        swal.fire('Successful!', 'saved successfully!', 'success');
+        this.getCollateral(this.custnumber);
+      },
+      (error) => {
+        console.log(error);
+        swal.fire('Error!', 'Error occurred during processing!', 'error');
+      }
+    );
   }
 
   getCollateral(custnumber) {
-    this.ecolService.retrieveCollateral(custnumber).subscribe(data => {
-      this.collaterals = data;
-    }, error => {
-      console.log(error);
-    });
+    this.ecolService.retrieveCollateral(custnumber).subscribe(
+      (data) => {
+        this.collaterals = data;
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 
-
   sendCollateralData(custnumber) {
-    this.ecolService.totalcollaterals(custnumber).subscribe(data => {
+    this.ecolService.totalcollaterals(custnumber).subscribe((data) => {
       this.dataService.pushCollateral(data[0].TOTAL);
     });
   }
-
 
   reset() {
     this.model.regowner = '';
@@ -221,24 +229,18 @@ export class CollateralsComponent implements OnInit {
     this.reset();
   }
 
-
   updatecollateral(form) {
     // save to db
-    this.ecolService.updateCollateral(this.model.id, form).subscribe(response => {
-      swal.fire(
-        'Good!',
-        'Collateral updated!',
-        'success'
-      );
-      this.getCollateral(this.custnumber);
-    }, error => {
-      console.log(error);
-      swal.fire(
-        'Ooops!',
-        'Contact Not updated!',
-        'error'
-      );
-    });
+    this.ecolService.updateCollateral(this.model.id, form).subscribe(
+      (response) => {
+        swal.fire('Good!', 'Collateral updated!', 'success');
+        this.getCollateral(this.custnumber);
+      },
+      (error) => {
+        console.log(error);
+        swal.fire('Ooops!', 'Contact Not updated!', 'error');
+      }
+    );
   }
 
   editcollateral(collateral) {
@@ -256,7 +258,4 @@ export class CollateralsComponent implements OnInit {
     //
     this.edit = true;
   }
-
 }
-
-

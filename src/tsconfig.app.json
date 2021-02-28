@@ -5,10 +5,10 @@
     "baseUrl": "./",
     "types": []
   },
-//  "angularCompilerOptions": {
-//    "enableIvy": true,
-//    "allowEmptyCodegenFiles": true
-//  },
+  //  "angularCompilerOptions": {
+  //    "enableIvy": true,
+  //    "allowEmptyCodegenFiles": true
+  //  },
   "angularCompilerOptions": {
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,

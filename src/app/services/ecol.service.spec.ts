@@ -1,6 +1,6 @@
-import {TestBed} from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
 
-import {EcolService} from './ecol.service';
+import { EcolService } from './ecol.service';
 
 describe('EcolService', () => {
   let service: EcolService;

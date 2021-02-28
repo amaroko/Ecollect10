@@ -1,4 +1,4 @@
-import {Component, HostListener, OnInit} from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import pageSettings from '../../config/page-settings';
 
 @Component({
@@ -24,14 +24,16 @@ export class LayoutComponent implements OnInit {
     this.pageHasScroll = top > 0;
   }
 
-// set page minified
+  // set page minified
   onToggleSidebarMinified(val: boolean): void {
-    this.pageSettings.pageSidebarMinified = !this.pageSettings.pageSidebarMinified;
+    this.pageSettings.pageSidebarMinified = !this.pageSettings
+      .pageSidebarMinified;
   }
 
   // set page right collapse
   onToggleSidebarRight(val: boolean): void {
-    this.pageSettings.pageSidebarRightCollapsed = !this.pageSettings.pageSidebarRightCollapsed;
+    this.pageSettings.pageSidebarRightCollapsed = !this.pageSettings
+      .pageSidebarRightCollapsed;
   }
 
   // hide mobile sidebar
@@ -76,4 +78,3 @@ export class LayoutComponent implements OnInit {
     }
   }
 }
-
