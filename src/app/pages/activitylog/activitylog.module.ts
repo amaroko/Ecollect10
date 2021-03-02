@@ -29,6 +29,7 @@ import { FilesComponent } from './files/files.component';
 import { BulknotesComponent } from './bulknotes/bulknotes.component';
 import { PtpsComponent } from './ptps/ptps.component';
 import { WriteoffstoryComponent } from './writeoffstory/writeoffstory.component';
+import { NgxFilesizeModule } from 'ngx-filesize';
 
 const routes: Routes = [{ path: '', component: NotesComponent }];
 
@@ -52,6 +53,7 @@ const routes: Routes = [{ path: '', component: NotesComponent }];
   imports: [
     PanelModule,
     CommonModule,
+    NgxFilesizeModule,
     NgbModule,
     RouterModule.forRoot(routes),
     AgGridModule,

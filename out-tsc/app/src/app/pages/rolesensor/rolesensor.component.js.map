@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "rolesensor.component.js",
+  "sourceRoot": "",
+  "sources": [
+    "../../../../../../src/app/pages/rolesensor/rolesensor.component.ts"
+  ],
+  "names": [],
+  "mappings": ";AAAA,OAAO,EAAE,SAAS,EAAU,MAAM,eAAe,CAAC;AAOlD;IACE;IAAe,CAAC;IAEhB,sCAAQ,GAAR,cAAkB,CAAC;IAHR,mBAAmB;QAL/B,SAAS,CAAC;YACT,QAAQ,EAAE,gBAAgB;YAC1B,WAAW,EAAE,6BAA6B;YAC1C,SAAS,EAAE,CAAC,4BAA4B,CAAC;SAC1C,CAAC;;OACW,mBAAmB,CAI/B;IAAD,0BAAC;CAAA,AAJD,IAIC;SAJY,mBAAmB"
+}

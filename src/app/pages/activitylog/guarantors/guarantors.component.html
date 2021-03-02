@@ -1,35 +1,40 @@
-<app-panel>
-  <ul #nav='ngbNav' class='nav-pills' ngbNav>
-    <!--  tab starts-->
-    <li ngbNavItem='Existing Guarantors'>
-      <a ngbNavLink>Existing Guarantors <span class='badge badge-danger'>{{ guarantors?.length }}</span></a>
-      <ng-template ngbNavContent>
-        <!-- START table-responsive-->
-        <div class='table-responsive' id='existinguarantors'>
-          <table class='table table-striped table-bordered table-hover'>
-            <thead>
-            <tr>
-              <th scope='col'>#</th>
-              <th scope='col'>Gurarantor Name</th>
-              <th scope='col'>Address</th>
-              <th scope='col'>Postal Code</th>
-              <th scope='col'>Tenumber</th>
-              <th scope='col'>Email</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr *ngFor='let g of guarantors; index as i'>
-              <th scope='row'>{{ i + 1 }}</th>
-              <td>{{ g.guarantorname }}</td>
-              <td>{{ g.address }}</td>
-              <td>{{ g.postalcode }}</td>
-              <td>{{ g.telnumber }}</td>
-              <td>{{ g.email }}</td>
-            </tr>
-            </tbody>
-          </table>
-          <!--        end of table responsible-->
-        </div>
+<app-panel title=' Guarantors'>
+  <div class='row'>
+    <!-- begin nav-tabs -->
+    <div class='col-xl-12'>
+      <ul #nav='ngbNav' class='nav-pills' ngbNav>
+        <!--  tab starts-->
+        <li ngbNavItem='Existing Guarantors'>
+          <a ngbNavLink>Existing Guarantors <span class='badge badge-danger'>{{ guarantors?.length }}</span></a>
+          <ng-template ngbNavContent>
+            <div class='panel-body'>
+              <!-- START table-responsive-->
+              <div class='table-responsive' id='existinguarantors'>
+                <table class='table table-striped table-bordered table-hover'>
+                  <thead>
+                  <tr>
+                    <th scope='col'>#</th>
+                    <th scope='col'>Gurarantor Name</th>
+                    <th scope='col'>Address</th>
+                    <th scope='col'>Postal Code</th>
+                    <th scope='col'>Tenumber</th>
+                    <th scope='col'>Email</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr *ngFor='let g of guarantors; index as i'>
+                    <th scope='row'>{{ i + 1 }}</th>
+                    <td>{{ g.guarantorname }}</td>
+                    <td>{{ g.address }}</td>
+                    <td>{{ g.postalcode }}</td>
+                    <td>{{ g.telnumber }}</td>
+                    <td>{{ g.email }}</td>
+                  </tr>
+                  </tbody>
+                </table>
+                <!--        end of table responsible-->
+              </div>
+            </div>
       </ng-template>
     </li>
     <li ngbNavItem='Enter Guarantor details'>
@@ -40,9 +45,9 @@
           SHOW ME STEPS
         </button>
         <!-- START card-->
-        <div class='card card-default'>
-          <div class='card-header'>Enter Guarantor details</div>
-          <div class='card-body'>
+        <div class='panel panel-default'>
+          <div class='panel-header'>Enter Guarantor details</div>
+          <div class='panel-body'>
             <form
               #newGuarantorForm='ngForm'
               (ngSubmit)='onSubmit(newGuarantorForm)'
@@ -290,7 +295,10 @@
         <!-- END card-->
       </ng-template>
     </li>
-  </ul>
-  <div [ngbNavOutlet]='nav' class='ml-4'></div>
+      </ul>
+      <div [ngbNavOutlet]='nav' class='ml-4'></div>
 
+
+    </div>
+  </div>
 </app-panel>

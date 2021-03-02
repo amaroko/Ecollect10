@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "predelq.component.js",
+  "sourceRoot": "",
+  "sources": [
+    "../../../../../../../src/app/pages/work/predelq/predelq.component.ts"
+  ],
+  "names": [],
+  "mappings": ";AAAA,OAAO,EAAE,SAAS,EAAU,MAAM,eAAe,CAAC;AAOlD;IACE;IAAe,CAAC;IAEhB,mCAAQ,GAAR,cAAY,CAAC;IAHF,gBAAgB;QAL5B,SAAS,CAAC;YACT,QAAQ,EAAE,aAAa;YACvB,WAAW,EAAE,0BAA0B;YACvC,SAAS,EAAE,CAAC,yBAAyB,CAAC;SACvC,CAAC;;OACW,gBAAgB,CAI5B;IAAD,uBAAC;CAAA,AAJD,IAIC;SAJY,gBAAgB"
+}

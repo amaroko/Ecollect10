@@ -1,34 +1,39 @@
-<ul #nav='ngbNav' class='nav-pills' ngbNav>
-  <!--  tab starts-->
-  <li ngbNavItem='Uploaded files'>
-    <a ngbNavLink>Uploaded files<span class='badge badge-danger'>{{ files?.length }}</span></a>
-    <ng-template ngbNavContent>
-      <!--      <button (click)="UploadedFilesSteps()" class="btn btn-primary">-->
-      <!--        SHOW ME STEPS-->
-      <!--      </button>-->
-      <div class='card'>
-        <!-- START table-responsive-->
-        <div class='table-responsive' id='uploadedfiles'>
-          <table class='table table-hover table-bordered table-striped'>
-            <thead>
-            <tr>
-              <th>custnumber#</th>
-              <th>FileName</th>
-              <th>Type</th>
-              <th>Description</th>
-              <th>Owner</th>
+<app-panel title=' Upload Files and Documents'>
+  <div class='row'>
+    <!-- begin nav-tabs -->
+    <div class='col-xl-12'>
+
+      <ul #nav='ngbNav' class='nav-pills' ngbNav>
+        <!--  tab starts-->
+        <li ngbNavItem='Uploaded files'>
+          <a ngbNavLink>Uploaded files&nbsp;&nbsp;&nbsp;<span class='badge badge-danger'> {{ files?.length }}</span></a>
+          <ng-template ngbNavContent>
+            <!--      <button (click)="UploadedFilesSteps()" class="btn btn-primary">-->
+            <!--        SHOW ME STEPS-->
+            <!--      </button>-->
+            <div class='panel-body'>
+              <!-- START table-responsive-->
+              <div class='table-responsive' id='uploadedfiles'>
+                <table class='table table-hover table-bordered table-striped'>
+                  <thead>
+                  <tr>
+                    <th>custnumber#</th>
+                    <th>FileName</th>
+                    <th>File Size</th>
+                    <th>Description</th>
+                    <th>Owner</th>
               <th>Date</th>
               <th class='text-center'>Download</th>
             </tr>
             </thead>
             <tbody>
-            <tr *ngFor='let d of files'>
+            <tr *ngFor='let d of files | paginate: { itemsPerPage: 10, currentPage: fp }'>
               <td>{{ d.custnumber }}</td>
               <td>{{ d.filename }}</td>
-              <td>{{ d.userdesctype }}</td>
+              <td>{{ d.filesize / 1024 / 1024 | number:'.2'   }} MB</td>
               <td>{{ d.docdesc }}</td>
               <td>{{ d.colofficer }}</td>
-              <td>{{ d.stagedate }}</td>
+              <td>{{ d.stagedate | date: 'medium' }}</td>
               <td class='text-center'>
                 <button
                   (click)='downloadFile(d.destpath, d.filename)'
@@ -41,6 +46,7 @@
             </tbody>
           </table>
           <!--        end of table responsible-->
+                <pagination-controls (pageChange)='fp = $event'></pagination-controls>
           <!--        start of no data table-->
         </div>
       </div>
@@ -49,64 +55,84 @@
   <li ngbNavItem='Upload Files'>
     <a ngbNavLink>Upload files</a>
     <ng-template ngbNavContent>
-      <!--      <button (click)="UploadedFilesSteps2()" class="btn btn-primary">-->
-      <!--        SHOW ME STEPS-->
-      <!--      </button>-->
-      <!-- START card-->
-      <div class='card'>
+      <div class='panel-body'>
+        <!--      <button (click)="UploadedFilesSteps2()" class="btn btn-primary">-->
+        <!--        SHOW ME STEPS-->
+        <!--      </button>-->
+        <!-- START card-->
+
+
         <div class='collapse show' data-parent='#accordion' id='collapseupload'>
-          <div class='card-body'>
-            <div class='form-group row'>
-              <label class='col-xl-4 col-form-label'>Document Type</label>
-              <div class='col-xl-8'>
-                <!--<ng-select id="userdesctype" name="userdesctype" #userdesctype="ngModel" [ngModel]="model.userdesctype">
-                  <ng-option *ngFor="let f of filetype" [value]="f.filetype" >{{f.filetype}}</ng-option>
-                </ng-select>-->
-                <label for='userdesctype'></label
-                ><select
-                #userdesctype='ngModel'
-                (change)='changeCity($event)'
-                [ngModel]='model.userdesctype'
-                id='userdesctype'
-                name='userdesctype'
-              >
-                <option disabled value=''>Choose type of document</option>
-                <option *ngFor='let f of filetype' [ngValue]='f.filetype'>
-                  {{ f.filetype }}
-                </option>
-              </select>
-              </div>
-            </div>
-            <div class="form-group row">
-              <label class="col-xl-4 col-form-label">File Description</label>
-              <div class='col-xl-8'>
-                <label for='filedesc'></label
-                ><textarea
-                #filedesc='ngModel'
-                [(ngModel)]='model.filedesc'
-                class='form-control'
-                id='filedesc'
-                name='filedesc'
-                rows='2'
-              ></textarea>
+          <div class='panel-body'>
+            <div class='row' style='padding-top: 20px'>
+              <div class='col-xl-2 col-md-3'>Document Type</div>
+              <div class='col-md-9'>
+                <div class='col-md-12'>
+
+                  <label for='userdesctype'></label
+                  ><select
+                  #userdesctype='ngModel'
+                  (change)='changeCity($event)'
+                  [ngClass]="{ 'is-invalid': userdesctype.invalid }"
+                  [ngModel]='model.userdesctype'
+                  class='form-control is-valid'
+                  id='userdesctype'
+                  name='userdesctype'
+                  required
+                  type='text'
+                >
+
+                  <option *ngFor='let f of filetype' [ngValue]='f.filetype'>
+                    {{ f.filetype }}
+                  </option>
+                </select>
+                  <div *ngIf='userdesctype.valid' class='valid-feedback'>
+                    Looks good!
+                  </div>
+                </div>
               </div>
             </div>
 
-            <div class="row">
-              <div class="col-lg-3">
-                <div class="card">
-                  <div class='card-body'>
+
+            <div class='row' style='padding-top: 20px'>
+              <div class='col-xl-2 col-md-3'>File Description</div>
+              <div class='col-md-9'>
+                <div class='col-md-12'>
+
+                  <label for='filedesc'></label
+                  ><textarea
+                  #filedesc='ngModel'
+                  [(ngModel)]='model.filedesc'
+                  [ngClass]="{ 'is-invalid': filedesc.invalid }"
+                  class='form-control is-valid'
+                  id='filedesc'
+                  name='filedesc'
+                  required
+                  rows='2'
+                ></textarea>
+                  <div *ngIf='filedesc.valid' class='valid-feedback'>
+                    Looks good!
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class='row'>
+              <div class='col-lg-3'>
+                <div class='panel'>
+                  <div class='panel-body'>
                     <h4 class='page-header mt0'>Select files</h4>
-                    <div
-                      (fileOver)='fileOverBase($event)'
-                      [ngClass]="{ 'nv-file-over': hasBaseDropZoneOver }"
-                      [uploader]='uploader'
-                      class='box-placeholder my-drop-zone'
-                      id='drop'
-                      ng2FileDrop
-                    >
-                      Drop files here
-                    </div>
+                    <!--                    <div-->
+                    <!--                      (fileOver)='fileOverBase($event)'-->
+                    <!--                      [ngClass]="{ 'nv-file-over': hasBaseDropZoneOver }"-->
+                    <!--                      [uploader]='uploader'-->
+                    <!--                      class='box-placeholder my-drop-zone'-->
+                    <!--                      id='drop'-->
+                    <!--                      ng2FileDrop-->
+                    <!--                    >-->
+                    <!--                      Drop files here-->
+                    <!--                    </div>-->
                     <p class='text-bold'>Upload options</p>
                     <label class='file-upload' for='file1'>
                       <button
@@ -137,9 +163,9 @@
                   </div>
                 </div>
               </div>
-              <div class="col-lg-9" id="progress" style="margin-bottom: 40px">
-                <div class="card">
-                  <div class='card-body'>
+              <div class='col-lg-9' id='progress' style='margin-bottom: 40px'>
+                <div class='panel'>
+                  <div class='panel-body'>
                     <p
                       *ngIf='uploader?.queue?.length'
                       class='float-right badge badge-info'
@@ -192,7 +218,7 @@
                             [disabled]='
                                 item.isReady ||
                                 item.isUploading ||
-                                item.isSuccess
+                                item.isSuccess || userdesctype.invalid || filedesc.invalid
                               '
                             class='btn btn-info btn-xs'
                             type='button'
@@ -221,8 +247,8 @@
                     </table>
                   </div>
                 </div>
-                <div class="card">
-                  <div class="card-body">
+                <div class='panel'>
+                  <div class='panel-body'>
                     <div>
                       <div>
                         Queue progress:
@@ -236,7 +262,7 @@
                       </div>
                       <button
                         (click)='uploader.uploadAll()'
-                        [disabled]='!uploader.getNotUploadedItems().length'
+                        [disabled]='!uploader.getNotUploadedItems().length || userdesctype.invalid || filedesc.invalid'
                         class='btn btn-info btn-s'
                         type='button'
                       >
@@ -269,5 +295,9 @@
       <!-- END card-->
     </ng-template>
   </li>
-</ul>
-<div [ngbNavOutlet]='nav' class='ml-4'></div>
+      </ul>
+      <div [ngbNavOutlet]='nav' class='ml-4'></div>
+
+    </div>
+  </div>
+</app-panel>

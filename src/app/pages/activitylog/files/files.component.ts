@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Pipe } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { EcolService } from '../../../services/ecol.service';
 import { DataService } from '../../../services/data.service';
@@ -23,7 +23,7 @@ export class FilesComponent implements OnInit {
   introJS = introJs();
   accnumber: string;
   custnumber: string;
-
+  fp = 1;
   model: any = {};
   demands: any;
   files: any = [];
@@ -209,20 +209,15 @@ export class FilesComponent implements OnInit {
   getfileshistory(custnumber) {
     this.ecolService.getfileshistory(custnumber).subscribe((data) => {
       this.files = data;
+      console.log(data[0].filesize);
       this.dataService.pushFile(data.length);
     });
   }
 
   downloadFile(filepath, filename) {
-    this.ecolService.downloadFile(filepath).subscribe(
-      (data) => {
-        saveAs(data, filename);
-      },
-      (error) => {
-        console.log(error.error);
-        swal.fire('Error!', ' Cannot download  file!', 'error');
-      }
-    );
+    this.ecolService.downloadFile(filepath).subscribe((blob) => {
+      saveAs(blob, filename);
+    });
   }
 
   changeCity(e) {

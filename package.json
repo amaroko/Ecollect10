@@ -69,6 +69,7 @@
     "ngx-chips": "^2.2.1",
     "ngx-countdown": "^11.0.3",
     "ngx-daterangepicker-material": "^4.0.1",
+    "ngx-filesize": "^2.0.16",
     "ngx-highlight-js": "^11.1.0",
     "ngx-pagination": "^5.0.0",
     "ngx-perfect-scrollbar": "^10.0.1",

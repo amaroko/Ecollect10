@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "permissionsensor.component.js",
+  "sourceRoot": "",
+  "sources": [
+    "../../../../../../../src/app/pages/home/permissionsensor/permissionsensor.component.ts"
+  ],
+  "names": [],
+  "mappings": ";AAAA,OAAO,EAAE,SAAS,EAAU,MAAM,eAAe,CAAC;AAOlD;IACE;IAAe,CAAC;IAEhB,4CAAQ,GAAR,cAAkB,CAAC;IAHR,yBAAyB;QALrC,SAAS,CAAC;YACT,QAAQ,EAAE,sBAAsB;YAChC,WAAW,EAAE,mCAAmC;YAChD,SAAS,EAAE,CAAC,kCAAkC,CAAC;SAChD,CAAC;;OACW,yBAAyB,CAIrC;IAAD,gCAAC;CAAA,AAJD,IAIC;SAJY,yBAAyB"
+}
