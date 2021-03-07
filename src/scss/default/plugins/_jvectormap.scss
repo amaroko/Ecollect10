@@ -9,7 +9,7 @@
     color: $dark;
     background: $white;
 
-    @include box-shadow(0 2px 8px rgba($black, 0.25));
+    @include box-shadow(0 2px 8px rgba($black, .25));
     @if $enable-rtl {
       left: auto;
       right: rem(15px);
@@ -19,13 +19,13 @@
   & .jvectormap-label {
     padding: rem(3px) rem(6px);
     border: none;
-    background: rgba($black, 0.6);
+    background: rgba($black, .6);
   }
 }
 .jvectormap-tip {
   padding: rem(3px) rem(6px) !important;
   border: none !important;
-  background: rgba($black, 0.6) !important;
+  background: rgba($black, .6) !important;
 }
 .map {
   & .jvectormap-zoomin,

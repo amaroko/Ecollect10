@@ -201,7 +201,7 @@
       font-family: inherit;
       font-size: rem(12px);
 
-      @include box-shadow(0 6px 30px rgba($black, 0.15));
+      @include box-shadow(0 6px 30px rgba($black, .15));
       @include media-breakpoint-down(xs) {
         width: rem(250px);
       }

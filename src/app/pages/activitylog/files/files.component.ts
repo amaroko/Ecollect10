@@ -37,6 +37,7 @@ export class FilesComponent implements OnInit {
   public uploader: FileUploader = new FileUploader({ url: URL });
   public hasBaseDropZoneOver = false;
   public hasAnotherDropZoneOver = false;
+  loading: boolean;
 
   constructor(
     private route: ActivatedRoute,
@@ -92,6 +93,8 @@ export class FilesComponent implements OnInit {
             (resp) => {
               this.getfileshistory(this.custnumber);
               swal.fire('Good!', 'File uploaded successfully!', 'success');
+              this.uploader.clearQueue();
+              // clear the queue on successful upload
             },
             (error) => {
               swal.fire(
@@ -215,9 +218,37 @@ export class FilesComponent implements OnInit {
   }
 
   downloadFile(filepath, filename) {
-    this.ecolService.downloadFile(filepath).subscribe((blob) => {
-      saveAs(blob, filename);
-    });
+    this.loading = true;
+    this.ecolService.downloadFile(filepath).subscribe(
+      (data) => {
+        saveAs(data, filename);
+        swal.fire({
+          icon: 'success',
+          title: 'Successful',
+          text: filename + '   downloaded successfully',
+          // showDenyButton: true,
+          // denyButtonText: 'Never Mind',
+          // showCancelButton: true,
+          timer: 4000
+        });
+        this.loading = false;
+      },
+      (error) => {
+        console.log(error.error);
+        // swal.fire('Error!', ' Cannot download  file!', 'error');
+        swal.fire({
+          icon: 'error',
+          title: 'Oops',
+          text: 'Cannot download  file!',
+          // showDenyButton: true,
+          // denyButtonText: 'Never Mind',
+          showCancelButton: true,
+
+          timer: 4000
+        });
+        this.loading = false;
+      }
+    );
   }
 
   changeCity(e) {

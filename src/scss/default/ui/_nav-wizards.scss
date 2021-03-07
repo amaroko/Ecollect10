@@ -34,7 +34,7 @@
           @include display-flex();
           @include flex-align(center);
           @include flex-justify-content(center);
-          @include transition(all 0.2s linear);
+          @include transition(all .2s linear);
         }
 
         & .nav-text {
@@ -60,7 +60,7 @@
 
         &.active {
           & .nav-no {
-            @include box-shadow(0 0 0 5px rgba($component-active-bg, 0.2));
+            @include box-shadow(0 0 0 5px rgba($component-active-bg, .2));
           }
         }
 
@@ -86,10 +86,10 @@
           @if $enable-rtl {
             left: 0;
           } @else {
-            right: 0;
+            right: 0
           }
 
-          @include transition(all 0.2s linear);
+          @include transition(all .2s linear);
         }
       }
 
@@ -155,7 +155,7 @@
           margin-top: rem(-1px);
           background-color: $gray-200;
 
-          @include transition(all 0.2s linear);
+          @include transition(all .2s linear);
         }
 
         &:after {
@@ -178,7 +178,7 @@
         }
 
         &.active {
-          @include box-shadow(0 0 0 4px rgba($component-active-bg, 0.2));
+          @include box-shadow(0 0 0 4px rgba($component-active-bg, .2));
         }
       }
 
@@ -232,7 +232,7 @@
           @include display-flex();
           @include flex-align(center);
           @include flex-justify-content(center);
-          @include transition(all 0.2s linear);
+          @include transition(all .2s linear);
         }
 
         & .nav-title {
@@ -265,7 +265,7 @@
 
         &.active {
           & .nav-dot {
-            @include box-shadow(0 0 0 5px rgba($component-active-bg, 0.2));
+            @include box-shadow(0 0 0 5px rgba($component-active-bg, .2));
           }
         }
 
@@ -293,7 +293,7 @@
           width: 0%;
           background: $component-active-bg;
 
-          @include transition(all 0.2s linear);
+          @include transition(all .2s linear);
         }
       }
 

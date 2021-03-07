@@ -1,370 +1,382 @@
-<app-panel>
-  <ul #nav='ngbNav' class='nav-pills' ngbNav>
-    <!--  tab starts-->
-    <li ngbNavItem='Existing Collaterals'>
-      <a ngbNavLink>Existing Collaterals <span class='badge badge-warning'>{{ collaterals?.length }}</span></a>
+<app-panel title=' Collaterals'>
+  <div class='row'>
+    <!-- begin nav-tabs -->
+    <div class='col-xl-12'>
+      <ul #nav='ngbNav' class='nav-pills' ngbNav>
+        <!--  tab starts-->
+        <li ngbNavItem='Existing Collaterals'>
+          <a ngbNavLink>Existing Collaterals <span class='badge badge-warning'>{{ collaterals?.length }}</span></a>
 
-      <ng-template ngbNavContent>
-        <!--      <button (click)="CollateralsSteps()" class="btn btn-primary">-->
-        <!--        SHOW ME STEPS-->
-        <!--      </button>-->
-        <!-- START table-responsive-->
-        <div class='table-responsive' data id='collateraltable'>
-          <table class='table table-striped table-bordered table-hover'>
-            <thead>
-            <tr>
-              <th scope='col'>#</th>
-              <th scope='col'>Accnumber</th>
-              <th scope='col'>Custnumber</th>
-              <th scope='col'>Collateral Name</th>
-              <th scope='col'>Market sale value</th>
-              <th scope='col'>Forced sale value</th>
-              <th scope='col'>Reg owner</th>
-              <th scope='col'></th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr *ngFor='let g of collaterals; index as i'>
-              <th scope='row'>{{ i + 1 }}</th>
-              <td>{{ g.accnumber }}</td>
-              <td>{{ g.custnumber }}</td>
-              <td>{{ g.collateralname }}</td>
-              <td>{{ g.marketvalue }}</td>
-              <td>{{ g.forcedsale }}</td>
-              <td>{{ g.regowner }}</td>
-              <td class='text-center'>
-                <button
-                  (click)='editcollateral(g)'
-                  class='btn btn-outline-success btn-sm'
-                >
-                  <i class='fas fa-edit'></i> edit
-                </button>
-              </td>
-            </tr>
-            </tbody>
-          </table>
-        </div>
+          <ng-template ngbNavContent>
+            <div class='panel-body'>
+              <!--      <button (click)="CollateralsSteps()" class="btn btn-primary">-->
+              <!--        SHOW ME STEPS-->
+              <!--      </button>-->
+              <!-- START table-responsive-->
+              <div class='table-responsive' data id='collateraltable'>
+                <table class='table table-striped table-bordered table-hover'>
+                  <thead>
+                  <tr>
+                    <th scope='col'>#</th>
+                    <th scope='col'>Accnumber</th>
+                    <th scope='col'>Custnumber</th>
+                    <th scope='col'>Collateral Name</th>
+                    <th scope='col'>Market sale value</th>
+                    <th scope='col'>Forced sale value</th>
+                    <th scope='col'>Reg owner</th>
+                    <th scope='col'></th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr *ngFor='let g of collaterals; index as i'>
+                    <th scope='row'>{{ i + 1 }}</th>
+                    <td>{{ g.accnumber }}</td>
+                    <td>{{ g.custnumber }}</td>
+                    <td>{{ g.collateralname }}</td>
+                    <td>{{ g.marketvalue }}</td>
+                    <td>{{ g.forcedsale }}</td>
+                    <td>{{ g.regowner }}</td>
+                    <td class='text-center'>
+                      <button
+                        (click)='editcollateral(g)'
+                        class='btn btn-outline-success btn-sm'
+                      >
+                        <i class='fas fa-edit'></i> edit
+                      </button>
+                    </td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
       </ng-template>
+
     </li>
     <li ngbNavItem='Add New Collateral'>
       <a ngbNavLink>Add New Collateral</a>
+
       <ng-template ngbNavContent>
-        <!--      <button (click)="CollateralsSteps2()" class="btn btn-primary">-->
-        <!--        SHOW ME STEPS-->
-        <!--      </button>-->
-        <!-- START card-->
-        <div class='card card-default'>
-          <div class='card-body'>
-            <form
-              #newCollateralForm='ngForm'
-              (ngSubmit)='onSubmit(newCollateralForm)'
-              autocomplete='off'
-              class='form-horizontal'
-            >
-              <div class='form-group row m-b-15'>
-                <label class='col-form-label col-md-2' for='custnumber'
-                >Customer custnumber</label
-                >
-                <div class='col-md-7'>
-                  <input
-                    #custnumber='ngModel'
-                    [(ngModel)]='model.custnumber'
-                    [disabled]='true'
-                    [ngClass]="{ 'is-invalid': custnumber.invalid }"
-                    class='form-control is-valid'
-                    id='custnumber'
-                    name='custnumber'
-                    required
-                    type='text'
-                  />
-                  <div *ngIf='custnumber.valid' class='valid-feedback'>
-                    Looks good!
-                  </div>
-                </div>
-            </div>
-
-              <div class='form-group row m-b-15'>
-                <label class='col-form-label col-md-2' for='accnumber'
-                >Customer accnumber</label
-                >
-                <div class='col-md-7'>
-                  <input
-                    #accnumber='ngModel'
-                    [(ngModel)]='model.accnumber'
-                    [disabled]='true'
-                    [ngClass]="{ 'is-invalid': accnumber.invalid }"
-                    class='form-control is-valid'
-                    id='accnumber'
-                    name='accnumber'
-                    required
-                    type='text'
-                  />
-                  <div *ngIf='accnumber.valid' class='valid-feedback'>
-                    Looks good!
-                  </div>
-                </div>
-            </div>
-
-              <div class='form-group row m-b-15'>
-                <label class='col-form-label col-md-2' for='collateralname'
-                >Collateral title/name</label
-                >
-                <div class='col-md-7'>
-                  <input
-                    #collateralname='ngModel'
-                    [(ngModel)]='model.collateralname'
-                    [ngClass]="{ 'is-invalid': collateralname.invalid }"
-                    class='form-control is-valid'
-                    id='collateralname'
-                    name='collateralname'
-                    required
-                    type='text'
-                  />
-                  <div *ngIf='collateralname.valid' class='valid-feedback'>
-                    Looks good!
-                  </div>
-                  <div
-                    *ngIf='collateralname.invalid && collateralname.touched'
-                    class='text-danger'
+        <div class='panel-body'>
+          <!--      <button (click)="CollateralsSteps2()" class="btn btn-primary">-->
+          <!--        SHOW ME STEPS-->
+          <!--      </button>-->
+          <!-- START card-->
+          <div class='card card-default'>
+            <div class='card-body'>
+              <form
+                #newCollateralForm='ngForm'
+                (ngSubmit)='onSubmit(newCollateralForm)'
+                autocomplete='off'
+                class='form-horizontal'
+              >
+                <div class='form-group row m-b-15'>
+                  <label class='col-form-label col-md-2' for='custnumber'
+                  >Customer custnumber</label
                   >
-                    collateral name is required
+                  <div class='col-md-7'>
+                    <input
+                      #custnumber='ngModel'
+                      [(ngModel)]='model.custnumber'
+                      [disabled]='true'
+                      [ngClass]="{ 'is-invalid': custnumber.invalid }"
+                      class='form-control is-valid'
+                      id='custnumber'
+                      name='custnumber'
+                      required
+                      type='text'
+                    />
+                    <div *ngIf='custnumber.valid' class='valid-feedback'>
+                      Looks good!
+                    </div>
                   </div>
                 </div>
-            </div>
 
-              <div class='form-group row m-b-15'>
-                <label class='col-form-label col-md-2' for='regowner'
-                >Registered Owner</label
-                >
-                <div class='col-md-7'>
-                  <input
-                    #regowner='ngModel'
-                    [(ngModel)]='model.regowner'
-                    [ngClass]="{ 'is-invalid': regowner.invalid }"
-                    class='form-control is-valid'
-                    id='regowner'
-                    name='regowner'
-                    required
-                    type='text'
-                  />
-                  <div *ngIf='regowner.valid' class='valid-feedback'>
-                    Looks good!
-                  </div>
-                  <div
-                    *ngIf='regowner.invalid && regowner.touched'
-                    class='text-danger'
+                <div class='form-group row m-b-15'>
+                  <label class='col-form-label col-md-2' for='accnumber'
+                  >Customer accnumber</label
                   >
-                    registered owner name is required
+                  <div class='col-md-7'>
+                    <input
+                      #accnumber='ngModel'
+                      [(ngModel)]='model.accnumber'
+                      [disabled]='true'
+                      [ngClass]="{ 'is-invalid': accnumber.invalid }"
+                      class='form-control is-valid'
+                      id='accnumber'
+                      name='accnumber'
+                      required
+                      type='text'
+                    />
+                    <div *ngIf='accnumber.valid' class='valid-feedback'>
+                      Looks good!
+                    </div>
                   </div>
                 </div>
-            </div>
 
-              <div class='form-group row m-b-15'>
-                <label class='col-form-label col-md-2' for='forcedsale'
-                >Forced Sale Value</label
-                >
-                <div class='col-md-7'>
-                  <input
-                    #forcedsale='ngModel'
-                    [(ngModel)]='model.forcedsale'
-                    [ngClass]="{ 'is-invalid': forcedsale.invalid }"
-                    class='form-control is-valid'
-                    id='forcedsale'
-                    name='forcedsale'
-                    required
-                    type='text'
-                  />
-                  <div *ngIf='forcedsale.valid' class='valid-feedback'>
-                    Looks good!
-                  </div>
-                  <div
-                    *ngIf='forcedsale.invalid && forcedsale.touched'
-                    class='text-danger'
+                <div class='form-group row m-b-15'>
+                  <label class='col-form-label col-md-2' for='collateralname'
+                  >Collateral title/name</label
                   >
-                    forced sale value is required
+                  <div class='col-md-7'>
+                    <input
+                      #collateralname='ngModel'
+                      [(ngModel)]='model.collateralname'
+                      [ngClass]="{ 'is-invalid': collateralname.invalid }"
+                      class='form-control is-valid'
+                      id='collateralname'
+                      name='collateralname'
+                      required
+                      type='text'
+                    />
+                    <div *ngIf='collateralname.valid' class='valid-feedback'>
+                      Looks good!
+                    </div>
+                    <div
+                      *ngIf='collateralname.invalid && collateralname.touched'
+                      class='text-danger'
+                    >
+                      collateral name is required
+                    </div>
                   </div>
                 </div>
-            </div>
 
-              <div class='form-group row m-b-15'>
-                <label class='col-form-label col-md-2' for='marketvalue'
-                >Market Sale Value</label
-                >
-                <div class='col-md-7'>
-                  <input
-                    #marketvalue='ngModel'
-                    [(ngModel)]='model.marketvalue'
-                    [ngClass]="{ 'is-invalid': marketvalue.invalid }"
-                    class='form-control is-valid'
-                    id='marketvalue'
-                    name='marketvalue'
-                    required
-                    type='text'
-                  />
-                  <div *ngIf='marketvalue.valid' class='valid-feedback'>
-                    Looks good!
-                  </div>
-                  <div
-                    *ngIf='marketvalue.invalid && marketvalue.touched'
-                    class='text-danger'
+                <div class='form-group row m-b-15'>
+                  <label class='col-form-label col-md-2' for='regowner'
+                  >Registered Owner</label
                   >
-                    Marketvalue is required
+                  <div class='col-md-7'>
+                    <input
+                      #regowner='ngModel'
+                      [(ngModel)]='model.regowner'
+                      [ngClass]="{ 'is-invalid': regowner.invalid }"
+                      class='form-control is-valid'
+                      id='regowner'
+                      name='regowner'
+                      required
+                      type='text'
+                    />
+                    <div *ngIf='regowner.valid' class='valid-feedback'>
+                      Looks good!
+                    </div>
+                    <div
+                      *ngIf='regowner.invalid && regowner.touched'
+                      class='text-danger'
+                    >
+                      registered owner name is required
+                    </div>
                   </div>
                 </div>
-            </div>
 
-              <div class='form-group row m-b-15'>
-                <label class='col-form-label col-md-2' for='insurancevalue'
-                >Insurance Value</label
-                >
-                <div class='col-md-7'>
-                  <input
-                    #insurancevalue='ngModel'
-                    [(ngModel)]='model.insurancevalue'
-                    [ngClass]="{ 'is-invalid': insurancevalue.invalid }"
-                    class='form-control is-valid'
-                    id='insurancevalue'
-                    name='insurancevalue'
-                    required
-                    type='text'
-                  />
-                  <div *ngIf='insurancevalue.valid' class='valid-feedback'>
-                    Looks good!
-                  </div>
-                  <div
-                    *ngIf='insurancevalue.invalid && insurancevalue.touched'
-                    class='text-danger'
+                <div class='form-group row m-b-15'>
+                  <label class='col-form-label col-md-2' for='forcedsale'
+                  >Forced Sale Value</label
                   >
-                    insurancevalue is required
+                  <div class='col-md-7'>
+                    <input
+                      #forcedsale='ngModel'
+                      [(ngModel)]='model.forcedsale'
+                      [ngClass]="{ 'is-invalid': forcedsale.invalid }"
+                      class='form-control is-valid'
+                      id='forcedsale'
+                      name='forcedsale'
+                      required
+                      type='text'
+                    />
+                    <div *ngIf='forcedsale.valid' class='valid-feedback'>
+                      Looks good!
+                    </div>
+                    <div
+                      *ngIf='forcedsale.invalid && forcedsale.touched'
+                      class='text-danger'
+                    >
+                      forced sale value is required
+                    </div>
                   </div>
                 </div>
-            </div>
 
-              <div class='form-group row m-b-15'>
-                <label class='col-form-label col-md-2' for='valuationdate'
-                >Valuation Date</label
-                >
-                <div class='col-md-7'>
-                  <input
-                    #valuationdate='ngModel'
-                    [(ngModel)]='model.valuationdate'
-                    [ngClass]="{ 'is-invalid': valuationdate.invalid }"
-                    class='form-control is-valid'
-                    id='valuationdate'
-                    name='valuationdate'
-                    required
-                    type='text'
-                  />
-                  <div *ngIf='valuationdate.valid' class='valid-feedback'>
-                    Looks good!
-                  </div>
-                  <div
-                    *ngIf='valuationdate.invalid && valuationdate.touched'
-                    class='text-danger'
+                <div class='form-group row m-b-15'>
+                  <label class='col-form-label col-md-2' for='marketvalue'
+                  >Market Sale Value</label
                   >
-                    valuationdate is required
+                  <div class='col-md-7'>
+                    <input
+                      #marketvalue='ngModel'
+                      [(ngModel)]='model.marketvalue'
+                      [ngClass]="{ 'is-invalid': marketvalue.invalid }"
+                      class='form-control is-valid'
+                      id='marketvalue'
+                      name='marketvalue'
+                      required
+                      type='text'
+                    />
+                    <div *ngIf='marketvalue.valid' class='valid-feedback'>
+                      Looks good!
+                    </div>
+                    <div
+                      *ngIf='marketvalue.invalid && marketvalue.touched'
+                      class='text-danger'
+                    >
+                      Marketvalue is required
+                    </div>
                   </div>
                 </div>
-            </div>
 
-            <div class="form-group row m-b-15">
-              <label for="tenure" class="col-form-label col-md-2">Tenure</label>
-              <div class='col-md-7'>
-                <input
-                  #tenure='ngModel'
-                  [(ngModel)]='model.tenure'
-                  [ngClass]="{ 'is-invalid': tenure.invalid }"
-                  class='form-control is-valid'
-                  id='tenure'
-                  name='tenure'
-                  required
-                  type='text'
-                />
-                <div *ngIf='tenure.valid' class='valid-feedback'>
-                  Looks good!
+                <div class='form-group row m-b-15'>
+                  <label class='col-form-label col-md-2' for='insurancevalue'
+                  >Insurance Value</label
+                  >
+                  <div class='col-md-7'>
+                    <input
+                      #insurancevalue='ngModel'
+                      [(ngModel)]='model.insurancevalue'
+                      [ngClass]="{ 'is-invalid': insurancevalue.invalid }"
+                      class='form-control is-valid'
+                      id='insurancevalue'
+                      name='insurancevalue'
+                      required
+                      type='text'
+                    />
+                    <div *ngIf='insurancevalue.valid' class='valid-feedback'>
+                      Looks good!
+                    </div>
+                    <div
+                      *ngIf='insurancevalue.invalid && insurancevalue.touched'
+                      class='text-danger'
+                    >
+                      insurancevalue is required
+                    </div>
+                  </div>
                 </div>
-                <div
-                  *ngIf='tenure.invalid && tenure.touched'
-                  class='text-danger'
-                >
-                  tenure is required
-                </div>
-              </div>
-            </div>
 
-            <div class="form-group row m-b-15">
-              <label for="valuer" class="col-form-label col-md-2">Valuer</label>
-              <div class='col-md-7'>
-                <input
-                  #valuer='ngModel'
-                  [(ngModel)]='model.valuer'
-                  [ngClass]="{ 'is-invalid': valuer.invalid }"
-                  class='form-control is-valid'
-                  id='valuer'
-                  name='valuer'
-                  required
-                  type='text'
-                />
-                <div *ngIf='valuer.valid' class='valid-feedback'>
-                  Looks good!
+                <div class='form-group row m-b-15'>
+                  <label class='col-form-label col-md-2' for='valuationdate'
+                  >Valuation Date</label
+                  >
+                  <div class='col-md-7'>
+                    <input
+                      #valuationdate='ngModel'
+                      [(ngModel)]='model.valuationdate'
+                      [ngClass]="{ 'is-invalid': valuationdate.invalid }"
+                      class='form-control is-valid'
+                      id='valuationdate'
+                      name='valuationdate'
+                      required
+                      type='text'
+                    />
+                    <div *ngIf='valuationdate.valid' class='valid-feedback'>
+                      Looks good!
+                    </div>
+                    <div
+                      *ngIf='valuationdate.invalid && valuationdate.touched'
+                      class='text-danger'
+                    >
+                      valuationdate is required
+                    </div>
+                  </div>
                 </div>
-                <div
-                  *ngIf='valuer.invalid && valuer.touched'
-                  class='text-danger'
-                >
-                  valuer is required
-                </div>
-              </div>
-            </div>
 
-            <div class="form-group row">
-              <label class="col-xl-3 col-form-label"></label>
-              <div class='col-xl-6'>
-                <button
-                  *ngIf='!edit'
-                  [disabled]='
+                <div class="form-group row m-b-15">
+                  <label for="tenure" class="col-form-label col-md-2">Tenure</label>
+                  <div class='col-md-7'>
+                    <input
+                      #tenure='ngModel'
+                      [(ngModel)]='model.tenure'
+                      [ngClass]="{ 'is-invalid': tenure.invalid }"
+                      class='form-control is-valid'
+                      id='tenure'
+                      name='tenure'
+                      required
+                      type='text'
+                    />
+                    <div *ngIf='tenure.valid' class='valid-feedback'>
+                      Looks good!
+                    </div>
+                    <div
+                      *ngIf='tenure.invalid && tenure.touched'
+                      class='text-danger'
+                    >
+                      tenure is required
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group row m-b-15">
+                  <label for="valuer" class="col-form-label col-md-2">Valuer</label>
+                  <div class='col-md-7'>
+                    <input
+                      #valuer='ngModel'
+                      [(ngModel)]='model.valuer'
+                      [ngClass]="{ 'is-invalid': valuer.invalid }"
+                      class='form-control is-valid'
+                      id='valuer'
+                      name='valuer'
+                      required
+                      type='text'
+                    />
+                    <div *ngIf='valuer.valid' class='valid-feedback'>
+                      Looks good!
+                    </div>
+                    <div
+                      *ngIf='valuer.invalid && valuer.touched'
+                      class='text-danger'
+                    >
+                      valuer is required
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label class="col-xl-3 col-form-label"></label>
+                  <div class='col-xl-6'>
+                    <button
+                      *ngIf='!edit'
+                      [disabled]='
                     !newCollateralForm.valid || !newCollateralForm.dirty
                   '
-                  class='btn btn-sm btn-outline-primary'
-                  id='collateralsubmit'
-                  type='submit'
-                >
-                  Submit
-                </button>
-                <button
-                  (click)='reset()'
-                  *ngIf='!edit'
-                  class='btn btn-sm btn-outline-danger'
-                  id='collateralreset'
-                  type='button'
-                >
-                  Reset
-                </button>
-                <button
-                  (click)='updatecollateral(model)'
-                  *ngIf='edit'
-                  [disabled]='newCollateralForm.invalid'
-                  class='mb-1 mr-1 btn btn-sm btn-outline-warning col-form-label'
-                  type='button'
-                >
-                  Update
-                </button>
-                <button
-                  (click)='cancel()'
-                  *ngIf='edit'
-                  class='mb-1 mr-1 btn btn-sm btn-outline-danger col-form-label'
-                  type='button'
-                >
-                  Cancel
-                </button>
-              </div>
+                      class='btn btn-sm btn-outline-primary'
+                      id='collateralsubmit'
+                      type='submit'
+                    >
+                      Submit
+                    </button>
+                    <button
+                      (click)='reset()'
+                      *ngIf='!edit'
+                      class='btn btn-sm btn-outline-danger'
+                      id='collateralreset'
+                      type='button'
+                    >
+                      Reset
+                    </button>
+                    <button
+                      (click)='updatecollateral(model)'
+                      *ngIf='edit'
+                      [disabled]='newCollateralForm.invalid'
+                      class='mb-1 mr-1 btn btn-sm btn-outline-warning col-form-label'
+                      type='button'
+                    >
+                      Update
+                    </button>
+                    <button
+                      (click)='cancel()'
+                      *ngIf='edit'
+                      class='mb-1 mr-1 btn btn-sm btn-outline-danger col-form-label'
+                      type='button'
+                    >
+                      Cancel
+                    </button>
+                  </div>
+                </div>
+              </form>
             </div>
-            </form>
           </div>
         </div>
         <!--      end of card-->
       </ng-template>
+
     </li>
-  </ul>
-  <div [ngbNavOutlet]='nav' class='ml-4'></div>
+      </ul>
+      <div [ngbNavOutlet]='nav' class='ml-4'></div>
+    </div>
+  </div>
 </app-panel>

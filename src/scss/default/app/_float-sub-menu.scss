@@ -24,7 +24,7 @@
         display: block;
         text-decoration: none;
         position: relative;
-        color: rgba($white, 0.6);
+        color: rgba($white, .6);
 
         @if $enable-rtl {
           padding: rem(3px) rem(15px) rem(3px) rem(20px);
@@ -59,7 +59,7 @@
             } @else {
               content: '\f054';
             }
-            @include transition(all 0.2s linear);
+            @include transition(all .2s linear);
           }
         }
 
@@ -104,7 +104,7 @@
         position: absolute;
         width: rem(6px);
         height: rem(6px);
-        border: 1px solid rgba($white, 0.25);
+        border: 1px solid rgba($white, .25);
         top: rem(11px);
         margin-top: rem(-2px);
         z-index: 10;
@@ -151,7 +151,7 @@
 
           & .caret {
             &:before {
-              opacity: 1;
+              opacity: 1.0;
 
               @if $enable-rtl {
                 @include transform(rotate(-90deg));
@@ -174,7 +174,7 @@
 
           & .caret {
             &:before {
-              opacity: 1;
+              opacity: 1.0;
 
               @if $enable-rtl {
                 @include transform(rotate(-90deg));

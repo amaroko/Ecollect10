@@ -75,7 +75,7 @@ div {
       border-color: lighten($dark, 7.5%);
       color: $white;
 
-      @include placeholder(rgba($white, 0.45));
+      @include placeholder(rgba($white, .45));
     }
   }
 

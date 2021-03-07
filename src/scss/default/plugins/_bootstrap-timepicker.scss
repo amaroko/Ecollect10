@@ -14,16 +14,14 @@
             color: $dark;
 
             @include box-shadow(none);
-            @include transition(all 0.2s linear);
+            @include transition(all .2s linear);
             @include border-radius($border-radius);
 
             &:focus {
               border-color: $input-focus-border-color;
               outline: none;
 
-              @include box-shadow(
-                  0 0 0 0.125rem rgba($input-focus-border-color, 0.3)
-              );
+              @include box-shadow(0 0 0 0.125rem rgba($input-focus-border-color, .3));
             }
           }
 
@@ -69,7 +67,7 @@
     padding: rem(5px) !important;
 
     @include border-radius($border-radius-lg !important);
-    @include box-shadow(0 6px 30px rgba($black, 0.2) !important);
+    @include box-shadow(0 6px 30px rgba($black, .2) !important);
   }
 
   &:before {

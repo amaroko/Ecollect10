@@ -49,12 +49,12 @@
             left: 0;
             right: auto;
 
-            @include animation(sidebarSlideInLeft 0.2s);
+            @include animation(sidebarSlideInLeft .2s);
           } @else {
             right: 0;
             left: auto;
 
-            @include animation(sidebarSlideInRight 0.2s);
+            @include animation(sidebarSlideInRight .2s);
           }
         }
       }
@@ -82,12 +82,12 @@
               left: 0;
               right: auto;
 
-              @include animation(sidebarSlideInLeft 0.2s);
+              @include animation(sidebarSlideInLeft .2s);
             } @else {
               right: 0;
               left: auto;
 
-              @include animation(sidebarSlideInRight 0.2s);
+              @include animation(sidebarSlideInRight .2s);
             }
           }
         }

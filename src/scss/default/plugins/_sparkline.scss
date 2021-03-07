@@ -3,7 +3,7 @@ body {
     border: none;
     width: auto !important;
     height: auto !important;
-    background: rgba($dark, 0.9);
+    background: rgba($dark, .9);
 
     @include border-radius($border-radius);
   }

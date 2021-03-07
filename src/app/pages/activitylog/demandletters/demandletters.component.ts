@@ -67,7 +67,7 @@ export class DemandlettersComponent implements OnInit {
     'Day30',
     'prelistingremedial'
   ];
-
+  natid: any;
   public uploader: FileUploader = new FileUploader({ url: URL });
   public hasBaseDropZoneOver = false;
   public hasAnotherDropZoneOver = false;
@@ -373,7 +373,9 @@ export class DemandlettersComponent implements OnInit {
 
   getaccount(accnumber) {
     this.ecolService.getAccount(accnumber).subscribe((data) => {
+      console.log(data[0].nationid);
       this.accountdetails = data[0];
+      this.natid = data[0].nationid;
       this.guarantors = data[0].guarantors;
       this.model.accnumber = data[0].accnumber;
       this.model.custnumber = data[0].custnumber;
@@ -405,6 +407,7 @@ export class DemandlettersComponent implements OnInit {
 
   getwatch(accnumber) {
     this.ecolService.getwatch(accnumber).subscribe((data) => {
+      this.loader = false;
       this.accountdetails = data;
       this.guarantors = data.guarantors;
       this.model.accnumber = data.accnumber;
@@ -418,6 +421,7 @@ export class DemandlettersComponent implements OnInit {
 
   getcard(cardacct) {
     this.ecolService.getcardAccount(cardacct).subscribe((data) => {
+      this.loader = false;
       this.accountdetails = data[0];
       this.model.accnumber = data[0].cardacct;
       this.model.custnumber = data[0].cardacct;
@@ -432,6 +436,7 @@ export class DemandlettersComponent implements OnInit {
     // console.log('getdemandshistory called ...');
     this.ecolService.getdemandshistory(accnumber).subscribe((data) => {
       this.demands = data;
+      console.log(this.demands);
     });
   }
 
@@ -512,6 +517,8 @@ export class DemandlettersComponent implements OnInit {
           this.bodyletter.ccy = data[0].currency;
           this.bodyletter.demand1date = null;
           this.bodyletter.guarantors = data[0].guarantors;
+          this.bodyletter.nationalid = data[0].nationalid;
+
           // Get all cust accounts
           this.ecolService.getcustwithAccount(data[0].custnumber).subscribe(
             (accounts) => {
@@ -1006,6 +1013,7 @@ export class DemandlettersComponent implements OnInit {
   processlettercc(demand, cardacct, emailaddress) {
     this.ecolService.getcardAccount(cardacct).subscribe(
       (data) => {
+        this.loader = false;
         if (data.length > 0) {
           const letter = {
             demand: demand.toLowerCase(),
@@ -1041,6 +1049,7 @@ export class DemandlettersComponent implements OnInit {
 
   generatelettercc(letter, emaildata: any) {
     swal.close();
+    this.loader = false;
     this.popinfoToast('Letter Queued to be sent');
     // this.audio();
     this.ecolService.generateLettercc(letter).subscribe(
@@ -1087,6 +1096,7 @@ export class DemandlettersComponent implements OnInit {
               .subscribe((response) => {
                 if (response.result === 'fail') {
                   swal.close();
+                  this.loader = false;
                   this.poperrorToast('Letter not sent on email!');
                 } else {
                   // add to history
@@ -1106,6 +1116,7 @@ export class DemandlettersComponent implements OnInit {
                   this.sendsms(smsdata);
 
                   swal.close();
+                  this.loader = false;
                   this.popsuccessToast('Letter sent on email!');
                 }
               }); // end

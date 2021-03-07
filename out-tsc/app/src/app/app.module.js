@@ -1,4 +1,4 @@
-import { __decorate, __metadata } from 'tslib';
+import { __decorate, __metadata } from "tslib";
 // Core Module
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -42,109 +42,107 @@ import { filter, map } from 'rxjs/operators';
 import { ActivitylogComponent } from './pages/activitylog/activitylog.component';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { RolesensorComponent } from './pages/rolesensor/rolesensor.component';
-
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 var DEFAULT_PERFECT_SCROLLBAR_CONFIG = {
-  suppressScrollX: true
+    suppressScrollX: true
 };
-var AppModule = /** @class */ (function() {
-  function AppModule(router, titleService, routee) {
-    // router.events.subscribe((e) => {
-    //   if (e instanceof NavigationEnd) {
-    //     const title = 'E-collect | ' + this.route.snapshot.firstChild.data['title'];
-    //     this.titleService.setTitle(title);
-    //   }
-    var _this = this;
-    this.router = router;
-    this.titleService = titleService;
-    this.routee = routee;
-    var appTitle = this.titleService.getTitle();
-    this.router.events
-      .pipe(filter(function(event) {
-        return event instanceof NavigationEnd;
-      }), map(function() {
-        var child = _this.routee.firstChild;
-        while (child.firstChild) {
-          child = child.firstChild;
-        }
-        if (child.snapshot.data['title']) {
-          return 'E-collect | ' + child.snapshot.data['title'];
-        }
-        return appTitle;
-      }))
-      .subscribe(function(ttl) {
-        _this.titleService.setTitle(ttl);
-      });
-  }
-
-  AppModule = __decorate([
-    NgModule({
-      declarations: [
-        AppComponent,
-        HeaderComponent,
-        SidebarComponent,
-        TopMenuComponent,
-        FooterComponent,
-        // PanelComponent,
-        // HomePageComponent,
-        LayoutComponent,
-        LoginComponent,
-        ActivitylogComponent,
-        RolesensorComponent
-      ],
-      imports: [
-        AppRoutingModule,
-        FaviconModule,
-        // AgmCoreModule.forRoot({
-        //   apiKey: 'AIzaSyC5gJ5x8Yw7qP_DqvNq3IdZi2WUSiDjskk',
-        // }),
-        BrowserAnimationsModule,
-        BrowserModule,
-        NgxSkeletonLoaderModule.forRoot(),
-        CalendarModule.forRoot({
-          provide: DateAdapter,
-          useFactory: adapterFactory
+var AppModule = /** @class */ (function () {
+    function AppModule(router, titleService, routee) {
+        // router.events.subscribe((e) => {
+        //   if (e instanceof NavigationEnd) {
+        //     const title = 'E-collect | ' + this.route.snapshot.firstChild.data['title'];
+        //     this.titleService.setTitle(title);
+        //   }
+        var _this = this;
+        this.router = router;
+        this.titleService = titleService;
+        this.routee = routee;
+        var appTitle = this.titleService.getTitle();
+        this.router.events
+            .pipe(filter(function (event) { return event instanceof NavigationEnd; }), map(function () {
+            var child = _this.routee.firstChild;
+            while (child.firstChild) {
+                child = child.firstChild;
+            }
+            if (child.snapshot.data['title']) {
+                return 'E-collect | ' + child.snapshot.data['title'];
+            }
+            return appTitle;
+        }))
+            .subscribe(function (ttl) {
+            _this.titleService.setTitle(ttl);
+        });
+    }
+    AppModule = __decorate([
+        NgModule({
+            declarations: [
+                AppComponent,
+                HeaderComponent,
+                SidebarComponent,
+                TopMenuComponent,
+                FooterComponent,
+                // PanelComponent,
+                // HomePageComponent,
+                LayoutComponent,
+                LoginComponent,
+                ActivitylogComponent,
+                RolesensorComponent
+            ],
+            imports: [
+                AppRoutingModule,
+                FaviconModule,
+                // AgmCoreModule.forRoot({
+                //   apiKey: 'AIzaSyC5gJ5x8Yw7qP_DqvNq3IdZi2WUSiDjskk',
+                // }),
+                BrowserAnimationsModule,
+                BrowserModule,
+                NgxSkeletonLoaderModule.forRoot(),
+                CalendarModule.forRoot({
+                    provide: DateAdapter,
+                    useFactory: adapterFactory
+                }),
+                CountdownModule,
+                // LoadingBarHttpClientModule,
+                NgChartjsModule,
+                FullCalendarModule,
+                FormsModule,
+                HighlightJsModule,
+                LoadingBarRouterModule,
+                NgbModule,
+                // NvD3Module,
+                NgxChartsModule,
+                CommonModule,
+                NgxDatatableModule,
+                HttpClientModule,
+                NgxDaterangepickerMd.forRoot(),
+                PerfectScrollbarModule,
+                ReactiveFormsModule,
+                SweetAlert2Module.forRoot(),
+                FontAwesomeModule,
+                TagInputModule,
+                TrendModule
+            ],
+            providers: [
+                Title,
+                {
+                    provide: PERFECT_SCROLLBAR_CONFIG,
+                    useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
+                },
+                {
+                    provide: FAVICON_CONFIG,
+                    useValue: {
+                        color: '#fff',
+                        bgColor: '#ff0000' // favicon notification background color
+                    }
+                }
+            ],
+            bootstrap: [AppComponent]
         }),
-        CountdownModule,
-        // LoadingBarHttpClientModule,
-        NgChartjsModule,
-        FullCalendarModule,
-        FormsModule,
-        HighlightJsModule,
-        LoadingBarRouterModule,
-        NgbModule,
-        // NvD3Module,
-        NgxChartsModule,
-        CommonModule,
-        NgxDatatableModule,
-        HttpClientModule,
-        NgxDaterangepickerMd.forRoot(),
-        PerfectScrollbarModule,
-        ReactiveFormsModule,
-        SweetAlert2Module.forRoot(),
-        TagInputModule,
-        TrendModule
-      ],
-      providers: [
-        Title,
-        {
-          provide: PERFECT_SCROLLBAR_CONFIG,
-          useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
-        },
-        {
-          provide: FAVICON_CONFIG,
-          useValue: {
-            color: '#fff',
-            bgColor: '#ff0000' // favicon notification background color
-          }
-        }
-      ],
-      bootstrap: [AppComponent]
-    }),
-    __metadata('design:paramtypes', [Router,
-      Title,
-      ActivatedRoute])
-  ], AppModule);
-  return AppModule;
+        __metadata("design:paramtypes", [Router,
+            Title,
+            ActivatedRoute])
+    ], AppModule);
+    return AppModule;
 }());
 export { AppModule };
 //# sourceMappingURL=app.module.js.map

@@ -10,7 +10,6 @@ import { ZerobalanceComponent } from './zerobalance/zerobalance.component';
 import { RouterModule } from '@angular/router';
 import { PanelModule } from '../../components/panel/panel.module';
 import { AgGridModule } from '@ag-grid-community/angular';
-
 var routes = [
   { path: '', redirectTo: 'allcards' },
   { path: 'allcards', component: AllcardsComponent },

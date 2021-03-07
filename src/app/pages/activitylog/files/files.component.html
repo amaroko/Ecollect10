@@ -22,7 +22,7 @@
                     <th>File Size</th>
                     <th>Description</th>
                     <th>Owner</th>
-              <th>Date</th>
+              <th>Date Uploaded</th>
               <th class='text-center'>Download</th>
             </tr>
             </thead>
@@ -34,9 +34,16 @@
               <td>{{ d.docdesc }}</td>
               <td>{{ d.colofficer }}</td>
               <td>{{ d.stagedate | date: 'medium' }}</td>
-              <td class='text-center'>
+              <td>
+                <div *ngIf='loading' class='progress progress-sm rounded-corner m-b-5'>
+                  <div class='progress-bar progress-bar-striped progress-bar-animated rounded-corner'
+                       style='width: 100%;'>
+                    loading
+                  </div>
+                </div>
                 <button
-                  (click)='downloadFile(d.destpath, d.filename)'
+                  (click)='downloadFile(d.destpath, d.filename) '
+                  *ngIf='!loading'
                   class='btn btn-outline-success btn-sm'
                 >
                   <i class='fa fa-download'></i>
@@ -135,13 +142,14 @@
                     <!--                    </div>-->
                     <p class='text-bold'>Upload options</p>
                     <label class='file-upload' for='file1'>
-                      <button
+                      <h2
                         class='btn btn-secondary btn-block'
                         id='selmultiple'
                       >
                         Select Multiple
-                      </button>
+                      </h2>
                       <input
+                        class='badge-success'
                         [uploader]='uploader'
                         id='file1'
                         multiple
@@ -150,10 +158,11 @@
                       />
                     </label>
                     <label class='file-upload' for='file2'>
-                      <button class='btn btn-secondary btn-block' id='single'>
+                      <h2 class='btn btn-secondary btn-sm btn-block' id='single'>
                         Select Single
-                      </button>
+                      </h2>
                       <input
+                        class='badge-danger'
                         [uploader]='uploader'
                         id='file2'
                         ng2FileSelect

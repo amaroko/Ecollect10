@@ -138,13 +138,13 @@
 
   & .nvd3 {
     text {
-      fill: rgba($white, 0.75);
+      fill: rgba($white, .75);
     }
 
     & .nv-axis {
       & line,
       & path {
-        stroke: rgba($white, 0.15);
+        stroke: rgba($white, .15);
       }
     }
   }

@@ -76,7 +76,7 @@ body {
     &.dt-button-info {
       border: none;
       padding: rem(15px);
-      background: rgba($dark, 0.95);
+      background: rgba($dark, .95);
 
       @include border-radius($border-radius * 2);
       @include box-shadow(none);
@@ -408,7 +408,7 @@ body {
               pointer-events: none;
               cursor: auto;
               background-color: $white !important;
-              border-color: $border-color !important;
+              border-color: $border-color !important
             }
           }
         }

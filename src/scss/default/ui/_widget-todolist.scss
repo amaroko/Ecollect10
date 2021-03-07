@@ -1,3 +1,4 @@
+
 .widget-todolist {
   background: $white;
 
@@ -138,7 +139,7 @@
         & .form-control {
           color: $white;
 
-          @include placeholder(rgba($white, 0.45));
+          @include placeholder(rgba($white, .45));
         }
       }
 

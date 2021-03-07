@@ -9,10 +9,11 @@ div {
       &.dropdown-toggle {
         &:after {
           @if $enable-rtl {
+
           } @else {
             content: '';
             border: rem(5px) solid transparent;
-            border-top-color: rgba($white, 0.5);
+            border-top-color: rgba($white, .5);
             position: relative;
             top: rem(3px);
           }
@@ -22,7 +23,7 @@ div {
           @if $enable-rtl {
             content: '';
             border: rem(5px) solid transparent;
-            border-top-color: rgba($white, 0.5);
+            border-top-color: rgba($white, .5);
             position: relative;
             top: rem(3px);
             z-index: 10;
@@ -36,18 +37,18 @@ div {
 
         &.dropdown-toggle {
           &:after {
-            border-top-color: rgba($dark, 0.5);
+            border-top-color: rgba($dark, .5);
           }
         }
       }
 
       &.bs-placeholder {
-        color: rgba($white, 0.75) !important;
+        color: rgba($white, .75) !important;
 
         &:active,
         &:hover,
         &:focus {
-          color: rgba($white, 0.75) !important;
+          color: rgba($white, .75) !important;
         }
       }
     }

@@ -24,6 +24,7 @@ var NocreditComponent = /** @class */ (function() {
             return ''; // <img src="assets/img/user/loading.gif">
           }
         }
+        // checkboxSelection: true
       },
       {
         headerName: 'CUSTNUMBER',

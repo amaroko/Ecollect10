@@ -1,4 +1,4 @@
-import { __decorate } from 'tslib';
+import { __decorate } from "tslib";
 import { NgModule } from '@angular/core';
 import { ActivityhomeComponent } from './activityhome/activityhome.component';
 import { RouterModule } from '@angular/router';
@@ -30,56 +30,52 @@ import { FilesComponent } from './files/files.component';
 import { BulknotesComponent } from './bulknotes/bulknotes.component';
 import { PtpsComponent } from './ptps/ptps.component';
 import { WriteoffstoryComponent } from './writeoffstory/writeoffstory.component';
-import { NgxFilesizeModule } from 'ngx-filesize';
-
 var routes = [{ path: '', component: NotesComponent }];
-var ActivitylogModule = /** @class */ (function() {
-  function ActivitylogModule() {
-  }
-
-  ActivitylogModule = __decorate([
-    NgModule({
-      declarations: [
-        ActivityhomeComponent,
-        NotesComponent,
-        ActivityactionComponent,
-        EditnoteComponent,
-        DemandlettersComponent,
-        SmsComponent,
-        AccplanComponent,
-        CustcontactsComponent,
-        CollateralsComponent,
-        GuarantorsComponent,
-        FilesComponent,
-        BulknotesComponent,
-        PtpsComponent,
-        WriteoffstoryComponent
-      ],
-      imports: [
-        PanelModule,
-        CommonModule,
-        NgxFilesizeModule,
-        NgbModule,
-        RouterModule.forRoot(routes),
-        AgGridModule,
-        NgxSkeletonLoaderModule.forRoot(),
-        ReactiveFormsModule,
-        BsDatepickerModule.forRoot(),
-        NgSelectModule,
-        NgxSpinnerModule,
-        NgxSmartModalModule.forRoot(),
-        FormsModule,
-        NgxPaginationModule,
-        HighlightJsModule,
-        ToasterModule,
-        FileUploadModule
-      ],
-      exports: [RouterModule],
-      providers: [DataService, DatePipe]
-    })
-  ], ActivitylogModule);
-  return ActivitylogModule;
+var ActivitylogModule = /** @class */ (function () {
+    function ActivitylogModule() {
+    }
+    ActivitylogModule = __decorate([
+        NgModule({
+            declarations: [
+                ActivityhomeComponent,
+                NotesComponent,
+                ActivityactionComponent,
+                EditnoteComponent,
+                DemandlettersComponent,
+                SmsComponent,
+                AccplanComponent,
+                CustcontactsComponent,
+                CollateralsComponent,
+                GuarantorsComponent,
+                FilesComponent,
+                BulknotesComponent,
+                PtpsComponent,
+                WriteoffstoryComponent
+            ],
+            imports: [
+                PanelModule,
+                CommonModule,
+                NgbModule,
+                RouterModule.forRoot(routes),
+                AgGridModule,
+                NgxSkeletonLoaderModule.forRoot(),
+                ReactiveFormsModule,
+                BsDatepickerModule.forRoot(),
+                NgSelectModule,
+                NgxSpinnerModule,
+                NgxSmartModalModule.forRoot(),
+                FormsModule,
+                NgxPaginationModule,
+                HighlightJsModule,
+                ToasterModule,
+                FileUploadModule
+            ],
+            exports: [RouterModule],
+            providers: [DataService, DatePipe]
+        })
+    ], ActivitylogModule);
+    return ActivitylogModule;
 }());
 export { ActivitylogModule };
-// entry
+// entrys
 //# sourceMappingURL=activitylog.module.js.map

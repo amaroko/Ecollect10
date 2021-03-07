@@ -37,7 +37,7 @@
   }
 
   &.table-transparent {
-    color: rgba($white, 0.75);
+    color: rgba($white, .75);
     background: none;
 
     & thead,
@@ -46,7 +46,7 @@
       & tr {
         & th,
         & td {
-          border-color: rgba($white, 0.15);
+          border-color: rgba($white, .15);
         }
       }
     }
@@ -54,7 +54,7 @@
     & thead {
       & tr {
         & th {
-          border-bottom-color: rgba($white, 0.5);
+          border-bottom-color: rgba($white, .5);
         }
       }
     }

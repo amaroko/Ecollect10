@@ -35,7 +35,7 @@
     height: rem(3px);
     background: $primary;
 
-    @include transition(all 0.2s linear);
+    @include transition(all .2s linear);
     @include media-breakpoint-down(sm) {
       top: $header-height-sm * 2 + rem(1px);
     }

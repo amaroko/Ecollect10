@@ -1,3 +1,4 @@
+
 .superbox {
   &.superbox-active {
     font-size: 0;
@@ -30,7 +31,7 @@
         }
 
         &:hover {
-          opacity: 0.8;
+          opacity: .8;
         }
       }
 
@@ -71,7 +72,7 @@
         max-width: 100%;
         border: none;
 
-        @include box-shadow(0 0 16px rgba($black, 0.15));
+        @include box-shadow(0 0 16px rgba($black, .15));
       }
 
       & .superbox-prev {

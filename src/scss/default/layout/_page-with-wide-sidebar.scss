@@ -120,12 +120,12 @@
             right: auto;
             left: 0;
 
-            @include animation(wideSidebarSlideInLeft 0.2s);
+            @include animation(wideSidebarSlideInLeft .2s);
           } @else {
             left: auto;
             right: 0;
 
-            @include animation(wideSidebarSlideInRight 0.2s);
+            @include animation(wideSidebarSlideInRight .2s);
           }
         }
       }
@@ -190,11 +190,11 @@
         @if $enable-rtl {
           right: 0;
 
-          @include animation(wideSidebarSlideInRight 0.2s);
+          @include animation(wideSidebarSlideInRight .2s);
         } @else {
           left: 0;
 
-          @include animation(wideSidebarSlideInLeft 0.2s);
+          @include animation(wideSidebarSlideInLeft .2s);
         }
       }
     }
@@ -207,12 +207,12 @@
             left: 0;
             right: auto;
 
-            @include animation(wideSidebarSlideInLeft 0.2s);
+            @include animation(wideSidebarSlideInLeft .2s);
           } @else {
             left: auto;
             right: 0;
 
-            @include animation(wideSidebarSlideInRight 0.2s);
+            @include animation(wideSidebarSlideInRight .2s);
           }
         }
       }

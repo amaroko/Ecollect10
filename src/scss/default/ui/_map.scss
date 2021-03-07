@@ -25,7 +25,7 @@
     position: absolute;
     right: rem(25px);
     bottom: rem(25px);
-    background: rgba($gray-900, 0.9);
+    background: rgba($gray-900, .9);
 
     @if $enable-rtl {
       right: auto;

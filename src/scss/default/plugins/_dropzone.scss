@@ -109,12 +109,12 @@
 
 .inverse-mode {
   & .dropzone {
-    border-color: rgba($white, 0.25) !important;
+    border-color: rgba($white, .25) !important;
 
     & .dz-clickable {
       &:hover,
       &:focus {
-        background: rgba($white, 0.15) !important;
+        background: rgba($white, .15) !important;
       }
     }
 
@@ -122,7 +122,7 @@
       color: inherit !important;
 
       & .dz-note {
-        color: rgba($white, 0.75) !important;
+        color: rgba($white, .75) !important;
       }
     }
   }

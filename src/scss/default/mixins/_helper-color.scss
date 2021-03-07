@@ -27,38 +27,14 @@
   .bg-gradient-#{$color} {
     background: $value !important;
     @if $direction == 'positive' {
-      background: -moz-linear-gradient(
-          to bottom,
-          adjust-hue($value, 5deg) 0%,
-          adjust-hue($value, -20deg) 100%
-      ) !important;
-      background: -webkit-linear-gradient(
-          to bottom,
-          adjust-hue($value, 5deg) 0%,
-          adjust-hue($value, -20deg) 100%
-      ) !important;
-      background: linear-gradient(
-          to bottom,
-          adjust-hue($value, 5deg) 0%,
-          adjust-hue($value, -20deg) 100%
-      ) !important;
+      background: -moz-linear-gradient(to bottom, adjust-hue($value, 5deg) 0%, adjust-hue($value, -20deg) 100%) !important;
+      background: -webkit-linear-gradient(to bottom, adjust-hue($value, 5deg) 0%, adjust-hue($value, -20deg) 100%) !important;
+      background: linear-gradient(to bottom, adjust-hue($value, 5deg) 0%, adjust-hue($value, -20deg) 100%) !important;
       filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='adjust-hue($value, 5deg)', endColorstr='adjust-hue($value, -20deg)', GradientType=0) !important;
     } @else {
-      background: -moz-linear-gradient(
-          to bottom,
-          adjust-hue($value, -20deg) 0%,
-          adjust-hue($value, 5deg) 100%
-      ) !important;
-      background: -webkit-linear-gradient(
-          to bottom,
-          adjust-hue($value, -20deg) 0%,
-          adjust-hue($value, 5deg) 100%
-      ) !important;
-      background: linear-gradient(
-          to bottom,
-          adjust-hue($value, -20deg) 0%,
-          adjust-hue($value, 5deg) 100%
-      ) !important;
+      background: -moz-linear-gradient(to bottom, adjust-hue($value, -20deg) 0%, adjust-hue($value, 5deg) 100%) !important;
+      background: -webkit-linear-gradient(to bottom, adjust-hue($value, -20deg) 0%, adjust-hue($value, 5deg) 100%) !important;
+      background: linear-gradient(to bottom, adjust-hue($value, -20deg) 0%, adjust-hue($value, 5deg) 100%) !important;
       filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='adjust-hue($value, -20deg)', endColorstr='adjust-hue($value, 5deg)', GradientType=0) !important;
     }
   }

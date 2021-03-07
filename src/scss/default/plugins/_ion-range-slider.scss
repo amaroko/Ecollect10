@@ -56,7 +56,7 @@
     background: $white;
     cursor: pointer;
 
-    @include box-shadow(0 1px 3px rgba($black, 0.25));
+    @include box-shadow(0 1px 3px rgba($black, .25));
     @include border-radius($border-radius * 10);
   }
 
@@ -114,14 +114,14 @@
       background: $white;
       border: none;
 
-      @include box-shadow(0 2px 6px rgba($black, 0.25));
+      @include box-shadow(0 2px 6px rgba($black, .25));
 
       &:hover,
       &:focus,
       &.state_hover {
         background: $white;
 
-        @include box-shadow(0 2px 6px rgba($black, 0.5));
+        @include box-shadow(0 2px 6px rgba($black, .5));
       }
     }
   }

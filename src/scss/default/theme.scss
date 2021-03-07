@@ -41,10 +41,7 @@ a {
         & .label {
           &.label-theme {
             @include gradient-enabled {
-              @include gradient-linear(
-                  to bottom,
-                    (lighten($primary, 5%) 0%, darken($primary, 5%) 100%)
-              );
+              @include gradient-linear(to bottom, (lighten($primary, 5%) 0%, darken($primary, 5%) 100%));
             }
           }
         }
@@ -56,10 +53,7 @@ a {
             @if ($primary-color == 'yellow') {
               color: $dark;
             }
-            @include gradient-linear(
-                to bottom,
-                  (lighten($primary, 5%) 0%, darken($primary, 5%) 100%)
-            );
+            @include gradient-linear(to bottom, (lighten($primary, 5%) 0%, darken($primary, 5%) 100%));
           }
 
           & i {
@@ -72,7 +66,7 @@ a {
                 color: $white;
               }
               @include gradient-enabled {
-                background: rgba($black, 0.65);
+                background: rgba($black, .65);
               }
             }
           }
@@ -103,10 +97,7 @@ a {
               } @else {
                 color: $white;
               }
-              @include gradient-linear(
-                  to bottom,
-                    (lighten($primary, 5%) 0%, darken($primary, 5%) 100%)
-              );
+              @include gradient-linear(to bottom, (lighten($primary, 5%) 0%, darken($primary, 5%) 100%));
 
               & .label {
                 &.label-theme {

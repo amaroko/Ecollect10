@@ -15,13 +15,13 @@
     @if $enable-rtl {
       padding-right: 0;
       margin-right: 0;
-      margin-left: 0.75rem;
+      margin-left: .75rem;
     }
 
     & .form-check-input {
       @if $enable-rtl {
         margin-right: 0;
-        margin-left: 0.3125rem;
+        margin-left: .3125rem;
       }
     }
   }

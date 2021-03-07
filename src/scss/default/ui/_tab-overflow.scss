@@ -35,8 +35,8 @@
         display: none !important;
         opacity: 0;
 
-        @include box-shadow(0 0 15px rgba($dark, 0.25));
-        @include transition(all 0.2s linear);
+        @include box-shadow(0 0 15px rgba($dark, .25));
+        @include transition(all .2s linear);
         @if $enable-rtl {
           left: auto;
           right: 0;
@@ -58,8 +58,8 @@
         display: none !important;
         opacity: 0;
 
-        @include box-shadow(0 0 15px rgba($dark, 0.25));
-        @include transition(all 0.2s linear);
+        @include box-shadow(0 0 15px rgba($dark, .25));
+        @include transition(all .2s linear);
         @include border-top-left-radius(0);
         @if $enable-rtl {
           right: auto;

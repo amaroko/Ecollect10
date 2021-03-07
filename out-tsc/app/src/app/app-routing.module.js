@@ -29,7 +29,6 @@ import { RemindersModule } from './pages/reminders/reminders.module';
 import { McoopcashModule } from './pages/mcoopcash/mcoopcash.module';
 import { CreditcardsModule } from './pages/creditcards/creditcards.module';
 import { WatchModule } from './pages/watch/watch.module';
-
 export var routes = [
   // {path: '', redirectTo: '/home', pathMatch: 'full'},
   {

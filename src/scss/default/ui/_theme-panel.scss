@@ -7,13 +7,13 @@
   padding: rem(15px);
   width: rem(175px);
 
-  @include transition(right 0.2s linear);
+  @include transition(right .2s linear);
   @include border-radius($border-radius 0 0 $border-radius);
   @if $enable-rtl {
     right: auto;
     left: rem(-175px);
 
-    @include transition(left 0.2s linear);
+    @include transition(left .2s linear);
   }
 
   & .theme-list {
@@ -45,11 +45,11 @@
         text-decoration: none;
 
         @include border-radius($border-radius);
-        @include transition(all 0.2s linear);
+        @include transition(all .2s linear);
 
         &:hover,
         &:focus {
-          opacity: 0.6;
+          opacity: .6;
         }
       }
 
@@ -66,7 +66,7 @@
             bottom: 0;
             font-size: rem(14px);
             color: $white;
-            opacity: 0.4;
+            opacity: .4;
             text-align: center;
 
             @include fontawesome();
@@ -96,7 +96,7 @@
     text-align: center;
 
     @include border-radius($border-radius 0 0 $border-radius);
-    @include box-shadow(0 0 15px 0 rgba($black, 0.15));
+    @include box-shadow(0 0 15px 0 rgba($black, .15));
     @if $enable-rtl {
       left: auto;
       right: rem(-30px);
@@ -207,7 +207,7 @@
   &.active {
     right: 0;
 
-    @include box-shadow(0 5px 25px rgba($black, 0.3));
+    @include box-shadow(0 5px 25px rgba($black, .3));
     @if $enable-rtl {
       right: auto;
       left: 0;

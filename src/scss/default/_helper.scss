@@ -8,6 +8,7 @@
 @include helper-spacing('bottom', 'margin', 'm-b');
 @include helper-spacing('left', 'margin', 'm-l');
 
+
 /* Helper Padding */
 @include helper-spacing('', 'padding', 'p');
 @include helper-spacing('top', 'padding', 'p-t');
@@ -15,14 +16,17 @@
 @include helper-spacing('bottom', 'padding', 'p-b');
 @include helper-spacing('left', 'padding', 'p-l');
 
+
 /* Helper Font */
 @include helper-font-size(8, 80);
 @include helper-font-weight(1, 8);
+
 
 /* Helper Clearfix */
 .clearfix {
   @include clearfix();
 }
+
 
 /* Helper Text */
 .text-center {
@@ -66,13 +70,14 @@
 
 .row {
   &.row-col-border {
-    & > [class^='col-'] {
-      & + [class^='col-'] {
+    & > [class^="col-"] {
+      & + [class^="col-"] {
         border-left: 1px solid $border-color;
       }
     }
   }
 }
+
 
 /* Helper Float */
 .pull-left {
@@ -87,15 +92,18 @@
   float: none !important;
 }
 
+
 /* Flex */
 .flex-1 {
   @include flex(1);
 }
 
+
 /* Helper Border Radius */
 .rounded-corner {
   border-radius: rem(100px) !important;
 }
+
 
 /* Helper Table */
 .table-valign-middle th,
@@ -129,8 +137,9 @@
 }
 
 .table-td-bg-animate {
-  @include transition(background 0.3s linear);
+  @include transition(background .3s linear);
 }
+
 
 /* Helper Vertical Align */
 .valign-middle {
@@ -156,15 +165,16 @@
   vertical-align: middle;
 }
 
+
 /* Helper Size */
 @include helper-size('width');
 @include helper-size('height');
+
 
 /* Helper Color */
 .loading {
   cursor: progress;
 }
-
 .bg-theme {
   background-color: $primary !important;
 }
@@ -198,18 +208,22 @@
 @include background-gradient('bg-gradient-purple-indigo', $purple, $indigo);
 @include background-gradient('bg-gradient-silver-black', $silver, $black);
 
+
 /* Helper Opacity */
 @include helper-opacity(0, 10);
+
 
 /* Helper Box Shadow */
 .with-shadow {
   box-shadow: 0 rem(2px) rem(40px) 0 rgba($black, 0.1) !important;
 }
 
+
 /* Helper Display */
 .hide {
   display: none !important;
 }
+
 
 /* Helper Image */
 .img-responsive {
@@ -225,6 +239,7 @@
 .img-circle {
   border-radius: 50%;
 }
+
 
 .valign-top {
   vertical-align: top !important;
@@ -266,12 +281,13 @@
   -webkit-text-fill-color: transparent !important;
 }
 
+
 .row {
   margin-left: -10px;
   margin-right: -10px;
 }
 
-.row > [class^='col-'] {
+.row > [class^="col-"] {
   padding-left: 10px;
   padding-right: 10px;
 }
@@ -356,82 +372,82 @@
   margin-right: -15px;
 }
 
-.row.row-space-0 > [class^='col-'] {
+.row.row-space-0 > [class^="col-"] {
   padding-left: 0;
   padding-right: 0;
 }
 
-.row.row-space-2 > [class^='col-'] {
+.row.row-space-2 > [class^="col-"] {
   padding-left: 1px;
   padding-right: 1px;
 }
 
-.row.row-space-4 > [class^='col-'] {
+.row.row-space-4 > [class^="col-"] {
   padding-left: 2px;
   padding-right: 2px;
 }
 
-.row.row-space-6 > [class^='col-'] {
+.row.row-space-6 > [class^="col-"] {
   padding-left: 3px;
   padding-right: 3px;
 }
 
-.row.row-space-8 > [class^='col-'] {
+.row.row-space-8 > [class^="col-"] {
   padding-left: 4px;
   padding-right: 4px;
 }
 
-.row.row-space-10 > [class^='col-'] {
+.row.row-space-10 > [class^="col-"] {
   padding-left: 5px;
   padding-right: 5px;
 }
 
-.row.row-space-12 > [class^='col-'] {
+.row.row-space-12 > [class^="col-"] {
   padding-left: 6px;
   padding-right: 6px;
 }
 
-.row.row-space-14 > [class^='col-'] {
+.row.row-space-14 > [class^="col-"] {
   padding-left: 7px;
   padding-right: 7px;
 }
 
-.row.row-space-16 > [class^='col-'] {
+.row.row-space-16 > [class^="col-"] {
   padding-left: 8px;
   padding-right: 8px;
 }
 
-.row.row-space-18 > [class^='col-'] {
+.row.row-space-18 > [class^="col-"] {
   padding-left: 9px;
   padding-right: 9px;
 }
 
-.row.row-space-20 > [class^='col-'] {
+.row.row-space-20 > [class^="col-"] {
   padding-left: 10px;
   padding-right: 10px;
 }
 
-.row.row-space-22 > [class^='col-'] {
+.row.row-space-22 > [class^="col-"] {
   padding-left: 11px;
   padding-right: 11px;
 }
 
-.row.row-space-24 > [class^='col-'] {
+.row.row-space-24 > [class^="col-"] {
   padding-left: 12px;
   padding-right: 12px;
 }
 
-.row.row-space-26 > [class^='col-'] {
+.row.row-space-26 > [class^="col-"] {
   padding-left: 13px;
   padding-right: 13px;
 }
 
-.row.row-space-28 > [class^='col-'] {
+.row.row-space-28 > [class^="col-"] {
   padding-left: 14px;
   padding-right: 14px;
 }
 
-.row.row-space-30 > [class^='col-'] {
+.row.row-space-30 > [class^="col-"] {
   padding-left: 15px;
   padding-right: 15px;
 }
@@ -543,6 +559,7 @@
 .wrapper {
   padding: 15px;
 }
+
 
 .width-xs {
   width: 150px !important;

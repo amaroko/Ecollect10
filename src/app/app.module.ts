@@ -46,6 +46,7 @@ import { filter, map } from 'rxjs/operators';
 import { ActivitylogComponent } from './pages/activitylog/activitylog.component';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { RolesensorComponent } from './pages/rolesensor/rolesensor.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -97,6 +98,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     PerfectScrollbarModule,
     ReactiveFormsModule,
     SweetAlert2Module.forRoot(),
+    FontAwesomeModule,
     TagInputModule,
     TrendModule
   ],
