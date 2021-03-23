@@ -1,0 +1,41 @@
+<app-panel title="All Reports-Search for Reports">
+  <div class="row">
+    <div class="col-md-6">
+      <!-- begin input-group -->
+      <div class="input-group input-group-lg m-b-20">
+        <input
+          type="text"
+          [(ngModel)]="searchText"
+          (keyup)="filterArray()"
+          class="form-control input-white"
+          placeholder="Search here..."
+        />
+        <div class="input-group-append">
+          <button type="button" class="btn btn-primary">
+            <i class="fa fa-search fa-fw"></i> Search
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end input-group -->
+  <!-- begin row -->
+  <div class="row">
+    <!-- begin col-3 -->
+    <div *ngFor="let report of filteredArray" class="col-xl-2 col-md-6">
+      <div class="widget widget-stats bg-teal">
+        <div class="stats-icon"><i [class]="report.icon"></i></div>
+        <div class="stats-info">
+          <h4>{{ report.name }}</h4>
+          <p>****</p>
+        </div>
+        <div class="stats-link">
+          <a (click)="open(report.link)"
+            >View Report <i class="fa fa-arrow-alt-circle-right"></i
+          ></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end row -->
+</app-panel>
