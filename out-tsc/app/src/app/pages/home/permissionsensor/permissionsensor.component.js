@@ -3,18 +3,15 @@ import { Component } from '@angular/core';
 var PermissionsensorComponent = /** @class */ (function () {
     function PermissionsensorComponent() {
     }
-    PermissionsensorComponent.prototype.ngOnInit = function () {};
-    PermissionsensorComponent = __decorate(
-      [
+    PermissionsensorComponent.prototype.ngOnInit = function () { };
+    PermissionsensorComponent = __decorate([
         Component({
-          selector: 'app-permissionsensor',
-          templateUrl: './permissionsensor.component.html',
-          styleUrls: ['./permissionsensor.component.css'],
+            selector: 'app-permissionsensor',
+            templateUrl: './permissionsensor.component.html',
+            styleUrls: ['./permissionsensor.component.css'],
         }),
-        __metadata('design:paramtypes', []),
-      ],
-      PermissionsensorComponent
-    );
+        __metadata("design:paramtypes", [])
+    ], PermissionsensorComponent);
     return PermissionsensorComponent;
 }());
 export { PermissionsensorComponent };

@@ -54,63 +54,63 @@ export const routes: Routes = [
         path: 'work',
         loadChildren: () => WorkModule,
         // loadChildren: './pages/work/work.module#WorkModule',
-        data: { title: 'Work Queue' ,
+        data: { title: 'Work Queue' },
       },
       {
         path: 'reminders',
         loadChildren: () => RemindersModule,
         // loadChildren: './pages/reminders/reminders.module#RemindersModule',
-        data: { title: 'Reminders' }
+        data: { title: 'Reminders' },
       },
       {
         path: 'mcoopcash',
         loadChildren: () => McoopcashModule,
         // loadChildren: './pages/mcoopcash/mcoopcash.module#McoopcashModule',
-        data: { title: 'Mcoopcash' }
+        data: { title: 'Mcoopcash' },
       },
       {
         path: 'creditcards',
         loadChildren: () => CreditcardsModule,
         // loadChildren:
         //   './pages/creditcards/creditcards.module#CreditcardsModule',
-        data: { title: 'Creditcards' }
+        data: { title: 'Creditcards' },
       },
       {
         path: 'watch',
         loadChildren: () => WatchModule,
         // loadChildren: './pages/watch/watch.module#WatchModule',
-        data: { title: 'Watch' }
+        data: { title: 'Watch' },
       },
       {
         path: 'letters',
         loadChildren: () => LettersModule,
-        data: { title: 'Letters' }
+        data: { title: 'Letters' },
       },
       {
         path: 'reports',
         loadChildren: () => ReportsModule,
-        data: { title: 'Reports' }
+        data: { title: 'Reports' },
       },
       {
         path: 'guarantors',
         loadChildren: () => GuarantorsModule,
-        data: { title: 'Guarantors' }
+        data: { title: 'Guarantors' },
       },
       {
         path: 'demand',
         loadChildren: () => DemandModule,
-        data: { title: 'Demands' }
+        data: { title: 'Demands' },
       },
       {
         path: 'configurations',
         loadChildren: () => ConfigurationsModule,
-        data: { title: 'Configurations' }
+        data: { title: 'Configurations' },
       },
       {
         path: 'manuals',
         loadChildren: () => ManualsModule,
-        data: { title: 'All Manuals' }
-      }
+        data: { title: 'All Manuals' },
+      },
     ],
   },
   // not lazy loaded
@@ -123,74 +123,74 @@ export const routes: Routes = [
       {
         path: 'notes',
         component: NotesComponent,
-        data: { title: 'Activitylog | Notes' }
+        data: { title: 'Activitylog | Notes' },
       },
       {
         path: 'activityhome',
         component: ActivityhomeComponent,
-        data: { title: 'Activitylog | Home' }
+        data: { title: 'Activitylog | Home' },
       },
       {
         path: 'activityaction',
         component: ActivityactionComponent,
-        data: { title: 'Activitylog | Action' }
+        data: { title: 'Activitylog | Action' },
       },
       {
         path: 'editnote',
         component: EditnoteComponent,
-        data: { title: 'Activitylog | EditNote' }
+        data: { title: 'Activitylog | EditNote' },
       },
       {
         path: 'demandletters',
         component: DemandlettersComponent,
-        data: { title: 'Activitylog | DemandLetters' }
+        data: { title: 'Activitylog | DemandLetters' },
       },
       {
         path: 'sms',
         component: SmsComponent,
-        data: { title: 'Activitylog | Sms' }
+        data: { title: 'Activitylog | Sms' },
       },
       {
         path: 'accplan',
         component: AccplanComponent,
-        data: { title: 'Activitylog | AccountPlan' }
+        data: { title: 'Activitylog | AccountPlan' },
       },
       {
         path: 'contacts',
         component: CustcontactsComponent,
-        data: { title: 'Activitylog | Contacts' }
+        data: { title: 'Activitylog | Contacts' },
       },
       {
         path: 'remedialcollaterals',
         component: CollateralsComponent,
-        data: { title: 'Activitylog | Collaterals' }
+        data: { title: 'Activitylog | Collaterals' },
       },
       {
         path: 'guarantors',
         component: GuarantorsComponent,
-        data: { title: 'Activitylog | Guarantors' }
+        data: { title: 'Activitylog | Guarantors' },
       },
       {
         path: 'files',
         component: FilesComponent,
-        data: { title: 'Activitylog | SingleFileUploads' }
+        data: { title: 'Activitylog | SingleFileUploads' },
       },
       {
         path: 'bulknotes',
         component: BulknotesComponent,
-        data: { title: 'Activitylog | BulkNotes Upload' }
+        data: { title: 'Activitylog | BulkNotes Upload' },
       },
       {
         path: 'ptps',
         component: PtpsComponent,
-        data: { title: 'Activitylog | Ptps' }
+        data: { title: 'Activitylog | Ptps' },
       },
       {
         path: 'writeoffstory',
         component: WriteoffstoryComponent,
-        data: { title: 'Activitylog | WriteOffStory' }
+        data: { title: 'Activitylog | WriteOffStory' },
       },
-      { path: '**', redirectTo: 'notes' }
+      { path: '**', redirectTo: 'notes' },
     ],
   },
 
@@ -198,15 +198,14 @@ export const routes: Routes = [
   {
     path: 'rolesensor',
     component: RolesensorComponent,
-    data: { title: 'RoleSensor' }
+    data: { title: 'RoleSensor' },
   },
-  { path: '**', redirectTo: '/home' }
+  { path: '**', redirectTo: '/home' },
 ];
 
 @NgModule({
   imports: [CommonModule, RouterModule.forRoot(routes), ActivitylogModule],
   declarations: [],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule {
-}
+export class AppRoutingModule {}

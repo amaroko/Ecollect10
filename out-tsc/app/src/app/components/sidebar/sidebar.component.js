@@ -1,21 +1,7 @@
-import { __decorate, __metadata, __values } from 'tslib';
-import {
-  animate,
-  state,
-  style,
-  transition,
-  trigger,
-} from '@angular/animations';
+import { __decorate, __metadata, __values } from "tslib";
+import { animate, state, style, transition, trigger, } from '@angular/animations';
 import { menu } from '../../config/page-menus';
-import {
-  Component,
-  ElementRef,
-  EventEmitter,
-  HostListener,
-  Input,
-  Output,
-  ViewChild,
-} from '@angular/core';
+import { Component, ElementRef, EventEmitter, HostListener, Input, Output, } from '@angular/core';
 import pageSettings from '../../config/page-settings';
 var SidebarComponent = /** @class */ (function () {
     function SidebarComponent(eRef) {
@@ -263,34 +249,22 @@ var SidebarComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [Object]),
         __metadata("design:returntype", void 0)
     ], SidebarComponent.prototype, "onResize", null);
-    SidebarComponent = __decorate(
-      [
+    SidebarComponent = __decorate([
         Component({
-          selector: 'app-sidebar',
-          templateUrl: './sidebar.component.html',
-          animations: [
-            trigger('expandCollapse', [
-              state(
-                'expand',
-                style({ height: '*', overflow: 'hidden', display: 'block' })
-              ),
-              state(
-                'collapse',
-                style({ height: '0px', overflow: 'hidden', display: 'none' })
-              ),
-              state(
-                'active',
-                style({ height: '*', overflow: 'hidden', display: 'block' })
-              ),
-              transition('expand <=> collapse', animate(100)),
-              transition('active = collapse', animate(100)),
-            ]),
-          ],
+            selector: 'app-sidebar',
+            templateUrl: './sidebar.component.html',
+            animations: [
+                trigger('expandCollapse', [
+                    state('expand', style({ height: '*', overflow: 'hidden', display: 'block' })),
+                    state('collapse', style({ height: '0px', overflow: 'hidden', display: 'none' })),
+                    state('active', style({ height: '*', overflow: 'hidden', display: 'block' })),
+                    transition('expand <=> collapse', animate(100)),
+                    transition('active => collapse', animate(100)),
+                ]),
+            ],
         }),
-        __metadata('design:paramtypes', [ElementRef]),
-      ],
-      SidebarComponent
-    );
+        __metadata("design:paramtypes", [ElementRef])
+    ], SidebarComponent);
     return SidebarComponent;
 }());
 export { SidebarComponent };

@@ -1,10 +1,1 @@
-{
-  "version": 3,
-  "file": "insurance.component.js",
-  "sourceRoot": "",
-  "sources": [
-    "../../../../../../../src/app/pages/configurations/insurance/insurance.component.ts"
-  ],
-  "names": [],
-  "mappings": ";AAAA,OAAO,EAAE,SAAS,EAAU,MAAM,eAAe,CAAC;AAOlD;IACE;IAAe,CAAC;IAEhB,qCAAQ,GAAR,cAAkB,CAAC;IAHR,kBAAkB;QAL9B,SAAS,CAAC;YACT,QAAQ,EAAE,eAAe;YACzB,WAAW,EAAE,4BAA4B;YACzC,SAAS,EAAE,CAAC,2BAA2B,CAAC;SACzC,CAAC;;OACW,kBAAkB,CAI9B;IAAD,yBAAC;CAAA,AAJD,IAIC;SAJY,kBAAkB"
-}
+{"version":3,"file":"insurance.component.js","sourceRoot":"","sources":["../../../../../../../src/app/pages/configurations/insurance/insurance.component.ts"],"names":[],"mappings":";AAAA,OAAO,EAAE,SAAS,EAAU,MAAM,eAAe,CAAC;AAOlD;IACE;IAAe,CAAC;IAEhB,qCAAQ,GAAR,cAAkB,CAAC;IAHR,kBAAkB;QAL9B,SAAS,CAAC;YACT,QAAQ,EAAE,eAAe;YACzB,WAAW,EAAE,4BAA4B;YACzC,SAAS,EAAE,CAAC,2BAA2B,CAAC;SACzC,CAAC;;OACW,kBAAkB,CAI9B;IAAD,yBAAC;CAAA,AAJD,IAIC;SAJY,kBAAkB"}

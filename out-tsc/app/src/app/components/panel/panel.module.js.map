@@ -1,10 +1,1 @@
-{
-  "version": 3,
-  "file": "panel.module.js",
-  "sourceRoot": "",
-  "sources": [
-    "../../../../../../src/app/components/panel/panel.module.ts"
-  ],
-  "names": [],
-  "mappings": ";AAAA,OAAO,EAAE,QAAQ,EAAE,MAAM,eAAe,CAAC;AACzC,OAAO,EAAE,YAAY,EAAE,MAAM,iBAAiB,CAAC;AAE/C,OAAO,EAAE,cAAc,EAAE,MAAM,mBAAmB,CAAC;AAOnD;IAAA;IAA0B,CAAC;IAAd,WAAW;QALvB,QAAQ,CAAC;YACR,YAAY,EAAE,CAAC,cAAc,CAAC;YAC9B,OAAO,EAAE,CAAC,YAAY,CAAC;YACvB,OAAO,EAAE,CAAC,cAAc,CAAC;SAC1B,CAAC;OACW,WAAW,CAAG;IAAD,kBAAC;CAAA,AAA3B,IAA2B;SAAd,WAAW"
-}
+{"version":3,"file":"panel.module.js","sourceRoot":"","sources":["../../../../../../src/app/components/panel/panel.module.ts"],"names":[],"mappings":";AAAA,OAAO,EAAE,QAAQ,EAAE,MAAM,eAAe,CAAC;AACzC,OAAO,EAAE,YAAY,EAAE,MAAM,iBAAiB,CAAC;AAE/C,OAAO,EAAE,cAAc,EAAE,MAAM,mBAAmB,CAAC;AAOnD;IAAA;IAA0B,CAAC;IAAd,WAAW;QALvB,QAAQ,CAAC;YACR,YAAY,EAAE,CAAC,cAAc,CAAC;YAC9B,OAAO,EAAE,CAAC,YAAY,CAAC;YACvB,OAAO,EAAE,CAAC,cAAc,CAAC;SAC1B,CAAC;OACW,WAAW,CAAG;IAAD,kBAAC;CAAA,AAA3B,IAA2B;SAAd,WAAW"}

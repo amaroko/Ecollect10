@@ -11,78 +11,79 @@ var ViewallComponent = /** @class */ (function () {
         this.pivotPanelShow = true;
         this.modules = AllModules;
         this.columnDefs = [
-          {
-            headerName: 'CARDACCT',
-            field: 'CARDACCT',
-            cellRenderer: function (params) {
-              return '<a  href="#" target="_blank">' + params.value + '</a>';
+            {
+                headerName: 'CARDACCT',
+                field: 'CARDACCT',
+                cellRenderer: function (params) {
+                    return '<a  href="#" target="_blank">' + params.value + '</a>';
+                },
+                width: 90,
+                filter: 'agTextColumnFilter',
+                filterParams: { newRowsAction: 'keep' },
             },
-            width: 90,
-            filter: 'agTextColumnFilter',
-            filterParams: { newRowsAction: 'keep' },
-          },
-          {
-            headerName: 'CARDNUMBER',
-            field: 'CARDNUMBER',
-            width: 90,
-            filter: 'agTextColumnFilter',
-            filterParams: { newRowsAction: 'keep' },
-          },
-          {
-            headerName: 'CARDNAME',
-            field: 'CARDNAME',
-            width: 90,
-            filter: 'agTextColumnFilter',
-            filterParams: { newRowsAction: 'keep' ,
-          },
-          {
-            headerName: 'DAYSINARREARS',
-            field: 'DAYSINARREARS',
-            width: 90,
-            filter: 'agNumberColumnFilter',
-            filterParams: { newRowsAction: 'keep' }
-          },
-          {
-            headerName: 'EXPPMNT',
-            field: 'EXPPMNT',
-            width: 90,
-            filter: 'agNumberColumnFilter',
-            filterParams: { newRowsAction: 'keep' }
-          },
-          {
-            headerName: 'OUTSTANDING BALANCE',
-            field: 'OUTBALANCE',
-            width: 90,
-            filter: 'agNumberColumnFilter',
-            filterParams: { newRowsAction: 'keep' }
-          },
-          {
-            headerName: 'LIMIT',
-            field: 'LIMIT',
-            width: 90,
-            filter: 'agNumberColumnFilter',
-            filterParams: { newRowsAction: 'keep' }
-          },
-          {
-            headerName: 'CYCLE',
-            field: 'CYCLE',
-            width: 90,
-            filter: 'agNumberColumnFilter',
-            filterParams: { newRowsAction: 'keep' }
-          },
-          {
-            headerName: 'COLOFFICER',
-            field: 'COLOFFICER',
-            width: 90,
-            filter: 'agTextColumnFilter',
-            filterParams: { newRowsAction: 'keep' }
-          }
+            {
+                headerName: 'CARDNUMBER',
+                field: 'CARDNUMBER',
+                width: 90,
+                filter: 'agTextColumnFilter',
+                filterParams: { newRowsAction: 'keep',
+                },
+            },
+            {
+                headerName: 'CARDNAME',
+                field: 'CARDNAME',
+                width: 90,
+                filter: 'agTextColumnFilter',
+                filterParams: { newRowsAction: 'keep' }
+            },
+            {
+                headerName: 'DAYSINARREARS',
+                field: 'DAYSINARREARS',
+                width: 90,
+                filter: 'agNumberColumnFilter',
+                filterParams: { newRowsAction: 'keep' }
+            },
+            {
+                headerName: 'EXPPMNT',
+                field: 'EXPPMNT',
+                width: 90,
+                filter: 'agNumberColumnFilter',
+                filterParams: { newRowsAction: 'keep' }
+            },
+            {
+                headerName: 'OUTSTANDING BALANCE',
+                field: 'OUTBALANCE',
+                width: 90,
+                filter: 'agNumberColumnFilter',
+                filterParams: { newRowsAction: 'keep' }
+            },
+            {
+                headerName: 'LIMIT',
+                field: 'LIMIT',
+                width: 90,
+                filter: 'agNumberColumnFilter',
+                filterParams: { newRowsAction: 'keep' }
+            },
+            {
+                headerName: 'CYCLE',
+                field: 'CYCLE',
+                width: 90,
+                filter: 'agNumberColumnFilter',
+                filterParams: { newRowsAction: 'keep' }
+            },
+            {
+                headerName: 'COLOFFICER',
+                field: 'COLOFFICER',
+                width: 90,
+                filter: 'agTextColumnFilter',
+                filterParams: { newRowsAction: 'keep' }
+            }
         ];
         this.defaultColDef = {
-          width: 120,
-          resizable: true,
-          sortable: true,
-          floatingFilter: true
+            width: 120,
+            resizable: true,
+            sortable: true,
+            floatingFilter: true
         };
         this.rowModelType = 'serverSide';
         this.cacheBlockSize = 50;
@@ -102,9 +103,9 @@ var ViewallComponent = /** @class */ (function () {
             getRows: function (params) {
                 console.log(JSON.stringify(params.request, null, 1));
                 fetch(environment.nodeapi + '/gridcardsviewall/viewall', {
-                  method: 'post',
-                  body: JSON.stringify(params.request),
-                  headers: { 'Content-Type': 'application/json; charset=utf-8' }
+                    method: 'post',
+                    body: JSON.stringify(params.request),
+                    headers: { 'Content-Type': 'application/json; charset=utf-8' }
                 })
                     .then(function (httpResponse) { return httpResponse.json(); })
                     .then(function (response) {
@@ -120,16 +121,17 @@ var ViewallComponent = /** @class */ (function () {
     };
     ViewallComponent.prototype.ServerSideDatasource = function (server) {
         return {
-          getRows: function(params) {
-            setTimeout(function() {
-              var response = server.getResponse(params.request);
-              if (response.success) {
-                params.successCallback(response.rows, response.lastRow);
-              } else {
-                params.failCallback();
-              }
-            }, 500);
-          }
+            getRows: function (params) {
+                setTimeout(function () {
+                    var response = server.getResponse(params.request);
+                    if (response.success) {
+                        params.successCallback(response.rows, response.lastRow);
+                    }
+                    else {
+                        params.failCallback();
+                    }
+                }, 500);
+            }
         };
     };
     ViewallComponent.prototype.currencyFormatter = function (params) {
@@ -161,9 +163,9 @@ var ViewallComponent = /** @class */ (function () {
     };
     ViewallComponent = __decorate([
         Component({
-          selector: 'app-viewall',
-          templateUrl: './viewall.component.html',
-          styleUrls: ['./viewall.component.css']
+            selector: 'app-viewall',
+            templateUrl: './viewall.component.html',
+            styleUrls: ['./viewall.component.css'],
         }),
         __metadata("design:paramtypes", [HttpClient])
     ], ViewallComponent);

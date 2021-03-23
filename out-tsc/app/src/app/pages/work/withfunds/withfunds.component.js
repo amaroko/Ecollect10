@@ -10,96 +10,97 @@ var WithfundsComponent = /** @class */ (function () {
         this.pivotPanelShow = true;
         this.modules = AllModules;
         this.columnDefs = [
-          {
-            headerName: 'ACCNUMBER',
-            field: 'ACCNUMBER',
-            cellRenderer: function (params) {
-              if (params.value !== undefined) {
-                return '<a  href="#" target="_blank">' + params.value + '</a>';
-              } else {
-                return ''; // <img src="assets/img/user/loading.gif" alt="Loading Icon">
-              }
+            {
+                headerName: 'ACCNUMBER',
+                field: 'ACCNUMBER',
+                cellRenderer: function (params) {
+                    if (params.value !== undefined) {
+                        return '<a  href="#" target="_blank">' + params.value + '</a>';
+                    }
+                    else {
+                        return ''; // <img src="assets/img/user/loading.gif" alt="Loading Icon">
+                    }
+                },
+                filter: 'agTextColumnFilter',
+                filterParams: { newRowsAction: 'keep' },
+                resizable: tre,
             },
-            filter: 'agTextColumnFilter',
-            filterParams: { newRowsAction: 'keep' },
-            resizable: true,
-          },
-          {
-            headerName: 'CUSTNUMBER',
-            field: 'CUSTNUMBER',
-            filter: 'agTextColumnFilter',
-            filterParams: { newRowsAction: 'keep' },
-            resizable: true,
-          },
-          {
-            headerName: 'CLIENT NAME',
-            field: 'CLIENT_NAME',
-            filter: 'agTextColumnFilter',
-            filterParams: { newRowsAction: 'keep' },
-            resizable: tru,
-          },
-          {
-            headerName: 'DAYSINARREARS',
-            field: 'DAYSINARR',
-            filter: 'agTextColumnFilter',
-            filterParams: { newRowsAction: 'keep' },
-            resizable: true,
-          },
-          {
-            headerName: 'TOTALARREARS',
-            field: 'INSTAMOUNT',
-            valueFormatter: this.currencyFormatter,
-            filter: 'agTextColumnFilter',
-            filterParams: { newRowsAction: 'keep' },
-            resizable: tru,
-          },
-          {
-            headerName: 'OUSTBALANCE',
-            field: 'OUSTBALANCE',
-            valueFormatter: this.currencyFormatter,
-            filter: 'agTextColumnFilter',
-            filterParams: { newRowsAction: 'keep' },
-            resizable: true,
-          },
-          {
-            headerName: 'SETTLEACCNO',
-            field: 'SETTLEACCNO',
-            filter: 'agTextColumnFilter',
-            filterParams: { newRowsAction: 'keep' },
-            resizable: tru,
-          },
-          {
-            headerName: 'AROCODE',
-            field: 'AROCODE',
-            filter: 'agTextColumnFilter',
-            filterParams: { newRowsAction: 'keep' },
-            resizable: true,
-          },
-          {
-            headerName: 'SETTLEACCBAL',
-            field: 'SETTLEACCBAL',
-            filter: 'agTextColumnFilter',
-            filterParams: { newRowsAction: 'keep' },
-            resizable: tru,
-          },
-          {
-            headerName: 'COLOFFICER',
-            field: 'COLOFFICER',
-            filter: 'agTextColumnFilter',
-            filterParams: { newRowsAction: 'keep' },
-            resizable: tru,
-          ,
+            {
+                headerName: 'CUSTNUMBER',
+                field: 'CUSTNUMBER',
+                filter: 'agTextColumnFilter',
+                filterParams: { newRowsAction: 'keep' },
+                resizable: true,
+            },
+            {
+                headerName: 'CLIENT NAME',
+                field: 'CLIENT_NAME',
+                filter: 'agTextColumnFilter',
+                filterParams: { newRowsAction: 'keep' },
+                resizable: tru,
+            },
+            {
+                headerName: 'DAYSINARREARS',
+                field: 'DAYSINARR',
+                filter: 'agTextColumnFilter',
+                filterParams: { newRowsAction: 'keep' },
+                resizable: true,
+            },
+            {
+                headerName: 'TOTALARREARS',
+                field: 'INSTAMOUNT',
+                valueFormatter: this.currencyFormatter,
+                filter: 'agTextColumnFilter',
+                filterParams: { newRowsAction: 'keep' },
+                resizable: tru,
+            },
+            {
+                headerName: 'OUSTBALANCE',
+                field: 'OUSTBALANCE',
+                valueFormatter: this.currencyFormatter,
+                filter: 'agTextColumnFilter',
+                filterParams: { newRowsAction: 'keep' },
+                resizable: true,
+            },
+            {
+                headerName: 'SETTLEACCNO',
+                field: 'SETTLEACCNO',
+                filter: 'agTextColumnFilter',
+                filterParams: { newRowsAction: 'keep' },
+                resizable: tru,
+            },
+            {
+                headerName: 'AROCODE',
+                field: 'AROCODE',
+                filter: 'agTextColumnFilter',
+                filterParams: { newRowsAction: 'keep' },
+                resizable: true,
+            },
+            {
+                headerName: 'SETTLEACCBAL',
+                field: 'SETTLEACCBAL',
+                filter: 'agTextColumnFilter',
+                filterParams: { newRowsAction: 'keep' },
+                resizable: tru,
+            },
+            {
+                headerName: 'COLOFFICER',
+                field: 'COLOFFICER',
+                filter: 'agTextColumnFilter',
+                filterParams: { newRowsAction: 'keep' },
+                resizable: tru,
+            },
         ];
         this.defaultColDef = {
-          width: 120,
-          resizable: true,
-          sortable: true,
-          floatingFilter: true,
-          unSortIcon: true,
-          suppressResize: false,
-          enableRowGroup: true,
-          enablePivot: true,
-          pivot: true
+            width: 120,
+            resizable: true,
+            sortable: true,
+            floatingFilter: true,
+            unSortIcon: true,
+            suppressResize: false,
+            enableRowGroup: true,
+            enablePivot: true,
+            pivot: true
         };
         this.rowModelType = 'serverSide';
         this.cacheBlockSize = 50;
@@ -113,9 +114,9 @@ var WithfundsComponent = /** @class */ (function () {
             getRows: function (params) {
                 console.log(JSON.stringify(params.request, null, 1));
                 fetch(environment.nodeapi + '/gridtranscwithfunds/viewall', {
-                  method: 'post',
-                  body: JSON.stringify(params.request),
-                  headers: { 'Content-Type': 'application/json; charset=utf-8' }
+                    method: 'post',
+                    body: JSON.stringify(params.request),
+                    headers: { 'Content-Type': 'application/json; charset=utf-8' }
                 })
                     .then(function (httpResponse) { return httpResponse.json(); })
                     .then(function (response) {
@@ -158,9 +159,9 @@ var WithfundsComponent = /** @class */ (function () {
     };
     WithfundsComponent = __decorate([
         Component({
-          selector: 'app-withfunds',
-          templateUrl: './withfunds.component.html',
-          styleUrls: ['./withfunds.component.css']
+            selector: 'app-withfunds',
+            templateUrl: './withfunds.component.html',
+            styleUrls: ['./withfunds.component.css'],
         }),
         __metadata("design:paramtypes", [])
     ], WithfundsComponent);

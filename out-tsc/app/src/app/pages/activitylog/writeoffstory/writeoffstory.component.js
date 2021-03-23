@@ -57,11 +57,11 @@ var WriteoffstoryComponent = /** @class */ (function () {
         this.ecolService.ifLogged();
         this.ecolService.loader();
         var body = {
-          custnumber: this.custnumber,
-          accnumber: this.accnumber,
-          owner: this.username,
-          woffstory: form.value.writeoffstoryMessage,
-          lastupdate: this.currentDate(),
+            custnumber: this.custnumber,
+            accnumber: this.accnumber,
+            owner: this.username,
+            woffstory: form.value.writeoffstoryMessage,
+            lastupdate: this.currentDate()
         };
         this.ecolService.woffstory(body).subscribe(function (data) {
             swal.fire('Success!', 'Writeoff story updated', 'success');
@@ -74,26 +74,26 @@ var WriteoffstoryComponent = /** @class */ (function () {
     WriteoffstoryComponent.prototype.addActivity = function (msg) {
         var _this = this;
         var body = {
-          collectoraction: 'REVW',
-          party: '',
-          ptpamount: '',
-          ptp: '',
-          ptpdate: this.currentDate,
-          collectornote: msg,
-          reviewdate: moment(this.account.reviewdate).format('DD-MMM-YYYY'),
-          reason: this.account.excuse,
-          cmdstatus: this.account.cmdstatus,
-          route: this.account.routetostate,
-          paymode: '',
-          accountnumber: this.accnumber,
-          custnumber: this.custnumber,
-          arramount: this.account.totalarrears || 0,
-          oustamount: this.account.oustbalance || 0,
-          notesrc: 'added a writeoff story',
-          noteimp: 'N',
-          rfdother: '',
-          owner: this.username,
-          product: this.account.sectio,
+            collectoraction: 'REVW',
+            party: '',
+            ptpamount: '',
+            ptp: '',
+            ptpdate: this.currentDate,
+            collectornote: msg,
+            reviewdate: moment(this.account.reviewdate).format('DD-MMM-YYYY'),
+            reason: this.account.excuse,
+            cmdstatus: this.account.cmdstatus,
+            route: this.account.routetostate,
+            paymode: '',
+            accountnumber: this.accnumber,
+            custnumber: this.custnumber,
+            arramount: this.account.totalarrears || 0,
+            oustamount: this.account.oustbalance || 0,
+            notesrc: 'added a writeoff story',
+            noteimp: 'N',
+            rfdother: '',
+            owner: this.username,
+            product: this.account.section
         };
         // add action
         this.ecolService.postactivitylogs(body).subscribe(function (data) {
@@ -116,21 +116,16 @@ var WriteoffstoryComponent = /** @class */ (function () {
             _this.dataService.pushWoffstoryData(data.length);
         });
     };
-    WriteoffstoryComponent = __decorate(
-      [
+    WriteoffstoryComponent = __decorate([
         Component({
-          selector: 'app-writeoffstory',
-          templateUrl: './writeoffstory.component.html',
-          styleUrls: ['./writeoffstory.component.css'],
+            selector: 'app-writeoffstory',
+            templateUrl: './writeoffstory.component.html',
+            styleUrls: ['./writeoffstory.component.css'],
         }),
-        __metadata('design:paramtypes', [
-          ActivatedRoute,
-          EcolService,
-          DataService,
-        ]),
-      ],
-      WriteoffstoryComponent
-    );
+        __metadata("design:paramtypes", [ActivatedRoute,
+            EcolService,
+            DataService])
+    ], WriteoffstoryComponent);
     return WriteoffstoryComponent;
 }());
 export { WriteoffstoryComponent };

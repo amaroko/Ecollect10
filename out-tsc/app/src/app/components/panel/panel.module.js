@@ -5,16 +5,13 @@ import { PanelComponent } from './panel.component';
 var PanelModule = /** @class */ (function () {
     function PanelModule() {
     }
-    PanelModule = __decorate(
-      [
+    PanelModule = __decorate([
         NgModule({
-          declarations: [PanelComponent],
-          imports: [CommonModule],
-          exports: [PanelComponent],
-        }),
-      ],
-      PanelModule
-    );
+            declarations: [PanelComponent],
+            imports: [CommonModule],
+            exports: [PanelComponent],
+        })
+    ], PanelModule);
     return PanelModule;
 }());
 export { PanelModule };

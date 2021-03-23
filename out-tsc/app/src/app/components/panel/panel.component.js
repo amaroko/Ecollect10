@@ -36,24 +36,21 @@ var PanelComponent = /** @class */ (function () {
         ViewChild('panelFooter', { static: false }),
         __metadata("design:type", Object)
     ], PanelComponent.prototype, "panelFooter", void 0);
-    PanelComponent = __decorate(
-      [
+    PanelComponent = __decorate([
         Component({
-          selector: 'app-panel',
-          inputs: [
-            'title',
-            'variant',
-            'noBody',
-            'noButton',
-            'bodyClass',
-            'footerClass',
-            'panelClass',
-          ],
-          templateUrl: './panel.component.html',
-        }),
-      ],
-      PanelComponent
-    );
+            selector: 'app-panel',
+            inputs: [
+                'title',
+                'variant',
+                'noBody',
+                'noButton',
+                'bodyClass',
+                'footerClass',
+                'panelClass',
+            ],
+            templateUrl: './panel.component.html',
+        })
+    ], PanelComponent);
     return PanelComponent;
 }());
 export { PanelComponent };
