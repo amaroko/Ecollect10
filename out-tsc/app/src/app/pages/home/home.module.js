@@ -11,28 +11,30 @@ import { PermissionsensorComponent } from './permissionsensor/permissionsensor.c
 
 var routes = [
   // {path: '', redirectTo: 'home'},
-  { path: '', component: HomePageComponent }
+  { path: '', component: HomePageComponent },
 ];
-var HomeModule = /** @class */ (function() {
-  function HomeModule() {
-  }
+var HomeModule = /** @class */ (function () {
+  function HomeModule() {}
 
-  HomeModule = __decorate([
-    NgModule({
-      declarations: [HomePageComponent, PermissionsensorComponent],
-      imports: [
-        CommonModule,
-        RouterModule.forChild(routes),
-        PanelModule,
-        PerfectScrollbarModule,
-        // AgmCoreModule,
-        CalendarMonthModule
-      ],
-      exports: [RouterModule]
-    })
-  ], HomeModule);
+  HomeModule = __decorate(
+    [
+      NgModule({
+        declarations: [HomePageComponent, PermissionsensorComponent],
+        imports: [
+          CommonModule,
+          RouterModule.forChild(routes),
+          PanelModule,
+          PerfectScrollbarModule,
+          // AgmCoreModule,
+          CalendarMonthModule,
+        ],
+        exports: [RouterModule],
+      }),
+    ],
+    HomeModule
+  );
   return HomeModule;
-}());
+})();
 export { HomeModule };
 // works
 //# sourceMappingURL=home.module.js.map

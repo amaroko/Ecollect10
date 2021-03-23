@@ -6,7 +6,7 @@ import { DataService } from '../../../services/data.service';
 import swal from 'sweetalert2';
 import { saveAs } from 'file-saver';
 import { environment } from '../../../../environments/environment';
-import { FileUploader } from '@swimlane/ng2-file-upload';
+import { FileUploader, } from '@swimlane/ng2-file-upload';
 import * as introJs from 'intro.js/intro.js';
 var URL = environment.filesapi;
 var FilesComponent = /** @class */ (function () {
@@ -201,7 +201,7 @@ var FilesComponent = /** @class */ (function () {
         Component({
             selector: 'app-files',
             templateUrl: './files.component.html',
-            styleUrls: ['./files.component.css']
+            styleUrls: ['./files.component.css',]
         }),
         __metadata("design:paramtypes", [ActivatedRoute,
             EcolService,

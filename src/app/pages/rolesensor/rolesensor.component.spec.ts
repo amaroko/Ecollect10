@@ -8,7 +8,7 @@ describe('RolesensorComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [RolesensorComponent]
+      declarations: [RolesensorComponent],
     }).compileComponents();
   });
 

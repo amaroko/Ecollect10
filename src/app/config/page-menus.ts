@@ -6,7 +6,7 @@ const currentUser: any = JSON.parse(localStorage.getItem('currentUser'));
 const Home = {
   icon: 'fa fa-th-large',
   title: 'Home',
-  url: '/home'
+  url: '/home',
 };
 
 const Schedules = {
@@ -16,13 +16,13 @@ const Schedules = {
   submenu: [
     {
       title: 'New Reminder',
-      url: '/reminders/newreminders'
+      url: '/reminders/newreminders,
     },
     {
       title: 'All Reminders',
-      url: '/reminders/allreminders'
-    }
-  ]
+      url: '/reminders/allreminders,
+    ,
+  ,
 };
 
 const Guarantors = {

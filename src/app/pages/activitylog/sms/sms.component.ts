@@ -9,7 +9,7 @@ import * as introJs from 'intro.js/intro.js';
 @Component({
   selector: 'app-sms',
   templateUrl: './sms.component.html',
-  styleUrls: ['./sms.component.css']
+  styleUrls: ['./sms.component.css'],
 })
 export class SmsComponent implements OnInit {
   introJS = introJs();
@@ -52,7 +52,7 @@ export class SmsComponent implements OnInit {
             element: '#mobile',
             intro:
               'This is where you select the mobile phone number of the customer. The ' +
-              'numbers will be listed here'
+              'numbers will be listed here,
           },
           {
             element: '#template',

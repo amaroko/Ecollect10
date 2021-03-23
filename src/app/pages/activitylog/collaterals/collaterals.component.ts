@@ -11,7 +11,7 @@ const URL = environment.valor;
 @Component({
   selector: 'app-collaterals',
   templateUrl: './collaterals.component.html',
-  styleUrls: ['./collaterals.component.css']
+  styleUrls: ['./collaterals.component.css'],
 })
 export class CollateralsComponent implements OnInit {
   introJS = introJs();
@@ -40,8 +40,8 @@ export class CollateralsComponent implements OnInit {
             element: '#collateraltable',
             intro:
               'Here you will find a list of all collaterals placed under the specified account ' +
-              'you could then edit the collaterals if need be'
-          }
+              'you could then edit the collaterals if need be,
+          ,
           // {
           //   element: '#custnumber',
           //   intro: 'This is the 7 digit number of the customer'

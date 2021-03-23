@@ -19,7 +19,7 @@ import { HighlightJsModule } from 'ngx-highlight-js';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { EditnoteComponent } from './editnote/editnote.component';
 import { DemandlettersComponent } from './demandletters/demandletters.component';
-import { ToasterModule } from 'angular2-toaster';
+import { ToasterModule, ToasterService } from 'angular2-toaster';
 import { FileUploadModule } from '@swimlane/ng2-file-upload';
 import { SmsComponent } from './sms/sms.component';
 import { AccplanComponent } from './accplan/accplan.component';
@@ -30,6 +30,9 @@ import { FilesComponent } from './files/files.component';
 import { BulknotesComponent } from './bulknotes/bulknotes.component';
 import { PtpsComponent } from './ptps/ptps.component';
 import { WriteoffstoryComponent } from './writeoffstory/writeoffstory.component';
+import { NgxPrettyDateModule } from 'ngx-pretty-date';
+import { MomentModule } from 'ngx-moment';
+import { PdfJsViewerModule } from 'ng2-pdfjs-viewer';
 var routes = [{ path: '', component: NotesComponent }];
 var ActivitylogModule = /** @class */ (function () {
     function ActivitylogModule() {
@@ -50,7 +53,7 @@ var ActivitylogModule = /** @class */ (function () {
                 FilesComponent,
                 BulknotesComponent,
                 PtpsComponent,
-                WriteoffstoryComponent
+                WriteoffstoryComponent,
             ],
             imports: [
                 PanelModule,
@@ -67,15 +70,19 @@ var ActivitylogModule = /** @class */ (function () {
                 FormsModule,
                 NgxPaginationModule,
                 HighlightJsModule,
-                ToasterModule,
-                FileUploadModule
+                ToasterModule.forRoot(),
+                FileUploadModule,
+                NgxPrettyDateModule,
+                MomentModule,
+                PdfJsViewerModule,
+                NgxDocViewerModul,
             ],
             exports: [RouterModule],
-            providers: [DataService, DatePipe]
+            providers: [DataService, DatePipe, ToasterService,]
         })
     ], ActivitylogModule);
     return ActivitylogModule;
 }());
 export { ActivitylogModule };
-// entrys
+// entryss
 //# sourceMappingURL=activitylog.module.js.map

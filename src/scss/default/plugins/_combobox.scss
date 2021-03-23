@@ -20,7 +20,7 @@
 
       @include flex(1);
       @include border-radius($border-radius 0 0 $border-radius);
-      @include transition(all .2s linear);
+      @include transition(all 0.2s linear);
       @if $enable-rtl {
         @include border-radius(0 $border-radius $border-radius 0);
       }
@@ -29,7 +29,9 @@
         outline: none;
         border-color: $input-focus-border-color !important;
 
-        @include box-shadow(0 0 0 0.125rem rgba($input-focus-border-color, .3));
+        @include box-shadow(
+            0 0 0 0.125rem rgba($input-focus-border-color, 0.3)
+        );
       }
     }
 

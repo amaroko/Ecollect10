@@ -1,0 +1,233 @@
+<div class='content-heading'>
+  <div>
+    Account Plans
+    <small>Account plan settings</small>
+  </div>
+</div>
+<div class='container-fluid'>
+  <!--  <ngx-spinner bdColor="rgba(51,51,51,0.8)" color="#fff" size="medium" type="ball-spin-fade">-->
+  <!--    <p style="font-size: 20px; color: white">Processing ...</p>-->
+  <!--  </ngx-spinner>-->
+  <div class='row'>
+    <div class='col-xl-6'>
+      <div class='row'>
+        <div class='col-xl-12'>
+          <app-panel title=' Account Plan Configurations'>
+            <form #addplanForm='ngForm' (ngSubmit)='newplan(addplanForm.value)'>
+              <fieldset>
+                <div class='form-group row m-b-15'>
+                  <label class='col-md-3 col-form-label'>Plan Name</label>
+                  <div class='col-md-7'>
+                    <input
+                      #plantitle='ngModel'
+                      [(ngModel)]='model.plantitle'
+                      [ngClass]="{ 'is-invalid': plantitle.invalid }"
+                      class='form-control'
+                      id='plantitle'
+                      name='plantitle'
+                      placeholder='plan name'
+                      required
+                      type='text'
+                    />
+                  </div>
+                </div>
+                <div class='form-group row'>
+                  <div class='col-md-7 offset-md-3'>
+                    <button
+                      [disabled]='!addplanForm.valid || !addplanForm.dirty'
+                      class='btn btn-sm btn-primary m-r-5'
+                      type='submit'
+                    >
+                      Add New Plan
+                    </button>
+                  </div>
+                </div>
+              </fieldset>
+            </form>
+          </app-panel>
+
+          <!--                    <fieldset>-->
+          <!--                      <div class="form-check mb-2 mr-sm-2">-->
+          <!--                        <div *ngFor="let i of items" class="form-check">-->
+          <!--                          <input (click)="setradio(i)" [value]="i.planid" class="form-check-input" id="plan" name="plan"-->
+          <!--                                 ngModel type="radio"/>-->
+          <!--                          <label  class="form-check-label" for="plan">{{i.plantitle}}</label>-->
+          <!--                        </div>-->
+          <!--                      </div>-->
+          <!--                    </fieldset>-->
+          <app-panel title='List of Plans added'>
+            <div class='col-xl-6'>
+              <input
+                [(ngModel)]='term'
+                class='form-control'
+                placeholder='Search Plans Here....'
+                type='text'
+              />
+            </div>
+            <table class='table'>
+              <thead>
+              <tr>
+                <th>Plan Title</th>
+                <th>#</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr
+                *ngFor='
+                    let i of items
+                      | paginate: { itemsPerPage: 7, currentPage: p }
+                      | filter: term
+                  '
+              >
+                <td>{{ i.plantitle }}</td>
+                <td>
+                  <a
+                    (click)='setradio(i)'
+                    class='btn btn-sm btn-success'
+                    title='Select {{ i.plantitle }}'
+                  >Select</a
+                  >
+                </td>
+              </tr>
+              </tbody>
+            </table>
+            <pagination-controls
+              (pageChange)='p = $event'
+            ></pagination-controls>
+          </app-panel>
+        </div>
+      </div>
+    </div>
+
+    <div class='col-xl-6'>
+      <app-panel title='{{ selected_plan }}'>
+        <div class='col-xl-12'>
+          <form
+            #addactionForm='ngForm'
+            (ngSubmit)='addactionSubmit(addactionForm.value)'
+            class='form-horizontal'
+          >
+            <div class='form-group row mb'>
+              <div class='col-md-12'>
+                <label class='mt'><b>Plan Id</b></label>
+                <input
+                  #plan='ngModel'
+                  [(ngModel)]='model.plan'
+                  class='form-control'
+                  id='plans'
+                  name='plans'
+                  readonly
+                  required
+                />
+              </div>
+            </div>
+            <div class='form-group row mb'>
+              <div class='col-md-12'>
+                <label class='mt' for='selectedplan'
+                ><b>Selected Plan:</b></label
+                >
+                <textarea
+                  class='form-control'
+                  id='selectedplan'
+                  readonly
+                  required
+                  rows='3'
+                  value='{{ selected_plan }}'
+                ></textarea>
+              </div>
+            </div>
+
+            <fieldset>
+              <div class='form-group row mb'>
+                <div class='col-md-12'>
+                  <label class='mt'><b>Select action to add to plan</b></label>
+                  <ng-select
+                    #planaction='ngModel'
+                    [(ngModel)]='model.planaction'
+                    [ngClass]="{ 'is-invalid': planaction.invalid }"
+                    id='planaction'
+                    name='planaction'
+                    placeholder='No action selected'
+                    required
+                  >
+                    <ng-option *ngFor='let a of actions' [value]='a.actionid'>{{
+                      a.actiontitle
+                      }}</ng-option>
+                  </ng-select>
+                </div>
+              </div>
+            </fieldset>
+            <div class='clearfix'>
+              <div class='float-left'>
+                <button
+                  *ngIf='!edit'
+                  [disabled]='!addactionForm.valid || !addactionForm.dirty'
+                  class='btn btn-sm btn-primary m-r-5'
+                  type='submit'
+                >
+                  Add
+                </button>
+                <button
+                  (click)='deleteaction(model)'
+                  *ngIf='edit'
+                  [disabled]='addactionForm.invalid'
+                  class='mb-1 mr-1 btn btn-sm btn-outline-warning col-form-label'
+                  type='button'
+                >
+                  Delete
+                </button>
+                <button
+                  (click)='cancel()'
+                  *ngIf='edit'
+                  class='mb-1 mr-1 btn btn-sm btn-outline-danger col-form-label'
+                  type='button'
+                >
+                  Cancel
+                </button>
+                <button
+                  class='btn btn-sm btn-primary m-r-5'
+                  routerLink='/configurations/planactions'
+                  type='submit'
+                >
+                  Go to Add Actions Page
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </app-panel>
+
+      <app-panel title='Action(s) for Plan: {{ selected_plan }}'>
+        <perfect-scrollbar style='height: 280px'>
+          <div class='col-xl-12'>
+            <table cellspacing='0' class='table'>
+              <thead>
+              <tr>
+                <th>#</th>
+                <th>actionid</th>
+                <th>actiontitle</th>
+                <th></th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor='let p of planactions'>
+                <td>{{ p.planid }}</td>
+                <td>{{ p.actionid }}</td>
+                <td>{{ p.actiontitle }}</td>
+                <td class='text-center'>
+                  <button
+                    (click)='editaction(p)'
+                    class='btn btn-outline-danger btn-sm'
+                  >
+                    <i class='fas fa-edit'></i> delete
+                  </button>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </perfect-scrollbar>
+      </app-panel>
+    </div>
+  </div>
+</div>

@@ -33,18 +33,18 @@
         <th>Plan action</th>
         <th>Action in place</th>
         <!--<th>Date action taken</th>
-      <th>Last update by</th>-->
+    <th>Last update by</th>-->
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor='let current of currentplan; let in = index'>
+      <tr *ngFor='let current of currentplan; let i = index'>
         <!--<td>{{current.actionid}}</td>-->
         <td>
           <label>
             <input
               [(ngModel)]='current.actiontitle'
               [disabled]='true'
-              name='actiontitle-{{ in }}'
+              name='actiontitle-{{ i }}'
               type='text'
             />
           </label>
@@ -55,24 +55,24 @@
               <input
                 [(ngModel)]='current.completed'
                 [checked]='current.completed'
-                name='completed-{{ in }}'
+                name='completed-{{ i }}'
                 type='checkbox' />
               <span class='fa fa-check'></span
               ></label>
           </div>
         </td>
         <!--<td>
-          <div class="input-group">
-              <input class="form-control" placeholder="yyyy-mm-dd" name="datecompleted-{{in}}" [(ngModel)]="current.datecompleted"
-                  ngbDatepicker #p="ngbDatepicker" />
-              <div class="input-group-append">
-                  <button class="btn btn-outline-primary" (click)="p.toggle()" type="button"><span><i
-                              class="fa fa-calendar"></i>
-                      </span></button>
-              </div>
-          </div>
-      </td>
-      <td><input type="text" name="updateby-{{in}}" [(ngModel)]="current.updateby" [disabled]="true" /></td>-->
+        <div class="input-group">
+            <input class="form-control" placeholder="yyyy-mm-dd" name="datecompleted-{{in}}" [(ngModel)]="current.datecompleted"
+                ngbDatepicker #p="ngbDatepicker" />
+            <div class="input-group-append">
+                <button class="btn btn-outline-primary" (click)="p.toggle()" type="button"><span><i
+                            class="fa fa-calendar"></i>
+                    </span></button>
+            </div>
+        </div>
+    </td>
+    <td><input type="text" name="updateby-{{in}}" [(ngModel)]="current.updateby" [disabled]="true" /></td>-->
       </tr>
       </tbody>
     </table>

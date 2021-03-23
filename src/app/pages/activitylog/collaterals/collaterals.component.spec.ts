@@ -8,7 +8,7 @@ describe('CollateralsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [CollateralsComponent]
+      declarations: [CollateralsComponent],
     }).compileComponents();
   });
 

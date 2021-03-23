@@ -21,11 +21,10 @@ const routes: Routes = [
     PanelModule,
     PerfectScrollbarModule,
     // AgmCoreModule,
-    CalendarMonthModule
+    CalendarMonthModule,
   ],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class HomeModule {
-}
+export class HomeModule {}
 
 // works

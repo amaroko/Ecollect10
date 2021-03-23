@@ -22,7 +22,7 @@ body {
       @include box-shadow(none);
 
       & i {
-        border-color: rgba($black, .25);
+        border-color: rgba($black, 0.25);
       }
     }
 

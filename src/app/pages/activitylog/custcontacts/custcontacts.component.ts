@@ -9,7 +9,7 @@ import * as introJs from 'intro.js/intro.js';
 @Component({
   selector: 'app-custcontacts',
   templateUrl: './custcontacts.component.html',
-  styleUrls: ['./custcontacts.component.css']
+  styleUrls: ['./custcontacts.component.css'],
 })
 export class CustcontactsComponent implements OnInit {
   introJS = introJs();
@@ -40,7 +40,7 @@ export class CustcontactsComponent implements OnInit {
             element: '#contactnumber',
             intro:
               'This is where you type in the phone number of the customer. Kindly use ' +
-              'the format of 0712345678'
+              'the format of 0712345678,
           },
           {
             element: '#email',

@@ -5,7 +5,7 @@ body {
     font-family: inherit;
 
     @include border-radius($border-radius-lg);
-    @include box-shadow(0 6px 30px rgba($black, .2));
+    @include box-shadow(0 6px 30px rgba($black, 0.2));
     @if $enable-rtl {
       direction: rtl;
       text-align: right;
@@ -59,13 +59,15 @@ body {
                     background: $white;
 
                     @include border-radius($border-radius);
-                    @include transition(all .2s linear);
+                    @include transition(all 0.2s linear);
 
                     &:focus {
                       outline: none;
                       border-color: $input-focus-border-color;
 
-                      @include box-shadow(0 0 0 0.125rem rgba($input-focus-border-color, .3));
+                      @include box-shadow(
+                          0 0 0 0.125rem rgba($input-focus-border-color, 0.3)
+                      );
                     }
                   }
                 }

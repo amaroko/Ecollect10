@@ -177,7 +177,7 @@ $pos-counter-header-height: rem(52px);
             font-weight: 600;
             position: relative;
 
-            @include transition(all .1s linear);
+            @include transition(all 0.1s linear);
 
             & .table-status {
               position: absolute;
@@ -204,7 +204,7 @@ $pos-counter-header-height: rem(52px);
               @include flex-align(center);
               @include flex-direction-column();
               @include flex-justify-content(center);
-              @include transition(all .1s linear);
+              @include transition(all 0.1s linear);
 
               & .name {
                 font-size: $font-size-lg;
@@ -226,7 +226,6 @@ $pos-counter-header-height: rem(52px);
                 width: 50%;
                 padding: rem(1px) rem(1px) 0 0;
                 margin: 0 auto;
-
 
                 @include flex(0 0 50%);
 
@@ -284,7 +283,7 @@ $pos-counter-header-height: rem(52px);
                 left: 0;
                 right: 0;
                 bottom: 0;
-                background: rgba($gray-600, .8);
+                background: rgba($gray-600, 0.8);
               }
 
               &:after {
@@ -313,7 +312,7 @@ $pos-counter-header-height: rem(52px);
 
             & .table-container {
               background: $gray-800;
-              opacity: 1.0;
+              opacity: 1;
               color: $white;
               position: relative;
 
@@ -329,7 +328,7 @@ $pos-counter-header-height: rem(52px);
                 left: 0;
                 right: 0;
                 bottom: 0;
-                background: rgba($success, .9);
+                background: rgba($success, 0.9);
               }
 
               &:after {
@@ -413,7 +412,7 @@ $pos-counter-header-height: rem(52px);
                 right: 0;
                 bottom: 0;
 
-                @include transition(all .1s linear);
+                @include transition(all 0.1s linear);
               }
 
               & .table-status {

@@ -8,7 +8,7 @@ describe('BulknotesComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [BulknotesComponent]
+      declarations: [BulknotesComponent],
     }).compileComponents();
   });
 

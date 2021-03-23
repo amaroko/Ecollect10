@@ -22,7 +22,7 @@ const pageSettings = {
   pageMobileSidebarRightToggled: false,
   pageMobileSidebarRightFirstClicked: false,
   pageMobileTopMenuToggled: false,
-  pageMobileMegaMenuToggled: false
+  pageMobileMegaMenuToggled: false,
 };
 
 export default pageSettings;

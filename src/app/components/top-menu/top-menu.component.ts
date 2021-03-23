@@ -2,14 +2,14 @@ import {
   AfterViewInit,
   Component,
   HostListener,
-  ViewChild
+  ViewChild,
 } from '@angular/core';
 import pageSettings from '../../config/page-settings';
 import { menu } from '../../config/page-menus';
 
 @Component({
   selector: 'app-top-menu',
-  templateUrl: './top-menu.component.html'
+  templateUrl: './top-menu.component.html,
 })
 export class TopMenuComponent implements AfterViewInit {
   @ViewChild('topMenuContainer', { static: true }) topMenuContainer;

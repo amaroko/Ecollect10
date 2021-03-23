@@ -1,0 +1,148 @@
+<div class='content-heading'>
+  <div>
+    Account Plans
+    <small>Plan actions</small>
+  </div>
+</div>
+<div class='container-fluid'>
+  <div class='row'>
+    <div class='col-xl-4' id='accordions'>
+      <div class='card'>
+        <div class='card-header'>
+          <a class='card-link' data-toggle='collapse' href='#collapseOne'>
+            Plan action Configurations
+          </a>
+        </div>
+        <div class='collapse show' data-parent='#accordion' id='collapseOne'>
+          <div class='card-body'>
+            <div class='row'>
+              <div class='col-xl-12'>
+                <div class='card card-primary'>
+                  <div class='card-body'>
+                    <form
+                      #planactionsform='ngForm'
+                      (ngSubmit)='saveplanaction(model)'
+                      autocomplete='off'
+                      class='form-horizontal'
+                      novalidate
+                    >
+                      <div class='form-group row'>
+                        <label class='col-xl-4 col-form-label'
+                        >Action code</label
+                        >
+                        <div class='col-xl-8'>
+                          <label for='actioncode'></label
+                          ><input
+                          #actioncode='ngModel'
+                          [(ngModel)]='model.actioncode'
+                          [disabled]='true'
+                          [ngClass]="{ 'is-invalid': actioncode.invalid }"
+                          class='form-control'
+                          id='actioncode'
+                          name='actioncode'
+                          required
+                          type='text'
+                        />
+                        </div>
+                      </div>
+                      <div class='form-group row'>
+                        <label class='col-xl-4 col-form-label'
+                        >Action title</label
+                        >
+                        <div class='col-xl-8'>
+                          <label for='actiontitle'></label
+                          ><input
+                          #actiontitle='ngModel'
+                          [(ngModel)]='model.actiontitle'
+                          [ngClass]="{ 'is-invalid': actiontitle.invalid }"
+                          class='form-control'
+                          id='actiontitle'
+                          name='actiontitle'
+                          required
+                          type='text'
+                        />
+                        </div>
+                      </div>
+                      <div class='form-group row'>
+                        <label class='col-xl-4 col-form-label'></label>
+                        <div class='col-xl-8'>
+                          <button
+                            *ngIf='!edit'
+                            [disabled]='!planactionsform.valid'
+                            class='mb-1 mr-1 btn btn-sm btn-outline-info col-form-label'
+                            type='submit'
+                          >
+                            Submit
+                          </button>
+                          <button
+                            (click)='updateaction(model)'
+                            *ngIf='edit'
+                            [disabled]='planactionsform.invalid'
+                            class='mb-1 mr-1 btn btn-sm btn-outline-warning col-form-label'
+                            type='button'
+                          >
+                            Update
+                          </button>
+                          <button
+                            (click)='cancel()'
+                            *ngIf='edit'
+                            class='mb-1 mr-1 btn btn-sm btn-outline-danger col-form-label'
+                            type='button'
+                          >
+                            Cancel
+                          </button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='col-xl-8' id='accordion'>
+      <div class='col-xl-12'>
+        <div class='card card-default'>
+          <div class='card-header'>
+            <a class='card-link' data-toggle='collapse' href='#collapseDemand1'>
+              Plan actions:
+            </a>
+          </div>
+          <div
+            class='collapse show'
+            data-parent='#accordion'
+            id='collapseDemand1'
+          >
+            <div class='card-body'>
+              <table class='table table-hover table-bordered table-striped'>
+                <thead>
+                <tr>
+                  <th>#</th>
+                  <th>plan action title</th>
+                  <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor='let p of planactions'>
+                  <td>{{ p.actionid }}</td>
+                  <td>{{ p.actiontitle }}</td>
+                  <td class='text-center'>
+                    <button
+                      (click)='editaction(p)'
+                      class='btn btn-outline-success btn-sm'
+                    >
+                      <i class='fas fa-edit'></i> edit
+                    </button>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

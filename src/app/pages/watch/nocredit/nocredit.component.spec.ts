@@ -8,7 +8,7 @@ describe('NocreditComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [NocreditComponent]
+      declarations: [NocreditComponent],
     }).compileComponents();
   }));
 

@@ -1,0 +1,501 @@
+<div class='content-heading'>
+  <div>
+    Service Providers
+    <small>S-P Configurations</small>
+  </div>
+</div>
+<div class='container-fluid'>
+  <ngx-spinner
+    bdColor='rgba(51,51,51,0.8)'
+    color='#fff'
+    size='medium'
+    type='ball-spin-fade'
+  >
+    <p style='font-size: 20px; color: white'>Processing ...</p>
+  </ngx-spinner>
+  <div id='accordion'>
+    <div class='card'>
+      <div class='card-header'>
+        <a class='card-link' data-toggle='collapse' href='#collapseOne'>
+          Service Providers
+        </a>
+      </div>
+      <div class='collapse show' data-parent='#accordion' id='collapseOne'>
+        <div class='card-body'>
+          <div class='row'>
+            <div class='col-xl-4'>
+              <div class='card card-primary'>
+                <div class='card-body'>
+                  <form
+                    #settingsForm='ngForm'
+                    (ngSubmit)='editSubmit(settingsForm)'
+                    *ngIf='new'
+                    class='form-horizontal'
+                  >
+                    <div class='form-group row mb'>
+                      <div class='col-md-12'>
+                        <div class='form-group'>
+                          <p>Service Provider</p>
+                          <label for='SPTITLE'></label
+                          ><input
+                          #SPTITLE='ngModel'
+                          [(ngModel)]='model.SPTITLE'
+                          [disabled]='false'
+                          autocomplete='off'
+                          class='form-control'
+                          id='SPTITLES'
+                          name='SPTITLES'
+                          required
+                        />
+                        </div>
+
+                        <p class='my-2'></p>
+                        <div class='form-group'>
+                          <p>Contact Person</p>
+                          <label for='CONTACTPERSON'></label
+                          ><input
+                          #CONTACTPERSON='ngModel'
+                          [(ngModel)]='model.CONTACTPERSON'
+                          [disabled]='false'
+                          autocomplete='off'
+                          class='form-control'
+                          id='CONTACTPERSONS'
+                          name='CONTACTPERSONS'
+                          required
+                        />
+                        </div>
+                      </div>
+                    </div>
+                    <p class='my-2'></p>
+                    <div class='form-group'>
+                      <p>Telephone</p>
+                      <label for='TELEPHONE'></label
+                      ><input
+                      #TELEPHONE='ngModel'
+                      [(ngModel)]='model.TELEPHONE'
+                      [disabled]='false'
+                      autocomplete='off'
+                      class='form-control'
+                      id='TELEPHONES'
+                      name='TELEPHONES'
+                      required
+                    />
+                    </div>
+                    <p class='my-2'></p>
+                    <div class='form-group'>
+                      <p>SPCode</p>
+                      <label for='SPCODE'></label
+                      ><select
+                      #SPCODE='ngModel'
+                      [(ngModel)]='model.SPCODE'
+                      [disabled]='false'
+                      autocomplete='off'
+                      class='form-control'
+                      id='SPCODES'
+                      name='SPCODES'
+                      required
+                    >
+                      <option selected value=''>Choose...</option>
+                      <option>AUCTIONEERS-MARKETORS-REPOSSESSORS</option>
+                      <option>DEBT COLLECTORS</option>
+                      <option>INVESTIGATORS</option>
+                      <option>STORAGE YARDS</option>
+                      <option>VALUERS</option>
+                    </select>
+                    </div>
+                    <p class='my-2'></p>
+                    <div class='form-group'>
+                      <p>Start Date</p>
+
+                      <div class='input-group'>
+                        <label for='STARTDATE'></label
+                        ><input
+                        #STARTDATE='ngModel'
+                        #dp='bsDatepicker'
+                        [(ngModel)]='model.STARTDATE'
+                        [bsConfig]="{ dateInputFormat: 'DD-MMM-YYYY' }"
+                        [disabled]='false'
+                        bsDatepicker
+                        class='form-control'
+                        id='STARTDATES'
+                        name='STARTDATES'
+                        placeholder='Start Date'
+                        required
+                        type='text'
+                      />
+                        <div class='input-group-append'>
+                          <button
+                            (click)='dp.toggle()'
+                            class='btn btn-outline-primary'
+                            type='button'
+                          >
+                            <span><i class='fa fa-calendar'></i> </span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <p class='my-2'></p>
+                    <div class='form-group'>
+                      <p>Account Number</p>
+                      <label for='ACCNUMBER'></label
+                      ><input
+                      #ACCNUMBER='ngModel'
+                      [(ngModel)]='model.ACCNUMBER'
+                      [disabled]='false'
+                      autocomplete='off'
+                      class='form-control'
+                      id='ACCNUMBERS'
+                      name='ACCNUMBERS'
+                      required
+                    />
+                    </div>
+                    <p class='my-2'></p>
+                    <div class='form-group'>
+                      <p>Coverage</p>
+                      <label for='COVERAGE'></label
+                      ><input
+                      #COVERAGE='ngModel'
+                      [(ngModel)]='model.COVERAGE'
+                      [disabled]='false'
+                      autocomplete='off'
+                      class='form-control'
+                      id='COVERAGES'
+                      name='COVERAGES'
+                      required
+                    />
+                    </div>
+                    <p class='my-2'></p>
+                    <div class='form-group'>
+                      <p>Address</p>
+                      <label for='ADDRESS'></label
+                      ><input
+                      #ADDRESS='ngModel'
+                      [(ngModel)]='model.ADDRESS'
+                      [disabled]='false'
+                      autocomplete='off'
+                      class='form-control'
+                      id='ADDRESSS'
+                      name='ADDRESSS'
+                    />
+                    </div>
+                    <p class='my-2'></p>
+                    <div class='form-group'>
+                      <p>End of Indemnity</p>
+                      <label for='ENDOFINDEMNITY'></label
+                      ><input
+                      #ENDOFINDEMNITY='ngModel'
+                      [(ngModel)]='model.ENDOFINDEMNITY'
+                      [disabled]='false'
+                      autocomplete='off'
+                      class='form-control'
+                      id='ENDOFINDEMNITYS'
+                      name='ENDOFINDEMNITYS'
+                      required
+                    />
+                    </div>
+                    <p class='my-2'></p>
+                    <div class='form-group'>
+                      <p>Email</p>
+                      <label for='EMAIL'></label
+                      ><input
+                      #EMAIL='ngModel'
+                      [(ngModel)]='model.EMAIL'
+                      [disabled]='false'
+                      autocomplete='off'
+                      class='form-control'
+                      id='EMAILS'
+                      name='EMAILS'
+                      required
+                    />
+                    </div>
+                    <fieldset>
+                      <div class='form-group row'>
+                        <div class='col-md-10'>
+                          <label class='checkbox c-checkbox'>
+                            <input
+                              #active='ngModel'
+                              [(ngModel)]='model.active'
+                              [checked]='model.active'
+                              id='actives'
+                              name='actives'
+                              type='checkbox'
+                            />
+                            <span class='fa fa-check'></span> Active</label
+                          >
+                        </div>
+                      </div>
+                    </fieldset>
+                    <p class='lead mt-3'></p>
+                    <div>
+                      <div class='clearfix'>
+                        <div class='float-left'>
+                          <button
+                            [disabled]='
+                              !settingsForm.valid || !settingsForm.dirty
+                            '
+                            class='btn btn-outline-primary'
+                            type='submit'
+                          >
+                            <em class='fa fa-check fa-fw'></em>Add New
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                  <form
+                    #editForm='ngForm'
+                    (ngSubmit)='editSubmit(editForm)'
+                    *ngIf='!new'
+                    class='form-horizontal'
+                  >
+                    <p class='lead mt-3'></p>
+                    <div class='form-group'>
+                      <p>Service Provider</p>
+                      <label for='SPTITLE'></label
+                      ><input
+                      #SPTITLE='ngModel'
+                      [(ngModel)]='model.SPTITLE'
+                      [disabled]='true'
+                      autocomplete='off'
+                      class='form-control'
+                      id='SPTITLE'
+                      name='SPTITLE'
+                      required
+                    />
+                    </div>
+                    <p class='my-2'></p>
+                    <div class='form-group'>
+                      <p>Contact Person</p>
+                      <label for='CONTACTPERSON'></label
+                      ><input
+                      #CONTACTPERSON='ngModel'
+                      [(ngModel)]='model.CONTACTPERSON'
+                      [disabled]='false'
+                      autocomplete='off'
+                      class='form-control'
+                      id='CONTACTPERSON'
+                      name='CONTACTPERSON'
+                      required
+                    />
+                    </div>
+                    <p class='my-2'></p>
+                    <div class='form-group'>
+                      <p>Telephone</p>
+                      <label for='TELEPHONE'></label
+                      ><input
+                      #TELEPHONE='ngModel'
+                      [(ngModel)]='model.TELEPHONE'
+                      [disabled]='false'
+                      autocomplete='off'
+                      class='form-control'
+                      id='TELEPHONE'
+                      name='TELEPHONE'
+                      required
+                    />
+                    </div>
+                    <p class='my-2'></p>
+                    <div class='form-group'>
+                      <p>SPCode</p>
+                      <label for='SPCODE'></label
+                      ><select
+                      #SPCODE='ngModel'
+                      [(ngModel)]='model.SPCODE'
+                      [disabled]='false'
+                      autocomplete='off'
+                      class='form-control'
+                      id='SPCODE'
+                      name='SPCODE'
+                      required
+                    >
+                      <option selected value=''>Choose...</option>
+                      <option>AUCTIONEERS-MARKETORS-REPOSSESSORS</option>
+                      <option>DEBT COLLECTORS</option>
+                      <option>INVESTIGATORS</option>
+                      <option>STORAGE YARDS</option>
+                      <option>VALUERS</option>
+                    </select>
+                    </div>
+                    <p class='my-2'></p>
+                    <div class='form-group'>
+                      <p>Start Date</p>
+
+                      <div class='input-group'>
+                        <label for='STARTDATE'></label
+                        ><input
+                        #STARTDATE='ngModel'
+                        #dp='bsDatepicker'
+                        [(ngModel)]='model.STARTDATE'
+                        [bsConfig]="{ dateInputFormat: 'DD-MMM-YYYY' }"
+                        [disabled]='false'
+                        bsDatepicker
+                        class='form-control'
+                        id='STARTDATE'
+                        name='STARTDATE'
+                        placeholder='Start Date'
+                        required
+                        type='text'
+                      />
+                        <div class='input-group-append'>
+                          <button
+                            (click)='dp.toggle()'
+                            class='btn btn-outline-primary'
+                            type='button'
+                          >
+                            <span><i class='fa fa-calendar'></i> </span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <p class='my-2'></p>
+                    <div class='form-group'>
+                      <p>Account Number</p>
+                      <label for='ACCNUMBER'></label
+                      ><input
+                      #ACCNUMBER='ngModel'
+                      [(ngModel)]='model.ACCNUMBER'
+                      [disabled]='false'
+                      autocomplete='off'
+                      class='form-control'
+                      id='ACCNUMBER'
+                      name='ACCNUMBER'
+                      required
+                    />
+                    </div>
+                    <p class='my-2'></p>
+                    <div class='form-group'>
+                      <p>Coverage</p>
+                      <label for='COVERAGE'></label
+                      ><input
+                      #COVERAGE='ngModel'
+                      [(ngModel)]='model.COVERAGE'
+                      [disabled]='false'
+                      autocomplete='off'
+                      class='form-control'
+                      id='COVERAGE'
+                      name='COVERAGE'
+                      required
+                    />
+                    </div>
+                    <p class='my-2'></p>
+                    <div class='form-group'>
+                      <p>Address</p>
+                      <label for='ADDRESS'></label
+                      ><input
+                      #ADDRESS='ngModel'
+                      [(ngModel)]='model.ADDRESS'
+                      [disabled]='false'
+                      autocomplete='off'
+                      class='form-control'
+                      id='ADDRESS'
+                      name='ADDRESS'
+                    />
+                    </div>
+                    <p class='my-2'></p>
+                    <div class='form-group'>
+                      <p>End of Indemnity</p>
+                      <label for='ENDOFINDEMNITY'></label
+                      ><input
+                      #ENDOFINDEMNITY='ngModel'
+                      [(ngModel)]='model.ENDOFINDEMNITY'
+                      [disabled]='false'
+                      autocomplete='off'
+                      class='form-control'
+                      id='ENDOFINDEMNITY'
+                      name='ENDOFINDEMNITY'
+                      required
+                    />
+                    </div>
+                    <p class='my-2'></p>
+                    <div class='form-group'>
+                      <p>Email</p>
+                      <label for='EMAIL'></label
+                      ><input
+                      #EMAIL='ngModel'
+                      [(ngModel)]='model.EMAIL'
+                      [disabled]='false'
+                      autocomplete='off'
+                      class='form-control'
+                      id='EMAIL'
+                      name='EMAIL'
+                      required
+                    />
+                    </div>
+                    <fieldset>
+                      <div class='form-group row'>
+                        <div class='col-md-10'>
+                          <label class='checkbox c-checkbox' for='active'>
+                            <input
+                              #ACTIVE='ngModel'
+                              [(ngModel)]='model.ACTIVE'
+                              [checked]='model.ACTIVE'
+                              id='ACTIVE'
+                              name='ACTIVE'
+                              type='checkbox'
+                            />
+                            <span class='fa fa-check'></span> Active</label
+                          >
+                        </div>
+                      </div>
+                    </fieldset>
+
+                    <div class='float-left'>
+                      <button
+                        class='btn btn-outline-primary'
+                        type='submit'
+                        type='submit'
+                      >
+                        <em class='fa fa-pencil fa-fw'></em>Update
+                      </button>
+                    </div>
+                    <div class='float-left'>
+                      <button
+                        (click)='shownew()'
+                        class='btn btn-outline-warning'
+                      >
+                        <em class='fa fa-check fa-fw'></em>Cancel
+                      </button>
+                    </div>
+
+                    <!--<div class="float-right">
+                      <button class="btn btn-danger" type="button" (click)="delete()">
+                        <em class="fas fa-trash-alt fa-fw"></em>Delete</button>
+                    </div>-->
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class='col-xl-8'>
+              <div class='col-xl-12'>
+                <h4 class='page-header'>
+                  <small>search, sorting, filter ...</small>
+                </h4>
+                <div class='row'>
+                  <div class='col-xl-4 col-lg-6'>
+                    <label>
+                      <input
+                        (keyup)='onQuickFilterChanged($event)'
+                        class='mb form-control'
+                        placeholder='Filter...'
+                        type='text'
+                      />
+                    </label>
+                  </div>
+                </div>
+                <ag-grid-angular
+                  #agGrid
+                  (gridReady)='gridReady($event)'
+                  (rowClicked)='onRowClicked($event)'
+                  [gridOptions]='gridOptions'
+                  [rowData]='rowData1'
+                  class='ag-angle'
+                  style='width: 100%; height: 700px'
+                >
+                </ag-grid-angular>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

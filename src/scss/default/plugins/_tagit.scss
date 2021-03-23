@@ -57,7 +57,7 @@
           &:focus {
             & .ui-icon-close {
               &:before {
-                color: rgba($black, .4);
+                color: rgba($black, 0.4);
               }
             }
           }
@@ -80,7 +80,7 @@
             &:focus {
               & .ui-icon-close {
                 &:before {
-                  color: rgba($white, .4);
+                  color: rgba($white, 0.4);
                 }
               }
             }

@@ -14,7 +14,7 @@
 
     & + .breadcrumb-item {
       @if $enable-rtl {
-        padding-right: .5rem;
+        padding-right: 0.5rem;
         padding-left: 0;
       }
 
@@ -23,7 +23,7 @@
 
         @if $enable-rtl {
           padding-right: 0;
-          padding-left: .5rem;
+          padding-left: 0.5rem;
         }
       }
     }

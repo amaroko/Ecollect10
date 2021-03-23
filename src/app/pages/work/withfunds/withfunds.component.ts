@@ -6,7 +6,7 @@ import { AllModules } from '@ag-grid-enterprise/all-modules';
 @Component({
   selector: 'app-withfunds',
   templateUrl: './withfunds.component.html',
-  styleUrls: ['./withfunds.component.css']
+  styleUrls: ['./withfunds.component.css'],
 })
 export class WithfundsComponent implements OnInit {
   public gridApi;
@@ -32,7 +32,7 @@ export class WithfundsComponent implements OnInit {
       {
         headerName: 'ACCNUMBER',
         field: 'ACCNUMBER',
-        cellRenderer: function(params) {
+        cellRenderer: function (params) {
           if (params.value !== undefined) {
             return '<a  href="#" target="_blank">' + params.value + '</a>';
           } else {
@@ -41,28 +41,28 @@ export class WithfundsComponent implements OnInit {
         },
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: tre,
       },
       {
         headerName: 'CUSTNUMBER',
         field: 'CUSTNUMBER',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: true,
       },
       {
         headerName: 'CLIENT NAME',
         field: 'CLIENT_NAME',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: tru,
       },
       {
         headerName: 'DAYSINARREARS',
         field: 'DAYSINARR',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: true,
       },
       {
         headerName: 'TOTALARREARS',
@@ -70,7 +70,7 @@ export class WithfundsComponent implements OnInit {
         valueFormatter: this.currencyFormatter,
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: tru,
       },
       {
         headerName: 'OUSTBALANCE',
@@ -78,36 +78,36 @@ export class WithfundsComponent implements OnInit {
         valueFormatter: this.currencyFormatter,
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: true,
       },
       {
         headerName: 'SETTLEACCNO',
         field: 'SETTLEACCNO',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: tru,
       },
       {
         headerName: 'AROCODE',
         field: 'AROCODE',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: true,
       },
       {
         headerName: 'SETTLEACCBAL',
         field: 'SETTLEACCBAL',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: tru,
       },
       {
         headerName: 'COLOFFICER',
         field: 'COLOFFICER',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
-      }
+        resizable: tru,
+      ,
     ];
     this.defaultColDef = {
       width: 120,
@@ -169,13 +169,13 @@ export class WithfundsComponent implements OnInit {
     // tslint:disable-next-line:max-line-length
     window.open(
       environment.applink +
-      '/activitylog?accnumber=' +
-      this.model.ACCNUMBER +
-      '&custnumber=' +
-      this.model.CUSTNUMBER +
-      '&username=' +
-      this.currentUser.USERNAME +
-      '&sys=collections',
+        '/activitylog?accnumber=' +
+        this.model.ACCNUMBER +
+        '&custnumber=' +
+        this.model.CUSTNUMBER +
+        '&username=' +
+        this.currentUser.USERNAME +
+        '&sys=collections',
       '_blank'
     );
   }

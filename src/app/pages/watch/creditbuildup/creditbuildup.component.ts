@@ -6,7 +6,7 @@ import { AllModules } from '@ag-grid-enterprise/all-modules';
 @Component({
   selector: 'app-creditbuildup',
   templateUrl: './creditbuildup.component.html',
-  styleUrls: ['./creditbuildup.component.css']
+  styleUrls: ['./creditbuildup.component.css'],
 })
 export class CreditbuildupComponent implements OnInit {
   public gridApi;
@@ -32,7 +32,7 @@ export class CreditbuildupComponent implements OnInit {
       {
         headerName: 'ACCNUMBER',
         field: 'ACCNUMBER',
-        cellRenderer: function(params) {
+        cellRenderer: function (params) {
           if (params.value !== undefined) {
             return '<a  href="#" target="_blank">' + params.value + '</a>';
           } else {
@@ -41,7 +41,7 @@ export class CreditbuildupComponent implements OnInit {
         },
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: tre,
         // checkboxSelection: true
       },
       {
@@ -49,57 +49,57 @@ export class CreditbuildupComponent implements OnInit {
         field: 'CUSTNUMBER',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: true,
       },
       {
         headerName: 'CUSTNAME',
         field: 'CUSTNAME',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: tru,
       },
       {
         headerName: 'OUSTBALANCE',
         field: 'OUSTBALANCE',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: true,
       },
       {
         headerName: 'PRODUCTCODE',
         field: 'PRODUCTCODE',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: tru,
       },
       {
         headerName: 'BRANCHCODE',
         field: 'BRANCHCODE',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: true,
       },
       {
         headerName: 'AROCODE',
         field: 'AROCODE',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: tru,
       },
       {
         headerName: 'REPAYMENTAMOUNT',
         field: 'REPAYMENTAMOUNT',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: true,
       },
       {
         headerName: 'SETTLEACCBAL',
         field: 'SETTLEACCBAL',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
-      }
+        resizable: true,
+      },
     ];
     this.defaultColDef = {
       width: 120,
@@ -110,7 +110,7 @@ export class CreditbuildupComponent implements OnInit {
       suppressResize: false,
       enableRowGroup: true,
       enablePivot: true,
-      pivot: true
+      pivot: tue,
     };
     this.rowModelType = 'serverSide';
     this.cacheBlockSize = 50;
@@ -129,7 +129,7 @@ export class CreditbuildupComponent implements OnInit {
         fetch(environment.nodeapi + '/gridcreditbuild/viewall', {
           method: 'post',
           body: JSON.stringify(params.request),
-          headers: { 'Content-Type': 'application/json; charset=utf-8' }
+          headers: { 'Content-Type': 'application/json; charset=utf-8' },
         })
           .then((httpResponse) => httpResponse.json())
           .then((response) => {
@@ -157,13 +157,13 @@ export class CreditbuildupComponent implements OnInit {
     // tslint:disable-next-line:max-line-length
     window.open(
       environment.applink +
-      '/activitylog?accnumber=' +
-      this.model.ACCNUMBER +
-      '&custnumber=' +
-      this.model.CUSTNUMBER +
-      '&username=' +
-      this.currentUser.USERNAME +
-      '&sys=watch',
+        '/activitylog?accnumber=' +
+        this.model.ACCNUMBER +
+        '&custnumber=' +
+        this.model.CUSTNUMBER +
+        '&username=' +
+        this.currentUser.USERNAME +
+        '&sys=watch',
       '_blank'
     );
   }

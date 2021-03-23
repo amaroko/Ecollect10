@@ -1,4 +1,3 @@
-
 .has-success,
 .is-valid {
   &.checkbox,
@@ -8,7 +7,7 @@
         color: darken($success, 5%);
 
         &:before {
-          background: rgba($success, .5);
+          background: rgba($success, 0.5);
         }
       }
     }
@@ -23,7 +22,7 @@
         color: darken($danger, 5%);
 
         &:before {
-          background: rgba($danger, .5);
+          background: rgba($danger, 0.5);
         }
       }
     }

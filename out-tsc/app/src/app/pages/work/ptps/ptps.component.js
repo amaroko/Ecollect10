@@ -22,57 +22,57 @@ var PtpsComponent = /** @class */ (function () {
                 },
                 filter: 'agTextColumnFilter',
                 filterParams: { newRowsAction: 'keep' },
-                resizable: true
+                resizable: tre,
             },
             {
                 headerName: 'STATUS',
                 field: 'MET',
                 filter: 'agTextColumnFilter',
                 filterParams: { newRowsAction: 'keep' },
-                resizable: true
+                resizable: true,
             },
             {
                 headerName: 'CUST_NAME',
                 field: 'CLIENT_NAME',
                 filter: 'agTextColumnFilter',
                 filterParams: { newRowsAction: 'keep' },
-                resizable: true
+                resizable: tru,
             },
             {
                 headerName: 'PTPAMOUNT',
                 field: 'PTPAMOUNT',
                 filter: 'agTextColumnFilter',
                 filterParams: { newRowsAction: 'keep' },
-                resizable: true
+                resizable: true,
             },
             {
                 headerName: 'PTPDATE',
                 field: 'PTPDATE',
                 filter: 'agTextColumnFilter',
                 filterParams: { newRowsAction: 'keep' },
-                resizable: true
+                resizable: tru,
             },
             {
                 headerName: 'ACTIONDATE',
                 field: 'ACTIONDATE',
                 filter: 'agTextColumnFilter',
                 filterParams: { newRowsAction: 'keep' },
-                resizable: true
+                resizable: true,
             },
             {
                 headerName: 'PAYMETHOD',
                 field: 'PAYMETHOD',
                 filter: 'agTextColumnFilter',
                 filterParams: { newRowsAction: 'keep' },
-                resizable: true
+                resizable: tru,
             },
             {
                 headerName: 'OWNER',
                 field: 'OWNER',
                 filter: 'agTextColumnFilter',
                 filterParams: { newRowsAction: 'keep' },
-                resizable: true
-            }
+                resizable: tru,
+            },
         ];
         this.defaultColDef = {
             width: 120,
@@ -139,7 +139,7 @@ var PtpsComponent = /** @class */ (function () {
         Component({
             selector: 'app-ptps',
             templateUrl: './ptps.component.html',
-            styleUrls: ['./ptps.component.css']
+            styleUrls: ['./ptps.component.css'],
         }),
         __metadata("design:paramtypes", [])
     ], PtpsComponent);

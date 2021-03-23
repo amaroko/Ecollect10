@@ -70,7 +70,14 @@
 }
 
 .btn-default {
-  @include button-variant(lighten($silver, 20%), lighten($silver, 20%), lighten($silver, 10%), lighten($silver, 10%), lighten($silver, 10%), lighten($silver, 10%));
+  @include button-variant(
+      lighten($silver, 20%),
+      lighten($silver, 20%),
+      lighten($silver, 10%),
+      lighten($silver, 10%),
+      lighten($silver, 10%),
+      lighten($silver, 10%)
+  );
 }
 
 @each $color, $value in $theme-colors {
@@ -78,7 +85,14 @@
     $value: $blue;
   }
   .btn-#{$color} {
-    @include button-variant($value, $value, darken($value, 10%), darken($value, 10%), darken($value, 10%), darken($value, 10%));
+    @include button-variant(
+        $value,
+        $value,
+        darken($value, 10%),
+        darken($value, 10%),
+        darken($value, 10%),
+        darken($value, 10%)
+    );
 
     @if $color == 'warning' or $color == 'info' or $color == 'grey' {
       color: $white;
@@ -95,10 +109,24 @@
 @each $color, $value in $colors {
   .btn-#{$color} {
     @if $color == 'white' {
-      @include button-variant($value, $border-color, lighten($dark, 75%), $border-color, lighten($dark, 70%), $border-color);
+      @include button-variant(
+          $value,
+          $border-color,
+          lighten($dark, 75%),
+          $border-color,
+          lighten($dark, 70%),
+          $border-color
+      );
     }
     @if $color != 'white' {
-      @include button-variant($value, $value, darken($value, 10%), darken($value, 10%), darken($value, 10%), darken($value, 10%));
+      @include button-variant(
+          $value,
+          $value,
+          darken($value, 10%),
+          darken($value, 10%),
+          darken($value, 10%),
+          darken($value, 10%)
+      );
     }
     @if $color == 'orange' or $color == 'aqua' or $color == 'lime' {
       color: $white;

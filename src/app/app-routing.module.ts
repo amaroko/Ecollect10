@@ -28,6 +28,12 @@ import { RemindersModule } from './pages/reminders/reminders.module';
 import { McoopcashModule } from './pages/mcoopcash/mcoopcash.module';
 import { CreditcardsModule } from './pages/creditcards/creditcards.module';
 import { WatchModule } from './pages/watch/watch.module';
+import { LettersModule } from './pages/letters/letters.module';
+import { ReportsModule } from './pages/reports/reports.module';
+import { GuarantorsModule } from './pages/guarantors/guarantors.module';
+import { DemandModule } from './pages/demand/demand.module';
+import { ConfigurationsModule } from './pages/configurations/configurations.module';
+import { ManualsModule } from './pages/manuals/manuals.module';
 
 export const routes: Routes = [
   // {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -36,21 +42,19 @@ export const routes: Routes = [
     path: '',
     component: LayoutComponent,
     canActivate: [AuthGuard],
-
-    // canActivateChild: [AuthGuard],
     children: [
       { path: '', redirectTo: 'login', pathMatch: 'full' },
       {
         path: 'home',
         loadChildren: () => HomeModule,
         // loadChildren: './pages/home/home.module#HomeModule',
-        data: { title: 'Home' }
+        data: { title: 'Home' },
       },
       {
         path: 'work',
         loadChildren: () => WorkModule,
         // loadChildren: './pages/work/work.module#WorkModule',
-        data: { title: 'Work Queue' }
+        data: { title: 'Work Queue' ,
       },
       {
         path: 'reminders',
@@ -76,9 +80,40 @@ export const routes: Routes = [
         loadChildren: () => WatchModule,
         // loadChildren: './pages/watch/watch.module#WatchModule',
         data: { title: 'Watch' }
+      },
+      {
+        path: 'letters',
+        loadChildren: () => LettersModule,
+        data: { title: 'Letters' }
+      },
+      {
+        path: 'reports',
+        loadChildren: () => ReportsModule,
+        data: { title: 'Reports' }
+      },
+      {
+        path: 'guarantors',
+        loadChildren: () => GuarantorsModule,
+        data: { title: 'Guarantors' }
+      },
+      {
+        path: 'demand',
+        loadChildren: () => DemandModule,
+        data: { title: 'Demands' }
+      },
+      {
+        path: 'configurations',
+        loadChildren: () => ConfigurationsModule,
+        data: { title: 'Configurations' }
+      },
+      {
+        path: 'manuals',
+        loadChildren: () => ManualsModule,
+        data: { title: 'All Manuals' }
       }
     ],
   },
+  // not lazy loaded
   {
     path: 'activitylog',
     component: ActivitylogComponent,
@@ -155,16 +190,17 @@ export const routes: Routes = [
         component: WriteoffstoryComponent,
         data: { title: 'Activitylog | WriteOffStory' }
       },
-      { path: '**', redirectTo: 'notes', pathMatch: 'full' }
+      { path: '**', redirectTo: 'notes' }
     ],
   },
+
   { path: 'login', component: LoginComponent, data: { title: 'Login' } },
   {
     path: 'rolesensor',
     component: RolesensorComponent,
     data: { title: 'RoleSensor' }
   },
-  { path: '**', redirectTo: 'home' }
+  { path: '**', redirectTo: '/home' }
 ];
 
 @NgModule({

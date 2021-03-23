@@ -249,7 +249,7 @@
       border: none !important;
     }
 
-    &[class^="bg-"] {
+    &[class^='bg-'] {
       @include border-radius(0 0 $border-radius-sm $border-radius-sm);
     }
   }
@@ -268,7 +268,7 @@
     @include border-bottom-left-radius($border-radius-sm);
   }
 
-  & [class^="col-"] {
+  & [class^='col-'] {
     &.ui-sortable {
       min-height: 0;
     }
@@ -338,7 +338,7 @@
         opacity: 0.9;
         z-index: 10;
 
-        @include animation(fadeIn .2s);
+        @include animation(fadeIn 0.2s);
         @include border-radius(0 0 $border-radius $border-radius);
       }
     }
@@ -464,14 +464,14 @@
 
   & .content {
     & .row {
-      & [class^="col-"] {
+      & [class^='col-'] {
         position: inherit;
       }
     }
 
     & .panel-expand {
       & .row {
-        & > [class^="col-"] {
+        & > [class^='col-'] {
           position: relative;
         }
       }

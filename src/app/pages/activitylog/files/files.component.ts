@@ -8,7 +8,7 @@ import { environment } from '../../../../environments/environment';
 import {
   FileItem,
   FileUploader,
-  ParsedResponseHeaders
+  ParsedResponseHeaders,
 } from '@swimlane/ng2-file-upload';
 import * as introJs from 'intro.js/intro.js';
 
@@ -17,7 +17,7 @@ const URL = environment.filesapi;
 @Component({
   selector: 'app-files',
   templateUrl: './files.component.html',
-  styleUrls: ['./files.component.css']
+  styleUrls: ['./files.component.css',
 })
 export class FilesComponent implements OnInit {
   introJS = introJs();

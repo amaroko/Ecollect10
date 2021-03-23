@@ -8,7 +8,7 @@ import { AllModules } from '@ag-grid-enterprise/all-modules';
 @Component({
   selector: 'app-myworklist',
   templateUrl: './myworklist.component.html',
-  styleUrls: ['./myworklist.component.css']
+  styleUrls: ['./myworklist.component.css'],
 })
 export class MyworklistComponent implements OnInit {
   public gridOptions: GridOptions;
@@ -47,8 +47,8 @@ export class MyworklistComponent implements OnInit {
         this.http
           .get(
             environment.api +
-            '/api/tqall/paged/myallocation?colofficer=' +
-            this.username
+              '/api/tqall/paged/myallocation?colofficer=' +
+              this.username
           )
           .subscribe((resp) => {
             console.log(typeof resp); // to check whether object or array
@@ -63,7 +63,7 @@ export class MyworklistComponent implements OnInit {
       {
         headerName: 'ACCNUMBER',
         field: 'accnumber',
-        cellRenderer: function(params) {
+        cellRenderer: function (params) {
           if (params.value !== undefined) {
             return '<a  href="#" target="_blank">' + params.value + '</a>';
           } else {
@@ -72,21 +72,21 @@ export class MyworklistComponent implements OnInit {
         },
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: true,
       },
       {
         headerName: 'CUSTNUMBER',
         field: 'custnumber',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: tru,
       },
       {
         headerName: 'CUST_NAME',
         field: 'client_name',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: true,
       },
       {
         headerName: 'DAYSINARREARS',
@@ -94,7 +94,7 @@ export class MyworklistComponent implements OnInit {
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
         resizable: true,
-        cellStyle: function(params) {
+        cellStyle: function (params) {
           if (params.value < '30') {
             return { color: 'red' };
           } else if (params.value > '90') {
@@ -102,7 +102,7 @@ export class MyworklistComponent implements OnInit {
           } else {
             return null;
           }
-        }
+        ,
       },
       {
         headerName: 'TOTALARREARS',
@@ -198,13 +198,13 @@ export class MyworklistComponent implements OnInit {
     // tslint:disable-next-line:max-line-length
     window.open(
       environment.applink +
-      '/activitylog?accnumber=' +
-      this.model.ACCNUMBER +
-      '&custnumber=' +
-      this.model.CUSTNUMBER +
-      '&username=' +
-      this.currentUser.USERNAME +
-      '&sys=collections',
+        '/activitylog?accnumber=' +
+        this.model.ACCNUMBER +
+        '&custnumber=' +
+        this.model.CUSTNUMBER +
+        '&username=' +
+        this.currentUser.USERNAME +
+        '&sys=collections',
       '_blank'
     );
   }

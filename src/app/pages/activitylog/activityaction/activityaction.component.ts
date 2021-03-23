@@ -10,7 +10,7 @@ import { NgOption } from '@ng-select/ng-select';
 import {
   NgbDateAdapter,
   NgbDateNativeAdapter,
-  NgbDateStruct
+  NgbDateStruct,
 } from '@ng-bootstrap/ng-bootstrap';
 import { NgxSmartModalService } from 'ngx-smart-modal';
 
@@ -18,7 +18,7 @@ import { NgxSmartModalService } from 'ngx-smart-modal';
   selector: 'app-activityaction',
   templateUrl: './activityaction.component.html',
   styleUrls: ['./activityaction.component.css'],
-  providers: [{ provide: NgbDateAdapter, useClass: NgbDateNativeAdapter }]
+  providers: [{ provide: NgbDateAdapter, useClass: NgbDateNativeAdapter },
 })
 export class ActivityactionComponent implements OnInit {
   @ViewChild('reason') inputOne: ElementRef;
@@ -26,6 +26,7 @@ export class ActivityactionComponent implements OnInit {
   bsValue = new Date();
   public minDate: NgbDateStruct;
   minxDate: Date;
+  expand = false;
   year = parseInt(moment().format('YYYY'));
   month = parseInt(moment().format('MM'));
   day = parseInt(moment().format('DD'));
@@ -331,6 +332,10 @@ export class ActivityactionComponent implements OnInit {
     });
   }
 
+  panelExpand() {
+    this.expand = !this.expand;
+  }
+
   getcard(cardacct) {
     this.ecolService.getcardAccount(cardacct).subscribe((data) => {
       this.account = data[0];
@@ -423,6 +428,7 @@ export class ActivityactionComponent implements OnInit {
   }
 
   onSubmit() {
+    this.expand = false;
     this.submitted = true;
     // stop here if form is invalid
     if (this.actionForm.invalid) {
@@ -562,6 +568,7 @@ export class ActivityactionComponent implements OnInit {
         }
 
         // close windows
+        this.expand = false;
         swal
           .fire({
             title: 'Activity successfully saved',

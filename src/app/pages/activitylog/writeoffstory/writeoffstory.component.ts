@@ -8,7 +8,7 @@ import * as moment from 'moment';
 @Component({
   selector: 'app-writeoffstory',
   templateUrl: './writeoffstory.component.html',
-  styleUrls: ['./writeoffstory.component.css']
+  styleUrls: ['./writeoffstory.component.css'],
 })
 export class WriteoffstoryComponent implements OnInit {
   accnumber: string;
@@ -79,7 +79,7 @@ export class WriteoffstoryComponent implements OnInit {
       accnumber: this.accnumber,
       owner: this.username,
       woffstory: form.value.writeoffstoryMessage,
-      lastupdate: this.currentDate()
+      lastupdate: this.currentDate(,
     };
     this.ecolService.woffstory(body).subscribe(
       (data) => {

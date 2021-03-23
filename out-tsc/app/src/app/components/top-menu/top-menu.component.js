@@ -1,4 +1,4 @@
-import { __decorate, __metadata } from "tslib";
+import { __decorate, __metadata } from 'tslib';
 import { Component, HostListener, ViewChild } from '@angular/core';
 import pageSettings from '../../config/page-settings';
 import { menu } from '../../config/page-menus';
@@ -125,12 +125,15 @@ var TopMenuComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [Object]),
         __metadata("design:returntype", void 0)
     ], TopMenuComponent.prototype, "onResize", null);
-    TopMenuComponent = __decorate([
+    TopMenuComponent = __decorate(
+      [
         Component({
-            selector: 'app-top-menu',
-            templateUrl: './top-menu.component.html'
-        })
-    ], TopMenuComponent);
+          selector: 'app-top-menu',
+          templateUrl: './top-menu.component.html',
+        }),
+      ],
+      TopMenuComponent
+    );
     return TopMenuComponent;
 }());
 export { TopMenuComponent };

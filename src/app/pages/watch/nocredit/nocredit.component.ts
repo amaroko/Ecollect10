@@ -6,7 +6,7 @@ import { AllModules } from '@ag-grid-enterprise/all-modules';
 @Component({
   selector: 'app-nocredit',
   templateUrl: './nocredit.component.html',
-  styleUrls: ['./nocredit.component.css']
+  styleUrls: ['./nocredit.component.css'],
 })
 export class NocreditComponent implements OnInit {
   public gridApi;
@@ -35,13 +35,13 @@ export class NocreditComponent implements OnInit {
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
         resizable: true,
-        cellRenderer: function(params) {
+        cellRenderer: function (params) {
           if (params.value !== undefined) {
             return '<a  href="#" target="_blank">' + params.value + '</a>';
           } else {
             return ''; // <img src="assets/img/user/loading.gif">
           }
-        }
+        },
         // checkboxSelection: true
       },
       {
@@ -49,57 +49,57 @@ export class NocreditComponent implements OnInit {
         field: 'CUSTNUMBER',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: tru,
       },
       {
         headerName: 'CUSTNAME',
         field: 'CUSTNAME',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: true,
       },
       {
         headerName: 'OUSTBALANCE',
         field: 'OUSTBALANCE',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: tru,
       },
       {
         headerName: 'PRODUCTCODE',
         field: 'PRODUCTCODE',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: true,
       },
       {
         headerName: 'BRANCHCODE',
         field: 'BRANCHCODE',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: tru,
       },
       {
         headerName: 'AROCODE',
         field: 'AROCODE',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: true,
       },
       {
         headerName: 'REPAYMENTAMOUNT',
         field: 'REPAYMENTAMOUNT',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: tru,
       },
       {
         headerName: 'SETTLEACCBAL',
         field: 'SETTLEACCBAL',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
-      }
+        resizable: tru,
+      ,
     ];
     this.defaultColDef = {
       width: 120,
@@ -161,13 +161,13 @@ export class NocreditComponent implements OnInit {
     // tslint:disable-next-line:max-line-length
     window.open(
       environment.applink +
-      '/activitylog?accnumber=' +
-      this.model.ACCNUMBER +
-      '&custnumber=' +
-      this.model.CUSTNUMBER +
-      '&username=' +
-      this.currentUser.USERNAME +
-      '&sys=collections',
+        '/activitylog?accnumber=' +
+        this.model.ACCNUMBER +
+        '&custnumber=' +
+        this.model.CUSTNUMBER +
+        '&username=' +
+        this.currentUser.USERNAME +
+        '&sys=collections',
       '_blank'
     );
   }

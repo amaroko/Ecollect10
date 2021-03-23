@@ -16,7 +16,7 @@ import pageSettings from '../../../config/page-settings';
 @Component({
   selector: 'app-notes',
   templateUrl: './notes.component.html',
-  styleUrls: ['./notes.component.css']
+  styleUrls: ['./notes.component.css'],
 })
 export class NotesComponent implements OnInit, OnDestroy {
   lightMode = true;
@@ -30,6 +30,7 @@ export class NotesComponent implements OnInit, OnDestroy {
   public defaultColDef;
   public rowData: [];
   modules = AllModules;
+  expand = false;
   pivotPanelShow = true;
   noteData: any = [];
   notesreason: any = [];
@@ -47,16 +48,7 @@ export class NotesComponent implements OnInit, OnDestroy {
   p = 1;
   bp = 1;
   download_disabled = true;
-  pager = {
-    limit: 10, // default number of notes
-    current: 0, // current page
-    reachedend: false
-  };
   cust: string;
-  query = {
-    limit: this.pager.limit,
-    skip: this.pager.limit * this.pager.current
-  };
   currentDate: any = new Date();
   public statusBar;
   pageSettings = pageSettings;
@@ -68,7 +60,7 @@ export class NotesComponent implements OnInit, OnDestroy {
     Bulknotes: false,
     flaggednotes: false,
     allNotes: false,
-    friendTab: false
+    friendTab: false,
   };
   private rowHeight;
   private str: string;
@@ -77,6 +69,7 @@ export class NotesComponent implements OnInit, OnDestroy {
 
   // download() {
   //   this.excelService.generateExcel(this.cust);
+  collectornoteslength = 0;
 
   constructor(
     private ecolservice: EcolService,
@@ -109,8 +102,8 @@ export class NotesComponent implements OnInit, OnDestroy {
         this.http
           .get(
             environment.api +
-            '/api/notehis/allcustnotes?custnumber=' +
-            this.cust
+              '/api/notehis/allcustnotes?custnumber=' +
+              this.cust
           )
           .subscribe((resp) => {
             console.log(typeof resp); // to check whether object or array
@@ -134,14 +127,14 @@ export class NotesComponent implements OnInit, OnDestroy {
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
         resizable: true,
-        floatingFilter: true
+        floatingFilter: true,
       },
       {
         field: 'CUSTNUMBER',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
         resizable: true,
-        floatingFilter: true
+        floatingFilter: tru,
       },
       {
         field: 'NOTEMADE',
@@ -150,29 +143,29 @@ export class NotesComponent implements OnInit, OnDestroy {
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
         resizable: true,
-        floatingFilter: true
+        floatingFilter: true,
       },
       {
         field: 'NOTEDATE',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep', browserDatePicker: true },
         valueFormatter: this.dateFormatter,
-        floatingFilter: true
+        floatingFilter: tru,
       },
       {
         field: 'NOTEIMP',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
         resizable: true,
-        floatingFilter: true
+        floatingFilter: true,
       },
       {
         field: 'NOTESRC',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
         resizable: true,
-        floatingFilter: true
-      }
+        floatingFilter: true,
+      },
     ];
     this.sortingOrder = ['desc', 'asc', null];
     this.defaultColDef = {
@@ -185,22 +178,22 @@ export class NotesComponent implements OnInit, OnDestroy {
       autoHeight: true,
       enableRowGroup: true,
       enablePivot: true,
-      pivot: true
+      pivot: tue,
     };
     this.rowHeight = 275;
     this.statusBar = {
       statusPanels: [
         {
           statusPanel: 'agTotalAndFilteredRowCountComponent',
-          align: 'left'
+          align: 'left',
         },
         {
           statusPanel: 'agTotalRowCountComponent',
-          align: 'center'
+          align: 'center',
         },
         { statusPanel: 'agFilteredRowCountComponent' },
         { statusPanel: 'agSelectedRowCountComponent' },
-        { statusPanel: 'agAggregationComponent' }
+        { statusPanel: 'agAggregationComponent' },
       ],
     };
   }
@@ -270,6 +263,7 @@ export class NotesComponent implements OnInit, OnDestroy {
     this.getNotes(this.cust);
     this.getflagged(this.cust);
     this.getNotesReason(this.cust);
+    this.getcollectormadenotes(this.cust);
 
     this.model.noteselector = 'collector';
   }
@@ -282,6 +276,14 @@ export class NotesComponent implements OnInit, OnDestroy {
     });
   }
 
+  getcollectormadenotes(cust) {
+    this.ecolservice.totalcollectornotes(cust).subscribe((data) => {
+      console.log(data);
+      this.collectornoteslength = data[0].TOTAL;
+      this.loader = false;
+    });
+  }
+
   getflagged(cust) {
     this.ecolservice.getflaggednotes(cust).subscribe((data) => {
       this.flaggedNotes = data[0];
@@ -290,9 +292,14 @@ export class NotesComponent implements OnInit, OnDestroy {
     });
   }
 
+  panelExpand() {
+    this.expand = !this.expand;
+  }
+
   getNotes(custnumber) {
     this.ecolService.totalnotes(custnumber).subscribe((data) => {
       this.noteslength = data[0].TOTAL;
+      // all notes counter
       if (data[0].TOTAL && data[0].TOTAL > 0) {
         this.download_disabled = false;
         console.log(data);
@@ -316,15 +323,10 @@ export class NotesComponent implements OnInit, OnDestroy {
   }
 
   getAll(cust) {
-    // this.spinner.show();
-    this.query.limit = this.pager.limit;
-    this.query.skip = this.pager.limit * this.pager.current;
-
-    //
-    this.ecolservice.getallnotes(this.query, cust).subscribe(
+    this.ecolservice.getallnotes(cust).subscribe(
       (data) => {
-        this.notes = data;
         console.log(data);
+        this.notes = data;
 
         // enable notes download button
         if (data && data.length > 0) {
@@ -338,16 +340,16 @@ export class NotesComponent implements OnInit, OnDestroy {
             this.datePipe
               .transform(this.currentDate, 'dd-MMM-yy')
               .toUpperCase() ===
-            this.datePipe
-              .transform(this.notes[i].NOTEDATE, 'dd-MMM-yy')
-              .toUpperCase();
+              this.datePipe
+                .transform(this.notes[i].NOTEDATE, 'dd-MMM-yy')
+                .toUpperCase();
         }
         // append posts
         if (!isNullOrUndefined(data) && this.notes.length) {
           this.noteData = this.noteData.concat(data);
           console.log(data);
         } else {
-          this.pager.reachedend = true;
+          // this.pager.reachedend = true;
         }
         this.loader = false;
       },
@@ -357,32 +359,19 @@ export class NotesComponent implements OnInit, OnDestroy {
     );
   }
 
-  loadmore(event) {
-    // this.spinner.show();
-    // increase the current by 1
-    // if current = 0, skip = limit*current
-    event.preventDefault();
-    this.pager.current = this.pager.current + 1;
-    this.getAll(this.cust);
-
-    setTimeout(() => {
-      // this.spinner.hide();
-    }, 1500);
-  }
-
   editnote(note) {
     // tslint:disable-next-line:max-line-length
     this.rout
       .navigateByUrl(
         '/activitylog/editnote?id=' +
-        note.ID +
-        '&accnumber=' +
-        note.ACCNUMBER +
-        '&custnumber=' +
-        note.CUSTNUMBER +
-        '&username=' +
-        note.OWNER +
-        '&sys=watch'
+          note.ID +
+          '&accnumber=' +
+          note.ACCNUMBER +
+          '&custnumber=' +
+          note.CUSTNUMBER +
+          '&username=' +
+          note.OWNER +
+          '&sys=watch'
       )
       .then((e) => {
         if (e) {

@@ -3,7 +3,9 @@
   "compilerOptions": {
     "outDir": "../out-tsc/app",
     "baseUrl": "./",
-    "types": []
+    "types": [
+      "node"
+    ]
   },
   //  "angularCompilerOptions": {
   //    "enableIvy": true,
@@ -12,7 +14,12 @@
   "angularCompilerOptions": {
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
-    "strictTemplates": true
+    "strictTemplates": true,
+    "paths": {
+      "exceljs": [
+        "node_modules/exceljs/dist"
+      ]
+    }
   },
   "exclude": [
     "test.ts",

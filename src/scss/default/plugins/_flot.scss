@@ -1,5 +1,5 @@
 .legend {
-  background: rgba($white, .9);
+  background: rgba($white, 0.9);
   border: 1px solid $gray-300;
   z-index: 1020;
 
@@ -21,10 +21,10 @@
   display: none;
   border: 0;
   padding: rem(6px) rem(10px);
-  color: rgba($white, .9);
+  color: rgba($white, 0.9);
   font-weight: 600;
   font-size: rem(11px);
-  background: rgba($dark-darker, .85);
+  background: rgba($dark-darker, 0.85);
   z-index: 10000 !important;
 
   @include border-radius($border-radius);

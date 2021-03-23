@@ -6,7 +6,7 @@ import { AllModules } from '@ag-grid-enterprise/all-modules';
 @Component({
   selector: 'app-allcards',
   templateUrl: './allcards.component.html',
-  styleUrls: ['./allcards.component.css']
+  styleUrls: ['./allcards.component.css'],
 })
 export class AllcardsComponent implements OnInit {
   public gridApi;
@@ -32,7 +32,7 @@ export class AllcardsComponent implements OnInit {
       {
         headerName: 'CARDACCT',
         field: 'CARDACCT',
-        cellRenderer: function(params) {
+        cellRenderer: function (params) {
           if (params.value !== undefined) {
             return '<a  href="#" target="_blank">' + params.value + '</a>';
           } else {
@@ -41,64 +41,64 @@ export class AllcardsComponent implements OnInit {
         },
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: tre,
       },
       {
         headerName: 'CARDNUMBER',
         field: 'CARDNUMBER',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: true,
       },
       {
         headerName: 'CARDNAME',
         field: 'CARDNAME',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: tru,
       },
       {
         headerName: 'DAYSINARREARS',
         field: 'DAYSINARREARS',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: true,
       },
       {
         headerName: 'EXPPMNT',
         field: 'EXPPMNT',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: tru,
       },
       {
         headerName: 'OUTSTANDING BALANCE',
         field: 'OUTBALANCE',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: true,
       },
       {
         headerName: 'LIMIT',
         field: 'LIMIT',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: tru,
       },
       {
         headerName: 'CYCLE',
         field: 'CYCLE',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: true,
       },
       {
         headerName: 'COLOFFICER',
         field: 'COLOFFICER',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
-      }
+        resizable: true,
+      },
     ];
     this.defaultColDef = {
       width: 120,
@@ -109,7 +109,7 @@ export class AllcardsComponent implements OnInit {
       suppressResize: false,
       enableRowGroup: true,
       enablePivot: true,
-      pivot: true
+      pivot: tue,
     };
     this.rowModelType = 'serverSide';
     this.cacheBlockSize = 50;
@@ -128,7 +128,7 @@ export class AllcardsComponent implements OnInit {
         fetch(environment.nodeapi + '/gridcreditcardsviewallcards/viewall', {
           method: 'post',
           body: JSON.stringify(params.request),
-          headers: { 'Content-Type': 'application/json; charset=utf-8' }
+          headers: { 'Content-Type': 'application/json; charset=utf-8' },
         })
           .then((httpResponse) => httpResponse.json())
           .then((response) => {
@@ -159,13 +159,13 @@ export class AllcardsComponent implements OnInit {
     // tslint:disable-next-line:max-line-length
     window.open(
       environment.applink +
-      '/activitylog?accnumber=' +
-      this.model.CARDACCT +
-      '&custnumber=' +
-      this.model.CARDACCT +
-      '&username=' +
-      this.username +
-      '&sys=watchcc',
+        '/activitylog?accnumber=' +
+        this.model.CARDACCT +
+        '&custnumber=' +
+        this.model.CARDACCT +
+        '&username=' +
+        this.username +
+        '&sys=watchcc',
       '_blank'
     );
   }

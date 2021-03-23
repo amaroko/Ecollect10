@@ -1,0 +1,248 @@
+<div class='content-heading'>
+  <div>Guarantors <small>add a guarantor</small></div>
+</div>
+<!-- START row-->
+<div class='row'>
+  <div class='col-md-10'>
+    <!-- START card-->
+    <div class='card card-default'>
+      <div class='card-header'>Enter Guarantor details</div>
+      <div class='card-body'>
+        <form
+          #newGuarantorForm='ngForm'
+          (ngSubmit)='onSubmit(newGuarantorForm)'
+          autocomplete='off'
+          class='form-horizontal'
+        >
+          <div class='form-group row'>
+            <label class='col-xl-2 col-form-label'>Customer custnumber</label>
+            <div class='col-xl-10'>
+              <label for='custnumber'></label
+              ><input
+              #custnumber='ngModel'
+              [(ngModel)]='model.custnumber'
+              class='form-control'
+              id='custnumber'
+              name='custnumber'
+              placeholder='custnumber'
+              required
+              type='text'
+            />
+              <div
+                *ngIf='custnumber.invalid && custnumber.touched'
+                class='validation-error'
+              >
+                custnumber is required
+              </div>
+            </div>
+          </div>
+          <div class='form-group row'>
+            <label class='col-xl-2 col-form-label'>Customer accnumber</label>
+            <div class='col-xl-10'>
+              <label for='accnumber'></label
+              ><input
+              #accnumber='ngModel'
+              [(ngModel)]='model.accnumber'
+              class='form-control'
+              id='accnumber'
+              name='accnumber'
+              placeholder='accnumber'
+              required
+              type='text'
+            />
+              <div
+                *ngIf='accnumber.invalid && accnumber.touched'
+                class='validation-error'
+              >
+                accnumber is required
+              </div>
+            </div>
+          </div>
+          <div class='form-group row'>
+            <label class='col-xl-2 col-form-label'>Guarantor nationid</label>
+            <div class='col-xl-10'>
+              <label for='nationid'></label
+              ><input
+              #nationid='ngModel'
+              [(ngModel)]='model.nationid'
+              class='form-control'
+              id='nationid'
+              name='nationid'
+              placeholder='nationid'
+              required
+              type='text'
+            />
+              <div
+                *ngIf='nationid.invalid && nationid.touched'
+                class='validation-error'
+              >
+                nationid is required
+              </div>
+            </div>
+          </div>
+          <div class='form-group row'>
+            <label class='col-xl-2 col-form-label'>Guarantor Name</label>
+            <div class='col-xl-10'>
+              <label for='guarantorname'></label
+              ><input
+              #guarantorname='ngModel'
+              [(ngModel)]='model.guarantorname'
+              class='form-control'
+              id='guarantorname'
+              name='guarantorname'
+              placeholder='GuarantorName'
+              required
+              type='text'
+            />
+              <div
+                *ngIf='guarantorname.invalid && guarantorname.touched'
+                class='validation-error'
+              >
+                Guarantor Name is required
+              </div>
+            </div>
+          </div>
+          <div class='form-group row'>
+            <label class='col-xl-2 col-form-label'>Guarantor address</label>
+            <div class='col-xl-10'>
+              <label for='address'></label
+              ><input
+              #address='ngModel'
+              [(ngModel)]='model.address'
+              class='form-control'
+              id='address'
+              name='address'
+              placeholder='Address'
+              required
+              type='text'
+            />
+              <div
+                *ngIf='address.invalid && address.touched'
+                class='validation-error'
+              >
+                address is required
+              </div>
+            </div>
+          </div>
+          <div class='form-group row'>
+            <label class='col-xl-2 col-form-label'>Postal Code</label>
+            <div class='col-xl-10'>
+              <label for='postalcode'></label
+              ><input
+              #postalcode='ngModel'
+              [(ngModel)]='model.postalcode'
+              class='form-control'
+              id='postalcode'
+              name='postalcode'
+              placeholder='PostalCode'
+              required
+              type='text'
+            />
+              <div
+                *ngIf='postalcode.invalid && postalcode.touched'
+                class='validation-error'
+              >
+                postalcode is required
+              </div>
+            </div>
+          </div>
+          <div class='form-group row'>
+            <label class='col-xl-2 col-form-label'>Telephone Number</label>
+            <div class='col-xl-10'>
+              <label for='telnumber'></label
+              ><input
+              #telnumber='ngModel'
+              [(ngModel)]='model.telnumber'
+              class='form-control'
+              id='telnumber'
+              name='telnumber'
+              placeholder='TelNumber'
+              required
+              type='text'
+            />
+              <div
+                *ngIf='telnumber.invalid && telnumber.touched'
+                class='validation-error'
+              >
+                telnumber is required
+              </div>
+            </div>
+          </div>
+          <!---<div class="form-group row">
+              <label class="col-xl-2 col-form-label">Email</label>
+              <div class="col-xl-10">
+                  <input class="form-control" type="text" name="email" id="email" #email="ngModel" [(ngModel)]="model.email" [ngClass]="{ 'is-invalid': email.touched && email.invalid }" required placeholder="email" />
+                  <div *ngIf="email.invalid" class="validation-error">
+                      <div *ngIf="email.errors.required">Email is required</div>
+                      <div *ngIf="email.errors.email">Email must be a valid email address</div>
+                  </div>
+              </div>
+          </div>-->
+          <div class='form-group row'>
+            <label class='col-xl-2 col-form-label' for='email'>Email</label>
+            <div class='col-xl-10'>
+              <label>
+                <input
+                  #email='ngModel'
+                  [(ngModel)]='model.email'
+                  [ngClass]="{ 'is-invalid': email.invalid }"
+                  class='form-control'
+                  email
+                  name='email'
+                  required
+                  type='text'
+                />
+              </label>
+              <div *ngIf='email.invalid' class='validation-error'>
+                <div *ngIf='email.errors.required'>Email is required</div>
+                <div *ngIf='email.errors.email'>
+                  Email must be a valid email address
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class='form-group row'>
+            <label class='col-xl-2 col-form-label'>Active</label>
+            <div class='d-flex align-items-center mb-3'>
+              <div class='ml-auto'>
+                <label class='switch switch-lg m-0'>
+                  <input
+                    #active='ngModel'
+                    [(ngModel)]='model.active'
+                    checked='checked'
+                    id='active'
+                    name='active'
+                    type='checkbox'
+                  />
+                  <span></span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class='form-group row'>
+            <label class='col-xl-2 col-form-label'></label>
+            <div class='col-xl-10'>
+              <button
+                [disabled]='!newGuarantorForm.valid || !newGuarantorForm.dirty'
+                class='btn btn-sm btn-outline-primary'
+                type='submit'
+              >
+                Submit
+              </button>
+              <button
+                (click)='cancel()'
+                class='btn btn-sm btn-outline-danger'
+                type='button'
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- END card-->
+  </div>
+</div>
+<!-- END row-->

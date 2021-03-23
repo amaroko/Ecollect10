@@ -35,7 +35,7 @@
     position: relative;
     overflow: hidden;
 
-    @include box-shadow(0 0px 30px rgba($black, .5));
+    @include box-shadow(0 0px 30px rgba($black, 0.5));
   }
 
   & .header {

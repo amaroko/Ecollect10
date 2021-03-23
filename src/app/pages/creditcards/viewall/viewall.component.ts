@@ -6,7 +6,7 @@ import { AllModules } from '@ag-grid-enterprise/all-modules';
 @Component({
   selector: 'app-viewall',
   templateUrl: './viewall.component.html',
-  styleUrls: ['./viewall.component.css']
+  styleUrls: ['./viewall.component.css'],
 })
 export class ViewallComponent implements OnInit {
   public gridApi;
@@ -33,19 +33,19 @@ export class ViewallComponent implements OnInit {
       {
         headerName: 'CARDACCT',
         field: 'CARDACCT',
-        cellRenderer: function(params) {
+        cellRenderer: function (params) {
           return '<a  href="#" target="_blank">' + params.value + '</a>';
         },
         width: 90,
         filter: 'agTextColumnFilter',
-        filterParams: { newRowsAction: 'keep' }
+        filterParams: { newRowsAction: 'keep' },
       },
       {
         headerName: 'CARDNUMBER',
         field: 'CARDNUMBER',
         width: 90,
         filter: 'agTextColumnFilter',
-        filterParams: { newRowsAction: 'keep' }
+        filterParams: { newRowsAction: 'keep' ,
       },
       {
         headerName: 'CARDNAME',
@@ -146,7 +146,7 @@ export class ViewallComponent implements OnInit {
   ServerSideDatasource(server) {
     return {
       getRows(params) {
-        setTimeout(function() {
+        setTimeout(function () {
           const response = server.getResponse(params.request);
           if (response.success) {
             params.successCallback(response.rows, response.lastRow);
@@ -174,13 +174,13 @@ export class ViewallComponent implements OnInit {
     // tslint:disable-next-line:max-line-length
     window.open(
       environment.applink +
-      '/activitylog?accnumber=' +
-      this.model.CARDACCT +
-      '&custnumber=' +
-      this.model.CARDACCT +
-      '&username=' +
-      this.username +
-      '&sys=cc',
+        '/activitylog?accnumber=' +
+        this.model.CARDACCT +
+        '&custnumber=' +
+        this.model.CARDACCT +
+        '&username=' +
+        this.username +
+        '&sys=cc',
       '_blank'
     );
   }

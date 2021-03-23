@@ -8,7 +8,7 @@ describe('ActivityhomeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ActivityhomeComponent]
+      declarations: [ActivityhomeComponent],
     }).compileComponents();
   }));
 

@@ -12,7 +12,7 @@ body {
 
     & .gritter-item-wrapper {
       background: none;
-      background: rgba($dark-darker, .9);
+      background: rgba($dark-darker, 0.9);
 
       @include border-radius($border-radius-lg);
 
@@ -111,14 +111,14 @@ body {
           height: auto;
           display: block !important;
           font-family: inherit;
-          border-left: 1px solid rgba($white, .1);
+          border-left: 1px solid rgba($white, 0.1);
           color: lighten($dark, 45%);
 
           @if $enable-rtl {
             right: auto;
             left: 0;
             border-left: none;
-            border-right: 1px solid rgba($white, .1);
+            border-right: 1px solid rgba($white, 0.1);
             text-align: right;
           }
           @include media-breakpoint-down(xs) {
@@ -154,7 +154,7 @@ body {
         & .gritter-item,
         & .gritter-bottom,
         & .gritter-top {
-          background: rgba($white, .95);
+          background: rgba($white, 0.95);
           color: lighten($dark, 30%);
         }
 

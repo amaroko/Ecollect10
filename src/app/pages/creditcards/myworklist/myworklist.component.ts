@@ -8,7 +8,7 @@ import { AllModules } from '@ag-grid-enterprise/all-modules';
 @Component({
   selector: 'app-myworklist',
   templateUrl: './myworklist.component.html',
-  styleUrls: ['./myworklist.component.css']
+  styleUrls: ['./myworklist.component.css'],
 })
 export class MyworklistComponent implements OnInit {
   public gridOptions: GridOptions;
@@ -47,8 +47,8 @@ export class MyworklistComponent implements OnInit {
         this.http
           .get(
             environment.api +
-            '/api/tcards/myallocations?colofficer=' +
-            this.username
+              '/api/tcards/myallocations?colofficer=' +
+              this.username
           )
           .subscribe((resp) => {
             console.log(typeof resp); // to check whether object or array
@@ -63,7 +63,7 @@ export class MyworklistComponent implements OnInit {
       {
         headerName: 'CARDACCT',
         field: 'CARDACCT',
-        cellRenderer: function(params) {
+        cellRenderer: function (params) {
           if (params.value !== undefined) {
             return '<a  href="#" target="_blank">' + params.value + '</a>';
           } else {
@@ -72,57 +72,57 @@ export class MyworklistComponent implements OnInit {
         },
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: true,
       },
       {
         headerName: 'CARDNUMBER',
         field: 'CARDNUMBER',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: tru,
       },
       {
         headerName: 'CARDNAME',
         field: 'CARDNAME',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: true,
       },
       {
         headerName: 'DAYSINARREARS',
         field: 'DAYSINARREARS',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: tru,
       },
       {
         headerName: 'EXPPMNT',
         field: 'EXPPMNT',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: true,
       },
       {
         headerName: 'OUTBALANCE',
         field: 'OUTBALANCE',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: tru,
       },
       {
         headerName: 'CYCLE',
         field: 'CYCLE',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: true,
       },
       {
         headerName: 'COLOFFICER',
         field: 'COLOFFICER',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
-      }
+        resizable: true,
+      },
     ];
     this.sortingOrder = ['desc', 'asc', null];
     this.defaultColDef = {
@@ -134,7 +134,7 @@ export class MyworklistComponent implements OnInit {
       suppressResize: false,
       enableRowGroup: true,
       enablePivot: true,
-      pivot: true
+      pivot: tue,
     };
   }
 
@@ -159,13 +159,13 @@ export class MyworklistComponent implements OnInit {
     // tslint:disable-next-line:max-line-length
     window.open(
       environment.applink +
-      '/activitylog?accnumber=' +
-      this.model.CARDACCT +
-      '&custnumber=' +
-      this.model.CARDACCT +
-      '&username=' +
-      this.username +
-      '&sys=cc',
+        '/activitylog?accnumber=' +
+        this.model.CARDACCT +
+        '&custnumber=' +
+        this.model.CARDACCT +
+        '&username=' +
+        this.username +
+        '&sys=cc',
       '_blank'
     );
   }

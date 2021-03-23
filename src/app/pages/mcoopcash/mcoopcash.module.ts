@@ -9,7 +9,7 @@ import { ViewallComponent } from './viewall/viewall.component';
 const routes: Routes = [
   { path: '', redirectTo: 'viewall' },
   { path: 'viewall', component: ViewallComponent },
-  { path: 'allecredit', component: AllecreditComponent }
+  { path: 'allecredit', component: AllecreditComponent },
 ];
 
 @NgModule({
@@ -18,8 +18,8 @@ const routes: Routes = [
     CommonModule,
     PanelModule,
     AgGridModule.withComponents([]),
-    RouterModule.forChild(routes)
-  ]
+    RouterModule.forChild(routes,
+  ,
 })
 export class McoopcashModule {
 }

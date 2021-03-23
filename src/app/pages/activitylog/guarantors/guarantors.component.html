@@ -5,7 +5,10 @@
       <ul #nav='ngbNav' class='nav-pills' ngbNav>
         <!--  tab starts-->
         <li ngbNavItem='Existing Guarantors'>
-          <a ngbNavLink>Existing Guarantors <span class='badge badge-danger'>{{ guarantors?.length }}</span></a>
+          <a ngbNavLink
+          >Existing Guarantors
+            <span class='badge badge-danger'>{{ guarantors?.length }}</span></a
+          >
           <ng-template ngbNavContent>
             <div class='panel-body'>
               <!-- START table-responsive-->
@@ -35,270 +38,279 @@
                 <!--        end of table responsible-->
               </div>
             </div>
-      </ng-template>
-    </li>
-    <li ngbNavItem='Enter Guarantor details'>
-      <a ngbNavLink>Enter Guarantor details</a>
+          </ng-template>
+        </li>
+        <li ngbNavItem='Enter Guarantor details'>
+          <a ngbNavLink>Enter Guarantor details</a>
 
-      <ng-template ngbNavContent>
-        <button (click)='GuarantorSteps2()' class='btn btn-primary'>
-          SHOW ME STEPS
-        </button>
-        <!-- START card-->
-        <div class='panel panel-default'>
-          <div class='panel-header'>Enter Guarantor details</div>
-          <div class='panel-body'>
-            <form
-              #newGuarantorForm='ngForm'
-              (ngSubmit)='onSubmit(newGuarantorForm)'
-              autocomplete='off'
-              class='form-horizontal'
-            >
-              <div class='form-group row'>
-                <label class='col-xl-3 col-form-label'>Customer custnumber</label>
-                <div class='col-xl-6'>
-                  <label for='custnumber'></label
-                  ><input
-                  #custnumber='ngModel'
-                  [(ngModel)]='model.custnumber'
-                  [disabled]='true'
-                  [ngClass]="{ 'is-invalid': custnumber.invalid }"
-                  class='form-control is-valid'
-                  id='custnumber'
-                  name='custnumber'
-                  required
-                  type='text'
-                />
-                  <div *ngIf='custnumber.valid' class='valid-feedback'>
-                    Looks good!
+          <ng-template ngbNavContent>
+            <button (click)='GuarantorSteps2()' class='btn btn-primary'>
+              SHOW ME STEPS
+            </button>
+            <!-- START card-->
+            <div class='panel panel-default'>
+              <div class='panel-header'>Enter Guarantor details</div>
+              <div class='panel-body'>
+                <form
+                  #newGuarantorForm='ngForm'
+                  (ngSubmit)='onSubmit(newGuarantorForm)'
+                  autocomplete='off'
+                  class='form-horizontal'
+                >
+                  <div class='form-group row'>
+                    <label class='col-xl-3 col-form-label'
+                    >Customer custnumber</label
+                    >
+                    <div class='col-xl-6'>
+                      <label for='custnumber'></label
+                      ><input
+                      #custnumber='ngModel'
+                      [(ngModel)]='model.custnumber'
+                      [disabled]='true'
+                      [ngClass]="{ 'is-invalid': custnumber.invalid }"
+                      class='form-control is-valid'
+                      id='custnumber'
+                      name='custnumber'
+                      required
+                      type='text'
+                    />
+                      <div *ngIf='custnumber.valid' class='valid-feedback'>
+                        Looks good!
+                      </div>
+                    </div>
                   </div>
-                </div>
-            </div>
-            <div class="form-group row">
-              <label class="col-xl-3 col-form-label">Customer accnumber</label>
-              <div class='col-xl-6'>
-                <label for='accnumber'></label
-                ><input
-                #accnumber='ngModel'
-                [(ngModel)]='model.accnumber'
-                [disabled]='true'
-                [ngClass]="{ 'is-invalid': accnumber.invalid }"
-                class='form-control is-valid'
-                id='accnumber'
-                name='accnumber'
-                required
-                type='text'
-              />
-                <div *ngIf='accnumber.valid' class='valid-feedback'>
-                  Looks good!
-                </div>
-              </div>
-            </div>
-            <div class="form-group row">
-              <label class="col-xl-3 col-form-label">Guarantor nationid</label>
-              <div class='col-xl-6'>
-                <label for='nationid'></label
-                ><input
-                #nationid='ngModel'
-                [(ngModel)]='model.nationid'
-                [ngClass]="{ 'is-invalid': nationid.invalid }"
-                class='form-control is-valid'
-                id='nationid'
-                name='nationid'
-                required
-                type='text'
-              />
-                <div
-                  *ngIf='nationid.invalid && nationid.touched'
-                  class='validation-error'
-                >
-                  nationid is required
-                </div>
-                <div *ngIf='nationid.valid' class='valid-feedback'>
-                  Looks good!
-                </div>
-              </div>
-            </div>
-            <div class="form-group row">
-              <label class="col-xl-3 col-form-label">Guarantor Name</label>
-              <div class='col-xl-6'>
-                <label for='guarantorname'></label
-                ><input
-                #guarantorname='ngModel'
-                [(ngModel)]='model.guarantorname'
-                [ngClass]="{ 'is-invalid': guarantorname.invalid }"
-                class='form-control is-valid'
-                id='guarantorname'
-                name='guarantorname'
-                required
-                type='text'
-              />
-                <div
-                  *ngIf='guarantorname.invalid && guarantorname.touched'
-                  class='validation-error'
-                >
-                  Guarantor Name is required
-                </div>
-                <div *ngIf='guarantorname.valid' class='valid-feedback'>
-                  Looks good!
-                </div>
-              </div>
-            </div>
-            <div class="form-group row">
-              <label class="col-xl-3 col-form-label">Guarantor address</label>
-              <div class='col-xl-6'>
-                <label for='address'></label
-                ><input
-                #address='ngModel'
-                [(ngModel)]='model.address'
-                [ngClass]="{ 'is-invalid': address.invalid }"
-                class='form-control is-valid'
-                id='address'
-                name='address'
-                required
-                type='text'
-              />
-                <div
-                  *ngIf='address.invalid && address.touched'
-                  class='validation-error'
-                >
-                  address is required
-                </div>
-                <div *ngIf='address.valid' class='valid-feedback'>
-                  Looks good!
-                </div>
-              </div>
-            </div>
-            <div class="form-group row">
-              <label class="col-xl-3 col-form-label">Postal Code</label>
-              <div class='col-xl-6'>
-                <label for='postalcode'></label
-                ><input
-                #postalcode='ngModel'
-                [(ngModel)]='model.postalcode'
-                [ngClass]="{ 'is-invalid': postalcode.invalid }"
-                class='form-control is-valid'
-                id='postalcode'
-                name='postalcode'
-                required
-                type='text'
-              />
-                <div
-                  *ngIf='postalcode.invalid && postalcode.touched'
-                  class='validation-error'
-                >
-                  postalcode is required
-                </div>
-                <div *ngIf='postalcode.valid' class='valid-feedback'>
-                  Looks good!
-                </div>
+                  <div class='form-group row'>
+                    <label class='col-xl-3 col-form-label'
+                    >Customer accnumber</label
+                    >
+                    <div class='col-xl-6'>
+                      <label for='accnumber'></label
+                      ><input
+                      #accnumber='ngModel'
+                      [(ngModel)]='model.accnumber'
+                      [disabled]='true'
+                      [ngClass]="{ 'is-invalid': accnumber.invalid }"
+                      class='form-control is-valid'
+                      id='accnumber'
+                      name='accnumber'
+                      required
+                      type='text'
+                    />
+                      <div *ngIf='accnumber.valid' class='valid-feedback'>
+                        Looks good!
+                      </div>
+                    </div>
+                  </div>
+                  <div class='form-group row'>
+                    <label class='col-xl-3 col-form-label'
+                    >Guarantor nationid</label
+                    >
+                    <div class='col-xl-6'>
+                      <label for='nationid'></label
+                      ><input
+                      #nationid='ngModel'
+                      [(ngModel)]='model.nationid'
+                      [ngClass]="{ 'is-invalid': nationid.invalid }"
+                      class='form-control is-valid'
+                      id='nationid'
+                      name='nationid'
+                      required
+                      type='text'
+                    />
+                      <div
+                        *ngIf='nationid.invalid && nationid.touched'
+                        class='validation-error'
+                      >
+                        nationid is required
+                      </div>
+                      <div *ngIf='nationid.valid' class='valid-feedback'>
+                        Looks good!
+                      </div>
+                    </div>
+                  </div>
+                  <div class='form-group row'>
+                    <label class='col-xl-3 col-form-label'
+                    >Guarantor Name</label
+                    >
+                    <div class='col-xl-6'>
+                      <label for='guarantorname'></label
+                      ><input
+                      #guarantorname='ngModel'
+                      [(ngModel)]='model.guarantorname'
+                      [ngClass]="{ 'is-invalid': guarantorname.invalid }"
+                      class='form-control is-valid'
+                      id='guarantorname'
+                      name='guarantorname'
+                      required
+                      type='text'
+                    />
+                      <div
+                        *ngIf='guarantorname.invalid && guarantorname.touched'
+                        class='validation-error'
+                      >
+                        Guarantor Name is required
+                      </div>
+                      <div *ngIf='guarantorname.valid' class='valid-feedback'>
+                        Looks good!
+                      </div>
+                    </div>
+                  </div>
+                  <div class='form-group row'>
+                    <label class='col-xl-3 col-form-label'
+                    >Guarantor address</label
+                    >
+                    <div class='col-xl-6'>
+                      <label for='address'></label
+                      ><input
+                      #address='ngModel'
+                      [(ngModel)]='model.address'
+                      [ngClass]="{ 'is-invalid': address.invalid }"
+                      class='form-control is-valid'
+                      id='address'
+                      name='address'
+                      required
+                      type='text'
+                    />
+                      <div
+                        *ngIf='address.invalid && address.touched'
+                        class='validation-error'
+                      >
+                        address is required
+                      </div>
+                      <div *ngIf='address.valid' class='valid-feedback'>
+                        Looks good!
+                      </div>
+                    </div>
+                  </div>
+                  <div class='form-group row'>
+                    <label class='col-xl-3 col-form-label'>Postal Code</label>
+                    <div class='col-xl-6'>
+                      <label for='postalcode'></label
+                      ><input
+                      #postalcode='ngModel'
+                      [(ngModel)]='model.postalcode'
+                      [ngClass]="{ 'is-invalid': postalcode.invalid }"
+                      class='form-control is-valid'
+                      id='postalcode'
+                      name='postalcode'
+                      required
+                      type='text'
+                    />
+                      <div
+                        *ngIf='postalcode.invalid && postalcode.touched'
+                        class='validation-error'
+                      >
+                        postalcode is required
+                      </div>
+                      <div *ngIf='postalcode.valid' class='valid-feedback'>
+                        Looks good!
+                      </div>
+                    </div>
+                  </div>
+                  <div class='form-group row'>
+                    <label class='col-xl-3 col-form-label'
+                    >Telephone Number</label
+                    >
+                    <div class='col-xl-6'>
+                      <label for='telnumber'></label
+                      ><input
+                      #telnumber='ngModel'
+                      [(ngModel)]='model.telnumber'
+                      [ngClass]="{ 'is-invalid': telnumber.invalid }"
+                      class='form-control is-valid'
+                      id='telnumber'
+                      name='telnumber'
+                      required
+                      type='text'
+                    />
+                      <div
+                        *ngIf='telnumber.invalid && telnumber.touched'
+                        class='validation-error'
+                      >
+                        telnumber is required
+                      </div>
+                      <div *ngIf='telnumber.valid' class='valid-feedback'>
+                        Looks good!
+                      </div>
+                    </div>
+                  </div>
+                  <div class='form-group row'>
+                    <label class='col-xl-3 col-form-label' for='email'
+                    >Email</label
+                    >
+                    <div class='col-xl-6'>
+                      <label for='email'></label>
+                      <input
+                        #email='ngModel'
+                        [(ngModel)]='model.email'
+                        [ngClass]="{ 'is-invalid': email.invalid }"
+                        [pattern]='emailPattern'
+                        class='form-control is-valid'
+                        id='email'
+                        name='email'
+                        required
+                        type='text'
+                      />
 
-              </div>
-            </div>
-            <div class="form-group row">
-              <label class="col-xl-3 col-form-label">Telephone Number</label>
-              <div class='col-xl-6'>
-                <label for='telnumber'></label
-                ><input
-                #telnumber='ngModel'
-                [(ngModel)]='model.telnumber'
-                [ngClass]="{ 'is-invalid': telnumber.invalid }"
-                class='form-control is-valid'
-                id='telnumber'
-                name='telnumber'
-                required
-                type='text'
-              />
-                <div
-                  *ngIf='telnumber.invalid && telnumber.touched'
-                  class='validation-error'
-                >
-                  telnumber is required
-                </div>
-                <div *ngIf='telnumber.valid' class='valid-feedback'>
-                  Looks good!
-                </div>
-              </div>
-            </div>
-            <div class="form-group row">
-              <label class="col-xl-3 col-form-label" for="email">Email</label>
-              <div class='col-xl-6'>
-                <label for='email'></label
-                >
-                <input
-                  #email='ngModel'
-                  [(ngModel)]='model.email'
-                  [ngClass]="{ 'is-invalid': email.invalid }"
-                  [pattern]='emailPattern'
-                  class='form-control is-valid'
-                  id='email'
-                  name='email'
-                  required
-                  type='text'
-                />
+                      <div
+                        *ngIf='email.invalid && email.touched'
+                        class='validation-error'
+                      >
+                        Email is required
+                      </div>
+                      <div *ngIf='email.valid' class='valid-feedback'>
+                        Looks good!
+                      </div>
+                    </div>
+                  </div>
+                  <div class='form-group row'>
+                    <label class='col-xl-3 col-form-label'>Active</label>
+                    <div class='d-flex align-items-center mb-3'>
+                      <div class='checkbox checkbox-css checkbox-inline'>
+                        <input
+                          #active='ngModel'
+                          [(ngModel)]='model.active'
+                          checked='checked'
+                          id='active'
+                          name='active'
+                          type='checkbox'
+                        />
+                        <label for='active'>Active</label>
+                      </div>
+                    </div>
+                  </div>
 
-                <div
-                  *ngIf='email.invalid && email.touched'
-                  class='validation-error'
-                >
-                  Email is required
-                </div>
-                <div *ngIf='email.valid' class='valid-feedback'>
-                  Looks good!
-                </div>
+                  <div class='form-group row'>
+                    <label class='col-xl-3 col-form-label'></label>
+                    <div class='col-xl-6'>
+                      <button
+                        [disabled]='
+                          !newGuarantorForm.valid || !newGuarantorForm.dirty
+                        '
+                        class='btn btn-sm btn-outline-primary'
+                        id='guarantorsubmit'
+                        type='submit'
+                      >
+                        Submit
+                      </button>
+                      <button
+                        (click)='reset()'
+                        class='btn btn-sm btn-outline-danger'
+                        id='reset'
+                        type='button'
+                      >
+                        Reset
+                      </button>
+                    </div>
+                  </div>
+                </form>
               </div>
             </div>
-            <div class="form-group row">
-              <label class="col-xl-3 col-form-label">Active</label>
-              <div class='d-flex align-items-center mb-3'>
-
-                <div class='checkbox checkbox-css checkbox-inline'>
-                  <input
-                    #active='ngModel'
-                    [(ngModel)]='model.active'
-                    checked='checked'
-                    id='active'
-                    name='active'
-                    type='checkbox'
-                  />
-                  <label for='active'>Active</label>
-                </div>
-              </div>
-            </div>
-
-            <div class="form-group row">
-              <label class="col-xl-3 col-form-label"></label>
-              <div class='col-xl-6'>
-                <button
-                  [disabled]='
-                    !newGuarantorForm.valid || !newGuarantorForm.dirty
-                  '
-                  class='btn btn-sm btn-outline-primary'
-                  id='guarantorsubmit'
-                  type='submit'
-                >
-                  Submit
-                </button>
-                <button
-                  (click)='reset()'
-                  class='btn btn-sm btn-outline-danger'
-                  id='reset'
-                  type='button'
-                >
-                  Reset
-                </button>
-              </div>
-            </div>
-            </form>
-          </div>
-        </div>
-        <!-- END card-->
-      </ng-template>
-    </li>
+            <!-- END card-->
+          </ng-template>
+        </li>
       </ul>
       <div [ngbNavOutlet]='nav' class='ml-4'></div>
-
-
     </div>
   </div>
 </app-panel>

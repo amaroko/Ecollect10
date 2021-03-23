@@ -7,7 +7,7 @@ import { environment } from '../../../../environments/environment';
 import {
   FileItem,
   FileUploader,
-  ParsedResponseHeaders
+  ParsedResponseHeaders,
 } from '@swimlane/ng2-file-upload';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ToasterConfig, ToasterService } from 'angular2-toaster';
@@ -15,6 +15,8 @@ import { license } from '../../../../../env';
 import { HttpClient } from '@angular/common/http';
 import { Howl } from 'howler';
 import * as introJs from 'intro.js/intro.js';
+import * as moment from 'moment';
+import { NgxSmartModalService } from 'ngx-smart-modal';
 
 const URL = environment.filesapi;
 const apiUrl = environment.letters_api;
@@ -22,9 +24,10 @@ const apiUrl = environment.letters_api;
 @Component({
   selector: 'app-demandletters',
   templateUrl: './demandletters.component.html',
-  styleUrls: ['./demandletters.component.css']
+  styleUrls: ['./demandletters.component.css'],
 })
 export class DemandlettersComponent implements OnInit {
+  url: any;
   introJS = introJs();
   accnumber: string;
   demandid: string;
@@ -65,27 +68,48 @@ export class DemandlettersComponent implements OnInit {
     'Day90',
     'Day40',
     'Day30',
-    'prelistingremedial'
+    'prelistingremedial',
   ];
   natid: any;
   public uploader: FileUploader = new FileUploader({ url: URL });
   public hasBaseDropZoneOver = false;
   public hasAnotherDropZoneOver = false;
-
   public config: ToasterConfig = new ToasterConfig({
-    showCloseButton: true,
+    showCloseButton: { warning: true, error: false, success: true },
     tapToDismiss: false,
+    preventDuplicates: true,
+    newestOnTop: true,
+    timeout: 0,
     positionClass: 'toast-top-right',
-    animation: 'fade'
+    animation: 'flyLeft',
+    limit: ,
+    // closeHtml: '<button class="btn btn-danger">Close</button>'
   });
   loader = true;
+  // }
+  private modalDialog: any;
+
+  // DemandletternSteps(): void {
+  //   this.introJS
+  //     .addHints()
+  //     .showHints();
+  // }
+  //
+  // DemandletternSteps2(id): void {
+  //   this.introJS
+  //     .hideHint(id);
+  // }
+  // DemandletternSteps3(): void {
+  //   this.introJS
+  //     .hideHints();
 
   constructor(
     private route: ActivatedRoute,
     private ecolService: EcolService,
     private spinner: NgxSpinnerService,
     public toasterService: ToasterService,
-    private httpClient: HttpClient
+    private httpClient: HttpClient,
+    public ngxSmartModalService: NgxSmartModalService
   ) {
     //
     this.uploader.onBuildItemForm = (item, form) => {
@@ -121,7 +145,7 @@ export class DemandlettersComponent implements OnInit {
           telnumber: 'none',
           filepath: obj.files[i].path,
           filename: obj.files[i].originalname,
-          datesent: new Date(),
+          // datesent: new Date(),
           owner: this.username,
           byemail: false,
           byphysical: true,
@@ -181,21 +205,6 @@ export class DemandlettersComponent implements OnInit {
 
     return year + '-' + month + '-' + day;
   }
-
-  // DemandletternSteps(): void {
-  //   this.introJS
-  //     .addHints()
-  //     .showHints();
-  // }
-  //
-  // DemandletternSteps2(id): void {
-  //   this.introJS
-  //     .hideHint(id);
-  // }
-  // DemandletternSteps3(): void {
-  //   this.introJS
-  //     .hideHints();
-  // }
 
   Demand(): void {
     this.introJS
@@ -364,11 +373,17 @@ export class DemandlettersComponent implements OnInit {
 
   getteles(cust) {
     this.ecolService.getteles(cust).subscribe((data_teles) => {
+      this.loader = false;
       this.teles = data_teles;
       this.emails = data_teles;
       this.postcodes = data_teles;
       this.addresses = data_teles;
     });
+  }
+
+  openLetterReadyPreviewModal() {
+    // open modal
+    this.ngxSmartModalService.getModal('demandsending').open();
   }
 
   getaccount(accnumber) {
@@ -435,6 +450,7 @@ export class DemandlettersComponent implements OnInit {
   getdemandshistory(accnumber) {
     // console.log('getdemandshistory called ...');
     this.ecolService.getdemandshistory(accnumber).subscribe((data) => {
+      this.loader = false;
       this.demands = data;
       console.log(this.demands);
     });
@@ -535,7 +551,9 @@ export class DemandlettersComponent implements OnInit {
                   this.ecolService.generateLetter(this.bodyletter).subscribe(
                     (generateletterdata) => {
                       // sucess
+                      // modalDialog
                       if (generateletterdata.result === 'success') {
+                        this.url = generateletterdata.message;
                         swal.fire(
                           'Good!',
                           generateletterdata.message,
@@ -553,7 +571,8 @@ export class DemandlettersComponent implements OnInit {
                             telnumber: this.model.telnumber,
                             filepath: generateletterdata.message,
                             filename: generateletterdata.filename,
-                            datesent: new Date(),
+                            // datesent: moment(),
+                            // datesent: new Date(),,
                             owner: this.username,
                             byemail: 'N',
                             byphysical: 'Y',
@@ -816,7 +835,7 @@ export class DemandlettersComponent implements OnInit {
         telnumber: this.model.telnumber,
         filepath: uploaddata.message,
         filename: uploaddata.filename,
-        datesent: new Date(),
+        // datesent: new Date(),
         owner: this.username,
         byemail: this.model.sendemail,
         byphysical: this.model.sendphysical,
@@ -1067,7 +1086,7 @@ export class DemandlettersComponent implements OnInit {
             telnumber: this.model.telnumber,
             filepath: uploaddata.message,
             filename: uploaddata.filename,
-            datesent: new Date(),
+            // datesent: new Date(),
             owner: this.username,
             byemail: this.model.sendemail,
             byphysical: this.model.sendphysical,
@@ -1183,13 +1202,11 @@ export class DemandlettersComponent implements OnInit {
   }
 
   guarantorletter(body) {
-    this.ecolService.guarantorletters(body).subscribe((data) => {
-    });
+    this.ecolService.guarantorletters(body).subscribe((data) => {});
   }
 
   sms(body) {
-    this.ecolService.guarantorletters(body).subscribe((data) => {
-    });
+    this.ecolService.guarantorletters(body).subscribe((data) => {});
   }
 
   downloadDemand(filepath, filename) {
@@ -1213,8 +1230,7 @@ export class DemandlettersComponent implements OnInit {
         showCancelButton: true,
         confirmButtonText: 'Send Email',
         showLoaderOnConfirm: true,
-        preConfirm: (email) => {
-        },
+        preConfirm: (email) => {},
         allowOutsideClick: () => !swal.isLoading()
       })
       .then((result) => {

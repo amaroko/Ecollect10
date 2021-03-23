@@ -24,7 +24,7 @@
             width: calc(100% - 90px);
           }
 
-          & .visualmonthyear, {
+          & .visualmonthyear {
             height: 100%;
             font-size: rem(16px);
             font-weight: 600;
@@ -75,7 +75,6 @@
             padding: rem(7px) rem(10px);
             font-weight: 600;
             color: lighten($dark, 30%);
-
 
             & a {
               display: block;

@@ -8,7 +8,7 @@ describe('ZerobalanceComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ZerobalanceComponent]
+      declarations: [ZerobalanceComponent],
     }).compileComponents();
   }));
 

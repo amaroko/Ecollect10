@@ -1,18 +1,18 @@
 body {
   & .introjs-hint {
     & .introjs-hint-dot {
-      border-color: rgba($dark, .3);
+      border-color: rgba($dark, 0.3);
     }
 
     & .introjs-hint-pulse {
-      background-color: rgba($dark, .15);
-      border-color: rgba($dark, .15);
+      background-color: rgba($dark, 0.15);
+      border-color: rgba($dark, 0.15);
     }
 
     &:hover {
       & .introjs-hint-pulse {
-        border-color: rgba($dark, .3);
-        background-color: rgba($dark, .3);
+        border-color: rgba($dark, 0.3);
+        background-color: rgba($dark, 0.3);
       }
     }
   }
@@ -62,7 +62,7 @@ body {
 
   & .introjs-tooltip {
     @include border-radius($border-radius);
-    @include box-shadow(0 4px 16px rgba($black, .15));
+    @include box-shadow(0 4px 16px rgba($black, 0.15));
   }
 
   & .introjs-button {

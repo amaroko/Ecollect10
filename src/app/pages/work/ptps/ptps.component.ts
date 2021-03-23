@@ -5,7 +5,7 @@ import { AllModules } from '@ag-grid-enterprise/all-modules';
 @Component({
   selector: 'app-ptps',
   templateUrl: './ptps.component.html',
-  styleUrls: ['./ptps.component.css']
+  styleUrls: ['./ptps.component.css'],
 })
 export class PtpsComponent implements OnInit {
   public overlayLoadingTemplate;
@@ -35,7 +35,7 @@ export class PtpsComponent implements OnInit {
       {
         headerName: 'ACCNUMBER',
         field: 'ACCNUMBER',
-        cellRenderer: function(params) {
+        cellRenderer: function (params) {
           if (params.value !== undefined) {
             return '<a  href="#" target="_blank">' + params.value + '</a>';
           } else {
@@ -44,57 +44,57 @@ export class PtpsComponent implements OnInit {
         },
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: tre,
       },
       {
         headerName: 'STATUS',
         field: 'MET',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: true,
       },
       {
         headerName: 'CUST_NAME',
         field: 'CLIENT_NAME',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: tru,
       },
       {
         headerName: 'PTPAMOUNT',
         field: 'PTPAMOUNT',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: true,
       },
       {
         headerName: 'PTPDATE',
         field: 'PTPDATE',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: tru,
       },
       {
         headerName: 'ACTIONDATE',
         field: 'ACTIONDATE',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: true,
       },
       {
         headerName: 'PAYMETHOD',
         field: 'PAYMETHOD',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: tru,
       },
       {
         headerName: 'OWNER',
         field: 'OWNER',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
-      }
+        resizable: tru,
+      ,
     ];
     this.defaultColDef = {
       width: 120,
@@ -152,13 +152,13 @@ export class PtpsComponent implements OnInit {
     // tslint:disable-next-line:max-line-length
     window.open(
       environment.applink +
-      '/activitylog?accnumber=' +
-      this.model.ACCNUMBER +
-      '&custnumber=' +
-      this.model.CUSTNUMBER +
-      '&username=' +
-      this.currentUser.USERNAME +
-      '&sys=ptp',
+        '/activitylog?accnumber=' +
+        this.model.ACCNUMBER +
+        '&custnumber=' +
+        this.model.CUSTNUMBER +
+        '&username=' +
+        this.currentUser.USERNAME +
+        '&sys=ptp',
       '_blank'
     );
   }

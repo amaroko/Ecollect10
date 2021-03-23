@@ -31,40 +31,46 @@ var SmsComponent = /** @class */ (function () {
     };
     SmsComponent.prototype.SmsSteps = function () {
         this.introJS
-            .setOptions({
+          .setOptions({
             steps: [
-                {
-                    element: '#mobile',
-                    intro: 'This is where you select the mobile phone number of the customer. The ' +
-                        'numbers will be listed here'
-                },
-                {
-                    element: '#template',
-                    intro: 'Here you have to select the sms template according to the Status'
-                },
-                {
-                    element: '#smsmessage',
-                    intro: 'This is where you can view the selected message template. As well as edit the message if you feel so. ' +
-                        'Keep in much that you are limited to the amount of characters that you type'
-                },
-                {
-                    element: '#callback',
-                    intro: 'Here you can put the number to which the customer can call for enquiries. You can also leave it as default'
-                },
-                {
-                    element: '#sendsms',
-                    intro: 'Pressing this button will send the message to the selected customer phone number'
-                },
-                {
-                    element: '#historysms',
-                    intro: 'Here is where the history of sent sms can be viewed in a listed format'
-                }
+              {
+                element: '#mobile',
+                intro:
+                  'This is where you select the mobile phone number of the customer. The ' +
+                  'numbers will be listed here',
+              },
+              {
+                element: '#template',
+                intro:
+                  'Here you have to select the sms templateaccording to the Status',
+              },
+              {
+                element: '#smsmessage',
+                intro:
+                  'This is where you can view the selected message template. As well as edit the message if you feel so. ' +
+                  'Keep in much that you are limited to the amount of characters that you type',
+              },
+              {
+                element: '#callback',
+                intro:
+                  'Here you can put the number to which the customer can call for enquiries. You can also leave it as default',
+              },
+              {
+                element: '#sendsms',
+                intro:
+                  'Pressing this button will send the message to the selected customer phone number',
+              },
+              {
+                element: '#historysms',
+                intro:
+                  'Here is where the history of sent sms can be viewed in a listed format',
+              },
             ],
             hidePrev: true,
             hideNext: true,
-            showProgress: true
-        })
-            .start();
+            showProgress: true,
+          })
+          .start();
     };
     SmsComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -207,13 +213,13 @@ var SmsComponent = /** @class */ (function () {
         this.username = currentUser.username;
         this.ecolService.loader();
         var body = {
-            custnumber: this.custnumber,
-            accnumber: this.accnumber,
-            owner: this.username,
-            message: form.value.smsMessage + form.value.smsCallback,
-            arrears: this.account.totalarrears,
-            datesent: new Date(),
-            telnumber: form.value.smsNumber
+          custnumber: this.custnumber,
+          accnumber: this.accnumber,
+          owner: this.username,
+          message: form.value.smsMessage + form.value.smsCallback,
+          arrears: this.account.totalarrears,
+          datesent: new Date(),
+          telnumber: form.value.smsNumbe,
         };
         this.ecolService.postsms(body).subscribe(function (data) {
             swal.fire('Success!', 'sms sent', 'success');
@@ -228,26 +234,26 @@ var SmsComponent = /** @class */ (function () {
     SmsComponent.prototype.addActivity = function (sms) {
         var _this = this;
         var body = {
-            collectoraction: 'SMS',
-            party: '',
-            ptpamount: '',
-            ptp: '',
-            ptpdate: this.currentDate,
-            collectornote: sms,
-            reviewdate: moment(this.account.reviewdate).format('DD-MMM-YYYY'),
-            reason: this.account.excuse,
-            cmdstatus: this.account.cmdstatus,
-            route: this.account.routetostate,
-            paymode: '',
-            accountnumber: this.accnumber,
-            custnumber: this.custnumber,
-            arramount: this.account.totalarrears || 0,
-            oustamount: this.account.oustbalance || 0,
-            notesrc: 'sent sms',
-            noteimp: 'N',
-            rfdother: '',
-            owner: this.username,
-            product: this.account.section
+          collectoraction: 'SMS',
+          party: '',
+          ptpamount: '',
+          ptp: '',
+          ptpdate: this.currentDate,
+          collectornote: sms,
+          reviewdate: moment(this.account.reviewdate).format('DD-MMM-YYYY'),
+          reason: this.account.excuse,
+          cmdstatus: this.account.cmdstatus,
+          route: this.account.routetostate,
+          paymode: '',
+          accountnumber: this.accnumber,
+          custnumber: this.custnumber,
+          arramount: this.account.totalarrears || 0,
+          oustamount: this.account.oustbalance || 0,
+          notesrc: 'sent sms',
+          noteimp: 'N',
+          rfdother: '',
+          owner: this.username,
+          product: this.account.section,
         };
         // add action
         this.ecolService.postactivitylogs(body).subscribe(function (data) {
@@ -263,16 +269,21 @@ var SmsComponent = /** @class */ (function () {
             _this.dataService.pustNotesData(data[0].TOTAL);
         });
     };
-    SmsComponent = __decorate([
+    SmsComponent = __decorate(
+      [
         Component({
-            selector: 'app-sms',
-            templateUrl: './sms.component.html',
-            styleUrls: ['./sms.component.css']
+          selector: 'app-sms',
+          templateUrl: './sms.component.html',
+          styleUrls: ['./sms.component.css'],
         }),
-        __metadata("design:paramtypes", [ActivatedRoute,
-            EcolService,
-            DataService])
-    ], SmsComponent);
+        __metadata('design:paramtypes', [
+          ActivatedRoute,
+          EcolService,
+          DataService,
+        ]),
+      ],
+      SmsComponent
+    );
     return SmsComponent;
 }());
 export { SmsComponent };

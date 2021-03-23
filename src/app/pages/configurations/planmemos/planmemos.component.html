@@ -1,0 +1,187 @@
+<div class='content-heading'>
+  <div>
+    Plan-memos
+    <small>add memogroups to a plan</small>
+  </div>
+</div>
+<div class='container-fluid'>
+  <ngx-spinner
+    bdColor='rgba(51,51,51,0.8)'
+    color='#fff'
+    size='medium'
+    type='ball-spin-fade'
+  >
+    <p style='font-size: 20px; color: white'>Processing ...</p>
+  </ngx-spinner>
+  <div id='accordion'>
+    <div class='card'>
+      <div class='card-header'>
+        <a class='card-link' data-toggle='collapse' href='#collapseOne'>
+          Account plan
+        </a>
+      </div>
+      <div class='collapse show' data-parent='#accordion' id='collapseOne'>
+        <div class='card-body'>
+          <div class='row'>
+            <div class='col-xl-6'>
+              <div class='card card-primary'>
+                <div class='card-body'>
+                  <form
+                    #planmemoForm='ngForm'
+                    (ngSubmit)='addNew(planmemoForm.value)'
+                    *ngIf='new'
+                    class='form-horizontal'
+                  >
+                    <fieldset>
+                      <div class='form-group row mb'>
+                        <div class='col-md-12'>
+                          <label class='mt'>plan name</label>
+                          <ng-select
+                            #planid='ngModel'
+                            [(ngModel)]='model.planid'
+                            [ngClass]="{ 'is-invalid': planid.invalid }"
+                            id='planid'
+                            name='planid'
+                            placeholder='No plan selected'
+                            required
+                          >
+                            <ng-option
+                              *ngFor='let a of accplans'
+                              [value]='a.planid'
+                            >{{ a.plantitle }}</ng-option
+                            >
+                          </ng-select>
+
+                          <label class='mt'>Select Memo group(s) to add</label>
+                          <!--                          <ngx-select #memogroup="ngModel" (data)="value" (data)="refreshValue($event)" (selected)="selected($event)" [(ngModel)]="model.memogroup"-->
+                          <!--                                      [disabled]="disabled" [items]="items" [multiple]="true"-->
+                          <!--                                      id="memogroup" name="memogroup"-->
+                          <!--                                      placeholder="No memo selected">-->
+                          <!--                          </ngx-select>-->
+                        </div>
+                      </div>
+                    </fieldset>
+
+                    <!--<pre>{{model | json}}</pre>-->
+
+                    <p class='lead mt-3'></p>
+                    <div>
+                      <div class='clearfix'>
+                        <div class='float-left'>
+                          <button
+                            [disabled]='
+                              !planmemoForm.valid || !planmemoForm.dirty
+                            '
+                            class='btn btn-outline-primary'
+                            type='submit'
+                          >
+                            <em class='fa fa-check fa-fw'></em>Add New
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                  <form
+                    #editForm='ngForm'
+                    (ngSubmit)='deleteSubmit(editForm.value)'
+                    *ngIf='!new'
+                    class='form-horizontal'
+                  >
+                    <p class='lead mt-3'></p>
+                    <div class='form-group'>
+                      <p>id</p>
+                      <label for='id'></label
+                      ><input
+                      #planid='ngModel'
+                      [(ngModel)]='model.id'
+                      [disabled]='true'
+                      class='form-control'
+                      id='id'
+                      name='id'
+                      required
+                    />
+                    </div>
+                    <p class='lead mt-3'></p>
+                    <div class='form-group'>
+                      <p>Plan id</p>
+                      <label for='planids'></label
+                      ><input
+                      #planid='ngModel'
+                      [(ngModel)]='model.planid'
+                      [disabled]='true'
+                      class='form-control'
+                      id='planids'
+                      name='planids'
+                      required
+                    />
+                    </div>
+                    <p class='my-2'></p>
+                    <div class='form-group'>
+                      <p>MemoGroup</p>
+                      <label for='memogroup'></label
+                      ><input
+                      #memogroup='ngModel'
+                      [(ngModel)]='model.memogroup'
+                      [disabled]='true'
+                      class='form-control'
+                      id='memogroup'
+                      name='memogroup'
+                    />
+                    </div>
+
+                    <div class='float-left'>
+                      <button
+                        class='btn btn-outline-danger'
+                        type='submit'
+                        type='submit'
+                      >
+                        <em class='fa fa-trash fa-fw'></em>Delete
+                      </button>
+                    </div>
+                    <div class='float-left'>
+                      <button
+                        (click)='shownew()'
+                        class='btn btn-outline-success'
+                      >
+                        <em class='fa fa-check fa-fw'></em>Cancel
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class='col-xl-6'>
+              <div class='col-xl-12'>
+                <h4 class='page-header'>
+                  <small>Search, sorting, filter ...</small>
+                </h4>
+                <div class='row'>
+                  <div class='col-xl-4 col-lg-6'>
+                    <label>
+                      <input
+                        (keyup)='onQuickFilterChanged($event)'
+                        class='mb form-control'
+                        placeholder='Filter...'
+                        type='text'
+                      />
+                    </label>
+                  </div>
+                </div>
+                <ag-grid-angular
+                  #agGrid
+                  (gridReady)='gridReady($event)'
+                  (rowClicked)='onRowClicked($event)'
+                  [gridOptions]='gridOptions'
+                  [rowData]='rowData1'
+                  class='ag-angle'
+                  style='width: 100%; height: 400px'
+                >
+                </ag-grid-angular>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

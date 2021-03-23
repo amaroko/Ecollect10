@@ -8,7 +8,7 @@ describe('PermissionsensorComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [PermissionsensorComponent]
+      declarations: [PermissionsensorComponent],
     }).compileComponents();
   });
 

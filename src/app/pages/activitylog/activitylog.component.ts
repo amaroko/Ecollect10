@@ -9,7 +9,7 @@ const URL = environment.valor;
 @Component({
   selector: 'app-activitylog',
   templateUrl: './activitylog.component.html',
-  styleUrls: ['./activitylog.component.css']
+  styleUrls: ['./activitylog.component.css'],
 })
 export class ActivitylogComponent implements OnInit {
   lat = 40.7143528;
@@ -51,7 +51,7 @@ export class ActivitylogComponent implements OnInit {
     aboutTab: false,
     photoTab: false,
     videoTab: false,
-    friendTab: false
+    friendTab: fals,
   };
 
   constructor(

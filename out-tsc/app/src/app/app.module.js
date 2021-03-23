@@ -15,7 +15,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { TopMenuComponent } from './components/top-menu/top-menu.component';
 import { FooterComponent } from './components/footer/footer.component';
-// Component Module
+// Component Modules
 // import { AgmCoreModule } from '@agm/core';
 import { FullCalendarModule } from '@fullcalendar/angular';
 import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
@@ -32,7 +32,7 @@ import 'd3';
 // import 'nvd3';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
-import { PERFECT_SCROLLBAR_CONFIG, PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
+import { PERFECT_SCROLLBAR_CONFIG, PerfectScrollbarModule, } from 'ngx-perfect-scrollbar';
 // Pages
 import { LayoutComponent } from './pages/layout/layout.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -41,10 +41,19 @@ import { CommonModule } from '@angular/common';
 import { filter, map } from 'rxjs/operators';
 import { ActivitylogComponent } from './pages/activitylog/activitylog.component';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
-import { RolesensorComponent } from './pages/rolesensor/rolesensor.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NgxPrettyDateModule } from 'ngx-pretty-date';
+import { MomentModule } from 'ngx-moment';
+import { PdfJsViewerModule } from 'ng2-pdfjs-viewer';
+import { BnNgIdleService } from 'bn-ng-idle';
+import { NgxSmartModalModule } from 'ngx-smart-modal';
+import { NgxSelectModule } from 'ngx-select-ex';
+import { NgxDocViewerModule } from 'ngx-doc-viewer';
+import { ToasterModule, ToasterService } from 'angular2-toaster';
+import { NgMarqueeModule } from 'ng-marquee';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 var DEFAULT_PERFECT_SCROLLBAR_CONFIG = {
-    suppressScrollX: true
+    suppressScrollX: tru,
 };
 var AppModule = /** @class */ (function () {
     function AppModule(router, titleService, routee) {
@@ -86,20 +95,28 @@ var AppModule = /** @class */ (function () {
                 LayoutComponent,
                 LoginComponent,
                 ActivitylogComponent,
-                RolesensorComponent
+                RolesensorComponen,
             ],
             imports: [
                 AppRoutingModule,
                 FaviconModule,
+                NgxDocViewerModule,
+                ToasterModule.forRoot(),
                 // AgmCoreModule.forRoot({
                 //   apiKey: 'AIzaSyC5gJ5x8Yw7qP_DqvNq3IdZi2WUSiDjskk',
                 // }),
                 BrowserAnimationsModule,
+                NgMarqueeModule,
+                Ng2SearchPipeModule,
                 BrowserModule,
+                NgxSelectModule,
+                NgxPrettyDateModule,
+                MomentModule,
+                PdfJsViewerModule,
                 NgxSkeletonLoaderModule.forRoot(),
                 CalendarModule.forRoot({
                     provide: DateAdapter,
-                    useFactory: adapterFactory
+                    useFactory: adapterFactory,
                 }),
                 CountdownModule,
                 // LoadingBarHttpClientModule,
@@ -120,23 +137,27 @@ var AppModule = /** @class */ (function () {
                 SweetAlert2Module.forRoot(),
                 FontAwesomeModule,
                 TagInputModule,
-                TrendModule
+                TrendModule,
+                NgxSmartModalModule,
+                TooltipModul,
             ],
             providers: [
+                BnNgIdleService,
+                ToasterService,
                 Title,
                 {
                     provide: PERFECT_SCROLLBAR_CONFIG,
-                    useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
+                    useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG,
                 },
                 {
                     provide: FAVICON_CONFIG,
                     useValue: {
                         color: '#fff',
-                        bgColor: '#ff0000' // favicon notification background color
-                    }
-                }
+                        bgColor: '#ff0000',
+                    },
+                },
             ],
-            bootstrap: [AppComponent]
+            bootstrap: [AppComponent],
         }),
         __metadata("design:paramtypes", [Router,
             Title,

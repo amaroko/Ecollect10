@@ -17,7 +17,7 @@
       border: 1px solid $border-color;
 
       @include border-radius(rem(46px));
-      @include transition(all .2s linear);
+      @include transition(all 0.2s linear);
     }
 
     &:after {
@@ -30,8 +30,8 @@
       background: $white;
 
       @include border-radius(rem(24px));
-      @include box-shadow(0 1px 3px rgba($black, .15));
-      @include transition(all .2s linear);
+      @include box-shadow(0 1px 3px rgba($black, 0.15));
+      @include transition(all 0.2s linear);
       @if $enable-rtl {
         left: auto;
         right: rem(2px);

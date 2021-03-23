@@ -4,6 +4,127 @@
 <!--It causes shaking effect on some devices so i've disabled it-->
 
 <!-- ngx-loading-bar begin #page-container -->
+<ngx-smart-modal
+  #myModal
+  [backdrop]='true'
+  [closable]='false'
+  [dismissable]='false'
+  [escapable]='false'
+  identifier='lockModal'
+>
+  <div class='card b0'>
+    <div class='card-body'>
+      <div style='text-align: center !important'>
+        <img
+          alt='App Logo'
+          class='img-fluid'
+          src='assets/img/logo/logo.png'
+          style='
+            max-width: 80% !important;
+            height: 80px !important;
+            margin-top: 6px !important;
+            border-radius: 50%;
+          '
+        />
+      </div>
+      <p class='text-center'>Please login to unlock your screen.</p>
+      <form
+        (submit)='submitFormm($event, vallForm.value)'
+        [formGroup]='vallForm'
+        name='vallForm'
+        novalidate=''
+        role='form'
+      >
+        <div class='form-group'>
+          <div class='input-group with-focus'>
+            <input
+              class='form-control border-right-0'
+              formControlName='username'
+              id='username'
+              name='username'
+              placeholder='username'
+              type='text'
+            />
+            <div class='input-group-append'>
+              <span
+                class='input-group-text text-muted bg-transparent border-left-0'
+              >
+                <em class='fa fa-user'></em>
+              </span>
+            </div>
+          </div>
+          <div
+            *ngIf="
+              vallForm.controls['username'].hasError('required') &&
+              (vallForm.controls['username'].dirty ||
+                vallForm.controls['username'].touched)
+            "
+            class='text-danger'
+          >
+            Username is required
+          </div>
+        </div>
+        <div class='form-group'>
+          <div class='input-group with-focus'>
+            <input
+              class='form-control border-right-0'
+              formControlName='password'
+              id='password'
+              name='password'
+              placeholder='password'
+              type='password'
+            />
+            <div class='input-group-append'>
+              <span
+                class='input-group-text text-muted bg-transparent border-left-0'
+              >
+                <em class='fa fa-lock'></em>
+              </span>
+            </div>
+          </div>
+          <div
+            *ngIf="
+              vallForm.controls['password'].hasError('required') &&
+              (vallForm.controls['password'].dirty ||
+                vallForm.controls['password'].touched)
+            "
+            class='text-danger'
+          >
+            Password is required
+          </div>
+        </div>
+        <div class='d-flex'>
+          <div class='ml-auto'>
+            <button
+              [disabled]='!vallForm.valid'
+              class='btn btn-sm btn-primary'
+              type='submit'
+            >
+              Unlock
+            </button>
+          </div>
+        </div>
+        <div *ngIf='loading' class='loader'></div>
+        <div *ngIf='error' class='alert alert-danger fade show'>
+          <span class='close' data-dismiss='alert'>×</span>
+          <strong>{{ error }}</strong>
+        </div>
+
+        <div class='m-t-20 m-b-40 p-b-40 text-inverse'>
+          Not <b>{{ username }}</b
+        >? Click
+          <a
+            (click)='newsession()'
+            class='text-success'
+            tooltip='Start New Session'
+          >here</a
+          >
+          to start New Session.
+        </div>
+      </form>
+    </div>
+  </div>
+</ngx-smart-modal>
 <div
   [ngClass]="{
     'has-scroll': pageHasScroll,
@@ -15,7 +136,5 @@
   id='page-container'
 >
   <router-outlet></router-outlet>
-
-  <footer *ngIf='pageSettings.pageWithFooter'></footer>
 </div>
 <!-- end #page-container -->

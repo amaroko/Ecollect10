@@ -5,7 +5,7 @@ var currentUser = JSON.parse(localStorage.getItem('currentUser'));
 var Home = {
     icon: 'fa fa-th-large',
     title: 'Home',
-    url: '/home'
+    url: '/home',
 };
 var Schedules = {
     icon: 'fas fa-bell',
@@ -14,12 +14,12 @@ var Schedules = {
     submenu: [
         {
             title: 'New Reminder',
-            url: '/reminders/newreminders'
+            url: '/reminders/newreminders,
         },
         {
             title: 'All Reminders',
-            url: '/reminders/allreminders'
-        }
+            url: '/reminders/allreminders,,
+        },
     ]
 };
 var Guarantors = {

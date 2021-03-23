@@ -5,11 +5,10 @@ import { AllremindersComponent } from './allreminders/allreminders.component';
 import { NewremindersComponent } from './newreminders/newreminders.component';
 import { RouterModule } from '@angular/router';
 import { AgGridModule } from '@ag-grid-community/angular';
-import { PanelModule } from '../../components/panel/panel.module';
 var routes = [
     { path: '', redirectTo: 'allreminders' },
     { path: 'allreminders', component: AllremindersComponent },
-    { path: 'newreminders', component: NewremindersComponent }
+    { path: 'newreminders', component: NewremindersComponent },
 ];
 var RemindersModule = /** @class */ (function () {
     function RemindersModule() {
@@ -21,9 +20,9 @@ var RemindersModule = /** @class */ (function () {
                 CommonModule,
                 AgGridModule.withComponents([]),
                 RouterModule.forChild(routes),
-                PanelModule
+                PanelModul,
             ],
-            exports: [RouterModule]
+            exports: [RouterModule,]
         })
     ], RemindersModule);
     return RemindersModule;

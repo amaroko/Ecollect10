@@ -6,6 +6,16 @@
 >
   <p style='font-size: 20px; color: white'>Sending demand notice ...</p>
 </ngx-spinner>
+<ngx-smart-modal
+  #myModal
+  [backdrop]='true'
+  [closable]='true'
+  [dismissable]='false'
+  [escapable]='true'
+  identifier='demandsending'
+>
+  <toaster-container [toasterconfig]='config'></toaster-container>
+</ngx-smart-modal>
 <app-panel>
   <div>
     <toaster-container [toasterconfig]='config'></toaster-container>
@@ -20,8 +30,10 @@
                 <div class='card-body'>
                   <form autocomplete='off' class='form-horizontal'>
                     <div class='form-group row m-b-15'>
-
-                      <label *ngIf='!loader' class='col-form-label col-md-1' for='sdemand'
+                      <label
+                        *ngIf='!loader'
+                        class='col-form-label col-md-1'
+                        for='sdemand'
                       >Demand</label
                       >
 
@@ -30,13 +42,11 @@
                           *ngIf='loader'
                         ></ngx-skeleton-loader>
                         <select
-
                           #demand='ngModel'
                           [(ngModel)]='model.demand'
                           [hidden]='loader'
                           [ngClass]="{ 'is-invalid': demand.invalid }"
                           class='form-control is-valid'
-
                           id='sdemand'
                           name='demand'
                           required
@@ -52,7 +62,10 @@
                     </div>
 
                     <div class='form-group row m-b-15'>
-                      <label *ngIf='!loader' class='col-form-label col-md-1' for='accnumber'
+                      <label
+                        *ngIf='!loader'
+                        class='col-form-label col-md-1'
+                        for='accnumber'
                       >Accnumber</label
                       >
                       <div class='col-md-9'>
@@ -77,7 +90,10 @@
                     </div>
 
                     <div class='form-group row m-b-15'>
-                      <label *ngIf='!loader' class='col-form-label col-md-1' for='custnumber'
+                      <label
+                        *ngIf='!loader'
+                        class='col-form-label col-md-1'
+                        for='custnumber'
                       >Custnumber</label
                       >
                       <div class='col-md-9'>
@@ -102,7 +118,10 @@
                     </div>
 
                     <div class='form-group row m-b-15'>
-                      <label *ngIf='!loader' class='col-form-label col-md-1' for='addressline1'
+                      <label
+                        *ngIf='!loader'
+                        class='col-form-label col-md-1'
+                        for='addressline1'
                       >Address</label
                       >
                       <div class='col-md-9'>
@@ -133,7 +152,10 @@
                     </div>
 
                     <div class='form-group row m-b-15'>
-                      <label *ngIf='!loader' class='col-form-label col-md-1' for='postcode'
+                      <label
+                        *ngIf='!loader'
+                        class='col-form-label col-md-1'
+                        for='postcode'
                       >Postcode</label
                       >
                       <div class='col-md-9'>
@@ -164,7 +186,10 @@
                     </div>
 
                     <div class='form-group row m-b-15'>
-                      <label *ngIf='!loader' class='col-form-label col-md-1' for='emailaddress'
+                      <label
+                        *ngIf='!loader'
+                        class='col-form-label col-md-1'
+                        for='emailaddress'
                       >Email address</label
                       >
                       <div class='col-md-9'>
@@ -196,7 +221,10 @@
                     </div>
 
                     <div class='form-group row m-b-15'>
-                      <label *ngIf='!loader' class='col-form-label col-md-1' for='celnumber'
+                      <label
+                        *ngIf='!loader'
+                        class='col-form-label col-md-1'
+                        for='celnumber'
                       >Cellnumber</label
                       >
                       <div class='col-md-9'>
@@ -227,16 +255,19 @@
                     </div>
 
                     <div class='form-group row m-b-15'>
-                      <label *ngIf='!loader' class='col-form-label col-md-1' for='celnumber'
+                      <label
+                        *ngIf='!loader'
+                        class='col-form-label col-md-1'
+                        for='celnumber'
                       >Save to contacts</label
                       >
                       <div class='col-md-9'>
                         <ngx-skeleton-loader
                           *ngIf='loader'
                           [theme]="{
- 'border-radius': '5px',
- height: '50px'
-}"
+                            'border-radius': '5px',
+                            height: '50px'
+                          }"
                         ></ngx-skeleton-loader>
                         <button
                           (click)='savecontacts(model)'
@@ -259,17 +290,22 @@
                       </div>
                     </div>
 
-                    <div class="form-group row m-b-15">
-                      <label *ngIf='!loader' class='col-form-label col-md-1'>Preview</label>
+                    <div class='form-group row m-b-15'>
+                      <label *ngIf='!loader' class='col-form-label col-md-1'
+                      >Preview</label
+                      >
                       <div class='col-md-9'>
                         <ngx-skeleton-loader
                           *ngIf='loader'
                           [theme]="{
- 'border-radius': '5px',
- height: '50px'
-}"
+                            'border-radius': '5px',
+                            height: '50px'
+                          }"
                         ></ngx-skeleton-loader>
-                        <div *ngIf='!loader' class='checkbox checkbox-css checkbox-inline'>
+                        <div
+                          *ngIf='!loader'
+                          class='checkbox checkbox-css checkbox-inline'
+                        >
                           <input
                             [(ngModel)]='model.showlogo'
                             class='form-check-input'
@@ -343,9 +379,7 @@
                     </div>
 
                     <div class='form-group row m-b-10'>
-                      <ngx-skeleton-loader
-                        *ngIf='loader'
-                      ></ngx-skeleton-loader>
+                      <ngx-skeleton-loader *ngIf='loader'></ngx-skeleton-loader>
                       <label
                         class='col-md-2 col-form-label'
                         for='previewletter'
@@ -354,10 +388,10 @@
                         <ngx-skeleton-loader
                           *ngIf='loader'
                           [theme]="{
- 'border-radius': '5px',
- height: '50px',
- width: '25%'
-}"
+                            'border-radius': '5px',
+                            height: '50px',
+                            width: '25%'
+                          }"
                         ></ngx-skeleton-loader>
                         <button
                           (click)='openletter_choose(model)'
@@ -382,10 +416,10 @@
                 <ngx-skeleton-loader
                   *ngIf='loader'
                   [theme]="{
- 'border-radius': '5px',
- height: '50px',
- width:'25%'
-}"
+                    'border-radius': '5px',
+                    height: '50px',
+                    width: '25%'
+                  }"
                 ></ngx-skeleton-loader>
                 <div class='checkbox checkbox-css checkbox-inline'>
                   <input
@@ -397,7 +431,9 @@
                     name='sendemail'
                     type='checkbox'
                   />
-                  <label *ngIf='!loader' for='sendemailinput'>Send to email</label>
+                  <label *ngIf='!loader' for='sendemailinput'
+                  >Send to email</label
+                  >
                 </div>
 
                 <div class='checkbox checkbox-css checkbox-inline'>
@@ -410,7 +446,9 @@
                     name='sendpostal'
                     type='checkbox'
                   />
-                  <label *ngIf='!loader' for='sendpostal'>Send to post address</label>
+                  <label *ngIf='!loader' for='sendpostal'
+                  >Send to post address</label
+                  >
                 </div>
 
                 <div class='checkbox checkbox-css checkbox-inline'>
@@ -428,12 +466,10 @@
               </div>
             </div>
 
-            <div class="form-group row m-b-10">
-              <label class="col-xl-4 col-form-label"></label>
+            <div class='form-group row m-b-10'>
+              <label class='col-xl-4 col-form-label'></label>
               <div class='col-xl-4'>
-                <ngx-skeleton-loader
-                  *ngIf='loader'
-                ></ngx-skeleton-loader>
+                <ngx-skeleton-loader *ngIf='loader'></ngx-skeleton-loader>
                 <button
                   (click)='generate_choose()'
                   *ngIf='!loader'
@@ -473,7 +509,7 @@
               </div>
               <div class="row">
                 <div class="col-lg-3">
-                  <div class="card">
+                  <div class='card'>
                     <div class='card-body'>
                       <h4 class='page-header mt0'>Select files</h4>
                       <div
@@ -682,22 +718,23 @@
                   <tbody>
                   <tr *ngFor='let d of demands'>
                     <td>
-                      {{d.custnumber}}
+                      {{ d.custnumber }}
                     </td>
                     <td>
-                      {{d.customeremail}}
+                      {{ d.customeremail }}
                     </td>
                     <td>
-                      {{d.datesent | date: 'medium' }}
+                      <b>({{ d.datesent | amTimeAgo }})</b> at
+                      {{ d.datesent | date: 'medium' }}
                     </td>
                     <td>
-                      {{d.filename}}
+                      {{ d.filename }}
                     </td>
                     <td>
-                      {{d.owner}}
+                      {{ d.owner }}
                     </td>
                     <td>
-                      {{natid}}
+                      {{ natid }}
                     </td>
                     <td>
                       <button

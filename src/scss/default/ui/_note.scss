@@ -28,7 +28,6 @@
     & h6 {
       color: inherit;
     }
-
   }
 
   &.note-with-right-icon {
@@ -38,7 +37,6 @@
 
   @each $color, $value in $theme-colors {
     &.note-#{$color} {
-
       @if $color == 'primary' {
         background: lighten($blue, 10%);
         color: darken($blue, 30%);

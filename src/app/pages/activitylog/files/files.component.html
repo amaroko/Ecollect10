@@ -2,11 +2,284 @@
   <div class='row'>
     <!-- begin nav-tabs -->
     <div class='col-xl-12'>
-
       <ul #nav='ngbNav' class='nav-pills' ngbNav>
+        <li ngbNavItem='Upload Files'>
+          <a ngbNavLink>Upload files</a>
+          <ng-template ngbNavContent>
+            <div class='panel-body'>
+              <!--      <button (click)="UploadedFilesSteps2()" class="btn btn-primary">-->
+              <!--        SHOW ME STEPS-->
+              <!--      </button>-->
+              <!-- START card-->
+
+              <div
+                class='collapse show'
+                data-parent='#accordion'
+                id='collapseupload'
+              >
+                <div class='panel-body'>
+                  <div class='row' style='padding-top: 20px'>
+                    <div class='col-xl-2 col-md-3'>Document Type</div>
+                    <div class='col-md-9'>
+                      <div class='col-md-12'>
+                        <label for='userdesctype'></label
+                        ><select
+                        #userdesctype='ngModel'
+                        (change)='changeCity($event)'
+                        [ngClass]="{ 'is-invalid': userdesctype.invalid }"
+                        [ngModel]='model.userdesctype'
+                        class='form-control is-valid'
+                        id='userdesctype'
+                        name='userdesctype'
+                        required
+                        type='text'
+                      >
+                        <option
+                          *ngFor='let f of filetype'
+                          [ngValue]='f.filetype'
+                        >
+                          {{ f.filetype }}
+                        </option>
+                      </select>
+                        <div *ngIf='userdesctype.valid' class='valid-feedback'>
+                          Looks good!
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class='row' style='padding-top: 20px'>
+                    <div class='col-xl-2 col-md-3'>File Description</div>
+                    <div class='col-md-9'>
+                      <div class='col-md-12'>
+                        <label for='filedesc'></label
+                        ><textarea
+                        #filedesc='ngModel'
+                        [(ngModel)]='model.filedesc'
+                        [ngClass]="{ 'is-invalid': filedesc.invalid }"
+                        class='form-control is-valid'
+                        id='filedesc'
+                        name='filedesc'
+                        required
+                        rows='2'
+                      ></textarea>
+                        <div *ngIf='filedesc.valid' class='valid-feedback'>
+                          Looks good!
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class='row'>
+                    <div class='col-lg-3'>
+                      <div class='panel'>
+                        <div class='panel-body'>
+                          <h4 class='page-header mt0'>Select files</h4>
+                          <!--                    <div-->
+                          <!--                      (fileOver)='fileOverBase($event)'-->
+                          <!--                      [ngClass]="{ 'nv-file-over': hasBaseDropZoneOver }"-->
+                          <!--                      [uploader]='uploader'-->
+                          <!--                      class='box-placeholder my-drop-zone'-->
+                          <!--                      id='drop'-->
+                          <!--                      ng2FileDrop-->
+                          <!--                    >-->
+                          <!--                      Drop files here-->
+                          <!--                    </div>-->
+                          <p class='text-bold'>Upload options</p>
+                          <label class='file-upload' for='file1'>
+                            <h2
+                              class='btn btn-secondary btn-block'
+                              id='selmultiple'
+                            >
+                              Select Multiple
+                            </h2>
+                            <input
+                              [uploader]='uploader'
+                              class='badge-success'
+                              id='file1'
+                              multiple
+                              ng2FileSelect
+                              type='file'
+                            />
+                          </label>
+                          <label class='file-upload' for='file2'>
+                            <h2
+                              class='btn btn-secondary btn-sm btn-block'
+                              id='single'
+                            >
+                              Select Single
+                            </h2>
+                            <input
+                              [uploader]='uploader'
+                              class='badge-danger'
+                              id='file2'
+                              ng2FileSelect
+                              type='file'
+                            />
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class='col-lg-9'
+                      id='progress'
+                      style='margin-bottom: 40px'
+                    >
+                      <div class='panel'>
+                        <div class='panel-body'>
+                          <p
+                            *ngIf='uploader?.queue?.length'
+                            class='float-right badge badge-info'
+                          >
+                            Queue length: {{ uploader?.queue?.length }}
+                          </p>
+                          <h4 class='page-header mt0'>Upload queue</h4>
+                          <table class='table'>
+                            <thead>
+                            <tr>
+                              <th width='50%'>Name</th>
+                              <th>Size</th>
+                              <th>Progress</th>
+                              <th>Status</th>
+                              <th>Actions</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr *ngFor='let item of uploader.queue'>
+                              <td>
+                                <strong>{{ item?.file?.name }}</strong>
+                              </td>
+                              <td nowrap>
+                                {{
+                                item?.file?.size / 1024 / 1024
+                                  | number: '.2'
+                                }}
+                                MB
+                              </td>
+                              <td>
+                                <div
+                                  class='progress'
+                                  style='margin-bottom: 0'
+                                >
+                                  <div
+                                    [ngStyle]="{ width: item.progress + '%' }"
+                                    class='progress-bar'
+                                    role='progressbar'
+                                  ></div>
+                                </div>
+                              </td>
+                              <td class='text-center'>
+                                  <span *ngIf='item.isSuccess'
+                                  ><i class='glyphicon glyphicon-ok'></i
+                                  ></span>
+                                <span *ngIf='item.isCancel'
+                                ><i
+                                  class='glyphicon glyphicon-ban-circle'
+                                ></i
+                                ></span>
+                                <span *ngIf='item.isError'
+                                ><i class='glyphicon glyphicon-remove'></i
+                                ></span>
+                              </td>
+                              <td nowrap>
+                                <button
+                                  (click)='item.upload()'
+                                  [disabled]='
+                                      item.isReady ||
+                                      item.isUploading ||
+                                      item.isSuccess ||
+                                      userdesctype.invalid ||
+                                      filedesc.invalid
+                                    '
+                                  class='btn btn-info btn-xs'
+                                  type='button'
+                                >
+                                    <span
+                                      class='fa icon-cloud-upload mr'
+                                    ></span>
+                                  Upload
+                                </button>
+                                <button
+                                  (click)='item.cancel()'
+                                  [disabled]='!item.isUploading'
+                                  class='btn btn-warning btn-xs'
+                                  type='button'
+                                >
+                                  <span class='icon-close mr'></span> Cancel
+                                </button>
+                                <button
+                                  (click)='item.remove()'
+                                  class='btn btn-danger btn-xs'
+                                  type='button'
+                                >
+                                  <span class='icon-trash mr'></span> Remove
+                                </button>
+                              </td>
+                            </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                      <div class='panel'>
+                        <div class='panel-body'>
+                          <div>
+                            <div>
+                              Queue progress:
+                              <div class='progress'>
+                                <div
+                                  [ngStyle]="{ width: uploader.progress + '%' }"
+                                  class='progress-bar'
+                                  role='progressbar'
+                                ></div>
+                              </div>
+                            </div>
+                            <button
+                              (click)='uploader.uploadAll()'
+                              [disabled]='
+                                !uploader.getNotUploadedItems().length ||
+                                userdesctype.invalid ||
+                                filedesc.invalid
+                              '
+                              class='btn btn-info btn-s'
+                              type='button'
+                            >
+                              <span class='fa icon-cloud-upload mr'></span>
+                              Upload all
+                            </button>
+                            <button
+                              (click)='uploader.cancelAll()'
+                              [disabled]='!uploader.isUploading'
+                              class='btn btn-warning btn-s'
+                              type='button'
+                            >
+                              <span class='icon-close mr'></span> Cancel all
+                            </button>
+                            <button
+                              (click)='uploader.clearQueue()'
+                              [disabled]='!uploader.queue.length'
+                              class='btn btn-danger btn-s'
+                              type='button'
+                            >
+                              <span class='icon-trash mr'></span> Remove all
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- END card-->
+          </ng-template>
+        </li>
         <!--  tab starts-->
         <li ngbNavItem='Uploaded files'>
-          <a ngbNavLink>Uploaded files&nbsp;&nbsp;&nbsp;<span class='badge badge-danger'> {{ files?.length }}</span></a>
+          <a ngbNavLink
+          >Uploaded files&nbsp;&nbsp;&nbsp;<span class='badge badge-danger'>
+              {{ files?.length }}</span
+          ></a
+          >
           <ng-template ngbNavContent>
             <!--      <button (click)="UploadedFilesSteps()" class="btn btn-primary">-->
             <!--        SHOW ME STEPS-->
@@ -22,291 +295,60 @@
                     <th>File Size</th>
                     <th>Description</th>
                     <th>Owner</th>
-              <th>Date Uploaded</th>
-              <th class='text-center'>Download</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr *ngFor='let d of files | paginate: { itemsPerPage: 10, currentPage: fp }'>
-              <td>{{ d.custnumber }}</td>
-              <td>{{ d.filename }}</td>
-              <td>{{ d.filesize / 1024 / 1024 | number:'.2'   }} MB</td>
-              <td>{{ d.docdesc }}</td>
-              <td>{{ d.colofficer }}</td>
-              <td>{{ d.stagedate | date: 'medium' }}</td>
-              <td>
-                <div *ngIf='loading' class='progress progress-sm rounded-corner m-b-5'>
-                  <div class='progress-bar progress-bar-striped progress-bar-animated rounded-corner'
-                       style='width: 100%;'>
-                    loading
-                  </div>
-                </div>
-                <button
-                  (click)='downloadFile(d.destpath, d.filename) '
-                  *ngIf='!loading'
-                  class='btn btn-outline-success btn-sm'
-                >
-                  <i class='fa fa-download'></i>
-                </button>
-              </td>
-            </tr>
-            </tbody>
-          </table>
-          <!--        end of table responsible-->
-                <pagination-controls (pageChange)='fp = $event'></pagination-controls>
-          <!--        start of no data table-->
-        </div>
-      </div>
-    </ng-template>
-  </li>
-  <li ngbNavItem='Upload Files'>
-    <a ngbNavLink>Upload files</a>
-    <ng-template ngbNavContent>
-      <div class='panel-body'>
-        <!--      <button (click)="UploadedFilesSteps2()" class="btn btn-primary">-->
-        <!--        SHOW ME STEPS-->
-        <!--      </button>-->
-        <!-- START card-->
-
-
-        <div class='collapse show' data-parent='#accordion' id='collapseupload'>
-          <div class='panel-body'>
-            <div class='row' style='padding-top: 20px'>
-              <div class='col-xl-2 col-md-3'>Document Type</div>
-              <div class='col-md-9'>
-                <div class='col-md-12'>
-
-                  <label for='userdesctype'></label
-                  ><select
-                  #userdesctype='ngModel'
-                  (change)='changeCity($event)'
-                  [ngClass]="{ 'is-invalid': userdesctype.invalid }"
-                  [ngModel]='model.userdesctype'
-                  class='form-control is-valid'
-                  id='userdesctype'
-                  name='userdesctype'
-                  required
-                  type='text'
-                >
-
-                  <option *ngFor='let f of filetype' [ngValue]='f.filetype'>
-                    {{ f.filetype }}
-                  </option>
-                </select>
-                  <div *ngIf='userdesctype.valid' class='valid-feedback'>
-                    Looks good!
-                  </div>
-                </div>
-              </div>
-            </div>
-
-
-            <div class='row' style='padding-top: 20px'>
-              <div class='col-xl-2 col-md-3'>File Description</div>
-              <div class='col-md-9'>
-                <div class='col-md-12'>
-
-                  <label for='filedesc'></label
-                  ><textarea
-                  #filedesc='ngModel'
-                  [(ngModel)]='model.filedesc'
-                  [ngClass]="{ 'is-invalid': filedesc.invalid }"
-                  class='form-control is-valid'
-                  id='filedesc'
-                  name='filedesc'
-                  required
-                  rows='2'
-                ></textarea>
-                  <div *ngIf='filedesc.valid' class='valid-feedback'>
-                    Looks good!
-                  </div>
-                </div>
-              </div>
-            </div>
-
-
-            <div class='row'>
-              <div class='col-lg-3'>
-                <div class='panel'>
-                  <div class='panel-body'>
-                    <h4 class='page-header mt0'>Select files</h4>
-                    <!--                    <div-->
-                    <!--                      (fileOver)='fileOverBase($event)'-->
-                    <!--                      [ngClass]="{ 'nv-file-over': hasBaseDropZoneOver }"-->
-                    <!--                      [uploader]='uploader'-->
-                    <!--                      class='box-placeholder my-drop-zone'-->
-                    <!--                      id='drop'-->
-                    <!--                      ng2FileDrop-->
-                    <!--                    >-->
-                    <!--                      Drop files here-->
-                    <!--                    </div>-->
-                    <p class='text-bold'>Upload options</p>
-                    <label class='file-upload' for='file1'>
-                      <h2
-                        class='btn btn-secondary btn-block'
-                        id='selmultiple'
+                    <th>Date Uploaded</th>
+                    <th class='text-center'>Download</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr
+                    *ngFor='
+                        let d of files
+                          | paginate: { itemsPerPage: 10, currentPage: fp }
+                      '
+                  >
+                    <td>{{ d.custnumber }}</td>
+                    <td>{{ d.filename }}</td>
+                    <td>{{ d.filesize / 1024 / 1024 | number: '.2' }} MB</td>
+                    <td>{{ d.docdesc }}</td>
+                    <td>{{ d.colofficer }}</td>
+                    <td>
+                      <b>({{ d.stagedate | amTimeAgo }})</b> at
+                      {{ d.stagedate | date: 'medium' }}
+                    </td>
+                    <td>
+                      <div
+                        *ngIf='loading'
+                        class='progress progress-sm rounded-corner m-b-5'
                       >
-                        Select Multiple
-                      </h2>
-                      <input
-                        class='badge-success'
-                        [uploader]='uploader'
-                        id='file1'
-                        multiple
-                        ng2FileSelect
-                        type='file'
-                      />
-                    </label>
-                    <label class='file-upload' for='file2'>
-                      <h2 class='btn btn-secondary btn-sm btn-block' id='single'>
-                        Select Single
-                      </h2>
-                      <input
-                        class='badge-danger'
-                        [uploader]='uploader'
-                        id='file2'
-                        ng2FileSelect
-                        type='file'
-                      />
-                    </label>
-                  </div>
-                </div>
-              </div>
-              <div class='col-lg-9' id='progress' style='margin-bottom: 40px'>
-                <div class='panel'>
-                  <div class='panel-body'>
-                    <p
-                      *ngIf='uploader?.queue?.length'
-                      class='float-right badge badge-info'
-                    >
-                      Queue length: {{ uploader?.queue?.length }}
-                    </p>
-                    <h4 class='page-header mt0'>Upload queue</h4>
-                    <table class='table'>
-                      <thead>
-                      <tr>
-                        <th width='50%'>Name</th>
-                        <th>Size</th>
-                        <th>Progress</th>
-                        <th>Status</th>
-                        <th>Actions</th>
-                      </tr>
-                      </thead>
-                      <tbody>
-                      <tr *ngFor='let item of uploader.queue'>
-                        <td>
-                          <strong>{{ item?.file?.name }}</strong>
-                        </td>
-                        <td nowrap>
-                          {{ item?.file?.size / 1024 / 1024 | number: '.2' }}
-                          MB
-                        </td>
-                        <td>
-                          <div class='progress' style='margin-bottom: 0'>
-                            <div
-                              [ngStyle]="{ width: item.progress + '%' }"
-                              class='progress-bar'
-                              role='progressbar'
-                            ></div>
-                          </div>
-                        </td>
-                        <td class='text-center'>
-                            <span *ngIf='item.isSuccess'
-                            ><i class='glyphicon glyphicon-ok'></i
-                            ></span>
-                          <span *ngIf='item.isCancel'
-                          ><i class='glyphicon glyphicon-ban-circle'></i
-                          ></span>
-                          <span *ngIf='item.isError'
-                          ><i class='glyphicon glyphicon-remove'></i
-                          ></span>
-                        </td>
-                        <td nowrap>
-                          <button
-                            (click)='item.upload()'
-                            [disabled]='
-                                item.isReady ||
-                                item.isUploading ||
-                                item.isSuccess || userdesctype.invalid || filedesc.invalid
-                              '
-                            class='btn btn-info btn-xs'
-                            type='button'
-                          >
-                            <span class='fa icon-cloud-upload mr'></span>
-                            Upload
-                          </button>
-                          <button
-                            (click)='item.cancel()'
-                            [disabled]='!item.isUploading'
-                            class='btn btn-warning btn-xs'
-                            type='button'
-                          >
-                            <span class='icon-close mr'></span> Cancel
-                          </button>
-                          <button
-                            (click)='item.remove()'
-                            class='btn btn-danger btn-xs'
-                            type='button'
-                          >
-                            <span class='icon-trash mr'></span> Remove
-                          </button>
-                        </td>
-                      </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-                <div class='panel'>
-                  <div class='panel-body'>
-                    <div>
-                      <div>
-                        Queue progress:
-                        <div class='progress'>
-                          <div
-                            [ngStyle]="{ width: uploader.progress + '%' }"
-                            class='progress-bar'
-                            role='progressbar'
-                          ></div>
+                        <div
+                          class='progress-bar progress-bar-striped progress-bar-animated rounded-corner'
+                          style='width: 100%'
+                        >
+                          loading
                         </div>
                       </div>
                       <button
-                        (click)='uploader.uploadAll()'
-                        [disabled]='!uploader.getNotUploadedItems().length || userdesctype.invalid || filedesc.invalid'
-                        class='btn btn-info btn-s'
-                        type='button'
+                        (click)='downloadFile(d.destpath, d.filename)'
+                        *ngIf='!loading'
+                        class='btn btn-outline-success btn-sm'
                       >
-                        <span class='fa icon-cloud-upload mr'></span> Upload all
+                        <i class='fa fa-download'></i>
                       </button>
-                      <button
-                        (click)='uploader.cancelAll()'
-                        [disabled]='!uploader.isUploading'
-                        class='btn btn-warning btn-s'
-                        type='button'
-                      >
-                        <span class='icon-close mr'></span> Cancel all
-                      </button>
-                      <button
-                        (click)='uploader.clearQueue()'
-                        [disabled]='!uploader.queue.length'
-                        class='btn btn-danger btn-s'
-                        type='button'
-                      >
-                        <span class='icon-trash mr'></span> Remove all
-                      </button>
-                    </div>
-                  </div>
-                </div>
+                    </td>
+                  </tr>
+                  </tbody>
+                </table>
+                <!--        end of table responsible-->
+                <pagination-controls
+                  (pageChange)='fp = $event'
+                ></pagination-controls>
+                <!--        start of no data table-->
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-      <!-- END card-->
-    </ng-template>
-  </li>
+          </ng-template>
+        </li>
       </ul>
       <div [ngbNavOutlet]='nav' class='ml-4'></div>
-
     </div>
   </div>
 </app-panel>

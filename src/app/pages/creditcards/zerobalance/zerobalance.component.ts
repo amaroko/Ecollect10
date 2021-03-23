@@ -6,7 +6,7 @@ import { AllModules } from '@ag-grid-enterprise/all-modules';
 @Component({
   selector: 'app-zerobalance',
   templateUrl: './zerobalance.component.html',
-  styleUrls: ['./zerobalance.component.css']
+  styleUrls: ['./zerobalance.component.css'],
 })
 export class ZerobalanceComponent implements OnInit {
   public gridApi;
@@ -32,7 +32,7 @@ export class ZerobalanceComponent implements OnInit {
       {
         headerName: 'CARDACCT',
         field: 'CARDACCT',
-        cellRenderer: function(params) {
+        cellRenderer: function (params) {
           if (params.value !== undefined) {
             return '<a  href="#" target="_blank">' + params.value + '</a>';
           } else {
@@ -41,57 +41,57 @@ export class ZerobalanceComponent implements OnInit {
         },
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: tre,
       },
       {
         headerName: 'CARDNUMBER',
         field: 'CARDNUMBER',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: true,
       },
       {
         headerName: 'CARDNAME',
         field: 'CARDNAME',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: tru,
       },
       {
         headerName: 'DATEDISBURSED',
         field: 'DATEDISBURSED',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: true,
       },
       {
         headerName: 'LIMIT',
         field: 'LIMIT',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: tru,
       },
       {
         headerName: 'EXPPMNT',
         field: 'EXPPMNT',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: true,
       },
       {
         headerName: 'OUTBALANCE',
         field: 'OUTBALANCE',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: tru,
       },
       {
         headerName: 'CYCLE',
         field: 'CYCLE',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
-      }
+        resizable: tru,
+      ,
     ];
     this.defaultColDef = {
       width: 120,
@@ -152,13 +152,13 @@ export class ZerobalanceComponent implements OnInit {
     // tslint:disable-next-line:max-line-length
     window.open(
       environment.applink +
-      '/activitylog?accnumber=' +
-      this.model.CARDACCT +
-      '&custnumber=' +
-      this.model.CARDACCT +
-      '&username=' +
-      this.username +
-      '&sys=watchcc',
+        '/activitylog?accnumber=' +
+        this.model.CARDACCT +
+        '&custnumber=' +
+        this.model.CARDACCT +
+        '&username=' +
+        this.username +
+        '&sys=watchcc',
       '_blank'
     );
   }

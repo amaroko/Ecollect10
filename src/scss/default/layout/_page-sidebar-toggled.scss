@@ -21,11 +21,11 @@
       @if $enable-rtl {
         right: 0;
 
-        @include animation(sidebarSlideInRight .2s);
+        @include animation(sidebarSlideInRight 0.2s);
       } @else {
         left: 0;
 
-        @include animation(sidebarSlideInLeft .2s);
+        @include animation(sidebarSlideInLeft 0.2s);
       }
     }
 
@@ -40,12 +40,12 @@
           left: 0;
           right: auto;
 
-          @include animation(sidebarSlideInLeft .2s);
+          @include animation(sidebarSlideInLeft 0.2s);
         } @else {
           left: auto;
           right: 0;
 
-          @include animation(sidebarSlideInRight .2s);
+          @include animation(sidebarSlideInRight 0.2s);
         }
       }
 
@@ -56,12 +56,12 @@
             left: 0;
             right: auto;
 
-            @include animation(sidebarSlideInLeft .2s);
+            @include animation(sidebarSlideInLeft 0.2s);
           } @else {
             left: auto;
             right: 0;
 
-            @include animation(sidebarSlideInRight .2s);
+            @include animation(sidebarSlideInRight 0.2s);
           }
         }
       }
@@ -84,11 +84,11 @@
         @if $enable-rtl {
           right: 0;
 
-          @include animation(sidebarSlideInRight .2s);
+          @include animation(sidebarSlideInRight 0.2s);
         } @else {
           left: 0;
 
-          @include animation(sidebarSlideInLeft .2s);
+          @include animation(sidebarSlideInLeft 0.2s);
         }
       }
     }

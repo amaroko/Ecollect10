@@ -4,16 +4,17 @@ import {
   Input,
   OnDestroy,
   Output,
-  Renderer2
+  Renderer2,
 } from '@angular/core';
 import pageSettings from '../../config/page-settings';
 import swal from 'sweetalert2';
 import { Router } from '@angular/router';
 import { EcolService } from '../../services/ecol.service';
+import { NgxSmartModalService } from 'ngx-smart-modal';
 
 @Component({
   selector: 'app-header',
-  templateUrl: './header.component.html'
+  templateUrl: './header.component.html',
 })
 export class HeaderComponent implements OnDestroy {
   @Input() pageSidebarTwo;
@@ -30,6 +31,7 @@ export class HeaderComponent implements OnDestroy {
 
   constructor(
     private renderer: Renderer2,
+    public ngxsmartModalService: NgxSmartModalService,
     public ecolService: EcolService,
     public router: Router
   ) {
@@ -47,6 +49,11 @@ export class HeaderComponent implements OnDestroy {
       firstname: this.userdata.FIRSTNAME,
       surname: this.userdata.SURNAME
     };
+  }
+
+  opentimeoutModal() {
+    this.ngxsmartModalService.getModal('lockModal').open();
+    localStorage.setItem('timeout', '1');
   }
 
   getGreetings() {
@@ -103,7 +110,7 @@ export class HeaderComponent implements OnDestroy {
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, Logout!'
+        confirmButtonText: 'Yes, Logout!',
       })
       .then((result) => {
         if (result.value) {

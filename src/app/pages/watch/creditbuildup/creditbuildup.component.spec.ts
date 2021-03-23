@@ -8,7 +8,7 @@ describe('CreditbuildupComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [CreditbuildupComponent]
+      declarations: [CreditbuildupComponent],
     }).compileComponents();
   }));
 

@@ -10,7 +10,7 @@ const URL = environment.valor;
 @Component({
   selector: 'app-editnote',
   templateUrl: './editnote.component.html',
-  styleUrls: ['./editnote.component.css']
+  styleUrls: ['./editnote.component.css'],
 })
 export class EditnoteComponent implements OnInit {
   custnumber: string;
@@ -86,12 +86,12 @@ export class EditnoteComponent implements OnInit {
       accnumber: this.model.accnumber,
       notesrc: this.note.notesrc,
       noteimp: this.note.noteimp,
-      notedate: this.note.notedate
+      notedate: this.note.notedat,
     };
     this.ecolService.updatenote(body).subscribe(
       (data) => {
         console.log(body);
-        swal.fire('Successful!', 'Note updated!', 'success').then(function() {
+        swal.fire('Successful!', 'Note updated!', 'success').then(function () {
           window.history.back();
         });
         //
@@ -123,7 +123,7 @@ export class EditnoteComponent implements OnInit {
       custnumber: [{ value: this.note.custnumber, disabled: true }],
       notemade: [{ value: this.note.notemade, disabled: false }],
       notedate: [{ value: this.note.notedate, disabled: true }],
-      owner: [{ value: this.note.owner, disabled: true }]
+      owner: [{ value: this.note.owner, disabled: true }],
     });
   }
 

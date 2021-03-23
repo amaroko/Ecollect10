@@ -131,7 +131,7 @@
       font-size: rem(14px);
       border: 5px solid $dark;
 
-      @include transition(border-color .2s linear);
+      @include transition(border-color 0.2s linear);
       @include border-radius($border-radius-lg * 4);
     }
   }

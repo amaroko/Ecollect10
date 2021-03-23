@@ -17,7 +17,7 @@
     color: $dark;
     font-size: rem(200px);
     line-height: 1;
-    text-shadow: 10px 10px 0px rgba($dark, .2);
+    text-shadow: 10px 10px 0px rgba($dark, 0.2);
     padding: rem(30px);
 
     @include display-flex();
@@ -48,7 +48,7 @@
 
   & .error-desc {
     font-size: rem(12px);
-    color: rgba($white, .6);
+    color: rgba($white, 0.6);
     letter-spacing: 0.5px;
   }
 }

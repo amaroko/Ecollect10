@@ -1,0 +1,138 @@
+<app-panel title='Documents & Manuals'>
+  <div class='container-fluid'>
+    <div class='col-4 col-xl-12'>
+      <div class='col-md-4'>
+        <table class='table'>
+          <thead>
+          <tr>
+            <th>Document/Manual</th>
+            <th>Button</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>Admin manual.</td>
+            <td>
+              <a
+                (click)="
+                    open('ecollect_adminmanual.pdf', 'E-Collect Admin Manual')
+                  "
+                class='btn btn-sm btn-success'
+              >Download</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>Data dictionary.</td>
+            <td>
+              <a
+                (click)="
+                    open('ecollect_datadictionary.pdf', 'Data dictionary')
+                  "
+                class='btn btn-sm btn-primary'
+              >Download</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>E-Collect user guide</td>
+            <td>
+              <a
+                (click)="
+                    open('ecollect_userguide.pdf', 'E-Collect User guide')
+                  "
+                class='btn btn-sm btn-primary'
+              >Download</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>Collection call plan scripts</td>
+            <td>
+              <a
+                (click)="
+                    open(
+                      'Collection_scripts.pdf',
+                      'Collection call plan scripts'
+                    )
+                  "
+                class='btn btn-sm btn-success'
+              >Download</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>Collection customer visit</td>
+            <td>
+              <a
+                (click)="
+                    open('customer_visits.pdf', 'Collection customer visit')
+                  "
+                class='btn btn-sm btn-primary'
+              >Download</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>Decision tree</td>
+            <td>
+              <a
+                (click)="open('decision_tree.pdf', 'Decision tree')"
+                class='btn btn-sm btn-success'
+              >Download</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>Account plans</td>
+            <td>
+              <a
+                (click)="open('account_plans.pdf', 'Account plans')"
+                class='btn btn-sm btn-primary'
+              >Download</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>Loan process flow Collections Process Flow-MSME</td>
+            <td>
+              <a
+                (click)="
+                    open(
+                      'loan_process_flow.pdf',
+                      'Loan process flow Collections Process Flow-MSME'
+                    )
+                  "
+                class='btn btn-sm btn-success'
+              >Download</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>PBO handover guideline</td>
+            <td>
+              <a
+                (click)="
+                    open('pbo_handover_guideline.pdf', 'PBO handover guideline')
+                  "
+                class='btn btn-sm btn-primary'
+              >Download</a
+              >
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <ng-marquee speed='drowsy'>
+    <mark
+    >We gather and analyse information on our visitors' routine use of this
+      website. We use this information to monitor which areas of the website are
+      most frequently visited, to assist us to continue developing a value-added
+      service. This information is pooled so individual personal information,
+      behaviour or patterns cannot be identified.
+    </mark
+    >
+  </ng-marquee>
+</app-panel>

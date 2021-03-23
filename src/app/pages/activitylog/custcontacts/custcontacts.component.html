@@ -1,9 +1,7 @@
-
-
 <div>
   <h2>Customer contacts</h2>
   <div id="accordion">
-    <div class="card">
+    <div class='card'>
       <div class='collapse show' data-parent='#accordion' id='collapseupload'>
         <button (click)='ContactsSteps()' class='btn btn-primary'>
           SHOW ME STEPS
@@ -12,7 +10,6 @@
 
         <div class='card-body'>
           <div class='row'>
-
             <div class='col-lg-6'>
               <app-panel>
                 <form
@@ -23,8 +20,9 @@
                   novalidate
                 >
                   <div class='form-group row'>
-
-                    <label class='col-xl-4 col-form-label'>Contact Number</label>
+                    <label class='col-xl-4 col-form-label'
+                    >Contact Number</label
+                    >
 
                     <div class='col-xl-8'>
                       <label for='contactnumber'></label
@@ -47,83 +45,82 @@
                     >Please match pattern e.g 0724000000</span
                     >
                   </div>
-                <div class="form-group row">
-                  <label class="col-xl-4 col-form-label">Email</label>
-                  <div class='col-xl-8'>
-                    <label for='email'></label
-                    ><input
-                    #email='ngModel'
-                    [(ngModel)]='model.email'
-                    [ngClass]="{ 'is-invalid': email.invalid }"
-                    [pattern]='emailPattern'
-                    class='form-control is-valid'
-                    id='email'
-                    name='email'
-                    required
-                    type='text'
-                  />
-                    <div *ngIf='email.valid' class='valid-feedback'>
-                      Looks good!
+                  <div class='form-group row'>
+                    <label class='col-xl-4 col-form-label'>Email</label>
+                    <div class='col-xl-8'>
+                      <label for='email'></label
+                      ><input
+                      #email='ngModel'
+                      [(ngModel)]='model.email'
+                      [ngClass]="{ 'is-invalid': email.invalid }"
+                      [pattern]='emailPattern'
+                      class='form-control is-valid'
+                      id='email'
+                      name='email'
+                      required
+                      type='text'
+                    />
+                      <div *ngIf='email.valid' class='valid-feedback'>
+                        Looks good!
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="form-group row">
-                  <label class="col-xl-4 col-form-label">Active</label>
-                  <div class='col-xl-8'>
-                    <label for='active'></label
-                    ><select
-                    #active='ngModel'
-                    [(ngModel)]='model.active'
-                    [ngClass]="{ 'is-invalid': active.invalid }"
-                    class='form-control is-valid'
-                    id='active'
-                    name='active'
-                    required
-                    type='text'
-                  >
-                    <option>Yes</option>
-                    <option>No</option>
-                  </select>
-                    <div *ngIf='active.valid' class='valid-feedback'>
-                      Looks good!
+                  <div class='form-group row'>
+                    <label class='col-xl-4 col-form-label'>Active</label>
+                    <div class='col-xl-8'>
+                      <label for='active'></label
+                      ><select
+                      #active='ngModel'
+                      [(ngModel)]='model.active'
+                      [ngClass]="{ 'is-invalid': active.invalid }"
+                      class='form-control is-valid'
+                      id='active'
+                      name='active'
+                      required
+                      type='text'
+                    >
+                      <option>Yes</option>
+                      <option>No</option>
+                    </select>
+                      <div *ngIf='active.valid' class='valid-feedback'>
+                        Looks good!
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="form-group row">
-                  <label class="col-xl-4 col-form-label"></label>
-                  <div class='col-xl-8'>
-                    <button
-                      *ngIf='!edit'
-                      [disabled]='!custcontactsform.valid'
-                      class='mb-1 mr-1 btn btn-sm btn-outline-info col-form-label'
-                      id='contactsubmit'
-                      type='submit'
-                    >
-                      Submit
-                    </button>
-                    <button
-                      (click)='updatecontact(model)'
-                      *ngIf='edit'
-                      [disabled]='custcontactsform.invalid'
-                      class='mb-1 mr-1 btn btn-sm btn-outline-warning col-form-label'
-                      type='button'
-                    >
-                      Update
-                    </button>
-                    <button
-                      (click)='cancel()'
-                      *ngIf='edit'
-                      class='mb-1 mr-1 btn btn-sm btn-outline-danger col-form-label'
-                      type='button'
-                    >
-                      Cancel
-                    </button>
+                  <div class='form-group row'>
+                    <label class='col-xl-4 col-form-label'></label>
+                    <div class='col-xl-8'>
+                      <button
+                        *ngIf='!edit'
+                        [disabled]='!custcontactsform.valid'
+                        class='mb-1 mr-1 btn btn-sm btn-outline-info col-form-label'
+                        id='contactsubmit'
+                        type='submit'
+                      >
+                        Submit
+                      </button>
+                      <button
+                        (click)='updatecontact(model)'
+                        *ngIf='edit'
+                        [disabled]='custcontactsform.invalid'
+                        class='mb-1 mr-1 btn btn-sm btn-outline-warning col-form-label'
+                        type='button'
+                      >
+                        Update
+                      </button>
+                      <button
+                        (click)='cancel()'
+                        *ngIf='edit'
+                        class='mb-1 mr-1 btn btn-sm btn-outline-danger col-form-label'
+                        type='button'
+                      >
+                        Cancel
+                      </button>
+                    </div>
                   </div>
-                </div>
                 </form>
               </app-panel>
             </div>
-
 
             <div class='col-lg-6' id='contacttable' style='margin-bottom: 40px'>
               <app-panel>
@@ -158,7 +155,6 @@
                 </table>
               </app-panel>
             </div>
-
           </div>
         </div>
       </div>

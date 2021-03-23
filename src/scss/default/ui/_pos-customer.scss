@@ -106,7 +106,7 @@ $pos-sidebar-desktop-width: 360px;
           @include flex-direction-column();
           @include flex-justify-content(center);
           @include border-radius($border-radius-lg);
-          @include transition(color .2s linear);
+          @include transition(color 0.2s linear);
 
           & .fa {
             display: block;
@@ -114,7 +114,7 @@ $pos-sidebar-desktop-width: 360px;
             font-size: rem(20px);
             color: $gray-400;
 
-            @include transition(all .2s linear);
+            @include transition(all 0.2s linear);
           }
 
           &:hover {
@@ -191,7 +191,7 @@ $pos-sidebar-desktop-width: 360px;
       position: relative;
 
       @include border-radius($border-radius);
-      @include transition(all .2s linear);
+      @include transition(all 0.2s linear);
       @include display-flex();
       @include flex-direction-column();
 
@@ -204,7 +204,7 @@ $pos-sidebar-desktop-width: 360px;
         background-repeat: no-repeat;
         background-position: center;
         min-height: rem(180px);
-        @include transition(all .2s linear);
+        @include transition(all 0.2s linear);
       }
 
       & .text {
@@ -255,7 +255,7 @@ $pos-sidebar-desktop-width: 360px;
           right: 0;
           bottom: 0;
           min-height: rem(180px);
-          background: rgba($gray-700, .75);
+          background: rgba($gray-700, 0.75);
           color: $white;
           font-size: rem(24px);
 
@@ -512,7 +512,7 @@ $pos-sidebar-desktop-width: 360px;
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba($gray-200, .9);
+            background: rgba($gray-200, 0.9);
             font-size: $font-size-lg;
             font-weight: 600;
             z-index: 10;
@@ -536,7 +536,7 @@ $pos-sidebar-desktop-width: 360px;
 
       @include border-bottom-left-radius($border-radius-lg);
       @include border-bottom-right-radius($border-radius-lg);
-      @include box-shadow(0 -1px rgba($gray-800, .1));
+      @include box-shadow(0 -1px rgba($gray-800, 0.1));
 
       & .price {
         font-weight: 600;
@@ -675,9 +675,13 @@ $pos-sidebar-desktop-width: 360px;
                 min-height: rem(300px);
 
                 @if $enable-rtl {
-                  @include border-radius(0 $border-radius-lg $border-radius-lg 0);
+                  @include border-radius(
+                      0 $border-radius-lg $border-radius-lg 0
+                  );
                 } @else {
-                  @include border-radius($border-radius-lg 0 0 $border-radius-lg);
+                  @include border-radius(
+                      $border-radius-lg 0 0 $border-radius-lg
+                  );
                 }
               }
             }

@@ -9,9 +9,9 @@ import { AfterViewInit, Component, ViewChild } from '@angular/core';
     'noButton',
     'bodyClass',
     'footerClass',
-    'panelClass'
+    'panelClass',
   ],
-  templateUrl: './panel.component.html'
+  templateUrl: './panel.component.html',
 })
 export class PanelComponent implements AfterViewInit {
   @ViewChild('panelFooter', { static: false }) panelFooter;

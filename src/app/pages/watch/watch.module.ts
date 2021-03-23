@@ -8,17 +8,17 @@ import { PanelModule } from '../../components/panel/panel.module';
 const routes: Routes = [
   { path: '', redirectTo: 'nocredit' },
   { path: 'nocredit', component: NocreditComponent },
-  { path: 'creditbuildup', component: CreditbuildupComponent }
+  { path: 'creditbuildup', component: CreditbuildupComponent },
 ];
 
 @NgModule({
   imports: [
     AgGridModule.withComponents([]),
     RouterModule.forChild(routes),
-    PanelModule
+    PanelModul,
   ],
   declarations: [NocreditComponent, CreditbuildupComponent],
-  exports: [RouterModule]
+  exports: [RouterModule,
 })
 export class WatchModule {
 }

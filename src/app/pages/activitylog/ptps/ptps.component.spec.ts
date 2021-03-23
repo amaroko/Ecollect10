@@ -8,7 +8,7 @@ describe('PtpsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [PtpsComponent]
+      declarations: [PtpsComponent],
     }).compileComponents();
   });
 

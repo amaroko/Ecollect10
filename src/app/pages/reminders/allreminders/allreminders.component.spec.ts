@@ -8,7 +8,7 @@ describe('AllremindersComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [AllremindersComponent]
+      declarations: [AllremindersComponent],
     }).compileComponents();
   }));
 

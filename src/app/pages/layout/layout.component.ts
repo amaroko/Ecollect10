@@ -4,14 +4,13 @@ import pageSettings from '../../config/page-settings';
 @Component({
   selector: 'app-layout',
   templateUrl: './layout.component.html',
-  styleUrls: ['./layout.component.css']
+  styleUrls: ['./layout.component.css'],
 })
 export class LayoutComponent implements OnInit {
   pageSettings: any;
   pageHasScroll;
 
-  constructor() {
-  }
+  constructor() {}
 
   ngOnInit() {
     this.pageSettings = pageSettings;

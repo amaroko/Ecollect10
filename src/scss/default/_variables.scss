@@ -41,7 +41,7 @@ $pink: #fb5597 !default;
 $red: #ff5b57 !default;
 $silver: #b6c2c9 !default;
 $teal: #00acac !default;
-$white: #FFFFFF !default;
+$white: #ffffff !default;
 $yellow: #ffd900 !default;
 $inverse: $dark !default;
 $link-color: $blue !default;
@@ -92,7 +92,7 @@ $theme-colors: (
   'muted': $silver,
   'silver': $silver,
   'lime': $lime,
-  'aqua': $cyan
+  'aqua': $cyan,
 );
 $primary-color: 'teal' !default;
 $primary: map-get($colors, $primary-color) !default;
@@ -103,18 +103,15 @@ $warning: $orange !default;
   $primary: lighten($dark, 20%);
 }
 
-
 // 2.0 RTL Setting
 
 $enable-rtl: false !default;
-
 
 // 3.0 Component Color Setting
 
 $component-active-bg: $blue !default;
 $component-active-color: $white !default;
-$custom-control-indicator-checked-disabled-bg: rgba($blue, .5) !default;
-
+$custom-control-indicator-checked-disabled-bg: rgba($blue, 0.5) !default;
 
 // 4.0 Grid & Container Setting
 
@@ -126,17 +123,16 @@ $grid-breakpoints: (
   lg: 992px,
   xl: 1200px,
   xxl: 1660px,
-  xxxl: 1900px
+  xxxl: 1900px,
 );
 $container-max-widths: (
   sm: 540px,
   md: 750px,
   lg: 960px,
-  xl: 1170px
+  xl: 1170px,
 ) !default;
 $spacer: rem(16px) !default;
 $grid-gutter-width: 30px !default;
-
 
 // 5.0 Body Setting
 
@@ -144,7 +140,6 @@ $body-bg: $gray-300 !default;
 $body-color: lighten($black, 20%);
 $body-letter-spacing: 0 !default;
 $border-color: lighten($dark, 65%);
-
 
 // 6.0 App Component Setting
 
@@ -159,7 +154,6 @@ $sidebar-width: rem(220px) !default;
 $sidebar-minified-width: rem(60px) !default;
 $sidebar-wide-width: rem(250px) !default;
 $top-menu-height: rem(40px) !default;
-
 
 // 7.0 z-index Setting
 
@@ -177,7 +171,6 @@ $page-title-zindex: 1020 !default;
 $pace-loader-zindex: 1030 !default;
 $panel-expand-zindex: 1080 !default;
 
-
 // 8.0 Font Setting
 
 $font-family-base: 'Open Sans', sans-serif !default;
@@ -188,24 +181,20 @@ $line-height-base: 1.5 !default;
 $line-height-sm: 1.4 !default;
 $line-height-lg: 1.8 !default;
 
-
 // 9.0 Radius Setting
 
 $border-radius: 4px !default;
 $border-radius-lg: 6px !default;
 $border-radius-sm: 3px !default;
 
-
 // 10.0 Caret Setting
 
 $enable-caret: false !default;
-
 
 // 11.0 Heading / Paragraph Setting
 
 $headings-font-weight: 600 !default;
 $paragraph-margin-bottom: rem(15px) !default;
-
 
 // 12.0 Pagination Setting
 
@@ -218,13 +207,11 @@ $pagination-active-bg: $component-active-bg !default;
 $pagination-active-border-color: $component-active-bg !default;
 $pagination-focus-box-shadow: 0 !default;
 
-
 // 13.0 Button Setting
 
 $btn-focus-width: 0 !default;
 $btn-box-shadow: 0 !default;
 $btn-border-width: 1px !default;
-
 
 // 14.0 Form Component Setting
 
@@ -232,7 +219,6 @@ $form-component-active-bg: $blue;
 $form-component-active-color: $blue;
 $form-feedback-font-size: rem(11px) !default;
 $form-feedback-tooltip-font-size: rem(11px) !default;
-
 
 // 15.0 Input Setting
 
@@ -248,7 +234,6 @@ $input-border-color: $border-color !default;
 $input-group-addon-bg: $border-color !default;
 $input-group-addon-border-color: $border-color !default;
 
-
 // 16.0 Table Setting
 
 $table-cell-padding: rem(8px) !default;
@@ -259,33 +244,28 @@ $table-border-color: lighten($dark, 70%) !default;
 $table-component-active-bg: $blue !default;
 $table-component-active-color: $blue !default;
 
-
 // 17.0 Modal Setting
 
 $modal-header-padding-y: rem(15px) !default;
 $modal-header-padding-x: rem(15px) !default;
 
-
 // 18.0 List Group Setting
 
-$list-group-border-color: rgba($dark, .125) !default;
+$list-group-border-color: rgba($dark, 0.125) !default;
 $list-group-item-padding-y: rem(10px) !default;
 $list-group-item-padding-x: rem(15px) !default;
-
 
 // 19.0 Tabs Setting
 
 $nav-tabs-border-width: 0 !default;
 $nav-tabs-link-active-bg: $white !default;
 
-
 // 20.0 Alert Setting
 
-$alert-padding-y: .9375rem !default; // 15px
-$alert-padding-x: .9375rem !default; // 15px
+$alert-padding-y: 0.9375rem !default; // 15px
+$alert-padding-x: 0.9375rem !default; // 15px
 $alert-margin-bottom: 1.25rem !default; // 20px
 $alert-border-width: 0 !default;
-
 
 // 21.0 Card Setting
 
@@ -293,15 +273,13 @@ $card-spacer-y: rem(15px) !default;
 $card-spacer-x: rem(15px) !default;
 $card-img-overlay-padding: rem(15px) !default;
 $card-columns-gap: rem(15px) !default;
-$card-border-color: rgba($dark, .15) !default;
+$card-border-color: rgba($dark, 0.15) !default;
 $card-cap-bg: lighten($dark, 75%) !default;
-
 
 // 22.0 Dropown Setting
 
 $dropdown-border-width: 0 !default;
 $dropdown-font-size: $font-size-sm !default;
-
 
 // 23.0 Progress Setting
 

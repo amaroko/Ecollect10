@@ -1,0 +1,90 @@
+<app-panel title='List of dashboards'>
+  <div class='container-fluid'>
+    <div class='col-4 col-xl-12'>
+      <!-- begin row -->
+      <div class='row'>
+        <!-- begin col-3 -->
+        <div class='col-xl-3 col-md-6'>
+          <div class='widget widget-stats bg-blue'>
+            <div class='stats-icon'><i class='fa fa-desktop'></i></div>
+            <div class='stats-info'>
+              <h4>Book Portfolio dashboard</h4>
+              <p><i class='fas fa-arrow-alt-circle-right fa-rotate-90'></i></p>
+            </div>
+            <div class='stats-link'>
+              <a (click)='openactivityrpt()'
+              >View Detail <i class='fa fa-arrow-alt-circle-right'></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <!-- end col-3 -->
+        <!-- begin col-3 -->
+        <div class='col-xl-3 col-md-6'>
+          <div class='widget widget-stats bg-info'>
+            <div class='stats-icon'><i class='fa fa-link'></i></div>
+            <div class='stats-info'>
+              <h4>Collector activity dashboard</h4>
+              <p><i class='fas fa-arrow-alt-circle-right fa-rotate-90'></i></p>
+            </div>
+            <div class='stats-link'>
+              <a (click)='openactivityrpt()'
+              >View Detail <i class='fa fa-arrow-alt-circle-right'></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <!-- end col-3 -->
+        <!-- begin col-3 -->
+        <div class='col-xl-3 col-md-6'>
+          <div class='widget widget-stats bg-orange'>
+            <div class='stats-icon'><i class='fa fa-users'></i></div>
+            <div class='stats-info'>
+              <h4>Amount collected dashboard</h4>
+              <p><i class='fas fa-arrow-alt-circle-right fa-rotate-90'></i></p>
+            </div>
+            <div class='stats-link'>
+              <a (click)='openactivityrpt()'
+              >View Detail <i class='fa fa-arrow-alt-circle-right'></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <!-- end col-3 -->
+        <!-- begin col-3 -->
+        <div class='col-xl-3 col-md-6'>
+          <div class='widget widget-stats bg-red'>
+            <div class='stats-icon'><i class='fa fa-clock'></i></div>
+            <div class='stats-info'>
+              <h4>Regional dashboard</h4>
+              <p><i class='fas fa-arrow-alt-circle-right fa-rotate-90'></i></p>
+            </div>
+            <div class='stats-link'>
+              <a (click)='openactivityrpt()'
+              >View Detail <i class='fa fa-arrow-alt-circle-right'></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <!-- end col-3 -->
+        <!-- begin col-3 -->
+        <div class='col-xl-3 col-md-6'>
+          <div class='widget widget-stats bg-red'>
+            <div class='stats-icon'><i class='fa fa-clock'></i></div>
+            <div class='stats-info'>
+              <h4>System performance</h4>
+              <p><i class='fas fa-arrow-alt-circle-right fa-rotate-90'></i></p>
+            </div>
+            <div class='stats-link'>
+              <a (click)="onNavigate('systemdash')"
+              >View Detail <i class='fa fa-arrow-alt-circle-right'></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <!-- end col-3 -->
+      </div>
+      <!-- end row -->
+    </div>
+  </div>
+</app-panel>

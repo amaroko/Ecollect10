@@ -8,7 +8,7 @@ import { AllModules } from '@ag-grid-enterprise/all-modules';
 @Component({
   selector: 'app-myallocations',
   templateUrl: './myallocations.component.html',
-  styleUrls: ['./myallocations.component.css']
+  styleUrls: ['./myallocations.component.css'],
 })
 export class MyallocationsComponent implements OnInit {
   public gridOptions: GridOptions;
@@ -47,8 +47,8 @@ export class MyallocationsComponent implements OnInit {
         this.http
           .get(
             environment.api +
-            '/api/tqall/paged/myallocation?colofficer=' +
-            this.username
+              '/api/tqall/paged/myallocation?colofficer=' +
+              this.username
           )
           .subscribe((resp) => {
             console.log(typeof resp); // to check whether object or array
@@ -63,7 +63,7 @@ export class MyallocationsComponent implements OnInit {
       {
         headerName: 'ACCNUMBER',
         field: 'accnumber',
-        cellRenderer: function(params) {
+        cellRenderer: function (params) {
           if (params.value !== undefined) {
             return '<a  href="#" target="_blank">' + params.value + '</a>';
           } else {
@@ -72,28 +72,28 @@ export class MyallocationsComponent implements OnInit {
         },
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: true,
       },
       {
         headerName: 'CUSTNUMBER',
         field: 'custnumber',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: tru,
       },
       {
         headerName: 'CUSTNAME',
         field: 'client_name',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: true,
       },
       {
         headerName: 'DAYSINARREARS',
         field: 'daysinarr',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: tru,
       },
       {
         headerName: 'TOTALARREARS',
@@ -101,7 +101,7 @@ export class MyallocationsComponent implements OnInit {
         valueFormatter: this.currencyFormatter,
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: true,
       },
       {
         headerName: 'OUSTBALANCE',
@@ -109,43 +109,43 @@ export class MyallocationsComponent implements OnInit {
         valueFormatter: this.currencyFormatter,
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: tru,
       },
       {
         headerName: 'BUCKET',
         field: 'bucket',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: true,
       },
       {
         headerName: 'AROCODE',
         field: 'arocode',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: tru,
       },
       {
         headerName: 'RROCODE',
         field: 'rrocode',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: true,
       },
       {
         headerName: 'SECTION',
         field: 'section',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: tru,
       },
       {
         headerName: 'COLOFFICER',
         field: 'colofficer',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
-      }
+        resizable: tru,
+      ,
     ];
     this.sortingOrder = ['desc', 'asc', null];
     this.defaultColDef = {
@@ -172,7 +172,7 @@ export class MyallocationsComponent implements OnInit {
         { statusPanel: 'agFilteredRowCountComponent' },
         { statusPanel: 'agSelectedRowCountComponent' },
         { statusPanel: 'agAggregationComponent' }
-      ]
+      ],
     };
   }
 
@@ -197,13 +197,13 @@ export class MyallocationsComponent implements OnInit {
     // tslint:disable-next-line:max-line-length
     window.open(
       environment.applink +
-      '/activitylog?accnumber=' +
-      this.model.ACCNUMBER +
-      '&custnumber=' +
-      this.model.CUSTNUMBER +
-      '&username=' +
-      this.currentUser.USERNAME +
-      '&sys=collections',
+        '/activitylog?accnumber=' +
+        this.model.ACCNUMBER +
+        '&custnumber=' +
+        this.model.CUSTNUMBER +
+        '&username=' +
+        this.currentUser.USERNAME +
+        '&sys=collections',
       '_blank'
     );
   }

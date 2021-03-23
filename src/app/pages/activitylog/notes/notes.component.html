@@ -15,7 +15,10 @@
             (click)="showTab('collectornotes')"
             [ngClass]='{ active: tabs.collectornotes }'
             class='nav-link'
-          >COLLECTOR NOTES</a
+          >COLLECTOR NOTES
+            <span class='badge badge-danger float-right'>{{
+              collectornoteslength
+              }}</span></a
           >
         </li>
         <li class='nav-item'>
@@ -23,7 +26,10 @@
             (click)="showTab('Bulknotes')"
             [ngClass]='{ active: tabs.Bulknotes }'
             class='nav-link'
-          >BULK NOTES</a
+          >BULK NOTES
+            <span class='badge badge-danger float-right'>{{
+              bulknotelength
+              }}</span></a
           >
         </li>
         <li class='nav-item'>
@@ -31,7 +37,10 @@
             (click)="showTab('flaggednotes')"
             [ngClass]='{ active: tabs.flaggednotes }'
             class='nav-link'
-          >FLAGGED NOTES</a
+          >FLAGGED NOTES
+            <span class='badge badge-danger float-right'>{{
+              flaggedlength
+              }}</span></a
           >
         </li>
         <li class='nav-item'>
@@ -39,7 +48,9 @@
             (click)="showTab('allNotes')"
             [ngClass]='{ active: tabs.allNotes }'
             class='nav-link'
-          >ALL NOTES ON A GRID</a
+          >ALL NOTES ON A GRID<span class='label label-success'
+          >Search/Filter</span
+          ></a
           >
         </li>
       </ul>
@@ -171,7 +182,9 @@
                         'text-inverse': lightMode,
                         'text-white': darkMode
                       }"
-                  >{{ note.NOTEDATE | date: 'medium' }}</b
+                  >
+                    ({{ note.NOTEDATE | amTimeAgo }}) at
+                    {{ note.NOTEDATE | date: 'medium' }}</b
                   >
                 </div>
               </td>
@@ -198,7 +211,7 @@
       <!-- end #profile-post tab -->
 
       <!-- end #profile-post tab -->
-      <!-- begin #profile-about tab -->
+      <!-- begin #Bulknotes tab -->
       <div [ngClass]="{ 'active show': tabs.Bulknotes }" class="tab-pane fade">
         <!-- begin table -->
         <!-- begin widget-table -->
@@ -243,7 +256,9 @@
                         'text-inverse': lightMode,
                         'text-white': darkMode
                       }"
-                  >{{ note.notedate | date: 'medium' }}</b
+                  >
+                    ({{ note.notedate | amTimeAgo }}) at
+                    {{ note.notedate | date: 'medium' }}</b
                   >
                 </div>
               </td>

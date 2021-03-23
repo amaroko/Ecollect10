@@ -10,132 +10,129 @@ var ViewallComponent = /** @class */ (function () {
         this.model = {};
         this.modules = AllModules;
         this.columnDefs = [
-            {
-                field: 'LOANACCNUMBER',
-                cellRenderer: function (params) {
-                    if (params.value !== undefined) {
-                        return '<a  href="#" target="_blank">' + params.value + '</a>';
-                    }
-                    else {
-                        return '<img src="assets/img/user/loading.gif">';
-                    }
-                },
-                filter: 'agTextColumnFilter',
-                filterParams: { newRowsAction: 'keep' },
-                resizable: true
+          {
+            field: 'LOANACCNUMBER',
+            cellRenderer: function (params) {
+              if (params.value !== undefined) {
+                return '<a  href="#" target="_blank">' + params.value + '</a>';
+              } else {
+                return '<img src="assets/img/user/loading.gif">';
+              }
             },
-            {
-                field: 'CLIENTNAME',
-                filter: 'agTextColumnFilter',
-                filterParams: { newRowsAction: 'keep' },
-                resizable: true
+            filter: 'agTextColumnFilter',
+            filterParams: { newRowsAction: 'keep' },
+            resizable: true,
+          },
+          {
+            field: 'CLIENTNAME',
+            filter: 'agTextColumnFilter',
+            filterParams: { newRowsAction: 'keep' },
+            resizable: true,
+          },
+          {
+            field: 'IDNUMBER',
+            filter: 'agTextColumnFilter',
+            filterParams: { newRowsAction: 'keep' },
+            resizable: tru,
+          },
+          {
+            field: 'ARREARS_CATEGORY',
+            filter: 'agTextColumnFilter',
+            filterParams: { newRowsAction: 'keep' },
+            resizable: true,
+          },
+          {
+            field: 'LOAN_TYPE',
+            filter: 'agTextColumnFilter',
+            filterParams: { newRowsAction: 'keep' },
+            resizable: tru,
+          },
+          {
+            field: 'AROCODE',
+            filter: 'agTextColumnFilter',
+            filterParams: { newRowsAction: 'keep' },
+            resizable: true,
+          },
+          {
+            field: 'DISBURSALDATE',
+            filter: 'agTextColumnFilter',
+            filterParams: { newRowsAction: 'keep' },
+            resizable: tru,
+          },
+          {
+            field: 'AMOUNTDISBURSED',
+            cellRenderer: function (params) {
+              if (params.value !== undefined) {
+                return (Math.floor(params.value * 100) / 100)
+                  .toString()
+                  .replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
+              } else {
+                return '';
+              }
             },
-            {
-                field: 'IDNUMBER',
-                filter: 'agTextColumnFilter',
-                filterParams: { newRowsAction: 'keep' },
-                resizable: true
+            filter: 'agNumberColumnFilter',
+            filterParams: { newRowsAction: 'keep' },
+            aggFunc: 'sum',
+            resizable: tru,
+          },
+          {
+            field: 'REPAYMENTAMOUNT',
+            cellRenderer: function (params) {
+              if (params.value !== undefined) {
+                return (Math.floor(params.value * 100) / 100)
+                  .toString()
+                  .replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
+              } else {
+                return '';
+              }
             },
-            {
-                field: 'ARREARS_CATEGORY',
-                filter: 'agTextColumnFilter',
-                filterParams: { newRowsAction: 'keep' },
-                resizable: true
-            },
-            {
-                field: 'LOAN_TYPE',
-                filter: 'agTextColumnFilter',
-                filterParams: { newRowsAction: 'keep' },
-                resizable: true
-            },
-            {
-                field: 'AROCODE',
-                filter: 'agTextColumnFilter',
-                filterParams: { newRowsAction: 'keep' },
-                resizable: true
-            },
-            {
-                field: 'DISBURSALDATE',
-                filter: 'agTextColumnFilter',
-                filterParams: { newRowsAction: 'keep' },
-                resizable: true
-            },
-            {
-                field: 'AMOUNTDISBURSED',
-                cellRenderer: function (params) {
-                    if (params.value !== undefined) {
-                        return (Math.floor(params.value * 100) / 100)
-                            .toString()
-                            .replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
-                    }
-                    else {
-                        return '';
-                    }
-                },
-                filter: 'agNumberColumnFilter',
-                filterParams: { newRowsAction: 'keep' },
-                aggFunc: 'sum',
-                resizable: true
-            },
-            {
-                field: 'REPAYMENTAMOUNT',
-                cellRenderer: function (params) {
-                    if (params.value !== undefined) {
-                        return (Math.floor(params.value * 100) / 100)
-                            .toString()
-                            .replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
-                    }
-                    else {
-                        return '';
-                    }
-                },
-                filter: 'agNumberColumnFilter',
-                filterParams: { newRowsAction: 'keep' },
-                aggFunc: 'sum',
-                resizable: true
-            },
-            {
-                field: 'EMPLOYER',
-                filter: 'agTextColumnFilter',
-                filterParams: { newRowsAction: 'keep' },
-                resizable: true
-            },
-            {
-                field: 'LASTPAYMENTDATE',
-                filter: 'agTextColumnFilter',
-                filterParams: { newRowsAction: 'keep' },
-                resizable: true
-            },
-            {
-                field: 'DUEDATE',
-                filter: 'agTextColumnFilter',
-                filterParams: { newRowsAction: 'keep' },
-                resizable: true
-            },
-            {
-                field: 'LOANSTATUS',
-                filter: 'agTextColumnFilter',
-                filterParams: { newRowsAction: 'keep' },
-                resizable: true
-            },
-            {
-                field: 'ADDRESS',
-                filter: 'agTextColumnFilter',
-                filterParams: { newRowsAction: 'keep' },
-                resizable: true
-            },
-            {
-                field: 'PHONENUMBER',
-                filter: 'agTextColumnFilter',
-                filterParams: { newRowsAction: 'keep' },
-                resizable: true
-            }
+            filter: 'agNumberColumnFilter',
+            filterParams: { newRowsAction: 'keep' },
+            aggFunc: 'sum',
+            resizable: true,
+          },
+          {
+            field: 'EMPLOYER',
+            filter: 'agTextColumnFilter',
+            filterParams: { newRowsAction: 'keep' },
+            resizable: true,
+          },
+          {
+            field: 'LASTPAYMENTDATE',
+            filter: 'agTextColumnFilter',
+            filterParams: { newRowsAction: 'keep' },
+            resizable: tru,
+          },
+          {
+            field: 'DUEDATE',
+            filter: 'agTextColumnFilter',
+            filterParams: { newRowsAction: 'keep' },
+            resizable: true,
+          },
+          {
+            field: 'LOANSTATUS',
+            filter: 'agTextColumnFilter',
+            filterParams: { newRowsAction: 'keep' },
+            resizable: tru,
+          },
+          {
+            field: 'ADDRESS',
+            filter: 'agTextColumnFilter',
+            filterParams: { newRowsAction: 'keep' },
+            resizable: true,
+          },
+          {
+            field: 'PHONENUMBER',
+            filter: 'agTextColumnFilter',
+            filterParams: { newRowsAction: 'keep' },
+            resizable: true,
+          },
         ];
         this.defaultColDef = {
-            width: 120,
-            resizable: true,
-            sortable: true,
-            floatingFilter: true
+          width: 120,
+          resizable: true,
+          sortable: true,
+          floatingFilter: tue,
         };
         this.rowModelType = 'serverSide';
         this.cacheBlockSize = 50;
@@ -147,36 +144,39 @@ var ViewallComponent = /** @class */ (function () {
         var datasource = {
             getRows: function (params) {
                 fetch(environment.nodeapi + '/gridmcoopcashviewall/viewall', {
-                    method: 'post',
-                    body: JSON.stringify(params.request),
-                    headers: { 'Content-Type': 'application/json; charset=utf-8' }
+                  method: 'post',
+                  body: JSON.stringify(params.request),
+                  headers: {
+                    'Content-Type': 'application/json; charset=utf-8',
+                  },
                 })
-                    .then(function (httpResponse) { return httpResponse.json(); })
-                    .then(function (response) {
+                  .then(function (httpResponse) {
+                    return httpResponse.json();
+                  })
+                  .then(function (response) {
                     params.successCallback(response.rows, response.lastRow);
-                })
-                    .catch(function (error) {
+                  })
+                  .catch(function (error) {
                     console.error(error);
                     params.failCallback();
-                });
+                  });
             },
         };
         params.api.setServerSideDatasource(datasource);
     };
     ViewallComponent.prototype.ServerSideDatasource = function (server) {
-        return {
-            getRows: function (params) {
-                setTimeout(function () {
-                    var response = server.getResponse(params.request);
-                    if (response.success) {
-                        params.successCallback(response.rows, response.lastRow);
-                    }
-                    else {
-                        params.failCallback();
-                    }
-                }, 500);
+      return {
+        getRows: function (params) {
+          setTimeout(function () {
+            var response = server.getResponse(params.request);
+            if (response.success) {
+              params.successCallback(response.rows, response.lastRow);
+            } else {
+              params.failCallback();
             }
-        };
+          }, 500);
+        },
+      };
     };
     ViewallComponent.prototype.currencyFormatter = function (params) {
         if (params.value !== undefined) {
@@ -206,17 +206,17 @@ var ViewallComponent = /** @class */ (function () {
     };
     ViewallComponent.prototype.onBtnExportDataAsExcel = function () {
         var exportParams = {
-            skipHeader: false,
-            allColumns: true,
-            fileName: 'export.csv'
+          skipHeader: false,
+          allColumns: true,
+          fileName: 'export.csv',
         };
-        var datasource = {
+        ar datasource = {
             getRows: function (params) {
                 console.log(JSON.stringify(params.request, null, 1));
                 fetch(environment.nodeapi + '/gridmcoopcashviewall/viewall', {
-                    method: 'post',
-                    body: JSON.stringify(params.request),
-                    headers: { 'Content-Type': 'application/json; charset=utf-8' }
+                  method: 'post',
+                  body: JSON.stringify(params.request),
+                  headers: { 'Content-Type': 'application/json; charset=utf-8' }
                 })
                     .then(function (httpResponse) { return httpResponse.json(); })
                     .then(function (response) {
@@ -233,9 +233,9 @@ var ViewallComponent = /** @class */ (function () {
     };
     ViewallComponent = __decorate([
         Component({
-            selector: 'app-viewall',
-            templateUrl: './viewall.component.html',
-            styleUrls: ['./viewall.component.css']
+          selector: 'app-viewall',
+          templateUrl: './viewall.component.html',
+          styleUrls: ['./viewall.component.css']
         }),
         __metadata("design:paramtypes", [HttpClient])
     ], ViewallComponent);

@@ -11,7 +11,7 @@ import * as introJs from 'intro.js/intro.js';
 @Component({
   selector: 'app-ptps',
   templateUrl: './ptps.component.html',
-  styleUrls: ['./ptps.component.css']
+  styleUrls: ['./ptps.component.css'],
 })
 export class PtpsComponent implements OnInit {
   introJS = introJs();
@@ -57,12 +57,12 @@ export class PtpsComponent implements OnInit {
           {
             element: '#ptptable',
             intro:
-              'Here, you will find a list of the available Promises to Pay for this account'
-          }
+              'Here, you will find a list of the available Promises to Pay for this account,
+          ,
         ],
         hidePrev: true,
         hideNext: true,
-        showProgress: true
+        showProgress: tru,
       })
       .start();
   }

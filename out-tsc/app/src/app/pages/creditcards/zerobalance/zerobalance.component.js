@@ -10,81 +10,80 @@ var ZerobalanceComponent = /** @class */ (function () {
         this.pivotPanelShow = true;
         this.modules = AllModules;
         this.columnDefs = [
-            {
-                headerName: 'CARDACCT',
-                field: 'CARDACCT',
-                cellRenderer: function (params) {
-                    if (params.value !== undefined) {
-                        return '<a  href="#" target="_blank">' + params.value + '</a>';
-                    }
-                    else {
-                        return ''; // <img src="assets/img/user/loading.gif" alt="Loading Icon">
-                    }
-                },
-                filter: 'agTextColumnFilter',
-                filterParams: { newRowsAction: 'keep' },
-                resizable: true
+          {
+            headerName: 'CARDACCT',
+            field: 'CARDACCT',
+            cellRenderer: function (params) {
+              if (params.value !== undefined) {
+                return '<a  href="#" target="_blank">' + params.value + '</a>';
+              } else {
+                return ''; // <img src="assets/img/user/loading.gif" alt="Loading Icon">
+              }
             },
-            {
-                headerName: 'CARDNUMBER',
-                field: 'CARDNUMBER',
-                filter: 'agTextColumnFilter',
-                filterParams: { newRowsAction: 'keep' },
-                resizable: true
-            },
-            {
-                headerName: 'CARDNAME',
-                field: 'CARDNAME',
-                filter: 'agTextColumnFilter',
-                filterParams: { newRowsAction: 'keep' },
-                resizable: true
-            },
-            {
-                headerName: 'DATEDISBURSED',
-                field: 'DATEDISBURSED',
-                filter: 'agTextColumnFilter',
-                filterParams: { newRowsAction: 'keep' },
-                resizable: true
-            },
-            {
-                headerName: 'LIMIT',
-                field: 'LIMIT',
-                filter: 'agTextColumnFilter',
-                filterParams: { newRowsAction: 'keep' },
-                resizable: true
-            },
-            {
-                headerName: 'EXPPMNT',
-                field: 'EXPPMNT',
-                filter: 'agTextColumnFilter',
-                filterParams: { newRowsAction: 'keep' },
-                resizable: true
-            },
-            {
-                headerName: 'OUTBALANCE',
-                field: 'OUTBALANCE',
-                filter: 'agTextColumnFilter',
-                filterParams: { newRowsAction: 'keep' },
-                resizable: true
-            },
-            {
-                headerName: 'CYCLE',
-                field: 'CYCLE',
-                filter: 'agTextColumnFilter',
-                filterParams: { newRowsAction: 'keep' },
-                resizable: true
-            }
+            filter: 'agTextColumnFilter',
+            filterParams: { newRowsAction: 'keep' },
+            resizable: true,
+          },
+          {
+            headerName: 'CARDNUMBER',
+            field: 'CARDNUMBER',
+            filter: 'agTextColumnFilter',
+            filterParams: { newRowsAction: 'keep' },
+            resizable: true,
+          },
+          {
+            headerName: 'CARDNAME',
+            field: 'CARDNAME',
+            filter: 'agTextColumnFilter',
+            filterParams: { newRowsAction: 'keep' },
+            resizable: tru,
+          },
+          {
+            headerName: 'DATEDISBURSED',
+            field: 'DATEDISBURSED',
+            filter: 'agTextColumnFilter',
+            filterParams: { newRowsAction: 'keep' },
+            resizable: true,
+          },
+          {
+            headerName: 'LIMIT',
+            field: 'LIMIT',
+            filter: 'agTextColumnFilter',
+            filterParams: { newRowsAction: 'keep' },
+            resizable: tru,
+          },
+          {
+            headerName: 'EXPPMNT',
+            field: 'EXPPMNT',
+            filter: 'agTextColumnFilter',
+            filterParams: { newRowsAction: 'keep' },
+            resizable: true,
+          },
+          {
+            headerName: 'OUTBALANCE',
+            field: 'OUTBALANCE',
+            filter: 'agTextColumnFilter',
+            filterParams: { newRowsAction: 'keep' },
+            resizable: tru,
+          },
+          {
+            headerName: 'CYCLE',
+            field: 'CYCLE',
+            filter: 'agTextColumnFilter',
+            filterParams: { newRowsAction: 'keep' },
+            resizable: tru,
+          ,
         ];
         this.defaultColDef = {
-            width: 120,
-            resizable: true,
-            sortable: true,
-            floatingFilter: true,
-            unSortIcon: true,
-            suppressResize: false,
-            enableRowGroup: true,
-            enablePivot: true,
-            pivot: true
+          width: 120,
+          resizable: true,
+          sortable: true,
+          floatingFilter: true,
+          unSortIcon: true,
+          suppressResize: false,
+          enableRowGroup: true,
+          enablePivot: true,
+          pivot: true
         };
         this.rowModelType = 'serverSide';
         this.cacheBlockSize = 50;
@@ -98,9 +97,9 @@ var ZerobalanceComponent = /** @class */ (function () {
             getRows: function (params) {
                 console.log(JSON.stringify(params.request, null, 1));
                 fetch(environment.nodeapi + '/gridcreditcardszerobal/viewall', {
-                    method: 'post',
-                    body: JSON.stringify(params.request),
-                    headers: { 'Content-Type': 'application/json; charset=utf-8' }
+                  method: 'post',
+                  body: JSON.stringify(params.request),
+                  headers: { 'Content-Type': 'application/json; charset=utf-8' }
                 })
                     .then(function (httpResponse) { return httpResponse.json(); })
                     .then(function (response) {
@@ -142,9 +141,9 @@ var ZerobalanceComponent = /** @class */ (function () {
     };
     ZerobalanceComponent = __decorate([
         Component({
-            selector: 'app-zerobalance',
-            templateUrl: './zerobalance.component.html',
-            styleUrls: ['./zerobalance.component.css']
+          selector: 'app-zerobalance',
+          templateUrl: './zerobalance.component.html',
+          styleUrls: ['./zerobalance.component.css']
         }),
         __metadata("design:paramtypes", [])
     ], ZerobalanceComponent);

@@ -62,7 +62,7 @@ body {
       & .datetimepicker-hours,
       & .datetimepicker-days,
       & .datetimepicker-months,
-      & .datetimepicker-years, {
+      & .datetimepicker-years {
         & table {
           & thead,
           & tfoot {
@@ -174,7 +174,6 @@ body {
             @include media-breakpoint-down(xs) {
               width: rem(250px);
             }
-
           }
 
           & .timepicker {
@@ -285,7 +284,6 @@ body {
 
                         @include border-radius($border-radius-lg);
                       }
-
                     }
 
                     &.btn-primary {

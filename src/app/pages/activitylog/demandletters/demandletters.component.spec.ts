@@ -8,7 +8,7 @@ describe('DemandlettersComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [DemandlettersComponent]
+      declarations: [DemandlettersComponent],
     }).compileComponents();
   });
 

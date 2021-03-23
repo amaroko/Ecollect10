@@ -24,9 +24,7 @@
           <div *ngIf='!loader' class='col-xl-2 col-md-3'>Collector action</div>
           <div class='col-md-9'>
             <div class='col-md-12'>
-              <ngx-skeleton-loader
-                *ngIf='loader'
-              ></ngx-skeleton-loader>
+              <ngx-skeleton-loader *ngIf='loader'></ngx-skeleton-loader>
               <label for='collectoraction'></label
               ><select
               (ngModelChange)='changeAction(actionForm.value.collectoraction)'
@@ -53,11 +51,9 @@
           <div *ngIf='!f.party.disabled && !loader' class='col-xl-2 col-md-3'>
             Party contacted
           </div>
-          <div *ngIf="!f.party.disabled" class="col-md-3">
+          <div *ngIf='!f.party.disabled' class='col-md-3'>
             <div class='col-md-12'>
-              <ngx-skeleton-loader
-                *ngIf='loader'
-              ></ngx-skeleton-loader>
+              <ngx-skeleton-loader *ngIf='loader'></ngx-skeleton-loader>
               <ng-select
                 (ngModelChange)='changeParty(actionForm.value)'
                 formControlName='party'
@@ -75,14 +71,12 @@
             </p>
           </div>
           <div *ngIf='!loader' class='col-md-3'>Reason for default</div>
-          <div class="col-md-3">
+          <div class='col-md-3'>
             <div class='col-md-12'>
-              <ngx-skeleton-loader
-                *ngIf='loader'
-              ></ngx-skeleton-loader>
+              <ngx-skeleton-loader *ngIf='loader'></ngx-skeleton-loader>
               <ng-select
-                *ngIf='!loader'
                 (change)='onChangeExcuse(actionForm.value)'
+                *ngIf='!loader'
                 formControlName='reason'
                 placeholder='Select Reason'
               >
@@ -140,7 +134,7 @@
           <div *ngIf="!f.rfdother.disabled" class="col-md-3">
             Other reason for default
           </div>
-          <div *ngIf="!f.rfdother.disabled" class="col-md-3">
+          <div *ngIf='!f.rfdother.disabled' class='col-md-3'>
             <div class='col-md-12'>
               <label for='rfdother'></label
               ><textarea
@@ -162,7 +156,7 @@
             <div class="col-md-12">
               <div class="form-group row">
                 <label class="col-md-0 col-form-label"></label>
-                <div class='form-check form-check-inline'>
+                <div *ngIf='!loader' class='radio radio-css radio-inline'>
                   <input
                     (click)="handleChange('single')"
                     class='form-check-input'
@@ -176,7 +170,7 @@
                   >Single
                   </label>
                 </div>
-                <div class='form-check form-check-inline'>
+                <div *ngIf='!loader' class='radio radio-css radio-inline'>
                   <input
                     (click)="handleChange('multiple')"
                     class='form-check-input'
@@ -204,11 +198,9 @@
             </div>
           </div>
           <div *ngIf='!loader' class='col-md-3'>CMD status</div>
-          <div class="col-md-3">
+          <div class='col-md-3'>
             <div class='col-md-12'>
-              <ngx-skeleton-loader
-                *ngIf='loader'
-              ></ngx-skeleton-loader>
+              <ngx-skeleton-loader *ngIf='loader'></ngx-skeleton-loader>
               <ng-select
                 *ngIf='!loader'
                 [ngClass]="{ 'is-invalid': f.cmdstatus.errors }"
@@ -243,11 +235,9 @@
             </div>
           </div>
           <div *ngIf='!loader' class='col-md-3'>Route for review</div>
-          <div class="col-md-3">
+          <div class='col-md-3'>
             <div class='col-md-12'>
-              <ngx-skeleton-loader
-                *ngIf='loader'
-              ></ngx-skeleton-loader>
+              <ngx-skeleton-loader *ngIf='loader'></ngx-skeleton-loader>
               <ng-select
                 *ngIf='!loader'
                 formControlName='route'
@@ -299,12 +289,9 @@
             </div>
           </div>
           <div *ngIf='!loader' class='col-md-3'>Review date</div>
-          <div class="col-md-3">
-
+          <div class='col-md-3'>
             <div class='col-md-12'>
-              <ngx-skeleton-loader
-                *ngIf='loader'
-              ></ngx-skeleton-loader>
+              <ngx-skeleton-loader *ngIf='loader'></ngx-skeleton-loader>
               <div *ngIf='!loader' class='input-group'>
                 <label>
                   <input
@@ -338,7 +325,7 @@
           <div *ngIf="!f.paymode.disabled" class="col-xl-2 col-md-3">
             Payment mode
           </div>
-          <div *ngIf="!f.paymode.disabled" class="col-md-3">
+          <div *ngIf='!f.paymode.disabled' class='col-md-3'>
             <div class='col-md-12'>
               <label for='paymode'></label
               ><select
@@ -363,9 +350,9 @@
             <ngx-skeleton-loader
               *ngIf='loader'
               [theme]="{
- 'border-radius': '5px',
- height: '100px'
-}"
+                'border-radius': '5px',
+                height: '100px'
+              }"
             ></ngx-skeleton-loader>
             <label *ngIf='!loader'>Collector note</label>
             <label for='collectornote'></label
@@ -396,42 +383,37 @@
                 formControlName="toemail" placeholder="Customer email" />
             </div>
           </div>-->
+
           <div class='col-md-3 col-form-label'>
+            <ngx-skeleton-loader *ngIf='loader'></ngx-skeleton-loader>
             <div
-              *ngIf='!f.ptpsms.disabled'
-              class='checkbox c-checkbox form-check-inline'
+              *ngIf='!loader && !f.ptpsms.disabled'
+              class='checkbox checkbox-css checkbox-inline'
             >
-              <label>
-                <input
-                  [checked]='false'
-                  formControlName='ptpsms'
-                  id='ptpsms'
-                  name='ptpsms'
-                  name='ptpsms'
-                  type='checkbox' />
-                Send PTP Reminder SMS <span class='fa fa-check'></span
-              ></label>
+              <input
+                [checked]='false'
+                formControlName='ptpsms'
+                id='ptpsms'
+                name='ptpsms'
+                type='checkbox'
+              />
+              <label for='ptpsms'>Send PTP Reminder SMS</label>
             </div>
-            <div *ngIf="!f.ptpsmsnumber.disabled" class="">
-              <label>
-                <input
-                  class='form-control'
-                  formControlName='ptpsmsnumber'
-                  id='ptpsmsnumber'
-                  name='ptpsmsnumber'
-                  name='ptpsmsnumber'
-                  placeholder='Customer Tel.'
-                  type='text'
-                />
-              </label>
+            <div *ngIf='!f.ptpsmsnumber.disabled' class=''>
+              <label for='ptpsmsnumber'></label>
+              <input
+                class='form-control'
+                formControlName='ptpsmsnumber'
+                id='ptpsmsnumber'
+                name='ptpsmsnumber'
+                placeholder='Customer Tel.'
+                type='text'
+              />
             </div>
           </div>
 
-
           <div class='col-md-3 col-form-label'>
-            <ngx-skeleton-loader
-              *ngIf='loader'
-            ></ngx-skeleton-loader>
+            <ngx-skeleton-loader *ngIf='loader'></ngx-skeleton-loader>
             <div *ngIf='!loader' class='checkbox checkbox-css checkbox-inline'>
               <input
                 [checked]='false'
@@ -446,9 +428,7 @@
         </div>
       </div>
       <div class='card-footer'>
-        <ngx-skeleton-loader
-          *ngIf='loader'
-        ></ngx-skeleton-loader>
+        <ngx-skeleton-loader *ngIf='loader'></ngx-skeleton-loader>
         <button
           *ngIf='!loader'
           [disabled]='actionForm.invalid'

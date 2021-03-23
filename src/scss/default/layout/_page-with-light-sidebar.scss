@@ -51,7 +51,6 @@
         }
 
         &.nav-profile {
-
           & > a {
             color: $white !important;
           }
@@ -212,7 +211,10 @@
             & > a {
               color: $white;
 
-              @include gradient-linear(to bottom, (lighten($primary, 5%) 0%, darken($primary, 5%) 100%));
+              @include gradient-linear(
+                  to bottom,
+                    (lighten($primary, 5%) 0%, darken($primary, 5%) 100%)
+              );
             }
           }
         }

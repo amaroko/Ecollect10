@@ -8,7 +8,7 @@ import * as moment from 'moment';
 @Component({
   selector: 'app-accplan',
   templateUrl: './accplan.component.html',
-  styleUrls: ['./accplan.component.css']
+  styleUrls: ['./accplan.component.css'],
 })
 export class AccplanComponent implements OnInit {
   custnumber;
@@ -52,13 +52,13 @@ export class AccplanComponent implements OnInit {
     // tslint:disable-next-line:max-line-length
     window.open(
       environment.accplanlink +
-      '/?accnumber=' +
-      this.accnumber +
-      '&custnumber=' +
-      this.custnumber +
-      '&username=' +
-      this.username +
-      '&nationid=00',
+        '/?accnumber=' +
+        this.accnumber +
+        '&custnumber=' +
+        this.custnumber +
+        '&username=' +
+        this.username +
+        '&nationid=00',
       '_blank'
     );
   }
@@ -106,10 +106,9 @@ export class AccplanComponent implements OnInit {
                     planid: planid,
                     actionid: data[i].actionid,
                     actiontitle: data[i].actiontitle,
-                    completed:
-                      data[i].completed.toLowerCase() === 'true' ? true : false,
+                    completed: data[i].completed.toLowerCase() === 'true',
                     updateby: data[i].updateby,
-                    datecompleted: new Date(data[i].datecompleted)
+                    datecompleted: new Date(data[i].datecompleted),
                   };
                   this.currentplan.push(body);
                 }
@@ -122,7 +121,7 @@ export class AccplanComponent implements OnInit {
                     actiontitle: resp[i].actiontitle,
                     completed: false,
                     updateby: '',
-                    datecompleted: ''
+                    datecompleted: ',
                   };
                   this.currentplan.push(body);
                 }
@@ -174,8 +173,7 @@ export class AccplanComponent implements OnInit {
             };
             for (let i = 0; i < this.currentplan.length; i++) {
               this.ecolService.putaccountplan(this.currentplan[i]).subscribe(
-                (data) => {
-                },
+                (data) => {},
                 (error) => {
                   console.log(error);
                 }
@@ -191,7 +189,7 @@ export class AccplanComponent implements OnInit {
             this.ecolService.saveaccountplan(this.currentplan).subscribe(
               (data) => {
                 alert('plan saved');
-                // console.log(data);
+                console.log(data);
                 this.changeAction(this.currentplan[0].planid);
                 //
                 const acc = {

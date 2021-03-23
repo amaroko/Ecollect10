@@ -7,7 +7,7 @@ import { environment } from '../../../../environments/environment';
 import {
   FileItem,
   FileUploader,
-  ParsedResponseHeaders
+  ParsedResponseHeaders,
 } from '@swimlane/ng2-file-upload';
 import { HttpEventType } from '@angular/common/http';
 import * as XLSX from 'xlsx';
@@ -19,7 +19,7 @@ const URL = environment.xlsuploadapi;
 @Component({
   selector: 'app-bulknotes',
   templateUrl: './bulknotes.component.html',
-  styleUrls: ['./bulknotes.component.css']
+  styleUrls: ['./bulknotes.component.css',
 })
 export class BulknotesComponent implements OnInit {
   introJS = introJs();
@@ -254,7 +254,6 @@ export class BulknotesComponent implements OnInit {
 
       for (let i = 0; i < jsonData.Sheet1.length; i++) {
         // check for null
-        // tslint:disable-next-line:max-line-length
         if (
           this.outdata[i].accnumber == null ||
           this.outdata[i].notemade == null ||

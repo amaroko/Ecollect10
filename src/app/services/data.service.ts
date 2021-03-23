@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class DataService {
   public dataSubject = new BehaviorSubject<number>(0);
@@ -19,8 +19,7 @@ export class DataService {
   public timeSubject = new BehaviorSubject<number>(0);
   public reminderalertsSubject = new BehaviorSubject<any>(0);
 
-  constructor() {
-  }
+  constructor() {}
 
   getTestData(): Observable<any> {
     return this.dataSubject.asObservable();

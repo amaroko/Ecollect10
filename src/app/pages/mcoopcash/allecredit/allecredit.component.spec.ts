@@ -8,7 +8,7 @@ describe('AllcreditComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [AllecreditComponent]
+      declarations: [AllecreditComponent],
     }).compileComponents();
   }));
 

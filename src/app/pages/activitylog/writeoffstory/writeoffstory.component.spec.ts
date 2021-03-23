@@ -8,7 +8,7 @@ describe('WriteoffstoryComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [WriteoffstoryComponent]
+      declarations: [WriteoffstoryComponent],
     }).compileComponents();
   });
 

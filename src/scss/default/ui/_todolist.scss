@@ -44,7 +44,7 @@
           & i {
             &:before {
               content: '\f14a';
-              color: rgba($dark, .4);
+              color: rgba($dark, 0.4);
 
               @include fontawesome();
             }

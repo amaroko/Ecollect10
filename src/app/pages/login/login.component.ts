@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, VERSION } from '@angular/core';
 import { EcolService } from '../../services/ecol.service';
 import { environment } from '../../../environments/environment';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -10,7 +10,7 @@ const ADLOGIN = environment.adlogin;
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
   messageCount = 0;
@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
     this.valForm = fb.group({
       // 'email': [null, Validators.compose([Validators.required, CustomValidators.email])],
       username: [null, Validators.required],
-      password: [null, Validators.required]
+      password: [null, Validators.required,
     });
   }
 

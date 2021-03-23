@@ -3,7 +3,7 @@ import {
   state,
   style,
   transition,
-  trigger
+  trigger,
 } from '@angular/animations';
 import { menu } from '../../config/page-menus';
 import {
@@ -14,7 +14,7 @@ import {
   HostListener,
   Input,
   Output,
-  ViewChild
+  ViewChil,
 } from '@angular/core';
 
 import pageSettings from '../../config/page-settings';
@@ -37,7 +37,7 @@ import pageSettings from '../../config/page-settings';
         style({ height: '*', overflow: 'hidden', display: 'block' })
       ),
       transition('expand <=> collapse', animate(100)),
-      transition('active => collapse', animate(100))
+      transition('active => collapse', animate(100)),
     ]),
   ],
 })

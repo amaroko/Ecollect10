@@ -156,7 +156,7 @@ body {
         background: none !important;
 
         @include border-radius($input-border-radius);
-        @include transition(all .2s linear);
+        @include transition(all 0.2s linear);
 
         &:focus {
           border-color: $input-focus-border-color;
@@ -323,7 +323,7 @@ body {
   & .select2-dropdown {
     border: none;
 
-    @include box-shadow(0 8px 16px rgba($black, .15));
+    @include box-shadow(0 8px 16px rgba($black, 0.15));
 
     & .select2-search--dropdown {
       padding: rem(6px);
@@ -336,12 +336,14 @@ body {
         color: $dark;
 
         @include border-radius($border-radius);
-        @include transition(all .2s linear);
+        @include transition(all 0.2s linear);
 
         &:focus {
           border-color: $input-focus-border-color;
 
-          @include box-shadow(0 0 0 0.125rem rgba($input-focus-border-color, .3));
+          @include box-shadow(
+              0 0 0 0.125rem rgba($input-focus-border-color, 0.3)
+          );
         }
       }
     }
@@ -374,7 +376,7 @@ body {
             padding: rem(6px);
           }
 
-          &[aria-selected=true] {
+          &[aria-selected='true'] {
             background: $form-component-active-bg;
             color: $white;
           }
@@ -383,7 +385,7 @@ body {
     }
 
     &.select2-dropdown--above {
-      @include box-shadow(0 -8px 16px rgba($black, .15));
+      @include box-shadow(0 -8px 16px rgba($black, 0.15));
     }
   }
 }

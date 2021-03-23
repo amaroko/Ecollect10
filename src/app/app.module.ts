@@ -15,7 +15,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { TopMenuComponent } from './components/top-menu/top-menu.component';
 import { FooterComponent } from './components/footer/footer.component';
 
-// Component Module
+// Component Modules
 // import { AgmCoreModule } from '@agm/core';
 import { FullCalendarModule } from '@fullcalendar/angular';
 import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
@@ -35,7 +35,7 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import {
   PERFECT_SCROLLBAR_CONFIG,
   PerfectScrollbarConfigInterface,
-  PerfectScrollbarModule
+  PerfectScrollbarModule,
 } from 'ngx-perfect-scrollbar';
 // Pages
 import { LayoutComponent } from './pages/layout/layout.component';
@@ -47,9 +47,20 @@ import { ActivitylogComponent } from './pages/activitylog/activitylog.component'
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { RolesensorComponent } from './pages/rolesensor/rolesensor.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NgxPrettyDateModule } from 'ngx-pretty-date';
+import { MomentModule } from 'ngx-moment';
+import { PdfJsViewerModule } from 'ng2-pdfjs-viewer';
+import { BnNgIdleService } from 'bn-ng-idle';
+import { NgxSmartModalModule } from 'ngx-smart-modal';
+import { NgxSelectModule } from 'ngx-select-ex';
+import { NgxDocViewerModule } from 'ngx-doc-viewer';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { ToasterModule, ToasterService } from 'angular2-toaster';
+import { NgMarqueeModule } from 'ng-marquee';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
-  suppressScrollX: true
+  suppressScrollX: tru,
 };
 
 @NgModule({
@@ -66,20 +77,28 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     LayoutComponent,
     LoginComponent,
     ActivitylogComponent,
-    RolesensorComponent
+    RolesensorComponen,
   ],
   imports: [
     AppRoutingModule,
     FaviconModule,
+    NgxDocViewerModule,
+    ToasterModule.forRoot(),
     // AgmCoreModule.forRoot({
     //   apiKey: 'AIzaSyC5gJ5x8Yw7qP_DqvNq3IdZi2WUSiDjskk',
     // }),
     BrowserAnimationsModule,
+    NgMarqueeModule,
+    Ng2SearchPipeModule,
     BrowserModule,
+    NgxSelectModule,
+    NgxPrettyDateModule,
+    MomentModule,
+    PdfJsViewerModule,
     NgxSkeletonLoaderModule.forRoot(),
     CalendarModule.forRoot({
       provide: DateAdapter,
-      useFactory: adapterFactory
+      useFactory: adapterFactory,
     }),
     CountdownModule,
     // LoadingBarHttpClientModule,
@@ -100,23 +119,27 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     SweetAlert2Module.forRoot(),
     FontAwesomeModule,
     TagInputModule,
-    TrendModule
+    TrendModule,
+    NgxSmartModalModule,
+    TooltipModul,
   ],
   providers: [
+    BnNgIdleService,
+    ToasterService,
     Title,
     {
       provide: PERFECT_SCROLLBAR_CONFIG,
-      useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
+      useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG,
     },
     {
       provide: FAVICON_CONFIG,
       useValue: {
         color: '#fff', // favicon notification text color
-        bgColor: '#ff0000' // favicon notification background color
-      }
-    }
+        bgColor: '#ff0000', // favicon notification background color
+      },
+    },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {
   constructor(

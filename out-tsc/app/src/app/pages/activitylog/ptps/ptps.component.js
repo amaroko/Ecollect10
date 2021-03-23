@@ -39,12 +39,12 @@ var PtpsComponent = /** @class */ (function () {
             steps: [
                 {
                     element: '#ptptable',
-                    intro: 'Here, you will find a list of the available Promises to Pay for this account'
+                    intro: 'Here, you will find a list of the available Promises to Pay for this account,,
                 }
             ],
             hidePrev: true,
             hideNext: true,
-            showProgress: true
+            showProgress: tru,
         })
             .start();
     };
@@ -177,7 +177,7 @@ var PtpsComponent = /** @class */ (function () {
         Component({
             selector: 'app-ptps',
             templateUrl: './ptps.component.html',
-            styleUrls: ['./ptps.component.css']
+            styleUrls: ['./ptps.component.css'],
         }),
         __metadata("design:paramtypes", [ActivatedRoute,
             EcolService,

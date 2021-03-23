@@ -10,7 +10,7 @@ const URL = environment.valor;
 @Component({
   selector: 'app-guarantors',
   templateUrl: './guarantors.component.html',
-  styleUrls: ['./guarantors.component.css']
+  styleUrls: ['./guarantors.component.css'],
 })
 export class GuarantorsComponent implements OnInit {
   introJS = introJs();
@@ -32,8 +32,8 @@ export class GuarantorsComponent implements OnInit {
           {
             element: '#existinguarantors',
             intro:
-              'Here you will find a list of the existing guarantors for this account'
-          }
+              'Here you will find a list of the existing guarantors for this account,
+          ,
           // {
           //   element: '#custnumber',
           //   intro: 'This is the 7 digit number of the customer'

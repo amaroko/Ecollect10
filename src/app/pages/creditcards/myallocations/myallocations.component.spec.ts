@@ -8,7 +8,7 @@ describe('MyallocationsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [MyallocationsComponent]
+      declarations: [MyallocationsComponent],
     }).compileComponents();
   }));
 

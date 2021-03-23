@@ -18,10 +18,13 @@
         <tbody>
         <tr
           *ngFor='
-            let p of ptps | paginate: { itemsPerPage: 10, currentPage: p }
-          '
+              let p of ptps | paginate: { itemsPerPage: 10, currentPage: p }
+            '
         >
-          <td>{{ p.actiondate }}</td>
+          <td>
+            <b>({{ p.actiondate | amTimeAgo }})</b> at
+            {{ p.actiondate | date: 'medium' }}
+          </td>
           <td>{{ p.accnumber }}</td>
           <td>{{ p.ptpamount }}</td>
           <td>{{ p.ptpdate }}</td>
@@ -31,15 +34,15 @@
           </td>
           <td>{{ p.amountreceived }}</td>
           <td>
-            <span
-            ><button
-              (click)='openModal(p.id)'
-              *ngIf='p.showedit'
-              class='btn btn-link'
-            >
-                edit
-              </button></span
-            >
+              <span
+              ><button
+                (click)='openModal(p.id)'
+                *ngIf='p.showedit'
+                class='btn btn-link'
+              >
+                  edit
+                </button></span
+              >
           </td>
         </tr>
         <pagination-controls (pageChange)='p = $event'></pagination-controls>
@@ -103,7 +106,7 @@
             />
           </label>
         </div>
-        <div class="form-group">
+        <div class='form-group'>
           <label>Promise Date:</label>
           <div class='input-group'>
             <label for='ptpdate'></label

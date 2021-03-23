@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-viewall',
   templateUrl: './viewall.component.html',
-  styleUrls: ['./viewall.component.css']
+  styleUrls: ['./viewall.component.css'],
 })
 export class ViewallComponent implements OnInit {
   public gridApi;
@@ -31,7 +31,7 @@ export class ViewallComponent implements OnInit {
     this.columnDefs = [
       {
         field: 'ACCNUMBER',
-        cellRenderer: function(params) {
+        cellRenderer: function (params) {
           if (params.value !== undefined) {
             return '<a  href="#" target="_blank">' + params.value + '</a>';
           } else {
@@ -41,48 +41,48 @@ export class ViewallComponent implements OnInit {
         },
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: tre,
       },
       {
         field: 'CLIENT_NAME',
         filter: 'agTextColumnFilter',
         width: 200,
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: true,
       },
       {
         field: 'CUSTNUMBER',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: tru,
       },
       {
         field: 'BUCKET',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: true,
       },
       {
         field: 'PRODUCTCODE',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: tru,
       },
       {
         field: 'DAYSINARR',
         filter: 'agNumberColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: true,
       },
       {
         field: 'SECTION',
         filter: 'agNumberColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: tru,
       },
       {
         field: 'OUSTBALANCE',
-        cellRenderer: function(params) {
+        cellRenderer: function (params) {
           if (params.value !== undefined) {
             return (Math.floor(params.value * 100) / 100)
               .toString()
@@ -94,11 +94,11 @@ export class ViewallComponent implements OnInit {
         filter: 'agNumberColumnFilter',
         filterParams: { newRowsAction: 'keep' },
         aggFunc: 'sum',
-        resizable: true
+        resizable: true,
       },
       {
         field: 'PRINCARREARS',
-        cellRenderer: function(params) {
+        cellRenderer: function (params) {
           if (params.value !== undefined) {
             return (Math.floor(params.value * 100) / 100)
               .toString()
@@ -109,11 +109,11 @@ export class ViewallComponent implements OnInit {
         },
         filter: 'agNumberColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: true,
       },
       {
         field: 'INSTAMOUNT',
-        cellRenderer: function(params) {
+        cellRenderer: function (params) {
           if (params.value !== undefined) {
             return (Math.floor(params.value * 100) / 100)
               .toString()
@@ -124,17 +124,17 @@ export class ViewallComponent implements OnInit {
         },
         filter: 'agNumberColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: true,
       },
       {
         field: 'LIMITAMOUNT',
         filter: 'agNumberColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: true,
       },
       {
         field: 'TOTALARREARS',
-        cellRenderer: function(params) {
+        cellRenderer: function (params) {
           if (params.value !== undefined) {
             return (Math.floor(params.value * 100) / 100)
               .toString()
@@ -144,38 +144,38 @@ export class ViewallComponent implements OnInit {
           }
         },
         filter: 'agNumberColumnFilter',
-        filterParams: { newRowsAction: 'keep' }
+        filterParams: { newRowsAction: 'keep' },
       },
       {
         field: 'RROCODE',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: tru,
       },
       {
         field: 'AROCODE',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: true,
       },
       {
         field: 'BRANCHCODE',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: tru,
       },
       {
         field: 'BRANCHNAME',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: true,
       },
       {
         field: 'COLOFFICER',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
-      }
+        resizable: true,
+      },
     ];
     this.defaultColDef = {
       width: 120,
@@ -186,7 +186,7 @@ export class ViewallComponent implements OnInit {
       suppressResize: false,
       enableRowGroup: true,
       enablePivot: true,
-      pivot: true
+      pivot: tue,
     };
     this.rowModelType = 'serverSide';
     this.cacheBlockSize = 50;
@@ -205,7 +205,7 @@ export class ViewallComponent implements OnInit {
         fetch(environment.nodeapi + '/gridviewall/viewall', {
           method: 'post',
           body: JSON.stringify(params.request),
-          headers: { 'Content-Type': 'application/json; charset=utf-8' }
+          headers: { 'Content-Type': 'application/json; charset=utf-8' },
         })
           .then((httpResponse) => httpResponse.json())
           .then((response) => {
@@ -224,7 +224,7 @@ export class ViewallComponent implements OnInit {
   ServerSideDatasource(server) {
     return {
       getRows(params) {
-        setTimeout(function() {
+        setTimeout(function () {
           const response = server.getResponse(params.request);
           if (response.success) {
             params.successCallback(response.rows, response.lastRow);
@@ -232,7 +232,7 @@ export class ViewallComponent implements OnInit {
             params.failCallback();
           }
         }, 500);
-      }
+      ,
     };
   }
 
@@ -252,13 +252,13 @@ export class ViewallComponent implements OnInit {
     // tslint:disable-next-line:max-line-length
     window.open(
       environment.applink +
-      '/activitylog?accnumber=' +
-      this.model.ACCNUMBER +
-      '&custnumber=' +
-      this.model.CUSTNUMBER +
-      '&username=' +
-      this.currentUser.USERNAME +
-      '&sys=collections',
+        '/activitylog?accnumber=' +
+        this.model.ACCNUMBER +
+        '&custnumber=' +
+        this.model.CUSTNUMBER +
+        '&username=' +
+        this.currentUser.USERNAME +
+        '&sys=collections',
       '_blank'
     );
   }

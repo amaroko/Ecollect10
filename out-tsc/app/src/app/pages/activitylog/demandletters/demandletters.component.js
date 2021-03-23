@@ -5,23 +5,38 @@ import { EcolService } from '../../../services/ecol.service';
 import swal from 'sweetalert2';
 import { saveAs } from 'file-saver';
 import { environment } from '../../../../environments/environment';
-import { FileUploader } from '@swimlane/ng2-file-upload';
+import { FileUploader, } from '@swimlane/ng2-file-upload';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ToasterConfig, ToasterService } from 'angular2-toaster';
 import { license } from '../../../../../env';
 import { HttpClient } from '@angular/common/http';
 import { Howl } from 'howler';
 import * as introJs from 'intro.js/intro.js';
+import { NgxSmartModalService } from 'ngx-smart-modal';
 var URL = environment.filesapi;
 var apiUrl = environment.letters_api;
 var DemandlettersComponent = /** @class */ (function () {
-    function DemandlettersComponent(route, ecolService, spinner, toasterService, httpClient) {
+    // DemandletternSteps(): void {
+    //   this.introJS
+    //     .addHints()
+    //     .showHints();
+    // }
+    //
+    // DemandletternSteps2(id): void {
+    //   this.introJS
+    //     .hideHint(id);
+    // }
+    // DemandletternSteps3(): void {
+    //   this.introJS
+    //     .hideHints();
+    function DemandlettersComponent(route, ecolService, spinner, toasterService, httpClient, ngxSmartModalService) {
         var _this = this;
         this.route = route;
         this.ecolService = ecolService;
         this.spinner = spinner;
         this.toasterService = toasterService;
         this.httpClient = httpClient;
+        this.ngxSmartModalService = ngxSmartModalService;
         this.introJS = introJs();
         this.guarantors = [];
         this.teles = [];
@@ -48,16 +63,20 @@ var DemandlettersComponent = /** @class */ (function () {
             'Day90',
             'Day40',
             'Day30',
-            'prelistingremedial'
+            'prelistingremedial',
         ];
         this.uploader = new FileUploader({ url: URL });
         this.hasBaseDropZoneOver = false;
         this.hasAnotherDropZoneOver = false;
         this.config = new ToasterConfig({
-            showCloseButton: true,
+            showCloseButton: { warning: true, error: false, success: true },
             tapToDismiss: false,
+            preventDuplicates: true,
+            newestOnTop: true,
+            timeout: 0,
             positionClass: 'toast-top-right',
-            animation: 'fade'
+            animation: 'flyLeft',
+            limit: ,
         });
         this.loader = true;
         //
@@ -82,7 +101,7 @@ var DemandlettersComponent = /** @class */ (function () {
                     telnumber: 'none',
                     filepath: obj.files[i].path,
                     filename: obj.files[i].originalname,
-                    datesent: new Date(),
+                    // datesent: new Date(),
                     owner: _this.username,
                     byemail: false,
                     byphysical: true,
@@ -120,20 +139,6 @@ var DemandlettersComponent = /** @class */ (function () {
         }
         return year + '-' + month + '-' + day;
     };
-    // DemandletternSteps(): void {
-    //   this.introJS
-    //     .addHints()
-    //     .showHints();
-    // }
-    //
-    // DemandletternSteps2(id): void {
-    //   this.introJS
-    //     .hideHint(id);
-    // }
-    // DemandletternSteps3(): void {
-    //   this.introJS
-    //     .hideHints();
-    // }
     DemandlettersComponent.prototype.Demand = function () {
         this.introJS
             .setOptions({
@@ -281,11 +286,16 @@ var DemandlettersComponent = /** @class */ (function () {
     DemandlettersComponent.prototype.getteles = function (cust) {
         var _this = this;
         this.ecolService.getteles(cust).subscribe(function (data_teles) {
+            _this.loader = false;
             _this.teles = data_teles;
             _this.emails = data_teles;
             _this.postcodes = data_teles;
             _this.addresses = data_teles;
         });
+    };
+    DemandlettersComponent.prototype.openLetterReadyPreviewModal = function () {
+        // open modal
+        this.ngxSmartModalService.getModal('demandsending').open();
     };
     DemandlettersComponent.prototype.getaccount = function (accnumber) {
         var _this = this;
@@ -350,6 +360,7 @@ var DemandlettersComponent = /** @class */ (function () {
         var _this = this;
         // console.log('getdemandshistory called ...');
         this.ecolService.getdemandshistory(accnumber).subscribe(function (data) {
+            _this.loader = false;
             _this.demands = data;
             console.log(_this.demands);
         });
@@ -431,7 +442,9 @@ var DemandlettersComponent = /** @class */ (function () {
                         // call generate letter api
                         _this.ecolService.generateLetter(_this.bodyletter).subscribe(function (generateletterdata) {
                             // sucess
+                            // modalDialog
                             if (generateletterdata.result === 'success') {
+                                _this.url = generateletterdata.message;
                                 swal.fire('Good!', generateletterdata.message, 'success');
                                 // check if preview to send
                                 if (_this.model.previewtosend) {
@@ -444,7 +457,8 @@ var DemandlettersComponent = /** @class */ (function () {
                                         telnumber: _this.model.telnumber,
                                         filepath: generateletterdata.message,
                                         filename: generateletterdata.filename,
-                                        datesent: new Date(),
+                                        // datesent: moment(),
+                                        // datesent: new Date(),,
                                         owner: _this.username,
                                         byemail: 'N',
                                         byphysical: 'Y',
@@ -651,7 +665,7 @@ var DemandlettersComponent = /** @class */ (function () {
                                 telnumber: this.model.telnumber,
                                 filepath: uploaddata.message,
                                 filename: uploaddata.filename,
-                                datesent: new Date(),
+                                // datesent: new Date(),
                                 owner: this.username,
                                 byemail: this.model.sendemail,
                                 byphysical: this.model.sendphysical,
@@ -790,7 +804,7 @@ var DemandlettersComponent = /** @class */ (function () {
                     telnumber: _this.model.telnumber,
                     filepath: uploaddata.message,
                     filename: uploaddata.filename,
-                    datesent: new Date(),
+                    // datesent: new Date(),
                     owner: _this.username,
                     byemail: _this.model.sendemail,
                     byphysical: _this.model.sendphysical,
@@ -896,12 +910,10 @@ var DemandlettersComponent = /** @class */ (function () {
         });
     };
     DemandlettersComponent.prototype.guarantorletter = function (body) {
-        this.ecolService.guarantorletters(body).subscribe(function (data) {
-        });
+        this.ecolService.guarantorletters(body).subscribe(function (data) { });
     };
     DemandlettersComponent.prototype.sms = function (body) {
-        this.ecolService.guarantorletters(body).subscribe(function (data) {
-        });
+        this.ecolService.guarantorletters(body).subscribe(function (data) { });
     };
     DemandlettersComponent.prototype.downloadDemand = function (filepath, filename) {
         this.ecolService.demanddownload(filepath).subscribe(function (data) {
@@ -920,8 +932,7 @@ var DemandlettersComponent = /** @class */ (function () {
             showCancelButton: true,
             confirmButtonText: 'Send Email',
             showLoaderOnConfirm: true,
-            preConfirm: function (email) {
-            },
+            preConfirm: function (email) { },
             allowOutsideClick: function () { return !swal.isLoading(); }
         })
             .then(function (result) {
@@ -979,13 +990,14 @@ var DemandlettersComponent = /** @class */ (function () {
         Component({
             selector: 'app-demandletters',
             templateUrl: './demandletters.component.html',
-            styleUrls: ['./demandletters.component.css']
+            styleUrls: ['./demandletters.component.css'],
         }),
         __metadata("design:paramtypes", [ActivatedRoute,
             EcolService,
             NgxSpinnerService,
             ToasterService,
-            HttpClient])
+            HttpClient,
+            NgxSmartModalService])
     ], DemandlettersComponent);
     return DemandlettersComponent;
 }());

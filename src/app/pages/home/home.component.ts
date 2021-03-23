@@ -6,7 +6,7 @@ declare let d3: any;
 
 @Component({
   selector: 'app-home',
-  templateUrl: './home.component.html'
+  templateUrl: './home.component.html',
 })
 export class HomePageComponent implements OnInit {
   stackedChartOptions;
@@ -19,7 +19,7 @@ export class HomePageComponent implements OnInit {
     {
       featureType: 'all',
       elementType: 'labels.text.fill',
-      stylers: [{ saturation: 36 }, { lightness: 40 }]
+      stylers: [{ saturation: 36 }, { lightness: 40 },
     },
     {
       featureType: 'all',
@@ -185,10 +185,10 @@ export class HomePageComponent implements OnInit {
         type: 'stackedAreaChart',
         height: 260,
         useInteractiveGuideline: true,
-        x: function(d) {
+        x: function (d) {
           return d[0];
         },
-        y: function(d) {
+        y: function (d) {
           return d[1];
         },
         pointSize: 0.5,
@@ -197,7 +197,7 @@ export class HomePageComponent implements OnInit {
         showControls: false,
         duration: 300,
         xAxis: {
-          tickFormat: function(d) {
+          tickFormat: function (d) {
             const monthsName = [
               'Jan',
               'Feb',
@@ -210,12 +210,12 @@ export class HomePageComponent implements OnInit {
               'Sep',
               'Oct',
               'Nov',
-              'Dec'
+              'Dec',
             ];
             d = new Date(d);
             d = monthsName[d.getMonth()] + ' ' + d.getDate();
             return d;
-          }
+          },
         },
       },
     };
@@ -398,10 +398,10 @@ export class HomePageComponent implements OnInit {
       chart: {
         type: 'pieChart',
         height: 170,
-        x: function(d) {
+        x: function (d) {
           return d.label;
         },
-        y: function(d) {
+        y: function (d) {
           return d.value;
         },
         margin: { top: 10, right: 10, bottom: 10, left: 10 },
@@ -410,10 +410,10 @@ export class HomePageComponent implements OnInit {
         growOnHover: false,
         arcsRadius: [
           { inner: 0.65, outer: 0.93 },
-          { inner: 0.6, outer: 1 }
+          { inner: 0.6, outer: 1 },
         ],
         duration: 3000,
-        donutRatio: 0.5
+        donutRatio: 0.5,
       },
     };
   }

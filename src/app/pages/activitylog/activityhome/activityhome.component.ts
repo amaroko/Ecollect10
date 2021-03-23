@@ -10,7 +10,7 @@ const URL = environment.valor;
 @Component({
   selector: 'app-activityhome',
   templateUrl: './activityhome.component.html',
-  styleUrls: ['./activityhome.component.css']
+  styleUrls: ['./activityhome.component.css'],
 })
 export class ActivityhomeComponent implements OnInit {
   // introJS = introJs();
@@ -35,8 +35,7 @@ export class ActivityhomeComponent implements OnInit {
     private route: ActivatedRoute,
     private modalService: NgbModal,
     private ecolService: EcolService
-  ) {
-  }
+  ) {}
 
   open(content) {
     this.modalService.open(content).result.then(

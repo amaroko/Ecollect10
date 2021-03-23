@@ -6,7 +6,7 @@ import { AllModules } from '@ag-grid-enterprise/all-modules';
 @Component({
   selector: 'app-allcredit',
   templateUrl: './allecredit.component.html',
-  styleUrls: ['./allecredit.component.css']
+  styleUrls: ['./allecredit.component.css'],
 })
 export class AllecreditComponent implements OnInit {
   public gridApi;
@@ -29,7 +29,7 @@ export class AllecreditComponent implements OnInit {
     this.columnDefs = [
       {
         field: 'LOANACCNUMBER',
-        cellRenderer: function(params) {
+        cellRenderer: function (params) {
           if (params.value !== undefined) {
             return '<a  href="#" target="_blank">' + params.value + '</a>';
           } else {
@@ -38,47 +38,47 @@ export class AllecreditComponent implements OnInit {
         },
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: tre,
       },
       {
         field: 'CLIENTNAME',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: true,
       },
       {
         field: 'IDNUMBER',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: tru,
       },
       {
         field: 'ARREARS_CATEGORY',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: true,
       },
       {
         field: 'LOAN_TYPE',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: tru,
       },
       {
         field: 'AROCODE',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: true,
       },
       {
         field: 'DISBURSALDATE',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: tru,
       },
       {
         field: 'AMOUNTDISBURSED',
-        cellRenderer: function(params) {
+        cellRenderer: function (params) {
           if (params.value !== undefined) {
             return (Math.floor(params.value * 100) / 100)
               .toString()
@@ -90,11 +90,11 @@ export class AllecreditComponent implements OnInit {
         filter: 'agNumberColumnFilter',
         filterParams: { newRowsAction: 'keep' },
         aggFunc: 'sum',
-        resizable: true
+        resizable: true,
       },
       {
         field: 'REPAYMENTAMOUNT',
-        cellRenderer: function(params) {
+        cellRenderer: function (params) {
           if (params.value !== undefined) {
             return (Math.floor(params.value * 100) / 100)
               .toString()
@@ -106,50 +106,50 @@ export class AllecreditComponent implements OnInit {
         filter: 'agNumberColumnFilter',
         filterParams: { newRowsAction: 'keep' },
         aggFunc: 'sum',
-        resizable: true
+        resizable: true,
       },
       {
         field: 'EMPLOYER',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: true,
       },
       {
         field: 'LASTPAYMENTDATE',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: tru,
       },
       {
         field: 'DUEDATE',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: true,
       },
       {
         field: 'LOANSTATUS',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: tru,
       },
       {
         field: 'ADDRESS',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: true,
       },
       {
         field: 'PHONENUMBER',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
-      }
+        resizable: true,
+      },
     ];
     this.defaultColDef = {
       width: 120,
       resizable: true,
       sortable: true,
-      floatingFilter: true
+      floatingFilter: tue,
     };
     this.rowModelType = 'serverSide';
     this.cacheBlockSize = 50;
@@ -168,7 +168,7 @@ export class AllecreditComponent implements OnInit {
         fetch(environment.nodeapi + '/gridmcoopcashviewall/viewall', {
           method: 'post',
           body: JSON.stringify(params.request),
-          headers: { 'Content-Type': 'application/json; charset=utf-8' }
+          headers: { 'Content-Type': 'application/json; charset=utf-8' },
         })
           .then((httpResponse) => httpResponse.json())
           .then((response) => {
@@ -187,7 +187,7 @@ export class AllecreditComponent implements OnInit {
   ServerSideDatasource(server) {
     return {
       getRows(params) {
-        setTimeout(function() {
+        setTimeout(function () {
           const response = server.getResponse(params.request);
           if (response.success) {
             params.successCallback(response.rows, response.lastRow);
@@ -195,7 +195,7 @@ export class AllecreditComponent implements OnInit {
             params.failCallback();
           }
         }, 500);
-      }
+      ,
     };
   }
 
@@ -214,13 +214,13 @@ export class AllecreditComponent implements OnInit {
     // tslint:disable-next-line:max-line-length
     window.open(
       environment.applink +
-      '/activitylog?accnumber=' +
-      this.model.LOANACCNUMBER +
-      '&custnumber=' +
-      this.model.LOANACCNUMBER +
-      '&username=' +
-      this.username +
-      '&sys=mcoopcash',
+        '/activitylog?accnumber=' +
+        this.model.LOANACCNUMBER +
+        '&custnumber=' +
+        this.model.LOANACCNUMBER +
+        '&username=' +
+        this.username +
+        '&sys=mcoopcash',
       '_blank'
     );
   }

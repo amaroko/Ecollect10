@@ -9,7 +9,7 @@ import { PanelModule } from '../../components/panel/panel.module';
 const routes: Routes = [
   { path: '', redirectTo: 'allreminders' },
   { path: 'allreminders', component: AllremindersComponent },
-  { path: 'newreminders', component: NewremindersComponent }
+  { path: 'newreminders', component: NewremindersComponent },
 ];
 
 @NgModule({
@@ -18,9 +18,9 @@ const routes: Routes = [
     CommonModule,
     AgGridModule.withComponents([]),
     RouterModule.forChild(routes),
-    PanelModule
+    PanelModul,
   ],
-  exports: [RouterModule]
+  exports: [RouterModule,
 })
 export class RemindersModule {
 }

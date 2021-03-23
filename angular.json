@@ -23,6 +23,8 @@
               "howler",
               "file-saver",
               "xlsx",
+              "jquery",
+              "exceljs",
               "chart.js"
             ],
             "index": "src/index.html",
@@ -31,14 +33,22 @@
             "polyfills": "src/polyfills.ts",
             "assets": [
               "src/assets",
-              "src/favicon.png"
+              "src/favicon.ico",
+              {
+                "glob": "**/*",
+                "input": "node_modules/ng2-pdfjs-viewer/pdfjs",
+                "output": "/assets/pdfjs"
+              }
             ],
             "styles": [
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/bootstrap/dist/css/bootstrap.css",
+              "node_modules/angular2-toaster/toaster.min.css",
               "src/styles.css",
               "src/scss/angular.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.js"
+            ]
           },
           "configurations": {
             "production": {

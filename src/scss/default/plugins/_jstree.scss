@@ -54,7 +54,7 @@
             margin-top: rem(-3px);
             border: 5px solid transparent;
 
-            @include transition(all .2s linear);
+            @include transition(all 0.2s linear);
             @if $enable-rtl {
               left: auto;
               right: 50%;

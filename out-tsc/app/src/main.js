@@ -5,11 +5,11 @@ import { environment } from './environments/environment';
 import { LicenseManager } from '@ag-grid-enterprise/all-modules';
 import { license } from '../env';
 if (environment.production) {
-    enableProdMode();
+  enableProdMode();
 }
 platformBrowserDynamic()
   .bootstrapModule(AppModule)
-  .catch(function(err) {
+  .catch(function (err) {
     return console.log(err);
   });
 // License goes here

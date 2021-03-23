@@ -18,7 +18,8 @@ export const environment = {
   valor: 'http://localhost:3000/api/',
   xlsuploadapi: 'http://localhost:5001/xlsupload/',
   metrics: 'http://localhost:8000/appmetrics-dash',
-  xlstemplate: 'C:\\templates\\upload_notes.xlsx',
+  xlstemplate:
+    'C:\\Users\\AMAROKO\\Desktop\\allan new\\ecollect apis\\xlsx template\\template.xlsx',
   applink: 'http://localhost:4200',
   emailapi: 'http://localhost:8005/demandemail/email',
   demandsmsapi: 'http://localhost:7000',
@@ -39,5 +40,5 @@ export const environment = {
     'http://172.16.19.151:5601/app/kibana#/discover/6f42b0b0-0b8c-11ea-8410-c5d8870411ab?_g=(refreshInterval%3A(pause%3A!t%2Cvalue%3A0)%2Ctime%3A(from%3Anow-1y%2Cto%3Anow))',
   homedash:
     'http://ecollecttst.co-opbank.co.ke:5601/goto/1441d2733a6b9d444949e4f03782992e?embed=true',
-  workflow: 'http://172.16.19.151:8089/sysworkflow/en/neoclassic/login/login'
+  workflow: 'http://172.16.19.151:8089/sysworkflow/en/neoclassic/login/login',
 };

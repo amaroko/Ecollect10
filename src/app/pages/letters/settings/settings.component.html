@@ -1,0 +1,469 @@
+<div class='content-heading'>
+  <div>
+    Letters
+    <small>Demand letters configurations</small>
+  </div>
+</div>
+<div class='container-fluid'>
+  <ngx-spinner
+    bdColor='rgba(51,51,51,0.8)'
+    color='#fff'
+    size='medium'
+    type='ball-spin-fade'
+  >
+    <p style='font-size: 20px; color: white'>Processing ...</p>
+  </ngx-spinner>
+  <div class='row'>
+    <div class='col-xl-4' id='accordion'>
+      <div class='card'>
+        <div class='card-header'>
+          <a class='card-link' data-toggle='collapse' href='#collapseOne'>
+            Demand Letter Configurations
+          </a>
+        </div>
+        <div class='collapse show' data-parent='#accordion' id='collapseOne'>
+          <div class='card-body'>
+            <div class='row'>
+              <div class='col-xl-12'>
+                <div class='card card-primary'>
+                  <div class='card-body'>
+                    <fieldset>
+                      <div class='form-check mb-2 mr-sm-2'>
+                        <div class='form-check'>
+                          <input
+                            (click)="setradio('demand1')"
+                            [checked]='true'
+                            class='form-check-input'
+                            id='demand1'
+                            name='format'
+                            ngModel
+                            type='radio'
+                            value='demand1'
+                          />
+                          <label class='form-check-label' for='demand1'
+                          >Demand 1</label
+                          >
+                        </div>
+                      </div>
+                      <div class='form-check mb-2 mr-sm-2'>
+                        <div class='form-check'>
+                          <input
+                            (click)="setradio('demand2')"
+                            [checked]='false'
+                            class='form-check-input'
+                            id='demand2'
+                            name='format'
+                            ngModel
+                            type='radio'
+                            value='demand2'
+                          />
+                          <label class='form-check-label' for='demand2'
+                          >Demand 2</label
+                          >
+                        </div>
+                      </div>
+                      <div class='form-check mb-2 mr-sm-2'>
+                        <div class='form-check'>
+                          <input
+                            (click)="setradio('prelisting')"
+                            [checked]='false'
+                            class='form-check-input'
+                            id='prelisting'
+                            name='format'
+                            ngModel
+                            type='radio'
+                            value='prelisting'
+                          />
+                          <label class='form-check-label' for='prelisting'
+                          >Pre Listing</label
+                          >
+                        </div>
+                      </div>
+                      <div class='form-check mb-2 mr-sm-2'>
+                        <div class='form-check'>
+                          <input
+                            (click)="setradio('overduecc')"
+                            [checked]='false'
+                            class='form-check-input'
+                            id='overduecc'
+                            name='format'
+                            ngModel
+                            type='radio'
+                            value='overduecc'
+                          />
+                          <label class='form-check-label' for='overduecc'
+                          >Overdue cc</label
+                          >
+                        </div>
+                      </div>
+                      <div class='form-check mb-2 mr-sm-2'>
+                        <div class='form-check'>
+                          <input
+                            (click)="setradio('prelistingcc')"
+                            [checked]='false'
+                            class='form-check-input'
+                            id='prelistingcc'
+                            name='format'
+                            ngModel
+                            type='radio'
+                            value='prelistingcc'
+                          />
+                          <label class='form-check-label' for='prelistingcc'
+                          >Prelisting cc</label
+                          >
+                        </div>
+                      </div>
+                      <div class='form-check mb-2 mr-sm-2'>
+                        <div class='form-check'>
+                          <input
+                            (click)="setradio('suspension')"
+                            [checked]='false'
+                            class='form-check-input'
+                            id='suspension'
+                            name='format'
+                            ngModel
+                            type='radio'
+                            value='suspension'
+                          />
+                          <label class='form-check-label' for='suspension'
+                          >Suspension cc</label
+                          >
+                        </div>
+                      </div>
+                      <div class='form-check mb-2 mr-sm-2'>
+                        <div class='form-check'>
+                          <input
+                            (click)="setradio('prelistingremedial')"
+                            [checked]='false'
+                            class='form-check-input'
+                            id='prelistingremedial'
+                            name='format'
+                            ngModel
+                            type='radio'
+                            value='prelistingremedial'
+                          />
+                          <label
+                            class='form-check-label'
+                            for='prelistingremedial'
+                          >Prelisting Remedial (ex-Staff)</label
+                          >
+                        </div>
+                      </div>
+                      <div class='form-check mb-2 mr-sm-2'>
+                        <div class='form-check'>
+                          <input
+                            (click)="setradio('postlistingsecured')"
+                            [checked]='false'
+                            class='form-check-input'
+                            id='postlistingsecured'
+                            name='format'
+                            ngModel
+                            type='radio'
+                            value='postlistingsecured'
+                          />
+                          <label
+                            class='form-check-label'
+                            for='postlistingsecured'
+                          >Postlisting Secured</label
+                          >
+                        </div>
+                      </div>
+                      <div class='form-check mb-2 mr-sm-2'>
+                        <div class='form-check'>
+                          <input
+                            (click)="setradio('postlistingunsecuredcc')"
+                            [checked]='false'
+                            class='form-check-input'
+                            id='postlistingunsecuredcc'
+                            name='format'
+                            ngModel
+                            type='radio'
+                            value='postlistingunsecuredcc'
+                          />
+                          <label
+                            class='form-check-label'
+                            for='postlistingunsecuredcc'
+                          >Postlisting Un-Secured cc</label
+                          >
+                        </div>
+                      </div>
+                      <div class='form-check mb-2 mr-sm-2'>
+                        <div class='form-check'>
+                          <input
+                            (click)="setradio('postlistingunsecured')"
+                            [checked]='false'
+                            class='form-check-input'
+                            id='PostlistingUnsecured'
+                            name='format'
+                            ngModel
+                            type='radio'
+                            value='PostlistingUnsecured'
+                          />
+                          <label
+                            class='form-check-label'
+                            for='PostlistingUnsecured'
+                          >Postlisting Unsecured</label
+                          >
+                        </div>
+                      </div>
+                      <div class='form-check mb-2 mr-sm-2'>
+                        <div class='form-check'>
+                          <input
+                            (click)="setradio('day90')"
+                            [checked]='false'
+                            class='form-check-input'
+                            id='Day90'
+                            name='format'
+                            ngModel
+                            type='radio'
+                            value='Day90'
+                          />
+                          <label class='form-check-label' for='Day90'
+                          >90 Day</label
+                          >
+                        </div>
+                      </div>
+                      <div class='form-check mb-2 mr-sm-2'>
+                        <div class='form-check'>
+                          <input
+                            (click)="setradio('day40')"
+                            [checked]='false'
+                            class='form-check-input'
+                            id='Day40'
+                            name='format'
+                            ngModel
+                            type='radio'
+                            value='Day40'
+                          />
+                          <label class='form-check-label' for='Day40'
+                          >40 Day</label
+                          >
+                        </div>
+                      </div>
+                      <div class='form-check mb-2 mr-sm-2'>
+                        <div class='form-check'>
+                          <input
+                            (click)="setradio('day30')"
+                            [checked]='false'
+                            class='form-check-input'
+                            id='Day30'
+                            name='format'
+                            ngModel
+                            type='radio'
+                            value='Day30'
+                          />
+                          <label class='form-check-label' for='Day30'
+                          >30 Day</label
+                          >
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class='card'>
+        <div class='card-header'>
+          <a class='card-link' data-toggle='collapse' href='#collapseThree'>
+            Demand Letter global settings (Footer and logo)
+          </a>
+        </div>
+        <div class='collapse' data-parent='#accordion' id='collapseThree'>
+          <div class='card-body'>
+            <form
+              #globalForm='ngForm'
+              (ngSubmit)='globalSubmit(globalForm)'
+              autocomplete='off'
+              class='form-horizontal'
+            >
+              <div class='form-group'>
+                <p>Letter Footer</p>
+                <label for='footer'></label
+                ><textarea
+                #footer='ngModel'
+                [(ngModel)]='model.footer'
+                class='form-control'
+                id='footer'
+                name='footer'
+                required
+                rows='4'
+              ></textarea>
+              </div>
+
+              <p class='lead mt-3'></p>
+              <div class='form-group'>
+                <p>Bank Directors</p>
+                <label for='directors'></label
+                ><textarea
+                #directors='ngModel'
+                [(ngModel)]='model.directors'
+                class='form-control'
+                id='directors'
+                name='directors'
+                required
+                rows='3'
+              ></textarea>
+              </div>
+
+              <fieldset>
+                <div class='clearfix'>
+                  <div class='float-left'>
+                    <button
+                      [disabled]='!globalForm.valid || !globalForm.dirty'
+                      class='btn btn-primary'
+                      type='submit'
+                    >
+                      <em class='fa fa-check fa-fw'></em>Submit
+                    </button>
+                  </div>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='col-xl-8' id='accordion'>
+      <div class='col-xl-12'>
+        <div class='card card-default'>
+          <div class='card-header'>
+            <a class='card-link' data-toggle='collapse' href='#collapseDemand1'>
+              {{ selected_demand }} Settings:
+            </a>
+          </div>
+          <div
+            class='collapse show'
+            data-parent='#accordion'
+            id='collapseDemand1'
+          >
+            <div class='card-body'>
+              <form
+                #letterForm='ngForm'
+                (ngSubmit)='onSubmit(letterForm)'
+                class='form-horizontal'
+              >
+                <p class='lead mt-3'></p>
+                <div class='form-group'>
+                  <p>sms template</p>
+                  <label for='smstemplate'></label
+                  ><textarea
+                  #smstemplate='ngModel'
+                  [(ngModel)]='model.smstemplate'
+                  [ngClass]="{ 'is-invalid': smstemplate.invalid }"
+                  class='form-control'
+                  id='smstemplate'
+                  name='sms'
+                  placeholder='sms message..'
+                  required
+                  rows='3'
+                ></textarea>
+                </div>
+                <fieldset></fieldset>
+                <fieldset>
+                  <div class='form-group row'>
+                    <label class='col-md-2 col-form-label'>Suspend?</label>
+                    <p></p>
+                    <div class='col-md-10'>
+                      <label class='checkbox c-checkbox'>
+                        <input
+                          #suspendletter='ngModel'
+                          [(ngModel)]='model.suspendletter'
+                          [checked]='model.suspendletter'
+                          id='suspendletter'
+                          name='suspendletter'
+                          type='checkbox'
+                        />
+                        <span class='fa fa-check'></span> Whole Letter</label
+                      >
+                      <label class='c-checkbox'>
+                        <input
+                          #suspendsms='ngModel'
+                          [(ngModel)]='model.suspendsms'
+                          [checked]='model.suspendsms'
+                          id='suspendsms'
+                          name='suspendsms'
+                          type='checkbox'
+                        />
+                        <span class='fa fa-check'></span> SMS</label
+                      >
+                      <label class='c-checkbox'>
+                        <input
+                          #suspendautodelivery='ngModel'
+                          [(ngModel)]='model.suspendautodelivery'
+                          [checked]='model.suspendautodelivery'
+                          id='suspendautodelivery'
+                          name='suspendautodelivery'
+                          type='checkbox'
+                        />
+                        <span class='fa fa-check'></span> Automatic
+                        delivery</label
+                      >
+                    </div>
+                    <!--<pre>{{model | json }}</pre>-->
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <div class='form-group row'>
+                    <label class='col-md-2 col-form-label'
+                    >Mode of delivery</label
+                    >
+                    <p></p>
+                    <div class='col-md-10'>
+                      <label class='c-checkbox'>
+                        <input
+                          #byemail='ngModel'
+                          [(ngModel)]='model.byemail'
+                          id='inlineCheckbox10'
+                          id='byemail'
+                          name='byemail'
+                          type='checkbox'
+                        />
+                        <span class='fa fa-check'></span>Email</label
+                      >
+                      <label class='c-checkbox'>
+                        <input
+                          #byphysical='ngModel'
+                          [(ngModel)]='model.byphysical'
+                          id='inlineCheckbox20'
+                          id='byphysical'
+                          name='byphysical'
+                          type='checkbox'
+                        />
+                        <span class='fa fa-check'></span>Post</label
+                      >
+                      <label class='c-checkbox'>
+                        <input
+                          #bysms='ngModel'
+                          [(ngModel)]='model.bysms'
+                          id='inlineCheckbox20'
+                          id='bysms'
+                          name='bysms'
+                          type='checkbox'
+                        />
+                        <span class='fa fa-check'></span>SMS</label
+                      >
+                    </div>
+                  </div>
+                </fieldset>
+                <div class='clearfix'>
+                  <div class='float-left'>
+                    <button
+                      [disabled]='!letterForm.valid || !letterForm.dirty'
+                      class='btn btn-outline-primary'
+                      type='submit'
+                    >
+                      <em class='fa fa-check fa-fw'></em>update
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

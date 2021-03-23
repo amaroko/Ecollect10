@@ -8,34 +8,25 @@
     <div class='profile-header-content'>
       <!-- BEGIN profile-header-img -->
 
-
       <div *ngIf='accountdetails' class='profile-header-img'>
-
         <img alt='' src='/assets/img/user/user-13.jpg' />
       </div>
 
-
       <div *ngIf='!accountdetails' class='profile-header-img'>
-
         <ngx-skeleton-loader
           [theme]="{
             width: '80px',
             height: '80px',
             'background-color': '#c8c7c7'
           }"
-
           appearance='circle'
         ></ngx-skeleton-loader>
-
-
       </div>
-
 
       <!-- END profile-header-img -->
       <!-- BEGIN profile-header-info -->
       <div class='profile-header-info'>
         <div>
-
           <h4 class='m-t-10 m-b-5'>
             <ngx-skeleton-loader
               *ngIf='!accountdetails'
@@ -45,8 +36,8 @@
                 height: '15px',
                 'background-color': '#c8c7c7',
                 'margin-bottom': '10px'
-              }">
-
+              }"
+            >
             </ngx-skeleton-loader>
             {{
             accountdetails?.client_name ||
@@ -66,8 +57,8 @@
                 height: '15px',
                 'background-color': '#c8c7c7',
                 'margin-bottom': '10px'
-              }">
-
+              }"
+            >
             </ngx-skeleton-loader>
             {{ accountdetails?.addressline1 || accountdetails?.address }}
           </p>
@@ -80,8 +71,8 @@
                 height: '15px',
                 'background-color': '#c8c7c7',
                 'margin-bottom': '10px'
-              }">
-
+              }"
+            >
             </ngx-skeleton-loader>
             {{
             accountdetails?.cellnumber ||
@@ -100,7 +91,7 @@
             {{ autodial_telnumber }}</a
           >
           <a
-            *ngIf='teles?.length === 0 '
+            *ngIf='teles?.length === 0'
             aria-expanded='false'
             aria-haspopup='true'
             class='btn btn-secondary btn-sm dropdown-toggle'
@@ -128,7 +119,6 @@
         </div>
       </div>
       <!-- END profile-header-info -->
-
     </div>
     <!-- END profile-header-content -->
 

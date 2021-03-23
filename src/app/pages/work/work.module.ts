@@ -19,7 +19,7 @@ const routes: Routes = [
   { path: 'allloans', component: AllloansComponent },
   { path: 'predelq', component: PredelqComponent },
   { path: 'ptps', component: PtpsComponent },
-  { path: 'withfunds', component: WithfundsComponent }
+  { path: 'withfunds', component: WithfundsComponent },
 ];
 
 @NgModule({
@@ -30,15 +30,15 @@ const routes: Routes = [
     MyworklistComponent,
     PredelqComponent,
     PtpsComponent,
-    WithfundsComponent
+    WithfundsComponen,
   ],
   imports: [
     CommonModule,
     AgGridModule.withComponents([]),
     RouterModule.forChild(routes),
-    PanelModule
+    PanelModul,
   ],
-  exports: [RouterModule]
+  exports: [RouterModule,
 })
 export class WorkModule {
 }
