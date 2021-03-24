@@ -41,6 +41,7 @@ import { CommonModule } from '@angular/common';
 import { filter, map } from 'rxjs/operators';
 import { ActivitylogComponent } from './pages/activitylog/activitylog.component';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
+import { RolesensorComponent } from './pages/rolesensor/rolesensor.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgxPrettyDateModule } from 'ngx-pretty-date';
 import { MomentModule } from 'ngx-moment';
@@ -49,11 +50,12 @@ import { BnNgIdleService } from 'bn-ng-idle';
 import { NgxSmartModalModule } from 'ngx-smart-modal';
 import { NgxSelectModule } from 'ngx-select-ex';
 import { NgxDocViewerModule } from 'ngx-doc-viewer';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ToasterModule, ToasterService } from 'angular2-toaster';
 import { NgMarqueeModule } from 'ng-marquee';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 var DEFAULT_PERFECT_SCROLLBAR_CONFIG = {
-    suppressScrollX: tru,
+    suppressScrollX: true,
 };
 var AppModule = /** @class */ (function () {
     function AppModule(router, titleService, routee) {
@@ -95,7 +97,7 @@ var AppModule = /** @class */ (function () {
                 LayoutComponent,
                 LoginComponent,
                 ActivitylogComponent,
-                RolesensorComponen,
+                RolesensorComponent,
             ],
             imports: [
                 AppRoutingModule,
@@ -104,7 +106,7 @@ var AppModule = /** @class */ (function () {
                 ToasterModule.forRoot(),
                 // AgmCoreModule.forRoot({
                 //   apiKey: 'AIzaSyC5gJ5x8Yw7qP_DqvNq3IdZi2WUSiDjskk',
-                // }),
+                // }),,
                 BrowserAnimationsModule,
                 NgMarqueeModule,
                 Ng2SearchPipeModule,
@@ -139,7 +141,7 @@ var AppModule = /** @class */ (function () {
                 TagInputModule,
                 TrendModule,
                 NgxSmartModalModule,
-                TooltipModul,
+                TooltipModule,
             ],
             providers: [
                 BnNgIdleService,

@@ -39,7 +39,7 @@ export class ViewallComponent implements OnInit {
         },
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: tre,
+        resizable: true,
       },
       {
         field: 'CLIENTNAME',
@@ -51,7 +51,7 @@ export class ViewallComponent implements OnInit {
         field: 'IDNUMBER',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: tru,
+        resizable: true,
       },
       {
         field: 'ARREARS_CATEGORY',
@@ -63,7 +63,7 @@ export class ViewallComponent implements OnInit {
         field: 'LOAN_TYPE',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: tru,
+        resizable: true,
       },
       {
         field: 'AROCODE',
@@ -75,7 +75,7 @@ export class ViewallComponent implements OnInit {
         field: 'DISBURSALDATE',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: tru,
+        resizable: true,
       },
       {
         field: 'AMOUNTDISBURSED',
@@ -119,7 +119,7 @@ export class ViewallComponent implements OnInit {
         field: 'LASTPAYMENTDATE',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: tru,
+        resizable: true,
       },
       {
         field: 'DUEDATE',
@@ -131,7 +131,7 @@ export class ViewallComponent implements OnInit {
         field: 'LOANSTATUS',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: tru,
+        resizable: true,
       },
       {
         field: 'ADDRESS',
@@ -150,7 +150,7 @@ export class ViewallComponent implements OnInit {
       width: 120,
       resizable: true,
       sortable: true,
-      floatingFilter: tue,
+      floatingFilter: true,
     };
     this.rowModelType = 'serverSide';
     this.cacheBlockSize = 50;
@@ -193,7 +193,7 @@ export class ViewallComponent implements OnInit {
             params.failCallback();
           }
         }, 500);
-      ,
+      },
     };
   }
 
@@ -232,7 +232,7 @@ export class ViewallComponent implements OnInit {
     const exportParams = {
       skipHeader: false,
       allColumns: true,
-      fileName: 'export.csv'
+      fileName: 'export.csv',
     };
     const datasource = {
       getRows(params) {
@@ -241,7 +241,7 @@ export class ViewallComponent implements OnInit {
         fetch(environment.nodeapi + '/gridmcoopcashviewall/viewall', {
           method: 'post',
           body: JSON.stringify(params.request),
-          headers: { 'Content-Type': 'application/json; charset=utf-8' }
+          headers: { 'Content-Type': 'application/json; charset=utf-8' },
         })
           .then((httpResponse) => httpResponse.json())
           .then((response) => {

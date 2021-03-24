@@ -38,7 +38,7 @@ export class AllecreditComponent implements OnInit {
         },
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: tre,
+        resizable: true,
       },
       {
         field: 'CLIENTNAME',
@@ -50,7 +50,7 @@ export class AllecreditComponent implements OnInit {
         field: 'IDNUMBER',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: tru,
+        resizable: true,
       },
       {
         field: 'ARREARS_CATEGORY',
@@ -62,7 +62,7 @@ export class AllecreditComponent implements OnInit {
         field: 'LOAN_TYPE',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: tru,
+        resizable: true,
       },
       {
         field: 'AROCODE',
@@ -74,7 +74,7 @@ export class AllecreditComponent implements OnInit {
         field: 'DISBURSALDATE',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: tru,
+        resizable: true,
       },
       {
         field: 'AMOUNTDISBURSED',
@@ -118,7 +118,7 @@ export class AllecreditComponent implements OnInit {
         field: 'LASTPAYMENTDATE',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: tru,
+        resizable: true,
       },
       {
         field: 'DUEDATE',
@@ -130,7 +130,7 @@ export class AllecreditComponent implements OnInit {
         field: 'LOANSTATUS',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: tru,
+        resizable: true,
       },
       {
         field: 'ADDRESS',
@@ -149,7 +149,7 @@ export class AllecreditComponent implements OnInit {
       width: 120,
       resizable: true,
       sortable: true,
-      floatingFilter: tue,
+      floatingFilter: true,
     };
     this.rowModelType = 'serverSide';
     this.cacheBlockSize = 50;
@@ -195,7 +195,7 @@ export class AllecreditComponent implements OnInit {
             params.failCallback();
           }
         }, 500);
-      ,
+      },
     };
   }
 

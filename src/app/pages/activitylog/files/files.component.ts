@@ -17,7 +17,7 @@ const URL = environment.filesapi;
 @Component({
   selector: 'app-files',
   templateUrl: './files.component.html',
-  styleUrls: ['./files.component.css',
+  styleUrls: ['./files.component.css'],
 })
 export class FilesComponent implements OnInit {
   introJS = introJs();
@@ -31,7 +31,7 @@ export class FilesComponent implements OnInit {
   filetype: any = [
     { filetype: 'Other' },
     { filetype: 'Demand Letter' },
-    { filetype: 'Customer Correspondence' }
+    { filetype: 'Customer Correspondence' },
   ];
 
   public uploader: FileUploader = new FileUploader({ url: URL });
@@ -87,7 +87,7 @@ export class FilesComponent implements OnInit {
             docdesc: this.model.filedesc,
             colofficer: this.username,
             userdesctype: this.model.userdesctype || 'other',
-            code: ''
+            code: '',
           };
           this.ecolService.uploads(bulk).subscribe(
             (resp) => {
@@ -136,12 +136,12 @@ export class FilesComponent implements OnInit {
             element: '#uploadedfiles',
             intro:
               'Here you will find a list of the existing files that have been uploaded to ' +
-              'this account'
-          }
+              'this account',
+          },
         ],
         hidePrev: true,
         hideNext: true,
-        showProgress: true
+        showProgress: true,
       })
       .start();
   }
@@ -154,35 +154,35 @@ export class FilesComponent implements OnInit {
             element: '#userdesctype',
             intro:
               'Here, you get to choose the type of document that you are about to upload, ' +
-              'this helps in categoriing each documnet under its place'
+              'this helps in categoriing each documnet under its place',
           },
           {
             element: '#filedesc',
             intro:
-              'Here, you provide a description for  the document to be uploaded'
+              'Here, you provide a description for  the document to be uploaded',
           },
           {
             element: '#drop',
             intro:
-              'This is thee drag and drop feature. You could drop files here for upload'
+              'This is thee drag and drop feature. You could drop files here for upload',
           },
           {
             element: '#selmultiple',
             intro:
-              'Select this option if you are uploading multiple files at the same time'
+              'Select this option if you are uploading multiple files at the same time',
           },
           {
             element: '#single',
-            intro: 'Select this option if you are uploading single files'
+            intro: 'Select this option if you are uploading single files',
           },
           {
             element: '#progress',
-            intro: 'Here, you can view the status and progress of your uploads'
-          }
+            intro: 'Here, you can view the status and progress of your uploads',
+          },
         ],
         hidePrev: true,
         hideNext: true,
-        showProgress: true
+        showProgress: true,
       })
       .start();
   }
@@ -229,7 +229,7 @@ export class FilesComponent implements OnInit {
           // showDenyButton: true,
           // denyButtonText: 'Never Mind',
           // showCancelButton: true,
-          timer: 4000
+          timer: 4000,
         });
         this.loading = false;
       },
@@ -244,7 +244,7 @@ export class FilesComponent implements OnInit {
           // denyButtonText: 'Never Mind',
           showCancelButton: true,
 
-          timer: 4000
+          timer: 4000,
         });
         this.loading = false;
       }

@@ -41,7 +41,7 @@ export class AllloansComponent implements OnInit {
         },
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: tre,
+        resizable: true,
       },
       {
         headerName: 'CUSTNUMBER',
@@ -56,7 +56,7 @@ export class AllloansComponent implements OnInit {
         width: 300,
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: tru,
+        resizable: true,
       },
       {
         headerName: 'BRANCHNAME',
@@ -70,7 +70,7 @@ export class AllloansComponent implements OnInit {
         field: 'BRANCHCODE',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: tru,
+        resizable: true,
       },
       {
         headerName: 'OUSTBALANCE',
@@ -84,7 +84,7 @@ export class AllloansComponent implements OnInit {
         field: 'PRODUCTCODE',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: tru,
+        resizable: true,
       },
       {
         headerName: 'AROCODE',
@@ -98,15 +98,15 @@ export class AllloansComponent implements OnInit {
         field: 'NATIONID',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: tru,
+        resizable: true,
       },
       {
         headerName: 'EMPLOYER',
         field: 'EMPLOYER',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: tru,
-      ,
+        resizable: true,
+      },
     ];
     this.defaultColDef = {
       width: 120,
@@ -117,7 +117,7 @@ export class AllloansComponent implements OnInit {
       suppressResize: false,
       enableRowGroup: true,
       enablePivot: true,
-      pivot: true
+      pivot: true,
     };
     this.rowModelType = 'serverSide';
     this.cacheBlockSize = 50;
@@ -137,7 +137,7 @@ export class AllloansComponent implements OnInit {
           // fetch(environment.api + '/api/watch_stage/gridviewall_loans', {
           method: 'post',
           body: JSON.stringify(params.request),
-          headers: { 'Content-Type': 'application/json; charset=utf-8' }
+          headers: { 'Content-Type': 'application/json; charset=utf-8' },
         })
           .then((httpResponse) => httpResponse.json())
           .then((response) => {

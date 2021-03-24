@@ -51,7 +51,7 @@ export class ActivitylogComponent implements OnInit {
     aboutTab: false,
     photoTab: false,
     videoTab: false,
-    friendTab: fals,
+    friendTab: false,
   };
 
   constructor(

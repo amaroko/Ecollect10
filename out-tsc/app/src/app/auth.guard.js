@@ -19,7 +19,7 @@ var AuthGuard = /** @class */ (function () {
     };
     AuthGuard = __decorate([
         Injectable({
-            providedIn: 'root,
+            providedIn: 'root',
         }),
         __metadata("design:paramtypes", [Router])
     ], AuthGuard);

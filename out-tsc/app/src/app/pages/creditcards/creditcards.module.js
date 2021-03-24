@@ -11,6 +11,7 @@ import { PanelModule } from '../../components/panel/panel.module';
 import { AgGridModule } from '@ag-grid-community/angular';
 import { DemandsdueComponent } from './creditcarddemands/demandsdue/demandsdue.component';
 import { DemandshistoryComponent } from './creditcarddemands/demandshistory/demandshistory.component';
+import { FormsModule } from '@angular/forms';
 var routes = [
     { path: '', redirectTo: 'allcards' },
     { path: 'allcards', component: AllcardsComponent },
@@ -37,16 +38,16 @@ var CreditcardsModule = /** @class */ (function () {
                 ViewallComponent,
                 ZerobalanceComponent,
                 DemandsdueComponent,
-                DemandshistoryComponet,
+                DemandshistoryComponent,
             ],
             imports: [
                 CommonModule,
                 PanelModule,
                 AgGridModule.withComponents([]),
                 RouterModule.forChild(routes),
-                FormsModue,
+                FormsModule,
             ],
-            exports: [RouterModul],
+            exports: [RouterModule],
         })
     ], CreditcardsModule);
     return CreditcardsModule;

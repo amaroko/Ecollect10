@@ -31,7 +31,7 @@ var ActivitylogComponent = /** @class */ (function () {
             aboutTab: false,
             photoTab: false,
             videoTab: false,
-            friendTab: fals,
+            friendTab: false,
         };
         // test service
         dataService.getTestData().subscribe(function (data) {

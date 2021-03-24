@@ -82,7 +82,7 @@ export class DemandlettersComponent implements OnInit {
     timeout: 0,
     positionClass: 'toast-top-right',
     animation: 'flyLeft',
-    limit: ,
+    limit: 7,
     // closeHtml: '<button class="btn btn-danger">Close</button>'
   });
   loader = true;
@@ -150,7 +150,7 @@ export class DemandlettersComponent implements OnInit {
           byemail: false,
           byphysical: true,
           bypost: true,
-          demand: this.model.demand
+          demand: this.model.demand,
         };
         this.ecolService.demandshistory(bulk).subscribe(
           (resp) => {
@@ -215,33 +215,33 @@ export class DemandlettersComponent implements OnInit {
             position: 'left',
             intro:
               'Here you get to select the demand type that you want to send manually eg Demad letter' +
-              '1, Prelisting etc'
+              '1, Prelisting etc',
           },
           {
             element: '#accnumber',
             tooltipPosition: 'left',
             intro:
-              'This is the account number of the customer. It is a 14 digit code eg 016C7184210202'
+              'This is the account number of the customer. It is a 14 digit code eg 016C7184210202',
           },
           {
             element: '#custnumber',
             tooltipPosition: 'auto',
             intro:
-              'This is 7 digit number of the customer derived from the account number eg 1842102'
+              'This is 7 digit number of the customer derived from the account number eg 1842102',
           },
           {
             element: '#addressline1',
             position: 'left',
             intro:
               'This is the P. O Box address provided by the customer. It is vital especially' +
-              'when sending a letter by mail box. In some cases you may have to fill it manually if it\'s not available'
+              'when sending a letter by mail box. In some cases you may have to fill it manually if it\'s not available',
           },
           {
             element: '#postcode',
             position: 'top',
             intro:
               'This is the standard postal code that accompanies a mail box number to understand its destination ' +
-              'In some cases you may have to fill it manually if it\'s not available'
+              'In some cases you may have to fill it manually if it\'s not available',
           },
           {
             element: '#emailaddress',
@@ -249,77 +249,77 @@ export class DemandlettersComponent implements OnInit {
             intro:
               'This is the customer email address. It should follow the standard email format i.e ' +
               'janedoe@somethingmail.com otherwise the e-mail will not be delivered In ' +
-              'some cases you may have to fill it manually if it\'s not available'
+              'some cases you may have to fill it manually if it\'s not available',
           },
           {
             element: '#celnumber',
             position: 'left',
             intro:
-              'This is the mobile number of the customer. In some cases you may have to fill it manually if it\'s not available'
+              'This is the mobile number of the customer. In some cases you may have to fill it manually if it\'s not available',
           },
           {
             element: '#savecontacts',
             position: 'left',
             intro:
               'Here you may decide to save the cell number that you enteredd in the previous field. This  ' +
-              'number will be linked to this customer'
+              'number will be linked to this customer',
           },
           {
             element: '#showlogofooter',
             position: 'left',
             intro:
               'Check this box if you want to generate a letter that has the default Co-operative Bank of Kenya ' +
-              'logo and footer'
+              'logo and footer',
           },
           {
             element: '#generateword',
             intro:
               'Check this box if you want to generate a word document. This is the recommended format if you want to ' +
-              'download and edit the letter. Keep in mind, Word documents are not sent to customers'
+              'download and edit the letter. Keep in mind, Word documents are not sent to customers',
           },
           {
             element: '#generatepdf',
             intro:
               'Check this box, to generate a pdf document that will be sent to the customer as per the provided details ' +
-              'in the above fields'
+              'in the above fields',
           },
           {
             element: '#previewtosend',
             intro:
               'Check this box if you do not want the system to send the letter. ' +
               'This means the letter will be generated and downloaded ' +
-              'to your computer for you to take further steps'
+              'to your computer for you to take further steps',
           },
           {
             element: '#previewletter',
             intro:
               'Press this button to preview the letter that is to be sent. This button does not ' +
               'send the letter but instead downloads the letter to your computer so that you can ' +
-              'confirm the details before sending to customer'
+              'confirm the details before sending to customer',
           },
           {
             element: '#sendemailinput',
             intro:
-              'Check this box if you want to send the letter via email. The email address should be available and valid'
+              'Check this box if you want to send the letter via email. The email address should be available and valid',
           },
           {
             element: '#sendpostal',
             intro:
               'Check this box, to queue the letter for physical sending via the mail box. The postal address ' +
-              'and postal code should be available'
+              'and postal code should be available',
           },
           {
             element: '#sendbysms',
             intro:
               'Check this box, to send a link of the letter to the customers phone number. The customer ' +
-              'then follows the link to view the letter'
+              'then follows the link to view the letter',
           },
           {
             element: '#generateandsend',
             intro:
               'This is the final step. After confirming that all details are correct, this button sends the ' +
-              'letter as per the provided details'
-          }
+              'letter as per the provided details',
+          },
         ],
         hidePrev: true,
         hideNext: true,
@@ -328,7 +328,7 @@ export class DemandlettersComponent implements OnInit {
         showStepNumbers: true,
         showBullets: true,
         scrollToElement: true,
-        exitOnOverlayClick: false
+        exitOnOverlayClick: false,
       })
       .start();
   }
@@ -585,7 +585,7 @@ export class DemandlettersComponent implements OnInit {
                             guarantorsemail: this.guarantoremails,
                             sendemail:
                               letter.branchemail ||
-                              'Customer Service <Customerservice@co-opbank.co.ke>'
+                              'Customer Service <Customerservice@co-opbank.co.ke>',
                           };
 
                           // console.log('to history ', this.demandhisdetails);
@@ -606,7 +606,7 @@ export class DemandlettersComponent implements OnInit {
                                   accnumber: this.model.accnumber,
                                   telnumber: this.model.celnumber,
                                   owner: this.username,
-                                  message: this.smsMessage
+                                  message: this.smsMessage,
                                 };
                                 // console.log(smsdata);
                                 // this.sendsms(smsdata);
@@ -621,7 +621,7 @@ export class DemandlettersComponent implements OnInit {
                             id: this.demandid,
                             from: 'loans',
                             datesent: this.currentDate(),
-                            sentby: this.username
+                            sentby: this.username,
                           };
                           this.ecolService.demandstatus(status).subscribe(
                             (ddstatusdata) => {
@@ -788,7 +788,7 @@ export class DemandlettersComponent implements OnInit {
                   this.bodyletter.branchemail ||
                   'Customer Service <Customerservice@co-opbank.co.ke>',
                 title: letter.demand,
-                guarantor: this.bodyletter.guarantors || 0
+                guarantor: this.bodyletter.guarantors || 0,
               };
               // console.log('emaildata...', this.emaildata);
               // generate letter
@@ -848,7 +848,7 @@ export class DemandlettersComponent implements OnInit {
         guarantorsemail: this.guarantoremails,
         sendemail:
           letter.branchemail ||
-          'Customer Service <Customerservice@co-opbank.co.ke>'
+          'Customer Service <Customerservice@co-opbank.co.ke>',
       };
       //
       this.emaildata.file = uploaddata.message;
@@ -882,7 +882,7 @@ export class DemandlettersComponent implements OnInit {
                     accnumber: this.model.accnumber,
                     telnumber: this.model.celnumber,
                     owner: this.username,
-                    message: this.smsMessage
+                    message: this.smsMessage,
                   };
                   this.sendsms(smsdata);
                 },
@@ -907,7 +907,7 @@ export class DemandlettersComponent implements OnInit {
           body:
             'Dear Customer,\nPlease download your ' +
             this.model.demand +
-            ' from this link: https://bit.ly/2OfHuEh\n\nCo-op Bank\nCredit Department '
+            ' from this link: https://bit.ly/2OfHuEh\n\nCo-op Bank\nCredit Department ',
         };
         this.ecolService.sendDemandsms(smsbody).subscribe((response) => {
           console.log(response);
@@ -1044,14 +1044,14 @@ export class DemandlettersComponent implements OnInit {
             postcode: this.model.postcode,
             exp_pmnt: data[0].exppmnt,
             out_balance: data[0].exppmnt,
-            manager: 'ROSE KARAMBU'
+            manager: 'ROSE KARAMBU',
           };
           const emaildata = {
             name: data[0].cardname,
             email: emailaddress,
             title: demand,
             branchemail:
-              'Contact Centre Team <ContactCentreTeam@co-opbank.co.ke>'
+              'Contact Centre Team <ContactCentreTeam@co-opbank.co.ke>',
           };
           // generate letter
           this.generatelettercc(letter, emaildata);
@@ -1099,7 +1099,7 @@ export class DemandlettersComponent implements OnInit {
             guarantorsemail: this.guarantoremails,
             sendemail:
               letter.branchemail ||
-              'Customer Service <Customerservice@co-opbank.co.ke>'
+              'Customer Service <Customerservice@co-opbank.co.ke>',
           };
           //
           emaildata.file = uploaddata.message;
@@ -1130,7 +1130,7 @@ export class DemandlettersComponent implements OnInit {
                     accnumber: this.model.accnumber,
                     telnumber: this.model.celnumber,
                     owner: this.username,
-                    message: this.smsMessage
+                    message: this.smsMessage,
                   };
                   this.sendsms(smsdata);
 
@@ -1151,7 +1151,7 @@ export class DemandlettersComponent implements OnInit {
               body:
                 'Dear Customer,\nPlease download your ' +
                 this.model.demand +
-                ' from this link: https://bit.ly/2OfHuEh\n\nCo-op Bank\nCredit Department '
+                ' from this link: https://bit.ly/2OfHuEh\n\nCo-op Bank\nCredit Department ',
             };
             //
             // console.log(smsbody);
@@ -1231,7 +1231,7 @@ export class DemandlettersComponent implements OnInit {
         confirmButtonText: 'Send Email',
         showLoaderOnConfirm: true,
         preConfirm: (email) => {},
-        allowOutsideClick: () => !swal.isLoading()
+        allowOutsideClick: () => !swal.isLoading(),
       })
       .then((result) => {
         if (result.value !== null) {
@@ -1263,7 +1263,7 @@ export class DemandlettersComponent implements OnInit {
               updatedby: this.username,
               updatedlast: new Date(),
               address: model.addressline1,
-              postcode: model.postcode
+              postcode: model.postcode,
             };
 
             this.ecolService.postteles(telesbody).subscribe((teles) => {
@@ -1285,7 +1285,7 @@ export class DemandlettersComponent implements OnInit {
 
   audio() {
     const sound = new Howl({
-      src: 'assets/sound.wav'
+      src: 'assets/sound.wav',
     });
 
     sound.play();

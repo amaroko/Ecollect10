@@ -1,7 +1,7 @@
 import { __decorate, __metadata, __values } from "tslib";
 import { animate, state, style, transition, trigger, } from '@angular/animations';
 import { menu } from '../../config/page-menus';
-import { Component, ElementRef, EventEmitter, HostListener, Input, Output, } from '@angular/core';
+import { Component, ElementRef, EventEmitter, HostListener, Input, Output, ViewChild, } from '@angular/core';
 import pageSettings from '../../config/page-settings';
 var SidebarComponent = /** @class */ (function () {
     function SidebarComponent(eRef) {

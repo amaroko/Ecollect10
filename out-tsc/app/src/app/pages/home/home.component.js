@@ -10,138 +10,138 @@ var HomePageComponent = /** @class */ (function () {
             {
                 featureType: 'all',
                 elementType: 'labels.text.fill',
-                stylers: [{ saturation: 36 }, { lightness: 40 },]
+                stylers: [{ saturation: 36 }, { lightness: 40 }],
             },
             {
                 featureType: 'all',
                 elementType: 'labels.text.stroke',
-                stylers: [{ visibility: 'on' }, { color: '#000000' }, { lightness: 16 }]
+                stylers: [{ visibility: 'on' }, { color: '#000000' }, { lightness: 16 }],
             },
             {
                 featureType: 'all',
                 elementType: 'labels.icon',
-                stylers: [{ visibility: 'off' }]
+                stylers: [{ visibility: 'off' }],
             },
             {
                 featureType: 'administrative',
                 elementType: 'geometry.fill',
-                stylers: [{ color: '#2d353c' }, { lightness: 20 }]
+                stylers: [{ color: '#2d353c' }, { lightness: 20 }],
             },
             {
                 featureType: 'administrative',
                 elementType: 'geometry.stroke',
-                stylers: [{ color: '#000000' }, { lightness: 17 }, { weight: 1.2 }]
+                stylers: [{ color: '#000000' }, { lightness: 17 }, { weight: 1.2 }],
             },
             {
                 featureType: 'administrative',
                 elementType: 'labels.text.fill',
-                stylers: [{ color: '#d8d8d8' }]
+                stylers: [{ color: '#d8d8d8' }],
             },
             {
                 featureType: 'administrative.neighborhood',
                 elementType: 'geometry.fill',
-                stylers: [{ color: '#ff0000' }]
+                stylers: [{ color: '#ff0000' }],
             },
             {
                 featureType: 'administrative.land_parcel',
                 elementType: 'geometry.fill',
-                stylers: [{ color: '#2d353c' }]
+                stylers: [{ color: '#2d353c' }],
             },
             {
                 featureType: 'landscape',
                 elementType: 'geometry',
-                stylers: [{ color: '#000000' }, { lightness: 20 }]
+                stylers: [{ color: '#000000' }, { lightness: 20 }],
             },
             {
                 featureType: 'landscape',
                 elementType: 'geometry.fill',
-                stylers: [{ color: '#2d353c' }]
+                stylers: [{ color: '#2d353c' }],
             },
             {
                 featureType: 'landscape',
                 elementType: 'labels.text.fill',
-                stylers: [{ color: '#00acac' }]
+                stylers: [{ color: '#00acac' }],
             },
             {
                 featureType: 'landscape.man_made',
                 elementType: 'geometry.fill',
-                stylers: [{ color: '#2d353c' }]
+                stylers: [{ color: '#2d353c' }],
             },
             {
                 featureType: 'poi',
                 elementType: 'geometry',
-                stylers: [{ color: '#000000' }, { lightness: 21 }]
+                stylers: [{ color: '#000000' }, { lightness: 21 }],
             },
             {
                 featureType: 'poi',
                 elementType: 'geometry.fill',
-                stylers: [{ color: '#2d353c' }]
+                stylers: [{ color: '#2d353c' }],
             },
             {
                 featureType: 'poi',
                 elementType: 'labels.text.fill',
-                stylers: [{ color: '#575d63' }]
+                stylers: [{ color: '#575d63' }],
             },
             {
                 featureType: 'road',
                 elementType: 'labels.text.fill',
-                stylers: [{ color: '#348fe2' }]
+                stylers: [{ color: '#348fe2' }],
             },
             {
                 featureType: 'road.highway',
                 elementType: 'geometry.fill',
-                stylers: [{ color: '#000000' }, { lightness: 17 }]
+                stylers: [{ color: '#000000' }, { lightness: 17 }],
             },
             {
                 featureType: 'road.highway',
                 elementType: 'geometry.stroke',
-                stylers: [{ color: '#000000' }, { lightness: 29 }, { weight: 0.2 }]
+                stylers: [{ color: '#000000' }, { lightness: 29 }, { weight: 0.2 }],
             },
             {
                 featureType: 'road.highway.controlled_access',
                 elementType: 'geometry.fill',
-                stylers: [{ color: '#575d63' }]
+                stylers: [{ color: '#575d63' }],
             },
             {
                 featureType: 'road.arterial',
                 elementType: 'geometry',
-                stylers: [{ color: '#000000' }, { lightness: 18 }]
+                stylers: [{ color: '#000000' }, { lightness: 18 }],
             },
             {
                 featureType: 'road.arterial',
                 elementType: 'geometry.fill',
-                stylers: [{ color: '#575d63' }]
+                stylers: [{ color: '#575d63' }],
             },
             {
                 featureType: 'road.local',
                 elementType: 'geometry',
-                stylers: [{ color: '#000000' }, { lightness: 16 }]
+                stylers: [{ color: '#000000' }, { lightness: 16 }],
             },
             {
                 featureType: 'road.local',
                 elementType: 'geometry.fill',
-                stylers: [{ color: '#575d63' }]
+                stylers: [{ color: '#575d63' }],
             },
             {
                 featureType: 'transit',
                 elementType: 'geometry',
-                stylers: [{ color: '#000000' }, { lightness: 19 }]
+                stylers: [{ color: '#000000' }, { lightness: 19 }],
             },
             {
                 featureType: 'transit',
                 elementType: 'geometry.fill',
-                stylers: [{ color: '#2d353c' }]
+                stylers: [{ color: '#2d353c' }],
             },
             {
                 featureType: 'water',
                 elementType: 'geometry',
-                stylers: [{ color: '#000000' }, { lightness: 17 }]
+                stylers: [{ color: '#000000' }, { lightness: 17 }],
             },
             {
                 featureType: 'water',
                 elementType: 'geometry.fill',
-                stylers: [{ color: '#1a1f23' }]
-            }
+                stylers: [{ color: '#1a1f23' }],
+            },
         ];
         this.viewDate = new Date();
         this.events = [
@@ -149,25 +149,25 @@ var HomePageComponent = /** @class */ (function () {
                 start: subDays(startOfDay(new Date()), 1),
                 end: addDays(new Date(), 1),
                 title: 'A 3 day event',
-                color: '#00acac'
+                color: '#00acac',
             },
             {
                 start: startOfDay(new Date()),
                 title: 'An event with no end date',
-                color: '#ff5b57'
+                color: '#ff5b57',
             },
             {
                 start: subDays(endOfMonth(new Date()), 3),
                 end: addDays(endOfMonth(new Date()), 3),
                 title: 'A long event that spans 2 months',
-                color: '#348fe2'
+                color: '#348fe2',
             },
             {
                 start: addHours(startOfDay(new Date()), 2),
                 end: new Date(),
                 title: 'A draggable and resizable event',
-                color: '#727cb6'
-            }
+                color: '#727cb6',
+            },
         ];
     }
     HomePageComponent.prototype.ngOnInit = function () {
@@ -291,7 +291,7 @@ var HomePageComponent = /** @class */ (function () {
                     [1517999158229, 17],
                     [1518085558229, 7],
                     [1518171958229, 7],
-                    [1518258358229, 7]
+                    [1518258358229, 7],
                 ],
             },
             {
@@ -374,13 +374,13 @@ var HomePageComponent = /** @class */ (function () {
                     [1517999158229, 15],
                     [1518085558229, 18],
                     [1518085558229, 18],
-                    [1518258358229, 17]
+                    [1518258358229, 17],
                 ],
             },
         ];
         this.donutChartData = [
             { label: 'Return Visitors', value: 784466, color: global.COLOR_BLUE },
-            { label: 'New Visitors', value: 416747, color: global.COLOR_GREEN }
+            { label: 'New Visitors', value: 416747, color: global.COLOR_GREEN },
         ];
         this.donutChartOptions = {
             chart: {

@@ -18,7 +18,7 @@ import { NgxSmartModalService } from 'ngx-smart-modal';
   selector: 'app-activityaction',
   templateUrl: './activityaction.component.html',
   styleUrls: ['./activityaction.component.css'],
-  providers: [{ provide: NgbDateAdapter, useClass: NgbDateNativeAdapter },
+  providers: [{ provide: NgbDateAdapter, useClass: NgbDateNativeAdapter }],
 })
 export class ActivityactionComponent implements OnInit {
   @ViewChild('reason') inputOne: ElementRef;
@@ -77,7 +77,7 @@ export class ActivityactionComponent implements OnInit {
     { collectoractionid: 'OA', collectoraction: 'ASSIGN OUTSIDE AGENCY' },
     { collectoractionid: 'RF', collectoraction: 'RECEIVED FILE' },
     { collectoractionid: 'FT', collectoraction: 'FUND TRANSFER' },
-    { collectoractionid: 'NFA', collectoraction: 'NEW FILE ALLOCATION' }
+    { collectoractionid: 'NFA', collectoraction: 'NEW FILE ALLOCATION' },
   ];
 
   message: string;
@@ -88,7 +88,7 @@ export class ActivityactionComponent implements OnInit {
 
   ptp: NgOption[] = [
     { id: 'No', name: 'No' },
-    { id: 'Yes', name: 'Yes' }
+    { id: 'Yes', name: 'Yes' },
   ];
 
   // ... subReason: any = {};
@@ -423,7 +423,7 @@ export class ActivityactionComponent implements OnInit {
       flag: [false],
       route: [null],
       paymode: [{ value: null, disabled: true }],
-      rfdother: [{ value: null, disabled: true }, [Validators.required]]
+      rfdother: [{ value: null, disabled: true }, [Validators.required]],
     });
   }
 
@@ -482,7 +482,7 @@ export class ActivityactionComponent implements OnInit {
       noteimp: 'N',
       rfdother: this.f.rfdother.value,
       owner: this.username,
-      product: this.account.section
+      product: this.account.section,
     };
     if (this.f.flag.value) {
       this.savebody.noteimp = 'Y';
@@ -498,7 +498,7 @@ export class ActivityactionComponent implements OnInit {
         toemail: '',
         ccemail: this.username,
         ptpamount: 0,
-        ptpdate: ''
+        ptpdate: '',
       };
     }
 
@@ -517,7 +517,7 @@ export class ActivityactionComponent implements OnInit {
             excuse: this.f.reason.value,
             lastactiondate: new Date(),
             reviewdate: moment(this.f.reviewdate.value).format('DD-MMM-YYYY'),
-            routetostate: this.f.route.value
+            routetostate: this.f.route.value,
           };
 
           this.ecolService.putcardwatch(watchccbody).subscribe(
@@ -538,12 +538,11 @@ export class ActivityactionComponent implements OnInit {
             excuse: this.f.reason.value,
             lastactiondate: new Date(),
             reviewdate: moment(this.f.reviewdate.value).format('DD-MMM-YYYY'),
-            routetostate: this.f.route.value
+            routetostate: this.f.route.value,
           };
 
           this.ecolService.putwatch(watchbody).subscribe(
-            (resp) => {
-            },
+            (resp) => {},
             (error) => {
               console.log(error);
             }
@@ -555,12 +554,11 @@ export class ActivityactionComponent implements OnInit {
             id: this.ptpid,
             comment: this.f.collectornote.value,
             reviewdate: moment().format('DD-MMM-YYYY'),
-            owner: this.username
+            owner: this.username,
           };
 
           this.ecolService.reviewptp(ptpbody).subscribe(
-            (resp) => {
-            },
+            (resp) => {},
             (error) => {
               console.log(error);
             }
@@ -577,7 +575,7 @@ export class ActivityactionComponent implements OnInit {
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, Close!'
+            confirmButtonText: 'Yes, Close!',
           })
           .then((result) => {
             if (result.value) {
@@ -675,7 +673,7 @@ export class ActivityactionComponent implements OnInit {
               // type: 'error',
               title: 'Oops...',
               text:
-                'a/c already has a running promise to pay. Check under Promises to pay menu'
+                'a/c already has a running promise to pay. Check under Promises to pay menu',
             })
             .then((result) => {
               this.actionForm.controls.ptp.setValue(null);
@@ -728,13 +726,13 @@ export class ActivityactionComponent implements OnInit {
     // tslint:disable-next-line:max-line-length
     window.open(
       environment.applink +
-      '/multipleptp?accnumber=' +
-      this.accnumber +
-      '&custnumber=' +
-      this.custnumber +
-      '&username=' +
-      this.username +
-      '&sys=collections',
+        '/multipleptp?accnumber=' +
+        this.accnumber +
+        '&custnumber=' +
+        this.custnumber +
+        '&username=' +
+        this.username +
+        '&sys=collections',
       '_blank'
     );
   }
@@ -766,7 +764,7 @@ export class ActivityactionComponent implements OnInit {
       ptpdate: ptpdate,
       ptpamount: ptpamount,
       owner: owner,
-      accnumber: accnumber
+      accnumber: accnumber,
     });
     this.ptpmultiple = {};
     this.isptptosave = true;
@@ -777,7 +775,7 @@ export class ActivityactionComponent implements OnInit {
       (resp) => {
         swal
           .fire('Successful!', 'Mupltiple ptp saved!', 'success')
-          .then(function() {
+          .then(function () {
             this.ngxSmartModalService.getModal('myModal').close();
           });
       },
@@ -788,8 +786,7 @@ export class ActivityactionComponent implements OnInit {
     );
   }
 
-  selectInput() {
-  }
+  selectInput() {}
 
   onKey(event) {
     const inputValue = event.target.value;

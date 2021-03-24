@@ -22,7 +22,7 @@ var FilesComponent = /** @class */ (function () {
         this.filetype = [
             { filetype: 'Other' },
             { filetype: 'Demand Letter' },
-            { filetype: 'Customer Correspondence' }
+            { filetype: 'Customer Correspondence' },
         ];
         this.uploader = new FileUploader({ url: URL });
         this.hasBaseDropZoneOver = false;
@@ -58,7 +58,7 @@ var FilesComponent = /** @class */ (function () {
                         docdesc: _this.model.filedesc,
                         colofficer: _this.username,
                         userdesctype: _this.model.userdesctype || 'other',
-                        code: ''
+                        code: '',
                     };
                     _this.ecolService.uploads(bulk).subscribe(function (resp) {
                         _this.getfileshistory(_this.custnumber);
@@ -91,12 +91,12 @@ var FilesComponent = /** @class */ (function () {
                 {
                     element: '#uploadedfiles',
                     intro: 'Here you will find a list of the existing files that have been uploaded to ' +
-                        'this account'
-                }
+                        'this account',
+                },
             ],
             hidePrev: true,
             hideNext: true,
-            showProgress: true
+            showProgress: true,
         })
             .start();
     };
@@ -107,32 +107,32 @@ var FilesComponent = /** @class */ (function () {
                 {
                     element: '#userdesctype',
                     intro: 'Here, you get to choose the type of document that you are about to upload, ' +
-                        'this helps in categoriing each documnet under its place'
+                        'this helps in categoriing each documnet under its place',
                 },
                 {
                     element: '#filedesc',
-                    intro: 'Here, you provide a description for  the document to be uploaded'
+                    intro: 'Here, you provide a description for  the document to be uploaded',
                 },
                 {
                     element: '#drop',
-                    intro: 'This is thee drag and drop feature. You could drop files here for upload'
+                    intro: 'This is thee drag and drop feature. You could drop files here for upload',
                 },
                 {
                     element: '#selmultiple',
-                    intro: 'Select this option if you are uploading multiple files at the same time'
+                    intro: 'Select this option if you are uploading multiple files at the same time',
                 },
                 {
                     element: '#single',
-                    intro: 'Select this option if you are uploading single files'
+                    intro: 'Select this option if you are uploading single files',
                 },
                 {
                     element: '#progress',
-                    intro: 'Here, you can view the status and progress of your uploads'
-                }
+                    intro: 'Here, you can view the status and progress of your uploads',
+                },
             ],
             hidePrev: true,
             hideNext: true,
-            showProgress: true
+            showProgress: true,
         })
             .start();
     };
@@ -174,7 +174,7 @@ var FilesComponent = /** @class */ (function () {
                 // showDenyButton: true,
                 // denyButtonText: 'Never Mind',
                 // showCancelButton: true,
-                timer: 4000
+                timer: 4000,
             });
             _this.loading = false;
         }, function (error) {
@@ -187,7 +187,7 @@ var FilesComponent = /** @class */ (function () {
                 // showDenyButton: true,
                 // denyButtonText: 'Never Mind',
                 showCancelButton: true,
-                timer: 4000
+                timer: 4000,
             });
             _this.loading = false;
         });
@@ -201,7 +201,7 @@ var FilesComponent = /** @class */ (function () {
         Component({
             selector: 'app-files',
             templateUrl: './files.component.html',
-            styleUrls: ['./files.component.css',]
+            styleUrls: ['./files.component.css'],
         }),
         __metadata("design:paramtypes", [ActivatedRoute,
             EcolService,

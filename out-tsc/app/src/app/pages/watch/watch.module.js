@@ -4,6 +4,7 @@ import { CreditbuildupComponent } from './creditbuildup/creditbuildup.component'
 import { NocreditComponent } from './nocredit/nocredit.component';
 import { RouterModule } from '@angular/router';
 import { AgGridModule } from '@ag-grid-community/angular';
+import { PanelModule } from '../../components/panel/panel.module';
 var routes = [
     { path: '', redirectTo: 'nocredit' },
     { path: 'nocredit', component: NocreditComponent },
@@ -17,10 +18,10 @@ var WatchModule = /** @class */ (function () {
             imports: [
                 AgGridModule.withComponents([]),
                 RouterModule.forChild(routes),
-                PanelModul,
+                PanelModule,
             ],
             declarations: [NocreditComponent, CreditbuildupComponent],
-            exports: [RouterModule,]
+            exports: [RouterModule],
         })
     ], WatchModule);
     return WatchModule;

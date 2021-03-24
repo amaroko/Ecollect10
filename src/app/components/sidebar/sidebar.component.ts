@@ -14,7 +14,7 @@ import {
   HostListener,
   Input,
   Output,
-  ViewChil,
+  ViewChild,
 } from '@angular/core';
 
 import pageSettings from '../../config/page-settings';

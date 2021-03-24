@@ -36,16 +36,16 @@ const routes: Routes = [
     ViewallComponent,
     ZerobalanceComponent,
     DemandsdueComponent,
-    DemandshistoryComponet,
+    DemandshistoryComponent,
   ],
   imports: [
     CommonModule,
     PanelModule,
     AgGridModule.withComponents([]),
     RouterModule.forChild(routes),
-    FormsModue,
+    FormsModule,
   ],
-  exports: [RouterModul],
+  exports: [RouterModule],
 })
 export class CreditcardsModule {}
 

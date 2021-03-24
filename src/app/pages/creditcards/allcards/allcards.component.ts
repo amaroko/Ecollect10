@@ -41,7 +41,7 @@ export class AllcardsComponent implements OnInit {
         },
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: tre,
+        resizable: true,
       },
       {
         headerName: 'CARDNUMBER',
@@ -55,7 +55,7 @@ export class AllcardsComponent implements OnInit {
         field: 'CARDNAME',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: tru,
+        resizable: true,
       },
       {
         headerName: 'DAYSINARREARS',
@@ -69,7 +69,7 @@ export class AllcardsComponent implements OnInit {
         field: 'EXPPMNT',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: tru,
+        resizable: true,
       },
       {
         headerName: 'OUTSTANDING BALANCE',
@@ -83,7 +83,7 @@ export class AllcardsComponent implements OnInit {
         field: 'LIMIT',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: tru,
+        resizable: true,
       },
       {
         headerName: 'CYCLE',
@@ -109,7 +109,7 @@ export class AllcardsComponent implements OnInit {
       suppressResize: false,
       enableRowGroup: true,
       enablePivot: true,
-      pivot: tue,
+      pivot: true,
     };
     this.rowModelType = 'serverSide';
     this.cacheBlockSize = 50;

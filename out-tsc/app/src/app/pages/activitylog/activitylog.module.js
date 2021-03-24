@@ -33,6 +33,7 @@ import { WriteoffstoryComponent } from './writeoffstory/writeoffstory.component'
 import { NgxPrettyDateModule } from 'ngx-pretty-date';
 import { MomentModule } from 'ngx-moment';
 import { PdfJsViewerModule } from 'ng2-pdfjs-viewer';
+import { NgxDocViewerModule } from 'ngx-doc-viewer';
 var routes = [{ path: '', component: NotesComponent }];
 var ActivitylogModule = /** @class */ (function () {
     function ActivitylogModule() {
@@ -75,10 +76,10 @@ var ActivitylogModule = /** @class */ (function () {
                 NgxPrettyDateModule,
                 MomentModule,
                 PdfJsViewerModule,
-                NgxDocViewerModul,
+                NgxDocViewerModule,
             ],
             exports: [RouterModule],
-            providers: [DataService, DatePipe, ToasterService,]
+            providers: [DataService, DatePipe, ToasterService]
         })
     ], ActivitylogModule);
     return ActivitylogModule;

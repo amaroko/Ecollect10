@@ -41,7 +41,7 @@ export class WithfundsComponent implements OnInit {
         },
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: tre,
+        resizable: true,
       },
       {
         headerName: 'CUSTNUMBER',
@@ -55,7 +55,7 @@ export class WithfundsComponent implements OnInit {
         field: 'CLIENT_NAME',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: tru,
+        resizable: true,
       },
       {
         headerName: 'DAYSINARREARS',
@@ -70,7 +70,7 @@ export class WithfundsComponent implements OnInit {
         valueFormatter: this.currencyFormatter,
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: tru,
+        resizable: true,
       },
       {
         headerName: 'OUSTBALANCE',
@@ -85,7 +85,7 @@ export class WithfundsComponent implements OnInit {
         field: 'SETTLEACCNO',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: tru,
+        resizable: true,
       },
       {
         headerName: 'AROCODE',
@@ -99,15 +99,15 @@ export class WithfundsComponent implements OnInit {
         field: 'SETTLEACCBAL',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: tru,
+        resizable: true,
       },
       {
         headerName: 'COLOFFICER',
         field: 'COLOFFICER',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: tru,
-      ,
+        resizable: true,
+      },
     ];
     this.defaultColDef = {
       width: 120,
@@ -118,7 +118,7 @@ export class WithfundsComponent implements OnInit {
       suppressResize: false,
       enableRowGroup: true,
       enablePivot: true,
-      pivot: true
+      pivot: true,
     };
     this.rowModelType = 'serverSide';
     this.cacheBlockSize = 50;
@@ -137,7 +137,7 @@ export class WithfundsComponent implements OnInit {
         fetch(environment.nodeapi + '/gridtranscwithfunds/viewall', {
           method: 'post',
           body: JSON.stringify(params.request),
-          headers: { 'Content-Type': 'application/json; charset=utf-8' }
+          headers: { 'Content-Type': 'application/json; charset=utf-8' },
         })
           .then((httpResponse) => httpResponse.json())
           .then((response) => {

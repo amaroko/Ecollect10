@@ -26,64 +26,63 @@ var ViewallComponent = /** @class */ (function () {
                 field: 'CARDNUMBER',
                 width: 90,
                 filter: 'agTextColumnFilter',
-                filterParams: { newRowsAction: 'keep',
-                },
+                filterParams: { newRowsAction: 'keep' },
             },
             {
                 headerName: 'CARDNAME',
                 field: 'CARDNAME',
                 width: 90,
                 filter: 'agTextColumnFilter',
-                filterParams: { newRowsAction: 'keep' }
+                filterParams: { newRowsAction: 'keep' },
             },
             {
                 headerName: 'DAYSINARREARS',
                 field: 'DAYSINARREARS',
                 width: 90,
                 filter: 'agNumberColumnFilter',
-                filterParams: { newRowsAction: 'keep' }
+                filterParams: { newRowsAction: 'keep' },
             },
             {
                 headerName: 'EXPPMNT',
                 field: 'EXPPMNT',
                 width: 90,
                 filter: 'agNumberColumnFilter',
-                filterParams: { newRowsAction: 'keep' }
+                filterParams: { newRowsAction: 'keep' },
             },
             {
                 headerName: 'OUTSTANDING BALANCE',
                 field: 'OUTBALANCE',
                 width: 90,
                 filter: 'agNumberColumnFilter',
-                filterParams: { newRowsAction: 'keep' }
+                filterParams: { newRowsAction: 'keep' },
             },
             {
                 headerName: 'LIMIT',
                 field: 'LIMIT',
                 width: 90,
                 filter: 'agNumberColumnFilter',
-                filterParams: { newRowsAction: 'keep' }
+                filterParams: { newRowsAction: 'keep' },
             },
             {
                 headerName: 'CYCLE',
                 field: 'CYCLE',
                 width: 90,
                 filter: 'agNumberColumnFilter',
-                filterParams: { newRowsAction: 'keep' }
+                filterParams: { newRowsAction: 'keep' },
             },
             {
                 headerName: 'COLOFFICER',
                 field: 'COLOFFICER',
                 width: 90,
                 filter: 'agTextColumnFilter',
-                filterParams: { newRowsAction: 'keep' }
-            }
+                filterParams: { newRowsAction: 'keep' },
+            },
         ];
         this.defaultColDef = {
             width: 120,
             resizable: true,
             sortable: true,
-            floatingFilter: true
+            floatingFilter: true,
         };
         this.rowModelType = 'serverSide';
         this.cacheBlockSize = 50;
@@ -105,7 +104,7 @@ var ViewallComponent = /** @class */ (function () {
                 fetch(environment.nodeapi + '/gridcardsviewall/viewall', {
                     method: 'post',
                     body: JSON.stringify(params.request),
-                    headers: { 'Content-Type': 'application/json; charset=utf-8' }
+                    headers: { 'Content-Type': 'application/json; charset=utf-8' },
                 })
                     .then(function (httpResponse) { return httpResponse.json(); })
                     .then(function (response) {
@@ -131,7 +130,7 @@ var ViewallComponent = /** @class */ (function () {
                         params.failCallback();
                     }
                 }, 500);
-            }
+            },
         };
     };
     ViewallComponent.prototype.currencyFormatter = function (params) {

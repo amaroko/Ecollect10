@@ -134,7 +134,7 @@ export class NotesComponent implements OnInit, OnDestroy {
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
         resizable: true,
-        floatingFilter: tru,
+        floatingFilter: true,
       },
       {
         field: 'NOTEMADE',
@@ -150,7 +150,7 @@ export class NotesComponent implements OnInit, OnDestroy {
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep', browserDatePicker: true },
         valueFormatter: this.dateFormatter,
-        floatingFilter: tru,
+        floatingFilter: true,
       },
       {
         field: 'NOTEIMP',
@@ -178,7 +178,7 @@ export class NotesComponent implements OnInit, OnDestroy {
       autoHeight: true,
       enableRowGroup: true,
       enablePivot: true,
-      pivot: tue,
+      pivot: true,
     };
     this.rowHeight = 275;
     this.statusBar = {

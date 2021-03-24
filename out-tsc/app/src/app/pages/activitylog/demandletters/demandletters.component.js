@@ -76,7 +76,7 @@ var DemandlettersComponent = /** @class */ (function () {
             timeout: 0,
             positionClass: 'toast-top-right',
             animation: 'flyLeft',
-            limit: ,
+            limit: 7,
         });
         this.loader = true;
         //
@@ -106,7 +106,7 @@ var DemandlettersComponent = /** @class */ (function () {
                     byemail: false,
                     byphysical: true,
                     bypost: true,
-                    demand: _this.model.demand
+                    demand: _this.model.demand,
                 };
                 _this.ecolService.demandshistory(bulk).subscribe(function (resp) {
                     _this.getdemandshistory(_this.accnumber);
@@ -147,95 +147,95 @@ var DemandlettersComponent = /** @class */ (function () {
                     element: '#demand',
                     position: 'left',
                     intro: 'Here you get to select the demand type that you want to send manually eg Demad letter' +
-                        '1, Prelisting etc'
+                        '1, Prelisting etc',
                 },
                 {
                     element: '#accnumber',
                     tooltipPosition: 'left',
-                    intro: 'This is the account number of the customer. It is a 14 digit code eg 016C7184210202'
+                    intro: 'This is the account number of the customer. It is a 14 digit code eg 016C7184210202',
                 },
                 {
                     element: '#custnumber',
                     tooltipPosition: 'auto',
-                    intro: 'This is 7 digit number of the customer derived from the account number eg 1842102'
+                    intro: 'This is 7 digit number of the customer derived from the account number eg 1842102',
                 },
                 {
                     element: '#addressline1',
                     position: 'left',
                     intro: 'This is the P. O Box address provided by the customer. It is vital especially' +
-                        'when sending a letter by mail box. In some cases you may have to fill it manually if it\'s not available'
+                        'when sending a letter by mail box. In some cases you may have to fill it manually if it\'s not available',
                 },
                 {
                     element: '#postcode',
                     position: 'top',
                     intro: 'This is the standard postal code that accompanies a mail box number to understand its destination ' +
-                        'In some cases you may have to fill it manually if it\'s not available'
+                        'In some cases you may have to fill it manually if it\'s not available',
                 },
                 {
                     element: '#emailaddress',
                     position: 'left',
                     intro: 'This is the customer email address. It should follow the standard email format i.e ' +
                         'janedoe@somethingmail.com otherwise the e-mail will not be delivered In ' +
-                        'some cases you may have to fill it manually if it\'s not available'
+                        'some cases you may have to fill it manually if it\'s not available',
                 },
                 {
                     element: '#celnumber',
                     position: 'left',
-                    intro: 'This is the mobile number of the customer. In some cases you may have to fill it manually if it\'s not available'
+                    intro: 'This is the mobile number of the customer. In some cases you may have to fill it manually if it\'s not available',
                 },
                 {
                     element: '#savecontacts',
                     position: 'left',
                     intro: 'Here you may decide to save the cell number that you enteredd in the previous field. This  ' +
-                        'number will be linked to this customer'
+                        'number will be linked to this customer',
                 },
                 {
                     element: '#showlogofooter',
                     position: 'left',
                     intro: 'Check this box if you want to generate a letter that has the default Co-operative Bank of Kenya ' +
-                        'logo and footer'
+                        'logo and footer',
                 },
                 {
                     element: '#generateword',
                     intro: 'Check this box if you want to generate a word document. This is the recommended format if you want to ' +
-                        'download and edit the letter. Keep in mind, Word documents are not sent to customers'
+                        'download and edit the letter. Keep in mind, Word documents are not sent to customers',
                 },
                 {
                     element: '#generatepdf',
                     intro: 'Check this box, to generate a pdf document that will be sent to the customer as per the provided details ' +
-                        'in the above fields'
+                        'in the above fields',
                 },
                 {
                     element: '#previewtosend',
                     intro: 'Check this box if you do not want the system to send the letter. ' +
                         'This means the letter will be generated and downloaded ' +
-                        'to your computer for you to take further steps'
+                        'to your computer for you to take further steps',
                 },
                 {
                     element: '#previewletter',
                     intro: 'Press this button to preview the letter that is to be sent. This button does not ' +
                         'send the letter but instead downloads the letter to your computer so that you can ' +
-                        'confirm the details before sending to customer'
+                        'confirm the details before sending to customer',
                 },
                 {
                     element: '#sendemailinput',
-                    intro: 'Check this box if you want to send the letter via email. The email address should be available and valid'
+                    intro: 'Check this box if you want to send the letter via email. The email address should be available and valid',
                 },
                 {
                     element: '#sendpostal',
                     intro: 'Check this box, to queue the letter for physical sending via the mail box. The postal address ' +
-                        'and postal code should be available'
+                        'and postal code should be available',
                 },
                 {
                     element: '#sendbysms',
                     intro: 'Check this box, to send a link of the letter to the customers phone number. The customer ' +
-                        'then follows the link to view the letter'
+                        'then follows the link to view the letter',
                 },
                 {
                     element: '#generateandsend',
                     intro: 'This is the final step. After confirming that all details are correct, this button sends the ' +
-                        'letter as per the provided details'
-                }
+                        'letter as per the provided details',
+                },
             ],
             hidePrev: true,
             hideNext: true,
@@ -244,7 +244,7 @@ var DemandlettersComponent = /** @class */ (function () {
             showStepNumbers: true,
             showBullets: true,
             scrollToElement: true,
-            exitOnOverlayClick: false
+            exitOnOverlayClick: false,
         })
             .start();
     };
@@ -470,7 +470,7 @@ var DemandlettersComponent = /** @class */ (function () {
                                         guarantorsno: _this.guarantors.length || [],
                                         guarantorsemail: _this.guarantoremails,
                                         sendemail: letter.branchemail ||
-                                            'Customer Service <Customerservice@co-opbank.co.ke>'
+                                            'Customer Service <Customerservice@co-opbank.co.ke>',
                                     };
                                     // console.log('to history ', this.demandhisdetails);
                                     _this.demandshistory(_this.demandhisdetails);
@@ -486,7 +486,7 @@ var DemandlettersComponent = /** @class */ (function () {
                                             accnumber: _this.model.accnumber,
                                             telnumber: _this.model.celnumber,
                                             owner: _this.username,
-                                            message: _this.smsMessage
+                                            message: _this.smsMessage,
                                         };
                                         // console.log(smsdata);
                                         // this.sendsms(smsdata);
@@ -498,7 +498,7 @@ var DemandlettersComponent = /** @class */ (function () {
                                         id: _this.demandid,
                                         from: 'loans',
                                         datesent: _this.currentDate(),
-                                        sentby: _this.username
+                                        sentby: _this.username,
                                     };
                                     _this.ecolService.demandstatus(status_1).subscribe(function (ddstatusdata) {
                                         console.log(_this.demandid + ' status updated ');
@@ -620,7 +620,7 @@ var DemandlettersComponent = /** @class */ (function () {
                         branchemail: _this.bodyletter.branchemail ||
                             'Customer Service <Customerservice@co-opbank.co.ke>',
                         title: letter.demand,
-                        guarantor: _this.bodyletter.guarantors || 0
+                        guarantor: _this.bodyletter.guarantors || 0,
                     };
                     // console.log('emaildata...', this.emaildata);
                     // generate letter
@@ -677,7 +677,7 @@ var DemandlettersComponent = /** @class */ (function () {
                                 guarantorsno: this.guarantors.length || [],
                                 guarantorsemail: this.guarantoremails,
                                 sendemail: letter.branchemail ||
-                                    'Customer Service <Customerservice@co-opbank.co.ke>'
+                                    'Customer Service <Customerservice@co-opbank.co.ke>',
                             };
                             //
                             this.emaildata.file = uploaddata.message;
@@ -707,7 +707,7 @@ var DemandlettersComponent = /** @class */ (function () {
                                                 accnumber: _this.model.accnumber,
                                                 telnumber: _this.model.celnumber,
                                                 owner: _this.username,
-                                                message: _this.smsMessage
+                                                message: _this.smsMessage,
                                             };
                                             _this.sendsms(smsdata);
                                         }, function (error) {
@@ -727,7 +727,7 @@ var DemandlettersComponent = /** @class */ (function () {
                                     from: license.from,
                                     body: 'Dear Customer,\nPlease download your ' +
                                         this.model.demand +
-                                        ' from this link: https://bit.ly/2OfHuEh\n\nCo-op Bank\nCredit Department '
+                                        ' from this link: https://bit.ly/2OfHuEh\n\nCo-op Bank\nCredit Department ',
                                 };
                                 this.ecolService.sendDemandsms(smsbody).subscribe(function (response) {
                                     console.log(response);
@@ -765,13 +765,13 @@ var DemandlettersComponent = /** @class */ (function () {
                     postcode: _this.model.postcode,
                     exp_pmnt: data[0].exppmnt,
                     out_balance: data[0].exppmnt,
-                    manager: 'ROSE KARAMBU'
+                    manager: 'ROSE KARAMBU',
                 };
                 var emaildata = {
                     name: data[0].cardname,
                     email: emailaddress,
                     title: demand,
-                    branchemail: 'Contact Centre Team <ContactCentreTeam@co-opbank.co.ke>'
+                    branchemail: 'Contact Centre Team <ContactCentreTeam@co-opbank.co.ke>',
                 };
                 // generate letter
                 _this.generatelettercc(letter, emaildata);
@@ -816,7 +816,7 @@ var DemandlettersComponent = /** @class */ (function () {
                     guarantorsno: _this.guarantors.length || [],
                     guarantorsemail: _this.guarantoremails,
                     sendemail: letter.branchemail ||
-                        'Customer Service <Customerservice@co-opbank.co.ke>'
+                        'Customer Service <Customerservice@co-opbank.co.ke>',
                 };
                 //
                 emaildata.file = uploaddata.message;
@@ -847,7 +847,7 @@ var DemandlettersComponent = /** @class */ (function () {
                                 accnumber: _this.model.accnumber,
                                 telnumber: _this.model.celnumber,
                                 owner: _this.username,
-                                message: _this.smsMessage
+                                message: _this.smsMessage,
                             };
                             _this.sendsms(smsdata);
                             swal.close();
@@ -865,7 +865,7 @@ var DemandlettersComponent = /** @class */ (function () {
                         from: license.from,
                         body: 'Dear Customer,\nPlease download your ' +
                             _this.model.demand +
-                            ' from this link: https://bit.ly/2OfHuEh\n\nCo-op Bank\nCredit Department '
+                            ' from this link: https://bit.ly/2OfHuEh\n\nCo-op Bank\nCredit Department ',
                     };
                     //
                     // console.log(smsbody);
@@ -933,7 +933,7 @@ var DemandlettersComponent = /** @class */ (function () {
             confirmButtonText: 'Send Email',
             showLoaderOnConfirm: true,
             preConfirm: function (email) { },
-            allowOutsideClick: function () { return !swal.isLoading(); }
+            allowOutsideClick: function () { return !swal.isLoading(); },
         })
             .then(function (result) {
             if (result.value !== null) {
@@ -964,7 +964,7 @@ var DemandlettersComponent = /** @class */ (function () {
                     updatedby: _this.username,
                     updatedlast: new Date(),
                     address: model.addressline1,
-                    postcode: model.postcode
+                    postcode: model.postcode,
                 };
                 _this.ecolService.postteles(telesbody).subscribe(function (teles) {
                     _this.spinner.hide();
@@ -982,7 +982,7 @@ var DemandlettersComponent = /** @class */ (function () {
     };
     DemandlettersComponent.prototype.audio = function () {
         var sound = new Howl({
-            src: 'assets/sound.wav'
+            src: 'assets/sound.wav',
         });
         sound.play();
     };

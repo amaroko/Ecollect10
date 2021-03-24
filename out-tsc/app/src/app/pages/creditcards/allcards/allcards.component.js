@@ -23,7 +23,7 @@ var AllcardsComponent = /** @class */ (function () {
                 },
                 filter: 'agTextColumnFilter',
                 filterParams: { newRowsAction: 'keep' },
-                resizable: tre,
+                resizable: true,
             },
             {
                 headerName: 'CARDNUMBER',
@@ -37,7 +37,7 @@ var AllcardsComponent = /** @class */ (function () {
                 field: 'CARDNAME',
                 filter: 'agTextColumnFilter',
                 filterParams: { newRowsAction: 'keep' },
-                resizable: tru,
+                resizable: true,
             },
             {
                 headerName: 'DAYSINARREARS',
@@ -51,7 +51,7 @@ var AllcardsComponent = /** @class */ (function () {
                 field: 'EXPPMNT',
                 filter: 'agTextColumnFilter',
                 filterParams: { newRowsAction: 'keep' },
-                resizable: tru,
+                resizable: true,
             },
             {
                 headerName: 'OUTSTANDING BALANCE',
@@ -65,7 +65,7 @@ var AllcardsComponent = /** @class */ (function () {
                 field: 'LIMIT',
                 filter: 'agTextColumnFilter',
                 filterParams: { newRowsAction: 'keep' },
-                resizable: tru,
+                resizable: true,
             },
             {
                 headerName: 'CYCLE',
@@ -91,7 +91,7 @@ var AllcardsComponent = /** @class */ (function () {
             suppressResize: false,
             enableRowGroup: true,
             enablePivot: true,
-            pivot: tue,
+            pivot: true,
         };
         this.rowModelType = 'serverSide';
         this.cacheBlockSize = 50;

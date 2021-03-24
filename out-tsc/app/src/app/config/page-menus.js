@@ -14,23 +14,23 @@ var Schedules = {
     submenu: [
         {
             title: 'New Reminder',
-            url: '/reminders/newreminders,
+            url: '/reminders/newreminders',
         },
         {
             title: 'All Reminders',
-            url: '/reminders/allreminders,,
+            url: '/reminders/allreminders',
         },
-    ]
+    ],
 };
 var Guarantors = {
     icon: 'fas fa-users',
     title: 'Guarantors',
-    url: '/guarantors/list'
+    url: '/guarantors/list',
 };
 var Manuals = {
     icon: 'fas fa-book',
     title: 'Manuals and scripts',
-    url: '/manuals/all'
+    url: '/manuals/all',
 };
 /*const Dashboard = {
     'title': 'Dashboard',
@@ -46,17 +46,17 @@ var Manuals = {
 var Dashboard = {
     icon: 'fas fa-desktop',
     title: 'Dashboards',
-    url: '/reports/dashboards'
+    url: '/reports/dashboards',
 };
 var Reports = {
     icon: 'fas fa-chart-bar',
     title: 'Reports',
-    url: '/reports/allreports'
+    url: '/reports/allreports',
 };
 var Relegate = {
     icon: 'fas fa-hand-point-down',
     title: 'Due for Relegation',
-    url: '/teamleader/accounts'
+    url: '/teamleader/accounts',
 };
 var Allocations = {
     icon: 'fas fa-sitemap',
@@ -66,20 +66,20 @@ var Allocations = {
     submenu: [
         {
             title: 'Collection',
-            url: '/allocations/collections'
+            url: '/allocations/collections',
         },
         {
             title: 'Remedial',
-            url: '/allocations/remedial'
+            url: '/allocations/remedial',
         },
         {
             title: 'Credit cards',
-            url: '/allocations/creditcards'
+            url: '/allocations/creditcards',
         },
         {
             title: 'Pre Delq',
-            url: '/allocations/predelq'
-        }
+            url: '/allocations/predelq',
+        },
     ],
 };
 /*const Reports = {
@@ -100,9 +100,9 @@ var DashboardAdmin = {
     submenu: [
         {
             title: 'Performance Metrics',
-            url: '/dashboard/v3'
-        }
-    ]
+            url: '/dashboard/v3',
+        },
+    ],
 };
 var Letters = {
     title: 'Demands Letters',
@@ -129,13 +129,13 @@ var Letters = {
             submenu: [
                 {
                     title: 'list',
-                    url: '/guarantors/list'
+                    url: '/guarantors/list',
                 },
                 {
                     title: 'New',
-                    url: '/guarantors/newguarantor'
-                }
-            ]
+                    url: '/guarantors/newguarantor',
+                },
+            ],
         },
         {
             title: 'Loans',
@@ -144,13 +144,13 @@ var Letters = {
             submenu: [
                 {
                     title: 'Letters Due',
-                    url: '/demand/demands'
+                    url: '/demand/demands',
                 },
                 {
                     title: 'Sent History',
-                    url: '/demand/demandhistory'
-                }
-            ]
+                    url: '/demand/demandhistory',
+                },
+            ],
         },
         {
             title: 'Credit Cards',
@@ -159,13 +159,13 @@ var Letters = {
             submenu: [
                 {
                     title: 'Demands due',
-                    url: '/creditcards/creditcarddemands/demandsdue'
+                    url: '/creditcards/creditcarddemands/demandsdue',
                 },
                 {
                     title: 'Demands history',
-                    url: '/creditcards/creditcarddemands/demandshistory'
-                }
-            ]
+                    url: '/creditcards/creditcarddemands/demandshistory',
+                },
+            ],
         },
     ],
 };
@@ -177,16 +177,13 @@ var Letterscc = {
     submenu: [
         {
             title: 'Demands due',
-            url: '/creditcards/creditcarddemands/demandsdue'
+            url: '/creditcards/creditcarddemands/demandsdue',
         },
         {
             title: 'Demands history',
-            url: '/creditcards/creditcarddemands/demandshistory'
-        }
-    ]
-    /* ,
-     'alert': '0',
-     'label': 'badge badge-danger'*/
+            url: '/creditcards/creditcarddemands/demandshistory',
+        },
+    ],
 };
 var Administration = {
     title: 'Administration',
@@ -196,20 +193,20 @@ var Administration = {
     submenu: [
         {
             title: 'Users',
-            url: '/users/search'
+            url: '/users/search',
         },
         {
             title: 'Roles',
-            url: '/users/roles'
+            url: '/users/roles',
         },
         {
             title: 'Approvals',
-            url: '/users/approvals'
+            url: '/users/approvals',
         },
         {
             title: 'Branches',
-            url: '/users/branches'
-        }
+            url: '/users/branches',
+        },
     ],
 };
 var Forms = {
@@ -220,24 +217,24 @@ var Forms = {
     submenu: [
         {
             title: 'Standard',
-            url: '/forms/standard'
+            url: '/forms/standard',
         },
         {
             title: 'Extended',
-            url: '/forms/extended'
+            url: '/forms/extended',
         },
         {
             title: 'Validation',
-            url: '/forms/validation'
+            url: '/forms/validation',
         },
         {
             title: 'Upload',
-            url: '/forms/upload'
+            url: '/forms/upload',
         },
         {
             title: 'Image Crop',
-            url: '/forms/cropper'
-        }
+            url: '/forms/cropper',
+        },
     ],
 };
 var Work = {
@@ -248,38 +245,36 @@ var Work = {
     submenu: [
         {
             title: 'Loan arrears(ALL)',
-            url: '/work/viewall'
-            /*'alert': '23',
-            'label': 'badge badge-warning'*/
+            url: '/work/viewall',
         },
         {
             title: 'My allocations',
-            url: '/work/myallocations'
+            url: '/work/myallocations',
         },
         {
             title: 'My worklist',
-            url: '/work/myworklist'
+            url: '/work/myworklist',
         },
         {
             title: 'Broken PTPs',
-            url: '/work/ptps'
+            url: '/work/ptps',
         },
         {
             title: 'Trsactn acc with Funds',
-            url: '/work/withfunds'
+            url: '/work/withfunds',
         },
         {
             title: 'View all Loans',
-            url: '/work/allloans'
+            url: '/work/allloans',
         },
         {
             title: 'No Credit buildup',
-            url: '/watch/nocredit'
+            url: '/watch/nocredit',
         },
         {
             title: 'Credit buildup',
-            url: '/watch/creditbuildup'
-        }
+            url: '/watch/creditbuildup',
+        },
     ],
 };
 var Work_cc = {
@@ -290,26 +285,24 @@ var Work_cc = {
     submenu: [
         {
             title: 'Card arrears(ALL)',
-            url: '/creditcards/viewall'
-            /*'alert': '23',
-            'label': 'badge badge-warning'*/
+            url: '/creditcards/viewall',
         },
         {
             title: 'My allocations',
-            url: '/creditcards/myallocations'
+            url: '/creditcards/myallocations',
         },
         {
             title: 'My Worklist',
-            url: '/creditcards/myworklist'
+            url: '/creditcards/myworklist',
         },
         {
             title: 'Cards Cr/Zero Bal',
-            url: '/creditcards/zerobalance'
+            url: '/creditcards/zerobalance',
         },
         {
             title: 'View all Cards',
-            url: '/creditcards/allcards'
-        }
+            url: '/creditcards/allcards',
+        },
     ],
 };
 var Remedial = {
@@ -320,34 +313,32 @@ var Remedial = {
     submenu: [
         {
             title: 'Loan arrears(ALL)',
-            url: '/work/viewall'
-            /*'alert': '23',
-            'label': 'badge badge-warning'*/
+            url: '/work/viewall',
         },
         {
             title: 'My allocations',
-            url: '/work/myallocations'
+            url: '/work/myallocations',
         },
         {
             title: 'My worklist',
-            url: '/work/myworklist'
+            url: '/work/myworklist',
         },
         {
             title: 'Todays',
-            url: '/work/todays'
+            url: '/work/todays',
         },
         {
             title: 'Broken PTPs',
-            url: '/work/ptps'
+            url: '/work/ptps',
         },
         {
             title: 'Tr accounts with Funds',
-            url: '/work/withfunds'
+            url: '/work/withfunds',
         },
         {
             title: 'View all Loans',
-            url: '/work/allloans'
-        }
+            url: '/work/allloans',
+        },
     ],
 };
 var serviceproviders = {
@@ -358,32 +349,32 @@ var serviceproviders = {
     submenu: [
         {
             title: 'Debt Collectors',
-            url: '/debtcollectors/allcases'
+            url: '/debtcollectors/allcases',
         },
         {
             title: 'Marketers',
-            url: '/marketors/allcases'
+            url: '/marketors/allcases',
         },
         {
             title: 'Auctioneers',
-            url: '/auctioneers/allcases'
+            url: '/auctioneers/allcases',
         },
         {
             title: 'Writeoffs',
-            url: '/writeoffs/allcases'
+            url: '/writeoffs/allcases',
         },
         {
             title: 'Investigators',
-            url: '/investigators/allcases'
+            url: '/investigators/allcases',
         },
         {
             title: 'Invoices',
-            url: '/invoices/allcases'
+            url: '/invoices/allcases',
         },
         {
             title: 'Valuations',
-            url: '/valuers/allcases'
-        }
+            url: '/valuers/allcases',
+        },
     ],
 };
 var mcoopcash = {
@@ -394,13 +385,13 @@ var mcoopcash = {
     submenu: [
         {
             title: 'E-Credit arrears',
-            url: '/mcoopcash/viewall'
+            url: '/mcoopcash/viewall',
         },
         {
             title: 'E-Credit All',
-            url: '/mcoopcash/allecredit'
-        }
-    ]
+            url: '/mcoopcash/allecredit',
+        },
+    ],
 };
 var assetfinance = {
     title: 'Asset Finance & IPF',
@@ -410,16 +401,16 @@ var assetfinance = {
     submenu: [
         {
             title: 'Asset Finance',
-            url: '/assetfinance/assetf'
+            url: '/assetfinance/assetf',
         },
         {
             title: 'IPF',
-            url: '/assetfinance/ipf'
+            url: '/assetfinance/ipf',
         },
         {
             title: 'Insurance Companies',
-            url: '/configurations/insurance'
-        }
+            url: '/configurations/insurance',
+        },
     ],
 };
 var Demandletters = {
@@ -430,32 +421,32 @@ var Demandletters = {
     submenu: [
         {
             title: 'Demand settings',
-            url: '/letters/settings'
+            url: '/letters/settings',
         },
         {
             title: 'Demand automation',
-            url: '/letters/automation'
+            url: '/letters/automation',
         },
         {
             title: 'Customer suspensions',
-            url: '/letters/customersuspensions'
-        }
+            url: '/letters/customersuspensions',
+        },
     ],
 };
 var SMS = {
     title: 'SMS',
     url: '/configurations/sms',
-    icon: 'fab fa-facebook-messenger'
+    icon: 'fab fa-facebook-messenger',
 };
 var SP = {
     title: 'Service Providers',
     url: '/configurations/sp',
-    icon: 'fas fa-snowflake'
+    icon: 'fas fa-snowflake',
 };
 var INSURANCE = {
     title: 'Insurance Co',
     url: '/configurations/insurance',
-    icon: 'fas fa-id-badge'
+    icon: 'fas fa-id-badge',
 };
 var AccountPlans = {
     title: 'Account Plans',
@@ -465,45 +456,45 @@ var AccountPlans = {
     submenu: [
         {
             title: 'Plans',
-            url: '/configurations/accplans'
+            url: '/configurations/accplans',
         },
         {
             title: 'Plan actions',
-            url: '/configurations/planactions'
+            url: '/configurations/planactions',
         },
         {
             title: 'Plan-Memo setup',
-            url: '/configurations/planmemos'
-        }
+            url: '/configurations/planmemos',
+        },
     ],
 };
 var headingMain = {
     title: 'Main Navigation',
-    heading: true
+    heading: true,
 };
 var headingComponents = {
     title: 'Work Queue',
-    heading: true
+    heading: true,
 };
 var headingDocumentations = {
     title: 'Documentation and Manuals',
-    heading: true
+    heading: true,
 };
 var headingConfigurations = {
     title: 'Configurations',
-    heading: true
+    heading: true,
 };
 var headingReports = {
     title: 'Reports',
-    heading: true
+    heading: true,
 };
 var headingLetters = {
     title: 'Demand Letters',
-    heading: true
+    heading: true,
 };
 var headingRelegate = {
     title: 'Team Leader',
-    heading: true
+    heading: true,
 };
 var menuitems;
 var user_mgmt_menu = [headingMain, Home, DashboardAdmin, Administration];
@@ -524,7 +515,7 @@ var collection_menu = [
     Dashboard,
     Reports,
     headingDocumentations,
-    Manuals
+    Manuals,
 ];
 var creditcards_menu = [
     headingMain,
@@ -542,7 +533,7 @@ var creditcards_menu = [
     Dashboard,
     Reports,
     headingDocumentations,
-    Manuals
+    Manuals,
 ];
 var remedial_menu = [
     headingMain,
@@ -561,7 +552,7 @@ var remedial_menu = [
     Dashboard,
     Reports,
     headingDocumentations,
-    Manuals
+    Manuals,
 ];
 var teamleader_menu = [
     headingMain,
@@ -588,7 +579,7 @@ var teamleader_menu = [
     AccountPlans,
     SP,
     headingDocumentations,
-    Manuals
+    Manuals,
 ];
 // console.log('menu role==>', currentUser.role);
 if (currentUser !== null) {

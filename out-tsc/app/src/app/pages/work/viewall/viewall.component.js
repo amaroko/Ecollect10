@@ -25,7 +25,7 @@ var ViewallComponent = /** @class */ (function () {
                 },
                 filter: 'agTextColumnFilter',
                 filterParams: { newRowsAction: 'keep' },
-                resizable: tre,
+                resizable: true,
             },
             {
                 field: 'CLIENT_NAME',
@@ -38,7 +38,7 @@ var ViewallComponent = /** @class */ (function () {
                 field: 'CUSTNUMBER',
                 filter: 'agTextColumnFilter',
                 filterParams: { newRowsAction: 'keep' },
-                resizable: tru,
+                resizable: true,
             },
             {
                 field: 'BUCKET',
@@ -50,7 +50,7 @@ var ViewallComponent = /** @class */ (function () {
                 field: 'PRODUCTCODE',
                 filter: 'agTextColumnFilter',
                 filterParams: { newRowsAction: 'keep' },
-                resizable: tru,
+                resizable: true,
             },
             {
                 field: 'DAYSINARR',
@@ -62,7 +62,7 @@ var ViewallComponent = /** @class */ (function () {
                 field: 'SECTION',
                 filter: 'agNumberColumnFilter',
                 filterParams: { newRowsAction: 'keep' },
-                resizable: tru,
+                resizable: true,
             },
             {
                 field: 'OUSTBALANCE',
@@ -138,7 +138,7 @@ var ViewallComponent = /** @class */ (function () {
                 field: 'RROCODE',
                 filter: 'agTextColumnFilter',
                 filterParams: { newRowsAction: 'keep' },
-                resizable: tru,
+                resizable: true,
             },
             {
                 field: 'AROCODE',
@@ -150,7 +150,7 @@ var ViewallComponent = /** @class */ (function () {
                 field: 'BRANCHCODE',
                 filter: 'agTextColumnFilter',
                 filterParams: { newRowsAction: 'keep' },
-                resizable: tru,
+                resizable: true,
             },
             {
                 field: 'BRANCHNAME',
@@ -174,7 +174,7 @@ var ViewallComponent = /** @class */ (function () {
             suppressResize: false,
             enableRowGroup: true,
             enablePivot: true,
-            pivot: tue,
+            pivot: true,
         };
         this.rowModelType = 'serverSide';
         this.cacheBlockSize = 50;
@@ -216,33 +216,31 @@ var ViewallComponent = /** @class */ (function () {
                         params.failCallback();
                     }
                 }, 500);
-            }
+            },
         };
-        currencyFormatter(params);
-        {
-            if (params.value !== undefined) {
-                return (Math.floor(params.value * 100) / 100)
-                    .toString()
-                    .replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
-            }
-            else {
-                return '';
-            }
+    };
+    ViewallComponent.prototype.currencyFormatter = function (params) {
+        if (params.value !== undefined) {
+            return (Math.floor(params.value * 100) / 100)
+                .toString()
+                .replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
         }
-        onRowDoubleClicked(event, any);
-        {
-            this.model = event.node.data;
-            // console.log(this.model);
-            // tslint:disable-next-line:max-line-length
-            window.open(environment.applink +
-                '/activitylog?accnumber=' +
-                this.model.ACCNUMBER +
-                '&custnumber=' +
-                this.model.CUSTNUMBER +
-                '&username=' +
-                this.currentUser.USERNAME +
-                '&sys=collections', '_blank');
+        else {
+            return '';
         }
+    };
+    ViewallComponent.prototype.onRowDoubleClicked = function (event) {
+        this.model = event.node.data;
+        // console.log(this.model);
+        // tslint:disable-next-line:max-line-length
+        window.open(environment.applink +
+            '/activitylog?accnumber=' +
+            this.model.ACCNUMBER +
+            '&custnumber=' +
+            this.model.CUSTNUMBER +
+            '&username=' +
+            this.currentUser.USERNAME +
+            '&sys=collections', '_blank');
     };
     ViewallComponent.prototype.ngOnInit = function () {
         var currentUser = JSON.parse(localStorage.getItem('currentUser'));

@@ -41,7 +41,7 @@ export class ViewallComponent implements OnInit {
         },
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: tre,
+        resizable: true,
       },
       {
         field: 'CLIENT_NAME',
@@ -54,7 +54,7 @@ export class ViewallComponent implements OnInit {
         field: 'CUSTNUMBER',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: tru,
+        resizable: true,
       },
       {
         field: 'BUCKET',
@@ -66,7 +66,7 @@ export class ViewallComponent implements OnInit {
         field: 'PRODUCTCODE',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: tru,
+        resizable: true,
       },
       {
         field: 'DAYSINARR',
@@ -78,7 +78,7 @@ export class ViewallComponent implements OnInit {
         field: 'SECTION',
         filter: 'agNumberColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: tru,
+        resizable: true,
       },
       {
         field: 'OUSTBALANCE',
@@ -150,7 +150,7 @@ export class ViewallComponent implements OnInit {
         field: 'RROCODE',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: tru,
+        resizable: true,
       },
       {
         field: 'AROCODE',
@@ -162,7 +162,7 @@ export class ViewallComponent implements OnInit {
         field: 'BRANCHCODE',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: tru,
+        resizable: true,
       },
       {
         field: 'BRANCHNAME',
@@ -186,7 +186,7 @@ export class ViewallComponent implements OnInit {
       suppressResize: false,
       enableRowGroup: true,
       enablePivot: true,
-      pivot: tue,
+      pivot: true,
     };
     this.rowModelType = 'serverSide';
     this.cacheBlockSize = 50;
@@ -232,7 +232,7 @@ export class ViewallComponent implements OnInit {
             params.failCallback();
           }
         }, 500);
-      ,
+      },
     };
   }
 

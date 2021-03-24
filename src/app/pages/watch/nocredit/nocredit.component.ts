@@ -49,7 +49,7 @@ export class NocreditComponent implements OnInit {
         field: 'CUSTNUMBER',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: tru,
+        resizable: true,
       },
       {
         headerName: 'CUSTNAME',
@@ -63,7 +63,7 @@ export class NocreditComponent implements OnInit {
         field: 'OUSTBALANCE',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: tru,
+        resizable: true,
       },
       {
         headerName: 'PRODUCTCODE',
@@ -77,7 +77,7 @@ export class NocreditComponent implements OnInit {
         field: 'BRANCHCODE',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: tru,
+        resizable: true,
       },
       {
         headerName: 'AROCODE',
@@ -91,15 +91,15 @@ export class NocreditComponent implements OnInit {
         field: 'REPAYMENTAMOUNT',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: tru,
+        resizable: true,
       },
       {
         headerName: 'SETTLEACCBAL',
         field: 'SETTLEACCBAL',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: tru,
-      ,
+        resizable: true,
+      },
     ];
     this.defaultColDef = {
       width: 120,
@@ -110,7 +110,7 @@ export class NocreditComponent implements OnInit {
       suppressResize: false,
       enableRowGroup: true,
       enablePivot: true,
-      pivot: true
+      pivot: true,
     };
     this.rowModelType = 'serverSide';
     this.cacheBlockSize = 50;
@@ -129,7 +129,7 @@ export class NocreditComponent implements OnInit {
         fetch(environment.nodeapi + '/gridnocreditbuild/viewall', {
           method: 'post',
           body: JSON.stringify(params.request),
-          headers: { 'Content-Type': 'application/json; charset=utf-8' }
+          headers: { 'Content-Type': 'application/json; charset=utf-8' },
         })
           .then((httpResponse) => httpResponse.json())
           .then((response) => {

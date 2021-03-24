@@ -79,7 +79,7 @@ export class MyworklistComponent implements OnInit {
         field: 'CARDNUMBER',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: tru,
+        resizable: true,
       },
       {
         headerName: 'CARDNAME',
@@ -93,7 +93,7 @@ export class MyworklistComponent implements OnInit {
         field: 'DAYSINARREARS',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: tru,
+        resizable: true,
       },
       {
         headerName: 'EXPPMNT',
@@ -107,7 +107,7 @@ export class MyworklistComponent implements OnInit {
         field: 'OUTBALANCE',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: tru,
+        resizable: true,
       },
       {
         headerName: 'CYCLE',
@@ -134,7 +134,7 @@ export class MyworklistComponent implements OnInit {
       suppressResize: false,
       enableRowGroup: true,
       enablePivot: true,
-      pivot: tue,
+      pivot: true,
     };
   }
 

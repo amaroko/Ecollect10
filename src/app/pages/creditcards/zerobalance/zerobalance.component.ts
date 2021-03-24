@@ -41,7 +41,7 @@ export class ZerobalanceComponent implements OnInit {
         },
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: tre,
+        resizable: true,
       },
       {
         headerName: 'CARDNUMBER',
@@ -55,7 +55,7 @@ export class ZerobalanceComponent implements OnInit {
         field: 'CARDNAME',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: tru,
+        resizable: true,
       },
       {
         headerName: 'DATEDISBURSED',
@@ -69,7 +69,7 @@ export class ZerobalanceComponent implements OnInit {
         field: 'LIMIT',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: tru,
+        resizable: true,
       },
       {
         headerName: 'EXPPMNT',
@@ -83,15 +83,15 @@ export class ZerobalanceComponent implements OnInit {
         field: 'OUTBALANCE',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: tru,
+        resizable: true,
       },
       {
         headerName: 'CYCLE',
         field: 'CYCLE',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: tru,
-      ,
+        resizable: true,
+      },
     ];
     this.defaultColDef = {
       width: 120,
@@ -102,7 +102,7 @@ export class ZerobalanceComponent implements OnInit {
       suppressResize: false,
       enableRowGroup: true,
       enablePivot: true,
-      pivot: true
+      pivot: true,
     };
     this.rowModelType = 'serverSide';
     this.cacheBlockSize = 50;
@@ -121,7 +121,7 @@ export class ZerobalanceComponent implements OnInit {
         fetch(environment.nodeapi + '/gridcreditcardszerobal/viewall', {
           method: 'post',
           body: JSON.stringify(params.request),
-          headers: { 'Content-Type': 'application/json; charset=utf-8' }
+          headers: { 'Content-Type': 'application/json; charset=utf-8' },
         })
           .then((httpResponse) => httpResponse.json())
           .then((response) => {

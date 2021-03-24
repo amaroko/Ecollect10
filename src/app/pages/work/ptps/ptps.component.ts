@@ -44,7 +44,7 @@ export class PtpsComponent implements OnInit {
         },
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: tre,
+        resizable: true,
       },
       {
         headerName: 'STATUS',
@@ -58,7 +58,7 @@ export class PtpsComponent implements OnInit {
         field: 'CLIENT_NAME',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: tru,
+        resizable: true,
       },
       {
         headerName: 'PTPAMOUNT',
@@ -72,7 +72,7 @@ export class PtpsComponent implements OnInit {
         field: 'PTPDATE',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: tru,
+        resizable: true,
       },
       {
         headerName: 'ACTIONDATE',
@@ -86,15 +86,15 @@ export class PtpsComponent implements OnInit {
         field: 'PAYMETHOD',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: tru,
+        resizable: true,
       },
       {
         headerName: 'OWNER',
         field: 'OWNER',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: tru,
-      ,
+        resizable: true,
+      },
     ];
     this.defaultColDef = {
       width: 120,
@@ -105,7 +105,7 @@ export class PtpsComponent implements OnInit {
       suppressResize: false,
       enableRowGroup: true,
       enablePivot: true,
-      pivot: true
+      pivot: true,
     };
     this.rowModelType = 'serverSide';
     this.cacheBlockSize = 50;
@@ -124,7 +124,7 @@ export class PtpsComponent implements OnInit {
         fetch(environment.nodeapi + '/gridbrokenptps/viewall', {
           method: 'post',
           body: JSON.stringify(params.request),
-          headers: { 'Content-Type': 'application/json; charset=utf-8' }
+          headers: { 'Content-Type': 'application/json; charset=utf-8' },
         })
           .then((httpResponse) => httpResponse.json())
           .then((response) => {

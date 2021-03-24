@@ -59,7 +59,7 @@ var MyworklistComponent = /** @class */ (function () {
                 field: 'custnumber',
                 filter: 'agTextColumnFilter',
                 filterParams: { newRowsAction: 'keep' },
-                resizable: tru,
+                resizable: true,
             },
             {
                 headerName: 'CUST_NAME',
@@ -92,7 +92,7 @@ var MyworklistComponent = /** @class */ (function () {
                 valueFormatter: this.currencyFormatter,
                 filter: 'agTextColumnFilter',
                 filterParams: { newRowsAction: 'keep' },
-                resizable: true
+                resizable: true,
             },
             {
                 headerName: 'OUSTBALANCE',
@@ -100,36 +100,36 @@ var MyworklistComponent = /** @class */ (function () {
                 valueFormatter: this.currencyFormatter,
                 filter: 'agTextColumnFilter',
                 filterParams: { newRowsAction: 'keep' },
-                resizable: true
+                resizable: true,
             },
             {
                 headerName: 'BUCKET',
                 field: 'bucket',
                 filter: 'agTextColumnFilter',
                 filterParams: { newRowsAction: 'keep' },
-                resizable: true
+                resizable: true,
             },
             {
                 headerName: 'AROCODE',
                 field: 'arocode',
                 filter: 'agTextColumnFilter',
                 filterParams: { newRowsAction: 'keep' },
-                resizable: true
+                resizable: true,
             },
             {
                 headerName: 'SECTION',
                 field: 'section',
                 filter: 'agTextColumnFilter',
                 filterParams: { newRowsAction: 'keep' },
-                resizable: true
+                resizable: true,
             },
             {
                 headerName: 'COLOFFICER',
                 field: 'colofficer',
                 filter: 'agTextColumnFilter',
                 filterParams: { newRowsAction: 'keep' },
-                resizable: true
-            }
+                resizable: true,
+            },
         ];
         this.sortingOrder = ['desc', 'asc', null];
         this.defaultColDef = {
@@ -141,7 +141,7 @@ var MyworklistComponent = /** @class */ (function () {
             suppressResize: false,
             enableRowGroup: true,
             enablePivot: true,
-            pivot: true
+            pivot: true,
         };
     }
     /*dataSource: IDatasource = {

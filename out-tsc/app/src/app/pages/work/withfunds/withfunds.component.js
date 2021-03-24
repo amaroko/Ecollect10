@@ -23,7 +23,7 @@ var WithfundsComponent = /** @class */ (function () {
                 },
                 filter: 'agTextColumnFilter',
                 filterParams: { newRowsAction: 'keep' },
-                resizable: tre,
+                resizable: true,
             },
             {
                 headerName: 'CUSTNUMBER',
@@ -37,7 +37,7 @@ var WithfundsComponent = /** @class */ (function () {
                 field: 'CLIENT_NAME',
                 filter: 'agTextColumnFilter',
                 filterParams: { newRowsAction: 'keep' },
-                resizable: tru,
+                resizable: true,
             },
             {
                 headerName: 'DAYSINARREARS',
@@ -52,7 +52,7 @@ var WithfundsComponent = /** @class */ (function () {
                 valueFormatter: this.currencyFormatter,
                 filter: 'agTextColumnFilter',
                 filterParams: { newRowsAction: 'keep' },
-                resizable: tru,
+                resizable: true,
             },
             {
                 headerName: 'OUSTBALANCE',
@@ -67,7 +67,7 @@ var WithfundsComponent = /** @class */ (function () {
                 field: 'SETTLEACCNO',
                 filter: 'agTextColumnFilter',
                 filterParams: { newRowsAction: 'keep' },
-                resizable: tru,
+                resizable: true,
             },
             {
                 headerName: 'AROCODE',
@@ -81,14 +81,14 @@ var WithfundsComponent = /** @class */ (function () {
                 field: 'SETTLEACCBAL',
                 filter: 'agTextColumnFilter',
                 filterParams: { newRowsAction: 'keep' },
-                resizable: tru,
+                resizable: true,
             },
             {
                 headerName: 'COLOFFICER',
                 field: 'COLOFFICER',
                 filter: 'agTextColumnFilter',
                 filterParams: { newRowsAction: 'keep' },
-                resizable: tru,
+                resizable: true,
             },
         ];
         this.defaultColDef = {
@@ -100,7 +100,7 @@ var WithfundsComponent = /** @class */ (function () {
             suppressResize: false,
             enableRowGroup: true,
             enablePivot: true,
-            pivot: true
+            pivot: true,
         };
         this.rowModelType = 'serverSide';
         this.cacheBlockSize = 50;
@@ -116,7 +116,7 @@ var WithfundsComponent = /** @class */ (function () {
                 fetch(environment.nodeapi + '/gridtranscwithfunds/viewall', {
                     method: 'post',
                     body: JSON.stringify(params.request),
-                    headers: { 'Content-Type': 'application/json; charset=utf-8' }
+                    headers: { 'Content-Type': 'application/json; charset=utf-8' },
                 })
                     .then(function (httpResponse) { return httpResponse.json(); })
                     .then(function (response) {

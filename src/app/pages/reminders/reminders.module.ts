@@ -18,9 +18,8 @@ const routes: Routes = [
     CommonModule,
     AgGridModule.withComponents([]),
     RouterModule.forChild(routes),
-    PanelModul,
+    PanelModule,
   ],
-  exports: [RouterModule,
+  exports: [RouterModule],
 })
-export class RemindersModule {
-}
+export class RemindersModule {}

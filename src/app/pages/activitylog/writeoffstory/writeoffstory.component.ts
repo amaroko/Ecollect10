@@ -79,7 +79,7 @@ export class WriteoffstoryComponent implements OnInit {
       accnumber: this.accnumber,
       owner: this.username,
       woffstory: form.value.writeoffstoryMessage,
-      lastupdate: this.currentDate(,
+      lastupdate: this.currentDate,
     };
     this.ecolService.woffstory(body).subscribe(
       (data) => {
@@ -114,7 +114,7 @@ export class WriteoffstoryComponent implements OnInit {
       noteimp: 'N',
       rfdother: '',
       owner: this.username,
-      product: this.account.section
+      product: this.account.section,
     };
     // add action
     this.ecolService.postactivitylogs(body).subscribe(

@@ -39,12 +39,12 @@ var PtpsComponent = /** @class */ (function () {
             steps: [
                 {
                     element: '#ptptable',
-                    intro: 'Here, you will find a list of the available Promises to Pay for this account,,
-                }
+                    intro: 'Here, you will find a list of the available Promises to Pay for this account',
+                },
             ],
             hidePrev: true,
             hideNext: true,
-            showProgress: tru,
+            showProgress: true,
         })
             .start();
     };
@@ -104,7 +104,7 @@ var PtpsComponent = /** @class */ (function () {
             _this.maxDate = {
                 year: _this.maxyear,
                 month: _this.maxmonth,
-                day: _this.maxday
+                day: _this.maxday,
             };
             // min should not be less than today
             if (moment().diff(_this.ammendptp.ptpdate, 'days') + 5 >= 0) {
@@ -118,7 +118,7 @@ var PtpsComponent = /** @class */ (function () {
                 _this.minDate = {
                     year: _this.minyear,
                     month: _this.minmonth,
-                    day: _this.minday
+                    day: _this.minday,
                 };
             }
         }, function (error) {
@@ -136,7 +136,7 @@ var PtpsComponent = /** @class */ (function () {
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes ammend!'
+            confirmButtonText: 'Yes ammend!',
         })
             .then(function (result) {
             if (result.value) {
@@ -155,7 +155,7 @@ var PtpsComponent = /** @class */ (function () {
                     ptpdate: ptpdate,
                     ptpdate2: ptpdate2,
                     ammendby: _this.username,
-                    ammendcomment: form.value.comment
+                    ammendcomment: form.value.comment,
                 };
                 _this.ecolService.ammendptp(body).subscribe(function (resp) {
                     //

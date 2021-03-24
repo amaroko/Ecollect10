@@ -833,7 +833,7 @@ export class EcolService {
     const body = { filename: file };
     return this.httpClient.post(environment.uploadurl + '/download', body, {
       responseType: 'blob',
-      headers: new HttpHeaders().append('Content-Type', 'application/json',
+      headers: new HttpHeaders().append('Content-Type', 'application/json'),
     });
   }
 
@@ -841,7 +841,7 @@ export class EcolService {
     const url = environment.nodeapi + '/xlsuploads/uploadbulk-test';
     return this.httpClient.post<any>(url, body, {
       reportProgress: true,
-      observe: 'events'
+      observe: 'events',
     });
   }
 

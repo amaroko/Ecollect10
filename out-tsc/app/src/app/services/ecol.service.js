@@ -515,14 +515,14 @@ var EcolService = /** @class */ (function () {
         var body = { filename: file };
         return this.httpClient.post(environment.uploadurl + '/download', body, {
             responseType: 'blob',
-            headers: new HttpHeaders().append('Content-Type', 'application/json')
+            headers: new HttpHeaders().append('Content-Type', 'application/json'),
         });
     };
     EcolService.prototype.bulknotes = function (body) {
         var url = environment.nodeapi + '/xlsuploads/uploadbulk-test';
         return this.httpClient.post(url, body, {
             reportProgress: true,
-            observe: 'events'
+            observe: 'events',
         });
     };
     EcolService.prototype.bulktotblcardsstatic = function (body) {

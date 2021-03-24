@@ -24,7 +24,7 @@ var AllloansComponent = /** @class */ (function () {
                 },
                 filter: 'agTextColumnFilter',
                 filterParams: { newRowsAction: 'keep' },
-                resizable: tre,
+                resizable: true,
             },
             {
                 headerName: 'CUSTNUMBER',
@@ -39,7 +39,7 @@ var AllloansComponent = /** @class */ (function () {
                 width: 300,
                 filter: 'agTextColumnFilter',
                 filterParams: { newRowsAction: 'keep' },
-                resizable: tru,
+                resizable: true,
             },
             {
                 headerName: 'BRANCHNAME',
@@ -53,7 +53,7 @@ var AllloansComponent = /** @class */ (function () {
                 field: 'BRANCHCODE',
                 filter: 'agTextColumnFilter',
                 filterParams: { newRowsAction: 'keep' },
-                resizable: tru,
+                resizable: true,
             },
             {
                 headerName: 'OUSTBALANCE',
@@ -67,7 +67,7 @@ var AllloansComponent = /** @class */ (function () {
                 field: 'PRODUCTCODE',
                 filter: 'agTextColumnFilter',
                 filterParams: { newRowsAction: 'keep' },
-                resizable: tru,
+                resizable: true,
             },
             {
                 headerName: 'AROCODE',
@@ -81,14 +81,14 @@ var AllloansComponent = /** @class */ (function () {
                 field: 'NATIONID',
                 filter: 'agTextColumnFilter',
                 filterParams: { newRowsAction: 'keep' },
-                resizable: tru,
+                resizable: true,
             },
             {
                 headerName: 'EMPLOYER',
                 field: 'EMPLOYER',
                 filter: 'agTextColumnFilter',
                 filterParams: { newRowsAction: 'keep' },
-                resizable: tru,
+                resizable: true,
             },
         ];
         this.defaultColDef = {
@@ -100,7 +100,7 @@ var AllloansComponent = /** @class */ (function () {
             suppressResize: false,
             enableRowGroup: true,
             enablePivot: true,
-            pivot: true
+            pivot: true,
         };
         this.rowModelType = 'serverSide';
         this.cacheBlockSize = 50;
@@ -117,7 +117,7 @@ var AllloansComponent = /** @class */ (function () {
                     // fetch(environment.api + '/api/watch_stage/gridviewall_loans', {
                     method: 'post',
                     body: JSON.stringify(params.request),
-                    headers: { 'Content-Type': 'application/json; charset=utf-8' }
+                    headers: { 'Content-Type': 'application/json; charset=utf-8' },
                 })
                     .then(function (httpResponse) { return httpResponse.json(); })
                     .then(function (response) {

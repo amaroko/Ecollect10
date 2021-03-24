@@ -40,8 +40,8 @@ export class CollateralsComponent implements OnInit {
             element: '#collateraltable',
             intro:
               'Here you will find a list of all collaterals placed under the specified account ' +
-              'you could then edit the collaterals if need be,
-          ,
+              'you could then edit the collaterals if need be',
+          },
           // {
           //   element: '#custnumber',
           //   intro: 'This is the 7 digit number of the customer'
@@ -66,7 +66,7 @@ export class CollateralsComponent implements OnInit {
         ],
         hidePrev: true,
         hideNext: true,
-        showProgress: true
+        showProgress: true,
       })
       .start();
   }
@@ -77,66 +77,66 @@ export class CollateralsComponent implements OnInit {
         steps: [
           {
             element: '#custnumber',
-            intro: 'This is the 7 digit customer number. You can only view it'
+            intro: 'This is the 7 digit customer number. You can only view it',
           },
           {
             element: '#accnumber',
             intro:
-              'This is the 14 digit number of the customer. You can only view it'
+              'This is the 14 digit number of the customer. You can only view it',
           },
           {
             element: '#collateralname',
             intro:
-              'Here, you have to provide the Name of the Collateral that you are about to add'
+              'Here, you have to provide the Name of the Collateral that you are about to add',
           },
           {
             element: '#regowner',
             intro:
               'Here, you have to enter the details of the registered owners of the collateral ' +
-              'at hand'
+              'at hand',
           },
           {
             element: '#forcedsale',
             intro:
-              'This is the value that the bank has decided to place on the collateral'
+              'This is the value that the bank has decided to place on the collateral',
           },
           {
             element: '#marketvalue',
-            intro: 'This is the Marked Market value of the collateral'
+            intro: 'This is the Marked Market value of the collateral',
           },
           {
             element: '#insurancevalue',
-            intro: 'This is the specified insurance value of the collateral'
+            intro: 'This is the specified insurance value of the collateral',
           },
           {
             element: '#valuationdate',
-            intro: 'This is the date on which the collaterals was valued'
+            intro: 'This is the date on which the collaterals was valued',
           },
           {
             element: '#tenure',
-            intro: 'This is the tenure of the collateral'
+            intro: 'This is the tenure of the collateral',
           },
           {
             element: '#valuer',
             intro:
-              'This is the details of the valuer who valuated the collateral at hand'
+              'This is the details of the valuer who valuated the collateral at hand',
           },
           {
             element: '#collateralsubmit',
             intro:
               'Pressing this button will submit your information to the server. If disabled, please check ' +
-              'to see if there is a field you left out'
+              'to see if there is a field you left out',
           },
           {
             element: '#collateralreset',
             intro:
               'Pressing this button will reset your form to empty,so that you may start filling the ' +
-              'information again'
-          }
+              'information again',
+          },
         ],
         hidePrev: true,
         hideNext: true,
-        showProgress: true
+        showProgress: true,
       })
       .start();
   }
@@ -180,7 +180,7 @@ export class CollateralsComponent implements OnInit {
       marketvalue: form.value.marketvalue,
       tenure: form.value.tenure,
       valuationdate: form.value.valuationdate,
-      valuer: form.value.valuer
+      valuer: form.value.valuer,
     };
     console.log(body);
     this.ecolService.submitCollateral(body).subscribe(

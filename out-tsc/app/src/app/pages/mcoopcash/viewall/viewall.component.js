@@ -22,7 +22,7 @@ var ViewallComponent = /** @class */ (function () {
                 },
                 filter: 'agTextColumnFilter',
                 filterParams: { newRowsAction: 'keep' },
-                resizable: tre,
+                resizable: true,
             },
             {
                 field: 'CLIENTNAME',
@@ -34,7 +34,7 @@ var ViewallComponent = /** @class */ (function () {
                 field: 'IDNUMBER',
                 filter: 'agTextColumnFilter',
                 filterParams: { newRowsAction: 'keep' },
-                resizable: tru,
+                resizable: true,
             },
             {
                 field: 'ARREARS_CATEGORY',
@@ -46,7 +46,7 @@ var ViewallComponent = /** @class */ (function () {
                 field: 'LOAN_TYPE',
                 filter: 'agTextColumnFilter',
                 filterParams: { newRowsAction: 'keep' },
-                resizable: tru,
+                resizable: true,
             },
             {
                 field: 'AROCODE',
@@ -58,7 +58,7 @@ var ViewallComponent = /** @class */ (function () {
                 field: 'DISBURSALDATE',
                 filter: 'agTextColumnFilter',
                 filterParams: { newRowsAction: 'keep' },
-                resizable: tru,
+                resizable: true,
             },
             {
                 field: 'AMOUNTDISBURSED',
@@ -104,7 +104,7 @@ var ViewallComponent = /** @class */ (function () {
                 field: 'LASTPAYMENTDATE',
                 filter: 'agTextColumnFilter',
                 filterParams: { newRowsAction: 'keep' },
-                resizable: tru,
+                resizable: true,
             },
             {
                 field: 'DUEDATE',
@@ -116,7 +116,7 @@ var ViewallComponent = /** @class */ (function () {
                 field: 'LOANSTATUS',
                 filter: 'agTextColumnFilter',
                 filterParams: { newRowsAction: 'keep' },
-                resizable: tru,
+                resizable: true,
             },
             {
                 field: 'ADDRESS',
@@ -135,7 +135,7 @@ var ViewallComponent = /** @class */ (function () {
             width: 120,
             resizable: true,
             sortable: true,
-            floatingFilter: tue,
+            floatingFilter: true,
         };
         this.rowModelType = 'serverSide';
         this.cacheBlockSize = 50;
@@ -175,32 +175,30 @@ var ViewallComponent = /** @class */ (function () {
                         params.failCallback();
                     }
                 }, 500);
-            }
+            },
         };
-        currencyFormatter(params);
-        {
-            if (params.value !== undefined) {
-                return (Math.floor(params.value * 100) / 100)
-                    .toString()
-                    .replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
-            }
-            else {
-                return '';
-            }
+    };
+    ViewallComponent.prototype.currencyFormatter = function (params) {
+        if (params.value !== undefined) {
+            return (Math.floor(params.value * 100) / 100)
+                .toString()
+                .replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
         }
-        onRowDoubleClicked(event, any);
-        {
-            this.model = event.node.data;
-            // tslint:disable-next-line:max-line-length
-            window.open(environment.applink +
-                '/activitylog?accnumber=' +
-                this.model.LOANACCNUMBER +
-                '&custnumber=' +
-                this.model.LOANACCNUMBER +
-                '&username=' +
-                this.username +
-                '&sys=mcoopcash', '_blank');
+        else {
+            return '';
         }
+    };
+    ViewallComponent.prototype.onRowDoubleClicked = function (event) {
+        this.model = event.node.data;
+        // tslint:disable-next-line:max-line-length
+        window.open(environment.applink +
+            '/activitylog?accnumber=' +
+            this.model.LOANACCNUMBER +
+            '&custnumber=' +
+            this.model.LOANACCNUMBER +
+            '&username=' +
+            this.username +
+            '&sys=mcoopcash', '_blank');
     };
     ViewallComponent.prototype.ngOnInit = function () {
         var currentUser = JSON.parse(localStorage.getItem('currentUser'));
@@ -210,7 +208,7 @@ var ViewallComponent = /** @class */ (function () {
         var exportParams = {
             skipHeader: false,
             allColumns: true,
-            fileName: 'export.csv'
+            fileName: 'export.csv',
         };
         var datasource = {
             getRows: function (params) {
@@ -218,7 +216,7 @@ var ViewallComponent = /** @class */ (function () {
                 fetch(environment.nodeapi + '/gridmcoopcashviewall/viewall', {
                     method: 'post',
                     body: JSON.stringify(params.request),
-                    headers: { 'Content-Type': 'application/json; charset=utf-8' }
+                    headers: { 'Content-Type': 'application/json; charset=utf-8' },
                 })
                     .then(function (httpResponse) { return httpResponse.json(); })
                     .then(function (response) {

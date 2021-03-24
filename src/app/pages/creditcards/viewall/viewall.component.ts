@@ -45,63 +45,63 @@ export class ViewallComponent implements OnInit {
         field: 'CARDNUMBER',
         width: 90,
         filter: 'agTextColumnFilter',
-        filterParams: { newRowsAction: 'keep' ,
+        filterParams: { newRowsAction: 'keep' },
       },
       {
         headerName: 'CARDNAME',
         field: 'CARDNAME',
         width: 90,
         filter: 'agTextColumnFilter',
-        filterParams: { newRowsAction: 'keep' }
+        filterParams: { newRowsAction: 'keep' },
       },
       {
         headerName: 'DAYSINARREARS',
         field: 'DAYSINARREARS',
         width: 90,
         filter: 'agNumberColumnFilter',
-        filterParams: { newRowsAction: 'keep' }
+        filterParams: { newRowsAction: 'keep' },
       },
       {
         headerName: 'EXPPMNT',
         field: 'EXPPMNT',
         width: 90,
         filter: 'agNumberColumnFilter',
-        filterParams: { newRowsAction: 'keep' }
+        filterParams: { newRowsAction: 'keep' },
       },
       {
         headerName: 'OUTSTANDING BALANCE',
         field: 'OUTBALANCE',
         width: 90,
         filter: 'agNumberColumnFilter',
-        filterParams: { newRowsAction: 'keep' }
+        filterParams: { newRowsAction: 'keep' },
       },
       {
         headerName: 'LIMIT',
         field: 'LIMIT',
         width: 90,
         filter: 'agNumberColumnFilter',
-        filterParams: { newRowsAction: 'keep' }
+        filterParams: { newRowsAction: 'keep' },
       },
       {
         headerName: 'CYCLE',
         field: 'CYCLE',
         width: 90,
         filter: 'agNumberColumnFilter',
-        filterParams: { newRowsAction: 'keep' }
+        filterParams: { newRowsAction: 'keep' },
       },
       {
         headerName: 'COLOFFICER',
         field: 'COLOFFICER',
         width: 90,
         filter: 'agTextColumnFilter',
-        filterParams: { newRowsAction: 'keep' }
-      }
+        filterParams: { newRowsAction: 'keep' },
+      },
     ];
     this.defaultColDef = {
       width: 120,
       resizable: true,
       sortable: true,
-      floatingFilter: true
+      floatingFilter: true,
     };
     this.rowModelType = 'serverSide';
     this.cacheBlockSize = 50;
@@ -127,7 +127,7 @@ export class ViewallComponent implements OnInit {
         fetch(environment.nodeapi + '/gridcardsviewall/viewall', {
           method: 'post',
           body: JSON.stringify(params.request),
-          headers: { 'Content-Type': 'application/json; charset=utf-8' }
+          headers: { 'Content-Type': 'application/json; charset=utf-8' },
         })
           .then((httpResponse) => httpResponse.json())
           .then((response) => {
@@ -154,7 +154,7 @@ export class ViewallComponent implements OnInit {
             params.failCallback();
           }
         }, 500);
-      }
+      },
     };
   }
 

@@ -41,7 +41,7 @@ export class CreditbuildupComponent implements OnInit {
         },
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: tre,
+        resizable: true,
         // checkboxSelection: true
       },
       {
@@ -56,7 +56,7 @@ export class CreditbuildupComponent implements OnInit {
         field: 'CUSTNAME',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: tru,
+        resizable: true,
       },
       {
         headerName: 'OUSTBALANCE',
@@ -70,7 +70,7 @@ export class CreditbuildupComponent implements OnInit {
         field: 'PRODUCTCODE',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: tru,
+        resizable: true,
       },
       {
         headerName: 'BRANCHCODE',
@@ -84,7 +84,7 @@ export class CreditbuildupComponent implements OnInit {
         field: 'AROCODE',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: tru,
+        resizable: true,
       },
       {
         headerName: 'REPAYMENTAMOUNT',
@@ -110,7 +110,7 @@ export class CreditbuildupComponent implements OnInit {
       suppressResize: false,
       enableRowGroup: true,
       enablePivot: true,
-      pivot: tue,
+      pivot: true,
     };
     this.rowModelType = 'serverSide';
     this.cacheBlockSize = 50;

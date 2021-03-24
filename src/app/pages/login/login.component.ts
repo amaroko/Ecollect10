@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
     this.valForm = fb.group({
       // 'email': [null, Validators.compose([Validators.required, CustomValidators.email])],
       username: [null, Validators.required],
-      password: [null, Validators.required,
+      password: [null, Validators.required],
     });
   }
 
@@ -66,7 +66,7 @@ export class LoginComponent implements OnInit {
     if (ADLOGIN) {
       const body = {
         username: value.username.toLowerCase(),
-        password: value.password
+        password: value.password,
       };
       this.ecolService.auth(body).subscribe(
         (response) => {

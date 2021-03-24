@@ -22,7 +22,7 @@ var LoginComponent = /** @class */ (function () {
         this.valForm = fb.group({
             // 'email': [null, Validators.compose([Validators.required, CustomValidators.email])],
             username: [null, Validators.required],
-            password: [null, Validators.required,]
+            password: [null, Validators.required],
         });
     }
     Object.defineProperty(LoginComponent.prototype, "f", {
@@ -53,7 +53,7 @@ var LoginComponent = /** @class */ (function () {
         if (ADLOGIN) {
             var body = {
                 username: value.username.toLowerCase(),
-                password: value.password
+                password: value.password,
             };
             this.ecolService.auth(body).subscribe(function (response) {
                 if (response.auth) {

@@ -11,8 +11,8 @@ var TopMenuComponent = /** @class */ (function () {
         this.navMarginLeft = 0;
         this.navMarginRight = 0;
         this.pageSettings = pageSettings;
-        this.mobileMode = window.innerWidth <= 767 ? true : false;
-        this.desktopMode = window.innerWidth <= 767 ? false : true;
+        this.mobileMode = window.innerWidth <= 767;
+        this.desktopMode = window.innerWidth > 767;
     }
     TopMenuComponent.prototype.controlLeft = function () {
         var widthLeft = this.navMarginLeft;
@@ -97,17 +97,13 @@ var TopMenuComponent = /** @class */ (function () {
                 }
             }
             _this.navControlRight =
-                listPrevWidth != listFullWidth && listFullWidth >= windowWidth
-                    ? true
-                    : false;
+                listPrevWidth !== listFullWidth && listFullWidth >= windowWidth;
             _this.navControlLeft =
-                listPrevWidth >= windowWidth && listFullWidth >= windowWidth
-                    ? true
-                    : false;
+                listPrevWidth >= windowWidth && listFullWidth >= windowWidth;
         });
     };
     TopMenuComponent.prototype.expandCollapseSubmenu = function (currentMenu, allMenu, active) {
-        if (currentMenu.state == 'expand' ||
+        if (currentMenu.state === 'expand' ||
             (active.isActive && !currentMenu.state)) {
             currentMenu.state = 'collapse';
         }
@@ -128,7 +124,7 @@ var TopMenuComponent = /** @class */ (function () {
     TopMenuComponent = __decorate([
         Component({
             selector: 'app-top-menu',
-            templateUrl: './top-menu.component.html,
+            templateUrl: './top-menu.component.html',
         })
     ], TopMenuComponent);
     return TopMenuComponent;

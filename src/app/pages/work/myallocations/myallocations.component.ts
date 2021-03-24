@@ -79,7 +79,7 @@ export class MyallocationsComponent implements OnInit {
         field: 'custnumber',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: tru,
+        resizable: true,
       },
       {
         headerName: 'CUSTNAME',
@@ -93,7 +93,7 @@ export class MyallocationsComponent implements OnInit {
         field: 'daysinarr',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: tru,
+        resizable: true,
       },
       {
         headerName: 'TOTALARREARS',
@@ -109,7 +109,7 @@ export class MyallocationsComponent implements OnInit {
         valueFormatter: this.currencyFormatter,
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: tru,
+        resizable: true,
       },
       {
         headerName: 'BUCKET',
@@ -123,7 +123,7 @@ export class MyallocationsComponent implements OnInit {
         field: 'arocode',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: tru,
+        resizable: true,
       },
       {
         headerName: 'RROCODE',
@@ -137,15 +137,15 @@ export class MyallocationsComponent implements OnInit {
         field: 'section',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: tru,
+        resizable: true,
       },
       {
         headerName: 'COLOFFICER',
         field: 'colofficer',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: tru,
-      ,
+        resizable: true,
+      },
     ];
     this.sortingOrder = ['desc', 'asc', null];
     this.defaultColDef = {
@@ -157,21 +157,21 @@ export class MyallocationsComponent implements OnInit {
       suppressResize: false,
       enableRowGroup: true,
       enablePivot: true,
-      pivot: true
+      pivot: true,
     };
     this.statusBar = {
       statusPanels: [
         {
           statusPanel: 'agTotalAndFilteredRowCountComponent',
-          align: 'left'
+          align: 'left',
         },
         {
           statusPanel: 'agTotalRowCountComponent',
-          align: 'center'
+          align: 'center',
         },
         { statusPanel: 'agFilteredRowCountComponent' },
         { statusPanel: 'agSelectedRowCountComponent' },
-        { statusPanel: 'agAggregationComponent' }
+        { statusPanel: 'agAggregationComponent' },
       ],
     };
   }

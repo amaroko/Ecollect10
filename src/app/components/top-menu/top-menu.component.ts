@@ -9,7 +9,7 @@ import { menu } from '../../config/page-menus';
 
 @Component({
   selector: 'app-top-menu',
-  templateUrl: './top-menu.component.html,
+  templateUrl: './top-menu.component.html',
 })
 export class TopMenuComponent implements AfterViewInit {
   @ViewChild('topMenuContainer', { static: true }) topMenuContainer;
@@ -21,13 +21,13 @@ export class TopMenuComponent implements AfterViewInit {
   navMarginLeft = 0;
   navMarginRight = 0;
   pageSettings = pageSettings;
-  mobileMode = window.innerWidth <= 767 ? true : false;
-  desktopMode = window.innerWidth <= 767 ? false : true;
+  mobileMode = window.innerWidth <= 767;
+  desktopMode = window.innerWidth > 767;
 
   controlLeft() {
-    var widthLeft = this.navMarginLeft;
-    var containerWidth = this.topMenuContainer.nativeElement.clientWidth;
-    var finalScrollWidth = 0;
+    const widthLeft = this.navMarginLeft;
+    const containerWidth = this.topMenuContainer.nativeElement.clientWidth;
+    let finalScrollWidth = 0;
 
     if (widthLeft <= containerWidth) {
       finalScrollWidth = 0;
@@ -48,9 +48,9 @@ export class TopMenuComponent implements AfterViewInit {
   }
 
   controlRight() {
-    var containerWidth = this.topMenuContainer.nativeElement.clientWidth - 88;
-    var widthLeft = this.navWidth + -this.navMarginLeft - containerWidth;
-    var finalScrollWidth = 0;
+    const containerWidth = this.topMenuContainer.nativeElement.clientWidth - 88;
+    const widthLeft = this.navWidth + -this.navMarginLeft - containerWidth;
+    let finalScrollWidth = 0;
 
     if (widthLeft <= containerWidth) {
       finalScrollWidth = widthLeft - -this.navMarginLeft + 128;
@@ -84,15 +84,15 @@ export class TopMenuComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     setTimeout(() => {
-      var windowWidth = this.topMenuContainer.nativeElement.clientWidth - 128;
-      var listFullWidth = 0;
-      var listPrevWidth = 0;
-      var listActive = false;
+      const windowWidth = this.topMenuContainer.nativeElement.clientWidth - 128;
+      let listFullWidth = 0;
+      let listPrevWidth = 0;
+      let listActive = false;
 
       const navList = Array.from(
         document.querySelectorAll('.top-menu .nav > li')
       );
-      navList.forEach(function(list) {
+      navList.forEach(function (list) {
         const elm = list as any;
         listFullWidth += elm.offsetWidth;
         listPrevWidth += !listActive ? elm.offsetWidth : 0;
@@ -104,7 +104,7 @@ export class TopMenuComponent implements AfterViewInit {
       listPrevWidth = !listActive ? 0 : listPrevWidth;
 
       if (listPrevWidth >= windowWidth) {
-        var finalScrollWidth = listPrevWidth - windowWidth + 128;
+        const finalScrollWidth = listPrevWidth - windowWidth + 128;
         if (!document.body.classList.contains('rtl-mode')) {
           this.navMarginLeft = finalScrollWidth;
           this.navMarginRight = 0;
@@ -115,19 +115,15 @@ export class TopMenuComponent implements AfterViewInit {
       }
 
       this.navControlRight =
-        listPrevWidth != listFullWidth && listFullWidth >= windowWidth
-          ? true
-          : false;
+        listPrevWidth !== listFullWidth && listFullWidth >= windowWidth;
       this.navControlLeft =
-        listPrevWidth >= windowWidth && listFullWidth >= windowWidth
-          ? true
-          : false;
+        listPrevWidth >= windowWidth && listFullWidth >= windowWidth;
     });
   }
 
   expandCollapseSubmenu(currentMenu, allMenu, active) {
     if (
-      currentMenu.state == 'expand' ||
+      currentMenu.state === 'expand' ||
       (active.isActive && !currentMenu.state)
     ) {
       currentMenu.state = 'collapse';

@@ -15,10 +15,9 @@ const routes: Routes = [
   imports: [
     AgGridModule.withComponents([]),
     RouterModule.forChild(routes),
-    PanelModul,
+    PanelModule,
   ],
   declarations: [NocreditComponent, CreditbuildupComponent],
-  exports: [RouterModule,
+  exports: [RouterModule],
 })
-export class WatchModule {
-}
+export class WatchModule {}

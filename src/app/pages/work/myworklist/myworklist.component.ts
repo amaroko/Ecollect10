@@ -79,7 +79,7 @@ export class MyworklistComponent implements OnInit {
         field: 'custnumber',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: tru,
+        resizable: true,
       },
       {
         headerName: 'CUST_NAME',
@@ -102,7 +102,7 @@ export class MyworklistComponent implements OnInit {
           } else {
             return null;
           }
-        ,
+        },
       },
       {
         headerName: 'TOTALARREARS',
@@ -110,7 +110,7 @@ export class MyworklistComponent implements OnInit {
         valueFormatter: this.currencyFormatter,
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: true,
       },
       {
         headerName: 'OUSTBALANCE',
@@ -118,36 +118,36 @@ export class MyworklistComponent implements OnInit {
         valueFormatter: this.currencyFormatter,
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: true,
       },
       {
         headerName: 'BUCKET',
         field: 'bucket',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: true,
       },
       {
         headerName: 'AROCODE',
         field: 'arocode',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: true,
       },
       {
         headerName: 'SECTION',
         field: 'section',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
+        resizable: true,
       },
       {
         headerName: 'COLOFFICER',
         field: 'colofficer',
         filter: 'agTextColumnFilter',
         filterParams: { newRowsAction: 'keep' },
-        resizable: true
-      }
+        resizable: true,
+      },
     ];
     this.sortingOrder = ['desc', 'asc', null];
     this.defaultColDef = {
@@ -159,7 +159,7 @@ export class MyworklistComponent implements OnInit {
       suppressResize: false,
       enableRowGroup: true,
       enablePivot: true,
-      pivot: true
+      pivot: true,
     };
   }
 

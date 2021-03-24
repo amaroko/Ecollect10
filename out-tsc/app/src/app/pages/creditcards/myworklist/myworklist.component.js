@@ -59,7 +59,7 @@ var MyworklistComponent = /** @class */ (function () {
                 field: 'CARDNUMBER',
                 filter: 'agTextColumnFilter',
                 filterParams: { newRowsAction: 'keep' },
-                resizable: tru,
+                resizable: true,
             },
             {
                 headerName: 'CARDNAME',
@@ -73,7 +73,7 @@ var MyworklistComponent = /** @class */ (function () {
                 field: 'DAYSINARREARS',
                 filter: 'agTextColumnFilter',
                 filterParams: { newRowsAction: 'keep' },
-                resizable: tru,
+                resizable: true,
             },
             {
                 headerName: 'EXPPMNT',
@@ -87,7 +87,7 @@ var MyworklistComponent = /** @class */ (function () {
                 field: 'OUTBALANCE',
                 filter: 'agTextColumnFilter',
                 filterParams: { newRowsAction: 'keep' },
-                resizable: tru,
+                resizable: true,
             },
             {
                 headerName: 'CYCLE',
@@ -114,7 +114,7 @@ var MyworklistComponent = /** @class */ (function () {
             suppressResize: false,
             enableRowGroup: true,
             enablePivot: true,
-            pivot: tue,
+            pivot: true,
         };
     }
     MyworklistComponent.prototype.ngOnInit = function () {

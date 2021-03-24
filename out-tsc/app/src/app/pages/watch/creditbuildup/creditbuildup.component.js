@@ -23,7 +23,7 @@ var CreditbuildupComponent = /** @class */ (function () {
                 },
                 filter: 'agTextColumnFilter',
                 filterParams: { newRowsAction: 'keep' },
-                resizable: tre,
+                resizable: true,
             },
             {
                 headerName: 'CUSTNUMBER',
@@ -37,7 +37,7 @@ var CreditbuildupComponent = /** @class */ (function () {
                 field: 'CUSTNAME',
                 filter: 'agTextColumnFilter',
                 filterParams: { newRowsAction: 'keep' },
-                resizable: tru,
+                resizable: true,
             },
             {
                 headerName: 'OUSTBALANCE',
@@ -51,7 +51,7 @@ var CreditbuildupComponent = /** @class */ (function () {
                 field: 'PRODUCTCODE',
                 filter: 'agTextColumnFilter',
                 filterParams: { newRowsAction: 'keep' },
-                resizable: tru,
+                resizable: true,
             },
             {
                 headerName: 'BRANCHCODE',
@@ -65,7 +65,7 @@ var CreditbuildupComponent = /** @class */ (function () {
                 field: 'AROCODE',
                 filter: 'agTextColumnFilter',
                 filterParams: { newRowsAction: 'keep' },
-                resizable: tru,
+                resizable: true,
             },
             {
                 headerName: 'REPAYMENTAMOUNT',
@@ -91,7 +91,7 @@ var CreditbuildupComponent = /** @class */ (function () {
             suppressResize: false,
             enableRowGroup: true,
             enablePivot: true,
-            pivot: tue,
+            pivot: true,
         };
         this.rowModelType = 'serverSide';
         this.cacheBlockSize = 50;

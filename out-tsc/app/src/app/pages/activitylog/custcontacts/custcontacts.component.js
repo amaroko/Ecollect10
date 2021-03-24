@@ -26,31 +26,31 @@ var CustcontactsComponent = /** @class */ (function () {
                 {
                     element: '#contactnumber',
                     intro: 'This is where you type in the phone number of the customer. Kindly use ' +
-                        'the format of 0712345678,
+                        'the format of 0712345678',
                 },
                 {
                     element: '#email',
                     intro: 'This is where you input a valid email of the customer. This should follow the standard ' +
-                        'format of johdoe@something.com'
+                        'format of johdoe@something.com',
                 },
                 {
                     element: '#active',
                     intro: 'Here you specify whether the phone number is active-currently in use or inactive-never available ' +
-                        'or out of service'
+                        'or out of service',
                 },
                 {
                     element: '#contactsubmit',
-                    intro: 'Pressing this button will submit the contact details and link it to the specified account'
+                    intro: 'Pressing this button will submit the contact details and link it to the specified account',
                 },
                 {
                     element: '#contacttable',
                     intro: 'Here you will find a list of all the manually added phone numbers, you can then edit them or ' +
-                        'update the contact if need be'
-                }
+                        'update the contact if need be',
+                },
             ],
             hidePrev: true,
             hideNext: true,
-            showProgress: true
+            showProgress: true,
         })
             .start();
     };
@@ -101,7 +101,7 @@ var CustcontactsComponent = /** @class */ (function () {
             swal.fire({
                 title: 'Ooops!',
                 text: 'Contact Not saved!',
-                footer: '<a href="http://helpdesk.co-opbank.co.ke" target="_blank">Report issue to helpdesk?</a>'
+                footer: '<a href="http://helpdesk.co-opbank.co.ke" target="_blank">Report issue to helpdesk?</a>',
             });
         });
     };

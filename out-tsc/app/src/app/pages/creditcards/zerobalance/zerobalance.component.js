@@ -23,7 +23,7 @@ var ZerobalanceComponent = /** @class */ (function () {
                 },
                 filter: 'agTextColumnFilter',
                 filterParams: { newRowsAction: 'keep' },
-                resizable: tre,
+                resizable: true,
             },
             {
                 headerName: 'CARDNUMBER',
@@ -37,7 +37,7 @@ var ZerobalanceComponent = /** @class */ (function () {
                 field: 'CARDNAME',
                 filter: 'agTextColumnFilter',
                 filterParams: { newRowsAction: 'keep' },
-                resizable: tru,
+                resizable: true,
             },
             {
                 headerName: 'DATEDISBURSED',
@@ -51,7 +51,7 @@ var ZerobalanceComponent = /** @class */ (function () {
                 field: 'LIMIT',
                 filter: 'agTextColumnFilter',
                 filterParams: { newRowsAction: 'keep' },
-                resizable: tru,
+                resizable: true,
             },
             {
                 headerName: 'EXPPMNT',
@@ -65,14 +65,14 @@ var ZerobalanceComponent = /** @class */ (function () {
                 field: 'OUTBALANCE',
                 filter: 'agTextColumnFilter',
                 filterParams: { newRowsAction: 'keep' },
-                resizable: tru,
+                resizable: true,
             },
             {
                 headerName: 'CYCLE',
                 field: 'CYCLE',
                 filter: 'agTextColumnFilter',
                 filterParams: { newRowsAction: 'keep' },
-                resizable: tru,
+                resizable: true,
             },
         ];
         this.defaultColDef = {
@@ -84,7 +84,7 @@ var ZerobalanceComponent = /** @class */ (function () {
             suppressResize: false,
             enableRowGroup: true,
             enablePivot: true,
-            pivot: true
+            pivot: true,
         };
         this.rowModelType = 'serverSide';
         this.cacheBlockSize = 50;
@@ -100,7 +100,7 @@ var ZerobalanceComponent = /** @class */ (function () {
                 fetch(environment.nodeapi + '/gridcreditcardszerobal/viewall', {
                     method: 'post',
                     body: JSON.stringify(params.request),
-                    headers: { 'Content-Type': 'application/json; charset=utf-8' }
+                    headers: { 'Content-Type': 'application/json; charset=utf-8' },
                 })
                     .then(function (httpResponse) { return httpResponse.json(); })
                     .then(function (response) {

@@ -53,14 +53,14 @@ var ActivityactionComponent = /** @class */ (function () {
             { collectoractionid: 'OA', collectoraction: 'ASSIGN OUTSIDE AGENCY' },
             { collectoractionid: 'RF', collectoraction: 'RECEIVED FILE' },
             { collectoractionid: 'FT', collectoraction: 'FUND TRANSFER' },
-            { collectoractionid: 'NFA', collectoraction: 'NEW FILE ALLOCATION' }
+            { collectoractionid: 'NFA', collectoraction: 'NEW FILE ALLOCATION' },
         ];
         this.reviewers = [];
         this.account = [];
         this.sys = 'collections';
         this.ptp = [
             { id: 'No', name: 'No' },
-            { id: 'Yes', name: 'Yes' }
+            { id: 'Yes', name: 'Yes' },
         ];
         // ... subReason: any = {};
         this.subReason = [];
@@ -378,7 +378,7 @@ var ActivityactionComponent = /** @class */ (function () {
             flag: [false],
             route: [null],
             paymode: [{ value: null, disabled: true }],
-            rfdother: [{ value: null, disabled: true }, [Validators.required]]
+            rfdother: [{ value: null, disabled: true }, [Validators.required]],
         });
     };
     ActivityactionComponent.prototype.onSubmit = function () {
@@ -432,7 +432,7 @@ var ActivityactionComponent = /** @class */ (function () {
             noteimp: 'N',
             rfdother: this.f.rfdother.value,
             owner: this.username,
-            product: this.account.section
+            product: this.account.section,
         };
         if (this.f.flag.value) {
             this.savebody.noteimp = 'Y';
@@ -447,7 +447,7 @@ var ActivityactionComponent = /** @class */ (function () {
                 toemail: '',
                 ccemail: this.username,
                 ptpamount: 0,
-                ptpdate: ''
+                ptpdate: '',
             };
         }
         // add action
@@ -464,7 +464,7 @@ var ActivityactionComponent = /** @class */ (function () {
                     excuse: _this.f.reason.value,
                     lastactiondate: new Date(),
                     reviewdate: moment(_this.f.reviewdate.value).format('DD-MMM-YYYY'),
-                    routetostate: _this.f.route.value
+                    routetostate: _this.f.route.value,
                 };
                 _this.ecolService.putcardwatch(watchccbody).subscribe(function (resp) {
                     //
@@ -481,10 +481,9 @@ var ActivityactionComponent = /** @class */ (function () {
                     excuse: _this.f.reason.value,
                     lastactiondate: new Date(),
                     reviewdate: moment(_this.f.reviewdate.value).format('DD-MMM-YYYY'),
-                    routetostate: _this.f.route.value
+                    routetostate: _this.f.route.value,
                 };
-                _this.ecolService.putwatch(watchbody).subscribe(function (resp) {
-                }, function (error) {
+                _this.ecolService.putwatch(watchbody).subscribe(function (resp) { }, function (error) {
                     console.log(error);
                 });
             }
@@ -493,10 +492,9 @@ var ActivityactionComponent = /** @class */ (function () {
                     id: _this.ptpid,
                     comment: _this.f.collectornote.value,
                     reviewdate: moment().format('DD-MMM-YYYY'),
-                    owner: _this.username
+                    owner: _this.username,
                 };
-                _this.ecolService.reviewptp(ptpbody).subscribe(function (resp) {
-                }, function (error) {
+                _this.ecolService.reviewptp(ptpbody).subscribe(function (resp) { }, function (error) {
                     console.log(error);
                 });
             }
@@ -510,7 +508,7 @@ var ActivityactionComponent = /** @class */ (function () {
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
-                confirmButtonText: 'Yes, Close!'
+                confirmButtonText: 'Yes, Close!',
             })
                 .then(function (result) {
                 if (result.value) {
@@ -602,7 +600,7 @@ var ActivityactionComponent = /** @class */ (function () {
                         .fire({
                         // type: 'error',
                         title: 'Oops...',
-                        text: 'a/c already has a running promise to pay. Check under Promises to pay menu'
+                        text: 'a/c already has a running promise to pay. Check under Promises to pay menu',
                     })
                         .then(function (result) {
                         _this.actionForm.controls.ptp.setValue(null);
@@ -684,7 +682,7 @@ var ActivityactionComponent = /** @class */ (function () {
             ptpdate: ptpdate,
             ptpamount: ptpamount,
             owner: owner,
-            accnumber: accnumber
+            accnumber: accnumber,
         });
         this.ptpmultiple = {};
         this.isptptosave = true;
@@ -701,8 +699,7 @@ var ActivityactionComponent = /** @class */ (function () {
             swal.fire('Error!', 'Error occurred during processing!', 'error');
         });
     };
-    ActivityactionComponent.prototype.selectInput = function () {
-    };
+    ActivityactionComponent.prototype.selectInput = function () { };
     ActivityactionComponent.prototype.onKey = function (event) {
         var inputValue = event.target.value;
         console.log(event.target.value);
@@ -716,7 +713,7 @@ var ActivityactionComponent = /** @class */ (function () {
             selector: 'app-activityaction',
             templateUrl: './activityaction.component.html',
             styleUrls: ['./activityaction.component.css'],
-            providers: [{ provide: NgbDateAdapter, useClass: NgbDateNativeAdapter },]
+            providers: [{ provide: NgbDateAdapter, useClass: NgbDateNativeAdapter }],
         }),
         __metadata("design:paramtypes", [ElementRef,
             ActivatedRoute,

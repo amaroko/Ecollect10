@@ -60,7 +60,7 @@ import { NgMarqueeModule } from 'ng-marquee';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
-  suppressScrollX: tru,
+  suppressScrollX: true,
 };
 
 @NgModule({
@@ -77,7 +77,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     LayoutComponent,
     LoginComponent,
     ActivitylogComponent,
-    RolesensorComponen,
+    RolesensorComponent,
   ],
   imports: [
     AppRoutingModule,
@@ -86,7 +86,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     ToasterModule.forRoot(),
     // AgmCoreModule.forRoot({
     //   apiKey: 'AIzaSyC5gJ5x8Yw7qP_DqvNq3IdZi2WUSiDjskk',
-    // }),
+    // }),,
     BrowserAnimationsModule,
     NgMarqueeModule,
     Ng2SearchPipeModule,
@@ -121,7 +121,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     TagInputModule,
     TrendModule,
     NgxSmartModalModule,
-    TooltipModul,
+    TooltipModule,
   ],
   providers: [
     BnNgIdleService,

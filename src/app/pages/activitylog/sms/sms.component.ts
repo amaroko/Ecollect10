@@ -52,38 +52,38 @@ export class SmsComponent implements OnInit {
             element: '#mobile',
             intro:
               'This is where you select the mobile phone number of the customer. The ' +
-              'numbers will be listed here,
+              'numbers will be listed here',
           },
           {
             element: '#template',
             intro:
-              'Here you have to select the sms template according to the Status'
+              'Here you have to select the sms template according to the Status',
           },
           {
             element: '#smsmessage',
             intro:
               'This is where you can view the selected message template. As well as edit the message if you feel so. ' +
-              'Keep in much that you are limited to the amount of characters that you type'
+              'Keep in much that you are limited to the amount of characters that you type',
           },
           {
             element: '#callback',
             intro:
-              'Here you can put the number to which the customer can call for enquiries. You can also leave it as default'
+              'Here you can put the number to which the customer can call for enquiries. You can also leave it as default',
           },
           {
             element: '#sendsms',
             intro:
-              'Pressing this button will send the message to the selected customer phone number'
+              'Pressing this button will send the message to the selected customer phone number',
           },
           {
             element: '#historysms',
             intro:
-              'Here is where the history of sent sms can be viewed in a listed format'
-          }
+              'Here is where the history of sent sms can be viewed in a listed format',
+          },
         ],
         hidePrev: true,
         hideNext: true,
-        showProgress: true
+        showProgress: true,
       })
       .start();
   }
@@ -240,7 +240,7 @@ export class SmsComponent implements OnInit {
       message: form.value.smsMessage + form.value.smsCallback,
       arrears: this.account.totalarrears,
       datesent: new Date(),
-      telnumber: form.value.smsNumber
+      telnumber: form.value.smsNumber,
     };
     this.ecolService.postsms(body).subscribe(
       (data) => {
@@ -277,7 +277,7 @@ export class SmsComponent implements OnInit {
       noteimp: 'N',
       rfdother: '',
       owner: this.username,
-      product: this.account.section
+      product: this.account.section,
     };
     // add action
     this.ecolService.postactivitylogs(body).subscribe(

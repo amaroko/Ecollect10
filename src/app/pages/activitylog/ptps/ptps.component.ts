@@ -57,12 +57,12 @@ export class PtpsComponent implements OnInit {
           {
             element: '#ptptable',
             intro:
-              'Here, you will find a list of the available Promises to Pay for this account,
-          ,
+              'Here, you will find a list of the available Promises to Pay for this account',
+          },
         ],
         hidePrev: true,
         hideNext: true,
-        showProgress: tru,
+        showProgress: true,
       })
       .start();
   }
@@ -147,7 +147,7 @@ export class PtpsComponent implements OnInit {
         this.maxDate = {
           year: this.maxyear,
           month: this.maxmonth,
-          day: this.maxday
+          day: this.maxday,
         };
 
         // min should not be less than today
@@ -161,7 +161,7 @@ export class PtpsComponent implements OnInit {
           this.minDate = {
             year: this.minyear,
             month: this.minmonth,
-            day: this.minday
+            day: this.minday,
           };
         }
       },
@@ -181,7 +181,7 @@ export class PtpsComponent implements OnInit {
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes ammend!'
+        confirmButtonText: 'Yes ammend!',
       })
       .then((result) => {
         if (result.value) {
@@ -203,7 +203,7 @@ export class PtpsComponent implements OnInit {
             ptpdate: ptpdate,
             ptpdate2: ptpdate2,
             ammendby: this.username,
-            ammendcomment: form.value.comment
+            ammendcomment: form.value.comment,
           };
 
           this.ecolService.ammendptp(body).subscribe(

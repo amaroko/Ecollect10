@@ -32,8 +32,8 @@ export class GuarantorsComponent implements OnInit {
           {
             element: '#existinguarantors',
             intro:
-              'Here you will find a list of the existing guarantors for this account,
-          ,
+              'Here you will find a list of the existing guarantors for this account',
+          },
           // {
           //   element: '#custnumber',
           //   intro: 'This is the 7 digit number of the customer'
@@ -58,7 +58,7 @@ export class GuarantorsComponent implements OnInit {
         ],
         hidePrev: true,
         hideNext: true,
-        showProgress: true
+        showProgress: true,
       })
       .start();
   }
@@ -69,57 +69,57 @@ export class GuarantorsComponent implements OnInit {
         steps: [
           {
             element: '#custnumber',
-            intro: 'This is the 7 digit number of the customer'
+            intro: 'This is the 7 digit number of the customer',
           },
           {
             element: '#accnumber',
-            intro: 'This is the 14 digit number of the customer'
+            intro: 'This is the 14 digit number of the customer',
           },
           {
             element: '#nationid',
-            intro: 'This is the Nation Identification number of the guarantor'
+            intro: 'This is the Nation Identification number of the guarantor',
           },
           {
             element: '#guarantorname',
-            intro: 'This is the Full names of the guarantor'
+            intro: 'This is the Full names of the guarantor',
           },
           {
             element: '#address',
-            intro: 'This is the postal address of the guarator'
+            intro: 'This is the postal address of the guarator',
           },
           {
             element: '#postalcode',
             intro:
-              'This is the postal code of the postal address provided by the guarantor'
+              'This is the postal code of the postal address provided by the guarantor',
           },
           {
             element: '#telnumber',
-            intro: 'This is the telephone number ontacts of the guarantor'
+            intro: 'This is the telephone number ontacts of the guarantor',
           },
           {
             element: '#email',
-            intro: 'Here you enter a valid email address of the guarantor'
+            intro: 'Here you enter a valid email address of the guarantor',
           },
           {
             element: '#active',
-            intro: 'Her you can specify if the guarantor is active or inactive'
+            intro: 'Her you can specify if the guarantor is active or inactive',
           },
           {
             element: '#guarantorsubmit',
             intro:
               'Pressing this button will submit your details to the server. If disabled, kindly check ' +
-              'to see if you have left a field unattended'
+              'to see if you have left a field unattended',
           },
           {
             element: '#reset',
             intro:
               'This button will clear your form or reset so that you could start entering ' +
-              'the information again'
-          }
+              'the information again',
+          },
         ],
         hidePrev: true,
         hideNext: true,
-        showProgress: true
+        showProgress: true,
       })
       .start();
   }
@@ -169,7 +169,7 @@ export class GuarantorsComponent implements OnInit {
       postalcode: form.value.postalcode,
       telnumber: form.value.telnumber,
       email: form.value.email,
-      active: form.value.active
+      active: form.value.active,
     };
     this.ecolService.submitGuarantor(body).subscribe(
       (data) => {

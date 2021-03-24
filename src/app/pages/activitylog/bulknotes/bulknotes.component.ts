@@ -19,7 +19,7 @@ const URL = environment.xlsuploadapi;
 @Component({
   selector: 'app-bulknotes',
   templateUrl: './bulknotes.component.html',
-  styleUrls: ['./bulknotes.component.css',
+  styleUrls: ['./bulknotes.component.css']
 })
 export class BulknotesComponent implements OnInit {
   introJS = introJs();

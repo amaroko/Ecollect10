@@ -22,7 +22,7 @@ var McoopcashModule = /** @class */ (function () {
                 PanelModule,
                 AgGridModule.withComponents([]),
                 RouterModule.forChild(routes),
-            ]
+            ],
         })
     ], McoopcashModule);
     return McoopcashModule;

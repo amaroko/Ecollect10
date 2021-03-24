@@ -30,17 +30,16 @@ const routes: Routes = [
     MyworklistComponent,
     PredelqComponent,
     PtpsComponent,
-    WithfundsComponen,
+    WithfundsComponent,
   ],
   imports: [
     CommonModule,
     AgGridModule.withComponents([]),
     RouterModule.forChild(routes),
-    PanelModul,
+    PanelModule,
   ],
-  exports: [RouterModule,
+  exports: [RouterModule],
 })
-export class WorkModule {
-}
+export class WorkModule {}
 
 // work module

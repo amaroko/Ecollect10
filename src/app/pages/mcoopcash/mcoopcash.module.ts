@@ -18,10 +18,9 @@ const routes: Routes = [
     CommonModule,
     PanelModule,
     AgGridModule.withComponents([]),
-    RouterModule.forChild(routes,
-  ,
+    RouterModule.forChild(routes),
+  ],
 })
-export class McoopcashModule {
-}
+export class McoopcashModule {}
 
 // this

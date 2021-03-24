@@ -121,7 +121,7 @@ export class AccplanComponent implements OnInit {
                     actiontitle: resp[i].actiontitle,
                     completed: false,
                     updateby: '',
-                    datecompleted: ',
+                    datecompleted: '',
                   };
                   this.currentplan.push(body);
                 }
@@ -152,7 +152,7 @@ export class AccplanComponent implements OnInit {
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, save!'
+        confirmButtonText: 'Yes, save!',
       })
       .then((result) => {
         if (result.value) {
@@ -169,7 +169,7 @@ export class AccplanComponent implements OnInit {
               accnumber: this.currentplan[0].accnumber,
               planid: this.currentplan[0].planid,
               dateupdated: moment(new Date()).format('YYYY-MM-DD'),
-              updateby: this.username
+              updateby: this.username,
             };
             for (let i = 0; i < this.currentplan.length; i++) {
               this.ecolService.putaccountplan(this.currentplan[i]).subscribe(
@@ -196,7 +196,7 @@ export class AccplanComponent implements OnInit {
                   accnumber: this.accnumber,
                   planid: data[0].planid,
                   dateupdated: moment(new Date()).format('YYYY-MM-DD'),
-                  updateby: this.username
+                  updateby: this.username,
                 };
                 this.update_s_accounts(acc);
               },

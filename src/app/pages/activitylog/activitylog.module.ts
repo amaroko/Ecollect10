@@ -73,10 +73,10 @@ const routes: Routes = [{ path: '', component: NotesComponent }];
     NgxPrettyDateModule,
     MomentModule,
     PdfJsViewerModule,
-    NgxDocViewerModul,
+    NgxDocViewerModule,
   ],
   exports: [RouterModule],
-  providers: [DataService, DatePipe, ToasterService,
+  providers: [DataService, DatePipe, ToasterService]
 })
 export class ActivitylogModule {}
 

@@ -22,7 +22,7 @@ var PtpsComponent = /** @class */ (function () {
                 },
                 filter: 'agTextColumnFilter',
                 filterParams: { newRowsAction: 'keep' },
-                resizable: tre,
+                resizable: true,
             },
             {
                 headerName: 'STATUS',
@@ -36,7 +36,7 @@ var PtpsComponent = /** @class */ (function () {
                 field: 'CLIENT_NAME',
                 filter: 'agTextColumnFilter',
                 filterParams: { newRowsAction: 'keep' },
-                resizable: tru,
+                resizable: true,
             },
             {
                 headerName: 'PTPAMOUNT',
@@ -50,7 +50,7 @@ var PtpsComponent = /** @class */ (function () {
                 field: 'PTPDATE',
                 filter: 'agTextColumnFilter',
                 filterParams: { newRowsAction: 'keep' },
-                resizable: tru,
+                resizable: true,
             },
             {
                 headerName: 'ACTIONDATE',
@@ -64,14 +64,14 @@ var PtpsComponent = /** @class */ (function () {
                 field: 'PAYMETHOD',
                 filter: 'agTextColumnFilter',
                 filterParams: { newRowsAction: 'keep' },
-                resizable: tru,
+                resizable: true,
             },
             {
                 headerName: 'OWNER',
                 field: 'OWNER',
                 filter: 'agTextColumnFilter',
                 filterParams: { newRowsAction: 'keep' },
-                resizable: tru,
+                resizable: true,
             },
         ];
         this.defaultColDef = {
@@ -83,7 +83,7 @@ var PtpsComponent = /** @class */ (function () {
             suppressResize: false,
             enableRowGroup: true,
             enablePivot: true,
-            pivot: true
+            pivot: true,
         };
         this.rowModelType = 'serverSide';
         this.cacheBlockSize = 50;
@@ -99,7 +99,7 @@ var PtpsComponent = /** @class */ (function () {
                 fetch(environment.nodeapi + '/gridbrokenptps/viewall', {
                     method: 'post',
                     body: JSON.stringify(params.request),
-                    headers: { 'Content-Type': 'application/json; charset=utf-8' }
+                    headers: { 'Content-Type': 'application/json; charset=utf-8' },
                 })
                     .then(function (httpResponse) { return httpResponse.json(); })
                     .then(function (response) {

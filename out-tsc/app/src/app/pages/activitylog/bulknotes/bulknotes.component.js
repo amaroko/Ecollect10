@@ -324,7 +324,7 @@ var BulknotesComponent = /** @class */ (function () {
         Component({
             selector: 'app-bulknotes',
             templateUrl: './bulknotes.component.html',
-            styleUrls: ['./bulknotes.component.css',]
+            styleUrls: ['./bulknotes.component.css']
         }),
         __metadata("design:paramtypes", [ActivatedRoute,
             DataService,

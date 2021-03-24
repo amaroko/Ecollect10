@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { ViewallComponent } from './viewall/viewall.component';
 import { RouterModule } from '@angular/router';
 import { AgGridModule } from '@ag-grid-community/angular';
+import { PanelModule } from '../../components/panel/panel.module';
 import { AllloansComponent } from './allloans/allloans.component';
 import { MyallocationsComponent } from './myallocations/myallocations.component';
 import { MyworklistComponent } from './myworklist/myworklist.component';
@@ -32,15 +33,15 @@ var WorkModule = /** @class */ (function () {
                 MyworklistComponent,
                 PredelqComponent,
                 PtpsComponent,
-                WithfundsComponen,
+                WithfundsComponent,
             ],
             imports: [
                 CommonModule,
                 AgGridModule.withComponents([]),
                 RouterModule.forChild(routes),
-                PanelModul,
+                PanelModule,
             ],
-            exports: [RouterModule,]
+            exports: [RouterModule],
         })
     ], WorkModule);
     return WorkModule;

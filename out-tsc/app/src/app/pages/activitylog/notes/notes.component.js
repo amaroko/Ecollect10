@@ -106,7 +106,7 @@ var NotesComponent = /** @class */ (function () {
                 filter: 'agTextColumnFilter',
                 filterParams: { newRowsAction: 'keep' },
                 resizable: true,
-                floatingFilter: tru,
+                floatingFilter: true,
             },
             {
                 field: 'NOTEMADE',
@@ -122,7 +122,7 @@ var NotesComponent = /** @class */ (function () {
                 filter: 'agTextColumnFilter',
                 filterParams: { newRowsAction: 'keep', browserDatePicker: true },
                 valueFormatter: this.dateFormatter,
-                floatingFilter: tru,
+                floatingFilter: true,
             },
             {
                 field: 'NOTEIMP',
@@ -150,7 +150,7 @@ var NotesComponent = /** @class */ (function () {
             autoHeight: true,
             enableRowGroup: true,
             enablePivot: true,
-            pivot: tue,
+            pivot: true,
         };
         this.rowHeight = 275;
         this.statusBar = {

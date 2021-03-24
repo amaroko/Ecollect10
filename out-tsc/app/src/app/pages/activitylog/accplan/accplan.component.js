@@ -101,7 +101,7 @@ var AccplanComponent = /** @class */ (function () {
                                 actiontitle: resp[i].actiontitle,
                                 completed: false,
                                 updateby: '',
-                                datecompleted: ',
+                                datecompleted: '',
                             };
                             _this.currentplan.push(body);
                         }
@@ -128,7 +128,7 @@ var AccplanComponent = /** @class */ (function () {
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, save!'
+            confirmButtonText: 'Yes, save!',
         })
             .then(function (result) {
             if (result.value) {
@@ -143,7 +143,7 @@ var AccplanComponent = /** @class */ (function () {
                         accnumber: _this.currentplan[0].accnumber,
                         planid: _this.currentplan[0].planid,
                         dateupdated: moment(new Date()).format('YYYY-MM-DD'),
-                        updateby: _this.username
+                        updateby: _this.username,
                     };
                     for (var i = 0; i < _this.currentplan.length; i++) {
                         _this.ecolService.putaccountplan(_this.currentplan[i]).subscribe(function (data) { }, function (error) {
@@ -167,7 +167,7 @@ var AccplanComponent = /** @class */ (function () {
                             accnumber: _this.accnumber,
                             planid: data[0].planid,
                             dateupdated: moment(new Date()).format('YYYY-MM-DD'),
-                            updateby: _this.username
+                            updateby: _this.username,
                         };
                         _this.update_s_accounts(acc);
                     }, function (error) {
