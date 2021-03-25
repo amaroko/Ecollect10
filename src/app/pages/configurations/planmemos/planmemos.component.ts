@@ -53,9 +53,11 @@ export class PlanmemosComponent implements OnInit {
   postBody: any = [];
   public singleData;
   // public items: Array<string> = [];
-  public items: Array<string> = [];
+  public items: Array<any> = [];
   model: any = {};
   dataList: any;
+  memogroups: any = [];
+  term: string;
 
   constructor(
     private ecolService: EcolService,
@@ -87,6 +89,36 @@ export class PlanmemosComponent implements OnInit {
     // this.model.active = (event.node.data.active).toLowerCase() === 'true' ? true : false;
   }
 
+  deleteplanmemos(form) {
+    // check if logged in
+    this.ecolService.ifLogged();
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    this.username = currentUser.USERNAME;
+
+    this.model.planid = form.planid;
+    this.model.memogroup = form.memogroup;
+    this.model.plantitle = form.plantitle;
+    swal
+      .fire({
+        title: 'Are you sure?',
+        text:
+          'You want to Delete Memogroup ' +
+          form.memogroup +
+          ' from Plan ' +
+          form.plantitle,
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, Delete!',
+      })
+      .then((result) => {
+        if (result.value) {
+          this.fndeleteSubmit(form);
+        }
+      });
+  }
+
   onQuickFilterChanged($event) {
     this.gridOptions.api.setQuickFilter($event.target.value);
   }
@@ -98,6 +130,7 @@ export class PlanmemosComponent implements OnInit {
     // get memos
     this.getMemos();
     this.getplans();
+    this.getData();
   }
 
   gridReady(params) {
@@ -133,6 +166,7 @@ export class PlanmemosComponent implements OnInit {
   getData() {
     this.ecolService.getplanmemos().subscribe((res) => {
       this.rowData1 = res;
+      console.log(res);
     });
   }
 
@@ -146,6 +180,8 @@ export class PlanmemosComponent implements OnInit {
     this.ecolService.getmemo().subscribe((res) => {
       for (let i = 0; i < res.data.length; i++) {
         this.items.push(res.data[i].MEMO);
+        this.memogroups = res.data[i];
+        console.log(res.data[i]);
       }
     });
   }

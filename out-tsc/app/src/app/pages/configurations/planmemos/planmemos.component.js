@@ -45,6 +45,7 @@ var PlanmemosComponent = /** @class */ (function () {
         // public items: Array<string> = [];
         this.items = [];
         this.model = {};
+        this.memogroups = [];
         // Basic example
         this.gridOptions = {
             headerHeight: 40,
@@ -65,6 +66,34 @@ var PlanmemosComponent = /** @class */ (function () {
         this.model.lastupdateby = this.username;
         // this.model.active = (event.node.data.active).toLowerCase() === 'true' ? true : false;
     };
+    PlanmemosComponent.prototype.deleteplanmemos = function (form) {
+        var _this = this;
+        // check if logged in
+        this.ecolService.ifLogged();
+        var currentUser = JSON.parse(localStorage.getItem('currentUser'));
+        this.username = currentUser.USERNAME;
+        this.model.planid = form.planid;
+        this.model.memogroup = form.memogroup;
+        this.model.plantitle = form.plantitle;
+        swal
+            .fire({
+            title: 'Are you sure?',
+            text: 'You want to Delete Memogroup ' +
+                form.memogroup +
+                ' from Plan ' +
+                form.plantitle,
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, Delete!',
+        })
+            .then(function (result) {
+            if (result.value) {
+                _this.fndeleteSubmit(form);
+            }
+        });
+    };
     PlanmemosComponent.prototype.onQuickFilterChanged = function ($event) {
         this.gridOptions.api.setQuickFilter($event.target.value);
     };
@@ -74,6 +103,7 @@ var PlanmemosComponent = /** @class */ (function () {
         // get memos
         this.getMemos();
         this.getplans();
+        this.getData();
     };
     PlanmemosComponent.prototype.gridReady = function (params) {
         params.api.sizeColumnsToFit();
@@ -104,6 +134,7 @@ var PlanmemosComponent = /** @class */ (function () {
         var _this = this;
         this.ecolService.getplanmemos().subscribe(function (res) {
             _this.rowData1 = res;
+            console.log(res);
         });
     };
     PlanmemosComponent.prototype.getplans = function () {
@@ -117,6 +148,8 @@ var PlanmemosComponent = /** @class */ (function () {
         this.ecolService.getmemo().subscribe(function (res) {
             for (var i = 0; i < res.data.length; i++) {
                 _this.items.push(res.data[i].MEMO);
+                _this.memogroups = res.data[i];
+                console.log(res.data[i]);
             }
         });
     };

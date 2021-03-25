@@ -23,7 +23,11 @@ var routes = [
     { path: '', redirectTo: 'dashboard' },
     { path: 'sms', component: SmsComponent },
     { path: 'allocations', component: AllocationsComponent },
-    { path: 'accplans', component: AccplansComponent },
+    {
+        path: 'accplans',
+        component: AccplansComponent,
+        data: { title: 'Configurations | AccountPlan Settings' },
+    },
     { path: 'planactions', component: PlanactionsComponent },
     { path: 'planmemos', component: PlanmemosComponent },
     { path: 'sp', component: SpComponent },

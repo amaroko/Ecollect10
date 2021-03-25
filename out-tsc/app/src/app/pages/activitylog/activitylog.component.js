@@ -7,8 +7,7 @@ import { environment } from '../../../environments/environment';
 // import {NgxSpinnerService} from 'ngx-spinner';
 var URL = environment.valor;
 var ActivitylogComponent = /** @class */ (function () {
-    function ActivitylogComponent(route, ecolService, dataService // private spinner: NgxSpinnerService
-    ) {
+    function ActivitylogComponent(route, ecolService, dataService) {
         var _this = this;
         this.route = route;
         this.ecolService = ecolService;
@@ -24,7 +23,6 @@ var ActivitylogComponent = /** @class */ (function () {
         this.demandlettersmenu = true;
         this.files = [];
         this.teles = [];
-        this.plan = 'NONE';
         this.loader = true;
         this.tabs = {
             postTab: true,
@@ -39,6 +37,9 @@ var ActivitylogComponent = /** @class */ (function () {
         });
         dataService.getNotesData().subscribe(function (data) {
             _this.notes = data;
+        });
+        dataService.getAccountPlanData().subscribe(function (data) {
+            _this.plan = data;
         });
         dataService.getCollateral().subscribe(function (data) {
             _this.totalcollaterals1 = data;
@@ -158,10 +159,8 @@ var ActivitylogComponent = /** @class */ (function () {
         this.ecolService.s_check_account_plans(accnumber).subscribe(function (data) {
             // check if there if a plan
             if (data && data.length) {
-                _this.ecolService
-                    .single_s_plans(data[0].planid)
-                    .subscribe(function (plandata) {
-                    _this.plan = plandata.plantitle;
+                _this.ecolService.single_s_plans(data[0].planid).subscribe(function (data) {
+                    _this.plan = data.plantitle;
                 });
             }
             _this.loader = false;
@@ -357,8 +356,7 @@ var ActivitylogComponent = /** @class */ (function () {
         }),
         __metadata("design:paramtypes", [ActivatedRoute,
             EcolService,
-            DataService // private spinner: NgxSpinnerService
-        ])
+            DataService])
     ], ActivitylogComponent);
     return ActivitylogComponent;
 }());

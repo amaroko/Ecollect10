@@ -4,6 +4,7 @@ import { EcolService } from '../../../services/ecol.service';
 import swal from 'sweetalert2';
 import { environment } from '../../../../environments/environment';
 import * as moment from 'moment';
+import { DataService } from '../../../services/data.service';
 
 @Component({
   selector: 'app-accplan',
@@ -18,8 +19,14 @@ export class AccplanComponent implements OnInit {
   allplans: any = [];
   model: any = {};
   update = false;
+  plan: any = {};
+  plansdata: any;
 
-  constructor(private route: ActivatedRoute, private ecolService: EcolService) {
+  constructor(
+    private route: ActivatedRoute,
+    private ecolService: EcolService,
+    private dataService: DataService
+  ) {
     //
   }
 
@@ -76,6 +83,11 @@ export class AccplanComponent implements OnInit {
         if (data && data.length) {
           this.changeAction(data[0].planid);
           this.model.plan = data[0].planid;
+          this.ecolService.single_s_plans(data[0].planid).subscribe((data) => {
+            this.plan = data;
+            this.plansdata = data.plantitle;
+            this.dataService.pushAccountPlanData(data.plantitle);
+          });
         }
       },
       (error) => {
@@ -173,7 +185,10 @@ export class AccplanComponent implements OnInit {
             };
             for (let i = 0; i < this.currentplan.length; i++) {
               this.ecolService.putaccountplan(this.currentplan[i]).subscribe(
-                (data) => {},
+                (data) => {
+                  console.log(data);
+                },
+
                 (error) => {
                   console.log(error);
                 }
@@ -181,24 +196,29 @@ export class AccplanComponent implements OnInit {
             }
             this.update_s_accounts(acc);
             this.changeAction(this.currentplan[0].planid);
-            alert('plan updated!');
+            this.planexists(this.accnumber);
+
+            // alert('plan updated!');
+            swal.fire('Successful!', 'plan updated!', 'success');
           } else {
             // adding new
             // console.log('this.currentplan', this.currentplan);
             // console.log(acc);
             this.ecolService.saveaccountplan(this.currentplan).subscribe(
-              (data) => {
-                alert('plan saved');
-                console.log(data);
-                this.changeAction(this.currentplan[0].planid);
-                //
+              (newdataplan) => {
+                console.log(newdataplan);
+                // alert('plan saved');
+
                 const acc = {
                   accnumber: this.accnumber,
-                  planid: data[0].planid,
+                  planid: newdataplan[0].planid,
                   dateupdated: moment(new Date()).format('YYYY-MM-DD'),
                   updateby: this.username,
                 };
                 this.update_s_accounts(acc);
+                this.changeAction(this.currentplan[0].planid);
+                this.planexists(this.accnumber);
+                swal.fire('Successful!', 'plan saved!', 'success');
               },
               (error) => {
                 console.log(error);
@@ -213,7 +233,7 @@ export class AccplanComponent implements OnInit {
   update_s_accounts(body) {
     this.ecolService.put_s_accounts(body).subscribe(
       (data) => {
-        // console.log(data);
+        console.log(data);
       },
       (error) => {
         console.log('put_s_accounts error', error);

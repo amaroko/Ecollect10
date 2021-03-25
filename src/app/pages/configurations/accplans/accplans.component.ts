@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import swal from 'sweetalert2';
 import { EcolService } from '../../../services/ecol.service';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-accplans',
@@ -9,6 +10,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
   styleUrls: ['./accplans.component.css'],
 })
 export class AccplansComponent implements OnInit {
+  @ViewChild('addactionForm', { static: false }) addactionForm: NgForm;
   model: any = {};
   planactions: any = [];
   actions: any = [];
@@ -166,17 +168,19 @@ export class AccplansComponent implements OnInit {
                   console.log(resp);
                   // refresh plan action lists
                   this.getplanactions(body.planid);
+                  this.addactionForm.resetForm();
                   swal.fire('Good!', 'Plan action added!', 'success');
                 },
                 (error) => {
-                  alert('');
+                  this.addactionForm.resetForm();
                   swal.fire('Ooops!', ':1 error saving plan action', 'error');
                 }
               );
             },
             (error) => {
               console.log(error);
-              alert('error saving plan action');
+              this.addactionForm.resetForm();
+              swal.fire('Ooops!', 'error saving plan action', 'error');
             }
           );
         }
@@ -206,10 +210,12 @@ export class AccplansComponent implements OnInit {
             (response) => {
               // console.log(response); {count: 1}
               swal.fire('Good!', 'Plan action deleted!', 'success');
+              this.addactionForm.resetForm();
               this.getplanactions(form.plan);
             },
             (error) => {
               console.log(error);
+              this.addactionForm.resetForm();
               swal.fire('Ooops!', 'Plan action Not deleted!', 'error');
             }
           );

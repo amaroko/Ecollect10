@@ -1,8 +1,9 @@
 import { __decorate, __metadata } from "tslib";
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import swal from 'sweetalert2';
 import { EcolService } from '../../../services/ecol.service';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { NgForm } from '@angular/forms';
 var AccplansComponent = /** @class */ (function () {
     function AccplansComponent(ecolService, spinner) {
         this.ecolService = ecolService;
@@ -134,14 +135,16 @@ var AccplansComponent = /** @class */ (function () {
                         console.log(resp);
                         // refresh plan action lists
                         _this.getplanactions(body.planid);
+                        _this.addactionForm.resetForm();
                         swal.fire('Good!', 'Plan action added!', 'success');
                     }, function (error) {
-                        alert('');
+                        _this.addactionForm.resetForm();
                         swal.fire('Ooops!', ':1 error saving plan action', 'error');
                     });
                 }, function (error) {
                     console.log(error);
-                    alert('error saving plan action');
+                    _this.addactionForm.resetForm();
+                    swal.fire('Ooops!', 'error saving plan action', 'error');
                 });
             }
         });
@@ -169,9 +172,11 @@ var AccplansComponent = /** @class */ (function () {
                 _this.ecolService.delete_s_plan_actions(form.id).subscribe(function (response) {
                     // console.log(response); {count: 1}
                     swal.fire('Good!', 'Plan action deleted!', 'success');
+                    _this.addactionForm.resetForm();
                     _this.getplanactions(form.plan);
                 }, function (error) {
                     console.log(error);
+                    _this.addactionForm.resetForm();
                     swal.fire('Ooops!', 'Plan action Not deleted!', 'error');
                 });
             }
@@ -195,6 +200,10 @@ var AccplansComponent = /** @class */ (function () {
         // this.model = {};
         // this.getid();
     };
+    __decorate([
+        ViewChild('addactionForm', { static: false }),
+        __metadata("design:type", NgForm)
+    ], AccplansComponent.prototype, "addactionForm", void 0);
     AccplansComponent = __decorate([
         Component({
             selector: 'app-accplans',

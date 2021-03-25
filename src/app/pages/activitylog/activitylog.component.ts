@@ -43,7 +43,7 @@ export class ActivitylogComponent implements OnInit {
   totalTeles: number;
   totalPtps: number;
   teles: any = [];
-  plan = 'NONE';
+  plan: string;
   loader = true;
 
   tabs = {
@@ -57,7 +57,7 @@ export class ActivitylogComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private ecolService: EcolService,
-    public dataService: DataService // private spinner: NgxSpinnerService
+    public dataService: DataService
   ) {
     // test service
     dataService.getTestData().subscribe((data) => {
@@ -66,6 +66,10 @@ export class ActivitylogComponent implements OnInit {
 
     dataService.getNotesData().subscribe((data) => {
       this.notes = data;
+    });
+
+    dataService.getAccountPlanData().subscribe((data) => {
+      this.plan = data;
     });
 
     dataService.getCollateral().subscribe((data) => {
@@ -201,11 +205,9 @@ export class ActivitylogComponent implements OnInit {
       (data) => {
         // check if there if a plan
         if (data && data.length) {
-          this.ecolService
-            .single_s_plans(data[0].planid)
-            .subscribe((plandata) => {
-              this.plan = plandata.plantitle;
-            });
+          this.ecolService.single_s_plans(data[0].planid).subscribe((data) => {
+            this.plan = data.plantitle;
+          });
         }
         this.loader = false;
       },

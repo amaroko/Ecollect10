@@ -1,24 +1,33 @@
-<div class='content-heading'>
-  <div>
-    Account Plans
-    <small>Plan actions</small>
-  </div>
-</div>
+<!-- begin breadcrumb -->
+<ol class="breadcrumb float-xl-right">
+  <li class="breadcrumb-item"><a href="javascript:">Home</a></li>
+  <li class="breadcrumb-item"><a href="javascript:">Dashboard</a></li>
+  <li class="breadcrumb-item active"></li>
+
+</ol>
+<!-- end breadcrumb -->
+<!-- begin page-header -->
+<h1 class='page-header'>
+  Dashboard v2 <small>header small text goes here...</small>
+</h1>
+<!-- end page-header -->
 <div class='container-fluid'>
   <div class='row'>
-    <div class='col-xl-4' id='accordions'>
-      <div class='card'>
-        <div class='card-header'>
-          <a class='card-link' data-toggle='collapse' href='#collapseOne'>
-            Plan action Configurations
-          </a>
-        </div>
-        <div class='collapse show' data-parent='#accordion' id='collapseOne'>
-          <div class='card-body'>
-            <div class='row'>
+    <app-panel title='Add Plan Action'>
+      <div class='row'>
+        <button
+          class='btn btn-sm btn-warning m-r-5'
+          routerLink='/configurations/accplans'
+          type='submit'
+        >
+          Go to Add Plan Title Page
+        </button>
+      </div>
+
+
+
               <div class='col-xl-12'>
-                <div class='card card-primary'>
-                  <div class='card-body'>
+
                     <form
                       #planactionsform='ngForm'
                       (ngSubmit)='saveplanaction(model)'
@@ -91,32 +100,20 @@
                           >
                             Cancel
                           </button>
+
                         </div>
                       </div>
+
                     </form>
-                  </div>
-                </div>
-              </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class='col-xl-8' id='accordion'>
-      <div class='col-xl-12'>
-        <div class='card card-default'>
-          <div class='card-header'>
-            <a class='card-link' data-toggle='collapse' href='#collapseDemand1'>
-              Plan actions:
-            </a>
-          </div>
-          <div
-            class='collapse show'
-            data-parent='#accordion'
-            id='collapseDemand1'
-          >
-            <div class='card-body'>
-              <table class='table table-hover table-bordered table-striped'>
+
+    </app-panel>
+
+
+
+    <div class='col-xl-8'>
+      <app-panel title='List of Plan actions added'>
+              <table class='table table-hover table-bordered'>
                 <thead>
                 <tr>
                   <th>#</th>
@@ -128,21 +125,17 @@
                 <tr *ngFor='let p of planactions'>
                   <td>{{ p.actionid }}</td>
                   <td>{{ p.actiontitle }}</td>
-                  <td class='text-center'>
-                    <button
-                      (click)='editaction(p)'
-                      class='btn btn-outline-success btn-sm'
-                    >
-                      <i class='fas fa-edit'></i> edit
-                    </button>
+                  <td class="with-btn" nowrap>
+                    <a (click)='editaction(p)' class="btn btn-sm btn-primary width-60">Edit</a>
                   </td>
                 </tr>
                 </tbody>
               </table>
-            </div>
-          </div>
-        </div>
+
+      </app-panel>
       </div>
-    </div>
   </div>
 </div>
+
+
+

@@ -5,14 +5,17 @@ import { EcolService } from '../../../services/ecol.service';
 import swal from 'sweetalert2';
 import { environment } from '../../../../environments/environment';
 import * as moment from 'moment';
+import { DataService } from '../../../services/data.service';
 var AccplanComponent = /** @class */ (function () {
-    function AccplanComponent(route, ecolService) {
+    function AccplanComponent(route, ecolService, dataService) {
         this.route = route;
         this.ecolService = ecolService;
+        this.dataService = dataService;
         this.currentplan = [];
         this.allplans = [];
         this.model = {};
         this.update = false;
+        this.plan = {};
         //
     }
     AccplanComponent.prototype.ngOnInit = function () {
@@ -60,6 +63,11 @@ var AccplanComponent = /** @class */ (function () {
             if (data && data.length) {
                 _this.changeAction(data[0].planid);
                 _this.model.plan = data[0].planid;
+                _this.ecolService.single_s_plans(data[0].planid).subscribe(function (data) {
+                    _this.plan = data;
+                    _this.plansdata = data.plantitle;
+                    _this.dataService.pushAccountPlanData(data.plantitle);
+                });
             }
         }, function (error) {
             console.log(error);
@@ -146,30 +154,35 @@ var AccplanComponent = /** @class */ (function () {
                         updateby: _this.username,
                     };
                     for (var i = 0; i < _this.currentplan.length; i++) {
-                        _this.ecolService.putaccountplan(_this.currentplan[i]).subscribe(function (data) { }, function (error) {
+                        _this.ecolService.putaccountplan(_this.currentplan[i]).subscribe(function (data) {
+                            console.log(data);
+                        }, function (error) {
                             console.log(error);
                         });
                     }
                     _this.update_s_accounts(acc);
                     _this.changeAction(_this.currentplan[0].planid);
-                    alert('plan updated!');
+                    _this.planexists(_this.accnumber);
+                    // alert('plan updated!');
+                    swal.fire('Successful!', 'plan updated!', 'success');
                 }
                 else {
                     // adding new
                     // console.log('this.currentplan', this.currentplan);
                     // console.log(acc);
-                    _this.ecolService.saveaccountplan(_this.currentplan).subscribe(function (data) {
-                        alert('plan saved');
-                        console.log(data);
-                        _this.changeAction(_this.currentplan[0].planid);
-                        //
+                    _this.ecolService.saveaccountplan(_this.currentplan).subscribe(function (newdataplan) {
+                        console.log(newdataplan);
+                        // alert('plan saved');
                         var acc = {
                             accnumber: _this.accnumber,
-                            planid: data[0].planid,
+                            planid: newdataplan[0].planid,
                             dateupdated: moment(new Date()).format('YYYY-MM-DD'),
                             updateby: _this.username,
                         };
                         _this.update_s_accounts(acc);
+                        _this.changeAction(_this.currentplan[0].planid);
+                        _this.planexists(_this.accnumber);
+                        swal.fire('Successful!', 'plan saved!', 'success');
                     }, function (error) {
                         console.log(error);
                     });
@@ -180,7 +193,7 @@ var AccplanComponent = /** @class */ (function () {
     // update tbl_s_accounts
     AccplanComponent.prototype.update_s_accounts = function (body) {
         this.ecolService.put_s_accounts(body).subscribe(function (data) {
-            // console.log(data);
+            console.log(data);
         }, function (error) {
             console.log('put_s_accounts error', error);
         });
@@ -191,7 +204,9 @@ var AccplanComponent = /** @class */ (function () {
             templateUrl: './accplan.component.html',
             styleUrls: ['./accplan.component.css'],
         }),
-        __metadata("design:paramtypes", [ActivatedRoute, EcolService])
+        __metadata("design:paramtypes", [ActivatedRoute,
+            EcolService,
+            DataService])
     ], AccplanComponent);
     return AccplanComponent;
 }());

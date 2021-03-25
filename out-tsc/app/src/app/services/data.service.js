@@ -16,6 +16,7 @@ var DataService = /** @class */ (function () {
         this.ptpsSubject = new BehaviorSubject(0);
         this.timeSubject = new BehaviorSubject(0);
         this.reminderalertsSubject = new BehaviorSubject(0);
+        this.accountplanSubject = new BehaviorSubject('NONE');
     }
     DataService.prototype.getTestData = function () {
         return this.dataSubject.asObservable();
@@ -31,6 +32,9 @@ var DataService = /** @class */ (function () {
     };
     DataService.prototype.getReminderData = function () {
         return this.reminderSubject.asObservable();
+    };
+    DataService.prototype.getAccountPlanData = function () {
+        return this.accountplanSubject.asObservable();
     };
     DataService.prototype.getWoffstoryData = function () {
         return this.woffstorySubject.asObservable();
@@ -61,6 +65,9 @@ var DataService = /** @class */ (function () {
     };
     DataService.prototype.pushReminderData = function (dataToPush) {
         this.reminderSubject.next(dataToPush);
+    };
+    DataService.prototype.pushAccountPlanData = function (plan) {
+        this.accountplanSubject.next(plan);
     };
     DataService.prototype.pushReminderAlertData = function (dataToPush) {
         this.reminderalertsSubject.next(dataToPush);
