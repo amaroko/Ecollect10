@@ -1,9 +1,6 @@
-import { __decorate, __metadata } from "tslib";
+import { __decorate } from "tslib";
 import { Component, ViewChild } from '@angular/core';
 import swal from 'sweetalert2';
-import { EcolService } from '../../../services/ecol.service';
-import { NgxSpinnerService } from 'ngx-spinner';
-import { NgForm } from '@angular/forms';
 var AccplansComponent = /** @class */ (function () {
     function AccplansComponent(ecolService, spinner) {
         this.ecolService = ecolService;
@@ -201,17 +198,14 @@ var AccplansComponent = /** @class */ (function () {
         // this.getid();
     };
     __decorate([
-        ViewChild('addactionForm', { static: false }),
-        __metadata("design:type", NgForm)
+        ViewChild('addactionForm', { static: false })
     ], AccplansComponent.prototype, "addactionForm", void 0);
     AccplansComponent = __decorate([
         Component({
             selector: 'app-accplans',
             templateUrl: './accplans.component.html',
             styleUrls: ['./accplans.component.css'],
-        }),
-        __metadata("design:paramtypes", [EcolService,
-            NgxSpinnerService])
+        })
     ], AccplansComponent);
     return AccplansComponent;
 }());

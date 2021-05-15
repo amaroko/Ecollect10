@@ -1,4 +1,4 @@
-import { __decorate, __metadata } from "tslib";
+import { __decorate } from "tslib";
 import { Component } from '@angular/core';
 import { environment } from '../../../../environments/environment';
 import { AllModules } from '@ag-grid-enterprise/all-modules';
@@ -140,8 +140,7 @@ var PtpsComponent = /** @class */ (function () {
             selector: 'app-ptps',
             templateUrl: './ptps.component.html',
             styleUrls: ['./ptps.component.css'],
-        }),
-        __metadata("design:paramtypes", [])
+        })
     ], PtpsComponent);
     return PtpsComponent;
 }());

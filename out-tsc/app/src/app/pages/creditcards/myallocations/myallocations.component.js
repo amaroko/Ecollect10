@@ -1,7 +1,6 @@
-import { __decorate, __metadata } from "tslib";
+import { __decorate } from "tslib";
 import { Component } from '@angular/core';
 import { environment } from '../../../../environments/environment';
-import { HttpClient } from '@angular/common/http';
 // import { EcolService } from '../../../services/ecol.ervice';
 import { AllModules } from '@ag-grid-enterprise/all-modules';
 var MyallocationsComponent = /** @class */ (function () {
@@ -149,8 +148,7 @@ var MyallocationsComponent = /** @class */ (function () {
             selector: 'app-myallocations',
             templateUrl: './myallocations.component.html',
             styleUrls: ['./myallocations.component.css'],
-        }),
-        __metadata("design:paramtypes", [HttpClient])
+        })
     ], MyallocationsComponent);
     return MyallocationsComponent;
 }());

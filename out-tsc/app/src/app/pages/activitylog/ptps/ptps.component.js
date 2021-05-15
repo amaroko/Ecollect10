@@ -1,11 +1,7 @@
-import { __decorate, __metadata } from "tslib";
+import { __decorate } from "tslib";
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { EcolService } from '../../../services/ecol.service';
-import { NgxSmartModalService } from 'ngx-smart-modal';
 import * as moment from 'moment';
 import swal from 'sweetalert2';
-import { DatePipe } from '@angular/common';
 import * as introJs from 'intro.js/intro.js';
 var PtpsComponent = /** @class */ (function () {
     //
@@ -178,11 +174,7 @@ var PtpsComponent = /** @class */ (function () {
             selector: 'app-ptps',
             templateUrl: './ptps.component.html',
             styleUrls: ['./ptps.component.css'],
-        }),
-        __metadata("design:paramtypes", [ActivatedRoute,
-            EcolService,
-            NgxSmartModalService,
-            DatePipe])
+        })
     ], PtpsComponent);
     return PtpsComponent;
 }());

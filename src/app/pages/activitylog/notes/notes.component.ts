@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { EcolService } from '../../../services/ecol.service';
-import { isNullOrUndefined } from 'util';
+// import { isNullOrUndefined } from 'util';
 // import {NgxSpinnerService} from 'ngx-spinner';
 import * as moment from 'moment';
 import { DatePipe } from '@angular/common';
@@ -345,7 +345,7 @@ export class NotesComponent implements OnInit, OnDestroy {
                 .toUpperCase();
         }
         // append posts
-        if (!isNullOrUndefined(data) && this.notes.length) {
+        if (data && this.notes.length) {
           this.noteData = this.noteData.concat(data);
           console.log(data);
         } else {

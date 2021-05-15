@@ -1,4 +1,4 @@
-import { __decorate, __metadata } from "tslib";
+import { __decorate } from "tslib";
 import { Component, HostListener } from '@angular/core';
 import pageSettings from '../../config/page-settings';
 var LayoutComponent = /** @class */ (function () {
@@ -65,18 +65,14 @@ var LayoutComponent = /** @class */ (function () {
         }
     };
     __decorate([
-        HostListener('window:scroll', ['$event']),
-        __metadata("design:type", Function),
-        __metadata("design:paramtypes", [Object]),
-        __metadata("design:returntype", void 0)
+        HostListener('window:scroll', ['$event'])
     ], LayoutComponent.prototype, "onWindowScroll", null);
     LayoutComponent = __decorate([
         Component({
             selector: 'app-layout',
             templateUrl: './layout.component.html',
             styleUrls: ['./layout.component.css'],
-        }),
-        __metadata("design:paramtypes", [])
+        })
     ], LayoutComponent);
     return LayoutComponent;
 }());

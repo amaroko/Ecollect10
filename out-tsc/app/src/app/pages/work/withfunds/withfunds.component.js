@@ -1,4 +1,4 @@
-import { __decorate, __metadata } from "tslib";
+import { __decorate } from "tslib";
 import { Component } from '@angular/core';
 import { environment } from '../../../../environments/environment';
 // import { HttpClient} from '@angular/common/http';
@@ -162,8 +162,7 @@ var WithfundsComponent = /** @class */ (function () {
             selector: 'app-withfunds',
             templateUrl: './withfunds.component.html',
             styleUrls: ['./withfunds.component.css'],
-        }),
-        __metadata("design:paramtypes", [])
+        })
     ], WithfundsComponent);
     return WithfundsComponent;
 }());

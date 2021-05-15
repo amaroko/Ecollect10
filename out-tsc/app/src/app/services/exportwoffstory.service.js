@@ -1,10 +1,8 @@
-import { __awaiter, __decorate, __generator, __metadata } from "tslib";
+import { __awaiter, __decorate, __generator } from "tslib";
 import { Injectable } from '@angular/core';
 import { Workbook } from 'exceljs';
 import * as fs from 'file-saver';
 import * as logoFile from '../../assets/img/cooplogo.js';
-import { DatePipe } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
 var ExportwoffstoryService = /** @class */ (function () {
     function ExportwoffstoryService(datePipe, http) {
         this.datePipe = datePipe;
@@ -86,7 +84,7 @@ var ExportwoffstoryService = /** @class */ (function () {
                     footerRow.getCell(1).fill = {
                         type: 'pattern',
                         pattern: 'solid',
-                        fgColor: { argb: 'AED6F1' },
+                        fgColor: { argb: 'AED6F1' }, // FFCCFFE5
                     };
                     // tslint:disable-next-line:max-line-length
                     footerRow.getCell(1).border = {
@@ -114,8 +112,7 @@ var ExportwoffstoryService = /** @class */ (function () {
     ExportwoffstoryService = __decorate([
         Injectable({
             providedIn: 'root',
-        }),
-        __metadata("design:paramtypes", [DatePipe, HttpClient])
+        })
     ], ExportwoffstoryService);
     return ExportwoffstoryService;
 }());

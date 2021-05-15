@@ -1,8 +1,5 @@
-import { __decorate, __metadata } from "tslib";
+import { __decorate } from "tslib";
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { EcolService } from '../../services/ecol.service';
-import { DataService } from '../../services/data.service';
 import { environment } from '../../../environments/environment';
 // import {NgxSpinnerService} from 'ngx-spinner';
 var URL = environment.valor;
@@ -353,10 +350,7 @@ var ActivitylogComponent = /** @class */ (function () {
             selector: 'app-activitylog',
             templateUrl: './activitylog.component.html',
             styleUrls: ['./activitylog.component.css'],
-        }),
-        __metadata("design:paramtypes", [ActivatedRoute,
-            EcolService,
-            DataService])
+        })
     ], ActivitylogComponent);
     return ActivitylogComponent;
 }());

@@ -1,10 +1,6 @@
-import { __decorate, __metadata } from "tslib";
+import { __decorate } from "tslib";
 import { Component } from '@angular/core';
 import swal from 'sweetalert2';
-import { EcolService } from '../../../services/ecol.service';
-import { ActivatedRoute } from '@angular/router';
-import { NgxSpinnerService } from 'ngx-spinner';
-import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../../environments/environment';
 var PlanmemosComponent = /** @class */ (function () {
     function PlanmemosComponent(ecolService, route, spinner, http) {
@@ -53,6 +49,7 @@ var PlanmemosComponent = /** @class */ (function () {
             rowData: null,
             enableFilter: true,
             rowSelection: 'single',
+            // onRowClicked: this.RowSelected,
         };
         http
             .get(environment.api + '/api/tbl_s_planmemos')
@@ -206,11 +203,7 @@ var PlanmemosComponent = /** @class */ (function () {
             selector: 'app-planmemos',
             templateUrl: './planmemos.component.html',
             styleUrls: ['./planmemos.component.css'],
-        }),
-        __metadata("design:paramtypes", [EcolService,
-            ActivatedRoute,
-            NgxSpinnerService,
-            HttpClient])
+        })
     ], PlanmemosComponent);
     return PlanmemosComponent;
 }());

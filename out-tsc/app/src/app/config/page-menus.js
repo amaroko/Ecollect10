@@ -168,6 +168,9 @@ var Letters = {
             ],
         },
     ],
+    /* ,
+     'alert': 'new',
+     'label': 'badge badge-danger'*/
 };
 var Letterscc = {
     title: 'Demands C-Cards',
@@ -184,6 +187,9 @@ var Letterscc = {
             url: '/creditcards/creditcarddemands/demandshistory',
         },
     ],
+    /* ,
+     'alert': '0',
+     'label': 'badge badge-danger'*/
 };
 var Administration = {
     title: 'Administration',
@@ -246,6 +252,8 @@ var Work = {
         {
             title: 'Loan arrears(ALL)',
             url: '/work/viewall',
+            /*'alert': '23',
+            'label': 'badge badge-warning'*/
         },
         {
             title: 'My allocations',
@@ -286,6 +294,8 @@ var Work_cc = {
         {
             title: 'Card arrears(ALL)',
             url: '/creditcards/viewall',
+            /*'alert': '23',
+            'label': 'badge badge-warning'*/
         },
         {
             title: 'My allocations',
@@ -314,6 +324,8 @@ var Remedial = {
         {
             title: 'Loan arrears(ALL)',
             url: '/work/viewall',
+            /*'alert': '23',
+            'label': 'badge badge-warning'*/
         },
         {
             title: 'My allocations',

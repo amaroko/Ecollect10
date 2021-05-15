@@ -1,11 +1,8 @@
-import { __decorate, __metadata } from "tslib";
+import { __decorate } from "tslib";
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { EcolService } from '../../../services/ecol.service';
 import swal from 'sweetalert2';
 import { environment } from '../../../../environments/environment';
 import * as introJs from 'intro.js/intro.js';
-import { DataService } from '../../../services/data.service';
 var URL = environment.valor;
 var CollateralsComponent = /** @class */ (function () {
     //
@@ -28,6 +25,27 @@ var CollateralsComponent = /** @class */ (function () {
                     intro: 'Here you will find a list of all collaterals placed under the specified account ' +
                         'you could then edit the collaterals if need be',
                 },
+                // {
+                //   element: '#custnumber',
+                //   intro: 'This is the 7 digit number of the customer'
+                // }
+                // {
+                //   element: '#smsmessage',
+                //   intro: 'This is where you can view the selected message template. As well as edit the message if you feel so. ' +
+                //     'Keep in much that you are limited to the amount of characters that you type'
+                // },
+                // {
+                //   element: '#callback',
+                //   intro: 'Here you can put the number to which the customer can call for enquiries. You can also leave it as default'
+                // },
+                // {
+                //   element: '#sendsms',
+                //   intro: 'Pressing this button will send the message to the selected customer phone number'
+                // },
+                // {
+                //   element: '#historysms',
+                //   intro: 'Here is where the history of sent sms can be viewed in a listed format'
+                // }
             ],
             hidePrev: true,
             hideNext: true,
@@ -204,10 +222,7 @@ var CollateralsComponent = /** @class */ (function () {
             selector: 'app-collaterals',
             templateUrl: './collaterals.component.html',
             styleUrls: ['./collaterals.component.css'],
-        }),
-        __metadata("design:paramtypes", [ActivatedRoute,
-            EcolService,
-            DataService])
+        })
     ], CollateralsComponent);
     return CollateralsComponent;
 }());

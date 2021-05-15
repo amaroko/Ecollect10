@@ -1,10 +1,7 @@
-import { __decorate, __metadata } from "tslib";
-import { Component, EventEmitter, Input, Output, Renderer2, } from '@angular/core';
+import { __decorate } from "tslib";
+import { Component, EventEmitter, Input, Output, } from '@angular/core';
 import pageSettings from '../../config/page-settings';
 import swal from 'sweetalert2';
-import { Router } from '@angular/router';
-import { EcolService } from '../../services/ecol.service';
-import { NgxSmartModalService } from 'ngx-smart-modal';
 var HeaderComponent = /** @class */ (function () {
     function HeaderComponent(renderer, ngxsmartModalService, ecolService, router) {
         var _this = this;
@@ -90,30 +87,22 @@ var HeaderComponent = /** @class */ (function () {
         });
     };
     __decorate([
-        Input(),
-        __metadata("design:type", Object)
+        Input()
     ], HeaderComponent.prototype, "pageSidebarTwo", void 0);
     __decorate([
-        Output(),
-        __metadata("design:type", Object)
+        Output()
     ], HeaderComponent.prototype, "toggleSidebarRightCollapsed", void 0);
     __decorate([
-        Output(),
-        __metadata("design:type", Object)
+        Output()
     ], HeaderComponent.prototype, "toggleMobileSidebar", void 0);
     __decorate([
-        Output(),
-        __metadata("design:type", Object)
+        Output()
     ], HeaderComponent.prototype, "toggleMobileRightSidebar", void 0);
     HeaderComponent = __decorate([
         Component({
             selector: 'app-header',
             templateUrl: './header.component.html',
-        }),
-        __metadata("design:paramtypes", [Renderer2,
-            NgxSmartModalService,
-            EcolService,
-            Router])
+        })
     ], HeaderComponent);
     return HeaderComponent;
 }());

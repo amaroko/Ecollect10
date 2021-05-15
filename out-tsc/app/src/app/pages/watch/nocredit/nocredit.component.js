@@ -1,4 +1,4 @@
-import { __decorate, __metadata } from "tslib";
+import { __decorate } from "tslib";
 import { Component } from '@angular/core';
 import { environment } from '../../../../environments/environment';
 // import { HttpClient} from '@angular/common/http';
@@ -24,6 +24,7 @@ var NocreditComponent = /** @class */ (function () {
                         return ''; // <img src="assets/img/user/loading.gif">
                     }
                 },
+                // checkboxSelection: true
             },
             {
                 headerName: 'CUSTNUMBER',
@@ -153,8 +154,7 @@ var NocreditComponent = /** @class */ (function () {
             selector: 'app-nocredit',
             templateUrl: './nocredit.component.html',
             styleUrls: ['./nocredit.component.css'],
-        }),
-        __metadata("design:paramtypes", [])
+        })
     ], NocreditComponent);
     return NocreditComponent;
 }());

@@ -1,8 +1,5 @@
-import { __decorate, __metadata } from "tslib";
+import { __decorate } from "tslib";
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { EcolService } from '../../../services/ecol.service';
-import { DataService } from '../../../services/data.service';
 import swal from 'sweetalert2';
 import { saveAs } from 'file-saver';
 import { environment } from '../../../../environments/environment';
@@ -202,10 +199,7 @@ var FilesComponent = /** @class */ (function () {
             selector: 'app-files',
             templateUrl: './files.component.html',
             styleUrls: ['./files.component.css'],
-        }),
-        __metadata("design:paramtypes", [ActivatedRoute,
-            EcolService,
-            DataService])
+        })
     ], FilesComponent);
     return FilesComponent;
 }());

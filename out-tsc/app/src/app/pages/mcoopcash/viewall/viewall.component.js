@@ -1,8 +1,7 @@
-import { __decorate, __metadata } from "tslib";
+import { __decorate } from "tslib";
 import { Component } from '@angular/core';
 import { AllModules } from '@ag-grid-enterprise/all-modules';
 import { environment } from '../../../../environments/environment';
-import { HttpClient } from '@angular/common/http';
 var ViewallComponent = /** @class */ (function () {
     function ViewallComponent(http) {
         this.http = http;
@@ -236,8 +235,7 @@ var ViewallComponent = /** @class */ (function () {
             selector: 'app-viewall',
             templateUrl: './viewall.component.html',
             styleUrls: ['./viewall.component.css'],
-        }),
-        __metadata("design:paramtypes", [HttpClient])
+        })
     ], ViewallComponent);
     return ViewallComponent;
 }());

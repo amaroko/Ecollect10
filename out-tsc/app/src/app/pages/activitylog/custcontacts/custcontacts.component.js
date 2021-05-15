@@ -1,9 +1,6 @@
-import { __decorate, __metadata } from "tslib";
+import { __decorate } from "tslib";
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { EcolService } from '../../../services/ecol.service';
 import swal from 'sweetalert2';
-import { DataService } from '../../../services/data.service';
 import * as introJs from 'intro.js/intro.js';
 var CustcontactsComponent = /** @class */ (function () {
     function CustcontactsComponent(route, ecolService, dataService) {
@@ -166,10 +163,7 @@ var CustcontactsComponent = /** @class */ (function () {
             selector: 'app-custcontacts',
             templateUrl: './custcontacts.component.html',
             styleUrls: ['./custcontacts.component.css'],
-        }),
-        __metadata("design:paramtypes", [ActivatedRoute,
-            EcolService,
-            DataService])
+        })
     ], CustcontactsComponent);
     return CustcontactsComponent;
 }());

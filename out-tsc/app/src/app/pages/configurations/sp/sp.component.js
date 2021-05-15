@@ -1,10 +1,7 @@
-import { __decorate, __metadata } from "tslib";
+import { __decorate } from "tslib";
 import { Component } from '@angular/core';
 import swal from 'sweetalert2';
 import { AllModules } from '@ag-grid-enterprise/all-modules';
-import { EcolService } from '../../../services/ecol.service';
-import { NgxSpinnerService } from 'ngx-spinner';
-import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../../environments/environment';
 import * as moment from 'moment';
 var SpComponent = /** @class */ (function () {
@@ -60,6 +57,7 @@ var SpComponent = /** @class */ (function () {
             rowData: null,
             enableFilter: true,
             rowSelection: 'single',
+            // onRowClicked: this.RowSelected,
         };
         http.get(environment.api + '/api/sptypes').subscribe(function (resp) {
             _this.rowData1 = resp;
@@ -163,10 +161,7 @@ var SpComponent = /** @class */ (function () {
             selector: 'app-sp',
             templateUrl: './sp.component.html',
             styleUrls: ['./sp.component.css'],
-        }),
-        __metadata("design:paramtypes", [EcolService,
-            NgxSpinnerService,
-            HttpClient])
+        })
     ], SpComponent);
     return SpComponent;
 }());

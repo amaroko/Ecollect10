@@ -1,4 +1,4 @@
-import { __decorate, __metadata } from "tslib";
+import { __decorate } from "tslib";
 import { Component, ViewChild } from '@angular/core';
 var PanelComponent = /** @class */ (function () {
     function PanelComponent() {
@@ -33,8 +33,7 @@ var PanelComponent = /** @class */ (function () {
         this.remove = !this.remove;
     };
     __decorate([
-        ViewChild('panelFooter', { static: false }),
-        __metadata("design:type", Object)
+        ViewChild('panelFooter', { static: false })
     ], PanelComponent.prototype, "panelFooter", void 0);
     PanelComponent = __decorate([
         Component({

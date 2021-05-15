@@ -1,6 +1,5 @@
-import { __decorate, __metadata } from "tslib";
+import { __decorate } from "tslib";
 import { Injectable } from '@angular/core';
-import { Router, } from '@angular/router';
 var AuthGuard = /** @class */ (function () {
     function AuthGuard(router) {
         this.router = router;
@@ -20,8 +19,7 @@ var AuthGuard = /** @class */ (function () {
     AuthGuard = __decorate([
         Injectable({
             providedIn: 'root',
-        }),
-        __metadata("design:paramtypes", [Router])
+        })
     ], AuthGuard);
     return AuthGuard;
 }());

@@ -1,8 +1,5 @@
-import { __decorate, __metadata } from "tslib";
+import { __decorate } from "tslib";
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { EcolService } from '../../../services/ecol.service';
-import { DataService } from '../../../services/data.service';
 import swal from 'sweetalert2';
 import * as moment from 'moment';
 var WriteoffstoryComponent = /** @class */ (function () {
@@ -121,10 +118,7 @@ var WriteoffstoryComponent = /** @class */ (function () {
             selector: 'app-writeoffstory',
             templateUrl: './writeoffstory.component.html',
             styleUrls: ['./writeoffstory.component.css'],
-        }),
-        __metadata("design:paramtypes", [ActivatedRoute,
-            EcolService,
-            DataService])
+        })
     ], WriteoffstoryComponent);
     return WriteoffstoryComponent;
 }());

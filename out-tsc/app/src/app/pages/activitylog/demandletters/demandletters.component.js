@@ -1,18 +1,13 @@
-import { __awaiter, __decorate, __generator, __metadata } from "tslib";
+import { __awaiter, __decorate, __generator } from "tslib";
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { EcolService } from '../../../services/ecol.service';
 import swal from 'sweetalert2';
 import { saveAs } from 'file-saver';
 import { environment } from '../../../../environments/environment';
 import { FileUploader, } from '@swimlane/ng2-file-upload';
-import { NgxSpinnerService } from 'ngx-spinner';
-import { ToasterConfig, ToasterService } from 'angular2-toaster';
+import { ToasterConfig } from 'angular2-toaster';
 import { license } from '../../../../../env';
-import { HttpClient } from '@angular/common/http';
 import { Howl } from 'howler';
 import * as introJs from 'intro.js/intro.js';
-import { NgxSmartModalService } from 'ngx-smart-modal';
 var URL = environment.filesapi;
 var apiUrl = environment.letters_api;
 var DemandlettersComponent = /** @class */ (function () {
@@ -77,6 +72,7 @@ var DemandlettersComponent = /** @class */ (function () {
             positionClass: 'toast-top-right',
             animation: 'flyLeft',
             limit: 7,
+            // closeHtml: '<button class="btn btn-danger">Close</button>'
         });
         this.loader = true;
         //
@@ -991,13 +987,7 @@ var DemandlettersComponent = /** @class */ (function () {
             selector: 'app-demandletters',
             templateUrl: './demandletters.component.html',
             styleUrls: ['./demandletters.component.css'],
-        }),
-        __metadata("design:paramtypes", [ActivatedRoute,
-            EcolService,
-            NgxSpinnerService,
-            ToasterService,
-            HttpClient,
-            NgxSmartModalService])
+        })
     ], DemandlettersComponent);
     return DemandlettersComponent;
 }());

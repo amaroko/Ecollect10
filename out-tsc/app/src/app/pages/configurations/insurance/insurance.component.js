@@ -1,4 +1,4 @@
-import { __decorate, __metadata } from "tslib";
+import { __decorate } from "tslib";
 import { Component } from '@angular/core';
 var InsuranceComponent = /** @class */ (function () {
     function InsuranceComponent() {
@@ -9,8 +9,7 @@ var InsuranceComponent = /** @class */ (function () {
             selector: 'app-insurance',
             templateUrl: './insurance.component.html',
             styleUrls: ['./insurance.component.css'],
-        }),
-        __metadata("design:paramtypes", [])
+        })
     ], InsuranceComponent);
     return InsuranceComponent;
 }());

@@ -1,8 +1,6 @@
-import { __decorate, __metadata } from "tslib";
+import { __decorate } from "tslib";
 import { Component } from '@angular/core';
 import swal from 'sweetalert2';
-import { Router } from '@angular/router';
-import { EcolService } from '../../../services/ecol.service';
 var ListComponent = /** @class */ (function () {
     function ListComponent(ecolService, router) {
         this.ecolService = ecolService;
@@ -34,8 +32,7 @@ var ListComponent = /** @class */ (function () {
             selector: 'app-list',
             templateUrl: './list.component.html',
             styleUrls: ['./list.component.css'],
-        }),
-        __metadata("design:paramtypes", [EcolService, Router])
+        })
     ], ListComponent);
     return ListComponent;
 }());

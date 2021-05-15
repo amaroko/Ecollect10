@@ -1,8 +1,5 @@
-import { __decorate, __metadata } from "tslib";
+import { __decorate } from "tslib";
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { EcolService } from '../../../services/ecol.service';
-import { DataService } from '../../../services/data.service';
 import swal from 'sweetalert2';
 import * as moment from 'moment';
 import * as introJs from 'intro.js/intro.js';
@@ -268,10 +265,7 @@ var SmsComponent = /** @class */ (function () {
             selector: 'app-sms',
             templateUrl: './sms.component.html',
             styleUrls: ['./sms.component.css'],
-        }),
-        __metadata("design:paramtypes", [ActivatedRoute,
-            EcolService,
-            DataService])
+        })
     ], SmsComponent);
     return SmsComponent;
 }());

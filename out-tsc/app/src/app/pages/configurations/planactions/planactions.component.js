@@ -1,7 +1,6 @@
-import { __decorate, __metadata } from "tslib";
+import { __decorate } from "tslib";
 import { Component } from '@angular/core';
 import swal from 'sweetalert2';
-import { EcolService } from '../../../services/ecol.service';
 var PlanactionsComponent = /** @class */ (function () {
     function PlanactionsComponent(ecolService) {
         this.ecolService = ecolService;
@@ -115,8 +114,7 @@ var PlanactionsComponent = /** @class */ (function () {
             selector: 'app-planactions',
             templateUrl: './planactions.component.html',
             styleUrls: ['./planactions.component.css'],
-        }),
-        __metadata("design:paramtypes", [EcolService])
+        })
     ], PlanactionsComponent);
     return PlanactionsComponent;
 }());

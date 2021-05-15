@@ -1,10 +1,7 @@
-import { __decorate, __metadata } from "tslib";
+import { __decorate } from "tslib";
 import { Component } from '@angular/core';
-import { EcolService } from '../../services/ecol.service';
 import { environment } from '../../../environments/environment';
-import { FormBuilder, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
-import { FaviconService } from '@enzedd/ng-favicon';
+import { Validators } from '@angular/forms';
 var ADLOGIN = environment.adlogin;
 var LoginComponent = /** @class */ (function () {
     function LoginComponent(fb, ecolService, router, route, faviconService) {
@@ -162,12 +159,7 @@ var LoginComponent = /** @class */ (function () {
             selector: 'app-login',
             templateUrl: './login.component.html',
             styleUrls: ['./login.component.css'],
-        }),
-        __metadata("design:paramtypes", [FormBuilder,
-            EcolService,
-            Router,
-            ActivatedRoute,
-            FaviconService])
+        })
     ], LoginComponent);
     return LoginComponent;
 }());

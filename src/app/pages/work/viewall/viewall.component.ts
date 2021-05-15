@@ -202,7 +202,7 @@ export class ViewallComponent implements OnInit {
       getRows(params) {
         // console.log(JSON.stringify(params.request, null, 1));
 
-        fetch(environment.nodeapi + '/gridviewall/viewall', {
+        fetch(environment.nodeapi + '/tqall/gridviewall', {
           method: 'post',
           body: JSON.stringify(params.request),
           headers: { 'Content-Type': 'application/json; charset=utf-8' },
@@ -220,22 +220,6 @@ export class ViewallComponent implements OnInit {
 
     params.api.setServerSideDatasource(datasource);
   }
-
-  ServerSideDatasource(server) {
-    return {
-      getRows(params) {
-        setTimeout(function () {
-          const response = server.getResponse(params.request);
-          if (response.success) {
-            params.successCallback(response.rows, response.lastRow);
-          } else {
-            params.failCallback();
-          }
-        }, 500);
-      },
-    };
-  }
-
   currencyFormatter(params) {
     if (params.value !== undefined) {
       return (Math.floor(params.value * 100) / 100)
@@ -252,13 +236,13 @@ export class ViewallComponent implements OnInit {
     // tslint:disable-next-line:max-line-length
     window.open(
       environment.applink +
-        '/activitylog?accnumber=' +
-        this.model.ACCNUMBER +
-        '&custnumber=' +
-        this.model.CUSTNUMBER +
-        '&username=' +
-        this.currentUser.USERNAME +
-        '&sys=collections',
+      '/activitylog?accnumber=' +
+      this.model.ACCNUMBER +
+      '&custnumber=' +
+      this.model.CUSTNUMBER +
+      '&username=' +
+      this.currentUser.USERNAME +
+      '&sys=collections',
       '_blank'
     );
   }

@@ -1,8 +1,6 @@
-import { __decorate, __metadata } from "tslib";
+import { __decorate } from "tslib";
 import { Component } from '@angular/core';
 import swal from 'sweetalert2';
-import { ActivatedRoute, Router } from '@angular/router';
-import { EcolService } from 'app/services/ecol.service';
 var EditguarantorComponent = /** @class */ (function () {
     function EditguarantorComponent(ecolService, router, activeRoute) {
         this.ecolService = ecolService;
@@ -58,10 +56,7 @@ var EditguarantorComponent = /** @class */ (function () {
             selector: 'app-editguarantor',
             templateUrl: './editguarantor.component.html',
             styleUrls: ['./editguarantor.component.css'],
-        }),
-        __metadata("design:paramtypes", [EcolService,
-            Router,
-            ActivatedRoute])
+        })
     ], EditguarantorComponent);
     return EditguarantorComponent;
 }());

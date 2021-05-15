@@ -1,7 +1,6 @@
-import { __decorate, __metadata } from "tslib";
+import { __decorate } from "tslib";
 import { Component } from '@angular/core';
 import swal from 'sweetalert2';
-import { EcolService } from '../../../services/ecol.service';
 import { saveAs } from 'file-saver';
 var DemandhisComponent = /** @class */ (function () {
     function DemandhisComponent(ecolService) {
@@ -39,8 +38,7 @@ var DemandhisComponent = /** @class */ (function () {
             selector: 'app-demandhis',
             templateUrl: './demandhis.component.html',
             styleUrls: ['./demandhis.component.css'],
-        }),
-        __metadata("design:paramtypes", [EcolService])
+        })
     ], DemandhisComponent);
     return DemandhisComponent;
 }());

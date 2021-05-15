@@ -1,7 +1,6 @@
-import { __decorate, __metadata } from "tslib";
+import { __decorate } from "tslib";
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Router } from '@angular/router';
+import { HttpHeaders } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { forkJoin } from 'rxjs';
 import swal from 'sweetalert2';
@@ -308,6 +307,9 @@ var EcolService = /** @class */ (function () {
             title: 'Processing ...',
             text: 'Please wait',
             showConfirmButton: false,
+            /*onOpen: function () {
+              swal.showLoading();
+            }*/
         });
     };
     EcolService.prototype.putcardwatch = function (data) {
@@ -545,8 +547,7 @@ var EcolService = /** @class */ (function () {
     EcolService = __decorate([
         Injectable({
             providedIn: 'root',
-        }),
-        __metadata("design:paramtypes", [HttpClient, Router])
+        })
     ], EcolService);
     return EcolService;
 }());

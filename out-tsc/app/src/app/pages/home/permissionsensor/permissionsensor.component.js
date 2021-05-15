@@ -1,4 +1,4 @@
-import { __decorate, __metadata } from "tslib";
+import { __decorate } from "tslib";
 import { Component } from '@angular/core';
 var PermissionsensorComponent = /** @class */ (function () {
     function PermissionsensorComponent() {
@@ -9,8 +9,7 @@ var PermissionsensorComponent = /** @class */ (function () {
             selector: 'app-permissionsensor',
             templateUrl: './permissionsensor.component.html',
             styleUrls: ['./permissionsensor.component.css'],
-        }),
-        __metadata("design:paramtypes", [])
+        })
     ], PermissionsensorComponent);
     return PermissionsensorComponent;
 }());

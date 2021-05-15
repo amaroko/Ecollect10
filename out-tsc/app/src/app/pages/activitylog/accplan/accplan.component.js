@@ -1,11 +1,8 @@
-import { __decorate, __metadata } from "tslib";
+import { __decorate } from "tslib";
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { EcolService } from '../../../services/ecol.service';
 import swal from 'sweetalert2';
 import { environment } from '../../../../environments/environment';
 import * as moment from 'moment';
-import { DataService } from '../../../services/data.service';
 var AccplanComponent = /** @class */ (function () {
     function AccplanComponent(route, ecolService, dataService) {
         this.route = route;
@@ -203,10 +200,7 @@ var AccplanComponent = /** @class */ (function () {
             selector: 'app-accplan',
             templateUrl: './accplan.component.html',
             styleUrls: ['./accplan.component.css'],
-        }),
-        __metadata("design:paramtypes", [ActivatedRoute,
-            EcolService,
-            DataService])
+        })
     ], AccplanComponent);
     return AccplanComponent;
 }());

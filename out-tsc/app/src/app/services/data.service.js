@@ -1,4 +1,4 @@
-import { __decorate, __metadata } from "tslib";
+import { __decorate } from "tslib";
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 var DataService = /** @class */ (function () {
@@ -99,8 +99,7 @@ var DataService = /** @class */ (function () {
     DataService = __decorate([
         Injectable({
             providedIn: 'root',
-        }),
-        __metadata("design:paramtypes", [])
+        })
     ], DataService);
     return DataService;
 }());

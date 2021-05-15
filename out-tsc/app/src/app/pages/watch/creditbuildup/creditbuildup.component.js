@@ -1,4 +1,4 @@
-import { __decorate, __metadata } from "tslib";
+import { __decorate } from "tslib";
 import { Component } from '@angular/core';
 import { environment } from '../../../../environments/environment';
 // import { HttpClient} from '@angular/common/http';
@@ -24,6 +24,7 @@ var CreditbuildupComponent = /** @class */ (function () {
                 filter: 'agTextColumnFilter',
                 filterParams: { newRowsAction: 'keep' },
                 resizable: true,
+                // checkboxSelection: true
             },
             {
                 headerName: 'CUSTNUMBER',
@@ -148,8 +149,7 @@ var CreditbuildupComponent = /** @class */ (function () {
             selector: 'app-creditbuildup',
             templateUrl: './creditbuildup.component.html',
             styleUrls: ['./creditbuildup.component.css'],
-        }),
-        __metadata("design:paramtypes", [])
+        })
     ], CreditbuildupComponent);
     return CreditbuildupComponent;
 }());

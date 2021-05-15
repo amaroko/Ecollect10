@@ -1,7 +1,6 @@
-import { __decorate, __metadata } from "tslib";
+import { __decorate } from "tslib";
 import { Component } from '@angular/core';
 import swal from 'sweetalert2';
-import { EcolService } from '../../../../services/ecol.service';
 import { saveAs } from 'file-saver';
 var DemandshistoryComponent = /** @class */ (function () {
     function DemandshistoryComponent(ecolService) {
@@ -39,8 +38,7 @@ var DemandshistoryComponent = /** @class */ (function () {
             selector: 'app-demandshistory',
             templateUrl: './demandshistory.component.html',
             styleUrls: ['./demandshistory.component.css'],
-        }),
-        __metadata("design:paramtypes", [EcolService])
+        })
     ], DemandshistoryComponent);
     return DemandshistoryComponent;
 }());

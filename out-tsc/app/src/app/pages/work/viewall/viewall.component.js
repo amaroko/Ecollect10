@@ -1,8 +1,7 @@
-import { __decorate, __metadata } from "tslib";
+import { __decorate } from "tslib";
 import { Component } from '@angular/core';
 import { environment } from '../../../../environments/environment';
 import { AllModules } from '@ag-grid-enterprise/all-modules';
-import { Router } from '@angular/router';
 var ViewallComponent = /** @class */ (function () {
     function ViewallComponent(router) {
         this.router = router;
@@ -187,7 +186,7 @@ var ViewallComponent = /** @class */ (function () {
             // tslint:disable-next-line:no-shadowed-variable
             getRows: function (params) {
                 // console.log(JSON.stringify(params.request, null, 1));
-                fetch(environment.nodeapi + '/gridviewall/viewall', {
+                fetch(environment.nodeapi + '/tqall/gridviewall', {
                     method: 'post',
                     body: JSON.stringify(params.request),
                     headers: { 'Content-Type': 'application/json; charset=utf-8' },
@@ -203,21 +202,6 @@ var ViewallComponent = /** @class */ (function () {
             },
         };
         params.api.setServerSideDatasource(datasource);
-    };
-    ViewallComponent.prototype.ServerSideDatasource = function (server) {
-        return {
-            getRows: function (params) {
-                setTimeout(function () {
-                    var response = server.getResponse(params.request);
-                    if (response.success) {
-                        params.successCallback(response.rows, response.lastRow);
-                    }
-                    else {
-                        params.failCallback();
-                    }
-                }, 500);
-            },
-        };
     };
     ViewallComponent.prototype.currencyFormatter = function (params) {
         if (params.value !== undefined) {
@@ -253,8 +237,7 @@ var ViewallComponent = /** @class */ (function () {
             selector: 'app-viewall',
             templateUrl: './viewall.component.html',
             styleUrls: ['./viewall.component.css'],
-        }),
-        __metadata("design:paramtypes", [Router])
+        })
     ], ViewallComponent);
     return ViewallComponent;
 }());

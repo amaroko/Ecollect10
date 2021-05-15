@@ -1,4 +1,4 @@
-import { __decorate, __metadata } from "tslib";
+import { __decorate } from "tslib";
 import { Component } from '@angular/core';
 var RolesensorComponent = /** @class */ (function () {
     function RolesensorComponent() {
@@ -9,8 +9,7 @@ var RolesensorComponent = /** @class */ (function () {
             selector: 'app-rolesensor',
             templateUrl: './rolesensor.component.html',
             styleUrls: ['./rolesensor.component.css'],
-        }),
-        __metadata("design:paramtypes", [])
+        })
     ], RolesensorComponent);
     return RolesensorComponent;
 }());

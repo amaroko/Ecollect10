@@ -1,8 +1,5 @@
-import { __decorate, __metadata } from "tslib";
+import { __decorate } from "tslib";
 import { Component } from '@angular/core';
-import { EcolService } from '../../../services/ecol.service';
-import { ActivatedRoute } from '@angular/router';
-import { NgxSpinnerService } from 'ngx-spinner';
 import swal from 'sweetalert2';
 var SettingsComponent = /** @class */ (function () {
     function SettingsComponent(ecolService, route, spinner) {
@@ -129,10 +126,7 @@ var SettingsComponent = /** @class */ (function () {
             selector: 'app-settings',
             templateUrl: './settings.component.html',
             styleUrls: ['./settings.component.css'],
-        }),
-        __metadata("design:paramtypes", [EcolService,
-            ActivatedRoute,
-            NgxSpinnerService])
+        })
     ], SettingsComponent);
     return SettingsComponent;
 }());

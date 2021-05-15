@@ -1,4 +1,4 @@
-import { __decorate, __metadata } from "tslib";
+import { __decorate } from "tslib";
 import { Component } from '@angular/core';
 var NewremindersComponent = /** @class */ (function () {
     function NewremindersComponent() {
@@ -9,8 +9,7 @@ var NewremindersComponent = /** @class */ (function () {
             selector: 'app-newreminders',
             templateUrl: './newreminders.component.html',
             styleUrls: ['./newreminders.component.css'],
-        }),
-        __metadata("design:paramtypes", [])
+        })
     ], NewremindersComponent);
     return NewremindersComponent;
 }());

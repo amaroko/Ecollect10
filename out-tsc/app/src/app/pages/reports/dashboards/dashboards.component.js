@@ -1,4 +1,4 @@
-import { __decorate, __metadata } from "tslib";
+import { __decorate } from "tslib";
 import { Component } from '@angular/core';
 import { environment } from '../../../../environments/environment';
 var DashboardsComponent = /** @class */ (function () {
@@ -16,8 +16,7 @@ var DashboardsComponent = /** @class */ (function () {
             selector: 'app-dashboards',
             templateUrl: './dashboards.component.html',
             styleUrls: ['./dashboards.component.css'],
-        }),
-        __metadata("design:paramtypes", [])
+        })
     ], DashboardsComponent);
     return DashboardsComponent;
 }());

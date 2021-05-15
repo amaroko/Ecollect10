@@ -1,4 +1,4 @@
-import { __decorate, __metadata } from "tslib";
+import { __decorate } from "tslib";
 import { Component } from '@angular/core';
 var AllremindersComponent = /** @class */ (function () {
     function AllremindersComponent() {
@@ -9,8 +9,7 @@ var AllremindersComponent = /** @class */ (function () {
             selector: 'app-allreminders',
             templateUrl: './allreminders.component.html',
             styleUrls: ['./allreminders.component.css'],
-        }),
-        __metadata("design:paramtypes", [])
+        })
     ], AllremindersComponent);
     return AllremindersComponent;
 }());

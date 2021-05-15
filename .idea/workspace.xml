@@ -5,30 +5,156 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="28b3daf4-2105-4515-8956-01267c185b3f" name="Default Changelist" comment="config/plan page editing">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/angular.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/app.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/app.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/app.component.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/app.component.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/app.module.js" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/app.module.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/app.module.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/app.module.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/auth.guard.js" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/auth.guard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/auth.guard.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/auth.guard.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/components/header/header.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/components/header/header.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/components/header/header.component.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/components/header/header.component.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/components/panel/panel.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/components/panel/panel.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/components/panel/panel.component.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/components/panel/panel.component.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/components/sidebar/sidebar.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/components/sidebar/sidebar.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/components/sidebar/sidebar.component.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/components/sidebar/sidebar.component.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/components/top-menu/top-menu.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/components/top-menu/top-menu.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/components/top-menu/top-menu.component.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/components/top-menu/top-menu.component.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/config/page-menus.js" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/config/page-menus.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/config/page-menus.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/config/page-menus.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/activitylog/accplan/accplan.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/activitylog/accplan/accplan.component.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/activitylog/accplan/accplan.component.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/activitylog/accplan/accplan.component.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/activitylog/activityaction/activityaction.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/activitylog/activityaction/activityaction.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/activitylog/activityaction/activityaction.component.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/activitylog/activityaction/activityaction.component.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/activitylog/activityhome/activityhome.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/activitylog/activityhome/activityhome.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/activitylog/activityhome/activityhome.component.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/activitylog/activityhome/activityhome.component.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/activitylog/activitylog.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/activitylog/activitylog.component.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/activitylog/activitylog.component.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/activitylog/activitylog.component.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/activitylog/bulknotes/bulknotes.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/activitylog/bulknotes/bulknotes.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/activitylog/bulknotes/bulknotes.component.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/activitylog/bulknotes/bulknotes.component.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/activitylog/collaterals/collaterals.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/activitylog/collaterals/collaterals.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/activitylog/collaterals/collaterals.component.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/activitylog/collaterals/collaterals.component.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/activitylog/custcontacts/custcontacts.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/activitylog/custcontacts/custcontacts.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/activitylog/custcontacts/custcontacts.component.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/activitylog/custcontacts/custcontacts.component.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/activitylog/demandletters/demandletters.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/activitylog/demandletters/demandletters.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/activitylog/demandletters/demandletters.component.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/activitylog/demandletters/demandletters.component.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/activitylog/editnote/editnote.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/activitylog/editnote/editnote.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/activitylog/editnote/editnote.component.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/activitylog/editnote/editnote.component.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/activitylog/files/files.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/activitylog/files/files.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/activitylog/files/files.component.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/activitylog/files/files.component.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/activitylog/guarantors/guarantors.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/activitylog/guarantors/guarantors.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/activitylog/guarantors/guarantors.component.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/activitylog/guarantors/guarantors.component.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/activitylog/notes/notes.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/activitylog/notes/notes.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/activitylog/notes/notes.component.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/activitylog/notes/notes.component.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/activitylog/ptps/ptps.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/activitylog/ptps/ptps.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/activitylog/ptps/ptps.component.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/activitylog/ptps/ptps.component.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/activitylog/sms/sms.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/activitylog/sms/sms.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/activitylog/sms/sms.component.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/activitylog/sms/sms.component.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/activitylog/writeoffstory/writeoffstory.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/activitylog/writeoffstory/writeoffstory.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/activitylog/writeoffstory/writeoffstory.component.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/activitylog/writeoffstory/writeoffstory.component.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/configurations/accplans/accplans.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/configurations/accplans/accplans.component.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/configurations/accplans/accplans.component.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/configurations/accplans/accplans.component.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/configurations/configurations.module.js" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/configurations/configurations.module.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/configurations/configurations.module.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/configurations/configurations.module.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/configurations/allocations/allocations.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/configurations/allocations/allocations.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/configurations/allocations/allocations.component.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/configurations/allocations/allocations.component.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/configurations/insurance/insurance.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/configurations/insurance/insurance.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/configurations/insurance/insurance.component.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/configurations/insurance/insurance.component.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/configurations/planactions/planactions.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/configurations/planactions/planactions.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/configurations/planactions/planactions.component.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/configurations/planactions/planactions.component.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/configurations/planmemos/planmemos.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/configurations/planmemos/planmemos.component.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/configurations/planmemos/planmemos.component.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/configurations/planmemos/planmemos.component.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/configurations/sms/sms.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/configurations/sms/sms.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/configurations/sms/sms.component.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/configurations/sms/sms.component.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/configurations/sp/sp.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/configurations/sp/sp.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/configurations/sp/sp.component.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/configurations/sp/sp.component.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/creditcards/allcards/allcards.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/creditcards/allcards/allcards.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/creditcards/allcards/allcards.component.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/creditcards/allcards/allcards.component.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/creditcards/creditcarddemands/demandsdue/demandsdue.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/creditcards/creditcarddemands/demandsdue/demandsdue.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/creditcards/creditcarddemands/demandsdue/demandsdue.component.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/creditcards/creditcarddemands/demandsdue/demandsdue.component.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/creditcards/creditcarddemands/demandshistory/demandshistory.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/creditcards/creditcarddemands/demandshistory/demandshistory.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/creditcards/creditcarddemands/demandshistory/demandshistory.component.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/creditcards/creditcarddemands/demandshistory/demandshistory.component.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/creditcards/myallocations/myallocations.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/creditcards/myallocations/myallocations.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/creditcards/myallocations/myallocations.component.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/creditcards/myallocations/myallocations.component.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/creditcards/myworklist/myworklist.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/creditcards/myworklist/myworklist.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/creditcards/myworklist/myworklist.component.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/creditcards/myworklist/myworklist.component.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/creditcards/viewall/viewall.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/creditcards/viewall/viewall.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/creditcards/viewall/viewall.component.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/creditcards/viewall/viewall.component.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/creditcards/zerobalance/zerobalance.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/creditcards/zerobalance/zerobalance.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/creditcards/zerobalance/zerobalance.component.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/creditcards/zerobalance/zerobalance.component.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/demand/demandhis/demandhis.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/demand/demandhis/demandhis.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/demand/demandhis/demandhis.component.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/demand/demandhis/demandhis.component.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/demand/demandsdue/demandsdue.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/demand/demandsdue/demandsdue.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/demand/demandsdue/demandsdue.component.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/demand/demandsdue/demandsdue.component.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/guarantors/editguarantor/editguarantor.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/guarantors/editguarantor/editguarantor.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/guarantors/editguarantor/editguarantor.component.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/guarantors/editguarantor/editguarantor.component.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/guarantors/list/list.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/guarantors/list/list.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/guarantors/list/list.component.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/guarantors/list/list.component.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/guarantors/newguarantor/newguarantor.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/guarantors/newguarantor/newguarantor.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/guarantors/newguarantor/newguarantor.component.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/guarantors/newguarantor/newguarantor.component.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/home/permissionsensor/permissionsensor.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/home/permissionsensor/permissionsensor.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/home/permissionsensor/permissionsensor.component.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/home/permissionsensor/permissionsensor.component.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/layout/layout.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/layout/layout.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/layout/layout.component.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/layout/layout.component.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/letters/automation/automation.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/letters/automation/automation.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/letters/automation/automation.component.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/letters/automation/automation.component.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/letters/customersuspensions/customersuspensions.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/letters/customersuspensions/customersuspensions.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/letters/customersuspensions/customersuspensions.component.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/letters/customersuspensions/customersuspensions.component.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/letters/settings/settings.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/letters/settings/settings.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/letters/settings/settings.component.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/letters/settings/settings.component.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/login/login.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/login/login.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/login/login.component.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/login/login.component.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/manuals/allmanuals/allmanuals.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/manuals/allmanuals/allmanuals.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/manuals/allmanuals/allmanuals.component.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/manuals/allmanuals/allmanuals.component.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/mcoopcash/allecredit/allecredit.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/mcoopcash/allecredit/allecredit.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/mcoopcash/allecredit/allecredit.component.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/mcoopcash/allecredit/allecredit.component.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/mcoopcash/viewall/viewall.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/mcoopcash/viewall/viewall.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/mcoopcash/viewall/viewall.component.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/mcoopcash/viewall/viewall.component.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/reminders/allreminders/allreminders.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/reminders/allreminders/allreminders.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/reminders/allreminders/allreminders.component.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/reminders/allreminders/allreminders.component.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/reminders/newreminders/newreminders.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/reminders/newreminders/newreminders.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/reminders/newreminders/newreminders.component.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/reminders/newreminders/newreminders.component.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/reports/allreports/allreports.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/reports/allreports/allreports.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/reports/allreports/allreports.component.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/reports/allreports/allreports.component.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/reports/dashboards/dashboards.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/reports/dashboards/dashboards.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/reports/dashboards/dashboards.component.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/reports/dashboards/dashboards.component.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/rolesensor/rolesensor.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/rolesensor/rolesensor.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/rolesensor/rolesensor.component.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/rolesensor/rolesensor.component.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/watch/creditbuildup/creditbuildup.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/watch/creditbuildup/creditbuildup.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/watch/creditbuildup/creditbuildup.component.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/watch/creditbuildup/creditbuildup.component.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/watch/nocredit/nocredit.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/watch/nocredit/nocredit.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/watch/nocredit/nocredit.component.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/watch/nocredit/nocredit.component.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/work/allloans/allloans.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/work/allloans/allloans.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/work/allloans/allloans.component.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/work/allloans/allloans.component.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/work/myallocations/myallocations.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/work/myallocations/myallocations.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/work/myallocations/myallocations.component.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/work/myallocations/myallocations.component.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/work/myworklist/myworklist.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/work/myworklist/myworklist.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/work/myworklist/myworklist.component.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/work/myworklist/myworklist.component.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/work/predelq/predelq.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/work/predelq/predelq.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/work/predelq/predelq.component.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/work/predelq/predelq.component.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/work/ptps/ptps.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/work/ptps/ptps.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/work/ptps/ptps.component.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/work/ptps/ptps.component.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/work/viewall/viewall.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/work/viewall/viewall.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/work/viewall/viewall.component.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/work/viewall/viewall.component.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/work/withfunds/withfunds.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/work/withfunds/withfunds.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/pages/work/withfunds/withfunds.component.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/pages/work/withfunds/withfunds.component.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/services/data.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/services/data.service.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/services/data.service.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/services/data.service.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/activitylog/accplan/accplan.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/activitylog/accplan/accplan.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/activitylog/accplan/accplan.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/activitylog/accplan/accplan.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/activitylog/activitylog.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/activitylog/activitylog.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/configurations/accplans/accplans.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/configurations/accplans/accplans.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/configurations/accplans/accplans.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/configurations/accplans/accplans.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/configurations/configurations.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/configurations/configurations.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/configurations/planactions/planactions.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/configurations/planactions/planactions.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/configurations/planmemos/planmemos.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/configurations/planmemos/planmemos.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/configurations/planmemos/planmemos.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/configurations/planmemos/planmemos.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/configurations/sms/sms.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/configurations/sms/sms.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/services/data.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/services/data.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/services/ecol.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/services/ecol.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/services/ecol.service.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/services/ecol.service.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/services/excel.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/services/excel.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/services/excel.service.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/services/excel.service.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/services/exportwoffstory.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/services/exportwoffstory.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/app/services/exportwoffstory.service.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/app/services/exportwoffstory.service.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/polyfills.js" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/polyfills.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out-tsc/app/src/polyfills.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/out-tsc/app/src/polyfills.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/pages/activitylog/notes/notes.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/activitylog/notes/notes.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/pages/work/viewall/viewall.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/work/viewall/viewall.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/polyfills.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/polyfills.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,9 +179,6 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/node_modules/angular2-toaster/toaster.scss" root0="FORCE_HIGHLIGHTING" />
-  </component>
   <component name="JsBowerSettings">
     <node-interpreter value="project" />
     <bower-package value="" />
@@ -79,8 +202,8 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/node_modules/@angular-devkit/build-angular/src/webpack/utils/stats.js&#10;C:/Users/AMAROKO/Desktop/allan new/Ecollect10/node_modules/angular2-toaster/toaster.scss" />
     <property name="com.intellij.openapi.externalSystem.service.settings.ExternalSystemGroupConfigurable" value="ALL" />
-    <property name="javascript.nodejs.core.library.configured.version" value="14.16.0" />
-    <property name="javascript.nodejs.core.library.typings.version" value="14.14.31" />
+    <property name="javascript.nodejs.core.library.configured.version" value="14.15.4" />
+    <property name="javascript.nodejs.core.library.typings.version" value="" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.stylelint" value="true" />
@@ -95,14 +218,14 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\AMAROKO\Desktop\allan new\Ecollect10\node_modules\prettier" />
-    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
-    <property name="ts.external.directory.path" value="C:\Users\AMAROKO\Desktop\allan new\Ecollect10\node_modules\typescript\lib" />
+    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
+    <property name="ts.external.directory.path" value="C:\Users\CATE\Desktop\E-collect Project 10\Ecollect10\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="ReaderModeSettings">
     <option name="enabled" value="false" />
   </component>
-  <component name="RunManager" selected="Database Script.notehis.sql">
+  <component name="RunManager" selected="JavaScript Debug.Angular Application">
     <configuration name="excuse.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
       <script-file value="$PROJECT_DIR$/../../ecol data/excuse.sql" />
       <script-mode>FILE</script-mode>
@@ -149,13 +272,6 @@
       <envs />
       <method v="2" />
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Database Script.notehis.sql" />
-        <item itemvalue="Database Script.mcoopcash_stage.sql" />
-        <item itemvalue="Database Script.excuse.sql" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -217,6 +333,8 @@
       <workItem from="1616437262771" duration="32527000" />
       <workItem from="1616543127044" duration="246000" />
       <workItem from="1616543776533" duration="42139000" />
+      <workItem from="1621096906787" duration="1087000" />
+      <workItem from="1621101631708" duration="9236000" />
     </task>
     <task id="LOCAL-00001" summary="Angular 10 upgrade startup">
       <created>1611070245573</created>

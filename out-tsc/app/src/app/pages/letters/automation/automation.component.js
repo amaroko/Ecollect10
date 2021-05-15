@@ -1,9 +1,5 @@
-import { __decorate, __metadata } from "tslib";
+import { __decorate } from "tslib";
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { NgxSpinnerService } from 'ngx-spinner';
-import { HttpClient } from '@angular/common/http';
-import { EcolService } from '../../../services/ecol.service';
 import { environment } from '../../../../environments/environment';
 import swal from 'sweetalert2';
 import { AllModules } from '@ag-grid-enterprise/all-modules';
@@ -81,6 +77,7 @@ var AutomationComponent = /** @class */ (function () {
             rowData: null,
             enableFilter: true,
             rowSelection: 'single',
+            // onRowClicked: this.RowSelected,
         };
         http.get(environment.api + '/api/autoletters').subscribe(function (resp) {
             _this.rowData1 = resp;
@@ -235,11 +232,7 @@ var AutomationComponent = /** @class */ (function () {
             selector: 'app-automation',
             templateUrl: './automation.component.html',
             styleUrls: ['./automation.component.css'],
-        }),
-        __metadata("design:paramtypes", [EcolService,
-            ActivatedRoute,
-            NgxSpinnerService,
-            HttpClient])
+        })
     ], AutomationComponent);
     return AutomationComponent;
 }());

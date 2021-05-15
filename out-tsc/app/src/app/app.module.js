@@ -1,6 +1,6 @@
-import { __decorate, __metadata } from "tslib";
+import { __decorate } from "tslib";
 // Core Module
-import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { NavigationEnd } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule, Title } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -155,15 +155,12 @@ var AppModule = /** @class */ (function () {
                     provide: FAVICON_CONFIG,
                     useValue: {
                         color: '#fff',
-                        bgColor: '#ff0000',
+                        bgColor: '#ff0000', // favicon notification background color
                     },
                 },
             ],
             bootstrap: [AppComponent],
-        }),
-        __metadata("design:paramtypes", [Router,
-            Title,
-            ActivatedRoute])
+        })
     ], AppModule);
     return AppModule;
 }());

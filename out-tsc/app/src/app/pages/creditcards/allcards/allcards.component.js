@@ -1,4 +1,4 @@
-import { __decorate, __metadata } from "tslib";
+import { __decorate } from "tslib";
 import { Component } from '@angular/core';
 import { environment } from '../../../../environments/environment';
 // import { HttpClient} from '@angular/common/http';
@@ -152,8 +152,7 @@ var AllcardsComponent = /** @class */ (function () {
             selector: 'app-allcards',
             templateUrl: './allcards.component.html',
             styleUrls: ['./allcards.component.css'],
-        }),
-        __metadata("design:paramtypes", [])
+        })
     ], AllcardsComponent);
     return AllcardsComponent;
 }());

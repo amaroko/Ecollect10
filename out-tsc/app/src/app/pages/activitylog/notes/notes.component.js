@@ -1,15 +1,10 @@
-import { __decorate, __metadata } from "tslib";
+import { __decorate } from "tslib";
 import { Component } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { EcolService } from '../../../services/ecol.service';
-import { isNullOrUndefined } from 'util';
+// import { isNullOrUndefined } from 'util';
 // import {NgxSpinnerService} from 'ngx-spinner';
 import * as moment from 'moment';
-import { DatePipe } from '@angular/common';
-import { ExcelService } from '../../../services/excel.service';
 import { AllModules } from '@ag-grid-enterprise/all-modules';
 import { environment } from '../../../../environments/environment';
-import { HttpClient } from '@angular/common/http';
 // import * as introJs from 'intro.js/intro.js';
 import pageSettings from '../../../config/page-settings';
 var NotesComponent = /** @class */ (function () {
@@ -308,7 +303,7 @@ var NotesComponent = /** @class */ (function () {
                                 .toUpperCase();
             }
             // append posts
-            if (!isNullOrUndefined(data) && _this.notes.length) {
+            if (data && _this.notes.length) {
                 _this.noteData = _this.noteData.concat(data);
                 console.log(data);
             }
@@ -369,14 +364,7 @@ var NotesComponent = /** @class */ (function () {
             selector: 'app-notes',
             templateUrl: './notes.component.html',
             styleUrls: ['./notes.component.css'],
-        }),
-        __metadata("design:paramtypes", [EcolService,
-            ActivatedRoute,
-            Router,
-            DatePipe,
-            EcolService,
-            ExcelService,
-            HttpClient])
+        })
     ], NotesComponent);
     return NotesComponent;
 }());

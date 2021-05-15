@@ -1,4 +1,4 @@
-import { __decorate, __metadata } from "tslib";
+import { __decorate } from "tslib";
 import { Component } from '@angular/core';
 var AllocationsComponent = /** @class */ (function () {
     function AllocationsComponent() {
@@ -9,8 +9,7 @@ var AllocationsComponent = /** @class */ (function () {
             selector: 'app-allocations',
             templateUrl: './allocations.component.html',
             styleUrls: ['./allocations.component.css'],
-        }),
-        __metadata("design:paramtypes", [])
+        })
     ], AllocationsComponent);
     return AllocationsComponent;
 }());

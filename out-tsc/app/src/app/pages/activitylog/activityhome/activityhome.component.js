@@ -1,9 +1,7 @@
-import { __decorate, __metadata } from "tslib";
+import { __decorate } from "tslib";
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { EcolService } from '../../../services/ecol.service';
 import { environment } from '../../../../environments/environment';
-import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 var URL = environment.valor;
 var ActivityhomeComponent = /** @class */ (function () {
     function ActivityhomeComponent(route, modalService, ecolService) {
@@ -265,10 +263,7 @@ var ActivityhomeComponent = /** @class */ (function () {
             selector: 'app-activityhome',
             templateUrl: './activityhome.component.html',
             styleUrls: ['./activityhome.component.css'],
-        }),
-        __metadata("design:paramtypes", [ActivatedRoute,
-            NgbModal,
-            EcolService])
+        })
     ], ActivityhomeComponent);
     return ActivityhomeComponent;
 }());

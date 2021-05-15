@@ -1,10 +1,6 @@
-import { __decorate, __metadata } from "tslib";
+import { __decorate } from "tslib";
 import { Component } from '@angular/core';
 import swal from 'sweetalert2';
-import { EcolService } from '../../../services/ecol.service';
-import { ActivatedRoute } from '@angular/router';
-import { NgxSpinnerService } from 'ngx-spinner';
-import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../../environments/environment';
 var SmsComponent = /** @class */ (function () {
     function SmsComponent(ecolService, route, spinner, http) {
@@ -58,6 +54,7 @@ var SmsComponent = /** @class */ (function () {
             rowData: null,
             enableFilter: true,
             rowSelection: 'single',
+            // onRowClicked: this.RowSelected,
         };
         http.get(environment.api + '/api/autoletters').subscribe(function (resp) {
             _this.rowData1 = resp;
@@ -210,11 +207,7 @@ var SmsComponent = /** @class */ (function () {
             selector: 'app-sms',
             templateUrl: './sms.component.html',
             styleUrls: ['./sms.component.css'],
-        }),
-        __metadata("design:paramtypes", [EcolService,
-            ActivatedRoute,
-            NgxSpinnerService,
-            HttpClient])
+        })
     ], SmsComponent);
     return SmsComponent;
 }());

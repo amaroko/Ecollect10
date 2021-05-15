@@ -1,8 +1,6 @@
-import { __decorate, __metadata } from "tslib";
+import { __decorate } from "tslib";
 import { Component } from '@angular/core';
 import { environment } from '../../../../environments/environment';
-import { HttpClient } from '@angular/common/http';
-import { EcolService } from '../../../services/ecol.service';
 import * as $ from 'jquery';
 var DemandsdueComponent = /** @class */ (function () {
     function DemandsdueComponent(ecolService, http) {
@@ -200,8 +198,7 @@ var DemandsdueComponent = /** @class */ (function () {
             selector: 'app-demandsdue',
             templateUrl: './demandsdue.component.html',
             styleUrls: ['./demandsdue.component.css'],
-        }),
-        __metadata("design:paramtypes", [EcolService, HttpClient])
+        })
     ], DemandsdueComponent);
     return DemandsdueComponent;
 }());

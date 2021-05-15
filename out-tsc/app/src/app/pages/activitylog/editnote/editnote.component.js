@@ -1,10 +1,7 @@
-import { __decorate, __metadata } from "tslib";
+import { __decorate } from "tslib";
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { EcolService } from '../../../services/ecol.service';
 import swal from 'sweetalert2';
 import { environment } from '../../../../environments/environment';
-import { FormBuilder } from '@angular/forms';
 var URL = environment.valor;
 var EditnoteComponent = /** @class */ (function () {
     function EditnoteComponent(route, ecolService, formBuilder) {
@@ -110,10 +107,7 @@ var EditnoteComponent = /** @class */ (function () {
             selector: 'app-editnote',
             templateUrl: './editnote.component.html',
             styleUrls: ['./editnote.component.css'],
-        }),
-        __metadata("design:paramtypes", [ActivatedRoute,
-            EcolService,
-            FormBuilder])
+        })
     ], EditnoteComponent);
     return EditnoteComponent;
 }());

@@ -1,8 +1,6 @@
-import { __decorate, __metadata } from "tslib";
+import { __decorate } from "tslib";
 import { Component } from '@angular/core';
 import swal from 'sweetalert2';
-import { Router } from '@angular/router';
-import { EcolService } from '../../../services/ecol.service';
 var NewguarantorComponent = /** @class */ (function () {
     function NewguarantorComponent(ecolService, router) {
         this.ecolService = ecolService;
@@ -42,8 +40,7 @@ var NewguarantorComponent = /** @class */ (function () {
             selector: 'app-newguarantor',
             templateUrl: './newguarantor.component.html',
             styleUrls: ['./newguarantor.component.css'],
-        }),
-        __metadata("design:paramtypes", [EcolService, Router])
+        })
     ], NewguarantorComponent);
     return NewguarantorComponent;
 }());

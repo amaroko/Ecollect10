@@ -1,8 +1,6 @@
-import { __decorate, __metadata, __read, __spread } from "tslib";
+import { __decorate, __read, __spreadArray } from "tslib";
 import { Component } from '@angular/core';
 import { environment } from '../../../../environments/environment';
-// import { ExportProductsService } from '../../services/exportproductsstory.service';
-import { ExportwoffstoryService } from '../../../services/exportwoffstory.service';
 var AllreportsComponent = /** @class */ (function () {
     // public transform(value, keys: string, term: string) {
     //
@@ -152,7 +150,7 @@ var AllreportsComponent = /** @class */ (function () {
                 icon: 'fas fa- exclamation-triangle fa-fw',
             },
         ];
-        this.filteredArray = __spread(this.reports);
+        this.filteredArray = __spreadArray([], __read(this.reports));
     }
     AllreportsComponent.prototype.onEvent = function (msg) {
         console.log(msg);
@@ -167,10 +165,10 @@ var AllreportsComponent = /** @class */ (function () {
         }
         // if no search is detected, the list remains in view.
         if (!this.searchText) {
-            this.filteredArray = __spread(this.reports); // keep your reports immutable
+            this.filteredArray = __spreadArray([], __read(this.reports)); // keep your reports immutable
             return;
         }
-        var list = __spread(this.reports); // keep list immutable
+        var list = __spreadArray([], __read(this.reports)); // keep list immutable
         var properties = Object.keys(list[0]); // get list properties
         // check all properties for each list and return data if matching to searchText
         this.filteredArray = list.filter(function (listdata) {
@@ -208,9 +206,7 @@ var AllreportsComponent = /** @class */ (function () {
             selector: 'app-allreports',
             templateUrl: './allreports.component.html',
             styleUrls: ['./allreports.component.css'],
-        }),
-        __metadata("design:paramtypes", [ExportwoffstoryService // private exportProductsService: ExportProductsService
-        ])
+        })
     ], AllreportsComponent);
     return AllreportsComponent;
 }());

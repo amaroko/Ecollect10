@@ -1,4 +1,4 @@
-import { __decorate, __metadata } from "tslib";
+import { __decorate } from "tslib";
 import { Component } from '@angular/core';
 var PredelqComponent = /** @class */ (function () {
     function PredelqComponent() {
@@ -9,8 +9,7 @@ var PredelqComponent = /** @class */ (function () {
             selector: 'app-predelq',
             templateUrl: './predelq.component.html',
             styleUrls: ['./predelq.component.css'],
-        }),
-        __metadata("design:paramtypes", [])
+        })
     ], PredelqComponent);
     return PredelqComponent;
 }());

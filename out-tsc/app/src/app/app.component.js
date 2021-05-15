@@ -1,13 +1,9 @@
-import { __decorate, __metadata } from "tslib";
-import { Component, HostListener, Renderer2 } from '@angular/core';
-import { Title } from '@angular/platform-browser';
-import { ActivatedRoute, NavigationStart, Router } from '@angular/router';
+import { __decorate } from "tslib";
+import { Component, HostListener } from '@angular/core';
+import { NavigationStart } from '@angular/router';
 import pageSettings from './config/page-settings';
-import { BnNgIdleService } from 'bn-ng-idle';
-import { FormBuilder, Validators } from '@angular/forms';
-import { EcolService } from './services/ecol.service';
+import { Validators } from '@angular/forms';
 import { environment } from '../environments/environment';
-import { NgxSmartModalService } from 'ngx-smart-modal';
 var ADLOGIN = environment.adlogin;
 var AppComponent = /** @class */ (function () {
     function AppComponent(titleService, route, fb, ecolService, ngxSmartModalService, router, renderer, bnIdle) {
@@ -221,25 +217,14 @@ var AppComponent = /** @class */ (function () {
         }
     };
     __decorate([
-        HostListener('window:scroll', ['$event']),
-        __metadata("design:type", Function),
-        __metadata("design:paramtypes", [Object]),
-        __metadata("design:returntype", void 0)
+        HostListener('window:scroll', ['$event'])
     ], AppComponent.prototype, "onWindowScroll", null);
     AppComponent = __decorate([
         Component({
             selector: 'app-root',
             templateUrl: './app.component.html',
             styleUrls: ['./app.component.css'],
-        }),
-        __metadata("design:paramtypes", [Title,
-            ActivatedRoute,
-            FormBuilder,
-            EcolService,
-            NgxSmartModalService,
-            Router,
-            Renderer2,
-            BnNgIdleService])
+        })
     ], AppComponent);
     return AppComponent;
 }());

@@ -1,10 +1,6 @@
-import { __decorate, __metadata } from "tslib";
+import { __decorate } from "tslib";
 import { Component } from '@angular/core';
 import { environment } from '../../../../environments/environment';
-import { HttpClient } from '@angular/common/http';
-import { NgxSpinnerService } from 'ngx-spinner';
-import { ActivatedRoute } from '@angular/router';
-import { EcolService } from '../../../services/ecol.service';
 import swal from 'sweetalert2';
 var CustomersuspensionsComponent = /** @class */ (function () {
     function CustomersuspensionsComponent(ecolService, route, spinner, http) {
@@ -114,6 +110,7 @@ var CustomersuspensionsComponent = /** @class */ (function () {
             rowData: null,
             enableFilter: true,
             rowSelection: 'single',
+            // onRowClicked: this.RowSelected,
         };
         http
             .get(environment.api + '/api/customersuspensions')
@@ -180,11 +177,7 @@ var CustomersuspensionsComponent = /** @class */ (function () {
             selector: 'app-customersuspensions',
             templateUrl: './customersuspensions.component.html',
             styleUrls: ['./customersuspensions.component.css'],
-        }),
-        __metadata("design:paramtypes", [EcolService,
-            ActivatedRoute,
-            NgxSpinnerService,
-            HttpClient])
+        })
     ], CustomersuspensionsComponent);
     return CustomersuspensionsComponent;
 }());

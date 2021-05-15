@@ -1,7 +1,6 @@
-import { __decorate, __metadata } from "tslib";
+import { __decorate } from "tslib";
 import { Component } from '@angular/core';
 import swal from 'sweetalert2';
-import { EcolService } from '../../../services/ecol.service';
 import { environment } from '../../../../environments/environment';
 import { saveAs } from 'file-saver';
 var AllmanualsComponent = /** @class */ (function () {
@@ -26,8 +25,7 @@ var AllmanualsComponent = /** @class */ (function () {
             selector: 'app-allmanuals',
             templateUrl: './allmanuals.component.html',
             styleUrls: ['./allmanuals.component.css'],
-        }),
-        __metadata("design:paramtypes", [EcolService])
+        })
     ], AllmanualsComponent);
     return AllmanualsComponent;
 }());

@@ -1,14 +1,10 @@
-import { __decorate, __metadata } from "tslib";
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { __decorate } from "tslib";
+import { Component, ViewChild } from '@angular/core';
 import swal from 'sweetalert2';
-import { FormBuilder, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
-import { EcolService } from '../../../services/ecol.service';
-import { DataService } from '../../../services/data.service';
+import { Validators } from '@angular/forms';
 import * as moment from 'moment';
 import { environment } from '../../../../environments/environment';
 import { NgbDateAdapter, NgbDateNativeAdapter, } from '@ng-bootstrap/ng-bootstrap';
-import { NgxSmartModalService } from 'ngx-smart-modal';
 var ActivityactionComponent = /** @class */ (function () {
     function ActivityactionComponent(el, route, formBuilder, ecolService, dataService, ngxSmartModalService) {
         this.el = el;
@@ -705,8 +701,7 @@ var ActivityactionComponent = /** @class */ (function () {
         console.log(event.target.value);
     };
     __decorate([
-        ViewChild('reason'),
-        __metadata("design:type", ElementRef)
+        ViewChild('reason')
     ], ActivityactionComponent.prototype, "inputOne", void 0);
     ActivityactionComponent = __decorate([
         Component({
@@ -714,13 +709,7 @@ var ActivityactionComponent = /** @class */ (function () {
             templateUrl: './activityaction.component.html',
             styleUrls: ['./activityaction.component.css'],
             providers: [{ provide: NgbDateAdapter, useClass: NgbDateNativeAdapter }],
-        }),
-        __metadata("design:paramtypes", [ElementRef,
-            ActivatedRoute,
-            FormBuilder,
-            EcolService,
-            DataService,
-            NgxSmartModalService])
+        })
     ], ActivityactionComponent);
     return ActivityactionComponent;
 }());

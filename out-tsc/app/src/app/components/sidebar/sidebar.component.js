@@ -1,7 +1,7 @@
-import { __decorate, __metadata, __values } from "tslib";
+import { __decorate, __values } from "tslib";
 import { animate, state, style, transition, trigger, } from '@angular/animations';
 import { menu } from '../../config/page-menus';
-import { Component, ElementRef, EventEmitter, HostListener, Input, Output, ViewChild, } from '@angular/core';
+import { Component, EventEmitter, HostListener, Input, Output, ViewChild, } from '@angular/core';
 import pageSettings from '../../config/page-settings';
 var SidebarComponent = /** @class */ (function () {
     function SidebarComponent(eRef) {
@@ -208,46 +208,31 @@ var SidebarComponent = /** @class */ (function () {
         }
     };
     __decorate([
-        Output(),
-        __metadata("design:type", Object)
+        Output()
     ], SidebarComponent.prototype, "toggleSidebarMinified", void 0);
     __decorate([
-        Output(),
-        __metadata("design:type", Object)
+        Output()
     ], SidebarComponent.prototype, "hideMobileSidebar", void 0);
     __decorate([
-        Output(),
-        __metadata("design:type", Object)
+        Output()
     ], SidebarComponent.prototype, "setPageFloatSubMenu", void 0);
     __decorate([
-        Input(),
-        __metadata("design:type", Object)
+        Input()
     ], SidebarComponent.prototype, "pageSidebarTransparent", void 0);
     __decorate([
-        Input(),
-        __metadata("design:type", Object)
+        Input()
     ], SidebarComponent.prototype, "pageSidebarMinified", void 0);
     __decorate([
-        ViewChild('sidebarScrollbar', { static: false }),
-        __metadata("design:type", ElementRef)
+        ViewChild('sidebarScrollbar', { static: false })
     ], SidebarComponent.prototype, "sidebarScrollbar", void 0);
     __decorate([
-        HostListener('document:click', ['$event']),
-        __metadata("design:type", Function),
-        __metadata("design:paramtypes", [Object]),
-        __metadata("design:returntype", void 0)
+        HostListener('document:click', ['$event'])
     ], SidebarComponent.prototype, "clickout", null);
     __decorate([
-        HostListener('scroll', ['$event']),
-        __metadata("design:type", Function),
-        __metadata("design:paramtypes", [Object]),
-        __metadata("design:returntype", void 0)
+        HostListener('scroll', ['$event'])
     ], SidebarComponent.prototype, "onScroll", null);
     __decorate([
-        HostListener('window:resize', ['$event']),
-        __metadata("design:type", Function),
-        __metadata("design:paramtypes", [Object]),
-        __metadata("design:returntype", void 0)
+        HostListener('window:resize', ['$event'])
     ], SidebarComponent.prototype, "onResize", null);
     SidebarComponent = __decorate([
         Component({
@@ -262,8 +247,7 @@ var SidebarComponent = /** @class */ (function () {
                     transition('active => collapse', animate(100)),
                 ]),
             ],
-        }),
-        __metadata("design:paramtypes", [ElementRef])
+        })
     ], SidebarComponent);
     return SidebarComponent;
 }());

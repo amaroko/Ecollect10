@@ -1,4 +1,4 @@
-import { __decorate, __metadata } from "tslib";
+import { __decorate } from "tslib";
 import { Component } from '@angular/core';
 import { environment } from '../../../../environments/environment';
 // import { HttpClient} from '@angular/common/http';
@@ -153,8 +153,7 @@ var AllloansComponent = /** @class */ (function () {
             selector: 'app-allloans',
             templateUrl: './allloans.component.html',
             styleUrls: ['./allloans.component.css'],
-        }),
-        __metadata("design:paramtypes", [])
+        })
     ], AllloansComponent);
     return AllloansComponent;
 }());

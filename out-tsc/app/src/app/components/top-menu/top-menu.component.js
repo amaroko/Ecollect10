@@ -1,4 +1,4 @@
-import { __decorate, __metadata } from "tslib";
+import { __decorate } from "tslib";
 import { Component, HostListener, ViewChild, } from '@angular/core';
 import pageSettings from '../../config/page-settings';
 import { menu } from '../../config/page-menus';
@@ -112,14 +112,10 @@ var TopMenuComponent = /** @class */ (function () {
         }
     };
     __decorate([
-        ViewChild('topMenuContainer', { static: true }),
-        __metadata("design:type", Object)
+        ViewChild('topMenuContainer', { static: true })
     ], TopMenuComponent.prototype, "topMenuContainer", void 0);
     __decorate([
-        HostListener('window:resize', ['$event']),
-        __metadata("design:type", Function),
-        __metadata("design:paramtypes", [Object]),
-        __metadata("design:returntype", void 0)
+        HostListener('window:resize', ['$event'])
     ], TopMenuComponent.prototype, "onResize", null);
     TopMenuComponent = __decorate([
         Component({

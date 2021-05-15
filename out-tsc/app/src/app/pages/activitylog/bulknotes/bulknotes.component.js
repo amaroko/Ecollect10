@@ -1,14 +1,11 @@
-import { __decorate, __metadata } from "tslib";
-import { Component, ElementRef, ViewChild } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { EcolService } from '../../../services/ecol.service';
+import { __decorate } from "tslib";
+import { Component, ViewChild } from '@angular/core';
 import swal from 'sweetalert2';
 import { saveAs } from 'file-saver';
 import { environment } from '../../../../environments/environment';
 import { FileUploader, } from '@swimlane/ng2-file-upload';
 import { HttpEventType } from '@angular/common/http';
 import * as XLSX from 'xlsx';
-import { DataService } from '../../../services/data.service';
 import * as introJs from 'intro.js/intro.js';
 var URL = environment.xlsuploadapi;
 var BulknotesComponent = /** @class */ (function () {
@@ -317,18 +314,14 @@ var BulknotesComponent = /** @class */ (function () {
         });
     };
     __decorate([
-        ViewChild('myInput'),
-        __metadata("design:type", ElementRef)
+        ViewChild('myInput')
     ], BulknotesComponent.prototype, "myInputVariable", void 0);
     BulknotesComponent = __decorate([
         Component({
             selector: 'app-bulknotes',
             templateUrl: './bulknotes.component.html',
             styleUrls: ['./bulknotes.component.css']
-        }),
-        __metadata("design:paramtypes", [ActivatedRoute,
-            DataService,
-            EcolService])
+        })
     ], BulknotesComponent);
     return BulknotesComponent;
 }());

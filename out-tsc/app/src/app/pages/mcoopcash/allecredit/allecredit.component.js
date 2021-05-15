@@ -1,7 +1,6 @@
-import { __decorate, __metadata } from "tslib";
+import { __decorate } from "tslib";
 import { Component } from '@angular/core';
 import { environment } from '../../../../environments/environment';
-import { HttpClient } from '@angular/common/http';
 import { AllModules } from '@ag-grid-enterprise/all-modules';
 var AllecreditComponent = /** @class */ (function () {
     function AllecreditComponent(http) {
@@ -211,8 +210,7 @@ var AllecreditComponent = /** @class */ (function () {
             selector: 'app-allcredit',
             templateUrl: './allecredit.component.html',
             styleUrls: ['./allecredit.component.css'],
-        }),
-        __metadata("design:paramtypes", [HttpClient])
+        })
     ], AllecreditComponent);
     return AllecreditComponent;
 }());
